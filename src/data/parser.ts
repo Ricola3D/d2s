@@ -16,7 +16,7 @@ function readConstantData(buffers: any): types.IConstantData {
   const constants = {} as types.IConstantData;
 
   let strings = {};
-  if (_hasKey(buffers, "strings.txt")) {
+  if (_hasKey(buffers, "string.txt")) {
     strings = _readStrings(_getKey(buffers, "string.txt"));
     strings = Object.assign(strings, _readStrings(_getKey(buffers, "expansionstring.txt")));
     strings = Object.assign(strings, _readStrings(_getKey(buffers, "patchstring.txt")));

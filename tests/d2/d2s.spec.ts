@@ -5,8 +5,8 @@ import * as fs from "fs";
 import * as path from "path";
 import * as types from "../../src/d2/types";
 import * as request from "request";
-import { constants } from "../../src/data/versions/96_constant_data";
-import * as version99 from "../../src/data/versions/99_constant_data";
+import { constants } from "../../src/data/versions/vanilla/96_constant_data";
+import * as version99 from "../../src/data/versions/vanilla/99_constant_data";
 
 /**
  * End to end tests.

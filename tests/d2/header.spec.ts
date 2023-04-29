@@ -7,7 +7,7 @@ import { BitReader } from "../../src/binary/bitreader";
 import { BitWriter } from "../../src/binary/bitwriter";
 import * as fs from "fs";
 import * as path from "path";
-import { constants } from "../../src/data/versions/96_constant_data";
+import { constants } from "../../src/data/versions/vanilla/96_constant_data";
 
 describe("header", () => {
   xit("should make all char classes w/ custom charm", async () => {

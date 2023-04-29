@@ -3,10 +3,10 @@ import * as path from "path";
 import { expect } from "chai";
 import { readItems, readItem, writeItem, _writeMagicProperties } from "../../src/d2/items";
 import * as types from "../../src/d2/types";
-import { constants } from "../../src/data/versions/96_constant_data";
+import { constants } from "../../src/data/versions/vanilla/96_constant_data";
 import { BitReader } from "../../src/binary/bitreader";
 import { read } from "../../src/d2/d2s";
-import * as version99 from "../../src/data/versions/99_constant_data";
+import * as version99 from "../../src/data/versions/vanilla/99_constant_data";
 
 describe("items", () => {
   const config = {

@@ -3,7 +3,7 @@ import { readAttributes, writeAttributes } from "../../src/d2/attributes";
 import * as types from "../../src/d2/types";
 import { BitReader } from "../../src/binary/bitreader";
 import { BitWriter } from "../../src/binary/bitwriter";
-import { constants } from "../../src/data/versions/96_constant_data";
+import { constants } from "../../src/data/versions/vanilla/96_constant_data";
 
 describe("attributes", () => {
   it("should read", async () => {

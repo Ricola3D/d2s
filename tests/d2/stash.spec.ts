@@ -1,9 +1,9 @@
 import { expect, should } from "chai";
 import { read, write } from "../../src/d2/stash";
-import { constants } from "../../src/data/versions/96_constant_data";
+import { constants } from "../../src/data/versions/vanilla/96_constant_data";
 import * as path from "path";
 import * as fs from "fs";
-import * as version99 from "../../src/data/versions/99_constant_data";
+import * as version99 from "../../src/data/versions/vanilla/99_constant_data";
 
 describe("stash", () => {
   it("should read D2R shared stash file", async () => {
