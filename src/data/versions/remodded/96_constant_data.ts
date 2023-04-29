@@ -9040,8 +9040,8 @@ export let constants = {
        {
           "s":"item_fastermovevelocity",
           "sS":1,
-          "sB":7,
-          "sA":20,
+          "sB":8,
+          "sA":60,
           "so":148,
           "dF":4,
           "dV":1,
