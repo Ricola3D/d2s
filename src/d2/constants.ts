@@ -1,16 +1,28 @@
 import * as types from "./types";
 
-const versionedConstants: Map<number, types.IConstantData> = new Map<number, types.IConstantData>();
+const versionedConstants = {
+  vanilla: {},
+  remodded: {},
+};
 
-function getConstantData(version: number): types.IConstantData {
-  if (!(version in versionedConstants)) {
-    throw new Error(`No constant data found for this version ${version}`);
+function getConstantData(mod: string, version: number): types.IConstantData {
+  if (!(mod in versionedConstants)) {
+    throw new Error(`No constant data found for this mod ${mod}. Supported mods are: ${Object.keys(versionedConstants).join(", ")}`);
   }
-  return versionedConstants[version];
+  if (!(version.toString() in versionedConstants[mod])) {
+    throw new Error(
+      `No constant data found for version ${version} of mod ${mod}. Supported versions are: ${Object.keys(versionedConstants[mod]).join(
+        ", "
+      )}`
+    );
+  }
+  const constants = versionedConstants[mod][version.toString()];
+
+  return constants;
 }
 
-function setConstantData(version: number, data: types.IConstantData) {
-  versionedConstants[version] = data;
+function setConstantData(mod: string, version: number, data: types.IConstantData): void {
+  versionedConstants[mod][version.toString()] = data;
 }
 
 export { getConstantData, setConstantData };

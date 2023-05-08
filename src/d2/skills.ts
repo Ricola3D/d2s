@@ -1,8 +1,10 @@
 import * as types from "./types";
 import { BitReader } from "../binary/bitreader";
 import { BitWriter } from "../binary/bitwriter";
+import { getConstantData } from "./constants";
 
-export async function readSkills(char: types.ID2S, reader: BitReader, constants: types.IConstantData) {
+export function readSkills(char: types.ID2S, reader: BitReader, mod: string): void {
+  const constants = getConstantData(mod, char.header.version);
   char.skills = [] as types.ISkill[];
   const offset = SkillOffset[<string>char.header.class];
   const header = reader.ReadString(2); //0x0000 [skills header = 0x69, 0x66 "if"]
@@ -24,7 +26,7 @@ export async function readSkills(char: types.ID2S, reader: BitReader, constants:
   }
 }
 
-export async function writeSkills(char: types.ID2S, constants: types.IConstantData): Promise<Uint8Array> {
+export async function writeSkills(char: types.ID2S): Promise<Uint8Array> {
   const writer = new BitWriter();
   writer.WriteString("if", 2); //0x0000 [skills header = 0x69, 0x66 "if"]
   //probably array length checking/sorting of skills by id...

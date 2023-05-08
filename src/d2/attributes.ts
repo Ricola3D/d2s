@@ -1,9 +1,11 @@
 import * as types from "./types";
 import { BitReader } from "../binary/bitreader";
 import { BitWriter } from "../binary/bitwriter";
+import { getConstantData } from "./constants";
 
 //todo use constants.magical_properties and csvBits
-export async function readAttributes(char: types.ID2S, reader: BitReader, constants: types.IConstantData) {
+export function readAttributes(char: types.ID2S, reader: BitReader, mod: string): void {
+  const constants = getConstantData(mod, char.header.version);
   char.attributes = {} as types.IAttributes;
   const header = reader.ReadString(2); //0x0000 [attributes header = 0x67, 0x66 "gf"]
   if (header != "gf") {

@@ -4,15 +4,23 @@
     "target": "es5",
     "module": "commonjs",
     "declaration": true,
-    "sourceMap": true,
     "outDir": "./lib",
     "rootDir": "./src",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
   },
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Recommended",
   "exclude": [ 
-    "tests",
+    "test",
     "lib",
-    "dist"
+    "dist",
+    "aa",
+    "public", // Because of "allowJS" it must be excluded
+    "webpack.config.js" // Because of "allowJS" it must be excluded
   ]
 }

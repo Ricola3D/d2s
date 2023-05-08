@@ -1,0 +1,1 @@
+Do not edit the data here directly. It is generated through d2s-editor project from the data directories.

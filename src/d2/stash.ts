@@ -3,19 +3,12 @@ import { BitWriter } from "../binary/bitwriter";
 import * as items from "./items";
 import { enhanceItems } from "./attribute_enhancer";
 import { BitReader } from "../binary/bitreader";
-import { config } from "chai";
-import { getConstantData } from "./constants";
 
 const defaultConfig = {
   extendedStash: false,
 } as types.IConfig;
 
-export async function read(
-  buffer: Uint8Array,
-  constants?: types.IConstantData,
-  version?: number | null,
-  userConfig?: types.IConfig
-): Promise<types.IStash> {
+export async function read(buffer: Uint8Array, mod: string, userConfig?: types.IConfig): Promise<types.IStash> {
   const stash = {} as types.IStash;
   const reader = new BitReader(buffer);
   const config = Object.assign(defaultConfig, userConfig);
@@ -27,20 +20,12 @@ export async function read(
     while (reader.offset < reader.bits.length) {
       pageCount++;
       await readStashHeader(stash, reader);
-      const saveVersion = version || parseInt(stash.version);
-      if (!constants) {
-        constants = getConstantData(saveVersion);
-      }
-      await readStashPart(stash, reader, saveVersion, constants);
+      await readStashPart(stash, reader, mod, parseInt(stash.version));
     }
     stash.pageCount = pageCount;
   } else {
     await readStashHeader(stash, reader);
-    const saveVersion = version || parseInt(stash.version);
-    if (!constants) {
-      constants = getConstantData(saveVersion);
-    }
-    await readStashPages(stash, reader, saveVersion, constants);
+    await readStashPages(stash, reader, mod, parseInt(stash.version));
   }
   return stash;
 }
@@ -86,14 +71,14 @@ async function readStashHeader(stash: types.IStash, reader: BitReader) {
   }
 }
 
-async function readStashPages(stash: types.IStash, reader: BitReader, version: number, constants: types.IConstantData) {
+async function readStashPages(stash: types.IStash, reader: BitReader, mod: string, version: number) {
   stash.pages = [];
   for (let i = 0; i < stash.pageCount; i++) {
-    await readStashPage(stash, reader, version, constants);
+    await readStashPage(stash, reader, mod, version);
   }
 }
 
-async function readStashPage(stash: types.IStash, reader: BitReader, version: number, constants: types.IConstantData) {
+async function readStashPage(stash: types.IStash, reader: BitReader, mod: string, version: number) {
   const page: types.IStashPage = {
     items: [],
     name: "",
@@ -107,40 +92,32 @@ async function readStashPage(stash: types.IStash, reader: BitReader, version: nu
   page.type = reader.ReadUInt32();
 
   page.name = reader.ReadNullTerminatedString();
-  page.items = await items.readItems(reader, version, constants, defaultConfig);
-  enhanceItems(page.items, constants, 1);
+  page.items = await items.readItems(reader, mod, version, defaultConfig);
+  enhanceItems(page.items, mod, version, 1);
   stash.pages.push(page);
 }
 
-async function readStashPart(stash: types.IStash, reader: BitReader, version: number, constants: types.IConstantData) {
+async function readStashPart(stash: types.IStash, reader: BitReader, mod: string, version: number) {
   const page: types.IStashPage = {
     items: [],
     name: "",
     type: 0,
   };
-  page.items = await items.readItems(reader, version, constants, defaultConfig);
-  enhanceItems(page.items, constants, 1);
+  page.items = await items.readItems(reader, mod, version, defaultConfig);
+  enhanceItems(page.items, mod, version, 1);
   stash.pages.push(page);
 }
 
-export async function write(
-  data: types.IStash,
-  constants: types.IConstantData,
-  version: number,
-  userConfig?: types.IConfig
-): Promise<Uint8Array> {
+export async function write(data: types.IStash, mod: string, version: number, userConfig?: types.IConfig): Promise<Uint8Array> {
   const config = Object.assign(defaultConfig, userConfig);
   const writer = new BitWriter();
-  if (!constants) {
-    constants = getConstantData(version);
-  }
   if (version > 0x61) {
     for (const page of data.pages) {
-      writer.WriteArray(await writeStashSection(data, page, constants, config));
+      writer.WriteArray(await writeStashSection(data, page, mod, version, config));
     }
   } else {
     writer.WriteArray(await writeStashHeader(data));
-    writer.WriteArray(await writeStashPages(data, version, constants, config));
+    writer.WriteArray(await writeStashPages(data, mod, version, config));
   }
   return writer.ToArray();
 }
@@ -169,51 +146,42 @@ async function writeStashHeader(data: types.IStash): Promise<Uint8Array> {
 async function writeStashSection(
   data: types.IStash,
   page: types.IStashPage,
-  constants: types.IConstantData,
+  mod: string,
+  version: number,
   userConfig: types.IConfig
 ): Promise<Uint8Array> {
   const writer = new BitWriter();
   writer.WriteUInt32(0xaa55aa55);
   writer.WriteUInt32(data.hardcore ? 0 : 1);
-  writer.WriteUInt32(0x62);
+  writer.WriteUInt32(version);
   writer.WriteUInt32(data.sharedGold);
   writer.WriteUInt32(0); // size of the sector, to be fixed later
   writer.WriteBytes(new Uint8Array(44).fill(0)); // empty
-  writer.WriteArray(await items.writeItems(page.items, 0x62, constants, userConfig));
+  writer.WriteArray(await items.writeItems(page.items, mod, version, userConfig));
   const size = writer.offset;
   writer.SeekByte(16);
   writer.WriteUInt32(Math.ceil(size / 8));
   return writer.ToArray();
 }
 
-async function writeStashPages(
-  data: types.IStash,
-  version: number,
-  constants: types.IConstantData,
-  config: types.IConfig
-): Promise<Uint8Array> {
+async function writeStashPages(data: types.IStash, mod: string, version: number, config: types.IConfig): Promise<Uint8Array> {
   const writer = new BitWriter();
 
   for (let i = 0; i < data.pages.length; i++) {
-    writer.WriteArray(await writeStashPage(data.pages[i], version, constants, config));
+    writer.WriteArray(await writeStashPage(data.pages[i], mod, version, config));
   }
 
   return writer.ToArray();
 }
 
-async function writeStashPage(
-  data: types.IStashPage,
-  version: number,
-  constants: types.IConstantData,
-  config: types.IConfig
-): Promise<Uint8Array> {
+async function writeStashPage(data: types.IStashPage, mod: string, version: number, config: types.IConfig): Promise<Uint8Array> {
   const writer = new BitWriter();
 
   writer.WriteString("ST", 2);
   writer.WriteUInt32(data.type);
 
   writer.WriteString(data.name, data.name.length + 1);
-  writer.WriteArray(await items.writeItems(data.items, version, constants, config));
+  writer.WriteArray(await items.writeItems(data.items, mod, version, config));
 
   return writer.ToArray();
 }

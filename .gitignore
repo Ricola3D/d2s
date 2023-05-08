@@ -2,4 +2,3 @@ dist
 lib
 node_modules
 .npmrc
-docs/editor/data

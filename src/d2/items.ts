@@ -1,6 +1,7 @@
 import * as types from "./types";
 import { BitReader } from "../binary/bitreader";
 import { BitWriter } from "../binary/bitwriter";
+import { getConstantData } from "./constants";
 
 enum ItemType {
   Armor = 0x01,
@@ -26,17 +27,17 @@ const HUFFMAN = [[[[["w","u"],[["8",["y",["5",["j",[]]]]],"h"]],["s",[["2","n"],
 // prettier-ignore
 const HUFFMAN_LOOKUP = { "0": { "v": 223, "l": 8 }, "1": { "v": 31, "l": 7 }, "2": { "v": 12, "l": 6 }, "3": { "v": 91, "l": 7 }, "4": { "v": 95, "l": 8 }, "5": { "v": 104, "l": 8 }, "6": { "v": 123, "l": 7 }, "7": { "v": 30, "l": 5 }, "8": { "v": 8, "l": 6 }, "9": { "v": 14, "l": 5 }, " ": { "v": 1, "l": 2 }, "a": { "v": 15, "l": 5 }, "b": { "v": 10, "l": 4 }, "c": { "v": 2, "l": 5 }, "d": { "v": 35, "l": 6 }, "e": { "v": 3, "l": 6 }, "f": { "v": 50, "l": 6 }, "g": { "v": 11, "l": 5 }, "h": { "v": 24, "l": 5 }, "i": { "v": 63, "l": 7 }, "j": { "v": 232, "l": 9 }, "k": { "v": 18, "l": 6 }, "l": { "v": 23, "l": 5 }, "m": { "v": 22, "l": 5 }, "n": { "v": 44, "l": 6 }, "o": { "v": 127, "l": 7 }, "p": { "v": 19, "l": 5 }, "q": { "v": 155, "l": 8 }, "r": { "v": 7, "l": 5 }, "s": { "v": 4, "l": 4 }, "t": { "v": 6, "l": 5 }, "u": { "v": 16, "l": 5 }, "v": { "v": 59, "l": 7 }, "w": { "v": 0, "l": 5 }, "x": { "v": 28, "l": 5 }, "y": { "v": 40, "l": 7 }, "z": { "v": 27, "l": 8 } };
 
-export async function readCharItems(char: types.ID2S, reader: BitReader, constants: types.IConstantData, config: types.IConfig) {
-  char.items = await readItems(reader, char.header.version, constants, config, char);
+export async function readCharItems(char: types.ID2S, reader: BitReader, mod: string, config: types.IConfig): Promise<void> {
+  char.items = await readItems(reader, mod, char.header.version, config, char);
 }
 
-export async function writeCharItems(char: types.ID2S, constants: types.IConstantData, config: types.IConfig): Promise<Uint8Array> {
+export async function writeCharItems(char: types.ID2S, mod: string, version: number, config: types.IConfig): Promise<Uint8Array> {
   const writer = new BitWriter();
-  writer.WriteArray(await writeItems(char.items, char.header.version, constants, config));
+  writer.WriteArray(await writeItems(char.items, mod, version, config));
   return writer.ToArray();
 }
 
-export async function readMercItems(char: types.ID2S, reader: BitReader, constants: types.IConstantData, config: types.IConfig) {
+export async function readMercItems(char: types.ID2S, reader: BitReader, mod: string, config: types.IConfig): Promise<void> {
   char.merc_items = [] as types.IItem[];
   const header = reader.ReadString(2); //0x0000 [merc item list header = "jf"]
   if (header !== "jf") {
@@ -48,21 +49,21 @@ export async function readMercItems(char: types.ID2S, reader: BitReader, constan
     throw new Error(`Mercenary header 'jf' not found at position ${reader.offset - 2 * 8}`);
   }
   if (char.header.merc_id && parseInt(char.header.merc_id, 16) !== 0) {
-    char.merc_items = await readItems(reader, char.header.version, constants, config, char);
+    char.merc_items = await readItems(reader, mod, char.header.version, config, char);
   }
 }
 
-export async function writeMercItems(char: types.ID2S, constants: types.IConstantData, config: types.IConfig): Promise<Uint8Array> {
+export async function writeMercItems(char: types.ID2S, mod: string, version: number, config: types.IConfig): Promise<Uint8Array> {
   const writer = new BitWriter();
   writer.WriteString("jf", 2);
   if (char.header.merc_id && parseInt(char.header.merc_id, 16) !== 0) {
     char.merc_items = char.merc_items || [];
-    writer.WriteArray(await writeItems(char.merc_items, char.header.version, constants, config));
+    writer.WriteArray(await writeItems(char.merc_items, mod, version, config));
   }
   return writer.ToArray();
 }
 
-export async function readGolemItems(char: types.ID2S, reader: BitReader, constants: types.IConstantData, config: types.IConfig) {
+export async function readGolemItems(char: types.ID2S, reader: BitReader, mod: string, config: types.IConfig): Promise<void> {
   const header = reader.ReadString(2); //0x0000 [golem item list header = "kf"]
   if (header !== "kf") {
     // header is not present in first save after char is created
@@ -74,23 +75,23 @@ export async function readGolemItems(char: types.ID2S, reader: BitReader, consta
   }
   const has_golem = reader.ReadUInt8();
   if (has_golem === 1) {
-    char.golem_item = await readItem(reader, char.header.version, constants, config);
+    char.golem_item = await readItem(reader, mod, char.header.version, config);
   }
 }
 
-export async function writeGolemItems(char: types.ID2S, constants: types.IConstantData, config: types.IConfig): Promise<Uint8Array> {
+export async function writeGolemItems(char: types.ID2S, mod: string, version: number, config: types.IConfig): Promise<Uint8Array> {
   const writer = new BitWriter();
   writer.WriteString("kf", 2);
   if (char.golem_item) {
     writer.WriteUInt8(1);
-    writer.WriteArray(await writeItem(char.golem_item, char.header.version, constants, config));
+    writer.WriteArray(await writeItem(char.golem_item, mod, version, config));
   } else {
     writer.WriteUInt8(0);
   }
   return writer.ToArray();
 }
 
-export async function readCorpseItems(char: types.ID2S, reader: BitReader, constants: types.IConstantData, config: types.IConfig) {
+export async function readCorpseItems(char: types.ID2S, reader: BitReader, mod: string, config: types.IConfig): Promise<void> {
   char.corpse_items = [] as types.IItem[];
   const header = reader.ReadString(2); //0x0000 [item list header = 0x4a, 0x4d "JM"]
   if (header !== "JM") {
@@ -105,11 +106,11 @@ export async function readCorpseItems(char: types.ID2S, reader: BitReader, const
   char.is_dead = reader.ReadUInt16(); //0x0002 [corpse count]
   for (let i = 0; i < char.is_dead; i++) {
     reader.SkipBytes(12); //0x0004 [unk4, x_pos, y_pos]
-    char.corpse_items = char.corpse_items.concat(await readItems(reader, char.header.version, constants, config, char));
+    char.corpse_items = char.corpse_items.concat(await readItems(reader, mod, char.header.version, config, char));
   }
 }
 
-export async function writeCorpseItem(char: types.ID2S, constants: types.IConstantData, config: types.IConfig): Promise<Uint8Array> {
+export async function writeCorpseItem(char: types.ID2S, mod: string, version: number, config: types.IConfig): Promise<Uint8Array> {
   const writer = new BitWriter();
   writer.WriteString("JM", 2);
   writer.WriteUInt16(char.is_dead);
@@ -117,18 +118,18 @@ export async function writeCorpseItem(char: types.ID2S, constants: types.IConsta
   if (char.is_dead) {
     writer.WriteArray(new Uint8Array(12));
     char.corpse_items = char.corpse_items || [];
-    writer.WriteArray(await writeItems(char.corpse_items, char.header.version, constants, config));
+    writer.WriteArray(await writeItems(char.corpse_items, mod, version, config));
   }
   return writer.ToArray();
 }
 
 export async function readItems(
   reader: BitReader,
+  mod: string,
   version: number,
-  constants: types.IConstantData,
   config: types.IConfig,
   char?: types.ID2S
-) {
+): Promise<types.IItem[]> {
   const items = [] as types.IItem[];
   const header = reader.ReadString(2); //0x0000 [item list header = 0x4a, 0x4d "JM"]
   if (header !== "JM") {
@@ -142,40 +143,29 @@ export async function readItems(
   const count = reader.ReadUInt16(); //0x0002
 
   for (let i = 0; i < count; i++) {
-    items.push(await readItem(reader, version, constants, config));
+    items.push(await readItem(reader, mod, version, config));
   }
   return items;
 }
 
-export async function writeItems(
-  items: types.IItem[],
-  version: number,
-  constants: types.IConstantData,
-  config: types.IConfig
-): Promise<Uint8Array> {
+export async function writeItems(items: types.IItem[], mod: string, version: number, config: types.IConfig): Promise<Uint8Array> {
   const writer = new BitWriter();
   writer.WriteString("JM", 2);
   writer.WriteUInt16(items.length);
   for (let i = 0; i < items.length; i++) {
-    writer.WriteArray(await writeItem(items[i], version, constants, config));
+    writer.WriteArray(await writeItem(items[i], mod, version, config));
   }
   return writer.ToArray();
 }
 
-export async function readItem(
-  reader: BitReader,
-  version: number,
-  originalConstants: types.IConstantData,
-  config: types.IConfig,
-  parent?: types.IItem
-): Promise<types.IItem> {
+export async function readItem(reader: BitReader, mod: string, version: number, config: types.IConfig): Promise<types.IItem> {
   if (version <= 0x60) {
     const header = reader.ReadString(2); //0x0000 [item header = 0x4a, 0x4d "JM"]
     if (header !== "JM") {
       throw new Error(`Item header 'JM' not found at position ${reader.offset - 2 * 8}`);
     }
   }
-  const constants = originalConstants;
+  const constants = getConstantData(mod, version);
   const item = {} as types.IItem;
   _readSimpleBits(item, reader, version, constants, config);
   if (!item.simple_item) {
@@ -328,19 +318,15 @@ export async function readItem(
   if (item.nr_of_items_in_sockets > 0 && item.simple_item === 0) {
     item.socketed_items = [];
     for (let i = 0; i < item.nr_of_items_in_sockets; i++) {
-      item.socketed_items.push(await readItem(reader, version, constants, config, item));
+      item.socketed_items.push(await readItem(reader, mod, version, config));
     }
   }
   //console.log(JSON.stringify(item));
   return item;
 }
 
-export async function writeItem(
-  item: types.IItem,
-  version: number,
-  constants: types.IConstantData,
-  config: types.IConfig
-): Promise<Uint8Array> {
+export async function writeItem(item: types.IItem, mod: string, version: number, config: types.IConfig): Promise<Uint8Array> {
+  const constants = getConstantData(mod, version);
   if (item._unknown_data === undefined) {
     item._unknown_data = {};
   }
@@ -352,7 +338,7 @@ export async function writeItem(
   if (version <= 0x60) {
     writer.WriteString("JM", 2);
   }
-  _writeSimpleBits(writer, version, item, constants, config);
+  _writeSimpleBits(writer, mod, version, item);
   if (!item.simple_item) {
     writer.WriteUInt32(item.id, 32);
     writer.WriteUInt8(item.level, 7);
@@ -389,7 +375,7 @@ export async function writeItem(
         writer.WriteUInt8(item.rare_name_id !== undefined ? item.rare_name_id : _lookupRareId(item.rare_name, constants), 8);
         writer.WriteUInt8(item.rare_name_id2 !== undefined ? item.rare_name_id2 : _lookupRareId(item.rare_name2, constants), 8);
         for (let i = 0; i < 6; i++) {
-          const magical_name_id = item.magical_name_ids[i];
+          const magical_name_id = item.magical_name_ids !== undefined ? item.magical_name_ids[i] : undefined;
           if (magical_name_id) {
             writer.WriteBit(1);
             writer.WriteUInt16(magical_name_id, 11);
@@ -474,7 +460,7 @@ export async function writeItem(
 
   if (item.nr_of_items_in_sockets > 0 && item.simple_item === 0) {
     for (let i = 0; i < item.nr_of_items_in_sockets; i++) {
-      writer.WriteArray(await writeItem(item.socketed_items[i], version, constants, config));
+      writer.WriteArray(await writeItem(item.socketed_items[i], mod, version, config));
     }
   }
   return writer.ToArray();
@@ -570,11 +556,12 @@ function _readSimpleBits(item: types.IItem, reader: BitReader, version: number, 
 function _lookupRareId(name: string, constants: types.IConstantData): number {
   //some inconsistencies with txt data and nokka. so have to hack it with startsWith
   return constants.rare_names.findIndex(
-    (k) => k && (k.n.toLowerCase().startsWith(name.toLowerCase()) || name.toLowerCase().startsWith(k.n.toLowerCase()))
+    (k) => k && k.n && (k.n.toLowerCase().startsWith(name.toLowerCase()) || name.toLowerCase().startsWith(k.n.toLowerCase()))
   );
 }
 
-function _writeSimpleBits(writer: BitWriter, version: number, item: types.IItem, constants: types.IConstantData, config: types.IConfig) {
+function _writeSimpleBits(writer: BitWriter, mod: string, version: number, item: types.IItem) {
+  const constants = getConstantData(mod, version);
   writer.WriteBits(item._unknown_data.b0_3 || new Uint8Array(4), 4);
   writer.WriteBit(item.identified);
   writer.WriteBits(item._unknown_data.b5_10 || new Uint8Array(6), 6);
@@ -634,13 +621,13 @@ function _writeSimpleBits(writer: BitWriter, version: number, item: types.IItem,
   }
 }
 
-export function _readMagicProperties(reader: BitReader, constants: types.IConstantData) {
+export function _readMagicProperties(reader: BitReader, constants: types.IConstantData): types.IMagicProperty[] {
   let id = reader.ReadUInt16(9);
   const magic_attributes = [];
   while (id != 0x1ff) {
     const values = [];
-    if (id > constants.magical_properties.length) {
-      throw new Error(`Invalid Stat Id: ${id} at position ${reader.offset - 9}`);
+    if (!constants.magical_properties[id]) {
+      throw new Error(`Invalid magic property Id: ${id} at position ${reader.offset - 9}`);
     }
     const num_of_properties = constants.magical_properties[id].np || 1;
     for (let i = 0; i < num_of_properties; i++) {
@@ -700,7 +687,7 @@ export function _readMagicProperties(reader: BitReader, constants: types.IConsta
   return magic_attributes;
 }
 
-export function _writeMagicProperties(writer: BitWriter, properties: types.IMagicProperty[], constants: types.IConstantData) {
+export function _writeMagicProperties(writer: BitWriter, properties: types.IMagicProperty[], constants: types.IConstantData): void {
   if (properties) {
     for (let i = 0; i < properties.length; i++) {
       const property = properties[i];

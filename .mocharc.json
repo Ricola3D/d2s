@@ -1,0 +1,12 @@
+{
+    "extension": ["ts", "js"],
+    "recursive": true,
+    "color": true,
+    "spec": "test/**/*.spec.ts",
+    "require": [
+        "ts-node/register",
+        "./test/bootstrap.ts"
+        
+    ],
+    "timeout": 10000
+}

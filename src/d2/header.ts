@@ -1,6 +1,7 @@
 import * as types from "./types";
 import { BitReader } from "../binary/bitreader";
 import { BitWriter } from "../binary/bitwriter";
+import { getConstantData } from "./constants";
 
 export async function readHeader(char: types.ID2S, reader: BitReader) {
   char.header = {} as types.IHeader;
@@ -13,7 +14,8 @@ export async function readHeader(char: types.ID2S, reader: BitReader) {
   char.header.version = reader.ReadUInt32();
 }
 
-export async function readHeaderData(char: types.ID2S, reader: BitReader, constants: types.IConstantData) {
+export async function readHeaderData(char: types.ID2S, reader: BitReader, mod: string) {
+  const constants = getConstantData(mod, char.header.version);
   const v = await _versionSpecificHeader(char.header.version);
   if (v == null) {
     throw new Error(`Cannot parse version: ${char.header.version}`);

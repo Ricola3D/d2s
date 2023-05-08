@@ -1,3 +1,4 @@
+import { getConstantData } from "./constants";
 import * as types from "./types";
 
 enum ItemType {
@@ -12,15 +13,16 @@ enum ItemType {
 //enhanced def/durability/weapon damage.
 //lookup socketed compact items (runes/gems) properties for the slot they are in
 //compute attributes like str/resists/etc..
-export async function enhanceAttributes(char: types.ID2S, constants: types.IConstantData, config?: types.IConfig) {
-  enhanceItems(char.items, constants, char.attributes.level, config);
-  enhanceItems([char.golem_item], constants, char.attributes.level, config);
-  enhanceItems(char.merc_items, constants, char.attributes.level, config);
-  enhanceItems(char.corpse_items, constants, char.attributes.level, config);
-  enhancePlayerAttributes(char, constants, config);
+export function enhanceAttributes(char: types.ID2S, mod: string, version: number, config?: types.IConfig): void {
+  enhanceItems(char.items, mod, version, char.attributes.level, config);
+  enhanceItems([char.golem_item], mod, version, char.attributes.level, config);
+  enhanceItems(char.merc_items, mod, version, char.attributes.level, config);
+  enhanceItems(char.corpse_items, mod, version, char.attributes.level, config);
+  enhancePlayerAttributes(char, mod, version, config);
 }
 
-export async function enhancePlayerAttributes(char: types.ID2S, constants: types.IConstantData, config?: types.IConfig) {
+export function enhancePlayerAttributes(char: types.ID2S, mod: string, version: number, config?: types.IConfig): void {
+  const constants = getConstantData(mod, version);
   const items = char.items.filter((item) => {
     return item.location_id === 1 && item.equipped_id !== 13 && item.equipped_id !== 14;
   });
@@ -35,13 +37,14 @@ export async function enhancePlayerAttributes(char: types.ID2S, constants: types
   _enhanceAttributeDescription(char.item_bonuses, constants, char.attributes.level, config);
 }
 
-export async function enhanceItems(
+export function enhanceItems(
   items: types.IItem[],
-  constants: types.IConstantData,
+  mod: string,
+  version: number,
   level = 1,
   config?: types.IConfig,
   parent?: types.IItem
-) {
+): void {
   if (!items) {
     return;
   }
@@ -50,13 +53,21 @@ export async function enhanceItems(
       continue;
     }
     if (item.socketed_items && item.socketed_items.length) {
-      enhanceItems(item.socketed_items, constants, level, config, item);
+      enhanceItems(item.socketed_items, mod, version, level, config, item);
     }
-    enhanceItem(item, constants, level, config, parent);
+    enhanceItem(item, mod, version, level, config, parent);
   }
 }
 
-export function enhanceItem(item: types.IItem, constants: types.IConstantData, level = 1, config?: types.IConfig, parent?: types.IItem) {
+export function enhanceItem(
+  item: types.IItem,
+  mod: string,
+  version: number,
+  level = 1,
+  config?: types.IConfig,
+  parent?: types.IItem
+): void {
+  const constants = getConstantData(mod, version);
   if (parent) {
     //socket item.
     const pt = constants.armor_items[parent.type] || constants.weapon_items[parent.type] || constants.other_items[item.type];
@@ -377,7 +388,10 @@ function _descFunc(
       break;
     }
     case 15: {
-      descString = _sprintf(descString, property.values[2], property.values[0], constants.skills[property.values[1]].s);
+      const skillId = property.values[1];
+      const skill = constants.skills[skillId];
+      const skillStr = skill ? skill.s : `Unknown_Skill_${skillId}`;
+      descString = _sprintf(descString, property.values[2], property.values[0], skillStr);
       property.description = `${descString}`;
       break;
     }
