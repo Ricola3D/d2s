@@ -19,7 +19,7 @@
     "test",
     "lib",
     "dist",
-    "aa",
+    "scripts",
     "public", // Because of "allowJS" it must be excluded
     "webpack.config.js" // Because of "allowJS" it must be excluded
   ]

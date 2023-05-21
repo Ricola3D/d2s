@@ -456,7 +456,7 @@ function _descFunc(
       const skill = constants.skills[property.values[0]];
       const clazz = _classFromCode(skill.c, constants);
       if (descString) {
-        property.description = _sprintf(descString, v, skill?.s, clazz?.co);
+        property.description = _sprintf(descString, v, skill?.s, clazz ? clazz?.co : "");
       } else {
         property.description = `${sign}${v} to ${skill?.s} ${clazz?.co}`;
       }

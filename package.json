@@ -17,7 +17,9 @@
     "postversion": "git push && git push --tags",
     "lint": "eslint \"*/**/*.{js,ts,tsx}\" --quiet --fix",
     "eslint": "eslint",
-    "generate": "node scripts/generate_constant_bundles"
+    "generate": "node scripts/generate_constant_bundles",
+    "d2t": "node scripts/d2s_to_text",
+    "t2d": "node scripts/text_to_d2s"
   },
   "devDependencies": {
     "@types/chai": "^4.1.3",

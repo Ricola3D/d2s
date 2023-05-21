@@ -10,6 +10,16 @@
         "--colors"
       ],
       "internalConsoleOptions": "openOnSessionStart"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Generate Bundles",
+      "program": "${workspaceFolder}/scripts/generate_constant_bundles.js",
+      "args": [
+        "--colors"
+      ],
+      "internalConsoleOptions": "openOnSessionStart"
     }
   ]
 }

@@ -5,9 +5,14 @@
     "**/.git": true,
     "**/node_modules": true,
     "**/dist": true,
-    "package-lock.json": true
+    "package-lock.json": true,
+    "public/d2/game_data/vanilla/": true,
+    "public/d2/vanilla_constants_*.js": true,
   },
   "files.eol": "\n",
+  "files.exclude": {
+    "**/node_modules": true
+  },
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#3399ff",
     "activityBar.background": "#3399ff",

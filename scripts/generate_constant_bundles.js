@@ -192,6 +192,7 @@ function _readClasses(tsv, tsv2, strings) {
     const clazz = tsv.lines[i][cClass];
     if (clazz && clazz != "Expansion") {
       arr[id] = {
+        id,
         n: clazz,
         c: tsv2.lines[i][cCode],
         as: strings[tsv.lines[i][cAllSkills]],
@@ -247,6 +248,7 @@ function _readSkills(tsv, skillDescs, strings) {
     const skillDesc = tsv.lines[i][cSkillDesc];
     if (skillDesc) {
       const o = {};
+      o.id = id;
       if (skillDescs[skillDesc]) o.s = skillDescs[skillDesc];
       if (tsv.lines[i][cCharclass]) o.c = tsv.lines[i][cCharclass];
       arr[id] = o;
@@ -263,6 +265,8 @@ function _readRareNames(tsv, idx, strings) {
     const name = tsv.lines[i][cName];
     if (name) {
       arr[id - idx] = {
+        id,
+        index: id - idx,
         n: strings[name],
       };
       id++;
@@ -280,6 +284,7 @@ function _readMagicNames(tsv, strings) {
     const name = tsv.lines[i][cName];
     if (name != "Expansion") {
       const o = {};
+      o.id = id;
       o.n = strings[name];
       if (tsv.lines[i][cTransformcolor]) o.tc = tsv.lines[i][cTransformcolor];
       arr[id] = o;
@@ -336,6 +341,7 @@ function _readRunewords(tsv, strings) {
         id += 26;
       }
       arr[id] = {
+        id,
         n: strings[tsv.lines[i][cName]],
       };
     }
@@ -356,7 +362,7 @@ function _readTypes(tsv, strings) {
   for (let i = 1; i < tsv.lines.length; i++) {
     const code = tsv.lines[i][cCode];
     if (code) {
-      const o = {};
+      const o = {code};
       const invgfx = [];
       for (let j = 0; j <= 6; j++) {
         if (tsv.lines[i][cInvGfx[j]]) invgfx[j] = tsv.lines[i][cInvGfx[j]];
@@ -498,7 +504,7 @@ function _readGems(miscItems, tsv, strings) {
             if (!item.m) item.m = [];
             item.m[k] = [];
           }
-          const m = {};
+          const m = {code, type};
           m.m = mod;
           if (tsv.lines[i][cols[type][j].cParam]) m.p = +tsv.lines[i][cols[type][j].cParam];
           if (tsv.lines[i][cols[type][j].cMin]) m.min = +tsv.lines[i][cols[type][j].cMin];
@@ -522,6 +528,7 @@ function _readSetOrUnqItems(tsv, strings) {
     const index = tsv.lines[i][cIndex];
     if (index && index != "Expansion") {
       const o = {};
+      o.id = id;
       o.n = strings[tsv.lines[i][cIndex]];
       if (tsv.lines[i][cInvfile]) o.i = tsv.lines[i][cInvfile];
       if (tsv.lines[i][cCode]) o.c = tsv.lines[i][cCode];
@@ -666,14 +673,7 @@ function createBundle(input_dir, output_dir, output_name) {
   const output_file_path_es5format = path.join(__dirname, `${output_dir}${output_name}.bundle.js`);
   fs.writeFileSync(output_file_path_es5format, to_write_es5format);
   console.log(`Generated file ${output_file_path_es5format}`);
-
-  const to_write_es6format = `var ${output_name} = ${JSON.stringify(json_data)};`;
-  const output_file_path_es6format = path.join(__dirname, `${output_dir}${output_name}.bundle.min.js`);
-  fs.writeFileSync(output_file_path_es6format, to_write_es6format);
-  console.log(`Generated file ${output_file_path_es6format}`);
 }
 
 // Note: currently I don't know how to read the 96 version, because for ex ItemStatCosts.txt is missing necessary columns
-//createBundle('../public/d2/game_data/vanilla/version_96/', '../public/d2/', 'vanilla_constants_96');
 createBundle('../public/d2/game_data/vanilla/version_99/', '../public/d2/', 'vanilla_constants_99');
-createBundle('../public/d2/game_data/remodded/version_99/', '../public/d2/', 'remodded_constants_99');

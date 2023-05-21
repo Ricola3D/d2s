@@ -1,6 +1,7 @@
 export let remodded_constants_99 = {
     "classes": [
         {
+            "id": 0,
             "n": "Amazon",
             "c": "ama",
             "as": "%+d to Amazon Skill Levels",
@@ -28,6 +29,7 @@ export let remodded_constants_99 = {
             }
         },
         {
+            "id": 1,
             "n": "Sorceress",
             "c": "sor",
             "as": "%+d to Sorceress Skill Levels",
@@ -55,6 +57,7 @@ export let remodded_constants_99 = {
             }
         },
         {
+            "id": 2,
             "n": "Necromancer",
             "c": "nec",
             "as": "%+d to Necromancer Skill Levels",
@@ -82,6 +85,7 @@ export let remodded_constants_99 = {
             }
         },
         {
+            "id": 3,
             "n": "Paladin",
             "c": "pal",
             "as": "%+d to Paladin Skill Levels",
@@ -109,6 +113,7 @@ export let remodded_constants_99 = {
             }
         },
         {
+            "id": 4,
             "n": "Barbarian",
             "c": "bar",
             "as": "%+d to Barbarian Skill Levels",
@@ -136,6 +141,7 @@ export let remodded_constants_99 = {
             }
         },
         {
+            "id": 5,
             "n": "Druid",
             "c": "dru",
             "as": "%+d to Druid Skill Levels",
@@ -163,6 +169,7 @@ export let remodded_constants_99 = {
             }
         },
         {
+            "id": 6,
             "n": "Assassin",
             "c": "ass",
             "as": "%+d to Assassin Skill Levels",
@@ -192,620 +199,776 @@ export let remodded_constants_99 = {
     ],
     "skills": [
         {
+            "id": 0,
             "s": "Attack"
         },
         {
+            "id": 1,
             "s": "Kick"
         },
         {
+            "id": 2,
             "s": "Throw"
         },
         {
+            "id": 3,
             "s": "Unsummon"
         },
         {
+            "id": 4,
             "s": "Left Hand Throw"
         },
         {
+            "id": 5,
             "s": "Left Hand Swing"
         },
         {
+            "id": 6,
             "s": "Magic Arrow",
             "c": "ama"
         },
         {
+            "id": 7,
             "s": "Fire Arrow",
             "c": "ama"
         },
         {
+            "id": 8,
             "s": "Inner Sight",
             "c": "ama"
         },
         {
+            "id": 9,
             "s": "Critical Strike",
             "c": "ama"
         },
         {
+            "id": 10,
             "s": "Jab",
             "c": "ama"
         },
         {
+            "id": 11,
             "s": "Cold Arrow",
             "c": "ama"
         },
         {
+            "id": 12,
             "s": "Multiple Shot",
             "c": "ama"
         },
         {
+            "id": 13,
             "s": "Dodge",
             "c": "ama"
         },
         {
+            "id": 14,
             "s": "Power Strike",
             "c": "ama"
         },
         {
+            "id": 15,
             "s": "Poison Javelin",
             "c": "ama"
         },
         {
+            "id": 16,
             "s": "Exploding Arrow",
             "c": "ama"
         },
         {
+            "id": 17,
             "s": "Slow Missiles",
             "c": "ama"
         },
         {
+            "id": 18,
             "s": "Avoid",
             "c": "ama"
         },
         {
+            "id": 19,
             "s": "Impale",
             "c": "ama"
         },
         {
+            "id": 20,
             "s": "Lightning Bolt",
             "c": "ama"
         },
         {
+            "id": 21,
             "s": "Ice Arrow",
             "c": "ama"
         },
         {
+            "id": 22,
             "s": "Guided Arrow",
             "c": "ama"
         },
         {
+            "id": 23,
             "s": "Penetrate",
             "c": "ama"
         },
         {
+            "id": 24,
             "s": "Charged Strike",
             "c": "ama"
         },
         {
+            "id": 25,
             "s": "Plague Javelin",
             "c": "ama"
         },
         {
+            "id": 26,
             "s": "Strafe",
             "c": "ama"
         },
         {
+            "id": 27,
             "s": "Immolation Arrow",
             "c": "ama"
         },
         {
+            "id": 28,
             "s": "Decoy",
             "c": "ama"
         },
         {
+            "id": 29,
             "s": "Evade",
             "c": "ama"
         },
         {
+            "id": 30,
             "s": "Fend",
             "c": "ama"
         },
         {
+            "id": 31,
             "s": "Freezing Arrow",
             "c": "ama"
         },
         {
+            "id": 32,
             "s": "Valkyrie",
             "c": "ama"
         },
         {
+            "id": 33,
             "s": "Pierce",
             "c": "ama"
         },
         {
+            "id": 34,
             "s": "Lightning Strike",
             "c": "ama"
         },
         {
+            "id": 35,
             "s": "Lightning Fury",
             "c": "ama"
         },
         {
+            "id": 36,
             "s": "Fire Bolt",
             "c": "sor"
         },
         {
+            "id": 37,
             "s": "Warmth",
             "c": "sor"
         },
         {
+            "id": 38,
             "s": "Charged Bolt",
             "c": "sor"
         },
         {
+            "id": 39,
             "s": "Ice Bolt",
             "c": "sor"
         },
         {
+            "id": 40,
             "s": "Frozen Armor",
             "c": "sor"
         },
         {
+            "id": 41,
             "s": "Inferno",
             "c": "sor"
         },
         {
+            "id": 42,
             "s": "Static Field",
             "c": "sor"
         },
         {
+            "id": 43,
             "s": "Telekinesis",
             "c": "sor"
         },
         {
+            "id": 44,
             "s": "Frost Nova",
             "c": "sor"
         },
         {
+            "id": 45,
             "s": "Ice Blast",
             "c": "sor"
         },
         {
+            "id": 46,
             "s": "Blaze",
             "c": "sor"
         },
         {
+            "id": 47,
             "s": "Fire Ball",
             "c": "sor"
         },
         {
+            "id": 48,
             "s": "Nova",
             "c": "sor"
         },
         {
+            "id": 49,
             "s": "Lightning",
             "c": "sor"
         },
         {
+            "id": 50,
             "s": "Shiver Armor",
             "c": "sor"
         },
         {
+            "id": 51,
             "s": "Fire Wall",
             "c": "sor"
         },
         {
+            "id": 52,
             "s": "Enchant",
             "c": "sor"
         },
         {
+            "id": 53,
             "s": "Chain Lightning",
             "c": "sor"
         },
         {
+            "id": 54,
             "s": "Teleport",
             "c": "sor"
         },
         {
+            "id": 55,
             "s": "Glacial Spike",
             "c": "sor"
         },
         {
+            "id": 56,
             "s": "Meteor",
             "c": "sor"
         },
         {
+            "id": 57,
             "s": "Thunder Storm",
             "c": "sor"
         },
         {
+            "id": 58,
             "s": "Energy Shield",
             "c": "sor"
         },
         {
+            "id": 59,
             "s": "Blizzard",
             "c": "sor"
         },
         {
+            "id": 60,
             "s": "Chilling Armor",
             "c": "sor"
         },
         {
+            "id": 61,
             "s": "Fire Mastery",
             "c": "sor"
         },
         {
+            "id": 62,
             "s": "Hydra",
             "c": "sor"
         },
         {
+            "id": 63,
             "s": "Lightning Mastery",
             "c": "sor"
         },
         {
+            "id": 64,
             "s": "Frozen Orb",
             "c": "sor"
         },
         {
+            "id": 65,
             "s": "Cold Mastery",
             "c": "sor"
         },
         {
+            "id": 66,
             "s": "Amplify Damage",
             "c": "nec"
         },
         {
+            "id": 67,
             "s": "Teeth",
             "c": "nec"
         },
         {
+            "id": 68,
             "s": "Bone Armor",
             "c": "nec"
         },
         {
+            "id": 69,
             "s": "Skeleton Mastery",
             "c": "nec"
         },
         {
+            "id": 70,
             "s": "Raise Skeleton",
             "c": "nec"
         },
         {
+            "id": 71,
             "s": "Dim Vision",
             "c": "nec"
         },
         {
+            "id": 72,
             "s": "Weaken",
             "c": "nec"
         },
         {
+            "id": 73,
             "s": "Poison Dagger",
             "c": "nec"
         },
         {
+            "id": 74,
             "s": "Corpse Explosion",
             "c": "nec"
         },
         {
+            "id": 75,
             "s": "Clay Golem",
             "c": "nec"
         },
         {
+            "id": 76,
             "s": "Iron Maiden",
             "c": "nec"
         },
         {
+            "id": 77,
             "s": "Terror",
             "c": "nec"
         },
         {
+            "id": 78,
             "s": "Bone Wall",
             "c": "nec"
         },
         {
+            "id": 79,
             "s": "Golem Mastery",
             "c": "nec"
         },
         {
+            "id": 80,
             "s": "Raise Skeletal Mage",
             "c": "nec"
         },
         {
+            "id": 81,
             "s": "Confuse",
             "c": "nec"
         },
         {
+            "id": 82,
             "s": "Life Tap",
             "c": "nec"
         },
         {
+            "id": 83,
             "s": "Poison Explosion",
             "c": "nec"
         },
         {
+            "id": 84,
             "s": "Bone Spear",
             "c": "nec"
         },
         {
+            "id": 85,
             "s": "Blood Golem",
             "c": "nec"
         },
         {
+            "id": 86,
             "s": "Attract",
             "c": "nec"
         },
         {
+            "id": 87,
             "s": "Decrepify",
             "c": "nec"
         },
         {
+            "id": 88,
             "s": "Bone Prison",
             "c": "nec"
         },
         {
+            "id": 89,
             "s": "Summon Resist",
             "c": "nec"
         },
         {
+            "id": 90,
             "s": "Iron Golem",
             "c": "nec"
         },
         {
+            "id": 91,
             "s": "Lower Resist",
             "c": "nec"
         },
         {
+            "id": 92,
             "s": "Poison Nova",
             "c": "nec"
         },
         {
+            "id": 93,
             "s": "Bone Spirit",
             "c": "nec"
         },
         {
+            "id": 94,
             "s": "Fire Golem",
             "c": "nec"
         },
         {
+            "id": 95,
             "s": "Revive",
             "c": "nec"
         },
         {
+            "id": 96,
             "s": "Sacrifice",
             "c": "pal"
         },
         {
+            "id": 97,
             "s": "Smite",
             "c": "pal"
         },
         {
+            "id": 98,
             "s": "Might",
             "c": "pal"
         },
         {
+            "id": 99,
             "s": "Prayer",
             "c": "pal"
         },
         {
+            "id": 100,
             "s": "Resist Fire",
             "c": "pal"
         },
         {
+            "id": 101,
             "s": "Holy Bolt",
             "c": "pal"
         },
         {
+            "id": 102,
             "s": "Holy Fire",
             "c": "pal"
         },
         {
+            "id": 103,
             "s": "Thorns",
             "c": "pal"
         },
         {
+            "id": 104,
             "s": "Defiance",
             "c": "pal"
         },
         {
+            "id": 105,
             "s": "Resist Cold",
             "c": "pal"
         },
         {
+            "id": 106,
             "s": "Zeal",
             "c": "pal"
         },
         {
+            "id": 107,
             "s": "Charge",
             "c": "pal"
         },
         {
+            "id": 108,
             "s": "Blessed Aim",
             "c": "pal"
         },
         {
+            "id": 109,
             "s": "Cleansing",
             "c": "pal"
         },
         {
+            "id": 110,
             "s": "Resist Lightning",
             "c": "pal"
         },
         {
+            "id": 111,
             "s": "Vengeance",
             "c": "pal"
         },
         {
+            "id": 112,
             "s": "Blessed Hammer",
             "c": "pal"
         },
         {
+            "id": 113,
             "s": "Concentration",
             "c": "pal"
         },
         {
+            "id": 114,
             "s": "Holy Freeze",
             "c": "pal"
         },
         {
+            "id": 115,
             "s": "Vigor",
             "c": "pal"
         },
         {
+            "id": 116,
             "s": "Conversion",
             "c": "pal"
         },
         {
+            "id": 117,
             "s": "Holy Shield",
             "c": "pal"
         },
         {
+            "id": 118,
             "s": "Holy Shock",
             "c": "pal"
         },
         {
+            "id": 119,
             "s": "Sanctuary",
             "c": "pal"
         },
         {
+            "id": 120,
             "s": "Meditation",
             "c": "pal"
         },
         {
+            "id": 121,
             "s": "Fist of the Heavens",
             "c": "pal"
         },
         {
+            "id": 122,
             "s": "Fanaticism",
             "c": "pal"
         },
         {
+            "id": 123,
             "s": "Conviction",
             "c": "pal"
         },
         {
+            "id": 124,
             "s": "Redemption",
             "c": "pal"
         },
         {
+            "id": 125,
             "s": "Salvation",
             "c": "pal"
         },
         {
+            "id": 126,
             "s": "Bash",
             "c": "bar"
         },
         {
+            "id": 127,
             "s": "Blade Mastery",
             "c": "bar"
         },
         {
+            "id": 128,
             "s": "Axe Mastery",
             "c": "bar"
         },
         {
+            "id": 129,
             "s": "Mace Mastery",
             "c": "bar"
         },
         {
+            "id": 130,
             "s": "Howl",
             "c": "bar"
         },
         {
+            "id": 131,
             "s": "Find Potion",
             "c": "bar"
         },
         {
+            "id": 132,
             "s": "Leap",
             "c": "bar"
         },
         {
+            "id": 133,
             "s": "Double Swing",
             "c": "bar"
         },
         {
+            "id": 134,
             "s": "Polearm Mastery",
             "c": "bar"
         },
         {
+            "id": 135,
             "s": "Throwing Mastery",
             "c": "bar"
         },
         {
+            "id": 136,
             "s": "Spear Mastery",
             "c": "bar"
         },
         {
+            "id": 137,
             "s": "Taunt",
             "c": "bar"
         },
         {
+            "id": 138,
             "s": "Shout",
             "c": "bar"
         },
         {
+            "id": 139,
             "s": "Stun",
             "c": "bar"
         },
         {
+            "id": 140,
             "s": "Double Throw",
             "c": "bar"
         },
         {
+            "id": 141,
             "s": "Increased Stamina",
             "c": "bar"
         },
         {
+            "id": 142,
             "s": "Find Item",
             "c": "bar"
         },
         {
+            "id": 143,
             "s": "Leap Attack",
             "c": "bar"
         },
         {
+            "id": 144,
             "s": "Concentrate",
             "c": "bar"
         },
         {
+            "id": 145,
             "s": "Iron Skin",
             "c": "bar"
         },
         {
+            "id": 146,
             "s": "Battle Cry",
             "c": "bar"
         },
         {
+            "id": 147,
             "s": "Frenzy",
             "c": "bar"
         },
         {
+            "id": 148,
             "s": "Increased Speed",
             "c": "bar"
         },
         {
+            "id": 149,
             "s": "Battle Orders",
             "c": "bar"
         },
         {
+            "id": 150,
             "s": "Grim Ward",
             "c": "bar"
         },
         {
+            "id": 151,
             "s": "Whirlwind",
             "c": "bar"
         },
         {
+            "id": 152,
             "s": "Berserk",
             "c": "bar"
         },
         {
+            "id": 153,
             "s": "Natural Resistance",
             "c": "bar"
         },
         {
+            "id": 154,
             "s": "War Cry",
             "c": "bar"
         },
         {
+            "id": 155,
             "s": "Battle Command",
             "c": "bar"
         },
@@ -851,6 +1014,7 @@ export let remodded_constants_99 = {
         null,
         null,
         {
+            "id": 197,
             "s": "Firestorm"
         },
         null,
@@ -873,254 +1037,318 @@ export let remodded_constants_99 = {
         null,
         null,
         {
+            "id": 217,
             "s": "Scroll of Identify"
         },
         {
+            "id": 218,
             "s": "Tome of Identify"
         },
         {
+            "id": 219,
             "s": "Scroll of Town Portal"
         },
         {
+            "id": 220,
             "s": "Tome of Town Portal"
         },
         {
+            "id": 221,
             "s": "Raven",
             "c": "dru"
         },
         {
+            "id": 222,
             "s": "Poison Creeper",
             "c": "dru"
         },
         {
+            "id": 223,
             "s": "Werewolf",
             "c": "dru"
         },
         {
+            "id": 224,
             "s": "Lycanthropy",
             "c": "dru"
         },
         {
+            "id": 225,
             "s": "Firestorm",
             "c": "dru"
         },
         {
+            "id": 226,
             "s": "Oak Sage",
             "c": "dru"
         },
         {
+            "id": 227,
             "s": "Summon Spirit Wolf",
             "c": "dru"
         },
         {
+            "id": 228,
             "s": "Werebear",
             "c": "dru"
         },
         {
+            "id": 229,
             "s": "Molten Boulder",
             "c": "dru"
         },
         {
+            "id": 230,
             "s": "Arctic Blast",
             "c": "dru"
         },
         {
+            "id": 231,
             "s": "Carrion Vine",
             "c": "dru"
         },
         {
+            "id": 232,
             "s": "Feral Rage",
             "c": "dru"
         },
         {
+            "id": 233,
             "s": "Maul",
             "c": "dru"
         },
         {
+            "id": 234,
             "s": "Fissure",
             "c": "dru"
         },
         {
+            "id": 235,
             "s": "Cyclone Armor",
             "c": "dru"
         },
         {
+            "id": 236,
             "s": "Heart of Wolverine",
             "c": "dru"
         },
         {
+            "id": 237,
             "s": "Summon Dire Wolf",
             "c": "dru"
         },
         {
+            "id": 238,
             "s": "Rabies",
             "c": "dru"
         },
         {
+            "id": 239,
             "s": "Fire Claws",
             "c": "dru"
         },
         {
+            "id": 240,
             "s": "Twister",
             "c": "dru"
         },
         {
+            "id": 241,
             "s": "Solar Creeper",
             "c": "dru"
         },
         {
+            "id": 242,
             "s": "Hunger",
             "c": "dru"
         },
         {
+            "id": 243,
             "s": "Shock Wave",
             "c": "dru"
         },
         {
+            "id": 244,
             "s": "Volcano",
             "c": "dru"
         },
         {
+            "id": 245,
             "s": "Tornado",
             "c": "dru"
         },
         {
+            "id": 246,
             "s": "Spirit of Barbs",
             "c": "dru"
         },
         {
+            "id": 247,
             "s": "Summon Grizzly",
             "c": "dru"
         },
         {
+            "id": 248,
             "s": "Fury",
             "c": "dru"
         },
         {
+            "id": 249,
             "s": "Armageddon",
             "c": "dru"
         },
         {
+            "id": 250,
             "s": "Hurricane",
             "c": "dru"
         },
         {
+            "id": 251,
             "s": "Fire Blast",
             "c": "ass"
         },
         {
+            "id": 252,
             "s": "Claw Mastery",
             "c": "ass"
         },
         {
+            "id": 253,
             "s": "Psychic Hammer",
             "c": "ass"
         },
         {
+            "id": 254,
             "s": "Tiger Strike",
             "c": "ass"
         },
         {
+            "id": 255,
             "s": "Dragon Talon",
             "c": "ass"
         },
         {
+            "id": 256,
             "s": "Shock Web",
             "c": "ass"
         },
         {
+            "id": 257,
             "s": "Blade Sentinel",
             "c": "ass"
         },
         {
+            "id": 258,
             "s": "Burst of Speed",
             "c": "ass"
         },
         {
+            "id": 259,
             "s": "Fists of Fire",
             "c": "ass"
         },
         {
+            "id": 260,
             "s": "Dragon Claw",
             "c": "ass"
         },
         {
+            "id": 261,
             "s": "Charged Bolt Sentry",
             "c": "ass"
         },
         {
+            "id": 262,
             "s": "Wake of Fire",
             "c": "ass"
         },
         {
+            "id": 263,
             "s": "Weapon Block",
             "c": "ass"
         },
         {
+            "id": 264,
             "s": "Cloak of Shadows",
             "c": "ass"
         },
         {
+            "id": 265,
             "s": "Cobra Strike",
             "c": "ass"
         },
         {
+            "id": 266,
             "s": "Blade Fury",
             "c": "ass"
         },
         {
+            "id": 267,
             "s": "Fade",
             "c": "ass"
         },
         {
+            "id": 268,
             "s": "Shadow Warrior",
             "c": "ass"
         },
         {
+            "id": 269,
             "s": "Claws of Thunder",
             "c": "ass"
         },
         {
+            "id": 270,
             "s": "Dragon Tail",
             "c": "ass"
         },
         {
+            "id": 271,
             "s": "Lightning Sentry",
             "c": "ass"
         },
         {
+            "id": 272,
             "s": "Wake of Inferno",
             "c": "ass"
         },
         {
+            "id": 273,
             "s": "Mind Blast",
             "c": "ass"
         },
         {
+            "id": 274,
             "s": "Blades of Ice",
             "c": "ass"
         },
         {
+            "id": 275,
             "s": "Dragon Flight",
             "c": "ass"
         },
         {
+            "id": 276,
             "s": "Death Sentry",
             "c": "ass"
         },
         {
+            "id": 277,
             "s": "Blade Shield",
             "c": "ass"
         },
         {
+            "id": 278,
             "s": "Venom",
             "c": "ass"
         },
         {
+            "id": 279,
             "s": "Shadow Master",
             "c": "ass"
         },
         {
+            "id": 280,
             "s": "Phoenix Strike",
             "c": "ass"
         },
@@ -1194,6 +1422,7 @@ export let remodded_constants_99 = {
         null,
         null,
         {
+            "id": 350,
             "s": "Delirium"
         },
         null,
@@ -1202,5221 +1431,7106 @@ export let remodded_constants_99 = {
         null,
         null,
         null,
-        {},
-        {},
         {
+            "id": 357
+        },
+        {
+            "id": 358
+        },
+        {
+            "id": 359,
             "s": "Scroll of Town Portal"
         },
-        {},
-        {},
-        {},
-        {},
-        {},
-        null,
-        null,
-        null,
-        null,
-        null,
-        {},
         {
+            "id": 360
+        },
+        {
+            "id": 361
+        },
+        {
+            "id": 362
+        },
+        {
+            "id": 363
+        },
+        {
+            "id": 364
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+            "id": 370
+        },
+        {
+            "id": 371,
             "s": "Mark of the Bear"
         },
         {
+            "id": 372,
             "s": "Mark of the Wolf"
         }
     ],
     "rare_names": [
         null,
         {
+            "id": 1,
+            "index": 0,
             "n": "Bite"
         },
         {
+            "id": 2,
+            "index": 1,
             "n": "Scratch"
         },
         {
+            "id": 3,
+            "index": 2,
             "n": "Scalpel"
         },
         {
+            "id": 4,
+            "index": 3,
             "n": "Fang"
         },
         {
+            "id": 5,
+            "index": 4,
             "n": "Gutter"
         },
         {
+            "id": 6,
+            "index": 5,
             "n": "Thirst"
         },
         {
+            "id": 7,
+            "index": 6,
             "n": "Razor"
         },
         {
+            "id": 8,
+            "index": 7,
             "n": "Scythe"
         },
         {
+            "id": 9,
+            "index": 8,
             "n": "Edge"
         },
         {
+            "id": 10,
+            "index": 9,
             "n": "Saw"
         },
         {
+            "id": 11,
+            "index": 10,
             "n": "Splitter"
         },
         {
+            "id": 12,
+            "index": 11,
             "n": "Cleaver"
         },
         {
+            "id": 13,
+            "index": 12,
             "n": "Sever"
         },
         {
+            "id": 14,
+            "index": 13,
             "n": "Sunder"
         },
         {
+            "id": 15,
+            "index": 14,
             "n": "Rend"
         },
         {
+            "id": 16,
+            "index": 15,
             "n": "Mangler"
         },
         {
+            "id": 17,
+            "index": 16,
             "n": "Slayer"
         },
         {
+            "id": 18,
+            "index": 17,
             "n": "Reaver"
         },
         {
+            "id": 19,
+            "index": 18,
             "n": "Spawn"
         },
         {
+            "id": 20,
+            "index": 19,
             "n": "Gnash"
         },
         {
+            "id": 21,
+            "index": 20,
             "n": "Star"
         },
         {
+            "id": 22,
+            "index": 21,
             "n": "Blow"
         },
         {
+            "id": 23,
+            "index": 22,
             "n": "Smasher"
         },
         {
+            "id": 24,
+            "index": 23,
             "n": "Bane"
         },
-        {},
         {
+            "id": 25,
+            "index": 24
+        },
+        {
+            "id": 26,
+            "index": 25,
             "n": "Breaker"
         },
         {
+            "id": 27,
+            "index": 26,
             "n": "Grinder"
         },
         {
+            "id": 28,
+            "index": 27,
             "n": "Crack"
         },
         {
+            "id": 29,
+            "index": 28,
             "n": "Mallet"
         },
         {
+            "id": 30,
+            "index": 29,
             "n": "Knell"
         },
         {
+            "id": 31,
+            "index": 30,
             "n": "Lance"
         },
         {
+            "id": 32,
+            "index": 31,
             "n": "Spike"
         },
         {
+            "id": 33,
+            "index": 32,
             "n": "Impaler"
         },
         {
+            "id": 34,
+            "index": 33,
             "n": "Skewer"
         },
         {
+            "id": 35,
+            "index": 34,
             "n": "Prod"
         },
         {
+            "id": 36,
+            "index": 35,
             "n": "Scourge"
         },
         {
+            "id": 37,
+            "index": 36,
             "n": "Wand"
         },
         {
+            "id": 38,
+            "index": 37,
             "n": "Wrack"
         },
         {
+            "id": 39,
+            "index": 38,
             "n": "Barb"
         },
         {
+            "id": 40,
+            "index": 39,
             "n": "Needle"
         },
         {
+            "id": 41,
+            "index": 40,
             "n": "Dart"
         },
         {
+            "id": 42,
+            "index": 41,
             "n": "Bolt"
         },
         {
+            "id": 43,
+            "index": 42,
             "n": "Quarrel"
         },
         {
+            "id": 44,
+            "index": 43,
             "n": "Fletch"
         },
         {
+            "id": 45,
+            "index": 44,
             "n": "Flight"
         },
         {
+            "id": 46,
+            "index": 45,
             "n": "Nock"
         },
         {
+            "id": 47,
+            "index": 46,
             "n": "Horn"
         },
         {
+            "id": 48,
+            "index": 47,
             "n": "Stinger"
         },
         {
+            "id": 49,
+            "index": 48,
             "n": "Quill"
         },
         {
+            "id": 50,
+            "index": 49,
             "n": "Goad"
         },
         {
+            "id": 51,
+            "index": 50,
             "n": "Branch"
         },
         {
+            "id": 52,
+            "index": 51,
             "n": "Spire"
         },
         {
+            "id": 53,
+            "index": 52,
             "n": "Song"
         },
         {
+            "id": 54,
+            "index": 53,
             "n": "Call"
         },
         {
+            "id": 55,
+            "index": 54,
             "n": "Cry"
         },
         {
+            "id": 56,
+            "index": 55,
             "n": "Spell"
         },
         {
+            "id": 57,
+            "index": 56,
             "n": "Chant"
         },
         {
+            "id": 58,
+            "index": 57,
             "n": "Weaver"
         },
         {
+            "id": 59,
+            "index": 58,
             "n": "Gnarl"
         },
         {
+            "id": 60,
+            "index": 59,
             "n": "Visage"
         },
         {
+            "id": 61,
+            "index": 60,
             "n": "Crest"
         },
         {
+            "id": 62,
+            "index": 61,
             "n": "Circlet"
         },
         {
+            "id": 63,
+            "index": 62,
             "n": "Veil"
         },
         {
+            "id": 64,
+            "index": 63,
             "n": "Hood"
         },
         {
+            "id": 65,
+            "index": 64,
             "n": "Mask"
         },
         {
+            "id": 66,
+            "index": 65,
             "n": "Brow"
         },
         {
+            "id": 67,
+            "index": 66,
             "n": "Casque"
         },
         {
+            "id": 68,
+            "index": 67,
             "n": "Visor"
         },
         {
+            "id": 69,
+            "index": 68,
             "n": "Cowl"
         },
         {
+            "id": 70,
+            "index": 69,
             "n": "Hide"
         },
         {
+            "id": 71,
+            "index": 70,
             "n": "Pelt"
         },
         {
+            "id": 72,
+            "index": 71,
             "n": "Carapace"
         },
         {
+            "id": 73,
+            "index": 72,
             "n": "Coat"
         },
         {
+            "id": 74,
+            "index": 73,
             "n": "Wrap"
         },
         {
+            "id": 75,
+            "index": 74,
             "n": "Suit"
         },
         {
+            "id": 76,
+            "index": 75,
             "n": "Cloak"
         },
         {
+            "id": 77,
+            "index": 76,
             "n": "Shroud"
         },
         {
+            "id": 78,
+            "index": 77,
             "n": "Jack"
         },
         {
+            "id": 79,
+            "index": 78,
             "n": "Mantle"
         },
         {
+            "id": 80,
+            "index": 79,
             "n": "Guard"
         },
         {
+            "id": 81,
+            "index": 80,
             "n": "Badge"
         },
         {
+            "id": 82,
+            "index": 81,
             "n": "Rock"
         },
         {
+            "id": 83,
+            "index": 82,
             "n": "Aegis"
         },
         {
+            "id": 84,
+            "index": 83,
             "n": "Ward"
         },
         {
+            "id": 85,
+            "index": 84,
             "n": "Tower"
         },
         {
+            "id": 86,
+            "index": 85,
             "n": "Shield"
         },
         {
+            "id": 87,
+            "index": 86,
             "n": "Wing"
         },
         {
+            "id": 88,
+            "index": 87,
             "n": "Mark"
         },
         {
+            "id": 89,
+            "index": 88,
             "n": "Emblem"
         },
         {
+            "id": 90,
+            "index": 89,
             "n": "Hand"
         },
         {
+            "id": 91,
+            "index": 90,
             "n": "Fist"
         },
         {
+            "id": 92,
+            "index": 91,
             "n": "Claw"
         },
         {
+            "id": 93,
+            "index": 92,
             "n": "Clutches"
         },
         {
+            "id": 94,
+            "index": 93,
             "n": "Grip"
         },
         {
+            "id": 95,
+            "index": 94,
             "n": "Grasp"
         },
         {
+            "id": 96,
+            "index": 95,
             "n": "Hold"
         },
         {
+            "id": 97,
+            "index": 96,
             "n": "Touch"
         },
         {
+            "id": 98,
+            "index": 97,
             "n": "Finger"
         },
         {
+            "id": 99,
+            "index": 98,
             "n": "Knuckle"
         },
         {
+            "id": 100,
+            "index": 99,
             "n": "Shank"
         },
         {
+            "id": 101,
+            "index": 100,
             "n": "Spur"
         },
         {
+            "id": 102,
+            "index": 101,
             "n": "Tread"
         },
         {
+            "id": 103,
+            "index": 102,
             "n": "Stalker"
         },
         {
+            "id": 104,
+            "index": 103,
             "n": "Greaves"
         },
         {
+            "id": 105,
+            "index": 104,
             "n": "Blazer"
         },
         {
+            "id": 106,
+            "index": 105,
             "n": "Nails"
         },
         {
+            "id": 107,
+            "index": 106,
             "n": "Trample"
         },
         {
+            "id": 108,
+            "index": 107,
             "n": "Brogues"
         },
         {
+            "id": 109,
+            "index": 108,
             "n": "Track"
         },
         {
+            "id": 110,
+            "index": 109,
             "n": "Slippers"
         },
         {
+            "id": 111,
+            "index": 110,
             "n": "Clasp"
         },
         {
+            "id": 112,
+            "index": 111,
             "n": "Buckle"
         },
         {
+            "id": 113,
+            "index": 112,
             "n": "Harness"
         },
         {
+            "id": 114,
+            "index": 113,
             "n": "Lock"
         },
         {
+            "id": 115,
+            "index": 114,
             "n": "Fringe"
         },
         {
+            "id": 116,
+            "index": 115,
             "n": "Winding"
         },
         {
+            "id": 117,
+            "index": 116,
             "n": "Chain"
         },
-        {},
         {
+            "id": 118,
+            "index": 117
+        },
+        {
+            "id": 119,
+            "index": 118,
             "n": "Lash"
         },
         {
+            "id": 120,
+            "index": 119,
             "n": "Cord"
         },
         {
+            "id": 121,
+            "index": 120,
             "n": "Knot"
         },
         {
+            "id": 122,
+            "index": 121,
             "n": "Circle"
         },
         {
+            "id": 123,
+            "index": 122,
             "n": "Loop"
         },
         {
+            "id": 124,
+            "index": 123,
             "n": "Eye"
         },
         {
+            "id": 125,
+            "index": 124,
             "n": "Turn"
         },
         {
+            "id": 126,
+            "index": 125,
             "n": "Spiral"
         },
         {
+            "id": 127,
+            "index": 126,
             "n": "Coil"
         },
         {
+            "id": 128,
+            "index": 127,
             "n": "Gyre"
         },
         {
+            "id": 129,
+            "index": 128,
             "n": "Band"
         },
         {
+            "id": 130,
+            "index": 129,
             "n": "Whorl"
         },
         {
+            "id": 131,
+            "index": 130,
             "n": "Talisman"
         },
         {
+            "id": 132,
+            "index": 131,
             "n": "Heart"
         },
         {
+            "id": 133,
+            "index": 132,
             "n": "Noose"
         },
         {
+            "id": 134,
+            "index": 133,
             "n": "Necklace"
         },
         {
+            "id": 135,
+            "index": 134,
             "n": "Collar"
         },
         {
+            "id": 136,
+            "index": 135,
             "n": "Beads"
         },
         {
+            "id": 137,
+            "index": 136,
             "n": "Torc"
         },
         {
+            "id": 138,
+            "index": 137,
             "n": "Gorget"
         },
-        {},
         {
+            "id": 139,
+            "index": 138
+        },
+        {
+            "id": 140,
+            "index": 139,
             "n": "Wood"
         },
         {
+            "id": 141,
+            "index": 140,
             "n": "Brand"
         },
         {
+            "id": 142,
+            "index": 141,
             "n": "Bludgeon"
         },
         {
+            "id": 143,
+            "index": 142,
             "n": "Cudgel"
         },
         {
+            "id": 144,
+            "index": 143,
             "n": "Loom"
         },
         {
+            "id": 145,
+            "index": 144,
             "n": "Harp"
         },
         {
+            "id": 146,
+            "index": 145,
             "n": "Master"
         },
         {
+            "id": 147,
+            "index": 146,
             "n": "Bar"
         },
         {
+            "id": 148,
+            "index": 147,
             "n": "Hew"
         },
         {
+            "id": 149,
+            "index": 148,
             "n": "Crook"
         },
         {
+            "id": 150,
+            "index": 149,
             "n": "Mar"
         },
         {
+            "id": 151,
+            "index": 150,
             "n": "Shell"
         },
         {
+            "id": 152,
+            "index": 151,
             "n": "Stake"
         },
         {
+            "id": 153,
+            "index": 152,
             "n": "Picket"
         },
         {
+            "id": 154,
+            "index": 153,
             "n": "Pale"
         },
         {
+            "id": 155,
+            "index": 154,
             "n": "Flange"
         },
         {
+            "id": 156,
+            "index": 0,
             "n": "Beast"
         },
         {
+            "id": 157,
+            "index": 1,
             "n": "Eagle"
         },
         {
+            "id": 158,
+            "index": 2,
             "n": "Raven"
         },
         {
+            "id": 159,
+            "index": 3,
             "n": "Viper"
         },
-        {},
         {
+            "id": 160,
+            "index": 4
+        },
+        {
+            "id": 161,
+            "index": 5,
             "n": "Skull"
         },
         {
+            "id": 162,
+            "index": 6,
             "n": "Blood"
         },
         {
+            "id": 163,
+            "index": 7,
             "n": "Dread"
         },
         {
+            "id": 164,
+            "index": 8,
             "n": "Doom"
         },
         {
+            "id": 165,
+            "index": 9,
             "n": "Grim"
         },
         {
+            "id": 166,
+            "index": 10,
             "n": "Bone"
         },
         {
+            "id": 167,
+            "index": 11,
             "n": "Death"
         },
         {
+            "id": 168,
+            "index": 12,
             "n": "Shadow"
         },
         {
+            "id": 169,
+            "index": 13,
             "n": "Storm"
         },
         {
+            "id": 170,
+            "index": 14,
             "n": "Rune"
         },
         {
+            "id": 171,
+            "index": 15,
             "n": "Plague"
         },
         {
+            "id": 172,
+            "index": 16,
             "n": "Stone"
         },
-        {},
         {
+            "id": 173,
+            "index": 17
+        },
+        {
+            "id": 174,
+            "index": 18,
             "n": "Spirit"
         },
         {
+            "id": 175,
+            "index": 19,
             "n": "Storm"
         },
         {
+            "id": 176,
+            "index": 20,
             "n": "Demon"
         },
         {
+            "id": 177,
+            "index": 21,
             "n": "Cruel"
         },
         {
+            "id": 178,
+            "index": 22,
             "n": "Empyrian"
         },
         {
+            "id": 179,
+            "index": 23,
             "n": "Bramble"
         },
         {
+            "id": 180,
+            "index": 24,
             "n": "Pain"
         },
         {
+            "id": 181,
+            "index": 25,
             "n": "Loath"
         },
         {
+            "id": 182,
+            "index": 26,
             "n": "Glyph"
         },
         {
+            "id": 183,
+            "index": 27,
             "n": "Imp"
         },
-        {},
         {
+            "id": 184,
+            "index": 28
+        },
+        {
+            "id": 185,
+            "index": 29,
             "n": "Hailstone"
         },
         {
+            "id": 186,
+            "index": 30,
             "n": "Gale"
         },
         {
+            "id": 187,
+            "index": 31,
             "n": "Dire"
         },
         {
+            "id": 188,
+            "index": 32,
             "n": "Soul"
         },
         {
+            "id": 189,
+            "index": 33,
             "n": "Brimstone"
         },
         {
+            "id": 190,
+            "index": 34,
             "n": "Corpse"
         },
         {
+            "id": 191,
+            "index": 35,
             "n": "Carrion"
         },
         {
+            "id": 192,
+            "index": 36,
             "n": "Armageddon"
         },
         {
+            "id": 193,
+            "index": 37,
             "n": "Havoc"
         },
         {
+            "id": 194,
+            "index": 38,
             "n": "Bitter"
         },
         {
+            "id": 195,
+            "index": 39,
             "n": "Entropy"
         },
         {
+            "id": 196,
+            "index": 40,
             "n": "Chaos"
         },
         {
+            "id": 197,
+            "index": 41,
             "n": "Order"
         },
         {
+            "id": 198,
+            "index": 42,
             "n": "Rule"
         },
         {
+            "id": 199,
+            "index": 43,
             "n": "Warp"
         },
         {
+            "id": 200,
+            "index": 44,
             "n": "Rift"
         },
         {
+            "id": 201,
+            "index": 45,
             "n": "Corruption"
         }
     ],
     "magic_prefixes": [
         null,
-        {},
         {
+            "id": 1
+        },
+        {
+            "id": 2,
             "n": "Sturdy"
         },
         {
+            "id": 3,
             "n": "Strong"
         },
         {
+            "id": 4,
             "n": "Glorious"
         },
         {
+            "id": 5,
             "n": "Blessed"
         },
         {
+            "id": 6,
             "n": "Saintly",
             "tc": "dgld"
         },
         {
+            "id": 7,
             "n": "Holy",
             "tc": "dgld"
         },
         {
+            "id": 8,
             "n": "Devious",
             "tc": "dblu"
         },
         {
+            "id": 9,
             "n": "Fortified",
             "tc": "dblu"
         },
-        {},
-        {},
-        {},
         {
+            "id": 10
+        },
+        {
+            "id": 11
+        },
+        {
+            "id": 12
+        },
+        {
+            "id": 13,
             "n": "Jagged"
         },
         {
+            "id": 14,
             "n": "Deadly"
         },
         {
+            "id": 15,
             "n": "Vicious"
         },
         {
+            "id": 16,
             "n": "Brutal"
         },
         {
+            "id": 17,
             "n": "Massive",
             "tc": "dgld"
         },
         {
+            "id": 18,
             "n": "Savage",
             "tc": "dgld"
         },
         {
+            "id": 19,
             "n": "Merciless",
             "tc": "dgld"
         },
         {
+            "id": 20,
             "n": "Vulpine",
             "tc": "cblu"
         },
-        {},
-        {},
-        {},
-        {},
         {
+            "id": 21
+        },
+        {
+            "id": 22
+        },
+        {
+            "id": 23
+        },
+        {
+            "id": 24
+        },
+        {
+            "id": 25,
             "n": "Tireless"
         },
         {
+            "id": 26,
             "n": "Rugged"
         },
         {
+            "id": 27,
             "n": "Bronze"
         },
         {
+            "id": 28,
             "n": "Iron"
         },
         {
+            "id": 29,
             "n": "Steel"
         },
         {
+            "id": 30,
             "n": "Silver"
         },
-        {},
         {
+            "id": 31
+        },
+        {
+            "id": 32,
             "n": "Gold",
             "tc": "lgld"
         },
         {
+            "id": 33,
             "n": "Platinum",
             "tc": "lgld"
         },
         {
+            "id": 34,
             "n": "Meteoric",
             "tc": "lgld"
         },
         {
+            "id": 35,
             "n": "Sharp"
         },
         {
+            "id": 36,
             "n": "Fine"
         },
         {
+            "id": 37,
             "n": "Warrior's"
         },
         {
+            "id": 38,
             "n": "Soldier's"
         },
         {
+            "id": 39,
             "n": "Knight's",
             "tc": "dgld"
         },
         {
+            "id": 40,
             "n": "Lord's",
             "tc": "dgld"
         },
         {
+            "id": 41,
             "n": "King's",
             "tc": "dgld"
         },
         {
+            "id": 42,
             "n": "Howling",
             "tc": "oran"
         },
         {
+            "id": 43,
             "n": "Fortuitous"
         },
-        {},
-        {},
-        {},
-        {},
-        {},
         {
+            "id": 44
+        },
+        {
+            "id": 45
+        },
+        {
+            "id": 46
+        },
+        {
+            "id": 47
+        },
+        {
+            "id": 48
+        },
+        {
+            "id": 49,
             "n": "Glimmering"
         },
         {
+            "id": 50,
             "n": "Glowing",
             "tc": "lyel"
         },
-        {},
-        {},
         {
+            "id": 51
+        },
+        {
+            "id": 52
+        },
+        {
+            "id": 53,
             "n": "Lizard's"
         },
-        {},
         {
+            "id": 54
+        },
+        {
+            "id": 55,
             "n": "Snake's"
         },
         {
+            "id": 56,
             "n": "Serpent's"
         },
         {
+            "id": 57,
             "n": "Serpent's"
         },
         {
+            "id": 58,
             "n": "Drake's",
             "tc": "cblu"
         },
         {
+            "id": 59,
             "n": "Dragon's",
             "tc": "cblu"
         },
         {
+            "id": 60,
             "n": "Dragon's",
             "tc": "cblu"
         },
         {
+            "id": 61,
             "n": "Wyrm's",
             "tc": "cblu"
         },
-        {},
-        {},
         {
+            "id": 62
+        },
+        {
+            "id": 63
+        },
+        {
+            "id": 64,
             "n": "Prismatic",
             "tc": "lpur"
         },
         {
+            "id": 65,
             "n": "Prismatic",
             "tc": "lpur"
         },
         {
+            "id": 66,
             "n": "Azure"
         },
         {
+            "id": 67,
             "n": "Lapis"
         },
         {
+            "id": 68,
             "n": "Lapis"
         },
         {
+            "id": 69,
             "n": "Cobalt"
         },
         {
+            "id": 70,
             "n": "Cobalt"
         },
-        {},
         {
+            "id": 71
+        },
+        {
+            "id": 72,
             "n": "Sapphire",
             "tc": "lblu"
         },
-        {},
-        {},
         {
+            "id": 73
+        },
+        {
+            "id": 74
+        },
+        {
+            "id": 75,
             "n": "Crimson"
         },
         {
+            "id": 76,
             "n": "Burgundy"
         },
         {
+            "id": 77,
             "n": "Burgundy"
         },
         {
+            "id": 78,
             "n": "Garnet"
         },
         {
+            "id": 79,
             "n": "Garnet"
         },
-        {},
         {
+            "id": 80
+        },
+        {
+            "id": 81,
             "n": "Ruby",
             "tc": "lred"
         },
-        {},
-        {},
         {
+            "id": 82
+        },
+        {
+            "id": 83
+        },
+        {
+            "id": 84,
             "n": "Ocher"
         },
         {
+            "id": 85,
             "n": "Tangerine"
         },
         {
+            "id": 86,
             "n": "Tangerine"
         },
         {
+            "id": 87,
             "n": "Coral"
         },
         {
+            "id": 88,
             "n": "Coral"
         },
-        {},
         {
+            "id": 89
+        },
+        {
+            "id": 90,
             "n": "Amber",
             "tc": "lyel"
         },
-        {},
-        {},
         {
+            "id": 91
+        },
+        {
+            "id": 92
+        },
+        {
+            "id": 93,
             "n": "Beryl"
         },
         {
+            "id": 94,
             "n": "Jade"
         },
         {
+            "id": 95,
             "n": "Jade"
         },
         {
+            "id": 96,
             "n": "Viridian"
         },
         {
+            "id": 97,
             "n": "Viridian"
         },
-        {},
         {
+            "id": 98
+        },
+        {
+            "id": 99,
             "n": "Emerald",
             "tc": "lgrn"
         },
-        {},
         {
+            "id": 100
+        },
+        {
+            "id": 101,
             "n": "Fletcher's"
         },
         {
+            "id": 102,
             "n": "Archer's",
             "tc": "cgrn"
         },
         {
+            "id": 103,
             "n": "Archer's",
             "tc": "cgrn"
         },
         {
+            "id": 104,
             "n": "Monk's"
         },
         {
+            "id": 105,
             "n": "Priest's",
             "tc": "cgrn"
         },
         {
+            "id": 106,
             "n": "Priest's",
             "tc": "cgrn"
         },
         {
+            "id": 107,
             "n": "Summoner's"
         },
         {
+            "id": 108,
             "n": "Necromancer's",
             "tc": "cgrn"
         },
         {
+            "id": 109,
             "n": "Necromancer's",
             "tc": "cgrn"
         },
         {
+            "id": 110,
             "n": "Angel's"
         },
         {
+            "id": 111,
             "n": "Arch-Angel's",
             "tc": "cgrn"
         },
         {
+            "id": 112,
             "n": "Arch-Angel's",
             "tc": "cgrn"
         },
         {
+            "id": 113,
             "n": "Slayer's"
         },
         {
+            "id": 114,
             "n": "Berserker's",
             "tc": "cgrn"
         },
         {
+            "id": 115,
             "n": "Berserker's",
             "tc": "cgrn"
         },
-        {},
-        {},
         {
+            "id": 116
+        },
+        {
+            "id": 117
+        },
+        {
+            "id": 118,
             "n": "Triumphant"
         },
         {
+            "id": 119,
             "n": "Stout"
         },
         {
+            "id": 120,
             "n": "Stout"
         },
         {
+            "id": 121,
             "n": "Stout"
         },
         {
+            "id": 122,
             "n": "Burly"
         },
         {
+            "id": 123,
             "n": "Burly"
         },
         {
+            "id": 124,
             "n": "Burly"
         },
         {
+            "id": 125,
             "n": "Stalwart"
         },
         {
+            "id": 126,
             "n": "Stalwart"
         },
         {
+            "id": 127,
             "n": "Stalwart"
         },
         {
+            "id": 128,
             "n": "Stout"
         },
         {
+            "id": 129,
             "n": "Stout"
         },
         {
+            "id": 130,
             "n": "Stout"
         },
         {
+            "id": 131,
             "n": "Burly"
         },
         {
+            "id": 132,
             "n": "Burly"
         },
         {
+            "id": 133,
             "n": "Stalwart"
         },
         {
+            "id": 134,
             "n": "Stalwart"
         },
         {
+            "id": 135,
             "n": "Stout"
         },
         {
+            "id": 136,
             "n": "Stout"
         },
         {
+            "id": 137,
             "n": "Burly"
         },
         {
+            "id": 138,
             "n": "Stalwart"
         },
         {
+            "id": 139,
             "n": "Blanched",
             "tc": "whit"
         },
         {
+            "id": 140,
             "n": "Eburine",
             "tc": "whit"
         },
         {
+            "id": 141,
             "n": "Bone",
             "tc": "whit"
         },
         {
+            "id": 142,
             "n": "Ivory",
             "tc": "whit"
         },
         {
+            "id": 143,
             "n": "Sturdy"
         },
         {
+            "id": 144,
             "n": "Sturdy"
         },
         {
+            "id": 145,
             "n": "Strong"
         },
         {
+            "id": 146,
             "n": "Glorious"
         },
         {
+            "id": 147,
             "n": "Blessed"
         },
         {
+            "id": 148,
             "n": "Saintly",
             "tc": "dgld"
         },
         {
+            "id": 149,
             "n": "Holy",
             "tc": "dgld"
         },
         {
+            "id": 150,
             "n": "Godly",
             "tc": "dgld"
         },
         {
+            "id": 151,
             "n": "Devious"
         },
         {
+            "id": 152,
             "n": "Void"
         },
         {
+            "id": 153,
             "n": "Null",
             "tc": "dblu"
         },
         {
+            "id": 154,
             "n": "Antimagic",
             "tc": "dblu"
         },
         {
+            "id": 155,
             "n": "Red"
         },
         {
+            "id": 156,
             "n": "Red"
         },
         {
+            "id": 157,
             "n": "Sanguinary"
         },
         {
+            "id": 158,
             "n": "Sanguinary"
         },
         {
+            "id": 159,
             "n": "Bloody"
         },
         {
+            "id": 160,
             "n": "Red",
             "tc": "dred"
         },
         {
+            "id": 161,
             "n": "Sanguinary",
             "tc": "dred"
         },
         {
+            "id": 162,
             "n": "Bloody",
             "tc": "dred"
         },
         {
+            "id": 163,
             "n": "Red",
             "tc": "dred"
         },
         {
+            "id": 164,
             "n": "Sanguinary",
             "tc": "dred"
         },
         {
+            "id": 165,
             "n": "Bloody",
             "tc": "dred"
         },
         {
+            "id": 166,
             "n": "Scarlet",
             "tc": "dred"
         },
         {
+            "id": 167,
             "n": "Crimson",
             "tc": "dred"
         },
         {
+            "id": 168,
             "n": "Jagged"
         },
         {
+            "id": 169,
             "n": "Jagged"
         },
         {
+            "id": 170,
             "n": "Jagged"
         },
         {
+            "id": 171,
             "n": "Forked"
         },
         {
+            "id": 172,
             "n": "Forked"
         },
         {
+            "id": 173,
             "n": "Serrated"
         },
         {
+            "id": 174,
             "n": "Serrated"
         },
         {
+            "id": 175,
             "n": "Jagged",
             "tc": "blac"
         },
         {
+            "id": 176,
             "n": "Jagged",
             "tc": "blac"
         },
         {
+            "id": 177,
             "n": "Forked",
             "tc": "blac"
         },
         {
+            "id": 178,
             "n": "Forked",
             "tc": "blac"
         },
         {
+            "id": 179,
             "n": "Serrated",
             "tc": "blac"
         },
         {
+            "id": 180,
             "n": "Jagged",
             "tc": "blac"
         },
         {
+            "id": 181,
             "n": "Forked",
             "tc": "blac"
         },
         {
+            "id": 182,
             "n": "Serrated",
             "tc": "blac"
         },
         {
+            "id": 183,
             "n": "Carbuncle",
             "tc": "dred"
         },
         {
+            "id": 184,
             "n": "Carmine",
             "tc": "dred"
         },
         {
+            "id": 185,
             "n": "Vermilion",
             "tc": "dred"
         },
         {
+            "id": 186,
             "n": "Jagged"
         },
         {
+            "id": 187,
             "n": "Deadly"
         },
         {
+            "id": 188,
             "n": "Vicious"
         },
         {
+            "id": 189,
             "n": "Brutal"
         },
         {
+            "id": 190,
             "n": "Massive",
             "tc": "dgld"
         },
         {
+            "id": 191,
             "n": "Savage",
             "tc": "dgld"
         },
         {
+            "id": 192,
             "n": "Merciless",
             "tc": "dgld"
         },
         {
+            "id": 193,
             "n": "Ferocious",
             "tc": "blac"
         },
         {
+            "id": 194,
             "n": "Cruel",
             "tc": "blac"
         },
         {
+            "id": 195,
             "n": "Cinnabar",
             "tc": "dred"
         },
         {
+            "id": 196,
             "n": "Rusty",
             "tc": "dred"
         },
         {
+            "id": 197,
             "n": "Realgar",
             "tc": "dred"
         },
         {
+            "id": 198,
             "n": "Ruby",
             "tc": "dred"
         },
         {
+            "id": 199,
             "n": "Vulpine",
             "tc": "cblu"
         },
         {
+            "id": 200,
             "n": "Dun"
         },
         {
+            "id": 201,
             "n": "Tireless"
         },
         {
+            "id": 202,
             "n": "Tireless"
         },
         {
+            "id": 203,
             "n": "Brown"
         },
         {
+            "id": 204,
             "n": "Rugged"
         },
         {
+            "id": 205,
             "n": "Rugged"
         },
         {
+            "id": 206,
             "n": "Rugged"
         },
         {
+            "id": 207,
             "n": "Rugged"
         },
         {
+            "id": 208,
             "n": "Rugged"
         },
         {
+            "id": 209,
             "n": "Rugged"
         },
         {
+            "id": 210,
             "n": "Rugged"
         },
         {
+            "id": 211,
             "n": "Rugged"
         },
         {
+            "id": 212,
             "n": "Rugged"
         },
         {
+            "id": 213,
             "n": "Rugged"
         },
         {
+            "id": 214,
             "n": "Rugged"
         },
         {
+            "id": 215,
             "n": "Vigorous"
         },
         {
+            "id": 216,
             "n": "Chestnut"
         },
         {
+            "id": 217,
             "n": "Maroon"
         },
         {
+            "id": 218,
             "n": "Bronze"
         },
         {
+            "id": 219,
             "n": "Bronze"
         },
         {
+            "id": 220,
             "n": "Bronze"
         },
         {
+            "id": 221,
             "n": "Iron"
         },
         {
+            "id": 222,
             "n": "Iron"
         },
         {
+            "id": 223,
             "n": "Iron"
         },
         {
+            "id": 224,
             "n": "Steel"
         },
         {
+            "id": 225,
             "n": "Steel"
         },
         {
+            "id": 226,
             "n": "Steel"
         },
         {
+            "id": 227,
             "n": "Bronze"
         },
         {
+            "id": 228,
             "n": "Bronze"
         },
         {
+            "id": 229,
             "n": "Bronze"
         },
         {
+            "id": 230,
             "n": "Iron"
         },
         {
+            "id": 231,
             "n": "Iron"
         },
         {
+            "id": 232,
             "n": "Steel"
         },
         {
+            "id": 233,
             "n": "Steel"
         },
         {
+            "id": 234,
             "n": "Bronze"
         },
         {
+            "id": 235,
             "n": "Bronze"
         },
         {
+            "id": 236,
             "n": "Iron"
         },
         {
+            "id": 237,
             "n": "Steel"
         },
         {
+            "id": 238,
             "n": "Bronze"
         },
         {
+            "id": 239,
             "n": "Iron"
         },
         {
+            "id": 240,
             "n": "Steel"
         },
         {
+            "id": 241,
             "n": "Silver"
         },
         {
+            "id": 242,
             "n": "Gold",
             "tc": "lgld"
         },
         {
+            "id": 243,
             "n": "Platinum",
             "tc": "lgld"
         },
         {
+            "id": 244,
             "n": "Meteoric",
             "tc": "lgld"
         },
         {
+            "id": 245,
             "n": "Strange",
             "tc": "lgld"
         },
         {
+            "id": 246,
             "n": "Weird",
             "tc": "lgld"
         },
         {
+            "id": 247,
             "n": "Nickel"
         },
         {
+            "id": 248,
             "n": "Tin"
         },
         {
+            "id": 249,
             "n": "Silver"
         },
         {
+            "id": 250,
             "n": "Argent"
         },
         {
+            "id": 251,
             "n": "Fine"
         },
         {
+            "id": 252,
             "n": "Fine"
         },
         {
+            "id": 253,
             "n": "Sharp"
         },
         {
+            "id": 254,
             "n": "Fine"
         },
         {
+            "id": 255,
             "n": "Sharp"
         },
         {
+            "id": 256,
             "n": "Fine"
         },
         {
+            "id": 257,
             "n": "Sharp"
         },
         {
+            "id": 258,
             "n": "Fine"
         },
         {
+            "id": 259,
             "n": "Warrior's"
         },
         {
+            "id": 260,
             "n": "Soldier's"
         },
         {
+            "id": 261,
             "n": "Knight's",
             "tc": "dgld"
         },
         {
+            "id": 262,
             "n": "Lord's",
             "tc": "dgld"
         },
         {
+            "id": 263,
             "n": "King's",
             "tc": "dgld"
         },
         {
+            "id": 264,
             "n": "Master's",
             "tc": "dgld"
         },
         {
+            "id": 265,
             "n": "Grandmaster's",
             "tc": "dgld"
         },
         {
+            "id": 266,
             "n": "Glimmering"
         },
         {
+            "id": 267,
             "n": "Glowing",
             "tc": "lyel"
         },
         {
+            "id": 268,
             "n": "Bright"
         },
         {
+            "id": 269,
             "n": "Screaming",
             "tc": "oran"
         },
         {
+            "id": 270,
             "n": "Howling",
             "tc": "oran"
         },
         {
+            "id": 271,
             "n": "Wailing",
             "tc": "oran"
         },
         {
+            "id": 272,
             "n": "Screaming",
             "tc": "oran"
         },
         {
+            "id": 273,
             "n": "Howling",
             "tc": "oran"
         },
         {
+            "id": 274,
             "n": "Wailing",
             "tc": "oran"
         },
         {
+            "id": 275,
             "n": "Lucky"
         },
         {
+            "id": 276,
             "n": "Lucky"
         },
         {
+            "id": 277,
             "n": "Lucky"
         },
         {
+            "id": 278,
             "n": "Lucky"
         },
         {
+            "id": 279,
             "n": "Lucky"
         },
         {
+            "id": 280,
             "n": "Lucky"
         },
         {
+            "id": 281,
             "n": "Felicitous"
         },
         {
+            "id": 282,
             "n": "Fortuitous"
         },
         {
+            "id": 283,
             "n": "Emerald"
         },
         {
+            "id": 284,
             "n": "Lizard's"
         },
         {
+            "id": 285,
             "n": "Lizard's"
         },
         {
+            "id": 286,
             "n": "Lizard's"
         },
         {
+            "id": 287,
             "n": "Snake's"
         },
         {
+            "id": 288,
             "n": "Snake's"
         },
         {
+            "id": 289,
             "n": "Snake's"
         },
         {
+            "id": 290,
             "n": "Serpent's"
         },
         {
+            "id": 291,
             "n": "Serpent's"
         },
         {
+            "id": 292,
             "n": "Serpent's"
         },
         {
+            "id": 293,
             "n": "Lizard's"
         },
         {
+            "id": 294,
             "n": "Lizard's"
         },
         {
+            "id": 295,
             "n": "Lizard's"
         },
         {
+            "id": 296,
             "n": "Snake's"
         },
         {
+            "id": 297,
             "n": "Snake's"
         },
         {
+            "id": 298,
             "n": "Serpent's"
         },
         {
+            "id": 299,
             "n": "Serpent's"
         },
         {
+            "id": 300,
             "n": "Lizard's"
         },
         {
+            "id": 301,
             "n": "Lizard's"
         },
         {
+            "id": 302,
             "n": "Snake's"
         },
         {
+            "id": 303,
             "n": "Serpent's"
         },
         {
+            "id": 304,
             "n": "Lizard's"
         },
         {
+            "id": 305,
             "n": "Snake's"
         },
         {
+            "id": 306,
             "n": "Serpent's"
         },
         {
+            "id": 307,
             "n": "Serpent's"
         },
         {
+            "id": 308,
             "n": "Drake's",
             "tc": "cblu"
         },
         {
+            "id": 309,
             "n": "Dragon's",
             "tc": "cblu"
         },
         {
+            "id": 310,
             "n": "Dragon's",
             "tc": "cblu"
         },
         {
+            "id": 311,
             "n": "Wyrm's",
             "tc": "cblu"
         },
         {
+            "id": 312,
             "n": "Great Wyrm's",
             "tc": "cblu"
         },
         {
+            "id": 313,
             "n": "Bahamut's",
             "tc": "cblu"
         },
         {
+            "id": 314,
             "n": "Zircon",
             "tc": "cblu"
         },
         {
+            "id": 315,
             "n": "Jacinth",
             "tc": "cblu"
         },
         {
+            "id": 316,
             "n": "Turquoise",
             "tc": "cblu"
         },
         {
+            "id": 317,
             "n": "Shimmering"
         },
         {
+            "id": 318,
             "n": "Shimmering"
         },
         {
+            "id": 319,
             "n": "Shimmering"
         },
         {
+            "id": 320,
             "n": "Shimmering",
             "tc": "lpur"
         },
         {
+            "id": 321,
             "n": "Shimmering",
             "tc": "lpur"
         },
         {
+            "id": 322,
             "n": "Shimmering",
             "tc": "lpur"
         },
         {
+            "id": 323,
             "n": "Shimmering",
             "tc": "lpur"
         },
         {
+            "id": 324,
             "n": "Rainbow",
             "tc": "lpur"
         },
         {
+            "id": 325,
             "n": "Scintillating",
             "tc": "lpur"
         },
         {
+            "id": 326,
             "n": "Prismatic",
             "tc": "lpur"
         },
         {
+            "id": 327,
             "n": "Chromatic",
             "tc": "lpur"
         },
         {
+            "id": 328,
             "n": "Shimmering",
             "tc": "lpur"
         },
         {
+            "id": 329,
             "n": "Rainbow",
             "tc": "lpur"
         },
         {
+            "id": 330,
             "n": "Scintillating",
             "tc": "lpur"
         },
         {
+            "id": 331,
             "n": "Prismatic",
             "tc": "lpur"
         },
         {
+            "id": 332,
             "n": "Chromatic",
             "tc": "lpur"
         },
         {
+            "id": 333,
             "n": "Shimmering",
             "tc": "lpur"
         },
         {
+            "id": 334,
             "n": "Rainbow",
             "tc": "lpur"
         },
         {
+            "id": 335,
             "n": "Scintillating",
             "tc": "lpur"
         },
         {
+            "id": 336,
             "n": "Shimmering",
             "tc": "lpur"
         },
         {
+            "id": 337,
             "n": "Scintillating",
             "tc": "lpur"
         },
         {
+            "id": 338,
             "n": "Azure"
         },
         {
+            "id": 339,
             "n": "Lapis"
         },
         {
+            "id": 340,
             "n": "Cobalt"
         },
         {
+            "id": 341,
             "n": "Sapphire"
         },
         {
+            "id": 342,
             "n": "Azure"
         },
         {
+            "id": 343,
             "n": "Lapis"
         },
         {
+            "id": 344,
             "n": "Cobalt",
             "tc": "lblu"
         },
         {
+            "id": 345,
             "n": "Sapphire",
             "tc": "lblu"
         },
         {
+            "id": 346,
             "n": "Azure"
         },
         {
+            "id": 347,
             "n": "Lapis"
         },
         {
+            "id": 348,
             "n": "Cobalt",
             "tc": "lblu"
         },
         {
+            "id": 349,
             "n": "Sapphire",
             "tc": "lblu"
         },
         {
+            "id": 350,
             "n": "Azure"
         },
         {
+            "id": 351,
             "n": "Lapis"
         },
         {
+            "id": 352,
             "n": "Lapis"
         },
         {
+            "id": 353,
             "n": "Cobalt"
         },
         {
+            "id": 354,
             "n": "Cobalt"
         },
         {
+            "id": 355,
             "n": "Sapphire",
             "tc": "lblu"
         },
         {
+            "id": 356,
             "n": "Lapis Lazuli",
             "tc": "lblu"
         },
         {
+            "id": 357,
             "n": "Sapphire",
             "tc": "lblu"
         },
         {
+            "id": 358,
             "n": "Crimson"
         },
         {
+            "id": 359,
             "n": "Russet"
         },
         {
+            "id": 360,
             "n": "Garnet"
         },
         {
+            "id": 361,
             "n": "Ruby"
         },
         {
+            "id": 362,
             "n": "Crimson"
         },
         {
+            "id": 363,
             "n": "Russet"
         },
         {
+            "id": 364,
             "n": "Garnet",
             "tc": "lred"
         },
         {
+            "id": 365,
             "n": "Ruby",
             "tc": "lred"
         },
         {
+            "id": 366,
             "n": "Crimson"
         },
         {
+            "id": 367,
             "n": "Russet",
             "tc": "lred"
         },
         {
+            "id": 368,
             "n": "Garnet",
             "tc": "lred"
         },
         {
+            "id": 369,
             "n": "Ruby"
         },
         {
+            "id": 370,
             "n": "Russet"
         },
         {
+            "id": 371,
             "n": "Russet"
         },
         {
+            "id": 372,
             "n": "Garnet"
         },
         {
+            "id": 373,
             "n": "Garnet"
         },
         {
+            "id": 374,
             "n": "Ruby",
             "tc": "lred"
         },
         {
+            "id": 375,
             "n": "Garnet",
             "tc": "lred"
         },
         {
+            "id": 376,
             "n": "Ruby",
             "tc": "lred"
         },
         {
+            "id": 377,
             "n": "Tangerine"
         },
         {
+            "id": 378,
             "n": "Ocher"
         },
         {
+            "id": 379,
             "n": "Coral"
         },
         {
+            "id": 380,
             "n": "Amber"
         },
         {
+            "id": 381,
             "n": "Tangerine"
         },
         {
+            "id": 382,
             "n": "Ocher"
         },
         {
+            "id": 383,
             "n": "Coral",
             "tc": "lyel"
         },
         {
+            "id": 384,
             "n": "Amber",
             "tc": "lyel"
         },
         {
+            "id": 385,
             "n": "Tangerine"
         },
         {
+            "id": 386,
             "n": "Ocher"
         },
         {
+            "id": 387,
             "n": "Coral",
             "tc": "lyel"
         },
         {
+            "id": 388,
             "n": "Amber",
             "tc": "lyel"
         },
         {
+            "id": 389,
             "n": "Tangerine"
         },
         {
+            "id": 390,
             "n": "Ocher"
         },
         {
+            "id": 391,
             "n": "Ocher"
         },
         {
+            "id": 392,
             "n": "Coral"
         },
         {
+            "id": 393,
             "n": "Coral"
         },
         {
+            "id": 394,
             "n": "Amber",
             "tc": "lyel"
         },
         {
+            "id": 395,
             "n": "Camphor",
             "tc": "lyel"
         },
         {
+            "id": 396,
             "n": "Ambergris",
             "tc": "lyel"
         },
         {
+            "id": 397,
             "n": "Beryl"
         },
         {
+            "id": 398,
             "n": "Viridian"
         },
         {
+            "id": 399,
             "n": "Jade"
         },
         {
+            "id": 400,
             "n": "Emerald"
         },
         {
+            "id": 401,
             "n": "Beryl"
         },
         {
+            "id": 402,
             "n": "Viridian"
         },
         {
+            "id": 403,
             "n": "Jade",
             "tc": "cgrn"
         },
         {
+            "id": 404,
             "n": "Emerald",
             "tc": "cgrn"
         },
         {
+            "id": 405,
             "n": "Beryl"
         },
         {
+            "id": 406,
             "n": "Viridian"
         },
         {
+            "id": 407,
             "n": "Jade",
             "tc": "cgrn"
         },
         {
+            "id": 408,
             "n": "Emerald",
             "tc": "cgrn"
         },
         {
+            "id": 409,
             "n": "Beryl"
         },
         {
+            "id": 410,
             "n": "Viridian"
         },
         {
+            "id": 411,
             "n": "Viridian"
         },
         {
+            "id": 412,
             "n": "Jade"
         },
         {
+            "id": 413,
             "n": "Jade"
         },
         {
+            "id": 414,
             "n": "Emerald",
             "tc": "cgrn"
         },
         {
+            "id": 415,
             "n": "Beryl",
             "tc": "cgrn"
         },
         {
+            "id": 416,
             "n": "Jade",
             "tc": "cgrn"
         },
         {
+            "id": 417,
             "n": "Triumphant"
         },
         {
+            "id": 418,
             "n": "Victorious"
         },
         {
+            "id": 419,
             "n": "Aureolic"
         },
         {
+            "id": 420,
             "n": "Mechanic's"
         },
         {
+            "id": 421,
             "n": "Artisan's"
         },
         {
+            "id": 422,
             "n": "Jeweler's"
         },
         {
+            "id": 423,
             "n": "Lunar"
         },
         {
+            "id": 424,
             "n": "Arcadian"
         },
         {
+            "id": 425,
             "n": "Unearthly"
         },
         {
+            "id": 426,
             "n": "Astral"
         },
         {
+            "id": 427,
             "n": "Elysian",
             "tc": "dgld"
         },
         {
+            "id": 428,
             "n": "Celestial",
             "tc": "dgld"
         },
         {
+            "id": 429,
             "n": "Diamond"
         },
         {
+            "id": 430,
             "n": "Fletcher's"
         },
         {
+            "id": 431,
             "n": "Acrobatic"
         },
         {
+            "id": 432,
             "n": "Harpoonist's"
         },
         {
+            "id": 433,
             "n": "Fletcher's"
         },
         {
+            "id": 434,
             "n": "Bowyer's",
             "tc": "lgld"
         },
         {
+            "id": 435,
             "n": "Archer's",
             "tc": "lgld"
         },
         {
+            "id": 436,
             "n": "Acrobatic"
         },
         {
+            "id": 437,
             "n": "Gymnastic",
             "tc": "lgld"
         },
         {
+            "id": 438,
             "n": "Athletic",
             "tc": "lgld"
         },
         {
+            "id": 439,
             "n": "Harpoonist's"
         },
         {
+            "id": 440,
             "n": "Spearmaiden's",
             "tc": "lgld"
         },
         {
+            "id": 441,
             "n": "Lancer's",
             "tc": "lgld"
         },
         {
+            "id": 442,
             "n": "Burning"
         },
         {
+            "id": 443,
             "n": "Sparking"
         },
         {
+            "id": 444,
             "n": "Chilling"
         },
         {
+            "id": 445,
             "n": "Burning"
         },
         {
+            "id": 446,
             "n": "Blazing",
             "tc": "lgld"
         },
         {
+            "id": 447,
             "n": "Volcanic",
             "tc": "lgld"
         },
         {
+            "id": 448,
             "n": "Sparking"
         },
         {
+            "id": 449,
             "n": "Charged",
             "tc": "lgld"
         },
         {
+            "id": 450,
             "n": "Powered",
             "tc": "lgld"
         },
         {
+            "id": 451,
             "n": "Chilling"
         },
         {
+            "id": 452,
             "n": "Freezing",
             "tc": "lgld"
         },
         {
+            "id": 453,
             "n": "Glacial",
             "tc": "lgld"
         },
         {
+            "id": 454,
             "n": "Hexing"
         },
         {
+            "id": 455,
             "n": "Fungal"
         },
         {
+            "id": 456,
             "n": "Graverobber's"
         },
         {
+            "id": 457,
             "n": "Hexing"
         },
         {
+            "id": 458,
             "n": "Blighting",
             "tc": "lgld"
         },
         {
+            "id": 459,
             "n": "Cursing",
             "tc": "lgld"
         },
         {
+            "id": 460,
             "n": "Fungal"
         },
         {
+            "id": 461,
             "n": "Noxious",
             "tc": "lgld"
         },
         {
+            "id": 462,
             "n": "Venomous",
             "tc": "lgld"
         },
         {
+            "id": 463,
             "n": "Graverobber's"
         },
         {
+            "id": 464,
             "n": "Mojo",
             "tc": "lgld"
         },
         {
+            "id": 465,
             "n": "Golemlord's",
             "tc": "lgld"
         },
         {
+            "id": 466,
             "n": "Lion Branded"
         },
         {
+            "id": 467,
             "n": "Captain's"
         },
         {
+            "id": 468,
             "n": "Preserver's"
         },
         {
+            "id": 469,
             "n": "Lion Branded"
         },
         {
+            "id": 470,
             "n": "Hawk Branded",
             "tc": "lgld"
         },
         {
+            "id": 471,
             "n": "Rose Branded",
             "tc": "lgld"
         },
         {
+            "id": 472,
             "n": "Captain's"
         },
         {
+            "id": 473,
             "n": "Commander's",
             "tc": "lgld"
         },
         {
+            "id": 474,
             "n": "Marshal's",
             "tc": "lgld"
         },
         {
+            "id": 475,
             "n": "Preserver's"
         },
         {
+            "id": 476,
             "n": "Warden's",
             "tc": "lgld"
         },
         {
+            "id": 477,
             "n": "Guardian's",
             "tc": "lgld"
         },
         {
+            "id": 478,
             "n": "Expert's"
         },
         {
+            "id": 479,
             "n": "Fanatic"
         },
         {
+            "id": 480,
             "n": "Sounding"
         },
         {
+            "id": 481,
             "n": "Expert's"
         },
         {
+            "id": 482,
             "n": "Veteran's",
             "tc": "lgld"
         },
         {
+            "id": 483,
             "n": "Master's",
             "tc": "lgld"
         },
         {
+            "id": 484,
             "n": "Fanatic"
         },
         {
+            "id": 485,
             "n": "Raging",
             "tc": "lgld"
         },
         {
+            "id": 486,
             "n": "Furious",
             "tc": "lgld"
         },
         {
+            "id": 487,
             "n": "Sounding"
         },
         {
+            "id": 488,
             "n": "Resonant",
             "tc": "lgld"
         },
         {
+            "id": 489,
             "n": "Echoing",
             "tc": "lgld"
         },
         {
+            "id": 490,
             "n": "Trainer's"
         },
         {
+            "id": 491,
             "n": "Spiritual"
         },
         {
+            "id": 492,
             "n": "Natural"
         },
         {
+            "id": 493,
             "n": "Trainer's"
         },
         {
+            "id": 494,
             "n": "Caretaker's",
             "tc": "lgld"
         },
         {
+            "id": 495,
             "n": "Keeper's",
             "tc": "lgld"
         },
         {
+            "id": 496,
             "n": "Spiritual"
         },
         {
+            "id": 497,
             "n": "Feral",
             "tc": "lgld"
         },
         {
+            "id": 498,
             "n": "Communal",
             "tc": "lgld"
         },
         {
+            "id": 499,
             "n": "Natural"
         },
         {
+            "id": 500,
             "n": "Terrene",
             "tc": "lgld"
         },
         {
+            "id": 501,
             "n": "Gaean",
             "tc": "lgld"
         },
         {
+            "id": 502,
             "n": "Entrapping"
         },
         {
+            "id": 503,
             "n": "Mentalist's"
         },
         {
+            "id": 504,
             "n": "Shogukusha's"
         },
         {
+            "id": 505,
             "n": "Entrapping"
         },
         {
+            "id": 506,
             "n": "Trickster's",
             "tc": "lgld"
         },
         {
+            "id": 507,
             "n": "Cunning",
             "tc": "lgld"
         },
         {
+            "id": 508,
             "n": "Mentalist's"
         },
         {
+            "id": 509,
             "n": "Psychic",
             "tc": "lgld"
         },
         {
+            "id": 510,
             "n": "Shadow",
             "tc": "lgld"
         },
         {
+            "id": 511,
             "n": "Shogukusha's"
         },
         {
+            "id": 512,
             "n": "Sensei's",
             "tc": "lgld"
         },
         {
+            "id": 513,
             "n": "Kenshi's",
             "tc": "lgld"
         },
         {
+            "id": 514,
             "n": "Enlightened",
             "tc": "whit"
         },
         {
+            "id": 515,
             "n": "Enlightened",
             "tc": "whit"
         },
         {
+            "id": 516,
             "n": "Honorable",
             "tc": "whit"
         },
         {
+            "id": 517,
             "n": "Honorable",
             "tc": "whit"
         },
         {
+            "id": 518,
             "n": "Righteous",
             "tc": "whit"
         },
         {
+            "id": 519,
             "n": "Righteous",
             "tc": "whit"
         },
         {
+            "id": 520,
             "n": "Faithful",
             "tc": "whit"
         },
         {
+            "id": 521,
             "n": "Faithful",
             "tc": "whit"
         },
         {
+            "id": 522,
             "n": "Knave's",
             "tc": "whit"
         },
         {
+            "id": 523,
             "n": "Jack's",
             "tc": "whit"
         },
         {
+            "id": 524,
             "n": "Jester's",
             "tc": "whit"
         },
         {
+            "id": 525,
             "n": "Joker's",
             "tc": "whit"
         },
         {
+            "id": 526,
             "n": "Fool's",
             "tc": "whit"
         },
         {
+            "id": 527,
             "n": "Alarming",
             "tc": "whit"
         },
         {
+            "id": 528,
             "n": "Calling",
             "tc": "whit"
         },
         {
+            "id": 529,
             "n": "Yelling",
             "tc": "whit"
         },
         {
+            "id": 530,
             "n": "Howling",
             "tc": "whit"
         },
         {
+            "id": 531,
             "n": "Grinding",
             "tc": "whit"
         },
         {
+            "id": 532,
             "n": "Paradox",
             "tc": "whit"
         },
         {
+            "id": 533,
             "n": "Paradox",
             "tc": "whit"
         },
         {
+            "id": 534,
             "n": "Robineye",
             "tc": "whit"
         },
         {
+            "id": 535,
             "n": "Sparroweye",
             "tc": "whit"
         },
         {
+            "id": 536,
             "n": "Falconeye",
             "tc": "whit"
         },
         {
+            "id": 537,
             "n": "Hawkeye",
             "tc": "whit"
         },
         {
+            "id": 538,
             "n": "Eagleeye",
             "tc": "whit"
         },
         {
+            "id": 539,
             "n": "Visionary",
             "tc": "whit"
         },
         {
+            "id": 540,
             "n": "Mnemonic",
             "tc": "cblu"
         },
         {
+            "id": 541,
             "n": "Snowy",
             "tc": "lblu"
         },
         {
+            "id": 542,
             "n": "Shivering",
             "tc": "lblu"
         },
         {
+            "id": 543,
             "n": "Boreal",
             "tc": "lblu"
         },
         {
+            "id": 544,
             "n": "Hibernal",
             "tc": "lblu"
         },
         {
+            "id": 545,
             "n": "Fiery",
             "tc": "dred"
         },
         {
+            "id": 546,
             "n": "Smoldering",
             "tc": "dred"
         },
         {
+            "id": 547,
             "n": "Smoking",
             "tc": "dred"
         },
         {
+            "id": 548,
             "n": "Flaming",
             "tc": "dred"
         },
         {
+            "id": 549,
             "n": "Condensing",
             "tc": "dred"
         },
         {
+            "id": 550,
             "n": "Static",
             "tc": "lyel"
         },
         {
+            "id": 551,
             "n": "Glowing",
             "tc": "lyel"
         },
         {
+            "id": 552,
             "n": "Buzzing",
             "tc": "lyel"
         },
         {
+            "id": 553,
             "n": "Arcing",
             "tc": "lyel"
         },
         {
+            "id": 554,
             "n": "Shocking",
             "tc": "lyel"
         },
         {
+            "id": 555,
             "n": "Septic",
             "tc": "dgrn"
         },
         {
+            "id": 556,
             "n": "Foul",
             "tc": "dgrn"
         },
         {
+            "id": 557,
             "n": "Corrosive",
             "tc": "dgrn"
         },
         {
+            "id": 558,
             "n": "Toxic",
             "tc": "dgrn"
         },
         {
+            "id": 559,
             "n": "Pestilent",
             "tc": "dgrn"
         },
         {
+            "id": 560,
             "n": "Maiden's"
         },
         {
+            "id": 561,
             "n": "Valkyrie's",
             "tc": "cgrn"
         },
         {
+            "id": 562,
             "n": "Maiden's"
         },
         {
+            "id": 563,
             "n": "Valkyrie's",
             "tc": "cgrn"
         },
         {
+            "id": 564,
             "n": "Monk's"
         },
         {
+            "id": 565,
             "n": "Priest's",
             "tc": "cgrn"
         },
         {
+            "id": 566,
             "n": "Monk's"
         },
         {
+            "id": 567,
             "n": "Priest's",
             "tc": "cgrn"
         },
         {
+            "id": 568,
             "n": "Monk's"
         },
         {
+            "id": 569,
             "n": "Priest's",
             "tc": "cgrn"
         },
         {
+            "id": 570,
             "n": "Summoner's"
         },
         {
+            "id": 571,
             "n": "Necromancer's",
             "tc": "cgrn"
         },
         {
+            "id": 572,
             "n": "Summoner's"
         },
         {
+            "id": 573,
             "n": "Necromancer's",
             "tc": "cgrn"
         },
         {
+            "id": 574,
             "n": "Angel's"
         },
         {
+            "id": 575,
             "n": "Arch-Angel's",
             "tc": "cgrn"
         },
         {
+            "id": 576,
             "n": "Angel's"
         },
         {
+            "id": 577,
             "n": "Arch-Angel's",
             "tc": "cgrn"
         },
         {
+            "id": 578,
             "n": "Slayer's"
         },
         {
+            "id": 579,
             "n": "Berserker's",
             "tc": "cgrn"
         },
         {
+            "id": 580,
             "n": "Slayer's"
         },
         {
+            "id": 581,
             "n": "Berserker's",
             "tc": "cgrn"
         },
         {
+            "id": 582,
             "n": "Slayer's"
         },
         {
+            "id": 583,
             "n": "Berserker's",
             "tc": "cgrn"
         },
         {
+            "id": 584,
             "n": "Shaman's"
         },
         {
+            "id": 585,
             "n": "Hierophant's",
             "tc": "cgrn"
         },
         {
+            "id": 586,
             "n": "Shaman's"
         },
         {
+            "id": 587,
             "n": "Hierophant's",
             "tc": "cgrn"
         },
         {
+            "id": 588,
             "n": "Magekiller's"
         },
         {
+            "id": 589,
             "n": "Witch-hunter's",
             "tc": "cgrn"
         },
         {
+            "id": 590,
             "n": "Magekiller's"
         },
         {
+            "id": 591,
             "n": "Witch-hunter's",
             "tc": "cgrn"
         },
         {
+            "id": 592,
             "n": "Compact"
         },
         {
+            "id": 593,
             "n": "Thin"
         },
         {
+            "id": 594,
             "n": "Dense"
         },
         {
+            "id": 595,
             "n": "Consecrated"
         },
         {
+            "id": 596,
             "n": "Pure",
             "tc": "lgld"
         },
         {
+            "id": 597,
             "n": "Sacred",
             "tc": "lgld"
         },
         {
+            "id": 598,
             "n": "Hallowed",
             "tc": "lgld"
         },
         {
+            "id": 599,
             "n": "Divine",
             "tc": "lgld"
         },
         {
+            "id": 600,
             "n": "Pearl"
         },
         {
+            "id": 601,
             "n": "Crimson"
         },
         {
+            "id": 602,
             "n": "Red"
         },
         {
+            "id": 603,
             "n": "Sanguinary"
         },
         {
+            "id": 604,
             "n": "Bloody"
         },
         {
+            "id": 605,
             "n": "Red",
             "tc": "dred"
         },
         {
+            "id": 606,
             "n": "Sanguinary",
             "tc": "dred"
         },
         {
+            "id": 607,
             "n": "Red",
             "tc": "dred"
         },
         {
+            "id": 608,
             "n": "Jagged"
         },
         {
+            "id": 609,
             "n": "Forked"
         },
         {
+            "id": 610,
             "n": "Serrated"
         },
         {
+            "id": 611,
             "n": "Jagged",
             "tc": "blac"
         },
         {
+            "id": 612,
             "n": "Forked",
             "tc": "blac"
         },
         {
+            "id": 613,
             "n": "Jagged",
             "tc": "blac"
         },
         {
+            "id": 614,
             "n": "Snowy"
         },
         {
+            "id": 615,
             "n": "Shivering"
         },
         {
+            "id": 616,
             "n": "Boreal"
         },
         {
+            "id": 617,
             "n": "Hibernal"
         },
         {
+            "id": 618,
             "n": "Snowy"
         },
         {
+            "id": 619,
             "n": "Shivering"
         },
         {
+            "id": 620,
             "n": "Boreal",
             "tc": "lblu"
         },
         {
+            "id": 621,
             "n": "Hibernal",
             "tc": "lblu"
         },
         {
+            "id": 622,
             "n": "Snowy"
         },
         {
+            "id": 623,
             "n": "Shivering"
         },
         {
+            "id": 624,
             "n": "Boreal",
             "tc": "lblu"
         },
         {
+            "id": 625,
             "n": "Hibernal",
             "tc": "lblu"
         },
         {
+            "id": 626,
             "n": "Fiery"
         },
         {
+            "id": 627,
             "n": "Smoldering"
         },
         {
+            "id": 628,
             "n": "Smoking"
         },
         {
+            "id": 629,
             "n": "Flaming"
         },
         {
+            "id": 630,
             "n": "Fiery"
         },
         {
+            "id": 631,
             "n": "Smoldering"
         },
         {
+            "id": 632,
             "n": "Smoking",
             "tc": "lred"
         },
         {
+            "id": 633,
             "n": "Flaming",
             "tc": "lred"
         },
         {
+            "id": 634,
             "n": "Fiery"
         },
         {
+            "id": 635,
             "n": "Smoldering"
         },
         {
+            "id": 636,
             "n": "Smoking",
             "tc": "lred"
         },
         {
+            "id": 637,
             "n": "Flaming",
             "tc": "lred"
         },
         {
+            "id": 638,
             "n": "Static"
         },
         {
+            "id": 639,
             "n": "Glowing"
         },
         {
+            "id": 640,
             "n": "Arcing"
         },
         {
+            "id": 641,
             "n": "Shocking"
         },
         {
+            "id": 642,
             "n": "Static"
         },
         {
+            "id": 643,
             "n": "Glowing"
         },
         {
+            "id": 644,
             "n": "Arcing",
             "tc": "whit"
         },
         {
+            "id": 645,
             "n": "Shocking",
             "tc": "whit"
         },
         {
+            "id": 646,
             "n": "Static"
         },
         {
+            "id": 647,
             "n": "Glowing"
         },
         {
+            "id": 648,
             "n": "Arcing",
             "tc": "whit"
         },
         {
+            "id": 649,
             "n": "Shocking",
             "tc": "whit"
         },
         {
+            "id": 650,
             "n": "Septic"
         },
         {
+            "id": 651,
             "n": "Foul"
         },
         {
+            "id": 652,
             "n": "Toxic"
         },
         {
+            "id": 653,
             "n": "Pestilent"
         },
         {
+            "id": 654,
             "n": "Septic"
         },
         {
+            "id": 655,
             "n": "Foul"
         },
         {
+            "id": 656,
             "n": "Toxic",
             "tc": "dgrn"
         },
         {
+            "id": 657,
             "n": "Pestilent",
             "tc": "dgrn"
         },
         {
+            "id": 658,
             "n": "Septic"
         },
         {
+            "id": 659,
             "n": "Foul"
         },
         {
+            "id": 660,
             "n": "Toxic",
             "tc": "dgrn"
         },
         {
+            "id": 661,
             "n": "Pestilent",
             "tc": "dgrn"
         },
         {
+            "id": 662,
             "n": "Tireless"
         },
         {
+            "id": 663,
             "n": "Lizard's"
         },
         {
+            "id": 664,
             "n": "Azure"
         },
         {
+            "id": 665,
             "n": "Crimson"
         },
         {
+            "id": 666,
             "n": "Tangerine"
         },
         {
+            "id": 667,
             "n": "Beryl"
         },
         {
+            "id": 668,
             "n": "Godly",
             "tc": "dgld"
         },
         {
+            "id": 669,
             "n": "Cruel",
             "tc": "blac"
         },
-        {}
+        {
+            "id": 670
+        }
     ],
     "magic_suffixes": [
         null,
         {
+            "id": 1,
             "n": "of Health"
         },
         {
+            "id": 2,
             "n": "of Protection"
         },
         {
+            "id": 3,
             "n": "of Absorption"
         },
         {
+            "id": 4,
             "n": "of Life",
             "tc": "dblu"
         },
-        {},
         {
+            "id": 5
+        },
+        {
+            "id": 6,
             "n": "of Warding"
         },
         {
+            "id": 7,
             "n": "of the Sentinel"
         },
         {
+            "id": 8,
             "n": "of Guarding"
         },
         {
+            "id": 9,
             "n": "of Negation"
         },
-        {},
         {
+            "id": 10
+        },
+        {
+            "id": 11,
             "n": "of Piercing"
         },
         {
+            "id": 12,
             "n": "of Bashing"
         },
         {
+            "id": 13,
             "n": "of Puncturing"
         },
         {
+            "id": 14,
             "n": "of Thorns"
         },
         {
+            "id": 15,
             "n": "of Spikes",
             "tc": "oran"
         },
         {
+            "id": 16,
             "n": "of Readiness"
         },
         {
+            "id": 17,
             "n": "of Alacrity"
         },
         {
+            "id": 18,
             "n": "of Swiftness"
         },
         {
+            "id": 19,
             "n": "of Quickness",
             "tc": "dyel"
         },
         {
+            "id": 20,
             "n": "of Blocking"
         },
         {
+            "id": 21,
             "n": "of Deflecting"
         },
         {
+            "id": 22,
             "n": "of the Apprentice"
         },
         {
+            "id": 23,
             "n": "of the Magus"
         },
         {
+            "id": 24,
             "n": "of Frost"
         },
         {
+            "id": 25,
             "n": "of the Glacier"
         },
         {
+            "id": 26,
             "n": "of Frost"
         },
         {
+            "id": 27,
             "n": "of Thawing"
         },
         {
+            "id": 28,
             "n": "of Flame"
         },
         {
+            "id": 29,
             "n": "of Fire"
         },
         {
+            "id": 30,
             "n": "of Burning",
             "tc": "dred"
         },
         {
+            "id": 31,
             "n": "of Flame"
         },
         {
+            "id": 32,
             "n": "of Shock"
         },
         {
+            "id": 33,
             "n": "of Lightning"
         },
         {
+            "id": 34,
             "n": "of Thunder",
             "tc": "dyel"
         },
         {
+            "id": 35,
             "n": "of Shock"
         },
         {
+            "id": 36,
             "n": "of Craftmanship"
         },
         {
+            "id": 37,
             "n": "of Quality"
         },
         {
+            "id": 38,
             "n": "of Maiming"
         },
         {
+            "id": 39,
             "n": "of Slaying"
         },
         {
+            "id": 40,
             "n": "of Gore"
         },
         {
+            "id": 41,
             "n": "of Carnage",
             "tc": "blac"
         },
         {
+            "id": 42,
             "n": "of Slaughter",
             "tc": "blac"
         },
         {
+            "id": 43,
             "n": "of Maiming"
         },
         {
+            "id": 44,
             "n": "of Worth"
         },
         {
+            "id": 45,
             "n": "of Measure"
         },
         {
+            "id": 46,
             "n": "of Excellence"
         },
         {
+            "id": 47,
             "n": "of Performance",
             "tc": "blac"
         },
         {
+            "id": 48,
             "n": "of Measure"
         },
         {
+            "id": 49,
             "n": "of Blight"
         },
         {
+            "id": 50,
             "n": "of Venom"
         },
         {
+            "id": 51,
             "n": "of Pestilence",
             "tc": "dgrn"
         },
         {
+            "id": 52,
             "n": "of Blight"
         },
         {
+            "id": 53,
             "n": "of Dexterity"
         },
         {
+            "id": 54,
             "n": "of Dexterity"
         },
         {
+            "id": 55,
             "n": "of Skill"
         },
         {
+            "id": 56,
             "n": "of Skill"
         },
         {
+            "id": 57,
             "n": "of Accuracy"
         },
         {
+            "id": 58,
             "n": "of Precision"
         },
         {
+            "id": 59,
             "n": "of Precision"
         },
         {
+            "id": 60,
             "n": "of Perfection",
             "tc": "dgld"
         },
         {
+            "id": 61,
             "n": "of Balance"
         },
         {
+            "id": 62,
             "n": "of Stability",
             "tc": "dyel"
         },
-        {},
         {
+            "id": 63
+        },
+        {
+            "id": 64,
             "n": "of Regeneration"
         },
         {
+            "id": 65,
             "n": "of Regeneration"
         },
         {
+            "id": 66,
             "n": "of Regeneration"
         },
         {
+            "id": 67,
             "n": "of Regrowth",
             "tc": "cred"
         },
         {
+            "id": 68,
             "n": "of Regrowth",
             "tc": "cred"
         },
         {
+            "id": 69,
             "n": "of Vileness"
         },
-        {},
         {
+            "id": 70
+        },
+        {
+            "id": 71,
             "n": "of Greed"
         },
         {
+            "id": 72,
             "n": "of Wealth",
             "tc": "lgld"
         },
         {
+            "id": 73,
             "n": "of Chance"
         },
         {
+            "id": 74,
             "n": "of Fortune",
             "tc": "lgld"
         },
         {
+            "id": 75,
             "n": "of Energy"
         },
         {
+            "id": 76,
             "n": "of Energy"
         },
         {
+            "id": 77,
             "n": "of the Mind"
         },
         {
+            "id": 78,
             "n": "of Brilliance"
         },
         {
+            "id": 79,
             "n": "of Sorcery",
             "tc": "dgld"
         },
         {
+            "id": 80,
             "n": "of Wizardry",
             "tc": "dgld"
         },
         {
+            "id": 81,
             "n": "of the Bear"
         },
         {
+            "id": 82,
             "n": "of Light"
         },
         {
+            "id": 83,
             "n": "of Radiance"
         },
         {
+            "id": 84,
             "n": "of the Sun"
         },
         {
+            "id": 85,
             "n": "of Life"
         },
         {
+            "id": 86,
             "n": "of the Jackal"
         },
         {
+            "id": 87,
             "n": "of the Fox"
         },
         {
+            "id": 88,
             "n": "of the Wolf"
         },
         {
+            "id": 89,
             "n": "of the Wolf"
         },
         {
+            "id": 90,
             "n": "of the Tiger"
         },
         {
+            "id": 91,
             "n": "of the Mammoth",
             "tc": "cred"
         },
         {
+            "id": 92,
             "n": "of the Mammoth",
             "tc": "cred"
         },
         {
+            "id": 93,
             "n": "of the Colossus",
             "tc": "cred"
         },
         {
+            "id": 94,
             "n": "of the Leech"
         },
         {
+            "id": 95,
             "n": "of the Locust",
             "tc": "cred"
         },
         {
+            "id": 96,
             "n": "of the Bat"
         },
         {
+            "id": 97,
             "n": "of the Vampire",
             "tc": "cblu"
         },
         {
+            "id": 98,
             "n": "of Defiance",
             "tc": "dred"
         },
         {
+            "id": 99,
             "n": "of Amelioration"
         },
         {
+            "id": 100,
             "n": "of Remedy"
         },
-        {},
         {
+            "id": 101
+        },
+        {
+            "id": 102,
             "n": "of Simplicity"
         },
         {
+            "id": 103,
             "n": "of Ease"
         },
-        {},
         {
+            "id": 104
+        },
+        {
+            "id": 105,
             "n": "of Strength"
         },
         {
+            "id": 106,
             "n": "of Might"
         },
         {
+            "id": 107,
             "n": "of the Ox"
         },
         {
+            "id": 108,
             "n": "of the Ox"
         },
         {
+            "id": 109,
             "n": "of the Giant",
             "tc": "dgld"
         },
         {
+            "id": 110,
             "n": "of the Giant",
             "tc": "dgld"
         },
         {
+            "id": 111,
             "n": "of the Titan",
             "tc": "dgld"
         },
         {
+            "id": 112,
             "n": "of Pacing"
         },
         {
+            "id": 113,
             "n": "of Haste"
         },
         {
+            "id": 114,
             "n": "of Speed"
         },
         {
+            "id": 115,
             "n": "of Health"
         },
         {
+            "id": 116,
             "n": "of Protection"
         },
         {
+            "id": 117,
             "n": "of Absorption"
         },
         {
+            "id": 118,
             "n": "of Life",
             "tc": "dblu"
         },
         {
+            "id": 119,
             "n": "of Life Everlasting"
         },
         {
+            "id": 120,
             "n": "of Protection"
         },
         {
+            "id": 121,
             "n": "of Absorption"
         },
         {
+            "id": 122,
             "n": "of Life"
         },
         {
+            "id": 123,
             "n": "of Amicae"
         },
         {
+            "id": 124,
             "n": "of Warding"
         },
         {
+            "id": 125,
             "n": "of the Sentinel"
         },
         {
+            "id": 126,
             "n": "of Guarding"
         },
         {
+            "id": 127,
             "n": "of Negation"
         },
         {
+            "id": 128,
             "n": "of the Sentinel"
         },
         {
+            "id": 129,
             "n": "of Guarding"
         },
         {
+            "id": 130,
             "n": "of Negation"
         },
         {
+            "id": 131,
             "n": "of Coolness"
         },
         {
+            "id": 132,
             "n": "of Inflammability"
         },
         {
+            "id": 133,
             "n": "of Amianthus"
         },
         {
+            "id": 134,
             "n": "of Quenching"
         },
         {
+            "id": 135,
             "n": "of Coolness"
         },
         {
+            "id": 136,
             "n": "of Inflammability"
         },
         {
+            "id": 137,
             "n": "of Amianthus"
         },
         {
+            "id": 138,
             "n": "of Quenching"
         },
         {
+            "id": 139,
             "n": "of Faith"
         },
         {
+            "id": 140,
             "n": "of Resistance"
         },
         {
+            "id": 141,
             "n": "of Insulation"
         },
         {
+            "id": 142,
             "n": "of Grounding"
         },
         {
+            "id": 143,
             "n": "of the Dynamo"
         },
         {
+            "id": 144,
             "n": "of Resistance"
         },
         {
+            "id": 145,
             "n": "of Insulation"
         },
         {
+            "id": 146,
             "n": "of Grounding"
         },
         {
+            "id": 147,
             "n": "of the Dynamo"
         },
         {
+            "id": 148,
             "n": "of Stoicism"
         },
         {
+            "id": 149,
             "n": "of Warming"
         },
         {
+            "id": 150,
             "n": "of Thawing"
         },
         {
+            "id": 151,
             "n": "of the Dunes"
         },
         {
+            "id": 152,
             "n": "of the Scirocco"
         },
         {
+            "id": 153,
             "n": "of Warming"
         },
         {
+            "id": 154,
             "n": "of Thawing"
         },
         {
+            "id": 155,
             "n": "of the Dunes"
         },
         {
+            "id": 156,
             "n": "of the Scirocco"
         },
         {
+            "id": 157,
             "n": "of Desire"
         },
         {
+            "id": 158,
             "n": "of Piercing"
         },
         {
+            "id": 159,
             "n": "of Bashing"
         },
         {
+            "id": 160,
             "n": "of Puncturing"
         },
         {
+            "id": 161,
             "n": "of Thorns"
         },
         {
+            "id": 162,
             "n": "of Spikes",
             "tc": "oran"
         },
         {
+            "id": 163,
             "n": "of Razors",
             "tc": "oran"
         },
         {
+            "id": 164,
             "n": "of Swords",
             "tc": "oran"
         },
         {
+            "id": 165,
             "n": "of Malice"
         },
         {
+            "id": 166,
             "n": "of Readiness"
         },
         {
+            "id": 167,
             "n": "of Alacrity"
         },
         {
+            "id": 168,
             "n": "of Swiftness"
         },
         {
+            "id": 169,
             "n": "of Quickness",
             "tc": "dyel"
         },
         {
+            "id": 170,
             "n": "of Alacrity",
             "tc": "dyel"
         },
         {
+            "id": 171,
             "n": "of Fervor"
         },
         {
+            "id": 172,
             "n": "of Blocking"
         },
         {
+            "id": 173,
             "n": "of Deflecting"
         },
         {
+            "id": 174,
             "n": "of the Apprentice"
         },
         {
+            "id": 175,
             "n": "of the Magus"
         },
         {
+            "id": 176,
             "n": "of Frost"
         },
         {
+            "id": 177,
             "n": "of the Icicle"
         },
         {
+            "id": 178,
             "n": "of the Glacier",
             "tc": "dblu"
         },
         {
+            "id": 179,
             "n": "of Winter",
             "tc": "dblu"
         },
         {
+            "id": 180,
             "n": "of Frost"
         },
         {
+            "id": 181,
             "n": "of Frigidity",
             "tc": "dblu"
         },
         {
+            "id": 182,
             "n": "of Thawing"
         },
         {
+            "id": 183,
             "n": "of Flame"
         },
         {
+            "id": 184,
             "n": "of Fire"
         },
         {
+            "id": 185,
             "n": "of Burning",
             "tc": "dred"
         },
         {
+            "id": 186,
             "n": "of Incineration",
             "tc": "dred"
         },
         {
+            "id": 187,
             "n": "of Flame"
         },
         {
+            "id": 188,
             "n": "of Passion",
             "tc": "dred"
         },
         {
+            "id": 189,
             "n": "of Shock"
         },
         {
+            "id": 190,
             "n": "of Lightning"
         },
         {
+            "id": 191,
             "n": "of Thunder",
             "tc": "dyel"
         },
         {
+            "id": 192,
             "n": "of Storms",
             "tc": "dyel"
         },
         {
+            "id": 193,
             "n": "of Shock"
         },
         {
+            "id": 194,
             "n": "of Ennui",
             "tc": "dyel"
         },
         {
+            "id": 195,
             "n": "of Craftmanship"
         },
         {
+            "id": 196,
             "n": "of Quality"
         },
         {
+            "id": 197,
             "n": "of Maiming"
         },
         {
+            "id": 198,
             "n": "of Slaying"
         },
         {
+            "id": 199,
             "n": "of Gore"
         },
         {
+            "id": 200,
             "n": "of Carnage",
             "tc": "blac"
         },
         {
+            "id": 201,
             "n": "of Slaughter",
             "tc": "blac"
         },
         {
+            "id": 202,
             "n": "of Butchery",
             "tc": "blac"
         },
         {
+            "id": 203,
             "n": "of Evisceration",
             "tc": "blac"
         },
         {
+            "id": 204,
             "n": "of Maiming"
         },
         {
+            "id": 205,
             "n": "of Craftmanship"
         },
         {
+            "id": 206,
             "n": "of Craftmanship"
         },
         {
+            "id": 207,
             "n": "of Craftmanship"
         },
         {
+            "id": 208,
             "n": "of Quality"
         },
         {
+            "id": 209,
             "n": "of Quality"
         },
         {
+            "id": 210,
             "n": "of Maiming"
         },
         {
+            "id": 211,
             "n": "of Maiming"
         },
         {
+            "id": 212,
             "n": "of Craftmanship"
         },
         {
+            "id": 213,
             "n": "of Craftmanship"
         },
         {
+            "id": 214,
             "n": "of Quality"
         },
         {
+            "id": 215,
             "n": "of Quality"
         },
         {
+            "id": 216,
             "n": "of Maiming"
         },
         {
+            "id": 217,
             "n": "of Craftmanship"
         },
         {
+            "id": 218,
             "n": "of Quality"
         },
         {
+            "id": 219,
             "n": "of Maiming"
         },
         {
+            "id": 220,
             "n": "of Ire"
         },
         {
+            "id": 221,
             "n": "of Wrath",
             "tc": "blac"
         },
         {
+            "id": 222,
             "n": "of Carnage",
             "tc": "blac"
         },
         {
+            "id": 223,
             "n": "of Worth"
         },
         {
+            "id": 224,
             "n": "of Measure"
         },
         {
+            "id": 225,
             "n": "of Excellence"
         },
         {
+            "id": 226,
             "n": "of Performance",
             "tc": "blac"
         },
         {
+            "id": 227,
             "n": "of Transcendence",
             "tc": "blac"
         },
         {
+            "id": 228,
             "n": "of Worth"
         },
         {
+            "id": 229,
             "n": "of Measure"
         },
         {
+            "id": 230,
             "n": "of Excellence"
         },
         {
+            "id": 231,
             "n": "of Performance"
         },
         {
+            "id": 232,
             "n": "of Joyfulness",
             "tc": "whit"
         },
         {
+            "id": 233,
             "n": "of Bliss",
             "tc": "whit"
         },
         {
+            "id": 234,
             "n": "of Blight"
         },
         {
+            "id": 235,
             "n": "of Venom"
         },
         {
+            "id": 236,
             "n": "of Pestilence",
             "tc": "dgrn"
         },
         {
+            "id": 237,
             "n": "of Anthrax",
             "tc": "dgrn"
         },
         {
+            "id": 238,
             "n": "of Blight"
         },
         {
+            "id": 239,
             "n": "of Envy",
             "tc": "dgrn"
         },
         {
+            "id": 240,
             "n": "of Dexterity"
         },
         {
+            "id": 241,
             "n": "of Skill"
         },
         {
+            "id": 242,
             "n": "of Accuracy"
         },
         {
+            "id": 243,
             "n": "of Precision"
         },
         {
+            "id": 244,
             "n": "of Perfection",
             "tc": "dgld"
         },
         {
+            "id": 245,
             "n": "of Nirvana",
             "tc": "dgld"
         },
         {
+            "id": 246,
             "n": "of Dexterity"
         },
         {
+            "id": 247,
             "n": "of Skill"
         },
         {
+            "id": 248,
             "n": "of Accuracy"
         },
         {
+            "id": 249,
             "n": "of Precision"
         },
         {
+            "id": 250,
             "n": "of Perfection",
             "tc": "dgld"
         },
         {
+            "id": 251,
             "n": "of Dexterity"
         },
         {
+            "id": 252,
             "n": "of Skill"
         },
         {
+            "id": 253,
             "n": "of Accuracy"
         },
         {
+            "id": 254,
             "n": "of Precision",
             "tc": "dgld"
         },
         {
+            "id": 255,
             "n": "of Dexterity"
         },
         {
+            "id": 256,
             "n": "of Dexterity"
         },
         {
+            "id": 257,
             "n": "of Dexterity"
         },
         {
+            "id": 258,
             "n": "of Dexterity"
         },
         {
+            "id": 259,
             "n": "of Dexterity"
         },
         {
+            "id": 260,
             "n": "of Dexterity"
         },
         {
+            "id": 261,
             "n": "of Daring"
         },
         {
+            "id": 262,
             "n": "of Balance"
         },
         {
+            "id": 263,
             "n": "of Equilibrium"
         },
         {
+            "id": 264,
             "n": "of Stability",
             "tc": "dyel"
         },
         {
+            "id": 265,
             "n": "of Balance"
         },
         {
+            "id": 266,
             "n": "of Balance"
         },
         {
+            "id": 267,
             "n": "of Balance",
             "tc": "dyel"
         },
         {
+            "id": 268,
             "n": "of Truth"
         },
         {
+            "id": 269,
             "n": "of Regeneration"
         },
         {
+            "id": 270,
             "n": "of Regeneration"
         },
         {
+            "id": 271,
             "n": "of Regeneration"
         },
         {
+            "id": 272,
             "n": "of Regrowth",
             "tc": "cred"
         },
         {
+            "id": 273,
             "n": "of Regrowth",
             "tc": "cred"
         },
         {
+            "id": 274,
             "n": "of Revivification",
             "tc": "cred"
         },
         {
+            "id": 275,
             "n": "of Honor"
         },
         {
+            "id": 276,
             "n": "of Vileness"
         },
         {
+            "id": 277,
             "n": "of Greed"
         },
         {
+            "id": 278,
             "n": "of Wealth",
             "tc": "lgld"
         },
         {
+            "id": 279,
             "n": "of Greed"
         },
         {
+            "id": 280,
             "n": "of Greed"
         },
         {
+            "id": 281,
             "n": "of Greed"
         },
         {
+            "id": 282,
             "n": "of Greed"
         },
         {
+            "id": 283,
             "n": "of Greed"
         },
         {
+            "id": 284,
             "n": "of Greed"
         },
         {
+            "id": 285,
             "n": "of Avarice"
         },
         {
+            "id": 286,
             "n": "of Chance"
         },
         {
+            "id": 287,
             "n": "of Fortune",
             "tc": "lgld"
         },
         {
+            "id": 288,
             "n": "of Fortune",
             "tc": "lgld"
         },
         {
+            "id": 289,
             "n": "of Luck",
             "tc": "lgld"
         },
         {
+            "id": 290,
             "n": "of Fortune"
         },
         {
+            "id": 291,
             "n": "of Good Luck"
         },
         {
+            "id": 292,
             "n": "of Prosperity"
         },
         {
+            "id": 293,
             "n": "of Energy"
         },
         {
+            "id": 294,
             "n": "of the Mind"
         },
         {
+            "id": 295,
             "n": "of Brilliance"
         },
         {
+            "id": 296,
             "n": "of Sorcery"
         },
         {
+            "id": 297,
             "n": "of Wizardry",
             "tc": "dgld"
         },
         {
+            "id": 298,
             "n": "of Enlightenment",
             "tc": "dgld"
         },
         {
+            "id": 299,
             "n": "of Energy"
         },
         {
+            "id": 300,
             "n": "of the Mind"
         },
         {
+            "id": 301,
             "n": "of Brilliance"
         },
         {
+            "id": 302,
             "n": "of Sorcery"
         },
         {
+            "id": 303,
             "n": "of Wizardry",
             "tc": "dgld"
         },
         {
+            "id": 304,
             "n": "of Energy"
         },
         {
+            "id": 305,
             "n": "of the Mind"
         },
         {
+            "id": 306,
             "n": "of Brilliance"
         },
         {
+            "id": 307,
             "n": "of Sorcery",
             "tc": "dgld"
         },
         {
+            "id": 308,
             "n": "of Knowledge"
         },
         {
+            "id": 309,
             "n": "of the Bear"
         },
         {
+            "id": 310,
             "n": "of Light"
         },
         {
+            "id": 311,
             "n": "of Radiance"
         },
         {
+            "id": 312,
             "n": "of the Sun"
         },
         {
+            "id": 313,
             "n": "of the Jackal"
         },
         {
+            "id": 314,
             "n": "of the Fox"
         },
         {
+            "id": 315,
             "n": "of the Wolf"
         },
         {
+            "id": 316,
             "n": "of the Tiger"
         },
         {
+            "id": 317,
             "n": "of the Mammoth",
             "tc": "cred"
         },
         {
+            "id": 318,
             "n": "of the Colossus",
             "tc": "cred"
         },
         {
+            "id": 319,
             "n": "of the Squid",
             "tc": "cred"
         },
         {
+            "id": 320,
             "n": "of the Whale",
             "tc": "cred"
         },
         {
+            "id": 321,
             "n": "of the Jackal"
         },
         {
+            "id": 322,
             "n": "of the Fox"
         },
         {
+            "id": 323,
             "n": "of the Wolf"
         },
         {
+            "id": 324,
             "n": "of the Tiger"
         },
         {
+            "id": 325,
             "n": "of the Mammoth",
             "tc": "cred"
         },
         {
+            "id": 326,
             "n": "of the Colossus",
             "tc": "cred"
         },
         {
+            "id": 327,
             "n": "of the Jackal"
         },
         {
+            "id": 328,
             "n": "of the Fox"
         },
         {
+            "id": 329,
             "n": "of the Wolf"
         },
         {
+            "id": 330,
             "n": "of the Tiger"
         },
         {
+            "id": 331,
             "n": "of the Mammoth",
             "tc": "cred"
         },
         {
+            "id": 332,
             "n": "of Life"
         },
         {
+            "id": 333,
             "n": "of Life"
         },
         {
+            "id": 334,
             "n": "of Life"
         },
         {
+            "id": 335,
             "n": "of Sustenance"
         },
         {
+            "id": 336,
             "n": "of Sustenance"
         },
         {
+            "id": 337,
             "n": "of Sustenance"
         },
         {
+            "id": 338,
             "n": "of Vita"
         },
         {
+            "id": 339,
             "n": "of Vita"
         },
         {
+            "id": 340,
             "n": "of Vita"
         },
         {
+            "id": 341,
             "n": "of Life"
         },
         {
+            "id": 342,
             "n": "of Life"
         },
         {
+            "id": 343,
             "n": "of Sustenance"
         },
         {
+            "id": 344,
             "n": "of Sustenance"
         },
         {
+            "id": 345,
             "n": "of Vita"
         },
         {
+            "id": 346,
             "n": "of Vita"
         },
         {
+            "id": 347,
             "n": "of Life"
         },
         {
+            "id": 348,
             "n": "of Sustenance"
         },
         {
+            "id": 349,
             "n": "of Vita"
         },
         {
+            "id": 350,
             "n": "of Spirit"
         },
         {
+            "id": 351,
             "n": "of Hope"
         },
         {
+            "id": 352,
             "n": "of the Leech"
         },
         {
+            "id": 353,
             "n": "of the Locust",
             "tc": "cred"
         },
         {
+            "id": 354,
             "n": "of the Lamprey",
             "tc": "cred"
         },
         {
+            "id": 355,
             "n": "of the Leech"
         },
         {
+            "id": 356,
             "n": "of the Locust"
         },
         {
+            "id": 357,
             "n": "of the Lamprey",
             "tc": "cred"
         },
         {
+            "id": 358,
             "n": "of the Leech",
             "tc": "cred"
         },
         {
+            "id": 359,
             "n": "of the Bat"
         },
         {
+            "id": 360,
             "n": "of the Wraith",
             "tc": "cred"
         },
         {
+            "id": 361,
             "n": "of the Vampire",
             "tc": "cred"
         },
         {
+            "id": 362,
             "n": "of the Bat"
         },
         {
+            "id": 363,
             "n": "of the Wraith"
         },
         {
+            "id": 364,
             "n": "of the Vampire",
             "tc": "cred"
         },
         {
+            "id": 365,
             "n": "of the Bat",
             "tc": "cred"
         },
         {
+            "id": 366,
             "n": "of Defiance",
             "tc": "dred"
         },
         {
+            "id": 367,
             "n": "of Amelioration"
         },
         {
+            "id": 368,
             "n": "of Remedy"
         },
         {
+            "id": 369,
             "n": "of Simplicity"
         },
         {
+            "id": 370,
             "n": "of Ease"
         },
         {
+            "id": 371,
             "n": "of Freedom"
         },
         {
+            "id": 372,
             "n": "of Strength"
         },
         {
+            "id": 373,
             "n": "of Might"
         },
         {
+            "id": 374,
             "n": "of the Ox"
         },
         {
+            "id": 375,
             "n": "of the Giant"
         },
         {
+            "id": 376,
             "n": "of the Titan",
             "tc": "dgld"
         },
         {
+            "id": 377,
             "n": "of Atlas",
             "tc": "dgld"
         },
         {
+            "id": 378,
             "n": "of Strength"
         },
         {
+            "id": 379,
             "n": "of Might"
         },
         {
+            "id": 380,
             "n": "of the Ox"
         },
         {
+            "id": 381,
             "n": "of the Giant"
         },
         {
+            "id": 382,
             "n": "of the Titan",
             "tc": "dgld"
         },
         {
+            "id": 383,
             "n": "of Strength"
         },
         {
+            "id": 384,
             "n": "of Might"
         },
         {
+            "id": 385,
             "n": "of the Ox"
         },
         {
+            "id": 386,
             "n": "of the Giant",
             "tc": "dgld"
         },
         {
+            "id": 387,
             "n": "of Strength"
         },
         {
+            "id": 388,
             "n": "of Strength"
         },
         {
+            "id": 389,
             "n": "of Strength"
         },
         {
+            "id": 390,
             "n": "of Strength"
         },
         {
+            "id": 391,
             "n": "of Strength"
         },
         {
+            "id": 392,
             "n": "of Strength"
         },
         {
+            "id": 393,
             "n": "of Virility"
         },
         {
+            "id": 394,
             "n": "of Pacing"
         },
         {
+            "id": 395,
             "n": "of Haste"
         },
         {
+            "id": 396,
             "n": "of Speed"
         },
         {
+            "id": 397,
             "n": "of Transportation"
         },
         {
+            "id": 398,
             "n": "of Acceleration"
         },
         {
+            "id": 399,
             "n": "of Inertia"
         },
         {
+            "id": 400,
             "n": "of Inertia"
         },
         {
+            "id": 401,
             "n": "of Inertia"
         },
         {
+            "id": 402,
             "n": "of Self-Repair"
         },
         {
+            "id": 403,
             "n": "of Restoration"
         },
         {
+            "id": 404,
             "n": "of Ages"
         },
         {
+            "id": 405,
             "n": "of Replenishing"
         },
         {
+            "id": 406,
             "n": "of Propogation"
         },
         {
+            "id": 407,
             "n": "of the Centaur",
             "tc": "cred"
         },
         {
+            "id": 408,
             "n": "of Memory",
             "tc": "cred"
         },
         {
+            "id": 409,
             "n": "of the Elephant",
             "tc": "cred"
         },
         {
+            "id": 410,
             "n": "of Power",
             "tc": "dgld"
         },
         {
+            "id": 411,
             "n": "of Grace",
             "tc": "dgld"
         },
         {
+            "id": 412,
             "n": "of Grace and Power",
             "tc": "dgld"
         },
         {
+            "id": 413,
             "n": "of the Yeti",
             "tc": "lblu"
         },
         {
+            "id": 414,
             "n": "of the Phoenix",
             "tc": "cred"
         },
         {
+            "id": 415,
             "n": "of the Efreeti",
             "tc": "cblu"
         },
         {
+            "id": 416,
             "n": "of the Cobra",
             "tc": "dyel"
         },
         {
+            "id": 417,
             "n": "of the Elements",
             "tc": "dgld"
         },
         {
+            "id": 418,
             "n": "of Firebolts"
         },
         {
+            "id": 419,
             "n": "of Firebolts"
         },
         {
+            "id": 420,
             "n": "of Firebolts"
         },
         {
+            "id": 421,
             "n": "of Charged Bolt"
         },
         {
+            "id": 422,
             "n": "of Charged Bolt"
         },
         {
+            "id": 423,
             "n": "of Charged Bolt"
         },
         {
+            "id": 424,
             "n": "of Icebolt",
             "tc": "lblu"
         },
         {
+            "id": 425,
             "n": "of Frozen Armor"
         },
         {
+            "id": 426,
             "n": "of Static Field"
         },
         {
+            "id": 427,
             "n": "of Telekinesis"
         },
         {
+            "id": 428,
             "n": "of Frost Shield",
             "tc": "lblu"
         },
         {
+            "id": 429,
             "n": "of Ice Blast"
         },
         {
+            "id": 430,
             "n": "of Blaze"
         },
         {
+            "id": 431,
             "n": "of Fire Ball"
         },
         {
+            "id": 432,
             "n": "of Nova",
             "tc": "cblu"
         },
         {
+            "id": 433,
             "n": "of Nova",
             "tc": "cblu"
         },
         {
+            "id": 434,
             "n": "of Nova Shield",
             "tc": "cblu"
         },
         {
+            "id": 435,
             "n": "of Nova Shield",
             "tc": "cblu"
         },
         {
+            "id": 436,
             "n": "of Nova Shield",
             "tc": "cblu"
         },
         {
+            "id": 437,
             "n": "of Lightning",
             "tc": "cblu"
         },
         {
+            "id": 438,
             "n": "of Lightning",
             "tc": "cblu"
         },
         {
+            "id": 439,
             "n": "of Shiver Armor"
         },
         {
+            "id": 440,
             "n": "of Fire Wall"
         },
         {
+            "id": 441,
             "n": "of Enchant"
         },
         {
+            "id": 442,
             "n": "of Chain Lightning"
         },
         {
+            "id": 443,
             "n": "of Chain Lightning"
         },
         {
+            "id": 444,
             "n": "of Chain Lightning"
         },
         {
+            "id": 445,
             "n": "of Teleport Shield",
             "tc": "whit"
         },
         {
+            "id": 446,
             "n": "of Teleport Shield",
             "tc": "whit"
         },
         {
+            "id": 447,
             "n": "of Teleport Shield",
             "tc": "whit"
         },
         {
+            "id": 448,
             "n": "of Glacial Spike"
         },
         {
+            "id": 449,
             "n": "of Meteor"
         },
         {
+            "id": 450,
             "n": "of Thunder Storm"
         },
         {
+            "id": 451,
             "n": "of Energy Shield"
         },
         {
+            "id": 452,
             "n": "of Blizzard"
         },
         {
+            "id": 453,
             "n": "of Chilling Armor"
         },
         {
+            "id": 454,
             "n": "of Hydra Shield",
             "tc": "cred"
         },
         {
+            "id": 455,
             "n": "of Frozen Orb"
         },
         {
+            "id": 456,
             "n": "of Dawn"
         },
         {
+            "id": 457,
             "n": "of Sunlight"
         },
         {
+            "id": 458,
             "n": "of Magic Arrow"
         },
         {
+            "id": 459,
             "n": "of Magic Arrow"
         },
         {
+            "id": 460,
             "n": "of Fire Arrow"
         },
         {
+            "id": 461,
             "n": "of Fire Arrow"
         },
         {
+            "id": 462,
             "n": "of Inner Sight"
         },
         {
+            "id": 463,
             "n": "of Inner Sight"
         },
         {
+            "id": 464,
             "n": "of Jab"
         },
         {
+            "id": 465,
             "n": "of Jab"
         },
         {
+            "id": 466,
             "n": "of Cold Arrow"
         },
         {
+            "id": 467,
             "n": "of Cold Arrow"
         },
         {
+            "id": 468,
             "n": "of Multiple Shot"
         },
         {
+            "id": 469,
             "n": "of Multiple Shot"
         },
         {
+            "id": 470,
             "n": "of Power Strike"
         },
         {
+            "id": 471,
             "n": "of Power Strike"
         },
         {
+            "id": 472,
             "n": "of Poison Jab"
         },
         {
+            "id": 473,
             "n": "of Poison Jab"
         },
         {
+            "id": 474,
             "n": "of Exploding Arrow"
         },
         {
+            "id": 475,
             "n": "of Exploding Arrow"
         },
         {
+            "id": 476,
             "n": "of Slow Missile"
         },
         {
+            "id": 477,
             "n": "of Slow Missile"
         },
         {
+            "id": 478,
             "n": "of Impaling Strike"
         },
         {
+            "id": 479,
             "n": "of Impaling Strike"
         },
         {
+            "id": 480,
             "n": "of Lightning Javelin"
         },
         {
+            "id": 481,
             "n": "of Lightning Javelin"
         },
         {
+            "id": 482,
             "n": "of Ice Arrow"
         },
         {
+            "id": 483,
             "n": "of Ice Arrow"
         },
         {
+            "id": 484,
             "n": "of Guided Arrow"
         },
         {
+            "id": 485,
             "n": "of Guided Arrow"
         },
         {
+            "id": 486,
             "n": "of Charged Strike"
         },
         {
+            "id": 487,
             "n": "of Charged Strike"
         },
         {
+            "id": 488,
             "n": "of Plague Jab"
         },
         {
+            "id": 489,
             "n": "of Plague Jab"
         },
         {
+            "id": 490,
             "n": "of Immolating Arrow"
         },
         {
+            "id": 491,
             "n": "of Immolating Arrow"
         },
         {
+            "id": 492,
             "n": "of Fending"
         },
         {
+            "id": 493,
             "n": "of Fending"
         },
         {
+            "id": 494,
             "n": "of Freezing Arrow"
         },
         {
+            "id": 495,
             "n": "of Freezing Arrow"
         },
         {
+            "id": 496,
             "n": "of Lightning Strike"
         },
         {
+            "id": 497,
             "n": "of Lightning Strike"
         },
         {
+            "id": 498,
             "n": "of Lightning Fury"
         },
         {
+            "id": 499,
             "n": "of Lightning Fury"
         },
         {
+            "id": 500,
             "n": "of Fire Bolt"
         },
         {
+            "id": 501,
             "n": "of Fire Bolt"
         },
         {
+            "id": 502,
             "n": "of Charged Bolt"
         },
         {
+            "id": 503,
             "n": "of Charged Bolt"
         },
         {
+            "id": 504,
             "n": "of Ice Bolt"
         },
         {
+            "id": 505,
             "n": "of Ice Bolt"
         },
         {
+            "id": 506,
             "n": "of Frozen Armor"
         },
         {
+            "id": 507,
             "n": "of Frozen Armor"
         },
         {
+            "id": 508,
             "n": "of Static Field"
         },
         {
+            "id": 509,
             "n": "of Static Field"
         },
         {
+            "id": 510,
             "n": "of Telekinesis"
         },
         {
+            "id": 511,
             "n": "of Telekinesis"
         },
         {
+            "id": 512,
             "n": "of Frost Nova"
         },
         {
+            "id": 513,
             "n": "of Frost Nova"
         },
         {
+            "id": 514,
             "n": "of Ice Blast"
         },
         {
+            "id": 515,
             "n": "of Ice Blast"
         },
         {
+            "id": 516,
             "n": "of Blazing"
         },
         {
+            "id": 517,
             "n": "of Blazing"
         },
         {
+            "id": 518,
             "n": "of Fire Ball"
         },
         {
+            "id": 519,
             "n": "of Fire Ball"
         },
         {
+            "id": 520,
             "n": "of Nova"
         },
         {
+            "id": 521,
             "n": "of Nova"
         },
         {
+            "id": 522,
             "n": "of Lightning"
         },
         {
+            "id": 523,
             "n": "of Lightning"
         },
         {
+            "id": 524,
             "n": "of Shiver Armor"
         },
         {
+            "id": 525,
             "n": "of Shiver Armor"
         },
         {
+            "id": 526,
             "n": "of Fire Wall"
         },
         {
+            "id": 527,
             "n": "of Fire Wall"
         },
         {
+            "id": 528,
             "n": "of Enchantment"
         },
         {
+            "id": 529,
             "n": "of Enchantment"
         },
         {
+            "id": 530,
             "n": "of Chain Lightning"
         },
         {
+            "id": 531,
             "n": "of Chain Lightning"
         },
         {
+            "id": 532,
             "n": "of Teleportation"
         },
         {
+            "id": 533,
             "n": "of Teleportation"
         },
         {
+            "id": 534,
             "n": "of Glacial Spike"
         },
         {
+            "id": 535,
             "n": "of Glacial Spike"
         },
         {
+            "id": 536,
             "n": "of Meteor"
         },
         {
+            "id": 537,
             "n": "of Meteor"
         },
         {
+            "id": 538,
             "n": "of Thunder Storm"
         },
         {
+            "id": 539,
             "n": "of Thunder Storm"
         },
         {
+            "id": 540,
             "n": "of Energy Shield"
         },
         {
+            "id": 541,
             "n": "of Energy Shield"
         },
         {
+            "id": 542,
             "n": "of Blizzard"
         },
         {
+            "id": 543,
             "n": "of Blizzard"
         },
         {
+            "id": 544,
             "n": "of Chilling Armor"
         },
         {
+            "id": 545,
             "n": "of Chilling Armor"
         },
         {
+            "id": 546,
             "n": "of Hydra"
         },
         {
+            "id": 547,
             "n": "of Hydra"
         },
         {
+            "id": 548,
             "n": "of Frozen Orb"
         },
         {
+            "id": 549,
             "n": "of Frozen Orb"
         },
         {
+            "id": 550,
             "n": "of Amplify Damage"
         },
         {
+            "id": 551,
             "n": "of Amplify Damage"
         },
         {
+            "id": 552,
             "n": "of Teeth"
         },
         {
+            "id": 553,
             "n": "of Teeth"
         },
         {
+            "id": 554,
             "n": "of Bone Armor"
         },
         {
+            "id": 555,
             "n": "of Bone Armor"
         },
         {
+            "id": 556,
             "n": "of Raise Skeleton"
         },
         {
+            "id": 557,
             "n": "of Raise Skeleton"
         },
         {
+            "id": 558,
             "n": "of Dim Vision"
         },
         {
+            "id": 559,
             "n": "of Dim Vision"
         },
         {
+            "id": 560,
             "n": "of Weaken"
         },
         {
+            "id": 561,
             "n": "of Weaken"
         },
         {
+            "id": 562,
             "n": "of Poison Dagger"
         },
         {
+            "id": 563,
             "n": "of Poison Dagger"
         },
         {
+            "id": 564,
             "n": "of Corpse Explosion"
         },
         {
+            "id": 565,
             "n": "of Corpse Explosion"
         },
         {
+            "id": 566,
             "n": "of Clay Golem"
         },
         {
+            "id": 567,
             "n": "of Clay Golem"
         },
         {
+            "id": 568,
             "n": "of Iron Maiden"
         },
         {
+            "id": 569,
             "n": "of Iron Maiden"
         },
         {
+            "id": 570,
             "n": "of Terror"
         },
         {
+            "id": 571,
             "n": "of Terror"
         },
         {
+            "id": 572,
             "n": "of Bone Wall"
         },
         {
+            "id": 573,
             "n": "of Bone Wall"
         },
         {
+            "id": 574,
             "n": "of Skeletal Mages"
         },
         {
+            "id": 575,
             "n": "of Skeletal Mages"
         },
         {
+            "id": 576,
             "n": "of Confusion"
         },
         {
+            "id": 577,
             "n": "of Confusion"
         },
         {
+            "id": 578,
             "n": "of Life Tap"
         },
         {
+            "id": 579,
             "n": "of Life Tap"
         },
         {
+            "id": 580,
             "n": "of Poison Explosion"
         },
         {
+            "id": 581,
             "n": "of Poison Explosion"
         },
         {
+            "id": 582,
             "n": "of Bone Spear"
         },
         {
+            "id": 583,
             "n": "of Bone Spear"
         },
         {
+            "id": 584,
             "n": "of Blood Golem"
         },
         {
+            "id": 585,
             "n": "of Blood Golem"
         },
         {
+            "id": 586,
             "n": "of Attract"
         },
         {
+            "id": 587,
             "n": "of Attract"
         },
         {
+            "id": 588,
             "n": "of Decrepify"
         },
         {
+            "id": 589,
             "n": "of Decrepify"
         },
         {
+            "id": 590,
             "n": "of Bone Prison"
         },
         {
+            "id": 591,
             "n": "of Bone Prison"
         },
         {
+            "id": 592,
             "n": "of Iron Golem"
         },
         {
+            "id": 593,
             "n": "of Iron Golem"
         },
         {
+            "id": 594,
             "n": "of Lower Resistance"
         },
         {
+            "id": 595,
             "n": "of Lower Resistance"
         },
         {
+            "id": 596,
             "n": "of Poison Nova"
         },
         {
+            "id": 597,
             "n": "of Poison Nova"
         },
         {
+            "id": 598,
             "n": "of Bone Spirit"
         },
         {
+            "id": 599,
             "n": "of Bone Spirit"
         },
         {
+            "id": 600,
             "n": "of Fire Golem"
         },
         {
+            "id": 601,
             "n": "of Fire Golem"
         },
         {
+            "id": 602,
             "n": "of Revivification"
         },
         {
+            "id": 603,
             "n": "of Revivification"
         },
         {
+            "id": 604,
             "n": "of Sacrifice"
         },
         {
+            "id": 605,
             "n": "of Sacrifice"
         },
         {
+            "id": 606,
             "n": "of Holy Bolt"
         },
         {
+            "id": 607,
             "n": "of Holy Bolt"
         },
         {
+            "id": 608,
             "n": "of Zeal"
         },
         {
+            "id": 609,
             "n": "of Zeal"
         },
         {
+            "id": 610,
             "n": "of Vengeance"
         },
         {
+            "id": 611,
             "n": "of Vengeance"
         },
         {
+            "id": 612,
             "n": "of Blessed Hammer"
         },
         {
+            "id": 613,
             "n": "of Blessed Hammer"
         },
         {
+            "id": 614,
             "n": "of Conversion"
         },
         {
+            "id": 615,
             "n": "of Conversion"
         },
         {
+            "id": 616,
             "n": "of Fist of the Heavens"
         },
         {
+            "id": 617,
             "n": "of Fist of the Heavens"
         },
         {
+            "id": 618,
             "n": "of Bashing"
         },
         {
+            "id": 619,
             "n": "of Bashing"
         },
         {
+            "id": 620,
             "n": "of Howl"
         },
         {
+            "id": 621,
             "n": "of Howl"
         },
         {
+            "id": 622,
             "n": "of Find Potion"
         },
         {
+            "id": 623,
             "n": "of Find Potion"
         },
         {
+            "id": 624,
             "n": "of Taunt"
         },
         {
+            "id": 625,
             "n": "of Taunt"
         },
         {
+            "id": 626,
             "n": "of Shout"
         },
         {
+            "id": 627,
             "n": "of Shout"
         },
         {
+            "id": 628,
             "n": "of Stun"
         },
         {
+            "id": 629,
             "n": "of Stun"
         },
         {
+            "id": 630,
             "n": "of Find Item"
         },
         {
+            "id": 631,
             "n": "of Find Item"
         },
         {
+            "id": 632,
             "n": "of Concentration"
         },
         {
+            "id": 633,
             "n": "of Concentration"
         },
         {
+            "id": 634,
             "n": "of Battle Cry"
         },
         {
+            "id": 635,
             "n": "of Battle Cry"
         },
         {
+            "id": 636,
             "n": "of Battle Orders"
         },
         {
+            "id": 637,
             "n": "of Battle Orders"
         },
         {
+            "id": 638,
             "n": "of Grim Ward"
         },
         {
+            "id": 639,
             "n": "of Grim Ward"
         },
         {
+            "id": 640,
             "n": "of War Cry"
         },
         {
+            "id": 641,
             "n": "of War Cry"
         },
         {
+            "id": 642,
             "n": "of Battle Command"
         },
         {
+            "id": 643,
             "n": "of Battle Command"
         },
         {
+            "id": 644,
             "n": "of Firestorms"
         },
         {
+            "id": 645,
             "n": "of Firestorms"
         },
         {
+            "id": 646,
             "n": "of Molten Boulder"
         },
         {
+            "id": 647,
             "n": "of Molten Boulder"
         },
         {
+            "id": 648,
             "n": "of Fissure"
         },
         {
+            "id": 649,
             "n": "of Fissure"
         },
         {
+            "id": 650,
             "n": "of Cyclone Armor"
         },
         {
+            "id": 651,
             "n": "of Cyclone Armor"
         },
         {
+            "id": 652,
             "n": "of Twister"
         },
         {
+            "id": 653,
             "n": "of Twister"
         },
         {
+            "id": 654,
             "n": "of Volcano"
         },
         {
+            "id": 655,
             "n": "of Volcano"
         },
         {
+            "id": 656,
             "n": "of Tornado"
         },
         {
+            "id": 657,
             "n": "of Tornado"
         },
         {
+            "id": 658,
             "n": "of Armageddon"
         },
         {
+            "id": 659,
             "n": "of Armageddon"
         },
         {
+            "id": 660,
             "n": "of Hurricane"
         },
         {
+            "id": 661,
             "n": "of Hurricane"
         },
         {
+            "id": 662,
             "n": "of Amplify Damage"
         },
         {
+            "id": 663,
             "n": "of the Icicle",
             "tc": "dblu"
         },
         {
+            "id": 664,
             "n": "of the Glacier",
             "tc": "dblu"
         },
         {
+            "id": 665,
             "n": "of Fire",
             "tc": "dred"
         },
         {
+            "id": 666,
             "n": "of Burning",
             "tc": "dred"
         },
         {
+            "id": 667,
             "n": "of Lightning",
             "tc": "dyel"
         },
         {
+            "id": 668,
             "n": "of Thunder",
             "tc": "dyel"
         },
         {
+            "id": 669,
             "n": "of Daring"
         },
         {
+            "id": 670,
             "n": "of Daring"
         },
         {
+            "id": 671,
             "n": "of Knowledge"
         },
         {
+            "id": 672,
             "n": "of Knowledge"
         },
         {
+            "id": 673,
             "n": "of Virility"
         },
         {
+            "id": 674,
             "n": "of Virility"
         },
         {
+            "id": 675,
             "n": "of Readiness"
         },
         {
+            "id": 676,
             "n": "of Craftmanship"
         },
         {
+            "id": 677,
             "n": "of Quality"
         },
         {
+            "id": 678,
             "n": "of Maiming"
         },
         {
+            "id": 679,
             "n": "of Craftmanship"
         },
         {
+            "id": 680,
             "n": "of Quality"
         },
         {
+            "id": 681,
             "n": "of Craftmanship"
         },
         {
+            "id": 682,
             "n": "of Blight"
         },
         {
+            "id": 683,
             "n": "of Venom"
         },
         {
+            "id": 684,
             "n": "of Pestilence"
         },
         {
+            "id": 685,
             "n": "of Anthrax"
         },
         {
+            "id": 686,
             "n": "of Blight"
         },
         {
+            "id": 687,
             "n": "of Venom"
         },
         {
+            "id": 688,
             "n": "of Pestilence",
             "tc": "dgrn"
         },
         {
+            "id": 689,
             "n": "of Anthrax",
             "tc": "dgrn"
         },
         {
+            "id": 690,
             "n": "of Blight"
         },
         {
+            "id": 691,
             "n": "of Venom"
         },
         {
+            "id": 692,
             "n": "of Pestilence",
             "tc": "dgrn"
         },
         {
+            "id": 693,
             "n": "of Anthrax",
             "tc": "dgrn"
         },
         {
+            "id": 694,
             "n": "of Frost"
         },
         {
+            "id": 695,
             "n": "of the Icicle"
         },
         {
+            "id": 696,
             "n": "of the Glacier"
         },
         {
+            "id": 697,
             "n": "of Winter"
         },
         {
+            "id": 698,
             "n": "of Frost"
         },
         {
+            "id": 699,
             "n": "of the Icicle"
         },
         {
+            "id": 700,
             "n": "of the Glacier",
             "tc": "dblu"
         },
         {
+            "id": 701,
             "n": "of Winter",
             "tc": "dblu"
         },
         {
+            "id": 702,
             "n": "of Frost"
         },
         {
+            "id": 703,
             "n": "of the Icicle"
         },
         {
+            "id": 704,
             "n": "of the Glacier",
             "tc": "dblu"
         },
         {
+            "id": 705,
             "n": "of Winter",
             "tc": "dblu"
         },
         {
+            "id": 706,
             "n": "of Flame"
         },
         {
+            "id": 707,
             "n": "of Fire"
         },
         {
+            "id": 708,
             "n": "of Burning"
         },
         {
+            "id": 709,
             "n": "of Incineration"
         },
         {
+            "id": 710,
             "n": "of Flame"
         },
         {
+            "id": 711,
             "n": "of Fire"
         },
         {
+            "id": 712,
             "n": "of Burning",
             "tc": "dred"
         },
         {
+            "id": 713,
             "n": "of Incineration",
             "tc": "dred"
         },
         {
+            "id": 714,
             "n": "of Flame"
         },
         {
+            "id": 715,
             "n": "of Fire"
         },
         {
+            "id": 716,
             "n": "of Burning",
             "tc": "dred"
         },
         {
+            "id": 717,
             "n": "of Incineration",
             "tc": "dred"
         },
         {
+            "id": 718,
             "n": "of Shock"
         },
         {
+            "id": 719,
             "n": "of Lightning"
         },
         {
+            "id": 720,
             "n": "of Thunder"
         },
         {
+            "id": 721,
             "n": "of Storms"
         },
         {
+            "id": 722,
             "n": "of Shock"
         },
         {
+            "id": 723,
             "n": "of Lightning"
         },
         {
+            "id": 724,
             "n": "of Thunder",
             "tc": "dyel"
         },
         {
+            "id": 725,
             "n": "of Storms",
             "tc": "dyel"
         },
         {
+            "id": 726,
             "n": "of Shock"
         },
         {
+            "id": 727,
             "n": "of Lightning"
         },
         {
+            "id": 728,
             "n": "of Thunder",
             "tc": "dyel"
         },
         {
+            "id": 729,
             "n": "of Storms",
             "tc": "dyel"
         },
         {
+            "id": 730,
             "n": "of Dexterity"
         },
         {
+            "id": 731,
             "n": "of Dexterity"
         },
         {
+            "id": 732,
             "n": "of Strength"
         },
         {
+            "id": 733,
             "n": "of Strength"
         },
         {
+            "id": 734,
             "n": "of Thorns"
         },
         {
+            "id": 735,
             "n": "of Frost"
         },
         {
+            "id": 736,
             "n": "of Flame"
         },
         {
+            "id": 737,
             "n": "of Blight"
         },
         {
+            "id": 738,
             "n": "of Shock"
         },
         {
+            "id": 739,
             "n": "of Regeneration"
         },
         {
+            "id": 740,
             "n": "of Energy"
         },
         {
+            "id": 741,
             "n": "of Light"
         },
         {
+            "id": 742,
             "n": "of the Leech"
         },
         {
+            "id": 743,
             "n": "of the Locust"
         },
         {
+            "id": 744,
             "n": "of the Lamprey",
             "tc": "cred"
         },
         {
+            "id": 745,
             "n": "of the Bat"
         },
         {
+            "id": 746,
             "n": "of the Wraith"
         },
         {
+            "id": 747,
             "n": "of the Vampire",
             "tc": "cred"
         },
-        {}
+        {
+            "id": 748
+        }
     ],
     "properties": {
         "ac": [
@@ -8282,7 +10396,7 @@ export let remodded_constants_99 = {
             "s": "mindamage",
             "sS": 1,
             "sB": 6,
-            "sA": 0,
+            "sA": 1,
             "so": 127,
             "dF": 19,
             "dP": "%+d to Minimum Damage",
@@ -8293,7 +10407,7 @@ export let remodded_constants_99 = {
             "s": "maxdamage",
             "sS": 1,
             "sB": 7,
-            "sA": 0,
+            "sA": 4,
             "so": 126,
             "dF": 19,
             "dP": "%+d to Maximum Damage",
@@ -8304,7 +10418,7 @@ export let remodded_constants_99 = {
             "s": "secondary_mindamage",
             "sS": 1,
             "sB": 6,
-            "sA": 0,
+            "sA": 1,
             "so": 124,
             "dF": 19,
             "dP": "%+d to Minimum Damage",
@@ -8315,7 +10429,7 @@ export let remodded_constants_99 = {
             "s": "secondary_maxdamage",
             "sS": 1,
             "sB": 7,
-            "sA": 0,
+            "sA": 4,
             "so": 123,
             "dF": 19,
             "dP": "%+d to Maximum Damage",
@@ -8338,8 +10452,8 @@ export let remodded_constants_99 = {
             "id": 27,
             "s": "manarecoverybonus",
             "sS": 1,
-            "sB": 8,
-            "sA": 0,
+            "sB": 12,
+            "sA": 200,
             "so": 52,
             "dF": 19,
             "dP": "Regenerate Mana %d%%",
@@ -8413,7 +10527,7 @@ export let remodded_constants_99 = {
             "s": "magic_damage_reduction",
             "sS": 1,
             "sB": 6,
-            "sA": 0,
+            "sA": 5,
             "so": 21,
             "dF": 19,
             "dP": "Magic Damage Reduced by %d",
@@ -8701,7 +10815,7 @@ export let remodded_constants_99 = {
             "s": "lifedrainmindam",
             "sS": 1,
             "sB": 7,
-            "sA": 0,
+            "sA": 25,
             "so": 88,
             "dF": 19,
             "dP": "%d%% Life stolen per hit",
@@ -8717,7 +10831,7 @@ export let remodded_constants_99 = {
             "s": "manadrainmindam",
             "sS": 1,
             "sB": 7,
-            "sA": 0,
+            "sA": 1,
             "so": 89,
             "dF": 19,
             "dP": "%d%% Mana stolen per hit",
@@ -8791,7 +10905,7 @@ export let remodded_constants_99 = {
             "id": 74,
             "s": "hpregen",
             "sB": 6,
-            "sA": 30,
+            "sA": 4,
             "so": 56,
             "dF": 19,
             "dP": "Replenish Life %+d",
@@ -8816,8 +10930,8 @@ export let remodded_constants_99 = {
             "id": 76,
             "s": "item_maxhp_percent",
             "sS": 1,
-            "sB": 6,
-            "sA": 10,
+            "sB": 10,
+            "sA": 99,
             "so": 58,
             "dF": 19,
             "dP": "Increase Maximum Life %d%%",
@@ -9080,7 +11194,7 @@ export let remodded_constants_99 = {
             "s": "item_fastercastrate",
             "sS": 1,
             "sB": 8,
-            "sA": 25,
+            "sA": 60,
             "so": 142,
             "dF": 19,
             "dP": "%+d%% Faster Cast Rate",
@@ -9631,14 +11745,14 @@ export let remodded_constants_99 = {
             "s": "item_throw_mindamage",
             "sS": 1,
             "sB": 6,
-            "sA": 0
+            "sA": 1
         },
         {
             "id": 160,
             "s": "item_throw_maxdamage",
             "sS": 1,
             "sB": 7,
-            "sA": 0
+            "sA": 4
         },
         {
             "id": 161,
@@ -11048,19 +13162,16 @@ export let remodded_constants_99 = {
         },
         {
             "id": 284,
-            "s": "item_resist_cold_bytime",
-            "e": 4,
-            "sS": 1,
-            "sB": 22,
-            "sA": 0,
+            "s": "item_summon_max_hp",
+            "sB": 8,
+            "sA": 32,
             "so": 180,
-            "dF": 18,
-            "dP": "Cold Resist %+d%%",
-            "dN": "Cold Resist %+d%%",
-            "o": 6,
-            "os": [
-                "coldresist"
-            ]
+            "dF": 19,
+            "dP": "Summon Max Hitpoints: %+d%%",
+            "dN": "%+d%% to All Summon Bonuses",
+            "dg": 3,
+            "dgF": 19,
+            "dgP": "%+d%% to All Summon Bonuses"
         },
         {
             "id": 285,
@@ -11080,19 +13191,13 @@ export let remodded_constants_99 = {
         },
         {
             "id": 286,
-            "s": "item_resist_ltng_bytime",
-            "e": 4,
-            "sS": 1,
+            "s": "item_reduce_cooldown",
             "sB": 9,
             "sA": 32,
-            "so": 180,
-            "dF": 18,
-            "dP": "Lightning Resist %+d%%",
-            "dN": "Lightning Resist %+d%%",
-            "o": 6,
-            "os": [
-                "lightresist"
-            ]
+            "so": 999,
+            "dF": 19,
+            "dP": "Reduce Cooldown by %d%%",
+            "dN": "Reduce Cooldown by %d%%"
         },
         {
             "id": 287,
@@ -11160,159 +13265,103 @@ export let remodded_constants_99 = {
         },
         {
             "id": 291,
-            "s": "item_absorb_pois_bytime",
-            "e": 4,
-            "sS": 1,
-            "sB": 22,
-            "sA": 0,
-            "o": 6,
-            "os": [
-                "item_absorbmagic"
-            ]
+            "s": "bag_gems",
+            "sB": 32,
+            "sA": 1000,
+            "so": 999,
+            "dF": 19,
+            "dP": "Gems: %d",
+            "dN": "Gems: %d",
         },
         {
             "id": 292,
-            "s": "item_find_gold_bytime",
-            "e": 4,
-            "sS": 1,
-            "sB": 22,
-            "sA": 0,
-            "so": 180,
-            "dF": 18,
-            "dP": "%d%% Extra Gold from Monsters",
-            "dN": "%d%% Extra Gold from Monsters",
-            "o": 6,
-            "os": [
-                "item_goldbonus"
-            ]
+            "s": "bag_low_runes",
+            "sB": 32,
+            "sA": 8437760,
+            "so": 999,
+            "dF": 19,
+            "dP": "Low rune points: %d",
+            "dN": "Low rune points: %d"
         },
         {
             "id": 293,
-            "s": "item_find_magic_bytime",
-            "e": 4,
-            "sS": 1,
-            "sB": 22,
-            "sA": 0,
-            "so": 180,
-            "dF": 18,
-            "dP": "%d%% Better Chance of Getting Magic Items",
-            "dN": "%d%% Better Chance of Getting Magic Items",
-            "o": 6,
-            "os": [
-                "item_magicbonus"
-            ]
+            "s": "bag_mid_runes",
+            "sB": 32,
+            "sA": 1077985280,
+            "so": 999,
+            "dF": 19,
+            "dP": "Mid rune points: %d",
+            "dN": "Mid rune points: %d"
         },
         {
             "id": 294,
-            "s": "item_regenstamina_bytime",
-            "e": 4,
-            "sS": 1,
-            "sB": 22,
-            "sA": 0,
-            "so": 180,
-            "dF": 18,
-            "dP": "Heal Stamina Plus %d%%",
-            "dN": "Heal Stamina Plus %d%%",
-            "o": 6,
-            "os": [
-                "staminarecoverybonus"
-            ]
+            "s": "bag_high_runes",
+            "sB": 32,
+            "sA": 536920064,
+            "so": 999,
+            "dF": 19,
+            "dP": "High rune points: %d",
+            "dN": "High rune points: %d"
         },
         {
             "id": 295,
-            "s": "item_stamina_bytime",
-            "e": 4,
-            "sS": 1,
-            "sB": 22,
-            "sA": 0,
-            "so": 180,
-            "dF": 17,
-            "dP": "%+d Maximum Stamina",
-            "dN": "%+d Maximum Stamina",
-            "o": 6,
-            "os": [
-                "maxstamina"
-            ]
+            "s": "bag_terror_keys",
+            "sB": 16,
+            "sA": 49152,
+            "so": 999,
+            "dF": 19,
+            "dP": "Terror keys: %d",
+            "dN": "Terror keys: %d"
         },
         {
             "id": 296,
-            "s": "item_damage_demon_bytime",
-            "e": 4,
-            "sS": 1,
-            "sB": 22,
-            "sA": 0,
-            "so": 180,
-            "dF": 18,
-            "dP": "%+d%% Damage to Demons",
-            "dN": "%+d%% Damage to Demons",
-            "o": 6,
-            "os": [
-                "item_demondamage_percent"
-            ]
+            "s": "bag_hate_keys",
+            "sB": 16,
+            "sA": 51200,
+            "so": 999,
+            "dF": 19,
+            "dP": "Hate keys: %d",
+            "dN": "Hate keys: %d"
         },
         {
             "id": 297,
-            "s": "item_damage_undead_bytime",
-            "e": 4,
-            "sS": 1,
-            "sB": 22,
-            "sA": 0,
-            "so": 180,
-            "dF": 18,
-            "dP": "%+d%% Damage to Undead",
-            "dN": "%+d%% Damage to Undead",
-            "o": 6,
-            "os": [
-                "item_undeaddamage_percent"
-            ]
+            "s": "bag_dest_keys",
+            "sB": 16,
+            "sA": 50176,
+            "so": 999,
+            "dF": 19,
+            "dP": "Destruction keys: %d",
+            "dN": "Destruction keys: %d"
         },
         {
             "id": 298,
-            "s": "item_tohit_demon_bytime",
-            "e": 4,
-            "sS": 1,
-            "sB": 22,
-            "sA": 0,
-            "so": 180,
-            "dF": 17,
-            "dP": "%+d to Attack Rating against Demons",
-            "dN": "%+d to Attack Rating against Demons",
-            "o": 6,
-            "os": [
-                "item_demon_tohit"
-            ]
+            "s": "bag_diablo_horns",
+            "sB": 16,
+            "sA": 49664,
+            "so": 999,
+            "dF": 19,
+            "dP": "Diablo's Horn: %d",
+            "dN": "Diablo's Horn: %d"
         },
         {
             "id": 299,
-            "s": "item_tohit_undead_bytime",
-            "e": 4,
-            "sS": 1,
-            "sB": 22,
-            "sA": 0,
-            "so": 180,
-            "dF": 17,
-            "dP": "%+d to Attack Rating against Undead",
-            "dN": "%+d to Attack Rating against Undead",
-            "o": 6,
-            "os": [
-                "item_undead_tohit"
-            ]
+            "s": "bag_baal_eyes",
+            "sB": 16,
+            "sA": 49408,
+            "so": 999,
+            "dF": 19,
+            "dP": "Baal's Eye: %d",
+            "dN": "Baal's Eye: %d"
         },
         {
             "id": 300,
-            "s": "item_crushingblow_bytime",
-            "e": 4,
-            "sS": 1,
-            "sB": 22,
-            "sA": 0,
-            "so": 180,
-            "dF": 18,
-            "dP": "%+d%% Chance of Crushing Blow",
-            "dN": "%+d%% Chance of Crushing Blow",
-            "o": 6,
-            "os": [
-                "item_crushingblow"
-            ]
+            "s": "bag_mephisto_brains",
+            "sB": 16,
+            "sA": 49280,
+            "so": 999,
+            "dF": 19,
+            "dP": "Mephisto's Brain: %d",
+            "dN": "Mephisto's Brain: %d"
         },
         {
             "id": 301,
@@ -11726,10 +13775,13 @@ export let remodded_constants_99 = {
         },
         {
             "id": 357,
-            "s": "passive_mag_mastery",
-            "sS": 1,
-            "sB": 9,
-            "sA": 50
+            "s": "item_damage_magic_sk",
+            "sB": 8,
+            "sA": 0,
+            "so": 100,
+            "dF": 19,
+            "dP": "%+d%% to magic skill damages",
+            "dN": "%+d%% to magic skill damages"
         },
         {
             "id": 358,
@@ -11755,6 +13807,88 @@ export let remodded_constants_99 = {
         null,
         null,
         null,
+        null, // 370
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+            "id": 377,
+            "s": "unsocket_recipe_consumed",
+            "sB": 1,
+            "sA": 0
+        },
+        null,
+        null,
+        null, // 380
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+            "id": 386,
+            "s": "bag_unique_cores",
+            "sB": 11,
+            "sA": 28,
+            "so": 999,
+            "dF": 19,
+            "dP": "Unique cores: %d",
+            "dN": "Unique cores: %d"
+        },
+        null,
+        null,
+        null,
+        null, // 390
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+            "id": 396,
+            "s": "item_mana_onhit",
+            "sB": 12,
+            "sA": 0,
+            "so": 999,
+            "dF": 19,
+            "dP": "Mana on hit: %+d",
+            "dN": "Mana on hit: %+d"
+        },
+        {
+            "id": 397,
+            "s": "item_life_onhit",
+            "sB": 12,
+            "sA": 0,
+            "so": 999,
+            "dF": 19,
+            "dP": "Life on hit: %+d",
+            "dN": "Life on hit: %+d"
+        },
+        {
+            "id": 398,
+            "s": "item_required_level",
+            "sB": 11,
+            "sA": 10,
+            "so": 999,
+            "dF": 19,
+            "dP": "Required level: %d%%",
+            "dN": "Required level: %d%%"
+        },
+        null,
+        null, // 400
+        null,
+        null,
+        null,
+        null, // 404, Increase Maul max leech by XX %, sB = 4 to 16, sA = 0
+        null, // 405, Increase Feral Rage max leech by XX %, sB = 4 to 16, sA = 0
+        null,
+        null,
+        null,
+        null,
+        null, // 410
         null,
         null,
         null,
@@ -11764,6 +13898,7 @@ export let remodded_constants_99 = {
         null,
         null,
         null,
+        null, // 420
         null,
         null,
         null,
@@ -11773,7 +13908,167 @@ export let remodded_constants_99 = {
         null,
         null,
         null,
+        null, // 430
         null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 440
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 450
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 460
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 470
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 480
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 490
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 500
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 510
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 520
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 530
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 540
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 550
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 560
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 570
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 580
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 590
         null,
         null,
         null,
@@ -11784,10 +14079,115 @@ export let remodded_constants_99 = {
         null,
         null,
         {
-            "id": 398,
-            "s": "jewel_levelreq",
-            "sB": 11
-        }
+            "id": 600,
+            "s": "bag_set_cores",
+            "sB": 11,
+            "sA": 30,
+            "so": 999,
+            "dF": 19,
+            "dP": "Set cores: %d",
+            "dN": "Set cores: %d"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 610
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 620
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 630
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 640
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 650
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 660
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 670
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 680
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 690
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 700
     ],
     "runewords": [
         null,
@@ -11818,1156 +14218,1460 @@ export let remodded_constants_99 = {
         null,
         null,
         {
+            "id": 27,
             "n": "Ancients' Pledge"
         },
         {
+            "id": 28,
             "n": "Armageddon"
         },
         {
+            "id": 29,
             "n": "Authority"
         },
         {
+            "id": 30,
             "n": "Beast"
         },
         {
+            "id": 31,
             "n": "Beauty"
         },
         {
+            "id": 32,
             "n": "Black"
         },
         {
+            "id": 33,
             "n": "Blood"
         },
         {
+            "id": 34,
             "n": "Bone"
         },
         {
+            "id": 35,
             "n": "Bramble"
         },
         {
+            "id": 36,
             "n": "Brand"
         },
         {
+            "id": 37,
             "n": "Breath of the Dying"
         },
         {
+            "id": 38,
             "n": "Broken Promise"
         },
         {
+            "id": 39,
             "n": "Call to Arms"
         },
         {
+            "id": 40,
             "n": "Chains of Honor"
         },
         {
+            "id": 41,
             "n": "Chance"
         },
         {
+            "id": 42,
             "n": "Chaos"
         },
         {
+            "id": 43,
             "n": "Crescent Moon"
         },
         {
+            "id": 44,
             "n": "Darkness"
         },
         {
+            "id": 45,
             "n": "Daylight"
         },
         {
+            "id": 46,
             "n": "Death"
         },
         {
+            "id": 47,
             "n": "Deception"
         },
         {
+            "id": 48,
             "n": "Delirium"
         },
         {
+            "id": 49,
             "n": "Desire"
         },
         {
+            "id": 50,
             "n": "Despair"
         },
         {
+            "id": 51,
             "n": "Destruction"
         },
         {
+            "id": 52,
             "n": "Doom"
         },
         {
+            "id": 53,
             "n": "Dragon"
         },
         {
+            "id": 54,
             "n": "Dread"
         },
         {
+            "id": 55,
             "n": "Dream"
         },
         {
+            "id": 56,
             "n": "Duress"
         },
         {
+            "id": 57,
             "n": "Edge"
         },
         {
+            "id": 58,
             "n": "Elation"
         },
         {
+            "id": 59,
             "n": "Enigma"
         },
         {
+            "id": 60,
             "n": "Enlightenment"
         },
         {
+            "id": 61,
             "n": "Envy"
         },
         {
+            "id": 62,
             "n": "Eternity"
         },
         {
+            "id": 63,
             "n": "Exile"
         },
         {
+            "id": 64,
             "n": "Faith"
         },
         {
+            "id": 65,
             "n": "Famine"
         },
         {
+            "id": 66,
             "n": "Flickering Flame"
         },
         {
+            "id": 67,
             "n": "Fortitude"
         },
         {
+            "id": 68,
             "n": "Fortune"
         },
         {
+            "id": 69,
             "n": "Friendship"
         },
         {
+            "id": 70,
             "n": "Fury"
         },
         {
+            "id": 71,
             "n": "Gloom"
         },
         {
+            "id": 72,
             "n": "Glory"
         },
         {
+            "id": 73,
             "n": "Grief"
         },
         {
+            "id": 74,
             "n": "Hand of Justice"
         },
         {
+            "id": 75,
             "n": "Harmony"
         },
         {
+            "id": 76,
             "n": "Hatred"
         },
         {
+            "id": 77,
             "n": "Heart of the Oak"
         },
         {
+            "id": 78,
             "n": "Heaven's Will"
         },
         {
+            "id": 79,
             "n": "Holy Tears"
         },
         {
+            "id": 80,
             "n": "Holy Thunder"
         },
         {
+            "id": 81,
             "n": "Honor"
         },
         {
+            "id": 82,
             "n": "Revenge"
         },
         {
+            "id": 83,
             "n": "Humility"
         },
         {
+            "id": 84,
             "n": "Hunger"
         },
         {
+            "id": 85,
             "n": "Ice"
         },
         {
+            "id": 86,
             "n": "Infinity"
         },
         {
+            "id": 87,
             "n": "Innocence"
         },
         {
+            "id": 88,
             "n": "Insight"
         },
         {
+            "id": 89,
             "n": "Jealousy"
         },
         {
+            "id": 90,
             "n": "Judgement"
         },
         {
+            "id": 91,
             "n": "King's Grace"
         },
         {
+            "id": 92,
             "n": "Kingslayer"
         },
         {
+            "id": 93,
             "n": "Knight's Vigil"
         },
         {
+            "id": 94,
             "n": "Knowledge"
         },
         {
+            "id": 95,
             "n": "Last Wish"
         },
         {
+            "id": 96,
             "n": "Law"
         },
         {
+            "id": 97,
             "n": "Lawbringer"
         },
         {
+            "id": 98,
             "n": "Leaf"
         },
         {
+            "id": 99,
             "n": "Lightning"
         },
         {
+            "id": 100,
             "n": "Lionheart"
         },
         {
+            "id": 101,
             "n": "Love"
         },
         {
+            "id": 102,
             "n": "Loyalty"
         },
         {
+            "id": 103,
             "n": "Lust"
         },
         {
+            "id": 104,
             "n": "Madness"
         },
         null,
         {
+            "id": 106,
             "n": "Malice"
         },
         {
+            "id": 107,
             "n": "Melody"
         },
         {
+            "id": 108,
             "n": "Memory"
         },
         {
+            "id": 109,
             "n": "Mist"
         },
         {
+            "id": 110,
             "n": "Morning"
         },
         {
+            "id": 111,
             "n": "Mystery"
         },
         {
+            "id": 112,
             "n": "Myth"
         },
         {
+            "id": 113,
             "n": "Nadir"
         },
         {
+            "id": 114,
             "n": "Nature's Kingdom"
         },
         {
+            "id": 115,
             "n": "Night"
         },
         {
+            "id": 116,
             "n": "Oath"
         },
         {
+            "id": 117,
             "n": "Obedience"
         },
         {
+            "id": 118,
             "n": "Oblivion"
         },
         {
+            "id": 119,
             "n": "Obsession"
         },
         {
+            "id": 120,
             "n": "Passion"
         },
         {
+            "id": 121,
             "n": "Patience"
         },
         {
+            "id": 122,
             "n": "Pattern"
         },
         {
+            "id": 123,
             "n": "Peace"
         },
         {
+            "id": 124,
             "n": "Voice of Reason"
         },
         {
+            "id": 125,
             "n": "Penitence"
         },
         {
+            "id": 126,
             "n": "Peril"
         },
         {
+            "id": 127,
             "n": "Pestilence"
         },
         {
+            "id": 128,
             "n": "Phoenix"
         },
         {
+            "id": 129,
             "n": "Piety"
         },
         {
+            "id": 130,
             "n": "Pillar of Faith"
         },
         {
+            "id": 131,
             "n": "Plague"
         },
         {
+            "id": 132,
             "n": "Praise"
         },
         {
+            "id": 133,
             "n": "Prayer"
         },
         {
+            "id": 134,
             "n": "Pride"
         },
         {
+            "id": 135,
             "n": "Principle"
         },
         {
+            "id": 136,
             "n": "Prowess in Battle"
         },
         {
+            "id": 137,
             "n": "Prudence"
         },
         {
+            "id": 138,
             "n": "Punishment"
         },
         {
+            "id": 139,
             "n": "Purity"
         },
         {
+            "id": 140,
             "n": "Question"
         },
         {
+            "id": 141,
             "n": "Radiance"
         },
         {
+            "id": 142,
             "n": "Rain"
         },
         {
+            "id": 143,
             "n": "Reason"
         },
         {
+            "id": 144,
             "n": "Red"
         },
         {
+            "id": 145,
             "n": "Rhyme"
         },
         {
+            "id": 146,
             "n": "Rift"
         },
         {
+            "id": 147,
             "n": "Sanctuary"
         },
         {
+            "id": 148,
             "n": "Serendipity"
         },
         {
+            "id": 149,
             "n": "Shadow"
         },
         {
+            "id": 150,
             "n": "Shadow of Doubt"
         },
         {
+            "id": 151,
             "n": "Silence"
         },
         {
+            "id": 152,
             "n": "Siren's Song"
         },
         {
+            "id": 153,
             "n": "Smoke"
         },
         {
+            "id": 154,
             "n": "Sorrow"
         },
         {
+            "id": 155,
             "n": "Spirit"
         },
         {
+            "id": 156,
             "n": "Splendor"
         },
         {
+            "id": 157,
             "n": "Starlight"
         },
         {
+            "id": 158,
             "n": "Stealth"
         },
         {
+            "id": 159,
             "n": "Steel"
         },
         {
+            "id": 160,
             "n": "Still Water"
         },
         {
+            "id": 161,
             "n": "Sting"
         },
         {
+            "id": 162,
             "n": "Stone"
         },
         {
+            "id": 163,
             "n": "Storm"
         },
         {
+            "id": 164,
             "n": "Strength"
         },
         {
+            "id": 165,
             "n": "Tempest"
         },
         {
+            "id": 166,
             "n": "Temptation"
         },
         {
+            "id": 167,
             "n": "Terror"
         },
         {
+            "id": 168,
             "n": "Thirst"
         },
         {
+            "id": 169,
             "n": "Thought"
         },
         {
+            "id": 170,
             "n": "Thunder"
         },
         {
+            "id": 171,
             "n": "Time"
         },
         {
+            "id": 172,
             "n": "Tradition"
         },
         {
+            "id": 173,
             "n": "Treachery"
         },
         {
+            "id": 174,
             "n": "Trust"
         },
         {
+            "id": 175,
             "n": "Truth"
         },
         {
+            "id": 176,
             "n": "Unbending Will"
         },
         {
+            "id": 177,
             "n": "Valor"
         },
         {
+            "id": 178,
             "n": "Vengeance"
         },
         {
+            "id": 179,
             "n": "Venom"
         },
         {
+            "id": 180,
             "n": "Victory"
         },
         {
+            "id": 181,
             "n": "Voice"
         },
         {
+            "id": 182,
             "n": "Void"
         },
         {
+            "id": 183,
             "n": "War"
         },
         {
+            "id": 184,
             "n": "Water"
         },
         {
+            "id": 185,
             "n": "Wealth"
         },
         {
+            "id": 186,
             "n": "Whisper"
         },
         {
+            "id": 187,
             "n": "White"
         },
         {
+            "id": 188,
             "n": "Wind"
         },
         {
+            "id": 189,
             "n": "Wings of Hope"
         },
         {
+            "id": 190,
             "n": "Wisdom"
         },
         {
+            "id": 191,
             "n": "Woe"
         },
         {
+            "id": 192,
             "n": "Wonder"
         },
         {
+            "id": 193,
             "n": "Wrath"
         },
         {
+            "id": 194,
             "n": "Youth"
         },
         {
+            "id": 195,
             "n": "Zephyr"
         },
         {
+            "id": 196,
             "n": "Hustle"
         },
         {
+            "id": 197,
             "n": "Hustle"
         },
         {
+            "id": 198,
             "n": "Mosaic"
         },
         {
+            "id": 199,
             "n": "Metamorphosis"
         },
         {
+            "id": 200,
             "n": "Ground"
         },
         {
+            "id": 201,
             "n": "Temper"
         },
         {
+            "id": 202,
             "n": "Hearth"
         },
         {
+            "id": 203,
             "n": "Cure"
         },
         {
+            "id": 204,
             "n": "Bulwark"
         }
     ],
     "set_items": [
         {
+            "id": 0,
             "n": "Civerb's Ward",
             "c": "lrg",
             "tc": "lyel"
         },
         {
+            "id": 1,
             "n": "Civerb's Icon",
             "c": "amu",
             "tc": "lyel"
         },
         {
+            "id": 2,
             "n": "Civerb's Cudgel",
             "c": "gsc",
             "tc": "lyel"
         },
         {
+            "id": 3,
             "n": "Hsarus' Iron Heel",
             "c": "mbt",
             "tc": "dred"
         },
         {
+            "id": 4,
             "n": "Hsarus' Iron Fist",
             "c": "buc",
             "tc": "dred"
         },
         {
+            "id": 5,
             "n": "Hsarus' Iron Stay",
             "c": "mbl",
             "tc": "dred"
         },
         {
+            "id": 6,
             "n": "Cleglaw's Tooth",
             "c": "lsd",
             "tc": "lred"
         },
         {
+            "id": 7,
             "n": "Cleglaw's Claw",
             "c": "sml",
             "tc": "lred"
         },
         {
+            "id": 8,
             "n": "Cleglaw's Pincers",
             "c": "mgl",
             "tc": "lred"
         },
         {
+            "id": 9,
             "n": "Iratha's Collar",
             "c": "amu",
             "tc": "lgry"
         },
         {
+            "id": 10,
             "n": "Iratha's Cuff",
             "c": "tgl",
             "tc": "lgry"
         },
         {
+            "id": 11,
             "n": "Iratha's Coil",
             "c": "crn",
             "tc": "lgry"
         },
         {
+            "id": 12,
             "n": "Iratha's Cord",
             "c": "tbl",
             "tc": "lgry"
         },
         {
+            "id": 13,
             "n": "Isenhart's Lightbrand",
             "c": "bsd",
             "tc": "lgld"
         },
         {
+            "id": 14,
             "n": "Isenhart's Parry",
             "c": "gts",
             "tc": "lgld"
         },
         {
+            "id": 15,
             "n": "Isenhart's Case",
             "c": "brs",
             "tc": "lgld"
         },
         {
+            "id": 16,
             "n": "Isenhart's Horns",
             "c": "fhl",
             "tc": "lgld"
         },
         {
+            "id": 17,
             "n": "Vidala's Barb",
             "c": "lbb",
             "tc": "blac"
         },
         {
+            "id": 18,
             "n": "Vidala's Fetlock",
             "c": "tbt",
             "tc": "blac"
         },
         {
+            "id": 19,
             "n": "Vidala's Ambush",
             "c": "lea",
             "tc": "blac"
         },
         {
+            "id": 20,
             "n": "Vidala's Snare",
             "c": "amu",
             "tc": "blac"
         },
         {
+            "id": 21,
             "n": "Milabrega's Orb",
             "c": "kit",
             "tc": "dblu"
         },
         {
+            "id": 22,
             "n": "Milabrega's Rod",
             "c": "wsp",
             "tc": "dblu"
         },
         {
+            "id": 23,
             "n": "Milabrega's Diadem",
             "c": "crn",
             "tc": "dblu"
         },
         {
+            "id": 24,
             "n": "Milabrega's Robe",
             "c": "aar",
             "tc": "dblu"
         },
         {
+            "id": 25,
             "n": "Cathan's Rule",
             "c": "bst",
             "tc": "dgrn"
         },
         {
+            "id": 26,
             "n": "Cathan's Mesh",
             "c": "chn",
             "tc": "dgrn"
         },
         {
+            "id": 27,
             "n": "Cathan's Visage",
             "c": "msk",
             "tc": "dgrn"
         },
         {
+            "id": 28,
             "n": "Cathan's Sigil",
             "c": "amu",
             "tc": "dgrn"
         },
         {
+            "id": 29,
             "n": "Cathan's Seal",
             "c": "rin",
             "tc": "dgrn"
         },
         {
+            "id": 30,
             "n": "Tancred's Crowbill",
             "c": "mpi",
             "tc": "dgld"
         },
         {
+            "id": 31,
             "n": "Tancred's Spine",
             "c": "ful",
             "tc": "dgld"
         },
         {
+            "id": 32,
             "n": "Tancred's Hobnails",
             "c": "lbt",
             "tc": "dgld"
         },
         {
+            "id": 33,
             "n": "Tancred's Weird",
             "c": "amu",
             "tc": "dgld"
         },
         {
+            "id": 34,
             "n": "Tancred's Skull",
             "c": "bhm",
             "tc": "dgld"
         },
         {
+            "id": 35,
             "n": "Sigon's Gage",
             "c": "hgl",
             "tc": "whit"
         },
         {
+            "id": 36,
             "n": "Sigon's Visor",
             "c": "ghm",
             "tc": "whit"
         },
         {
+            "id": 37,
             "n": "Sigon's Shelter",
             "c": "gth",
             "tc": "whit"
         },
         {
+            "id": 38,
             "n": "Sigon's Sabot",
             "c": "hbt",
             "tc": "whit"
         },
         {
+            "id": 39,
             "n": "Sigon's Wrap",
             "c": "hbl",
             "tc": "whit"
         },
         {
+            "id": 40,
             "n": "Sigon's Guard",
             "c": "tow",
             "tc": "whit"
         },
         {
+            "id": 41,
             "n": "Infernal Cranium",
             "c": "cap",
             "tc": "lyel"
         },
         {
+            "id": 42,
             "n": "Infernal Torch",
             "c": "gwn",
             "tc": "lyel"
         },
         {
+            "id": 43,
             "n": "Infernal Sign",
             "c": "tbl",
             "tc": "lyel"
         },
         {
+            "id": 44,
             "n": "Berserker's Headgear",
             "c": "hlm",
             "tc": "dred"
         },
         {
+            "id": 45,
             "n": "Berserker's Hauberk",
             "c": "spl",
             "tc": "dred"
         },
         {
+            "id": 46,
             "n": "Berserker's Hatchet",
             "c": "2ax",
             "tc": "dred"
         },
         {
+            "id": 47,
             "n": "Death's Hand",
             "c": "lgl",
             "tc": "lred"
         },
         {
+            "id": 48,
             "n": "Death's Guard",
             "c": "lbl",
             "tc": "lred"
         },
         {
+            "id": 49,
             "n": "Death's Touch",
             "c": "wsd",
             "tc": "lred"
         },
         {
+            "id": 50,
             "n": "Angelic Sickle",
             "c": "sbr",
             "tc": "lgry"
         },
         {
+            "id": 51,
             "n": "Angelic Mantle",
             "c": "rng",
             "tc": "lgry"
         },
         {
+            "id": 52,
             "n": "Angelic Halo",
             "c": "rin",
             "tc": "lgry"
         },
         {
+            "id": 53,
             "n": "Angelic Wings",
             "c": "amu",
             "tc": "lgry"
         },
         {
+            "id": 54,
             "n": "Arctic Horn",
             "c": "swb",
             "tc": "lgld"
         },
         {
+            "id": 55,
             "n": "Arctic Furs",
             "c": "qui",
             "tc": "lgld"
         },
         {
+            "id": 56,
             "n": "Arctic Binding",
             "c": "vbl",
             "tc": "lgld"
         },
         {
+            "id": 57,
             "n": "Arctic Mitts",
             "c": "tgl",
             "tc": "lgld"
         },
         {
+            "id": 58,
             "n": "Arcanna's Sign",
             "c": "amu",
             "tc": "blac"
         },
         {
+            "id": 59,
             "n": "Arcanna's Deathwand",
             "c": "wst",
             "tc": "blac"
         },
         {
+            "id": 60,
             "n": "Arcanna's Head",
             "c": "skp",
             "tc": "blac"
         },
         {
+            "id": 61,
             "n": "Arcanna's Flesh",
             "c": "ltp",
             "tc": "blac"
         },
         {
+            "id": 62,
             "n": "Natalya's Totem",
             "c": "xh9",
             "tc": "dgry"
         },
         {
+            "id": 63,
             "n": "Natalya's Mark",
             "c": "7qr",
             "tc": "dgry"
         },
         {
+            "id": 64,
             "n": "Natalya's Shadow",
             "c": "ucl",
             "tc": "dgry"
         },
         {
+            "id": 65,
             "n": "Natalya's Soul",
             "c": "xmb",
             "tc": "dgry"
         },
         {
+            "id": 66,
             "n": "Aldur's Stony Gaze",
             "c": "dr8",
             "tc": "oran"
         },
         {
+            "id": 67,
             "n": "Aldur's Deception",
             "c": "uul",
             "tc": "oran"
         },
         {
+            "id": 68,
             "n": "Aldur's Rhythm",
             "c": "9mt",
             "tc": "oran"
         },
         {
+            "id": 69,
             "n": "Aldur's Advance",
             "c": "xtb",
             "tc": "oran"
         },
         {
+            "id": 70,
             "n": "Immortal King's Will",
             "c": "ba5",
             "tc": "lgry"
         },
         {
+            "id": 71,
             "n": "Immortal King's Soul Cage",
             "c": "uar",
             "tc": "lgry"
         },
         {
+            "id": 72,
             "n": "Immortal King's Detail",
             "c": "zhb",
             "tc": "lgry"
         },
         {
+            "id": 73,
             "n": "Immortal King's Forge",
             "c": "xhg",
             "tc": "lgry"
         },
         {
+            "id": 74,
             "n": "Immortal King's Pillar",
             "c": "xhb",
             "tc": "lgry"
         },
         {
+            "id": 75,
             "n": "Immortal King's Stone Crusher",
             "c": "7m7",
             "tc": "lgry"
         },
         {
+            "id": 76,
             "n": "Tal Rasha's Fine-Spun Cloth",
             "c": "zmb",
             "tc": "dpur"
         },
         {
+            "id": 77,
             "n": "Tal Rasha's Adjudication",
             "c": "amu",
             "tc": "dpur"
         },
         {
+            "id": 78,
             "n": "Tal Rasha's Lidless Eye",
             "c": "oba",
             "tc": "dpur"
         },
         {
+            "id": 79,
             "n": "Tal Rasha's Guardianship",
             "c": "uth",
             "tc": "dpur"
         },
         {
+            "id": 80,
             "n": "Tal Rasha's Horadric Crest",
             "c": "xsk",
             "tc": "dpur"
         },
         {
+            "id": 81,
             "n": "Griswold's Valor",
             "c": "urn",
             "tc": "dgld"
         },
         {
+            "id": 82,
             "n": "Griswold's Heart",
             "c": "xar",
             "tc": "dgld"
         },
         {
+            "id": 83,
             "n": "Griswold's Redemption",
             "c": "7ws",
             "tc": "dgld"
         },
         {
+            "id": 84,
             "n": "Griswold's Honor",
             "c": "paf",
             "tc": "dgld"
         },
         {
+            "id": 85,
             "n": "Trang-Oul's Guise",
             "c": "uh9",
             "tc": "dgld"
         },
         {
+            "id": 86,
             "n": "Trang-Oul's Scales",
             "c": "xul",
             "tc": "dyel"
         },
         {
+            "id": 87,
             "n": "Trang-Oul's Wing",
             "c": "ne9",
             "tc": "dyel"
         },
         {
+            "id": 88,
             "n": "Trang-Oul's Claws",
             "c": "xmg",
             "tc": "dyel"
         },
         {
+            "id": 89,
             "n": "Trang-Oul's Girth",
             "c": "utc",
             "tc": "dyel"
         },
         {
+            "id": 90,
             "n": "M'avina's True Sight",
             "c": "ci3",
             "tc": "whit"
         },
         {
+            "id": 91,
             "n": "M'avina's Embrace",
             "c": "uld",
             "tc": "whit"
         },
         {
+            "id": 92,
             "n": "M'avina's Icy Clutch",
             "c": "xtg",
             "tc": "whit"
         },
         {
+            "id": 93,
             "n": "M'avina's Tenet",
             "c": "zvb",
             "tc": "whit"
         },
         {
+            "id": 94,
             "n": "M'avina's Caster",
             "c": "amc",
             "tc": "whit"
         },
         {
+            "id": 95,
             "n": "Telling of Beads",
             "c": "amu",
             "tc": "lblu"
         },
         {
+            "id": 96,
             "n": "Laying of Hands",
             "c": "ulg",
             "tc": "lblu"
         },
         {
+            "id": 97,
             "n": "Rite of Passage",
             "c": "xlb",
             "tc": "lblu"
         },
         {
+            "id": 98,
             "n": "Dark Adherent",
             "c": "uui",
             "tc": "lblu"
         },
         {
+            "id": 99,
             "n": "Credendum",
             "c": "umc",
             "tc": "lblu"
         },
         {
+            "id": 100,
             "n": "Dangoon's Teaching",
             "c": "7ma"
         },
         {
+            "id": 101,
             "n": "Taebaek's Glory",
             "c": "uts"
         },
         {
+            "id": 102,
             "n": "Haemosu's Adamant",
             "c": "xrs"
         },
         {
+            "id": 103,
             "n": "Ondal's Almighty",
             "c": "uhm"
         },
         {
+            "id": 104,
             "n": "Guillaume's Face",
             "c": "xhm",
             "tc": "lgry"
         },
         {
+            "id": 105,
             "n": "Wilhelm's Pride",
             "c": "ztb",
             "tc": "lgry"
         },
         {
+            "id": 106,
             "n": "Magnus' Skin",
             "c": "xvg",
             "tc": "lgry"
         },
         {
+            "id": 107,
             "n": "Whitstan's Guard",
             "c": "xml",
             "tc": "lgry"
         },
         {
+            "id": 108,
             "n": "Hwanin's Splendor",
             "c": "xrn"
         },
         {
+            "id": 109,
             "n": "Hwanin's Refuge",
             "c": "xcl"
         },
         {
+            "id": 110,
             "n": "Hwanin's Blessing",
             "c": "mbl"
         },
         {
+            "id": 111,
             "n": "Hwanin's Justice",
             "c": "9vo"
         },
         {
+            "id": 112,
             "n": "Sazabi's Cobalt Redeemer",
             "c": "7ls",
             "tc": "dblu"
         },
         {
+            "id": 113,
             "n": "Sazabi's Ghost Liberator",
             "c": "upl",
             "tc": "dblu"
         },
         {
+            "id": 114,
             "n": "Sazabi's Mental Sheath",
             "c": "xhl",
             "tc": "dblu"
         },
         {
+            "id": 115,
             "n": "Bul-Kathos' Sacred Charge",
             "c": "7gd",
             "tc": "dgrn"
         },
         {
+            "id": 116,
             "n": "Bul-Kathos' Tribal Guardian",
             "c": "7wd",
             "tc": "dgrn"
         },
         {
+            "id": 117,
             "n": "Cow King's Horns",
             "c": "xap"
         },
         {
+            "id": 118,
             "n": "Cow King's Hide",
             "c": "stu"
         },
         {
+            "id": 119,
             "n": "Cow King's Hooves",
             "c": "vbt"
         },
         {
+            "id": 120,
             "n": "Naj's Puzzler",
             "c": "6cs"
         },
         {
+            "id": 121,
             "n": "Naj's Light Plate",
             "c": "ult"
         },
         {
+            "id": 122,
             "n": "Naj's Circlet",
             "c": "ci0"
         },
         {
+            "id": 123,
             "n": "Sander's Paragon",
             "c": "cap",
             "tc": "lpur"
         },
         {
+            "id": 124,
             "n": "Sander's Riprap",
             "c": "vbt",
             "tc": "lpur"
         },
         {
+            "id": 125,
             "n": "Sander's Taboo",
             "c": "vgl",
             "tc": "lpur"
         },
         {
+            "id": 126,
             "n": "Sander's Superstition",
             "c": "bwn",
             "tc": "lpur"
@@ -12975,1970 +15679,2378 @@ export let remodded_constants_99 = {
     ],
     "unq_items": [
         {
+            "id": 0,
             "n": "The Gnasher",
             "i": "invhaxu",
             "c": "hax"
         },
         {
+            "id": 1,
             "n": "Deathspade",
             "i": "invaxeu",
             "c": "axe"
         },
         {
+            "id": 2,
             "n": "Bladebone",
             "c": "2ax",
             "tc": "lgry"
         },
         {
+            "id": 3,
             "n": "Skull Splitter",
             "i": "invmpiu",
             "c": "mpi"
         },
         {
+            "id": 4,
             "n": "Rakescar",
             "c": "wax",
             "tc": "dgry"
         },
         {
+            "id": 5,
             "n": "Axe of Fechmar",
             "c": "lax",
             "tc": "lpur"
         },
         {
+            "id": 6,
             "n": "Goreshovel",
             "c": "bax",
             "tc": "dpur"
         },
         {
+            "id": 7,
             "n": "The Chieftain",
             "i": "invbtxu",
             "c": "btx"
         },
         {
+            "id": 8,
             "n": "Brainhew",
             "i": "invgaxu",
             "c": "gax"
         },
         {
+            "id": 9,
             "n": "Humongous",
             "c": "gix",
             "tc": "blac"
         },
         {
+            "id": 10,
             "n": "Torch of Iro",
             "i": "invwndu",
             "c": "wnd"
         },
         {
+            "id": 11,
             "n": "Maelstrom",
             "c": "ywn",
             "tc": "dblu"
         },
         {
+            "id": 12,
             "n": "Gravenspine",
             "i": "invbwnu",
             "c": "bwn"
         },
         {
+            "id": 13,
             "n": "Ume's Lament",
             "c": "gwn",
             "tc": "lblu"
         },
         {
+            "id": 14,
             "n": "Felloak",
             "i": "invclbu",
             "c": "clb"
         },
         {
+            "id": 15,
             "n": "Knell Striker",
             "c": "scp",
             "tc": "dred"
         },
         {
+            "id": 16,
             "n": "Rusthandle",
             "c": "gsc",
             "tc": "lgld"
         },
         {
+            "id": 17,
             "n": "Stormeye",
             "c": "wsp",
             "tc": "cred"
         },
         {
+            "id": 18,
             "n": "Stoutnail",
             "i": "invspcu",
             "c": "spc"
         },
         {
+            "id": 19,
             "n": "Crushflange",
             "c": "mac",
             "tc": "blac"
         },
         {
+            "id": 20,
             "n": "Bloodrise",
             "i": "invmstu",
             "c": "mst"
         },
         {
+            "id": 21,
             "n": "The General's Tan Do Li Ga",
             "c": "fla",
             "tc": "dblu"
         },
         {
+            "id": 22,
             "n": "Ironstone",
             "c": "whm",
             "tc": "cblu"
         },
         {
+            "id": 23,
             "n": "Bonesnap",
             "i": "invmauu",
             "c": "mau"
         },
         {
+            "id": 24,
             "n": "Steeldriver",
             "i": "invgma",
             "c": "gma",
             "tc": "cgrn"
         },
         {
+            "id": 25,
             "n": "Rixot's Keen",
             "c": "ssd",
             "tc": "blac"
         },
         {
+            "id": 26,
             "n": "Blood Crescent",
             "i": "invscmu",
             "c": "scm"
         },
         {
+            "id": 27,
             "n": "Skewer of Krintiz",
             "i": "inv9sbu",
             "c": "sbr"
         },
         {
+            "id": 28,
             "n": "Gleamscythe",
             "i": "invflcu",
             "c": "flc"
         },
         {
+            "id": 29,
             "n": "Azurewrath",
             "i": "invcrsu",
             "c": "crs"
         },
         {
+            "id": 30,
             "n": "Griswold's Edge",
             "i": "invbsdu",
             "c": "bsd"
         },
         {
+            "id": 31,
             "n": "Hellplague",
             "i": "invlsdu",
             "c": "lsd"
         },
         {
+            "id": 32,
             "n": "Culwen's Point",
             "c": "wsd",
             "tc": "whit"
         },
         {
+            "id": 33,
             "n": "Shadowfang",
             "i": "inv2hsu",
             "c": "2hs"
         },
         {
+            "id": 34,
             "n": "Soulflay",
             "c": "clm",
             "tc": "dgrn"
         },
         {
+            "id": 35,
             "n": "Kinemil's Awl",
             "i": "invgisu",
             "c": "gis"
         },
         {
+            "id": 36,
             "n": "Blacktongue",
             "i": "invbswu",
             "c": "bsw"
         },
         {
+            "id": 37,
             "n": "Ripsaw",
             "c": "flb",
             "tc": "cblu"
         },
         {
+            "id": 38,
             "n": "The Patriarch",
             "i": "invgsdu",
             "c": "gsd"
         },
         {
+            "id": 39,
             "n": "Gull",
             "c": "dgr",
             "tc": "lgry"
         },
         {
+            "id": 40,
             "n": "The Diggler",
             "c": "dir",
             "tc": "dgry"
         },
         {
+            "id": 41,
             "n": "The Jade Tan Do",
             "i": "invkrsu",
             "c": "kri"
         },
         {
+            "id": 42,
             "n": "Spectral Shard",
             "c": "bld",
             "tc": "dblu"
         },
         {
+            "id": 43,
             "n": "The Dragon Chang",
             "c": "spr",
             "tc": "dpur"
         },
         {
+            "id": 44,
             "n": "Razortine",
             "i": "invtriu",
             "c": "tri"
         },
         {
+            "id": 45,
             "n": "Bloodthief",
             "c": "brn",
             "tc": "whit"
         },
         {
+            "id": 46,
             "n": "Lance of Yaggai",
             "c": "spt",
             "tc": "lred"
         },
         {
+            "id": 47,
             "n": "The Tannr Gorerod",
             "c": "pik",
             "tc": "lgry"
         },
         {
+            "id": 48,
             "n": "Dimoak's Hew",
             "c": "bar",
             "tc": "blac"
         },
         {
+            "id": 49,
             "n": "Steelgoad",
             "c": "vou",
             "tc": "cgrn"
         },
         {
+            "id": 50,
             "n": "Soul Harvest",
             "i": "invscyu",
             "c": "scy"
         },
         {
+            "id": 51,
             "n": "The Battlebranch",
             "c": "pax",
             "tc": "lblu"
         },
         {
+            "id": 52,
             "n": "Woestave",
             "c": "hal",
             "tc": "dblu"
         },
         {
+            "id": 53,
             "n": "The Grim Reaper",
             "c": "wsc",
             "tc": "lpur"
         },
         {
+            "id": 54,
             "n": "Bane Ash",
             "c": "sst",
             "tc": "lgrn"
         },
         {
+            "id": 55,
             "n": "Serpent Lord",
             "c": "lst",
             "tc": "cgrn"
         },
         {
+            "id": 56,
             "n": "Spire of Lazarus",
             "i": "invcstu",
             "c": "cst"
         },
         {
+            "id": 57,
             "n": "The Salamander",
             "c": "bst",
             "tc": "dred"
         },
         {
+            "id": 58,
             "n": "The Iron Jang Bong",
             "c": "wst",
             "tc": "dyel"
         },
         {
+            "id": 59,
             "n": "Pluckeye",
             "c": "sbw",
             "tc": "cblu"
         },
         {
+            "id": 60,
             "n": "Witherstring",
             "c": "hbw",
             "tc": "lred"
         },
         {
+            "id": 61,
             "n": "Raven Claw",
             "c": "lbw",
             "tc": "dred"
         },
         {
+            "id": 62,
             "n": "Rogue's Bow",
             "i": "invcbwu",
             "c": "cbw"
         },
         {
+            "id": 63,
             "n": "Stormstrike",
             "i": "invsbbu",
             "c": "sbb"
         },
         {
+            "id": 64,
             "n": "Wizendraw",
             "c": "lbb",
             "tc": "dgrn"
         },
         {
+            "id": 65,
             "n": "Hellclap",
             "i": "invswbu",
             "c": "swb"
         },
         {
+            "id": 66,
             "n": "Blastbark",
             "c": "lwb",
             "tc": "lyel"
         },
         {
+            "id": 67,
             "n": "Leadcrow",
             "i": "invlxbu",
             "c": "lxb"
         },
         {
+            "id": 68,
             "n": "Ichorsting",
             "i": "invmxbu",
             "c": "mxb"
         },
         {
+            "id": 69,
             "n": "Hellcast",
             "i": "invhxbu",
             "c": "hxb"
         },
         {
+            "id": 70,
             "n": "Doomslinger",
             "i": "invrxbu",
             "c": "rxb"
         },
         {
+            "id": 71,
             "n": "Biggin's Bonnet",
             "i": "invcapu",
             "c": "cap"
         },
         {
+            "id": 72,
             "n": "Tarnhelm",
             "c": "skp",
             "tc": "oran"
         },
         {
+            "id": 73,
             "n": "Coif of Glory",
             "i": "invhlmu",
             "c": "hlm"
         },
         {
+            "id": 74,
             "n": "Duskdeep",
             "i": "invfhlu",
             "c": "fhl"
         },
         {
+            "id": 75,
             "n": "Wormskull",
             "i": "invbhmu",
             "c": "bhm"
         },
         {
+            "id": 76,
             "n": "Howltusk",
             "c": "ghm",
             "tc": "dgry"
         },
         {
+            "id": 77,
             "n": "Undead Crown",
             "c": "crn",
             "tc": "blac"
         },
         {
+            "id": 78,
             "n": "The Face of Horror",
             "c": "msk",
             "tc": "lblu"
         },
         {
+            "id": 79,
             "n": "Greyform",
             "c": "qui",
             "tc": "lgry"
         },
         {
+            "id": 80,
             "n": "Blinkbat's Form",
             "c": "lea",
             "tc": "dred"
         },
         {
+            "id": 81,
             "n": "The Centurion",
             "c": "hla",
             "tc": "cred"
         },
         {
+            "id": 82,
             "n": "Twitchthroe",
             "c": "stu",
             "tc": "lgrn"
         },
         {
+            "id": 83,
             "n": "Darkglow",
             "c": "rng",
             "tc": "dgrn"
         },
         {
+            "id": 84,
             "n": "Hawkmail",
             "c": "scl",
             "tc": "cgrn"
         },
         {
+            "id": 85,
             "n": "Sparking Mail",
             "c": "chn",
             "tc": "lyel"
         },
         {
+            "id": 86,
             "n": "Venom Ward",
             "c": "brs",
             "tc": "dyel"
         },
         {
+            "id": 87,
             "n": "Iceblink",
             "c": "spl",
             "tc": "lgld"
         },
         {
+            "id": 88,
             "n": "Boneflesh",
             "c": "plt",
             "tc": "dgld"
         },
         {
+            "id": 89,
             "n": "Rockfleece",
             "c": "fld",
             "tc": "dgry"
         },
         {
+            "id": 90,
             "n": "Rattlecage",
             "c": "gth",
             "tc": "dpur"
         },
         {
+            "id": 91,
             "n": "Goldskin",
             "i": "invfulu",
             "c": "ful"
         },
         {
+            "id": 92,
             "n": "Silks of the Victor",
             "i": "invaaru",
             "c": "aar"
         },
         {
+            "id": 93,
             "n": "Heavenly Garb",
             "c": "ltp",
             "tc": "cblu"
         },
         {
+            "id": 94,
             "n": "Pelta Lunata",
             "i": "invbucu",
             "c": "buc"
         },
         {
+            "id": 95,
             "n": "Umbral Disk",
             "i": "invsmlu",
             "c": "sml"
         },
         {
+            "id": 96,
             "n": "Stormguild",
             "i": "invlrgu",
             "c": "lrg"
         },
         {
+            "id": 97,
             "n": "Wall of the Eyeless",
             "i": "invbshu",
             "c": "bsh"
         },
         {
+            "id": 98,
             "n": "Swordback Hold",
             "i": "invspku",
             "c": "spk"
         },
         {
+            "id": 99,
             "n": "Steelclash",
             "i": "invkitu",
             "c": "kit"
         },
         {
+            "id": 100,
             "n": "Bverrit Keep",
             "i": "invtowu",
             "c": "tow"
         },
         {
+            "id": 101,
             "n": "The Ward",
             "i": "invgtsu",
             "c": "gts"
         },
         {
+            "id": 102,
             "n": "The Hand of Broc",
             "c": "lgl",
             "tc": "cblu"
         },
         {
+            "id": 103,
             "n": "Bloodfist",
             "c": "vgl",
             "tc": "oran"
         },
         {
+            "id": 104,
             "n": "Chance Guards",
             "c": "mgl",
             "tc": "lred"
         },
         {
+            "id": 105,
             "n": "Magefist",
             "c": "tgl",
             "tc": "lgry"
         },
         {
+            "id": 106,
             "n": "Frostburn",
             "c": "hgl",
             "tc": "dred"
         },
         {
+            "id": 107,
             "n": "Hotspur",
             "c": "lbt",
             "tc": "cred"
         },
         {
+            "id": 108,
             "n": "Gorefoot",
             "c": "vbt",
             "tc": "dblu"
         },
         {
+            "id": 109,
             "n": "Treads of Cthon",
             "c": "mbt",
             "tc": "lgrn"
         },
         {
+            "id": 110,
             "n": "Goblin Toe",
             "c": "tbt",
             "tc": "dgry"
         },
         {
+            "id": 111,
             "n": "Tearhaunch",
             "c": "hbt",
             "tc": "dgrn"
         },
         {
+            "id": 112,
             "n": "Lenymo",
             "c": "lbl",
             "tc": "cgrn"
         },
         {
+            "id": 113,
             "n": "Snakecord",
             "c": "vbl",
             "tc": "blac"
         },
         {
+            "id": 114,
             "n": "Nightsmoke",
             "c": "mbl",
             "tc": "lyel"
         },
         {
+            "id": 115,
             "n": "Goldwrap",
             "c": "tbl",
             "tc": "lblu"
         },
         {
+            "id": 116,
             "n": "Bladebuckle",
             "c": "hbl",
             "tc": "dyel"
         },
         {
+            "id": 117,
             "n": "Nokozan Relic",
             "c": "amu"
         },
         {
+            "id": 118,
             "n": "The Eye of Etlich",
             "c": "amu"
         },
         {
+            "id": 119,
             "n": "The Mahim-Oak Curio",
             "c": "amu"
         },
         {
+            "id": 120,
             "n": "Nagelring",
             "c": "rin"
         },
         {
+            "id": 121,
             "n": "Manald Heal",
             "c": "rin"
         },
         {
+            "id": 122,
             "n": "The Stone of Jordan",
             "c": "rin"
         },
         {
+            "id": 123,
             "n": "Amulet of the Viper",
             "c": "vip"
         },
         {
+            "id": 124,
             "n": "Staff of Kings",
             "c": "msf"
         },
         {
+            "id": 125,
             "n": "Horadric Staff",
             "c": "hst"
         },
         {
+            "id": 126,
             "n": "Hell Forge Hammer",
             "c": "hfh"
         },
         {
+            "id": 127,
             "n": "Khalim's Flail",
             "c": "qf1"
         },
         {
+            "id": 128,
             "n": "Khalim's Will",
             "c": "qf2"
         },
         {
+            "id": 129,
             "n": "Coldkill",
             "i": "invhaxu",
             "c": "9ha",
             "tc": "cblu"
         },
         {
+            "id": 130,
             "n": "Butcher's Pupil",
             "i": "invaxeu",
             "c": "9ax",
             "tc": "cblu"
         },
         {
+            "id": 131,
             "n": "Islestrike",
             "c": "92a"
         },
         {
+            "id": 132,
             "n": "Pompeii's Wrath",
             "i": "invmpiu",
             "c": "9mp",
             "tc": "cred"
         },
         {
+            "id": 133,
             "n": "Guardian Naga",
             "c": "9wa"
         },
         {
+            "id": 134,
             "n": "Warlord's Trust",
             "c": "9la",
             "tc": "whit"
         },
         {
+            "id": 135,
             "n": "Spellsteel",
             "c": "9ba",
             "tc": "whit"
         },
         {
+            "id": 136,
             "n": "Stormrider",
             "i": "inv9btu",
             "c": "9bt",
             "tc": "lred"
         },
         {
+            "id": 137,
             "n": "Boneslayer Blade",
             "i": "invgaxu",
             "c": "9ga"
         },
         {
+            "id": 138,
             "n": "The Minotaur",
             "i": "inv9giu",
             "c": "9gi"
         },
         {
+            "id": 139,
             "n": "Suicide Branch",
             "c": "9wn"
         },
         {
+            "id": 140,
             "n": "Carin Shard",
             "c": "9yw",
             "tc": "cblu"
         },
         {
+            "id": 141,
             "n": "Arm of King Leoric",
             "i": "invbwnu",
             "c": "9bw"
         },
         {
+            "id": 142,
             "n": "Blackhand Key",
             "i": "inv9gwu",
             "c": "9gw",
             "tc": "blac"
         },
         {
+            "id": 143,
             "n": "Dark Clan Crusher",
             "i": "invclbu",
             "c": "9cl",
             "tc": "dgld"
         },
         {
+            "id": 144,
             "n": "Zakarum's Hand",
             "c": "9sc",
             "tc": "lpur"
         },
         {
+            "id": 145,
             "n": "The Fetid Sprinkler",
             "c": "9qs"
         },
         {
+            "id": 146,
             "n": "Hand of Blessed Light",
             "c": "9ws"
         },
         {
+            "id": 147,
             "n": "Fleshrender",
             "i": "invspcu",
             "c": "9sp"
         },
         {
+            "id": 148,
             "n": "Sureshrill Frost",
             "c": "9ma"
         },
         {
+            "id": 149,
             "n": "Moonfall",
             "i": "invmstu",
             "c": "9mt"
         },
         {
+            "id": 150,
             "n": "Baezil's Vortex",
             "c": "9fl",
             "tc": "dblu"
         },
         {
+            "id": 151,
             "n": "Earthshaker",
             "c": "9wh"
         },
         {
+            "id": 152,
             "n": "Bloodtree Stump",
             "c": "9m9"
         },
         {
+            "id": 153,
             "n": "The Gavel of Pain",
             "i": "inv9gmu",
             "c": "9gm"
         },
         {
+            "id": 154,
             "n": "Bloodletter",
             "c": "9ss",
             "tc": "cred"
         },
         {
+            "id": 155,
             "n": "Coldsteel Eye",
             "i": "invscmu",
             "c": "9sm"
         },
         {
+            "id": 156,
             "n": "Hexfire",
             "i": "invsbru",
             "c": "9sb"
         },
         {
+            "id": 157,
             "n": "Blade of Ali Baba",
             "c": "9fc",
             "tc": "cred"
         },
         {
+            "id": 158,
             "n": "Ginther's Rift",
             "i": "inv9cru",
             "c": "9cr"
         },
         {
+            "id": 159,
             "n": "Headstriker",
             "c": "9bs",
             "tc": "bwht"
         },
         {
+            "id": 160,
             "n": "Plague Bearer",
             "i": "inv9lsu",
             "c": "9ls"
         },
         {
+            "id": 161,
             "n": "The Atlantean",
             "c": "9wd",
             "tc": "lblu"
         },
         {
+            "id": 162,
             "n": "Crainte Vomir",
             "i": "inv2hsu",
             "c": "92h"
         },
         {
+            "id": 163,
             "n": "Bing Sz Wang",
             "c": "9cm"
         },
         {
+            "id": 164,
             "n": "The Vile Husk",
             "i": "invgisu",
             "c": "9gs",
             "tc": "dgry"
         },
         {
+            "id": 165,
             "n": "Cloudcrack",
             "i": "invbswu",
             "c": "9b9"
         },
         {
+            "id": 166,
             "n": "Todesfaelle Flamme",
             "i": "inv9fbu",
             "c": "9fb"
         },
         {
+            "id": 167,
             "n": "Swordguard",
             "i": "invgsdu",
             "c": "9gd",
             "tc": "bwht"
         },
         {
+            "id": 168,
             "n": "Spineripper",
             "c": "9dg"
         },
         {
+            "id": 169,
             "n": "Heart Carver",
             "c": "9di"
         },
         {
+            "id": 170,
             "n": "Blackbog's Sharp",
             "i": "invkrsu",
             "c": "9kr"
         },
         {
+            "id": 171,
             "n": "Stormspike",
             "i": "inv9blu",
             "c": "9bl",
             "tc": "cblu"
         },
         {
+            "id": 172,
             "n": "The Impaler",
             "c": "9sr",
             "tc": "lred"
         },
         {
+            "id": 173,
             "n": "Kelpie Snare",
             "i": "invtriu",
             "c": "9tr"
         },
         {
+            "id": 174,
             "n": "Soulfeast Tine",
             "i": "inv9bru",
             "c": "9br",
             "tc": "lyel"
         },
         {
+            "id": 175,
             "n": "Hone Sundan",
             "c": "9st"
         },
         {
+            "id": 176,
             "n": "Spire of Honor",
             "c": "9p9",
             "tc": "lgry"
         },
         {
+            "id": 177,
             "n": "The Meat Scraper",
             "c": "9b7",
             "tc": "dred"
         },
         {
+            "id": 178,
             "n": "Blackleach Blade",
             "c": "9vo",
             "tc": "blac"
         },
         {
+            "id": 179,
             "n": "Athena's Wrath",
             "i": "inv9s8u",
             "c": "9s8"
         },
         {
+            "id": 180,
             "n": "Pierre Tombale Couant",
             "c": "9pa",
             "tc": "lgld"
         },
         {
+            "id": 181,
             "n": "Husoldal Evo",
             "c": "9h9"
         },
         {
+            "id": 182,
             "n": "Grim's Burning Dead",
             "c": "9wc",
             "tc": "cred"
         },
         {
+            "id": 183,
             "n": "Razorswitch",
             "c": "8ss"
         },
         {
+            "id": 184,
             "n": "Ribcracker",
             "c": "8ls",
             "tc": "lblu"
         },
         {
+            "id": 185,
             "n": "Chromatic Ire",
             "i": "invcstu",
             "c": "8cs"
         },
         {
+            "id": 186,
             "n": "Warpspear",
             "c": "8bs",
             "tc": "cblu"
         },
         {
+            "id": 187,
             "n": "Skull Collector",
             "i": "inv8wsu",
             "c": "8ws",
             "tc": "blac"
         },
         {
+            "id": 188,
             "n": "Skystrike",
             "c": "8sb"
         },
         {
+            "id": 189,
             "n": "Riphook",
             "c": "8hb",
             "tc": "cred"
         },
         {
+            "id": 190,
             "n": "Kuko Shakaku",
             "i": "inv8lbu",
             "c": "8lb",
             "tc": "lpur"
         },
         {
+            "id": 191,
             "n": "Endlesshail",
             "i": "invcbwu",
             "c": "8cb"
         },
         {
+            "id": 192,
             "n": "Witchwild String",
             "i": "inv8s8u",
             "c": "8s8",
             "tc": "lblu"
         },
         {
+            "id": 193,
             "n": "Cliffkiller",
             "c": "8l8"
         },
         {
+            "id": 194,
             "n": "Magewrath",
             "i": "invswbu",
             "c": "8sw"
         },
         {
+            "id": 195,
             "n": "Goldstrike Arch",
             "c": "8lw",
             "tc": "lgry"
         },
         {
+            "id": 196,
             "n": "Langer Briser",
             "i": "inv8lxu",
             "c": "8lx"
         },
         {
+            "id": 197,
             "n": "Pus Spitter",
             "i": "inv8mxu",
             "c": "8mx",
             "tc": "cgrn"
         },
         {
+            "id": 198,
             "n": "Buriza-Do Kyanon",
             "i": "invhxbu",
             "c": "8hx"
         },
         {
+            "id": 199,
             "n": "Demon Machine",
             "i": "invrxbu",
             "c": "8rx",
             "tc": "blac"
         },
         {
+            "id": 200,
             "n": "Armor"
         },
         {
+            "id": 201,
             "n": "Peasant Crown",
             "c": "xap"
         },
         {
+            "id": 202,
             "n": "Rockstopper",
             "i": "invxkpu",
             "c": "xkp"
         },
         {
+            "id": 203,
             "n": "Stealskull",
             "i": "invhlmu",
             "c": "xlm"
         },
         {
+            "id": 204,
             "n": "Darksight Helm",
             "i": "invfhlu",
             "c": "xhl",
             "tc": "blac"
         },
         {
+            "id": 205,
             "n": "Valkyrie Wing",
             "c": "xhm"
         },
         {
+            "id": 206,
             "n": "Crown of Thieves",
             "i": "invxrnu",
             "c": "xrn",
             "tc": "dgld"
         },
         {
+            "id": 207,
             "n": "Blackhorn's Face",
             "c": "xsk",
             "tc": "blac"
         },
         {
+            "id": 208,
             "n": "Vampire Gaze",
             "i": "invbhmu",
             "c": "xh9",
             "tc": "cgrn"
         },
         {
+            "id": 209,
             "n": "The Spirit Shroud",
             "c": "xui"
         },
         {
+            "id": 210,
             "n": "Skin of the Vipermagi",
             "c": "xea",
             "tc": "dblu"
         },
         {
+            "id": 211,
             "n": "Skin of the Flayed One",
             "c": "xla",
             "tc": "lred"
         },
         {
+            "id": 212,
             "n": "Iron Pelt",
             "i": "invxtuu",
             "c": "xtu",
             "tc": "dgry"
         },
         {
+            "id": 213,
             "n": "Spirit Forge",
             "c": "xng"
         },
         {
+            "id": 214,
             "n": "Crow Caw",
             "c": "xcl"
         },
         {
+            "id": 215,
             "n": "Shaftstop",
             "c": "xhn"
         },
         {
+            "id": 216,
             "n": "Duriel's Shell",
             "c": "xrs",
             "tc": "oran"
         },
         {
+            "id": 217,
             "n": "Skullder's Ire",
             "c": "xpl"
         },
         {
+            "id": 218,
             "n": "Guardian Angel",
             "c": "xlt",
             "tc": "lgry"
         },
         {
+            "id": 219,
             "n": "Toothrow",
             "c": "xld",
             "tc": "whit"
         },
         {
+            "id": 220,
             "n": "Atma's Wail",
             "c": "xth"
         },
         {
+            "id": 221,
             "n": "Black Hades",
             "c": "xul"
         },
         {
+            "id": 222,
             "n": "Corpsemourn",
             "i": "invxaru",
             "c": "xar",
             "tc": "blac"
         },
         {
+            "id": 223,
             "n": "Que-Hegan's Wisdom",
             "c": "xtp"
         },
         {
+            "id": 224,
             "n": "Visceratuant",
             "i": "invbucu",
             "c": "xuc"
         },
         {
+            "id": 225,
             "n": "Moser's Blessed Circle",
             "i": "invxmlu",
             "c": "xml"
         },
         {
+            "id": 226,
             "n": "Stormchaser",
             "i": "invxrgu",
             "c": "xrg",
             "tc": "cblu"
         },
         {
+            "id": 227,
             "n": "Tiamat's Rebuke",
             "i": "invkitu",
             "c": "xit",
             "tc": "lgry"
         },
         {
+            "id": 228,
             "n": "Gerke's Sanctuary",
             "i": "invtowu",
             "c": "xow",
             "tc": "lgrn"
         },
         {
+            "id": 229,
             "n": "Radament's Sphere",
             "i": "invgtsu",
             "c": "xts"
         },
         {
+            "id": 230,
             "n": "Lidless Wall",
             "i": "invxshu",
             "c": "xsh",
             "tc": "dgld"
         },
         {
+            "id": 231,
             "n": "Lance Guard",
             "i": "invxpku",
             "c": "xpk"
         },
         {
+            "id": 232,
             "n": "Venom Grip",
             "c": "xlg"
         },
         {
+            "id": 233,
             "n": "Gravepalm",
             "c": "xvg"
         },
         {
+            "id": 234,
             "n": "Ghoulhide",
             "c": "xmg"
         },
         {
+            "id": 235,
             "n": "Lava Gout",
             "c": "xtg"
         },
         {
+            "id": 236,
             "n": "Hellmouth",
             "c": "xhg"
         },
         {
+            "id": 237,
             "n": "Infernostride",
             "c": "xlb"
         },
         {
+            "id": 238,
             "n": "Waterwalk",
             "c": "xvb"
         },
         {
+            "id": 239,
             "n": "Silkweave",
             "c": "xmb"
         },
         {
+            "id": 240,
             "n": "War Traveler",
             "c": "xtb"
         },
         {
+            "id": 241,
             "n": "Gore Rider",
             "c": "xhb"
         },
         {
+            "id": 242,
             "n": "String of Ears",
             "c": "zlb"
         },
         {
+            "id": 243,
             "n": "Razortail",
             "c": "zvb"
         },
         {
+            "id": 244,
             "n": "Gloom's Trap",
             "c": "zmb"
         },
         {
+            "id": 245,
             "n": "Snowclash",
             "c": "ztb"
         },
         {
+            "id": 246,
             "n": "Thundergod's Vigor",
             "c": "zhb"
         },
-        {},
         {
+            "id": 247
+        },
+        {
+            "id": 248,
             "n": "Harlequin Crest",
             "c": "uap",
             "tc": "cgrn"
         },
         {
+            "id": 249,
             "n": "Veil of Steel",
             "c": "uhm",
             "tc": "lgry"
         },
         {
+            "id": 250,
             "n": "The Gladiator's Bane",
             "c": "utu",
             "tc": "lgry"
         },
         {
+            "id": 251,
             "n": "Arkaine's Valor",
             "c": "upl",
             "tc": "lred"
         },
         {
+            "id": 252,
             "n": "Blackoak Shield",
             "i": "invsmlu",
             "c": "uml"
         },
         {
+            "id": 253,
             "n": "Stormshield",
             "i": "invkitu",
             "c": "uit"
         },
         {
+            "id": 254,
             "n": "Hellslayer",
             "i": "invbtxu",
             "c": "7bt",
             "tc": "dred"
         },
         {
+            "id": 255,
             "n": "Messerschmidt's Reaver",
             "i": "invgaxu",
             "c": "7ga",
             "tc": "blac"
         },
         {
+            "id": 256,
             "n": "Baranar's Star",
             "i": "invmstu",
             "c": "7mt",
             "tc": "lred"
         },
         {
+            "id": 257,
             "n": "Schaefer's Hammer",
             "c": "7wh",
             "tc": "lblu"
         },
         {
+            "id": 258,
             "n": "The Cranium Basher",
             "c": "7gm",
             "tc": "blac"
         },
         {
+            "id": 259,
             "n": "Lightsabre",
             "i": "invcrsu",
             "c": "7cr"
         },
         {
+            "id": 260,
             "n": "Doombringer",
             "i": "invbswu",
             "c": "7b7",
             "tc": "dred"
         },
         {
+            "id": 261,
             "n": "The Grandfather",
             "i": "invgsdu",
             "c": "7gd",
             "tc": "lyel"
         },
         {
+            "id": 262,
             "n": "Wizardspike",
             "c": "7dg",
             "tc": "lgry"
         },
         {
+            "id": 263,
             "n": "Constricting Ring",
             "c": "rin",
             "tc": "cblu"
         },
         {
+            "id": 264,
             "n": "Stormspire",
             "c": "7wc",
             "tc": "dblu"
         },
         {
+            "id": 265,
             "n": "Eaglehorn",
             "c": "6l7",
             "tc": "dgld"
         },
         {
+            "id": 266,
             "n": "Windforce",
             "c": "6lw",
             "tc": "dyel"
         },
         {
+            "id": 267,
             "n": "Rings"
         },
         {
+            "id": 268,
             "n": "Bul-Kathos' Wedding Band",
             "c": "rin",
             "tc": "dpur"
         },
         {
+            "id": 269,
             "n": "The Cat's Eye",
             "c": "amu",
             "tc": "oran"
         },
         {
+            "id": 270,
             "n": "The Rising Sun",
             "c": "amu",
             "tc": "lgld"
         },
         {
+            "id": 271,
             "n": "Crescent Moon",
             "c": "amu",
             "tc": "lblu"
         },
         {
+            "id": 272,
             "n": "Mara's Kaleidoscope",
             "c": "amu",
             "tc": "oran"
         },
         {
+            "id": 273,
             "n": "Atma's Scarab",
             "c": "amu",
             "tc": "cgrn"
         },
         {
+            "id": 274,
             "n": "Dwarf Star",
             "c": "rin",
             "tc": "dgry"
         },
         {
+            "id": 275,
             "n": "Raven Frost",
             "c": "rin",
             "tc": "cblu"
         },
         {
+            "id": 276,
             "n": "Highlord's Wrath",
             "c": "amu",
             "tc": "bwht"
         },
         {
+            "id": 277,
             "n": "Saracen's Chance",
             "c": "amu",
             "tc": "dpur"
         },
         {
+            "id": 278,
             "n": "Class-specific"
         },
         {
+            "id": 279,
             "n": "Arreat's Face",
             "c": "baa"
         },
         {
+            "id": 280,
             "n": "Homunculus",
             "c": "nea"
         },
         {
+            "id": 281,
             "n": "Titan's Revenge",
             "c": "ama"
         },
         {
+            "id": 282,
             "n": "Lycander's Aim",
             "c": "am7"
         },
         {
+            "id": 283,
             "n": "Lycander's Flank",
             "c": "am9"
         },
         {
+            "id": 284,
             "n": "The Oculus",
             "c": "oba"
         },
         {
+            "id": 285,
             "n": "Herald of Zakarum",
             "c": "pa9"
         },
         {
+            "id": 286,
             "n": "Bartuc's Cut-Throat",
             "c": "9tw"
         },
         {
+            "id": 287,
             "n": "Jalal's Mane",
             "c": "dra"
         },
         {
+            "id": 288,
             "n": "The Scalper",
             "c": "9ta"
         },
         {
+            "id": 289,
             "n": "Bloodmoon",
             "i": "invsbru",
             "c": "7sb",
             "tc": "cred"
         },
         {
+            "id": 290,
             "n": "Djinn Slayer",
             "i": "invscmu",
             "c": "7sm",
             "tc": "dpur"
         },
         {
+            "id": 291,
             "n": "Deathbit",
             "c": "9tk"
         },
         {
+            "id": 292,
             "n": "Warshrike",
             "i": "invtk3",
             "c": "7bk",
             "tc": "bwht"
         },
         {
+            "id": 293,
             "n": "Gut Siphon",
             "i": "invrxbu",
             "c": "6rx",
             "tc": "lgrn"
         },
         {
+            "id": 294,
             "n": "Razor's Edge",
             "i": "invhaxu",
             "c": "7ha"
         },
         {
+            "id": 295,
             "n": "Gore Ripper",
             "tc": "dred"
         },
         {
+            "id": 296,
             "n": "Demon Limb",
             "i": "invspcu",
             "c": "7sp",
             "tc": "dgrn"
         },
         {
+            "id": 297,
             "n": "Steel Shade",
             "i": "invhlmu",
             "c": "ulm",
             "tc": "blac"
         },
         {
+            "id": 298,
             "n": "Tomb Reaver",
             "c": "7pa",
             "tc": "lyel"
         },
         {
+            "id": 299,
             "n": "Death's Web",
             "c": "7gw",
             "tc": "bwht"
         },
         {
+            "id": 300,
             "n": "Nature's Peace",
             "c": "rin",
             "tc": "dgrn"
         },
         {
+            "id": 301,
             "n": "Azurewrath",
             "i": "invcrs",
             "c": "7cr"
         },
         {
+            "id": 302,
             "n": "Seraph's Hymn",
             "i": "invamu2",
             "c": "amu",
             "tc": "bwht"
         },
         {
+            "id": 303,
             "n": "Zakarum's Salvation"
         },
         {
+            "id": 304,
             "n": "Fleshripper",
             "i": "invkrsu",
             "c": "7kr",
             "tc": "dred"
         },
         {
+            "id": 305,
             "n": "Odium"
         },
         {
+            "id": 306,
             "n": "Horizon's Tornado",
             "c": "7fl",
             "tc": "dpur"
         },
         {
+            "id": 307,
             "n": "Stone Crusher",
             "c": "7wh"
         },
         {
+            "id": 308,
             "n": "Jade Talon",
             "c": "7wb",
             "tc": "cgrn"
         },
         {
+            "id": 309,
             "n": "Shadow Dancer",
             "c": "uhb",
             "tc": "blac"
         },
         {
+            "id": 310,
             "n": "Cerebus' Bite",
             "c": "drb",
             "tc": "bwht"
         },
         {
+            "id": 311,
             "n": "Tyrael's Might",
             "i": "invaaru",
             "c": "uar",
             "tc": "dblu"
         },
         {
+            "id": 312,
             "n": "Soul Drainer",
             "c": "umg",
             "tc": "dred"
         },
         {
+            "id": 313,
             "n": "Rune Master",
             "c": "72a",
             "tc": "lblu"
         },
         {
+            "id": 314,
             "n": "Death Cleaver",
             "c": "7wa"
         },
         {
+            "id": 315,
             "n": "Executioner's Justice",
             "c": "7gi",
             "tc": "blac"
         },
         {
+            "id": 316,
             "n": "Stoneraven",
             "c": "amd"
         },
         {
+            "id": 317,
             "n": "Leviathan",
             "c": "uld",
             "tc": "cgrn"
         },
         {
+            "id": 318,
             "n": "Larzuk's Champion",
             "i": "invhfh"
         },
         {
+            "id": 319,
             "n": "Wisp Projector",
             "c": "rin",
             "tc": "bwht"
         },
         {
+            "id": 320,
             "n": "Gargoyle's Bite",
             "c": "7ts",
             "tc": "cgrn"
         },
         {
+            "id": 321,
             "n": "Lacerator",
             "c": "7b8",
             "tc": "blac"
         },
         {
+            "id": 322,
             "n": "Mang Song's Lesson",
             "i": "inv8wsu",
             "c": "6ws",
             "tc": "dgld"
         },
         {
+            "id": 323,
             "n": "Viperfork",
             "c": "7br",
             "tc": "dgrn"
         },
         {
+            "id": 324,
             "n": "Ethereal Edge",
             "c": "7ba",
             "tc": "whit"
         },
         {
+            "id": 325,
             "n": "Demonhorn's Edge",
             "c": "bad",
             "tc": "dgry"
         },
         {
+            "id": 326,
             "n": "The Reaper's Toll",
             "i": "invscy",
             "c": "7s8"
         },
         {
+            "id": 327,
             "n": "Spirit Keeper",
             "c": "drd"
         },
         {
+            "id": 328,
             "n": "Hellrack",
             "i": "invhxbu",
             "c": "6hx"
         },
         {
+            "id": 329,
             "n": "Alma Negra",
             "c": "pac",
             "tc": "blac"
         },
         {
+            "id": 330,
             "n": "Darkforce Spawn",
             "c": "nef",
             "tc": "cred"
         },
         {
+            "id": 331,
             "n": "Widowmaker",
             "i": "invswbu",
             "c": "6sw",
             "tc": "dred"
         },
         {
+            "id": 332,
             "n": "Blood Raven's Charge",
             "i": "invswbu",
             "c": "amb",
             "tc": "dgld"
         },
         {
+            "id": 333,
             "n": "Ghostflame",
             "c": "7bl",
             "tc": "cblu"
         },
         {
+            "id": 334,
             "n": "Shadow Killer",
             "i": "invaxfu",
             "c": "7cs"
         },
         {
+            "id": 335,
             "n": "Gimmershred",
             "c": "7ta"
         },
         {
+            "id": 336,
             "n": "Griffon's Eye",
             "c": "ci3"
         },
         {
+            "id": 337,
             "n": "Windhammer",
             "i": "invmau",
             "c": "7m7",
             "tc": "cblu"
         },
         {
+            "id": 338,
             "n": "Thunderstroke",
             "c": "amf",
             "tc": "dblu"
         },
         {
+            "id": 339,
             "n": "Giant Maimer",
             "tc": "cred"
         },
         {
+            "id": 340,
             "n": "Demon's Arch",
             "c": "7s7",
             "tc": "cred"
         },
         {
+            "id": 341,
             "n": "Boneflame",
             "c": "nee",
             "tc": "dred"
         },
         {
+            "id": 342,
             "n": "Steel Pillar",
             "c": "7p7"
         },
         {
+            "id": 343,
             "n": "Nightwing's Veil",
             "c": "uhm",
             "tc": "cblu"
         },
         {
+            "id": 344,
             "n": "Crown of Ages",
             "c": "urn",
             "tc": "dgld"
         },
         {
+            "id": 345,
             "n": "Andariel's Visage",
             "c": "usk",
             "tc": "dred"
         },
         {
+            "id": 346,
             "n": "Darkfear",
             "i": "invhlmu",
             "c": "ulm"
         },
         {
+            "id": 347,
             "n": "Dragonscale",
             "c": "pae",
             "tc": "dgrn"
         },
         {
+            "id": 348,
             "n": "Steel Carapace",
             "c": "uul",
             "tc": "dgry"
         },
         {
+            "id": 349,
             "n": "Medusa's Gaze",
             "i": "invtowu",
             "c": "uow",
             "tc": "lred"
         },
         {
+            "id": 350,
             "n": "Ravenlore",
             "c": "dre",
             "tc": "dgld"
         },
         {
+            "id": 351,
             "n": "Boneshade",
             "i": "invbwnu",
             "c": "7bw",
             "tc": "dgry"
         },
         {
+            "id": 352,
             "n": "Nethercrow",
             "tc": "cblu"
         },
         {
+            "id": 353,
             "n": "Flamebellow",
             "i": "invgisu",
             "c": "7gs",
             "tc": "cred"
         },
         {
+            "id": 354,
             "n": "Death's Fathom",
             "c": "obf"
         },
         {
+            "id": 355,
             "n": "Wolfhowl",
             "c": "bac",
             "tc": "cred"
         },
         {
+            "id": 356,
             "n": "Spirit Ward",
             "i": "invgtsu",
             "c": "uts",
             "tc": "dblu"
         },
         {
+            "id": 357,
             "n": "Kira's Guardian",
             "c": "ci2",
             "tc": "blac"
         },
         {
+            "id": 358,
             "n": "Ormus' Robes",
             "c": "uui",
             "tc": "blac"
         },
         {
+            "id": 359,
             "n": "Gheed's Fortune",
             "c": "cm3"
         },
         {
+            "id": 360,
             "n": "Stormlash",
             "c": "7fl",
             "tc": "dgry"
         },
         {
+            "id": 361,
             "n": "Halaberd's Reign",
             "c": "bae"
         },
         {
+            "id": 362,
             "n": "Warriv's Warder"
         },
         {
+            "id": 363,
             "n": "Spike Thorn",
             "i": "invspku",
             "c": "upk",
             "tc": "dyel"
         },
         {
+            "id": 364,
             "n": "Dracul's Grasp",
             "c": "uvg",
             "tc": "dred"
         },
         {
+            "id": 365,
             "n": "Frostwind",
             "i": "invlsdu",
             "c": "7ls",
             "tc": "cblu"
         },
         {
+            "id": 366,
             "n": "Templar's Might",
             "i": "invaaru",
             "c": "uar",
             "tc": "cgrn"
         },
         {
+            "id": 367,
             "n": "Eschuta's Temper",
             "c": "obc"
         },
         {
+            "id": 368,
             "n": "Firelizard's Talons",
             "c": "7lw"
         },
         {
+            "id": 369,
             "n": "Sandstorm Trek",
             "c": "uvb"
         },
         {
+            "id": 370,
             "n": "Marrowwalk",
             "c": "umb"
         },
         {
+            "id": 371,
             "n": "Heaven's Light",
             "c": "7sc",
             "tc": "cblu"
         },
         {
+            "id": 372,
             "n": "Merman's Sprocket"
         },
         {
+            "id": 373,
             "n": "Arachnid Mesh",
             "c": "ulc",
             "tc": "blac"
         },
         {
+            "id": 374,
             "n": "Nosferatu's Coil",
             "c": "uvc"
         },
         {
+            "id": 375,
             "n": "Metalgrid",
             "c": "amu"
         },
         {
+            "id": 376,
             "n": "Verdungo's Hearty Cord",
             "c": "umc",
             "tc": "blac"
         },
         {
+            "id": 377,
             "n": "Siggard's Stealth"
         },
         {
+            "id": 378,
             "n": "Carrion Wind",
             "c": "rin"
         },
         {
+            "id": 379,
             "n": "Giant Skull",
             "i": "invbhm",
             "c": "uh9",
             "tc": "lgry"
         },
         {
+            "id": 380,
             "n": "Astreon's Iron Ward",
             "c": "7ws",
             "tc": "blac"
         },
         {
+            "id": 381,
             "n": "Annihilus",
             "i": "invmss",
             "c": "cm1"
         },
         {
+            "id": 382,
             "n": "Arioc's Needle",
             "c": "7sr"
         },
         {
+            "id": 383,
             "n": "Cranebeak",
             "i": "invmpiu",
             "c": "7mp"
         },
         {
+            "id": 384,
             "n": "Nord's Tenderizer",
             "i": "invclbu",
             "c": "7cl"
         },
         {
+            "id": 385,
             "n": "Earth Shifter",
             "c": "7gm"
         },
         {
+            "id": 386,
             "n": "Wraith Flight",
             "c": "7gl",
             "tc": "dblu"
         },
         {
+            "id": 387,
             "n": "Bonehew",
             "c": "7o7",
             "tc": "bwht"
         },
         {
+            "id": 388,
             "n": "Ondal's Wisdom",
             "i": "invcstu",
             "c": "6cs"
         },
         {
+            "id": 389,
             "n": "The Redeemer",
             "c": "7sc"
         },
         {
+            "id": 390,
             "n": "Head Hunter's Glory",
             "i": "invbshu",
             "c": "ush"
         },
         {
+            "id": 391,
             "n": "Steelrend",
             "c": "uhg"
         },
         {
+            "id": 392,
             "n": "Rainbow Facet",
             "c": "jew"
         },
         {
+            "id": 393,
             "n": "Rainbow Facet",
             "c": "jew"
         },
         {
+            "id": 394,
             "n": "Rainbow Facet",
             "c": "jew"
         },
         {
+            "id": 395,
             "n": "Rainbow Facet",
             "c": "jew"
         },
         {
+            "id": 396,
             "n": "Rainbow Facet",
             "c": "jew"
         },
         {
+            "id": 397,
             "n": "Rainbow Facet",
             "c": "jew"
         },
         {
+            "id": 398,
             "n": "Rainbow Facet",
             "c": "jew"
         },
         {
+            "id": 399,
             "n": "Rainbow Facet",
             "c": "jew"
         },
         {
+            "id": 400,
             "n": "Hellfire Torch",
             "i": "invtrch",
             "c": "cm2"
         },
         {
+            "id": 401,
             "n": "Cold Rupture",
             "c": "cm3",
             "tc": "lblu"
         },
         {
+            "id": 402,
             "n": "Flame Rift",
             "c": "cm3",
             "tc": "lred"
         },
         {
+            "id": 403,
             "n": "Crack of the Heavens",
             "c": "cm3",
             "tc": "lyel"
         },
         {
+            "id": 404,
             "n": "Rotting Fissure",
             "c": "cm3",
             "tc": "lgrn"
         },
         {
+            "id": 405,
             "n": "Bone Break",
             "c": "cm3",
             "tc": "whit"
         },
         {
+            "id": 406,
             "n": "Black Cleft",
             "c": "cm3",
             "tc": "lgry"
@@ -29643,6 +32755,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gcv",
+                        "type": "weapon",
                         "m": "att",
                         "p": 0,
                         "min": 40,
@@ -29651,6 +32765,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gcv",
+                        "type": "helm",
                         "m": "str",
                         "p": 0,
                         "min": 3,
@@ -29659,6 +32775,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gcv",
+                        "type": "shield",
                         "m": "ac",
                         "p": 0,
                         "min": 8,
@@ -29687,6 +32805,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gfv",
+                        "type": "weapon",
                         "m": "att",
                         "p": 0,
                         "min": 60,
@@ -29695,6 +32815,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gfv",
+                        "type": "helm",
                         "m": "str",
                         "p": 0,
                         "min": 4,
@@ -29703,6 +32825,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gfv",
+                        "type": "shield",
                         "m": "ac",
                         "p": 0,
                         "min": 12,
@@ -29731,6 +32855,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gsv",
+                        "type": "weapon",
                         "m": "att",
                         "p": 0,
                         "min": 80,
@@ -29739,6 +32865,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gsv",
+                        "type": "helm",
                         "m": "str",
                         "p": 0,
                         "min": 6,
@@ -29747,6 +32875,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gsv",
+                        "type": "shield",
                         "m": "ac",
                         "p": 0,
                         "min": 18,
@@ -29775,6 +32905,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gzv",
+                        "type": "weapon",
                         "m": "att",
                         "p": 0,
                         "min": 100,
@@ -29783,6 +32915,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gzv",
+                        "type": "helm",
                         "m": "str",
                         "p": 0,
                         "min": 8,
@@ -29791,6 +32925,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gzv",
+                        "type": "shield",
                         "m": "ac",
                         "p": 0,
                         "min": 24,
@@ -29819,6 +32955,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gpv",
+                        "type": "weapon",
                         "m": "att",
                         "p": 0,
                         "min": 150,
@@ -29827,6 +32965,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gpv",
+                        "type": "helm",
                         "m": "str",
                         "p": 0,
                         "min": 10,
@@ -29835,6 +32975,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gpv",
+                        "type": "shield",
                         "m": "ac",
                         "p": 0,
                         "min": 30,
@@ -29863,12 +33005,16 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gcy",
+                        "type": "weapon",
                         "m": "ltng-min",
                         "p": 0,
                         "min": 1,
                         "max": 1
                     },
                     {
+                        "code": "gcy",
+                        "type": "weapon",
                         "m": "ltng-max",
                         "p": 0,
                         "min": 8,
@@ -29877,6 +33023,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gcy",
+                        "type": "helm",
                         "m": "mag%",
                         "p": 0,
                         "min": 9,
@@ -29885,6 +33033,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gcy",
+                        "type": "shield",
                         "m": "res-ltng",
                         "p": 0,
                         "min": 12,
@@ -29913,12 +33063,16 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gfy",
+                        "type": "weapon",
                         "m": "ltng-min",
                         "p": 0,
                         "min": 1,
                         "max": 1
                     },
                     {
+                        "code": "gfy",
+                        "type": "weapon",
                         "m": "ltng-max",
                         "p": 0,
                         "min": 14,
@@ -29927,6 +33081,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gfy",
+                        "type": "helm",
                         "m": "mag%",
                         "p": 0,
                         "min": 13,
@@ -29935,6 +33091,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gfy",
+                        "type": "shield",
                         "m": "res-ltng",
                         "p": 0,
                         "min": 16,
@@ -29963,12 +33121,16 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gsy",
+                        "type": "weapon",
                         "m": "ltng-min",
                         "p": 0,
                         "min": 1,
                         "max": 1
                     },
                     {
+                        "code": "gsy",
+                        "type": "weapon",
                         "m": "ltng-max",
                         "p": 0,
                         "min": 22,
@@ -29977,6 +33139,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gsy",
+                        "type": "helm",
                         "m": "mag%",
                         "p": 0,
                         "min": 16,
@@ -29985,6 +33149,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gsy",
+                        "type": "shield",
                         "m": "res-ltng",
                         "p": 0,
                         "min": 22,
@@ -30013,12 +33179,16 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gly",
+                        "type": "weapon",
                         "m": "ltng-min",
                         "p": 0,
                         "min": 1,
                         "max": 1
                     },
                     {
+                        "code": "gly",
+                        "type": "weapon",
                         "m": "ltng-max",
                         "p": 0,
                         "min": 30,
@@ -30027,6 +33197,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gly",
+                        "type": "helm",
                         "m": "mag%",
                         "p": 0,
                         "min": 20,
@@ -30035,6 +33207,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gly",
+                        "type": "shield",
                         "m": "res-ltng",
                         "p": 0,
                         "min": 28,
@@ -30063,12 +33237,16 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gpy",
+                        "type": "weapon",
                         "m": "ltng-min",
                         "p": 0,
                         "min": 1,
                         "max": 1
                     },
                     {
+                        "code": "gpy",
+                        "type": "weapon",
                         "m": "ltng-max",
                         "p": 0,
                         "min": 40,
@@ -30077,6 +33255,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gpy",
+                        "type": "helm",
                         "m": "mag%",
                         "p": 0,
                         "min": 24,
@@ -30085,6 +33265,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gpy",
+                        "type": "shield",
                         "m": "res-ltng",
                         "p": 0,
                         "min": 40,
@@ -30113,18 +33295,24 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gcb",
+                        "type": "weapon",
                         "m": "cold-min",
                         "p": 0,
                         "min": 1,
                         "max": 1
                     },
                     {
+                        "code": "gcb",
+                        "type": "weapon",
                         "m": "cold-max",
                         "p": 0,
                         "min": 3,
                         "max": 3
                     },
                     {
+                        "code": "gcb",
+                        "type": "weapon",
                         "m": "cold-len",
                         "p": 0,
                         "min": 25,
@@ -30133,6 +33321,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gcb",
+                        "type": "helm",
                         "m": "mana",
                         "p": 0,
                         "min": 10,
@@ -30141,6 +33331,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gcb",
+                        "type": "shield",
                         "m": "res-cold",
                         "p": 0,
                         "min": 12,
@@ -30169,18 +33361,24 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gfb",
+                        "type": "weapon",
                         "m": "cold-min",
                         "p": 0,
                         "min": 3,
                         "max": 3
                     },
                     {
+                        "code": "gfb",
+                        "type": "weapon",
                         "m": "cold-max",
                         "p": 0,
                         "min": 5,
                         "max": 5
                     },
                     {
+                        "code": "gfb",
+                        "type": "weapon",
                         "m": "cold-len",
                         "p": 0,
                         "min": 35,
@@ -30189,6 +33387,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gfb",
+                        "type": "helm",
                         "m": "mana",
                         "p": 0,
                         "min": 17,
@@ -30197,6 +33397,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gfb",
+                        "type": "shield",
                         "m": "res-cold",
                         "p": 0,
                         "min": 16,
@@ -30225,18 +33427,24 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gsb",
+                        "type": "weapon",
                         "m": "cold-min",
                         "p": 0,
                         "min": 4,
                         "max": 4
                     },
                     {
+                        "code": "gsb",
+                        "type": "weapon",
                         "m": "cold-max",
                         "p": 0,
                         "min": 7,
                         "max": 7
                     },
                     {
+                        "code": "gsb",
+                        "type": "weapon",
                         "m": "cold-len",
                         "p": 0,
                         "min": 50,
@@ -30245,6 +33453,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gsb",
+                        "type": "helm",
                         "m": "mana",
                         "p": 0,
                         "min": 24,
@@ -30253,6 +33463,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gsb",
+                        "type": "shield",
                         "m": "res-cold",
                         "p": 0,
                         "min": 22,
@@ -30281,18 +33493,24 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "glb",
+                        "type": "weapon",
                         "m": "cold-min",
                         "p": 0,
                         "min": 6,
                         "max": 6
                     },
                     {
+                        "code": "glb",
+                        "type": "weapon",
                         "m": "cold-max",
                         "p": 0,
                         "min": 10,
                         "max": 10
                     },
                     {
+                        "code": "glb",
+                        "type": "weapon",
                         "m": "cold-len",
                         "p": 0,
                         "min": 60,
@@ -30301,6 +33519,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "glb",
+                        "type": "helm",
                         "m": "mana",
                         "p": 0,
                         "min": 31,
@@ -30309,6 +33529,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "glb",
+                        "type": "shield",
                         "m": "res-cold",
                         "p": 0,
                         "min": 28,
@@ -30337,18 +33559,24 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gpb",
+                        "type": "weapon",
                         "m": "cold-min",
                         "p": 0,
                         "min": 10,
                         "max": 10
                     },
                     {
+                        "code": "gpb",
+                        "type": "weapon",
                         "m": "cold-max",
                         "p": 0,
                         "min": 14,
                         "max": 14
                     },
                     {
+                        "code": "gpb",
+                        "type": "weapon",
                         "m": "cold-len",
                         "p": 0,
                         "min": 75,
@@ -30357,6 +33585,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gpb",
+                        "type": "helm",
                         "m": "mana",
                         "p": 0,
                         "min": 38,
@@ -30365,6 +33595,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gpb",
+                        "type": "shield",
                         "m": "res-cold",
                         "p": 0,
                         "min": 40,
@@ -30393,18 +33625,24 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gcg",
+                        "type": "weapon",
                         "m": "pois-min",
                         "p": 0,
                         "min": 34,
                         "max": 34
                     },
                     {
+                        "code": "gcg",
+                        "type": "weapon",
                         "m": "pois-max",
                         "p": 0,
                         "min": 34,
                         "max": 34
                     },
                     {
+                        "code": "gcg",
+                        "type": "weapon",
                         "m": "pois-len",
                         "p": 0,
                         "min": 75,
@@ -30413,6 +33651,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gcg",
+                        "type": "helm",
                         "m": "dex",
                         "p": 0,
                         "min": 3,
@@ -30421,6 +33661,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gcg",
+                        "type": "shield",
                         "m": "res-pois",
                         "p": 0,
                         "min": 12,
@@ -30449,18 +33691,24 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gfg",
+                        "type": "weapon",
                         "m": "pois-min",
                         "p": 0,
                         "min": 51,
                         "max": 51
                     },
                     {
+                        "code": "gfg",
+                        "type": "weapon",
                         "m": "pois-max",
                         "p": 0,
                         "min": 51,
                         "max": 51
                     },
                     {
+                        "code": "gfg",
+                        "type": "weapon",
                         "m": "pois-len",
                         "p": 0,
                         "min": 100,
@@ -30469,6 +33717,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gfg",
+                        "type": "helm",
                         "m": "dex",
                         "p": 0,
                         "min": 4,
@@ -30477,6 +33727,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gfg",
+                        "type": "shield",
                         "m": "res-pois",
                         "p": 0,
                         "min": 16,
@@ -30505,18 +33757,24 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gsg",
+                        "type": "weapon",
                         "m": "pois-min",
                         "p": 0,
                         "min": 82,
                         "max": 82
                     },
                     {
+                        "code": "gsg",
+                        "type": "weapon",
                         "m": "pois-max",
                         "p": 0,
                         "min": 82,
                         "max": 82
                     },
                     {
+                        "code": "gsg",
+                        "type": "weapon",
                         "m": "pois-len",
                         "p": 0,
                         "min": 125,
@@ -30525,6 +33783,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gsg",
+                        "type": "helm",
                         "m": "dex",
                         "p": 0,
                         "min": 6,
@@ -30533,6 +33793,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gsg",
+                        "type": "shield",
                         "m": "res-pois",
                         "p": 0,
                         "min": 22,
@@ -30561,18 +33823,24 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "glg",
+                        "type": "weapon",
                         "m": "pois-min",
                         "p": 0,
                         "min": 101,
                         "max": 101
                     },
                     {
+                        "code": "glg",
+                        "type": "weapon",
                         "m": "pois-max",
                         "p": 0,
                         "min": 101,
                         "max": 101
                     },
                     {
+                        "code": "glg",
+                        "type": "weapon",
                         "m": "pois-len",
                         "p": 0,
                         "min": 152,
@@ -30581,6 +33849,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "glg",
+                        "type": "helm",
                         "m": "dex",
                         "p": 0,
                         "min": 8,
@@ -30589,6 +33859,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "glg",
+                        "type": "shield",
                         "m": "res-pois",
                         "p": 0,
                         "min": 28,
@@ -30617,18 +33889,24 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gpg",
+                        "type": "weapon",
                         "m": "pois-min",
                         "p": 0,
                         "min": 143,
                         "max": 143
                     },
                     {
+                        "code": "gpg",
+                        "type": "weapon",
                         "m": "pois-max",
                         "p": 0,
                         "min": 143,
                         "max": 143
                     },
                     {
+                        "code": "gpg",
+                        "type": "weapon",
                         "m": "pois-len",
                         "p": 0,
                         "min": 179,
@@ -30637,6 +33915,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gpg",
+                        "type": "helm",
                         "m": "dex",
                         "p": 0,
                         "min": 10,
@@ -30645,6 +33925,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gpg",
+                        "type": "shield",
                         "m": "res-pois",
                         "p": 0,
                         "min": 40,
@@ -30673,12 +33955,16 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gcr",
+                        "type": "weapon",
                         "m": "fire-min",
                         "p": 0,
                         "min": 3,
                         "max": 3
                     },
                     {
+                        "code": "gcr",
+                        "type": "weapon",
                         "m": "fire-max",
                         "p": 0,
                         "min": 4,
@@ -30687,6 +33973,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gcr",
+                        "type": "helm",
                         "m": "hp",
                         "p": 0,
                         "min": 10,
@@ -30695,6 +33983,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gcr",
+                        "type": "shield",
                         "m": "res-fire",
                         "p": 0,
                         "min": 12,
@@ -30723,12 +34013,16 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gfr",
+                        "type": "weapon",
                         "m": "fire-min",
                         "p": 0,
                         "min": 5,
                         "max": 5
                     },
                     {
+                        "code": "gfr",
+                        "type": "weapon",
                         "m": "fire-max",
                         "p": 0,
                         "min": 8,
@@ -30737,6 +34031,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gfr",
+                        "type": "helm",
                         "m": "hp",
                         "p": 0,
                         "min": 17,
@@ -30745,6 +34041,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gfr",
+                        "type": "shield",
                         "m": "res-fire",
                         "p": 0,
                         "min": 16,
@@ -30773,12 +34071,16 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gsr",
+                        "type": "weapon",
                         "m": "fire-min",
                         "p": 0,
                         "min": 8,
                         "max": 8
                     },
                     {
+                        "code": "gsr",
+                        "type": "weapon",
                         "m": "fire-max",
                         "p": 0,
                         "min": 12,
@@ -30787,6 +34089,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gsr",
+                        "type": "helm",
                         "m": "hp",
                         "p": 0,
                         "min": 24,
@@ -30795,6 +34099,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gsr",
+                        "type": "shield",
                         "m": "res-fire",
                         "p": 0,
                         "min": 22,
@@ -30823,12 +34129,16 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "glr",
+                        "type": "weapon",
                         "m": "fire-min",
                         "p": 0,
                         "min": 10,
                         "max": 10
                     },
                     {
+                        "code": "glr",
+                        "type": "weapon",
                         "m": "fire-max",
                         "p": 0,
                         "min": 16,
@@ -30837,6 +34147,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "glr",
+                        "type": "helm",
                         "m": "hp",
                         "p": 0,
                         "min": 31,
@@ -30845,6 +34157,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "glr",
+                        "type": "shield",
                         "m": "res-fire",
                         "p": 0,
                         "min": 28,
@@ -30873,12 +34187,16 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gpr",
+                        "type": "weapon",
                         "m": "fire-min",
                         "p": 0,
                         "min": 15,
                         "max": 15
                     },
                     {
+                        "code": "gpr",
+                        "type": "weapon",
                         "m": "fire-max",
                         "p": 0,
                         "min": 20,
@@ -30887,6 +34205,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gpr",
+                        "type": "helm",
                         "m": "hp",
                         "p": 0,
                         "min": 38,
@@ -30895,6 +34215,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gpr",
+                        "type": "shield",
                         "m": "res-fire",
                         "p": 0,
                         "min": 40,
@@ -30923,6 +34245,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gcw",
+                        "type": "weapon",
                         "m": "dmg-undead",
                         "p": 0,
                         "min": 28,
@@ -30931,6 +34255,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gcw",
+                        "type": "helm",
                         "m": "att",
                         "p": 0,
                         "min": 20,
@@ -30939,6 +34265,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gcw",
+                        "type": "shield",
                         "m": "res-all",
                         "p": 0,
                         "min": 6,
@@ -30967,6 +34295,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gfw",
+                        "type": "weapon",
                         "m": "dmg-undead",
                         "p": 0,
                         "min": 34,
@@ -30975,6 +34305,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gfw",
+                        "type": "helm",
                         "m": "att",
                         "p": 0,
                         "min": 40,
@@ -30983,6 +34315,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gfw",
+                        "type": "shield",
                         "m": "res-all",
                         "p": 0,
                         "min": 8,
@@ -31011,6 +34345,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gsw",
+                        "type": "weapon",
                         "m": "dmg-undead",
                         "p": 0,
                         "min": 44,
@@ -31019,6 +34355,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gsw",
+                        "type": "helm",
                         "m": "att",
                         "p": 0,
                         "min": 60,
@@ -31027,6 +34365,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gsw",
+                        "type": "shield",
                         "m": "res-all",
                         "p": 0,
                         "min": 11,
@@ -31055,6 +34395,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "glw",
+                        "type": "weapon",
                         "m": "dmg-undead",
                         "p": 0,
                         "min": 54,
@@ -31063,6 +34405,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "glw",
+                        "type": "helm",
                         "m": "att",
                         "p": 0,
                         "min": 80,
@@ -31071,6 +34415,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "glw",
+                        "type": "shield",
                         "m": "res-all",
                         "p": 0,
                         "min": 14,
@@ -31099,6 +34445,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "gpw",
+                        "type": "weapon",
                         "m": "dmg-undead",
                         "p": 0,
                         "min": 68,
@@ -31107,6 +34455,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gpw",
+                        "type": "helm",
                         "m": "att",
                         "p": 0,
                         "min": 100,
@@ -31115,6 +34465,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "gpw",
+                        "type": "shield",
                         "m": "res-all",
                         "p": 0,
                         "min": 19,
@@ -31313,12 +34665,16 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "skc",
+                        "type": "weapon",
                         "m": "manasteal",
                         "p": 0,
                         "min": 1,
                         "max": 1
                     },
                     {
+                        "code": "skc",
+                        "type": "weapon",
                         "m": "lifesteal",
                         "p": 0,
                         "min": 2,
@@ -31327,12 +34683,16 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "skc",
+                        "type": "helm",
                         "m": "regen",
                         "p": 0,
                         "min": 2,
                         "max": 2
                     },
                     {
+                        "code": "skc",
+                        "type": "helm",
                         "m": "regen-mana",
                         "p": 0,
                         "min": 8,
@@ -31341,6 +34701,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "skc",
+                        "type": "shield",
                         "m": "thorns",
                         "p": 0,
                         "min": 4,
@@ -31369,12 +34731,16 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "skf",
+                        "type": "weapon",
                         "m": "manasteal",
                         "p": 0,
                         "min": 2,
                         "max": 2
                     },
                     {
+                        "code": "skf",
+                        "type": "weapon",
                         "m": "lifesteal",
                         "p": 0,
                         "min": 2,
@@ -31383,12 +34749,16 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "skf",
+                        "type": "helm",
                         "m": "regen",
                         "p": 0,
                         "min": 3,
                         "max": 3
                     },
                     {
+                        "code": "skf",
+                        "type": "helm",
                         "m": "regen-mana",
                         "p": 0,
                         "min": 8,
@@ -31397,6 +34767,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "skf",
+                        "type": "shield",
                         "m": "thorns",
                         "p": 0,
                         "min": 8,
@@ -31425,12 +34797,16 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "sku",
+                        "type": "weapon",
                         "m": "manasteal",
                         "p": 0,
                         "min": 2,
                         "max": 2
                     },
                     {
+                        "code": "sku",
+                        "type": "weapon",
                         "m": "lifesteal",
                         "p": 0,
                         "min": 3,
@@ -31439,12 +34815,16 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "sku",
+                        "type": "helm",
                         "m": "regen",
                         "p": 0,
                         "min": 3,
                         "max": 3
                     },
                     {
+                        "code": "sku",
+                        "type": "helm",
                         "m": "regen-mana",
                         "p": 0,
                         "min": 12,
@@ -31453,6 +34833,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "sku",
+                        "type": "shield",
                         "m": "thorns",
                         "p": 0,
                         "min": 12,
@@ -31481,12 +34863,16 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "skl",
+                        "type": "weapon",
                         "m": "manasteal",
                         "p": 0,
                         "min": 3,
                         "max": 3
                     },
                     {
+                        "code": "skl",
+                        "type": "weapon",
                         "m": "lifesteal",
                         "p": 0,
                         "min": 3,
@@ -31495,12 +34881,16 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "skl",
+                        "type": "helm",
                         "m": "regen",
                         "p": 0,
                         "min": 4,
                         "max": 4
                     },
                     {
+                        "code": "skl",
+                        "type": "helm",
                         "m": "regen-mana",
                         "p": 0,
                         "min": 12,
@@ -31509,6 +34899,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "skl",
+                        "type": "shield",
                         "m": "thorns",
                         "p": 0,
                         "min": 16,
@@ -31537,12 +34929,16 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "skz",
+                        "type": "weapon",
                         "m": "manasteal",
                         "p": 0,
                         "min": 3,
                         "max": 3
                     },
                     {
+                        "code": "skz",
+                        "type": "weapon",
                         "m": "lifesteal",
                         "p": 0,
                         "min": 4,
@@ -31551,12 +34947,16 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "skz",
+                        "type": "helm",
                         "m": "regen",
                         "p": 0,
                         "min": 5,
                         "max": 5
                     },
                     {
+                        "code": "skz",
+                        "type": "helm",
                         "m": "regen-mana",
                         "p": 0,
                         "min": 19,
@@ -31565,6 +34965,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "skz",
+                        "type": "shield",
                         "m": "thorns",
                         "p": 0,
                         "min": 20,
@@ -31739,11 +35141,15 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r01",
+                        "type": "weapon",
                         "m": "light",
                         "min": 1,
                         "max": 1
                     },
                     {
+                        "code": "r01",
+                        "type": "weapon",
                         "m": "att",
                         "min": 50,
                         "max": 50
@@ -31751,11 +35157,15 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r01",
+                        "type": "helm",
                         "m": "light",
                         "min": 1,
                         "max": 1
                     },
                     {
+                        "code": "r01",
+                        "type": "helm",
                         "m": "ac",
                         "min": 15,
                         "max": 15
@@ -31763,11 +35173,15 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r01",
+                        "type": "shield",
                         "m": "light",
                         "min": 1,
                         "max": 1
                     },
                     {
+                        "code": "r01",
+                        "type": "shield",
                         "m": "ac",
                         "min": 15,
                         "max": 15
@@ -31794,11 +35208,15 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r02",
+                        "type": "weapon",
                         "m": "att-undead",
                         "min": 50,
                         "max": 50
                     },
                     {
+                        "code": "r02",
+                        "type": "weapon",
                         "m": "dmg-undead",
                         "min": 75,
                         "max": 75
@@ -31806,6 +35224,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r02",
+                        "type": "helm",
                         "m": "stamdrain",
                         "min": 15,
                         "max": 15
@@ -31813,6 +35233,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r02",
+                        "type": "shield",
                         "m": "block",
                         "min": 7,
                         "max": 7
@@ -31839,6 +35261,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r03",
+                        "type": "weapon",
                         "m": "mana-kill",
                         "min": 2,
                         "max": 2
@@ -31846,6 +35270,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r03",
+                        "type": "helm",
                         "m": "mana-kill",
                         "min": 2,
                         "max": 2
@@ -31853,6 +35279,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r03",
+                        "type": "shield",
                         "m": "mana-kill",
                         "min": 2,
                         "max": 2
@@ -31879,6 +35307,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r04",
+                        "type": "weapon",
                         "m": "knock",
                         "min": 1,
                         "max": 1
@@ -31886,6 +35316,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r04",
+                        "type": "helm",
                         "m": "ac-miss",
                         "min": 30,
                         "max": 30
@@ -31893,6 +35325,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r04",
+                        "type": "shield",
                         "m": "ac-miss",
                         "min": 30,
                         "max": 30
@@ -31919,6 +35353,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r05",
+                        "type": "weapon",
                         "m": "reduce-ac",
                         "min": 25,
                         "max": 25
@@ -31926,6 +35362,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r05",
+                        "type": "helm",
                         "m": "regen-mana",
                         "min": 15,
                         "max": 15
@@ -31933,6 +35371,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r05",
+                        "type": "shield",
                         "m": "regen-mana",
                         "min": 15,
                         "max": 15
@@ -31959,6 +35399,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r06",
+                        "type": "weapon",
                         "m": "dmg-max",
                         "min": 9,
                         "max": 9
@@ -31966,6 +35408,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r06",
+                        "type": "helm",
                         "m": "dmg-to-mana",
                         "min": 15,
                         "max": 15
@@ -31973,6 +35417,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r06",
+                        "type": "shield",
                         "m": "dmg-to-mana",
                         "min": 15,
                         "max": 15
@@ -31999,6 +35445,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r07",
+                        "type": "weapon",
                         "m": "dmg-pois",
                         "p": 125,
                         "min": 154,
@@ -32007,6 +35455,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r07",
+                        "type": "helm",
                         "m": "res-pois",
                         "min": 30,
                         "max": 30
@@ -32014,6 +35464,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r07",
+                        "type": "shield",
                         "m": "res-pois",
                         "min": 35,
                         "max": 35
@@ -32040,6 +35492,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r08",
+                        "type": "weapon",
                         "m": "dmg-fire",
                         "min": 5,
                         "max": 30
@@ -32047,6 +35501,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r08",
+                        "type": "helm",
                         "m": "res-fire",
                         "min": 30,
                         "max": 30
@@ -32054,6 +35510,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r08",
+                        "type": "shield",
                         "m": "res-fire",
                         "min": 35,
                         "max": 35
@@ -32080,6 +35538,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r09",
+                        "type": "weapon",
                         "m": "dmg-ltng",
                         "min": 1,
                         "max": 50
@@ -32087,6 +35547,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r09",
+                        "type": "helm",
                         "m": "res-ltng",
                         "min": 30,
                         "max": 30
@@ -32094,6 +35556,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r09",
+                        "type": "shield",
                         "m": "res-ltng",
                         "min": 35,
                         "max": 35
@@ -32120,6 +35584,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r10",
+                        "type": "weapon",
                         "m": "dmg-cold",
                         "p": 75,
                         "min": 3,
@@ -32128,6 +35594,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r10",
+                        "type": "helm",
                         "m": "res-cold",
                         "min": 30,
                         "max": 30
@@ -32135,6 +35603,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r10",
+                        "type": "shield",
                         "m": "res-cold",
                         "min": 35,
                         "max": 35
@@ -32161,6 +35631,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r11",
+                        "type": "weapon",
                         "m": "lifesteal",
                         "min": 7,
                         "max": 7
@@ -32168,6 +35640,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r11",
+                        "type": "helm",
                         "m": "thorns",
                         "min": 14,
                         "max": 14
@@ -32175,6 +35649,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r11",
+                        "type": "shield",
                         "m": "thorns",
                         "min": 14,
                         "max": 14
@@ -32201,6 +35677,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r12",
+                        "type": "weapon",
                         "m": "dmg-min",
                         "min": 9,
                         "max": 9
@@ -32208,6 +35686,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r12",
+                        "type": "helm",
                         "m": "red-dmg",
                         "min": 7,
                         "max": 7
@@ -32215,6 +35695,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r12",
+                        "type": "shield",
                         "m": "red-dmg",
                         "min": 7,
                         "max": 7
@@ -32241,6 +35723,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r13",
+                        "type": "weapon",
                         "m": "swing2",
                         "min": 20,
                         "max": 20
@@ -32248,6 +35732,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r13",
+                        "type": "helm",
                         "m": "balance2",
                         "min": 20,
                         "max": 20
@@ -32255,6 +35741,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r13",
+                        "type": "shield",
                         "m": "block2",
                         "min": 20,
                         "max": 20
@@ -32281,6 +35769,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r14",
+                        "type": "weapon",
                         "m": "howl",
                         "min": 32,
                         "max": 32
@@ -32288,6 +35778,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r14",
+                        "type": "helm",
                         "m": "regen",
                         "min": 7,
                         "max": 7
@@ -32295,6 +35787,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r14",
+                        "type": "shield",
                         "m": "regen",
                         "min": 7,
                         "max": 7
@@ -32321,6 +35815,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r15",
+                        "type": "weapon",
                         "m": "ease",
                         "min": -20,
                         "max": -20
@@ -32328,6 +35824,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r15",
+                        "type": "helm",
                         "m": "ease",
                         "min": -15,
                         "max": -15
@@ -32335,6 +35833,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r15",
+                        "type": "shield",
                         "m": "ease",
                         "min": -15,
                         "max": -15
@@ -32361,6 +35861,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r16",
+                        "type": "weapon",
                         "m": "vit",
                         "min": 10,
                         "max": 10
@@ -32368,6 +35870,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r16",
+                        "type": "helm",
                         "m": "vit",
                         "min": 10,
                         "max": 10
@@ -32375,6 +35879,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r16",
+                        "type": "shield",
                         "m": "vit",
                         "min": 10,
                         "max": 10
@@ -32401,6 +35907,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r17",
+                        "type": "weapon",
                         "m": "enr",
                         "min": 10,
                         "max": 10
@@ -32408,6 +35916,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r17",
+                        "type": "helm",
                         "m": "enr",
                         "min": 10,
                         "max": 10
@@ -32415,6 +35925,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r17",
+                        "type": "shield",
                         "m": "enr",
                         "min": 10,
                         "max": 10
@@ -32441,6 +35953,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r18",
+                        "type": "weapon",
                         "m": "dex",
                         "min": 10,
                         "max": 10
@@ -32448,6 +35962,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r18",
+                        "type": "helm",
                         "m": "dex",
                         "min": 10,
                         "max": 10
@@ -32455,6 +35971,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r18",
+                        "type": "shield",
                         "m": "dex",
                         "min": 10,
                         "max": 10
@@ -32481,6 +35999,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r19",
+                        "type": "weapon",
                         "m": "str",
                         "min": 10,
                         "max": 10
@@ -32488,6 +36008,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r19",
+                        "type": "helm",
                         "m": "str",
                         "min": 10,
                         "max": 10
@@ -32495,6 +36017,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r19",
+                        "type": "shield",
                         "m": "str",
                         "min": 10,
                         "max": 10
@@ -32521,6 +36045,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r20",
+                        "type": "weapon",
                         "m": "gold%",
                         "min": 75,
                         "max": 75
@@ -32528,6 +36054,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r20",
+                        "type": "helm",
                         "m": "gold%",
                         "min": 50,
                         "max": 50
@@ -32535,6 +36063,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r20",
+                        "type": "shield",
                         "m": "gold%",
                         "min": 50,
                         "max": 50
@@ -32561,11 +36091,15 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r21",
+                        "type": "weapon",
                         "m": "att-demon",
                         "min": 100,
                         "max": 100
                     },
                     {
+                        "code": "r21",
+                        "type": "weapon",
                         "m": "dmg-demon",
                         "min": 75,
                         "max": 75
@@ -32573,6 +36107,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r21",
+                        "type": "helm",
                         "m": "ac%",
                         "min": 30,
                         "max": 30
@@ -32580,6 +36116,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r21",
+                        "type": "shield",
                         "m": "ac%",
                         "min": 30,
                         "max": 30
@@ -32606,6 +36144,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r22",
+                        "type": "weapon",
                         "m": "openwounds",
                         "min": 25,
                         "max": 25
@@ -32613,6 +36153,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r22",
+                        "type": "helm",
                         "m": "res-all",
                         "min": 15,
                         "max": 15
@@ -32620,6 +36162,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r22",
+                        "type": "shield",
                         "m": "res-all",
                         "min": 22,
                         "max": 22
@@ -32646,6 +36190,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r23",
+                        "type": "weapon",
                         "m": "noheal",
                         "min": 1,
                         "max": 1
@@ -32653,6 +36199,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r23",
+                        "type": "helm",
                         "m": "red-mag",
                         "min": 7,
                         "max": 7
@@ -32660,6 +36208,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r23",
+                        "type": "shield",
                         "m": "red-mag",
                         "min": 7,
                         "max": 7
@@ -32686,6 +36236,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r24",
+                        "type": "weapon",
                         "m": "mag%",
                         "min": 30,
                         "max": 30
@@ -32693,6 +36245,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r24",
+                        "type": "helm",
                         "m": "mag%",
                         "min": 25,
                         "max": 25
@@ -32700,6 +36254,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r24",
+                        "type": "shield",
                         "m": "mag%",
                         "min": 25,
                         "max": 25
@@ -32726,6 +36282,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r25",
+                        "type": "weapon",
                         "m": "att%",
                         "min": 20,
                         "max": 20
@@ -32733,6 +36291,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r25",
+                        "type": "helm",
                         "m": "res-pois-max",
                         "min": 5,
                         "max": 5
@@ -32740,6 +36300,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r25",
+                        "type": "shield",
                         "m": "res-pois-max",
                         "min": 5,
                         "max": 5
@@ -32766,6 +36328,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r26",
+                        "type": "weapon",
                         "m": "manasteal",
                         "min": 7,
                         "max": 7
@@ -32773,6 +36337,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r26",
+                        "type": "helm",
                         "m": "res-fire-max",
                         "min": 5,
                         "max": 5
@@ -32780,6 +36346,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r26",
+                        "type": "shield",
                         "m": "res-fire-max",
                         "min": 5,
                         "max": 5
@@ -32806,6 +36374,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r27",
+                        "type": "weapon",
                         "m": "dmg%",
                         "min": 50,
                         "max": 50
@@ -32813,6 +36383,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r27",
+                        "type": "helm",
                         "m": "res-cold-max",
                         "min": 5,
                         "max": 5
@@ -32820,6 +36392,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r27",
+                        "type": "shield",
                         "m": "res-cold-max",
                         "min": 5,
                         "max": 5
@@ -32846,6 +36420,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r28",
+                        "type": "weapon",
                         "m": "deadly",
                         "min": 20,
                         "max": 20
@@ -32853,6 +36429,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r28",
+                        "type": "helm",
                         "m": "res-ltng-max",
                         "min": 5,
                         "max": 5
@@ -32860,6 +36438,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r28",
+                        "type": "shield",
                         "m": "res-ltng-max",
                         "min": 5,
                         "max": 5
@@ -32886,6 +36466,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r29",
+                        "type": "weapon",
                         "m": "stupidity",
                         "min": 1,
                         "max": 1
@@ -32893,6 +36475,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r29",
+                        "type": "helm",
                         "m": "mana%",
                         "min": 5,
                         "max": 5
@@ -32900,6 +36484,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r29",
+                        "type": "shield",
                         "m": "mana",
                         "min": 50,
                         "max": 50
@@ -32926,6 +36512,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r30",
+                        "type": "weapon",
                         "m": "crush",
                         "min": 20,
                         "max": 20
@@ -32933,6 +36521,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r30",
+                        "type": "helm",
                         "m": "red-dmg%",
                         "min": 8,
                         "max": 8
@@ -32940,6 +36530,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r30",
+                        "type": "shield",
                         "m": "red-dmg%",
                         "min": 8,
                         "max": 8
@@ -32966,6 +36558,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r31",
+                        "type": "weapon",
                         "m": "ignore-ac",
                         "min": 1,
                         "max": 1
@@ -32973,6 +36567,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r31",
+                        "type": "helm",
                         "m": "hp%",
                         "min": 5,
                         "max": 5
@@ -32980,6 +36576,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r31",
+                        "type": "shield",
                         "m": "hp",
                         "min": 50,
                         "max": 50
@@ -33006,6 +36604,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r32",
+                        "type": "weapon",
                         "m": "freeze",
                         "min": 3,
                         "max": 3
@@ -33013,6 +36613,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r32",
+                        "type": "helm",
                         "m": "nofreeze",
                         "min": 1,
                         "max": 1
@@ -33020,6 +36622,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r32",
+                        "type": "shield",
                         "m": "nofreeze",
                         "min": 1,
                         "max": 1
@@ -33046,6 +36650,8 @@ export let remodded_constants_99 = {
             "m": [
                 [
                     {
+                        "code": "r33",
+                        "type": "weapon",
                         "m": "indestruct",
                         "min": 1,
                         "max": 1
@@ -33053,6 +36659,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r33",
+                        "type": "helm",
                         "m": "indestruct",
                         "min": 1,
                         "max": 1
@@ -33060,6 +36668,8 @@ export let remodded_constants_99 = {
                 ],
                 [
                     {
+                        "code": "r33",
+                        "type": "shield",
                         "m": "indestruct",
                         "min": 1,
                         "max": 1
@@ -33304,5 +36914,5 @@ export let remodded_constants_99 = {
             ]
         }
     },
-    "version": "remodded_constants_99"
+    "version": "vanilla_constants_99"
 };
