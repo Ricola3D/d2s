@@ -21,11 +21,88 @@ enum Quality {
   Crafted = 0x08,
 }
 
+//type FrequencyItem = [string | [FrequencyItem, FrequencyItem], number];
+//type FrequencyTable = FrequencyItem[];
+// type CompressedFrequencyItem = [string | CompressedFrequencyItem, string | CompressedFrequencyItem];
+// type HuffmanEncoded = CompressedFrequencyItem | string;
+// type HuffmanW = {
+//   [key: string]: string;
+// };
+// type HuffmanLookup = {
+//   [key: string]: {
+//     v: number;
+//     l: number;
+//   };
+// };
+
 // prettier-ignore
 //huffman tree
 const HUFFMAN = [[[[["w","u"],[["8",["y",["5",["j",[]]]]],"h"]],["s",[["2","n"],"x"]]],[[["c",["k","f"]],"b"],[["t","m"],["9","7"]]]],[" ",[[[["e","d"],"p"],["g",[[["z","q"],"3"],["v","6"]]]],[["r","l"],["a",[["1",["4","0"]],["i","o"]]]]]]];
 // prettier-ignore
 const HUFFMAN_LOOKUP = { "0": { "v": 223, "l": 8 }, "1": { "v": 31, "l": 7 }, "2": { "v": 12, "l": 6 }, "3": { "v": 91, "l": 7 }, "4": { "v": 95, "l": 8 }, "5": { "v": 104, "l": 8 }, "6": { "v": 123, "l": 7 }, "7": { "v": 30, "l": 5 }, "8": { "v": 8, "l": 6 }, "9": { "v": 14, "l": 5 }, " ": { "v": 1, "l": 2 }, "a": { "v": 15, "l": 5 }, "b": { "v": 10, "l": 4 }, "c": { "v": 2, "l": 5 }, "d": { "v": 35, "l": 6 }, "e": { "v": 3, "l": 6 }, "f": { "v": 50, "l": 6 }, "g": { "v": 11, "l": 5 }, "h": { "v": 24, "l": 5 }, "i": { "v": 63, "l": 7 }, "j": { "v": 232, "l": 9 }, "k": { "v": 18, "l": 6 }, "l": { "v": 23, "l": 5 }, "m": { "v": 22, "l": 5 }, "n": { "v": 44, "l": 6 }, "o": { "v": 127, "l": 7 }, "p": { "v": 19, "l": 5 }, "q": { "v": 155, "l": 8 }, "r": { "v": 7, "l": 5 }, "s": { "v": 4, "l": 4 }, "t": { "v": 6, "l": 5 }, "u": { "v": 16, "l": 5 }, "v": { "v": 59, "l": 7 }, "w": { "v": 0, "l": 5 }, "x": { "v": 28, "l": 5 }, "y": { "v": 40, "l": 7 }, "z": { "v": 27, "l": 8 } };
+
+// const HUFFMAN: CompressedFrequencyItem = [
+//   [
+//     [
+//       [
+//         ["w", "u"],
+//         [["8", ["y", ["5", ["j", []]]]], "h"],
+//       ],
+//       ["s", [["2", "n"], "x"]],
+//     ],
+//     [
+//       [["c", ["k", "f"]], "b"],
+//       [
+//         ["t", "m"],
+//         ["9", "7"],
+//       ],
+//     ],
+//   ],
+//   [
+//     " ",
+//     [
+//       [
+//         [["e", "d"], "p"],
+//         [
+//           "g",
+//           [
+//             [["z", "q"], "3"],
+//             ["v", "6"],
+//           ],
+//         ],
+//       ],
+//       [
+//         ["r", "l"],
+//         [
+//           "a",
+//           [
+//             ["1", ["4", "0"]],
+//             ["i", "o"],
+//           ],
+//         ],
+//       ],
+//     ],
+//   ],
+// ];
+
+// const HUFFMAN_W = {}; // Keys are each character, values are the binary coding
+// function dotree(node: HuffmanEncoded, prefix: string) {
+//   if (Array.isArray(node)) {
+//     dotree(node[0], prefix + "0");
+//     dotree(node[1], prefix + "1");
+//   } else if (node) {
+//     HUFFMAN_W[node] = prefix;
+//   }
+// }
+// dotree(HUFFMAN, "");
+
+// const HUFFMAN_LOOKUP: HuffmanLookup = {}; // Keys are each character, values are the encoded binary value & length
+// Object.keys(HUFFMAN_W).forEach(function (key, index) {
+//   HUFFMAN_LOOKUP[key] = {
+//     v: parseInt(HUFFMAN_W[key], 2),
+//     l: HUFFMAN_W[key].length,
+//   };
+// });
 
 export async function readCharItems(char: types.ID2S, reader: BitReader, mod: string, config: types.IConfig): Promise<void> {
   char.items = await readItems(reader, mod, char.header.version, config, char);
@@ -526,8 +603,14 @@ function _readSimpleBits(item: types.IItem, reader: BitReader, version: number, 
       //https://github.com/d07RiV/d07riv.github.io/blob/master/d2r.html#L11-L20
       for (let i = 0; i < 4; i++) {
         let node = HUFFMAN as any;
+        let bits = "";
         do {
-          node = node[reader.ReadBit()];
+          const bit = reader.ReadBit();
+          bits += bit;
+          node = node[bit];
+          if (node === undefined) {
+            console.log("Huffman value " + bits + " (left-to-right) is undefined.");
+          }
         } while (Array.isArray(node));
         item.type += node;
       }

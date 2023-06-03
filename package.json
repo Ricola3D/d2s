@@ -19,7 +19,8 @@
     "eslint": "eslint",
     "generate": "node scripts/generate_constant_bundles",
     "d2t": "node scripts/d2s_to_text",
-    "t2d": "node scripts/text_to_d2s"
+    "t2d": "node scripts/text_to_d2s",
+    "dhuff": "node scripts/decode_huffman"
   },
   "devDependencies": {
     "@types/chai": "^4.1.3",
