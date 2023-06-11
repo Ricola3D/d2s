@@ -102,22 +102,22 @@ export interface INPCS {
 }
 
 export interface IQuest {
-  unk15: boolean;
-  unk14: boolean;
-  done_recently: boolean; //13
-  closed: boolean; //12
-  unk11: boolean;
-  unk10: boolean;
-  unk9: boolean;
-  unk8: boolean;
-  consumed_scroll: boolean; //7
-  unk6: boolean;
-  unk5: boolean;
-  unk4: boolean;
-  unk3: boolean;
-  is_received: boolean; //2
-  is_completed: boolean; //1
-  is_requirement_completed: boolean; //0
+  b15_completed_before: boolean;
+  b14_completed_now: boolean;
+  b13_done_recently: boolean; //13
+  b12_closed: boolean; //12
+  b11_custom7: boolean;
+  b10_custom6: boolean;
+  b9_custom5: boolean;
+  b8_custom4: boolean;
+  b7_custom3: boolean; //7
+  b6_custom2: boolean;
+  b5_custom1: boolean;
+  b4_entered_area: boolean;
+  b3_left_town: boolean;
+  b2_is_received: boolean; //2
+  b0_is_completed: boolean; //1
+  b1_is_requirement_completed: boolean; //0
 }
 
 export interface IActIQuests {
@@ -337,9 +337,7 @@ export interface IItem {
   total_nr_of_sockets: number;
   quantity: number;
   magic_prefix: number;
-  magic_prefix_name: string;
   magic_suffix: number;
-  magic_suffix_name: string;
   runeword_id: number;
   runeword_name: string;
   runeword_attributes: IMagicProperty[];

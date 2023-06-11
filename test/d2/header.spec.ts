@@ -29,8 +29,8 @@ describe("header", () => {
           d2s.header[i][j].introduced = true;
           d2s.header[i][j].completed = true;
         }
-        d2s.header[i].act_iii.the_guardian.is_completed = true;
-        d2s.header[i].act_iv.terrors_end.is_completed = true;
+        d2s.header[i].act_iii.the_guardian.b0_is_completed = true;
+        d2s.header[i].act_iv.terrors_end.b0_is_completed = true;
       }
 
       for (const i of ["normal", "nm", "hell"]) {

@@ -20,363 +20,363 @@
     "quests_normal": {
       "act_i": {
         "den_of_evil": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "sisters_burial_grounds": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "tools_of_the_trade": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_search_for_cain": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_forgotten_tower": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "sisters_to_the_slaughter": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         }
       },
       "act_ii": {
         "radaments_lair": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_horadric_staff": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "tainted_sun": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "arcane_sanctuary": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_summoner": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_seven_tombs": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         }
       },
       "act_iii": {
         "lam_esens_tome": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "khalims_will": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "blade_of_the_old_religion": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_golden_bird": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_blackened_temple": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_guardian": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         }
       },
       "act_iv": {
         "the_fallen_angel": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "terrors_end": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "hellforge": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         }
       },
       "act_v": {
         "siege_on_harrogath": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "rescue_on_mount_arreat": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "prison_of_ice": {
-          "is_completed": false,
-          "consumed_scroll": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b7_custom3": false,
+          "b1_is_requirement_completed": false
         },
         "betrayal_of_harrogath": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "rite_of_passage": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "eve_of_destruction": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         }
       }
     },
     "quests_nm": {
       "act_i": {
         "den_of_evil": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "sisters_burial_grounds": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "tools_of_the_trade": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_search_for_cain": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_forgotten_tower": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "sisters_to_the_slaughter": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         }
       },
       "act_ii": {
         "radaments_lair": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_horadric_staff": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "tainted_sun": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "arcane_sanctuary": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_summoner": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_seven_tombs": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         }
       },
       "act_iii": {
         "lam_esens_tome": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "khalims_will": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "blade_of_the_old_religion": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_golden_bird": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_blackened_temple": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_guardian": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         }
       },
       "act_iv": {
         "the_fallen_angel": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "terrors_end": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "hellforge": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         }
       },
       "act_v": {
         "siege_on_harrogath": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "rescue_on_mount_arreat": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "prison_of_ice": {
-          "is_completed": false,
-          "consumed_scroll": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b7_custom3": false,
+          "b1_is_requirement_completed": false
         },
         "betrayal_of_harrogath": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "rite_of_passage": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "eve_of_destruction": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         }
       }
     },
     "quests_hell": {
       "act_i": {
         "den_of_evil": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "sisters_burial_grounds": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "tools_of_the_trade": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_search_for_cain": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_forgotten_tower": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "sisters_to_the_slaughter": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         }
       },
       "act_ii": {
         "radaments_lair": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_horadric_staff": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "tainted_sun": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "arcane_sanctuary": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_summoner": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_seven_tombs": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         }
       },
       "act_iii": {
         "lam_esens_tome": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "khalims_will": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "blade_of_the_old_religion": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_golden_bird": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_blackened_temple": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "the_guardian": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         }
       },
       "act_iv": {
         "the_fallen_angel": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "terrors_end": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "hellforge": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         }
       },
       "act_v": {
         "siege_on_harrogath": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "rescue_on_mount_arreat": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "prison_of_ice": {
-          "is_completed": false,
-          "consumed_scroll": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b7_custom3": false,
+          "b1_is_requirement_completed": false
         },
         "betrayal_of_harrogath": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "rite_of_passage": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         },
         "eve_of_destruction": {
-          "is_completed": false,
-          "is_requirement_completed": false
+          "b0_is_completed": false,
+          "b1_is_requirement_completed": false
         }
       }
     },

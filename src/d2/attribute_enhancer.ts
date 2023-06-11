@@ -342,28 +342,39 @@ function _descFunc(
   const desc2Present = descFunc >= 6 && descFunc <= 10;
   switch (descFunc) {
     case 1:
+    // +[value] [string1]
     case 6:
+    // +[value] [string1] [string2]
     case 12: {
+      // +[value] [string1]
       value = `${sign}${v}`;
       break;
     }
     case 2:
+    // [value]% [string1]
     case 7: {
+      // [value]% [string1] [string2]
       value = `${v}%`;
       break;
     }
     case 3:
+    // [value] [string1]
     case 9: {
+      // [value] [string1] [string2]
       value = `${v}`;
       break;
     }
     case 4:
+    // +[value]% [string1]
     case 8: {
+      // +[value]% [string1] [string2]
       value = `${sign}${v}%`;
       break;
     }
     case 5:
+    // [value*100/128]% [string1]
     case 10: {
+      // [value*100/128]% [string1] [string2]
       if (descString.indexOf("%%") < 0) {
         value = `${(v * 100) / 128}%`;
       } else {
@@ -372,15 +383,18 @@ function _descFunc(
       break;
     }
     case 11: {
+      // Repairs 1 Durability In [100 / value] Seconds
       property.description = descString.replace(/%d/, (v / 100).toString());
       break;
     }
     case 13: {
+      // +[value] to [class] Skill Levels
       const clazz = constants.classes[property.values[0]];
       property.description = `${sign}${v} ${clazz.as}`;
       break;
     }
     case 14: {
+      // +[value] to [skilltab] Skill Levels ([class] Only)
       const clazz = constants.classes[property.values[1]];
       const skillTabStr = clazz.ts[property.values[0]];
       descString = _sprintf(skillTabStr, v);
@@ -388,6 +402,7 @@ function _descFunc(
       break;
     }
     case 15: {
+      // [chance]% to case [slvl] [skill] on [event]
       const skillId = property.values[1];
       const skill = constants.skills[skillId];
       const skillStr = skill ? skill.s : `Unknown_Skill_${skillId}`;
@@ -396,78 +411,89 @@ function _descFunc(
       break;
     }
     case 16: {
+      // Level [sLvl] [skill] Aura When Equipped 
+      const skillId = property.values[0];
+      const skill = constants.skills[skillId];
+      const skillStr = skill ? skill.s : `Unknown_Skill_${skillId}`;
       property.description = descString.replace(/%d/, v.toString());
-      property.description = property.description.replace(/%s/, constants.skills[property.values[0]].s);
+      property.description = property.description.replace(/%s/, skillStr);
       break;
     }
     case 17: {
-      //todo
+      // [value] [string1] (Increases near [time])
       property.description = `${v} ${descString} (Increases near [time])`;
       break;
     }
     case 18: {
-      //todo
+      // [value]% [string1] (Increases near [time])
       property.description = `${v}% ${descString} (Increases near [time])`;
       break;
     }
     case 19: {
+      // [value * -1]% [string1]
       property.description = _sprintf(descString, v.toString());
       break;
     }
     case 20: {
+      // [value * -1]% [string1]
       value = `${v * -1}%`;
       break;
     }
     case 21: {
+      // [value * -1] [string1]
       value = `${v * -1}`;
       break;
     }
     case 22: {
-      //todo
+      // [value]% [string1] [montype] (warning: this is bugged in vanilla and doesn't work properly, see CE forum)
       property.description = `${v}% ${descString} [montype]`;
       break;
     }
     case 23: {
-      //todo
+      // [value]% [string1] [monster]
       property.description = `${v}% ${descString} [monster]]`;
       break;
     }
     case 24: {
-      //charges
-      //legacy desc string
+      // Level [lvl] [skill] ([curr]/[max] charges)
+      const skillId = property.values[1];
+      const skill = constants.skills[skillId];
+      const skillStr = skill ? skill.s : `Unknown_Skill_${skillId}`;
       if (descString.indexOf("(") == 0) {
         let count = 0;
         descString = descString.replace(/%d/gi, () => {
           return property.values[2 + count++].toString();
         });
-        property.description = `Level ${property.values[0]} ${constants.skills[property.values[1]].s} ${descString}`;
+        property.description = `Level ${property.values[0]} ${skillStr} ${descString}`;
       } else {
-        property.description = _sprintf(
-          descString,
-          property.values[0],
-          constants.skills[property.values[1]].s,
-          property.values[2],
-          property.values[3]
-        );
+        property.description = _sprintf(descString, property.values[0], skillStr, property.values[2], property.values[3]);
       }
       break;
     }
     case 27: {
-      const skill = constants.skills[property.values[0]];
+      // +[value] to [skill] ([class] Only)
+      const skillId = property.values[0];
+      const skill = constants.skills[skillId];
+      const skillStr = skill ? skill.s : `Unknown_Skill_${skillId}`;
       const clazz = _classFromCode(skill.c, constants);
+      const clazzStr = clazz ? clazz.co : "";
       if (descString) {
-        property.description = _sprintf(descString, v, skill?.s, clazz ? clazz?.co : "");
+        property.description = _sprintf(descString, v, skillStr, clazzStr);
       } else {
-        property.description = `${sign}${v} to ${skill?.s} ${clazz?.co}`;
+        property.description = `${sign}${v} to ${skillStr} ${clazz?.co}`;
       }
       break;
     }
     case 28: {
-      const skill = constants.skills[property.values[0]];
-      property.description = `${sign}${v} to ${skill?.s}`;
+      // +[value] to [skill]
+      const skillId = property.values[0];
+      const skill = constants.skills[skillId];
+      const skillStr = skill ? skill.s : `Unknown_Skill_${skillId}`;
+      property.description = `${sign}${v} to ${skillStr}`;
       break;
     }
     case 29: {
+      // Diablo regex
       property.description = _sprintf(descString, v.toString());
       break;
     }

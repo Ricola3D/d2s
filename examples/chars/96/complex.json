@@ -26,282 +26,282 @@
         "quests_normal": {
             "act_i": {
                 "den_of_evil": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "sisters_burial_grounds": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "tools_of_the_trade": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "the_search_for_cain": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "the_forgotten_tower": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "sisters_to_the_slaughter": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 }
             },
             "act_ii": {
                 "radaments_lair": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "the_horadric_staff": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "tainted_sun": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "arcane_sanctuary": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "the_summoner": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "the_seven_tombs": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 }
             },
             "act_iii": {
                 "lam_esens_tome": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "khalims_will": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "blade_of_the_old_religion": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "the_golden_bird": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "the_blackened_temple": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "the_guardian": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 }
             },
             "act_iv": {
                 "the_fallen_angel": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "terrors_end": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "hellforge": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 }
             },
             "act_v": {
                 "siege_on_harrogath": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "rescue_on_mount_arreat": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "prison_of_ice": {
-                    "is_completed": false,
-                    "consumed_scroll": false
+                    "b0_is_completed": false,
+                    "b7_custom3": false
                 },
                 "betrayal_of_harrogath": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "rite_of_passage": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "eve_of_destruction": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 }
             }
         },
         "quests_nm": {
             "act_i": {
                 "den_of_evil": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "sisters_burial_grounds": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "tools_of_the_trade": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "the_search_for_cain": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "the_forgotten_tower": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "sisters_to_the_slaughter": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 }
             },
             "act_ii": {
                 "radaments_lair": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "the_horadric_staff": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "tainted_sun": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "arcane_sanctuary": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "the_summoner": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "the_seven_tombs": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 }
             },
             "act_iii": {
                 "lam_esens_tome": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "khalims_will": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "blade_of_the_old_religion": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "the_golden_bird": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "the_blackened_temple": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "the_guardian": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 }
             },
             "act_iv": {
                 "the_fallen_angel": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "terrors_end": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "hellforge": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 }
             },
             "act_v": {
                 "siege_on_harrogath": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "rescue_on_mount_arreat": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "prison_of_ice": {
-                    "is_completed": false,
-                    "consumed_scroll": true
+                    "b0_is_completed": false,
+                    "b7_custom3": true
                 },
                 "betrayal_of_harrogath": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "rite_of_passage": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "eve_of_destruction": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 }
             }
         },
         "quests_hell": {
             "act_i": {
                 "den_of_evil": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "sisters_burial_grounds": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "tools_of_the_trade": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "the_search_for_cain": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "the_forgotten_tower": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "sisters_to_the_slaughter": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 }
             },
             "act_ii": {
                 "radaments_lair": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "the_horadric_staff": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "tainted_sun": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "arcane_sanctuary": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "the_summoner": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "the_seven_tombs": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 }
             },
             "act_iii": {
                 "lam_esens_tome": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "khalims_will": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "blade_of_the_old_religion": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "the_golden_bird": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "the_blackened_temple": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "the_guardian": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 }
             },
             "act_iv": {
                 "the_fallen_angel": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "terrors_end": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "hellforge": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 }
             },
             "act_v": {
                 "siege_on_harrogath": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "rescue_on_mount_arreat": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "prison_of_ice": {
-                    "is_completed": false,
-                    "consumed_scroll": false
+                    "b0_is_completed": false,
+                    "b7_custom3": false
                 },
                 "betrayal_of_harrogath": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 },
                 "rite_of_passage": {
-                    "is_completed": true
+                    "b0_is_completed": true
                 },
                 "eve_of_destruction": {
-                    "is_completed": false
+                    "b0_is_completed": false
                 }
             }
         },
@@ -1162,9 +1162,7 @@
             },
             "total_nr_of_sockets": 0,
             "magic_prefix": 444,
-            "magic_prefix_name": "Chilling",
             "magic_suffix": 332,
-            "magic_suffix_name": "Life",
             "runeword_attributes": [],
             "set_list_count": 0,
             "set_attributes": [],
@@ -1319,9 +1317,7 @@
             },
             "total_nr_of_sockets": 0,
             "magic_prefix": 347,
-            "magic_prefix_name": "Lapis",
             "magic_suffix": 291,
-            "magic_suffix_name": "Good Luck",
             "runeword_attributes": [],
             "set_list_count": 0,
             "set_attributes": [],
@@ -1618,9 +1614,7 @@
             },
             "total_nr_of_sockets": 0,
             "magic_prefix": 408,
-            "magic_prefix_name": "Emerald",
             "magic_suffix": 389,
-            "magic_suffix_name": "Strength",
             "runeword_attributes": [],
             "set_list_count": 0,
             "set_attributes": [],
@@ -1675,9 +1669,7 @@
             },
             "total_nr_of_sockets": 0,
             "magic_prefix": 367,
-            "magic_prefix_name": "Russet",
             "magic_suffix": 291,
-            "magic_suffix_name": "Good Luck",
             "runeword_attributes": [],
             "set_list_count": 0,
             "set_attributes": [],
@@ -1732,9 +1724,7 @@
             },
             "total_nr_of_sockets": 0,
             "magic_prefix": 367,
-            "magic_prefix_name": "Russet",
             "magic_suffix": 349,
-            "magic_suffix_name": "Vita",
             "runeword_attributes": [],
             "set_list_count": 0,
             "set_attributes": [],
@@ -1791,7 +1781,6 @@
             "magic_prefix": 444,
             "magic_prefix_name": "Chilling",
             "magic_suffix": 265,
-            "magic_suffix_name": "Balance",
             "runeword_attributes": [],
             "set_list_count": 0,
             "set_attributes": [],
@@ -1969,7 +1958,6 @@
             "magic_prefix": 405,
             "magic_prefix_name": "Beryl",
             "magic_suffix": 290,
-            "magic_suffix_name": "Fortune",
             "runeword_attributes": [],
             "set_list_count": 0,
             "set_attributes": [],
@@ -2972,7 +2960,6 @@
             },
             "total_nr_of_sockets": 0,
             "magic_suffix": 291,
-            "magic_suffix_name": "Good Luck",
             "runeword_attributes": [],
             "set_list_count": 0,
             "set_attributes": [],
@@ -3690,9 +3677,7 @@
             },
             "total_nr_of_sockets": 0,
             "magic_prefix": 444,
-            "magic_prefix_name": "Chilling",
             "magic_suffix": 694,
-            "magic_suffix_name": "Frost",
             "runeword_attributes": [],
             "set_list_count": 0,
             "set_attributes": [],
@@ -5307,9 +5292,7 @@
                     },
                     "total_nr_of_sockets": 0,
                     "magic_prefix": 250,
-                    "magic_prefix_name": "Argent",
                     "magic_suffix": 171,
-                    "magic_suffix_name": "Fewer",
                     "runeword_attributes": [],
                     "set_list_count": 0,
                     "set_attributes": [],

@@ -321,7 +321,7 @@ function _readQuests(bytes: Uint8Array): types.IQuests {
 function _writeQuests(quests: types.IQuests): Uint8Array {
   const writer = new BitWriter(96);
   writer.length = 96 * 8;
-  const difficultyCompleted = +quests.act_v.completed || +quests.act_v.eve_of_destruction.is_completed;
+  const difficultyCompleted = +quests.act_v.completed || +quests.act_v.eve_of_destruction.b0_is_completed;
   return writer
     .WriteUInt16(+quests.act_i.introduced)
     .WriteArray(_writeQuest(quests.act_i.den_of_evil))
@@ -330,30 +330,30 @@ function _writeQuests(quests: types.IQuests): Uint8Array {
     .WriteArray(_writeQuest(quests.act_i.the_search_for_cain))
     .WriteArray(_writeQuest(quests.act_i.the_forgotten_tower))
     .WriteArray(_writeQuest(quests.act_i.sisters_to_the_slaughter))
-    .WriteUInt16(+quests.act_i.completed || +quests.act_i.sisters_to_the_slaughter.is_completed)
-    .WriteUInt16(+quests.act_ii.introduced || +quests.act_i.sisters_to_the_slaughter.is_completed)
+    .WriteUInt16(+quests.act_i.completed || +quests.act_i.sisters_to_the_slaughter.b0_is_completed)
+    .WriteUInt16(+quests.act_ii.introduced || +quests.act_i.sisters_to_the_slaughter.b0_is_completed)
     .WriteArray(_writeQuest(quests.act_ii.radaments_lair))
     .WriteArray(_writeQuest(quests.act_ii.the_horadric_staff))
     .WriteArray(_writeQuest(quests.act_ii.tainted_sun))
     .WriteArray(_writeQuest(quests.act_ii.arcane_sanctuary))
     .WriteArray(_writeQuest(quests.act_ii.the_summoner))
     .WriteArray(_writeQuest(quests.act_ii.the_seven_tombs))
-    .WriteUInt16(+quests.act_ii.completed || +quests.act_ii.the_seven_tombs.is_completed)
-    .WriteUInt16(+quests.act_iii.introduced || +quests.act_ii.the_seven_tombs.is_completed)
+    .WriteUInt16(+quests.act_ii.completed || +quests.act_ii.the_seven_tombs.b0_is_completed)
+    .WriteUInt16(+quests.act_iii.introduced || +quests.act_ii.the_seven_tombs.b0_is_completed)
     .WriteArray(_writeQuest(quests.act_iii.lam_esens_tome))
     .WriteArray(_writeQuest(quests.act_iii.khalims_will))
     .WriteArray(_writeQuest(quests.act_iii.blade_of_the_old_religion))
     .WriteArray(_writeQuest(quests.act_iii.the_golden_bird))
     .WriteArray(_writeQuest(quests.act_iii.the_blackened_temple))
     .WriteArray(_writeQuest(quests.act_iii.the_guardian))
-    .WriteUInt16(+quests.act_iii.completed || +quests.act_iii.the_guardian.is_completed)
-    .WriteUInt16(+quests.act_iv.introduced || +quests.act_iii.the_guardian.is_completed)
+    .WriteUInt16(+quests.act_iii.completed || +quests.act_iii.the_guardian.b0_is_completed)
+    .WriteUInt16(+quests.act_iv.introduced || +quests.act_iii.the_guardian.b0_is_completed)
     .WriteArray(_writeQuest(quests.act_iv.the_fallen_angel))
     .WriteArray(_writeQuest(quests.act_iv.terrors_end))
     .WriteArray(_writeQuest(quests.act_iv.hellforge))
-    .WriteUInt16(+quests.act_iv.completed || +quests.act_iv.terrors_end.is_completed)
+    .WriteUInt16(+quests.act_iv.completed || +quests.act_iv.terrors_end.b0_is_completed)
     .WriteArray(new Uint8Array(6))
-    .WriteUInt16(+quests.act_v.introduced || +quests.act_iv.terrors_end.is_completed)
+    .WriteUInt16(+quests.act_v.introduced || +quests.act_iv.terrors_end.b0_is_completed)
     .WriteArray(new Uint8Array(4))
     .WriteArray(_writeQuest(quests.act_v.siege_on_harrogath))
     .WriteArray(_writeQuest(quests.act_v.rescue_on_mount_arreat))
@@ -370,44 +370,44 @@ function _writeQuests(quests: types.IQuests): Uint8Array {
 function _readQuest(bytes: Uint8Array): types.IQuest {
   const quest = {} as types.IQuest;
   const reader = new BitReader(bytes);
-  quest.is_completed = reader.ReadBit() === 1;
-  quest.is_requirement_completed = reader.ReadBit() === 1;
-  quest.is_received = reader.ReadBit() === 1;
-  if (reader.ReadBit() === 1) quest.unk3 = true;
-  if (reader.ReadBit() === 1) quest.unk4 = true;
-  if (reader.ReadBit() === 1) quest.unk5 = true;
-  if (reader.ReadBit() === 1) quest.unk6 = true;
-  if (reader.ReadBit() === 1) quest.consumed_scroll = true;
-  if (reader.ReadBit() === 1) quest.unk8 = true;
-  if (reader.ReadBit() === 1) quest.unk9 = true;
-  if (reader.ReadBit() === 1) quest.unk10 = true;
-  if (reader.ReadBit() === 1) quest.unk11 = true;
-  quest.closed = reader.ReadBit() === 1;
-  quest.done_recently = reader.ReadBit() === 1;
-  if (reader.ReadBit() === 1) quest.unk14 = true;
-  if (reader.ReadBit() === 1) quest.unk15 = true;
+  quest.b0_is_completed = reader.ReadBit() === 1;
+  quest.b1_is_requirement_completed = reader.ReadBit() === 1;
+  quest.b2_is_received = reader.ReadBit() === 1;
+  if (reader.ReadBit() === 1) quest.b3_left_town = true;
+  if (reader.ReadBit() === 1) quest.b4_entered_area = true;
+  if (reader.ReadBit() === 1) quest.b5_custom1 = true;
+  if (reader.ReadBit() === 1) quest.b6_custom2 = true;
+  if (reader.ReadBit() === 1) quest.b7_custom3 = true;
+  if (reader.ReadBit() === 1) quest.b8_custom4 = true;
+  if (reader.ReadBit() === 1) quest.b9_custom5 = true;
+  if (reader.ReadBit() === 1) quest.b10_custom6 = true;
+  if (reader.ReadBit() === 1) quest.b11_custom7 = true;
+  quest.b12_closed = reader.ReadBit() === 1;
+  quest.b13_done_recently = reader.ReadBit() === 1;
+  if (reader.ReadBit() === 1) quest.b14_completed_now = true;
+  if (reader.ReadBit() === 1) quest.b15_completed_before = true;
   return quest;
 }
 
 function _writeQuest(quest: types.IQuest): Uint8Array {
   const writer = new BitWriter(2);
   writer.length = 2 * 8;
-  writer.WriteBit(+quest.is_completed);
-  writer.WriteBit(+quest.is_requirement_completed);
-  writer.WriteBit(+quest.is_received);
-  writer.WriteBit(+quest.unk3);
-  writer.WriteBit(+quest.unk4);
-  writer.WriteBit(+quest.unk5);
-  writer.WriteBit(+quest.unk6);
-  writer.WriteBit(+quest.consumed_scroll);
-  writer.WriteBit(+quest.unk8);
-  writer.WriteBit(+quest.unk9);
-  writer.WriteBit(+quest.unk10);
-  writer.WriteBit(+quest.unk11);
-  writer.WriteBit(+quest.closed);
-  writer.WriteBit(+quest.done_recently);
-  writer.WriteBit(+quest.unk14);
-  writer.WriteBit(+quest.unk15);
+  writer.WriteBit(+quest.b0_is_completed);
+  writer.WriteBit(+quest.b1_is_requirement_completed);
+  writer.WriteBit(+quest.b2_is_received);
+  writer.WriteBit(+quest.b3_left_town);
+  writer.WriteBit(+quest.b4_entered_area);
+  writer.WriteBit(+quest.b5_custom1);
+  writer.WriteBit(+quest.b6_custom2);
+  writer.WriteBit(+quest.b7_custom3);
+  writer.WriteBit(+quest.b8_custom4);
+  writer.WriteBit(+quest.b9_custom5);
+  writer.WriteBit(+quest.b10_custom6);
+  writer.WriteBit(+quest.b11_custom7);
+  writer.WriteBit(+quest.b12_closed);
+  writer.WriteBit(+quest.b13_done_recently);
+  writer.WriteBit(+quest.b14_completed_now);
+  writer.WriteBit(+quest.b15_completed_before);
   return writer.ToArray();
 }
 

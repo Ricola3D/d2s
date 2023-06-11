@@ -6,7 +6,14 @@ import { getConstantData } from "./constants";
 //todo use constants.magical_properties and csvBits
 export function readAttributes(char: types.ID2S, reader: BitReader, mod: string): void {
   const constants = getConstantData(mod, char.header.version);
-  char.attributes = {} as types.IAttributes;
+  char.attributes = {
+    // For optional values, set default
+    unused_stats: 0,
+    unused_skill_points: 0,
+    experience: 0,
+    gold: 0,
+    stashed_gold: 0,
+  } as types.IAttributes;
   const header = reader.ReadString(2); //0x0000 [attributes header = 0x67, 0x66 "gf"]
   if (header != "gf") {
     // header is not present in first save after char is created

@@ -4,4 +4,5 @@ export { readAttributes, writeAttributes } from "./attributes";
 export { readSkills, writeSkills } from "./skills";
 export { enhanceAttributes, enhanceItems, enhancePlayerAttributes } from "./attribute_enhancer";
 export { getConstantData, setConstantData } from "./constants";
+export { ItemType, Quality } from "./items";
 export * as types from "./types";

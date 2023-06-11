@@ -3,14 +3,14 @@ import { BitReader } from "../binary/bitreader";
 import { BitWriter } from "../binary/bitwriter";
 import { getConstantData } from "./constants";
 
-enum ItemType {
+export enum ItemType {
   Armor = 0x01,
   Shield = 0x02, //treated the same as armor... only here to be able to parse nokkas jsons
   Weapon = 0x03,
   Other = 0x04,
 }
 
-enum Quality {
+export enum Quality {
   Low = 0x01,
   Normal = 0x02,
   Superior = 0x03,
@@ -182,7 +182,7 @@ export async function readCorpseItems(char: types.ID2S, reader: BitReader, mod: 
   }
   char.is_dead = reader.ReadUInt16(); //0x0002 [corpse count]
   for (let i = 0; i < char.is_dead; i++) {
-    reader.SkipBytes(12); //0x0004 [unk4, x_pos, y_pos]
+    reader.SkipBytes(12); //0x0004 [b4_entered_area, x_pos, y_pos]
     char.corpse_items = char.corpse_items.concat(await readItems(reader, mod, char.header.version, config, char));
   }
 }
@@ -268,11 +268,7 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
         break;
       case Quality.Magic:
         item.magic_prefix = reader.ReadUInt16(11);
-        if (item.magic_prefix)
-          item.magic_prefix_name = constants.magic_prefixes[item.magic_prefix] ? constants.magic_prefixes[item.magic_prefix].n : null;
         item.magic_suffix = reader.ReadUInt16(11);
-        if (item.magic_suffix)
-          item.magic_suffix_name = constants.magic_suffixes[item.magic_suffix] ? constants.magic_suffixes[item.magic_suffix].n : null;
         break;
       case Quality.Set:
         item.set_id = reader.ReadUInt16(12);
