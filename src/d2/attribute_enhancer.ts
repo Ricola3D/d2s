@@ -411,7 +411,7 @@ function _descFunc(
       break;
     }
     case 16: {
-      // Level [sLvl] [skill] Aura When Equipped 
+      // Level [sLvl] [skill] Aura When Equipped
       const skillId = property.values[0];
       const skill = constants.skills[skillId];
       const skillStr = skill ? skill.s : `Unknown_Skill_${skillId}`;
