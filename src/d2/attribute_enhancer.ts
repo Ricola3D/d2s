@@ -540,7 +540,7 @@ function _sprintf(str: string, ...args: any[]): string {
 }
 
 function _itemStatCostFromStat(stat: string, constants: types.IConstantData): number {
-  return constants.magical_properties.findIndex((e) => e.s === stat);
+  return constants.magical_properties.findIndex((e) => e && e.s === stat);
 }
 
 function _classFromCode(code: string, constants: types.IConstantData): any {

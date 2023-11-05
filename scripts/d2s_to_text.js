@@ -1,5 +1,17 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-var-requires */
+/*
+How to edit binary of a D2 item
+1 - Create a char "input".
+2 - Open the char, empty everything (weapon, shield, inventory, belt).
+3 - Move the item to the char. Save and return to menus.
+4 - run "npm run d2t"
+5 - open "output.txt", copy it's content to a word doc.
+6 - search and strike through "0100110101001010"/"MJ". It appears just before (reverse order) char items & body items.
+7 - On the right of first "0100110101001010" occurence, strike through the few 000s followed by 111111111.
+8 - Use the vault, or d2s-editor error to know the prop id to search.
+9 - Use internet to convert decimal to binary, and search the id on 9 bits.
+*/
 const fs = require("fs");
 const path = require("path");
 
