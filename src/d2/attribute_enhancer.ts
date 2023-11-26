@@ -126,7 +126,7 @@ export function enhanceItem(
         item.max_durability = details.durability - Math.ceil(details.durability / 2) + 1;
       }
     }
-    if (item.multiple_pictures) {
+    if (item.multiple_pictures && details.ig && details.ig[item.picture_id]) {
       item.inv_file = details.ig[item.picture_id];
     }
     if (item.magic_prefix || item.magic_suffix) {

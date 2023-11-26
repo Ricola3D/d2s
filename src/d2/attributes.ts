@@ -13,6 +13,10 @@ export function readAttributes(char: types.ID2S, reader: BitReader, mod: string)
     experience: 0,
     gold: 0,
     stashed_gold: 0,
+    killtrack: 0,
+    deathtrack: 0,
+    unused210: 0,
+    unused211: 0,
   } as types.IAttributes;
   const header = reader.ReadString(2); //0x0000 [attributes header = 0x67, 0x66 "gf"]
   if (header != "gf") {
@@ -37,6 +41,10 @@ export function readAttributes(char: types.ID2S, reader: BitReader, mod: string)
         experience: 0,
         gold: 0,
         stashed_gold: 0,
+        killtrack: 0,
+        deathtrack: 0,
+        unused210: 0,
+        unused211: 0,
       };
 
       return;
@@ -69,7 +77,8 @@ export function readAttributes(char: types.ID2S, reader: BitReader, mod: string)
 export async function writeAttributes(char: types.ID2S, constants: types.IConstantData): Promise<Uint8Array> {
   const writer = new BitWriter();
   writer.WriteString("gf", 2); //0x0000 [attributes header = 0x67, 0x66 "gf"]
-  for (let i = 0; i < 16; i++) {
+  const attributeIds = Array.from(Array(16).keys()).concat([210, 211]);
+  for (const i of attributeIds) {
     const property = constants.magical_properties[i];
     if (property === undefined) {
       throw new Error(`Invalid attribute: ${property}`);
@@ -108,4 +117,8 @@ const Attributes = {
   experience: "experience",
   gold: "gold",
   goldbank: "stashed_gold",
+  killtrack: "killtrack",
+  deathtrack: "deathtrack",
+  unused210: "unused210",
+  unused211: "unused211",
 };

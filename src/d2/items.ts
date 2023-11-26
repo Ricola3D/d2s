@@ -21,7 +21,7 @@ export enum Quality {
   Crafted = 0x08,
 }
 
-// Right now I'm missing characters (case sensitive) E, F, H, I, J, L, M, Q, U, X.
+// Right now I'm missing characters (case sensitive) E, F, I, J, L, M, Q, U, X.
 // prettier-ignore
 //huffman tree
 const HUFFMAN = [
@@ -345,7 +345,10 @@ const HUFFMAN = [
                             ],
                             /*11101 111101000*/ [
                               /*011101 111101000*/ [
-                                /*0011101 111101000*/ [],
+                                /*0011101 111101000*/ [
+                                  /*0011101 111101000*/ [],
+                                  /*1011101 111101000*/ "H"
+                                ],
                                 /*1011101 111101000*/ []
                               ],
                               /*111101 111101000*/ [
@@ -617,7 +620,7 @@ const HUFFMAN_LOOKUP = {
   //"E": { "v": 0, "l": 0 }, /**/
   //"F": { "v": 0, "l": 0 }, /**/
   "G": { "v": 109544, "l": 17 }, /*11010101111101000*/
-  //"H": { "v": 0, "l": 0 }, /**/
+  "H": { "v": 80872, "l": 17 }, /**/
   //"I": { "v": 0, "l": 0 }, /**/
   //"J": { "v": 0, "l": 0 }, /**/
   "K": { "v": 19432, "l": 17 }, /*00100101111101000*/
@@ -1249,7 +1252,7 @@ export function _readMagicProperties(reader: BitReader, constants: types.IConsta
         throw new Error(`Cannot find Magical Property for id: ${id} at position ${reader.offset}`);
       }
       if (prop.sP) {
-        let param = reader.ReadUInt16(prop.sP);
+        let param = reader.ReadUInt32(prop.sP);
         switch (prop.dF) {
           case 14: //+skill to skilltab
             values.push(param & 0x7);
@@ -1276,7 +1279,7 @@ export function _readMagicProperties(reader: BitReader, constants: types.IConsta
       if (!prop.sB) {
         throw new Error(`Save Bits is undefined for stat: ${id}:${prop.s} at position ${reader.offset}`);
       }
-      let v = reader.ReadUInt16(prop.sB);
+      let v = reader.ReadUInt32(prop.sB);
       if (prop.sA) {
         v -= prop.sA;
       }

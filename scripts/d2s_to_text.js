@@ -18,19 +18,19 @@ const path = require("path");
 const input_file_path = path.join("C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/ReMoDDeD", "input.d2s");
 const output_file_path = path.join("C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/ReMoDDeD", "output.txt");
 if (fs.existsSync(input_file_path)) {
-  const le_binary = fs.readFileSync(input_file_path);
+  const fileBuffer = fs.readFileSync(input_file_path);
 
   // Reach checksum
-  const uint8Array = new Uint8Array(le_binary.byteLength);
-  le_binary.copy(uint8Array, 0, 0, le_binary.byteLength);
-  const dv = new DataView(uint8Array.buffer);
-  const size = dv.getUint32(0x0008, true);
-  const checksum = dv.getUint32(0x000c, true);
+  const fileUint8Array = new Uint8Array(fileBuffer.byteLength);
+  fileBuffer.copy(fileUint8Array, 0, 0, fileBuffer.byteLength);
+  const fileDataView = new DataView(fileUint8Array.buffer);
+  const size = fileDataView.getUint32(0x0008, true);
+  const checksum = fileDataView.getUint32(0x000c, true);
   console.log(`size: ${size} - checksum: ${checksum}`);
 
   // Transform to an array of bits (0, 1)
-  const bits = new Uint8Array(le_binary.length * 8);
-  le_binary.reduce((acc, c) => {
+  const bits = new Uint8Array(fileBuffer.length * 8);
+  fileBuffer.reduce((acc, c) => {
     const b = c // c is a char/uint8/octet (hexa)
       .toString(2) // to a string of 0s and 1s
       .padStart(8, "0") // completed by leading 0s to a length of 8

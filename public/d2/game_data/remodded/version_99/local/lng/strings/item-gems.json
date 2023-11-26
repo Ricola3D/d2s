@@ -240,7 +240,7 @@
   {
     "id": 21267,
     "Key": "GemeffectX13",
-    "deDE": "Erhöht die Angriffswertung",
+    "deDE": "Erhöht den Angriffswert",
     "enUS": "Adds to Attack Rating",
     "esES": "Agrega a la clasificación de ataque",
     "esMX": "Agrega a la clasificación de ataque",
@@ -410,7 +410,7 @@
   {
     "id": 21277,
     "Key": "GemeffectX51",
-    "deDE": "Erhöht die Angriffswertung",
+    "deDE": "Erhöht den Angriffswert",
     "enUS": "Adds to Attack Rating",
     "esES": "Agrega a la clasificación de ataque",
     "esMX": "Agrega a la clasificación de ataque",
@@ -427,7 +427,7 @@
   {
     "id": 21278,
     "Key": "GemeffectX52",
-    "deDE": "Fügt allen Resistenzen hinzu",
+    "deDE": "Fügt alle Widerstände hinzu",
     "enUS": "Adds to All Resistances",
     "esES": "Se suma a todas las resistencias",
     "esMX": "Se suma a todas las resistencias",
@@ -478,7 +478,7 @@
   {
     "id": 21281,
     "Key": "GemeffectX62",
-    "deDE": "Fügt dem Blitz Widerstand hinzu",
+    "deDE": "Fügt Widerstand gegen Blitz hinzu",
     "enUS": "Adds Resistance to Lightning",
     "esES": "Añade resistencia a los rayos",
     "esMX": "Añade resistencia a los rayos",

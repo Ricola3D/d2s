@@ -676,4 +676,5 @@ function createBundle(input_dir, output_dir, output_name) {
 }
 
 // Note: currently I don't know how to read the 96 version, because for ex ItemStatCosts.txt is missing necessary columns
-createBundle('../public/d2/game_data/vanilla/version_99/', '../public/d2/', 'vanilla_constants_99');
+createBundle('../public/d2/game_data/vanilla/version_99/', '../public/d2/', 'generated_vanilla_constants_99');
+//createBundle('../public/d2/game_data/remodded/version_99/', '../public/d2/', 'generated_remodded_constants_99');
