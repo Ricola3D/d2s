@@ -15459,13 +15459,13 @@ export let remodded_constants_99 = {
         },
         {
             "id": 426,
-            "s": "unknown426",
+            "s": "item_fasterattackrate_perenergy",
             "sB": 7,
             "sA": 20,
             "so": 999,
             "dF": 19,
-            "dP": "Unknown426 %d",
-            "dN": "Unknown426 %d",
+            "dP": "%+d% Increased Attack Speed (Energy)",
+            "dN": "%+d% Increased Attack Speed (Energy)",
         },
         {
             "id": 427,
