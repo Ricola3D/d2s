@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const fs = require("fs");
 const path = require("path");
+const _ = require("lodash")
 
 //special stats. read the next N properties.
 //seems to be hardcode in d2 and not in itemstatcost
@@ -18,6 +19,285 @@ const EItemQuality = {
   normal: 0,
   exceptional: 1,
   elite: 2,
+}
+
+// In D2R, item definitions are overrided by files from "hd\items" and "hd\global\ui\items"
+function getBaseItemSection(constants, itemCode) {
+  let section = null;
+  if (constants.weapon_items[itemCode] != undefined) {
+    section = "weapon_items";
+  } else if (constants.armor_items[itemCode] != undefined) {
+    section = "armor_items";
+  } else if (constants.other_items[itemCode] != undefined) {
+    section = "other_items";
+  }
+  return section
+}
+
+function D2RPostTreatment(input_dir, constants) {
+  let subFolders = {
+    "weapon_items": "weapon",
+    "armor_items": "armor",
+    "other_items": "misc"
+  }
+  // HD UI images
+  const items_override_file_path = path.join(__dirname, `${input_dir}/hd/items/items.json`);
+  if (fs.existsSync(items_override_file_path)) {
+    //file exists. It contains "asset" override (inventory image) for some base items
+    const itemOverrides = JSON.parse(fs.readFileSync(items_override_file_path, 'utf8'));
+    for (let itemOverride of itemOverrides) {
+      // The matching item code
+      const itemCode = Object.keys(itemOverride)[0];
+      // Retrieve the item section
+      let baseItemSection = getBaseItemSection(constants, itemCode);
+      if (baseItemSection) {
+        // Check if an override .sprite image exist
+        const inventoryImage = path.normalize(`${subFolders[baseItemSection]}/${itemOverride[itemCode].asset}`)
+        const inventoryImageAbsolutePath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}.sprite`);
+        // Change the ".i" attribute in game constants
+        if (fs.existsSync(inventoryImageAbsolutePath)) {
+          constants[baseItemSection][itemCode].hdi = inventoryImage.replaceAll("\\", "/");
+        }
+      }
+    }
+  }
+
+  for (let category of [{ name: "uniques", section: "unq_items", short: "u "}, { name: "sets", section: "set_items", short: "s" }]) {
+    const uniqOrSet_override_file_path = path.join(__dirname, `${input_dir}/hd/items/${category.name}.json`);
+    if (fs.existsSync(uniqOrSet_override_file_path)) {
+      //file exists. It contains inventory image override for some unique items
+      const uniqOrSetOverrides = JSON.parse(fs.readFileSync(uniqOrSet_override_file_path, 'utf8'));
+      for (let uniqOrSetOverride of uniqOrSetOverrides) {
+        // The matching item code
+        const itemSnakeCaseIndex = Object.keys(uniqOrSetOverride)[0]; // Matches the index column of uniqueitems.txt, and a strings.json key, but with snake case
+        
+        let idx = constants[category.section].findIndex(item => _.snakeCase(item.index) == itemSnakeCaseIndex)
+
+        if (idx > -1) {
+          const item = constants.unq_items[idx]
+          let baseItemSection = getBaseItemSection(constants, item.c)
+          if (baseItemSection) {
+            // Check if an override .sprite image exist
+            const inventoryImage = path.normalize(`${subFolders[baseItemSection]}/${uniqOrSetOverride[itemSnakeCaseIndex].normal}`)
+            const inventoryImageAbsolutePath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}.sprite`);
+            // Change the ".i" attribute in game constants
+            if (fs.existsSync(inventoryImageAbsolutePath)) {
+              constants[category.section][idx].hdi = inventoryImage.replaceAll("\\", "/");
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Post treatment for ReMoDDeD
+function ReMoDDeDPostTreatment(input_dir, constants) {
+  // Make some hidden properties visible
+  let visibilityChanges = [
+    { section: "magical_properties", key:  92, from: "item_levelreq", assign: { s: "item_extra_level_req", so: 999, dF: 19, dP: "Req levels %+d (Enhances)" } },
+    { section: "magical_properties", key: 126, from: "item_elemskill", assign: { so: 157, dF: 19, dP: "%+d to Elemental Skills" } },
+    { section: "magical_properties", key: 370, from: "Soul_Ama", assign: { so: 999, dF: 19, dP: "Amazon Soul Tier: %d" } },
+    { section: "magical_properties", key: 371, from: "Soul_Sor", assign: { so: 999, dF: 19, dP: "Sorceress Soul Tier: %d" } },
+    { section: "magical_properties", key: 372, from: "Soul_Nec", assign: { so: 999, dF: 19, dP: "Necromancer Soul Tier: %d" } },
+    { section: "magical_properties", key: 373, from: "Soul_Pal", assign: { so: 999, dF: 19, dP: "Paladin Soul Tier: %d" } },
+    { section: "magical_properties", key: 374, from: "Soul_Bar", assign: { so: 999, dF: 19, dP: "Barbarian Soul Tier: %d" } },
+    { section: "magical_properties", key: 375, from: "Soul_Dru", assign: { so: 999, dF: 19, dP: "Druid Soul Tier: %d" } },
+    { section: "magical_properties", key: 376, from: "Soul_Ass", assign: { so: 999, dF: 19, dP: "Assassin Soul Tier: %d" } },
+    { section: "magical_properties", key: 377, from: "RW_Tracker", assign: { so: 999, dF: 19, dP: "One-use recipe consumed: %d" } },
+    { section: "magical_properties", key: 412, from: "Soul_Level", assign: { so: 999, dF: 19, dP: "Soul Count: %d" } },
+  ]
+  for (change of visibilityChanges) {
+    if (constants[change.section][change.key].s == change.from) {
+      Object.assign(constants[change.section][change.key], change.assign)
+    }
+    else {
+      console.log(`WARN: Magical Property ${propId} changed to "${constants[change.section][change.key].s}"`)
+    }
+  }
+
+  // Change some names
+  let nameChanges = []
+  for (let i = 0; i < 40; i++) {
+    key = `K${(1+i).toString().padStart(2, "0")}`
+    nameChanges.push({ section: "stackables", key: key, from: "Scroll of Torment", to: `Scroll of Torment<br>Level ${11+i} of Icy Hell` })
+    nameChanges.push({ section: "other_items", key: key, from: "Scroll of Torment", to: `Scroll of Torment<br>Level ${11+i} of Icy Hell` })
+  }
+  for (let i = 0; i < 40; i++) {
+    key = `K${(41+i).toString().padStart(2, "0")}`
+    nameChanges.push({ section: "stackables", key: key, from: "Scroll of Torment", to: `Scroll of Torment<br>Level ${11+i} of Torment Trial` })
+    nameChanges.push({ section: "other_items", key: key, from: "Scroll of Torment", to: `Scroll of Torment<br>Level ${11+i} of Torment Trial` })
+  }
+  nameChanges = nameChanges.concat([
+    { section: "stackables", key: "key", from: " ±", to: "Key" },
+    { section: "stackables", key: "b65", from: "Socket Remover", to: "Premium Socket Remover" },
+    { section: "other_items", key: "vps", from: " ³ ", to: "Stamina Potion" },
+    { section: "other_items", key: "yps", from: " ³ ", to: "Antidote Potion" },
+    { section: "other_items", key: "rvs", from: " ³ ", to: "Rejuvenation Potion" },
+    { section: "other_items", key: "rvl", from: " ¸ ", to: "Full Rejuvenation Potion" },
+    { section: "other_items", key: "wms", from: " ³ ", to: "Thawing Potion" },
+    { section: "other_items", key: "tsc", from: " ¯ ", to: "Scroll of Town Portal" },
+    { section: "other_items", key: "isc", from: " ¯ ", to: "Scroll of Identify" },
+    { section: "other_items", key: "key", from: " ±", to: "Key" },
+    { section: "other_items", key: "gcv", from: "¶ ", to: "Chipped Amethyst" },
+    { section: "other_items", key: "gfv", from: "¶ ", to: "Flawed Amethyst" },
+    { section: "other_items", key: "gsv", from: "¶ ", to: "Amethyst" },
+    { section: "other_items", key: "gzv", from: "¶ ", to: "Flawless Amethyst" },
+    { section: "other_items", key: "gpv", from: "¶ ", to: "Perfect Amethyst" },
+    { section: "other_items", key: "gcy", from: "¶ ", to: "Chipped Topaz" },
+    { section: "other_items", key: "gfy", from: "¶ ", to: "Flawed Topaz" },
+    { section: "other_items", key: "gsy", from: "¶ ", to: "Topaz" },
+    { section: "other_items", key: "gly", from: "¶ ", to: "Flawless Topaz" },
+    { section: "other_items", key: "gpy", from: "¶ ", to: "Perfect Topaz" },
+    { section: "other_items", key: "gcb", from: "¶ ", to: "Chipped Sapphire" },
+    { section: "other_items", key: "gfb", from: "¶ ", to: "Flawed Sapphire" },
+    { section: "other_items", key: "gsb", from: "¶ ", to: "Sapphire" },
+    { section: "other_items", key: "glb", from: "¶ ", to: "Flawless Sapphire" },
+    { section: "other_items", key: "gpb", from: "¶ ", to: "Perfect Sapphire" },
+    { section: "other_items", key: "gcg", from: "¶ ", to: "Chipped Emerald" },
+    { section: "other_items", key: "gfg", from: "¶ ", to: "Flawed Emerald" },
+    { section: "other_items", key: "gsg", from: "¶ ", to: "Emerald" },
+    { section: "other_items", key: "glg", from: "¶ ", to: "Flawless Emerald" },
+    { section: "other_items", key: "gpg", from: "¶ ", to: "Perfect Emerald" },
+    { section: "other_items", key: "gcr", from: "¶ ", to: "Chipped Ruby" },
+    { section: "other_items", key: "gfr", from: "¶ ", to: "Flawed Ruby" },
+    { section: "other_items", key: "gsr", from: "¶ ", to: "Ruby" },
+    { section: "other_items", key: "glr", from: "¶ ", to: "Flawless Ruby" },
+    { section: "other_items", key: "gpr", from: "¶ ", to: "Perfect Ruby" },
+    { section: "other_items", key: "gcw", from: "¶ ", to: "Chipped Diamond" },
+    { section: "other_items", key: "gfw", from: "¶ ", to: "Flawed Diamond" },
+    { section: "other_items", key: "gsw", from: "¶ ", to: "Diamond" },
+    { section: "other_items", key: "glw", from: "¶ ", to: "Flawless Diamond" },
+    { section: "other_items", key: "gpw", from: "¶ ", to: "Perfect Diamond" },
+    { section: "other_items", key: "hp1", from: " ³ ", to: "Minor Healing Potion" },
+    { section: "other_items", key: "hp2", from: " ³ ", to: "Light Healing Potion" },
+    { section: "other_items", key: "hp3", from: " ³ ", to: "Healing Potion" },
+    { section: "other_items", key: "hp4", from: " ¸ ", to: "Greater Healing Potion" },
+    { section: "other_items", key: "hp5", from: " ¸ ", to: "Super Healing Potion" },
+    { section: "other_items", key: "mp1", from: " ³ ", to: "Minor Mana Potion" },
+    { section: "other_items", key: "mp2", from: " ³ ", to: "Light Mana Potion" },
+    { section: "other_items", key: "mp3", from: " ³ ", to: "Mana Potion" },
+    { section: "other_items", key: "mp4", from: " ¸ ", to: "Greater Mana Potion" },
+    { section: "other_items", key: "mp5", from: " ¸ ", to: "Super Mana Potion" },
+    { section: "other_items", key: "skc", from: " ¹ ", to: "Chipped Skull" },
+    { section: "other_items", key: "skf", from: " ¹ ", to: "Flawed Skull" },
+    { section: "other_items", key: "sku", from: " ¹ ", to: "Skull" },
+    { section: "other_items", key: "skl", from: " ¹ ", to: "Flawless Skull" },
+    { section: "other_items", key: "skz", from: " ¹ ", to: "Perfect Skull" },
+    { section: "other_items", key: "r01", from: "⅐ El", to: "El Rune" },
+    { section: "other_items", key: "r02", from: "⅑ Eld", to: "Eld Rune" },
+    { section: "other_items", key: "r03", from: "⅒ Tir", to: "Tir Rune" },
+    { section: "other_items", key: "r04", from: "⅓ Nef", to: "Nef Rune" },
+    { section: "other_items", key: "r05", from: "⅔ Eth", to: "Eth Rune" },
+    { section: "other_items", key: "r06", from: "⅕ Ith", to: "Ith Rune" },
+    { section: "other_items", key: "r07", from: "⅖ Tal", to: "Tal Rune" },
+    { section: "other_items", key: "r08", from: "⅗ Ral", to: "Ral Rune" },
+    { section: "other_items", key: "r09", from: "⅘ Ort", to: "Ort Rune" },
+    { section: "other_items", key: "r10", from: "⅙ Thul", to: "Thul Rune" },
+    { section: "other_items", key: "r11", from: "⅚ Amn", to: "Amn Rune" },
+    { section: "other_items", key: "r12", from: "⅛ Sol", to: "Sol Rune" },
+    { section: "other_items", key: "r13", from: "⅜ Shael", to: "Shael Rune" },
+    { section: "other_items", key: "r14", from: "⅝ Dol", to: "Dol Rune" },
+    { section: "other_items", key: "r15", from: "⅞ Hel", to: "Hel Rune" },
+    { section: "other_items", key: "r16", from: "⅟ Io", to: "Io Rune" },
+    { section: "other_items", key: "r17", from: "Ⅰ Lum", to: "Lum Rune" },
+    { section: "other_items", key: "r18", from: "Ⅱ Ko", to: "Ko Rune" },
+    { section: "other_items", key: "r19", from: "Ⅲ Fal", to: "Fal Rune" },
+    { section: "other_items", key: "r20", from: "Ⅳ Lem", to: "Lem Rune" },
+    { section: "other_items", key: "r21", from: "Ⅴ Pul", to: "Pul Rune" },
+    { section: "other_items", key: "r22", from: "Ⅵ Um", to: "Um Rune" },
+    { section: "other_items", key: "r23", from: "Ⅶ Mal", to: "Mal Rune" },
+    { section: "other_items", key: "r24", from: "Ⅷ Ist", to: "Ist Rune" },
+    { section: "other_items", key: "r25", from: "Ⅸ Gul", to: "Gul Rune" },
+    { section: "other_items", key: "r26", from: "Ⅹ Vex", to: "Vex Rune" },
+    { section: "other_items", key: "r27", from: "Ⅺ Ohm", to: "Ohm Rune" },
+    { section: "other_items", key: "r28", from: "Ⅻ Lo", to: "Lo Rune" },
+    { section: "other_items", key: "r29", from: "Ⅼ Sur", to: "Sur Rune" },
+    { section: "other_items", key: "r30", from: "Ⅽ Ber", to: "Ber Rune" },
+    { section: "other_items", key: "r31", from: "Ⅾ Jah", to: "Jah Rune" },
+    { section: "other_items", key: "r32", from: "Ⅿ Cham", to: "Cham Rune" },
+    { section: "other_items", key: "r33", from: "ⅰ Zod", to: "Zod Rune" },
+    { section: "other_items", key: "a10", from: "Codex of Gluttony", to: "Codex of Gluttony 1:1" },
+    { section: "other_items", key: "a11", from: "Codex of Gluttony", to: "Codex of Gluttony 1:2" },
+    { section: "other_items", key: "a12", from: "Codex of Gluttony", to: "Codex of Gluttony 1:3" },
+    { section: "other_items", key: "a13", from: "Codex of Gluttony", to: "Codex of Gluttony 1:4" },
+    { section: "other_items", key: "a14", from: "Codex of Gluttony", to: "Codex of Gluttony 1:5" },
+    { section: "other_items", key: "a15", from: "Codex of Gluttony", to: "Codex of Gluttony 1:6" },
+    { section: "other_items", key: "a16", from: "Codex of Gluttony", to: "Codex of Gluttony 1:7" },
+    { section: "other_items", key: "a17", from: "Codex of Lust", to: "Codex of Lust 2:1" },
+    { section: "other_items", key: "a18", from: "Codex of Lust", to: "Codex of Lust 2:2" },
+    { section: "other_items", key: "a19", from: "Codex of Lust", to: "Codex of Lust 2:3" },
+    { section: "other_items", key: "a20", from: "Codex of Lust", to: "Codex of Lust 2:4" },
+    { section: "other_items", key: "a21", from: "Codex of Lust", to: "Codex of Lust 2:5" },
+    { section: "other_items", key: "a22", from: "Codex of Lust", to: "Codex of Lust 2:6" },
+    { section: "other_items", key: "a23", from: "Codex of Lust", to: "Codex of Lust 2:7" },
+    { section: "other_items", key: "a24", from: "Codex of Greed", to: "Codex of Greed 3:1" },
+    { section: "other_items", key: "a25", from: "Codex of Greed", to: "Codex of Greed 3:2" },
+    { section: "other_items", key: "a26", from: "Codex of Greed", to: "Codex of Greed 3:3" },
+    { section: "other_items", key: "a27", from: "Codex of Greed", to: "Codex of Greed 3:4" },
+    { section: "other_items", key: "a28", from: "Codex of Greed", to: "Codex of Greed 3:5" },
+    { section: "other_items", key: "a29", from: "Codex of Greed", to: "Codex of Greed 3:6" },
+    { section: "other_items", key: "a30", from: "Codex of Greed", to: "Codex of Greed 3:7" },
+    { section: "other_items", key: "a31", from: "Codex of Wrath", to: "Codex of Wrath 4:1" },
+    { section: "other_items", key: "a32", from: "Codex of Wrath", to: "Codex of Wrath 4:2" },
+    { section: "other_items", key: "a33", from: "Codex of Wrath", to: "Codex of Wrath 4:3" },
+    { section: "other_items", key: "a34", from: "Codex of Wrath", to: "Codex of Wrath 4:4" },
+    { section: "other_items", key: "a35", from: "Codex of Wrath", to: "Codex of Wrath 4:5" },
+    { section: "other_items", key: "a36", from: "Codex of Wrath", to: "Codex of Wrath 4:6" },
+    { section: "other_items", key: "a37", from: "Codex of Wrath", to: "Codex of Wrath 4:7" },
+    { section: "other_items", key: "a38", from: "Codex of Sloth", to: "Codex of Sloth 5:1" },
+    { section: "other_items", key: "a39", from: "Codex of Sloth", to: "Codex of Sloth 5:2" },
+    { section: "other_items", key: "a40", from: "Codex of Sloth", to: "Codex of Sloth 5:3" },
+    { section: "other_items", key: "a41", from: "Codex of Sloth", to: "Codex of Sloth 5:4" },
+    { section: "other_items", key: "a42", from: "Codex of Sloth", to: "Codex of Sloth 5:5" },
+    { section: "other_items", key: "a43", from: "Codex of Sloth", to: "Codex of Sloth 5:6" },
+    { section: "other_items", key: "a44", from: "Codex of Sloth", to: "Codex of Sloth 5:7" },
+    { section: "other_items", key: "a45", from: "Codex of Vanity", to: "Codex of Vanity 6:1" },
+    { section: "other_items", key: "a46", from: "Codex of Vanity", to: "Codex of Vanity 6:2" },
+    { section: "other_items", key: "a47", from: "Codex of Vanity", to: "Codex of Vanity 6:3" },
+    { section: "other_items", key: "a48", from: "Codex of Vanity", to: "Codex of Vanity 6:4" },
+    { section: "other_items", key: "a49", from: "Codex of Vanity", to: "Codex of Vanity 6:5" },
+    { section: "other_items", key: "a50", from: "Codex of Vanity", to: "Codex of Vanity 6:6" },
+    { section: "other_items", key: "a51", from: "Codex of Vanity", to: "Codex of Vanity 6:7" },
+    { section: "other_items", key: "a52", from: "Codex of Hubris", to: "Codex of Hubris 7:1" },
+    { section: "other_items", key: "a53", from: "Codex of Hubris", to: "Codex of Hubris 7:2" },
+    { section: "other_items", key: "a54", from: "Codex of Hubris", to: "Codex of Hubris 7:3" },
+    { section: "other_items", key: "a55", from: "Codex of Hubris", to: "Codex of Hubris 7:4" },
+    { section: "other_items", key: "a56", from: "Codex of Hubris", to: "Codex of Hubris 7:5" },
+    { section: "other_items", key: "a57", from: "Codex of Hubris", to: "Codex of Hubris 7:6" },
+    { section: "other_items", key: "a58", from: "Codex of Hubris", to: "Codex of Hubris 7:7" },
+    { section: "other_items", key: "a59", from: "Large Charm", to: "Gula's Testament of Gluttony" },
+    { section: "other_items", key: "a60", from: "Large Charm", to: "Luxuria's Testament of Lust" },
+    { section: "other_items", key: "a61", from: "Large Charm", to: "Avaritia's Testament of Greed" },
+    { section: "other_items", key: "a62", from: "Large Charm", to: "Ira's Testament of Wrath" },
+    { section: "other_items", key: "a63", from: "Large Charm", to: "Acedia's Testament of Sloth" },
+    { section: "other_items", key: "a64", from: "Large Charm", to: "Vanagloria's Testament of Vanity" },
+    { section: "other_items", key: "a65", from: "Large Charm", to: "Superbia's Testament of Hubris" },
+    { section: "other_items", key: "b65", from: "Socket Remover", to: "Premium Socket Remover" },
+  ])
+  for (change of nameChanges) {
+    if (constants[change.section][change.key].n == change.from) {
+      constants[change.section][change.key].n = change.to
+    } else {
+      console.log(`WARN: name of misc "${change.key}" changed to "${constants[change.section][change.key].n}"`)
+    }
+  }
+  function removeEbSymbol(item) {
+    if (item.n && item.n.startsWith("ⅲ")) {
+      item.n = item.n.slice(2)
+    }
+  }
+  for (const key in constants.stackables) {
+    removeEbSymbol(constants.stackables[key])
+  }
+  for (const key in constants.weapon_items) {
+    removeEbSymbol(constants.weapon_items[key])
+  }
+  for (const key in constants.armor_items) {
+    removeEbSymbol(constants.armor_items[key])
+  }
+  constants.unq_items.forEach(item => removeEbSymbol(item))
+  constants.set_items.forEach(item => removeEbSymbol(item))
 }
   
 // Function to convert the Diablo 2 casc data to a single file.
@@ -58,7 +338,7 @@ function makeBundle(buffers) {
   let strings = {};
   if (_hasKey(buffers, "local/lng/strings/item-modifiers.json")) {
     // Method for version 99 (better)
-    strings = _readJSONStrings(_getKey(buffers, "local/lng/strings/item-gems.json"));
+    strings =                        _readJSONStrings(_getKey(buffers, "local/lng/strings/item-gems.json"));
     strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, "local/lng/strings/item-modifiers.json")));
     strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, "local/lng/strings/item-nameaffixes.json")));
     strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, "local/lng/strings/item-names.json")));
@@ -66,7 +346,7 @@ function makeBundle(buffers) {
     strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, "local/lng/strings/skills.json")));
   } else {
     // Method for versions 96 and prior
-    strings = _readStrings(_getKey(buffers, "local/lng/eng/string.txt"));
+    strings =                        _readStrings(_getKey(buffers, "local/lng/eng/string.txt"));
     strings = Object.assign(strings, _readStrings(_getKey(buffers, "local/lng/eng/expansionstring.txt")));
     strings = Object.assign(strings, _readStrings(_getKey(buffers, "local/lng/eng/patchstring.txt")));
   }
@@ -139,6 +419,28 @@ function _readTsv(file) {
   };
 }
 
+function formatString(string) {
+  // Remove Color codes
+  // ÿc1 = Red
+  // ÿc2 = Blue
+  // ÿc3 = Green
+  // ÿc4 = Gold
+  // ÿc8 = Orange
+  // ÿc- = White
+  // ÿc: = Dark Green
+  // ÿc0 = white
+  // ÿc5 = grey
+  // ÿc6 = black
+  // ÿc7 = gold
+  // ÿc9 = Yellow
+  // ÿc; = Purple 
+
+  // Remove EB special character
+
+  // Replace \n by <br>
+  return string.replace(/ÿc./gi, "").replace(/\n/g, "<br>")
+}
+
 function _readStrings(file) {
   const result = {};
   file
@@ -146,7 +448,7 @@ function _readStrings(file) {
     .map((line) => line.split(/\t/))
     .map((line) => {
       if (!result[line[0]]) {
-        result[line[0]] = line[1];
+        result[line[0]] = formatString(line[1]);
       }
     });
   return result;
@@ -160,7 +462,7 @@ function _readJSONStrings(file) {
   }
   const data = JSON.parse(file);
   for (const str of data) {
-    result[str.Key] = str.enUS;
+    result[str.Key] = formatString(str.enUS);
   }
   return result;
 }
@@ -456,7 +758,7 @@ function _readItems(tsv, itemtypes, strings) {
       if (tsv.lines[i][cReqdex]) item.rd = +tsv.lines[i][cReqdex];
       if (tsv.lines[i][cHasinv]) item.hi = +tsv.lines[i][cHasinv];
       if (tsv.lines[i][cGemapplytype]) item.gt = +tsv.lines[i][cGemapplytype];
-      if (tsv.lines[i][cInvfile]) item.i = tsv.lines[i][cInvfile];
+      if (tsv.lines[i][cInvfile] && tsv.lines[i][cInvfile]) item.i = tsv.lines[i][cInvfile];
       if (tsv.lines[i][cUniqueInvfile]) item.ui = tsv.lines[i][cUniqueInvfile];
       if (tsv.lines[i][cSetInvfile]) item.si = tsv.lines[i][cSetInvfile];
       if (tsv.lines[i][cInvwidth]) item.iw = +tsv.lines[i][cInvwidth];
@@ -529,6 +831,7 @@ function _readSetOrUnqItems(tsv, strings) {
     if (index && index != "Expansion") {
       const o = {};
       o.id = id;
+      o.index = index
       o.n = strings[tsv.lines[i][cIndex]];
       if (tsv.lines[i][cInvfile]) o.i = tsv.lines[i][cInvfile];
       if (tsv.lines[i][cCode]) o.c = tsv.lines[i][cCode];
@@ -621,7 +924,7 @@ function _readItemStatCosts(tsv, strings) {
   return arr;
 }
 
-function createBundle(input_dir, output_dir, output_name) {
+function createBundle(input_dir, output_dir, output_name, alt_input_dir, modPostTreatmentFunction) {
   const input_files = [
     // Strings for versions 96 and prior
     "local/lng/eng/string.txt",
@@ -660,14 +963,24 @@ function createBundle(input_dir, output_dir, output_name) {
   // Read the files
   for (const input_file of input_files) {
     const input_file_path = path.join(__dirname, `${input_dir}${input_file}`);
+    const alt_input_file_path = path.join(__dirname, `${alt_input_dir}${input_file}`);
     if (fs.existsSync(input_file_path)) {
       //file exists
       game_data[input_file] = fs.readFileSync(input_file_path, 'utf8');
+    } else if (fs.existsSync(alt_input_file_path)) {
+      // Alternative file exists
+      game_data[input_file] = fs.readFileSync(alt_input_file_path, 'utf8');
     }
   }
 
   const json_data = makeBundle(game_data);
   json_data.version = `${output_name}`;
+
+  D2RPostTreatment(input_dir, json_data)
+
+  if (modPostTreatmentFunction) {
+    modPostTreatmentFunction(input_dir, json_data)
+  }
 
   const to_write_es5format = `export let ${output_name} = ${JSON.stringify(json_data, null, 4)};`;
   const output_file_path_es5format = path.join(__dirname, `${output_dir}${output_name}.bundle.js`);
@@ -676,5 +989,5 @@ function createBundle(input_dir, output_dir, output_name) {
 }
 
 // Note: currently I don't know how to read the 96 version, because for ex ItemStatCosts.txt is missing necessary columns
-createBundle('../public/d2/game_data/vanilla/version_99/', '../public/d2/', 'generated_vanilla_constants_99');
-//createBundle('../public/d2/game_data/remodded/version_99/', '../public/d2/', 'generated_remodded_constants_99');
+//createBundle('../public/d2/game_data/vanilla/version_99/', '../public/d2/', 'generated_vanilla_constants_99');
+createBundle('../public/d2/game_data/remodded/version_99/', '../public/d2/', 'generated_remodded_constants_99', '../public/d2/game_data/vanilla/version_99/', ReMoDDeDPostTreatment);

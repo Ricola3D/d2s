@@ -40,4 +40,6 @@ Vizjerei Vocation	Vizjerei Vocation	100	mana%		10	10																												
 Beyond Battlemage	Beyond Battlemage	100	skill	Enchant	4	4																													att/lvl	16			vit%		10	10	abs-fire%		20	20	heal-kill		5	5	addxp		5	5	sor		2	2	state	fullsetgeneric	1	1					0
 Glacial Plains	Glacial Plains	100	sum-ex		1	1																													sum-all		60	60	abs-cold		7	7	res-all		25	25	extra-cold		15	15	addxp		5	5	skilltab	5	3	3	state	fullsetgeneric	1	1					0
 Rathma's Calling	Rathma's Calling	100	sum-speed		40	40	regen		20	20																									sum-ex		3	3	skill	Summon Mastery	8	8	res-all		25	25	hp		50	50	sum-dmg		200	200	allskills		2	2	state	fullsetrathma	1	1					0
-Stacatomamba's Guidance	Stacatomamba's Guidance	100																																	allskills		1	1	res-all		15	15	vit		10	10	dex		10	10	mag%		25	25													0
+Stacatomamba's Guidance	Stacatomamba's Guidance	100																																	res-all		10	10	vit		10	10	dex		10	10	mag%		25	25																	0
+Kreigur's Mastery	Kreigur's Mastery	100																																	pierce-immunity-all		20	20	skilltab	18	2	2	oskill	Blink Strike	5	5																					0
+Scarlet Sukami	Scarlet Sukami	100																																	pierce-immunity-damage		30	30	skill	Frenzy	7	7	bar		3	3	dmg		100	100	crush/str	1															0

@@ -360,7 +360,8 @@ export interface IItem {
   reqdex: number;
   inv_width: number;
   inv_height: number;
-  inv_file: number;
+  inv_file: string;
+  hd_inv_file: string;
   inv_transform: number;
   transform_color: string;
   item_quality: EItemQuality;

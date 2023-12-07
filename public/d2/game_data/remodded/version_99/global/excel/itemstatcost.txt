@@ -91,7 +91,7 @@ item_doubleherbduration	88		1	2											0	0		1	0	1	0																										
 item_lightradius	89		1	5							1				9	17		4	4	4	4																6	19		ModStr3f	ModStr3f										0
 item_lightcolor	90		1	24							1				93	0		5	0	24	0																														0
 item_req_percent	91		1	8											16	-11		8	100	8	100																0	19		ModStr3h	ModStr3h										0
-item_levelreq	92														0	0		6	20	7	60																														0
+item_levelreq	92														0	0		6	20	7	25																														0
 item_fasterattackrate	93	1	1	9											500	20		7	20	8	60											1					145	19		ModStr4m	ModStr4m									2	0
 item_levelreqpct	94														0	0		7	20	7	64			13			item_levelreq																								0
 lastblockframe	95														0	0		6	20																																0
@@ -275,14 +275,14 @@ dont_use_me_272	272		1	9							1	1			0	0				12																							10	19		ModI
 dont_use_me_273	273		1	9							1	1	0		0	0				12																							10	19		ModItemDualHitP	ModItemDualHitP				0
 mana_per_gethit	274		1	9							1	1	0		0	0				12													damagedinmelee	28	damagedbymissile	28	16	1	2	ModItemMPgetH	ModItemMPgetH		11	19		ModItemDualGetH	ModItemDualGetH			2	0
 life_per_gethit	275		1	9							1	1	0		0	0				12													damagedinmelee	28	damagedbymissile	28	16	1	2	ModItemHPgetH	ModItemHPgetH		11	19		ModItemDualGetH	ModItemDualGetH			2	0
-ex_missiles	276			8			1	0	7			1	0		3	0		7	32	8	16																67	1	2	ModExMiss	ModExMiss									2	0
+ex_missiles	276			8			1	0	7			1	0		3	0		7	32	8	16																67	19	2	ModExMiss	ModExMiss									2	0
 item_attackertakescolddamage	277		1	6							1				3	0		5	0	5	0												damagedinmelee	12	damagedbymissile	12	14	3	2	ModStrColdThorn	ModStrColdThorn									2	0
-ex_attacks	278			8			1	0	7			1	0		3	0		7	32	8	16																67	1	2	ModExAtt	ModExAtt									2	0
+ex_attacks	278			8			1	0	7			1	0		3	0		7	32	8	16																67	19	2	ModExAtt	ModExAtt									2	0
 mod_essence	279			8			1	0	7			1	0		0	0		7	32	8	16																67	19		ModEssence	ModEssence										0
 curse_resistance_perenr	280			9											0	0		14	0	9	0			2	4	energy	curse_resistance										35	19		ModItemCurseLen	ModItemCurseLenN	playenr									0
 sum_dmg_perc	281	1	1	12			1	0	10			1	1		0	0		7	32	9	32																67	19		ModItemSumDmg	ModItemSumDmgN		7	19		ModItemSumAll	ModItemSumAll			2	0
 sum_speed	282	1	1	12			1	0	10			1	1		0	0		7	32	9	32																67	19		ModItemSumSpeed	ModItemSumSpeedN		7	19		ModItemSumAll	ModItemSumAll			2	0
-sum_ex	283			8			1	0	7			1	0		0	0		7	32	9	16																67	1	2	ModExSumm	ModExSumm									2	0
+sum_ex	283			8			1	0	7			1	0		0	0		7	32	9	16																67	19	2	ModExSumm	ModExSumm									2	0
 sum_hp_perc	284	1	1	12			1	0	10			1	1		0	0		7	32	8	32																67	19		ModItemSumHP	ModItemSumHPN		7	19		ModItemSumAll	ModItemSumAll			2	0
 sum_cr	285	1	1	12			1	0	10			1	1		0	0		7	32	9	32																67	19		ModItemSumCR	ModItemSumCRN		7	19		ModItemSumAll	ModItemSumAll			2	0
 item_cooldownreduction	286	1	1	12			1	0	10			1	1		0	0		7	32	9	32																67	19		ModItemCDR	ModItemCDRN									2	0
@@ -290,16 +290,16 @@ item_pierce_perdex	287		1	6											0	0		6	0	6	0			2	5	dexterity	item_pierce		
 skill_bonesyn	288			8			1	0	7			1	0		3	0		7	32	8	16																67	19		ModBoneSyn	ModBoneSyn										0
 skill_rage	289			8			1	0	7			1	0		3	0		7	32	8	16																67	19		ModRageSkill	ModRageSkill										0
 skill_focus	290			8			1	0	7			1	0		3	0		7	32	8	16																67	19		ModFocusSkill	ModFocusSkill										0
-GB_Total	291			16								1	0		102	20	1024	16	1000	16	1000																12	3	2	GBTotal	GBTotal										0
-RB_Low	292			32								1	0		102	20	1024	32	49152	32	49152																11	3	2	RBLow	RBLow										0
-RB_Mid	293			32								1	0		102	20	1024	32	49152	32	49152																10	3	2	RBMid	RBMid										0
-RB_High	294			32								1	0		102	20	1024	32	49152	32	49152																9	3	2	RBHigh	RBHigh										0
-KB_Terror	295			16								1	0		102	20	1024	16	49152	16	49152																8	3	2	KBTerror	KBTerror										0
-KB_Hate	296			16								1	0		102	20	1024	16	49152	16	49152																7	3	2	KBHate	KBHate										0
-KB_Dest	297			16								1	0		102	20	1024	16	49152	16	49152																6	3	2	KBDest	KBDest										0
-OB_Diablo	298			16								1	0		102	20	1024	16	49152	16	49152																5	3	2	OBDiablo	OBDiablo										0
-OB_Baal	299			16								1	0		102	20	1024	16	49152	16	49152																4	3	2	OBBaal	OBBaal										0
-OB_Meph	300			16								1	0		102	20	1024	16	49152	16	49152																3	3	2	OBMeph	OBMeph										0
+GB_Total	291			16								1	0		102	20	1024	16	1000	16	1000																16	3	2	GBTotal	GBTotal										0
+RB_Low	292			32								1	0		102	20	1024	32	49152	32	49152																15	3	2	RBLow	RBLow										0
+RB_Mid	293			32								1	0		102	20	1024	32	49152	32	49152																14	3	2	RBMid	RBMid										0
+RB_High	294			32								1	0		102	20	1024	32	49152	32	49152																13	3	2	RBHigh	RBHigh										0
+KB_Terror	295			16								1	0		102	20	1024	16	49152	16	49152																12	3	2	KBTerror	KBTerror										0
+KB_Hate	296			16								1	0		102	20	1024	16	49152	16	49152																11	3	2	KBHate	KBHate										0
+KB_Dest	297			16								1	0		102	20	1024	16	49152	16	49152																10	3	2	KBDest	KBDest										0
+OB_Diablo	298			16								1	0		102	20	1024	16	49152	16	49152																9	3	2	OBDiablo	OBDiablo										0
+OB_Baal	299			16								1	0		102	20	1024	16	49152	16	49152																8	3	2	OBBaal	OBBaal										0
+OB_Meph	300			16								1	0		102	20	1024	16	49152	16	49152																7	3	2	OBMeph	OBMeph										0
 unused301	301		1	12											0	1		8	0	8	0																														0
 Unused302	302														0	0		21	0																																0
 Unused303	303														0	0		21	0																																0
@@ -368,7 +368,7 @@ CD_Green	365			16											102	20	1024	10	10	11	10																997	3	0	CDGre
 CD_Yellow	366			16											102	20	1024	10	10	11	10																997	3	0	CDYellow	CDYellow										0
 CD_Purple	367			16											102	20	1024	10	10	11	10																997	3	0	CDPurple	CDPurple										0
 CD_Tracker	368			16											102	20	1024	10	10	11	10																														0
-score_tracker	369			12								1	0		0	0	1024	10	10	11	30																1	3	2	ModSCore	ModSCore										0
+score_tracker	369			12								1	0		0	0	1024	10	10	11	30																5	3	2	ModSCore	ModSCore										0
 Soul_Ama	370			16											102	20	1024	10	10	11	10																														0
 Soul_Sor	371			16											102	20	1024	10	10	11	10																														0
 Soul_Nec	372			16											102	20	1024	10	10	11	10																														0
@@ -379,13 +379,13 @@ Soul_Ass	376			16											102	20	1024	10	10	11	10																													
 RW_Tracker	377		1	2											0	0		1	0	1																															0
 Unused378	378														0	0		21	0																																0
 boneadded	379			32								1	0		0	0	1024	10	10	20	0																1	19	0	ModBoneArmor											0
-vitality_hidden	380		1	16											800	20		6	10	10	500			11			vitality										999	19		MercenaryOnly	MercenaryOnly									2	0
+vitality_hidden	380		1	16											800	20		6	10	10	500			11			vitality										999	19		MercenaryOnly	MercenaryOnly										0
 hsbonus	381		1	31											0	0	1024	31	0	31	0																														0
 item_slow_perdex	382		1	6											0	0		6	0	6	0			2	5	dexterity	item_slow					1	domeleedamage	27	domissiledamage	27	84	19		ModStr5r	ModStr5r	playdex									0
 chest_treasure	383			16											0	0	1024	4	0	4	0																														0
 enhance_low	384			6								1	0		0	0		3	0	5	1																998	19		EnhanceLow											0
 enhance_high	385			3								1	0		0	0		2	0	2	1																997	19		EnhanceHigh											0
-ucore_tracker	386			12								1	0		0	0	1024	10	10	11	30																2	3	2	ModUCore	ModUCore										0
+ucore_tracker	386			12								1	0		0	0	1024	10	10	11	30																6	3	2	ModUCore	ModUCore										0
 reckoning_slot	387			3								1	0		0	0		2	0	2	0																1	19	0	ModReck											0
 smite	388			32								1	0		0	0		7	0	32	0																														0
 kill_dummy	389														0	0																																			0
@@ -411,5 +411,20 @@ item_lightskill	408																	6	0	6	0																157	19		ModLightSkill
 item_coldskill	409																	6	0	6	0																157	19		ModColdSkills	ModColdSkills										0
 item_poisskill	410																	6	0	6	0																157	19		ModPoisSkills	ModPoisSkills										0
 item_magskill	411																	6	0	6	0																157	19		ModMagSkills	ModMagSkills										0
-Soul_Level	209			16											102	20	1024	10	10	11	10																														0
-item_openwounds_perdex	257		1	6											0	0		6	0	6	0			2	5	dexterity	item_openwounds					1					84	19		ModStr3m	ModStr3m	playdex									0
+Soul_Level	412			16											102	20	1024	10	10	11	10																														0
+item_openwounds_perdex	413		1	6											0	0		6	0	6	0			2	5	dexterity	item_openwounds					1					84	19		ModStr3m	ModStr3m	playdex									0
+Weight_Tracker	414		1	16											102	20	1024	10	10	11	10									1							2	19	0	ModCharmWeight										2	0
+Weight_Capacity	415		1	16											102	20	1024	10	10	11	10									1							2	19	0	ModCharmCapacity										2	0
+Weight_CapacityBase	416		1	16											102	20	1024	10	10	11	10									1							1	19	0	ModCharmCapacityBase										2	0
+hitpoints_hidden	417		1	16											800	20		6	10	10	500			11			hitpoints										999	19		MercenaryOnly	MercenaryOnly										0
+fireball_radius	418		1	16											102	20	1024	10	10	11	10									1							1	19	0	ModFireballRadius	ModFireballRadius									2	0
+JB_Rare	419		1	16											102	20	1024	10	10	11	10									1							4	19	0	ModJBJewel											0
+PB_Rejuv	420		1	16											102	20	1024	10	10	11	10									1							3	19	0	ModPBRejuv											0
+KillBonus	421		1	16											800	20		6	10	10	500			11	0		maxhp																								0
+KillBonus_Dummy	422														0	0																																			0
+KillBonus_Display	423														0	0				1				2	0	KillBonus	KillBonus_Dummy										0	19		ModKillBonus	ModKillBonus									2	0
+item_fasterattackrate_perstr	424	1	1	9											0	0		7	20	7	20			2	4	strength	item_fasterattackrate										142	19		ModStr4m	ModStr4m	playstr									0
+item_tohit_perenr	425	1	1	9											0	0		7	20	7	20			2	4	energy	tohit										142	19		ModStr1h	ModStr1h	playenr									0
+item_fasterattackrate_perenr	426	1	1	9											0	0		7	20	7	20			2	5	energy	item_fasterattackrate										142	19		ModStr4m	ModStr4m	playenr									0
+buff_length_modifier	427		1	16											102	20	1024	10	10	11	10									1							2	19	0	ModBuffLengthModifier	ModBuffLengthModifier									2	0
+skel_commander	428		1	6											102	20	1024	5	15	5	15									1							2	19	0	ModSkelCommander	ModSkelCommander									2	0

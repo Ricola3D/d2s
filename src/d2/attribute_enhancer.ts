@@ -112,6 +112,7 @@ export function enhanceItem(
     if (details.rs) item.reqstr = details.rs;
     if (details.rd) item.reqdex = details.rd;
     if (details.i) item.inv_file = details.i;
+    if (details.hdi) item.hd_inv_file = details.hdi;
     if (details.ih) item.inv_height = details.ih;
     if (details.iw) item.inv_width = details.iw;
     if (details.it) item.inv_transform = details.it;
@@ -153,11 +154,13 @@ export function enhanceItem(
       const unq = constants.unq_items[item.unique_id];
       if (details.ui) item.inv_file = details.ui;
       if (unq && unq.i) item.inv_file = unq.i;
+      if (unq && unq.hdi) item.hd_inv_file = unq.hdi;
       if (unq && unq.tc) item.transform_color = unq.tc;
     } else if (item.set_id) {
       const set = constants.set_items[item.set_id];
       if (details.ui) item.inv_file = details.ui;
       if (set && set.i) item.inv_file = set.i;
+      if (set && set.hdi) item.hd_inv_file = set.hdi;
       if (set && set.tc) item.transform_color = set.tc;
     }
   }
