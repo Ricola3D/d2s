@@ -15244,14 +15244,16 @@ export let generated_remodded_constants_99 = {
             "index": "Civerb's Ward",
             "n": "Civerb's Ward",
             "c": "lrg",
-            "tc": "lyel"
+            "tc": "lyel",
+            "hdi": "armor/shield/stormguild"
         },
         {
             "id": 1,
             "index": "Civerb's Icon",
             "n": "Civerb's Icon",
             "c": "amu",
-            "tc": "lyel"
+            "tc": "lyel",
+            "hdi": "misc/amulet/amulet"
         },
         {
             "id": 2,
@@ -15266,21 +15268,24 @@ export let generated_remodded_constants_99 = {
             "index": "Hsarus' Iron Heel",
             "n": "Hsarus' Iron Heel",
             "c": "mbt",
-            "tc": "dred"
+            "tc": "dred",
+            "hdi": "armor/boot/chain_boots"
         },
         {
             "id": 4,
             "index": "Hsarus' Iron Fist",
             "n": "Hsarus' Iron Fist",
             "c": "buc",
-            "tc": "dred"
+            "tc": "dred",
+            "hdi": "armor/shield/pelta_lunata"
         },
         {
             "id": 5,
             "index": "Hsarus' Iron Stay",
             "n": "Hsarus' Iron Stay",
             "c": "mbl",
-            "tc": "dred"
+            "tc": "dred",
+            "hdi": "armor/belt/belt_m"
         },
         {
             "id": 6,
@@ -15295,42 +15300,48 @@ export let generated_remodded_constants_99 = {
             "index": "Cleglaw's Claw",
             "n": "Cleglaw's Claw",
             "c": "sml",
-            "tc": "lred"
+            "tc": "lred",
+            "hdi": "armor/shield/umbral_disk"
         },
         {
             "id": 8,
             "index": "Cleglaw's Pincers",
             "n": "Cleglaw's Pincers",
             "c": "mgl",
-            "tc": "lred"
+            "tc": "lred",
+            "hdi": "armor/glove/bracers_m"
         },
         {
             "id": 9,
             "index": "Iratha's Collar",
             "n": "Iratha's Collar",
             "c": "amu",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "misc/amulet/amulet"
         },
         {
             "id": 10,
             "index": "Iratha's Cuff",
             "n": "Iratha's Cuff",
             "c": "tgl",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "armor/glove/light_gauntlets"
         },
         {
             "id": 11,
             "index": "Iratha's Coil",
             "n": "Iratha's Coil",
             "c": "crn",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "armor/helmet/crown"
         },
         {
             "id": 12,
             "index": "Iratha's Cord",
             "n": "Iratha's Cord",
             "c": "tbl",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "armor/belt/heavy_belt"
         },
         {
             "id": 13,
@@ -15345,21 +15356,24 @@ export let generated_remodded_constants_99 = {
             "index": "Isenhart's Parry",
             "n": "Isenhart's Parry",
             "c": "gts",
-            "tc": "lgld"
+            "tc": "lgld",
+            "hdi": "armor/shield/the_ward"
         },
         {
             "id": 15,
             "index": "Isenhart's Case",
             "n": "Isenhart's Case",
             "c": "brs",
-            "tc": "lgld"
+            "tc": "lgld",
+            "hdi": "armor/armor/breast_plate"
         },
         {
             "id": 16,
             "index": "Isenhart's Horns",
             "n": "Isenhart's Horns",
             "c": "fhl",
-            "tc": "lgld"
+            "tc": "lgld",
+            "hdi": "armor/helmet/duskdeep"
         },
         {
             "id": 17,
@@ -15374,28 +15388,32 @@ export let generated_remodded_constants_99 = {
             "index": "Vidala's Fetlock",
             "n": "Vidala's Fetlock",
             "c": "tbt",
-            "tc": "blac"
+            "tc": "blac",
+            "hdi": "armor/boot/light_plate_boots"
         },
         {
             "id": 19,
             "index": "Vidala's Ambush",
             "n": "Vidala's Ambush",
             "c": "lea",
-            "tc": "blac"
+            "tc": "blac",
+            "hdi": "armor/armor/leather_armor"
         },
         {
             "id": 20,
             "index": "Vidala's Snare",
             "n": "Vidala's Snare",
             "c": "amu",
-            "tc": "blac"
+            "tc": "blac",
+            "hdi": "misc/amulet/amulet"
         },
         {
             "id": 21,
             "index": "Milabrega's Orb",
             "n": "Milabrega's Orb",
             "c": "kit",
-            "tc": "dblu"
+            "tc": "dblu",
+            "hdi": "armor/shield/steelclash"
         },
         {
             "id": 22,
@@ -15410,14 +15428,16 @@ export let generated_remodded_constants_99 = {
             "index": "Milabrega's Diadem",
             "n": "Milabrega's Diadem",
             "c": "crn",
-            "tc": "dblu"
+            "tc": "dblu",
+            "hdi": "armor/helmet/crown"
         },
         {
             "id": 24,
             "index": "Milabrega's Robe",
             "n": "Milabrega's Robe",
             "c": "aar",
-            "tc": "dblu"
+            "tc": "dblu",
+            "hdi": "armor/armor/victors_silk"
         },
         {
             "id": 25,
@@ -15432,28 +15452,32 @@ export let generated_remodded_constants_99 = {
             "index": "Cathan's Mesh",
             "n": "Cathan's Mesh",
             "c": "chn",
-            "tc": "dgrn"
+            "tc": "dgrn",
+            "hdi": "armor/armor/chain_mail"
         },
         {
             "id": 27,
             "index": "Cathan's Visage",
             "n": "Cathan's Visage",
             "c": "msk",
-            "tc": "dgrn"
+            "tc": "dgrn",
+            "hdi": "armor/helmet/mask"
         },
         {
             "id": 28,
             "index": "Cathan's Sigil",
             "n": "Cathan's Sigil",
             "c": "amu",
-            "tc": "dgrn"
+            "tc": "dgrn",
+            "hdi": "misc/amulet/amulet"
         },
         {
             "id": 29,
             "index": "Cathan's Seal",
             "n": "Cathan's Seal",
             "c": "rin",
-            "tc": "dgrn"
+            "tc": "dgrn",
+            "hdi": "misc/ring/ring"
         },
         {
             "id": 30,
@@ -15468,77 +15492,88 @@ export let generated_remodded_constants_99 = {
             "index": "Tancred's Spine",
             "n": "Tancred's Spine",
             "c": "ful",
-            "tc": "dgld"
+            "tc": "dgld",
+            "hdi": "armor/armor/goldskin"
         },
         {
             "id": 32,
             "index": "Tancred's Hobnails",
             "n": "Tancred's Hobnails",
             "c": "lbt",
-            "tc": "dgld"
+            "tc": "dgld",
+            "hdi": "armor/boot/leather_boots"
         },
         {
             "id": 33,
             "index": "Tancred's Weird",
             "n": "Tancred's Weird",
             "c": "amu",
-            "tc": "dgld"
+            "tc": "dgld",
+            "hdi": "misc/amulet/amulet"
         },
         {
             "id": 34,
             "index": "Tancred's Skull",
             "n": "Tancred's Skull",
             "c": "bhm",
-            "tc": "dgld"
+            "tc": "dgld",
+            "hdi": "armor/helmet/wormskull"
         },
         {
             "id": 35,
             "index": "Sigon's Gage",
             "n": "Sigon's Gage",
             "c": "hgl",
-            "tc": "whit"
+            "tc": "whit",
+            "hdi": "armor/glove/gaunlets_h"
         },
         {
             "id": 36,
             "index": "Sigon's Visor",
             "n": "Sigon's Visor",
             "c": "ghm",
-            "tc": "whit"
+            "tc": "whit",
+            "hdi": "armor/helmet/great_helm"
         },
         {
             "id": 37,
             "index": "Sigon's Shelter",
             "n": "Sigon's Shelter",
             "c": "gth",
-            "tc": "whit"
+            "tc": "whit",
+            "hdi": "armor/armor/gothic_plate"
         },
         {
             "id": 38,
             "index": "Sigon's Sabot",
             "n": "Sigon's Sabot",
             "c": "hbt",
-            "tc": "whit"
+            "tc": "whit",
+            "hdi": "armor/boot/plate_boots"
         },
         {
             "id": 39,
             "index": "Sigon's Wrap",
             "n": "Sigon's Wrap",
             "c": "hbl",
-            "tc": "whit"
+            "tc": "whit",
+            "hdi": "armor/belt/girdle_h"
         },
         {
             "id": 40,
             "index": "Sigon's Guard",
             "n": "Sigon's Guard",
             "c": "tow",
-            "tc": "whit"
+            "tc": "whit",
+            "hdi": "armor/shield/bverrit_keep"
         },
         {
             "id": 41,
             "index": "Infernal Cranium",
             "n": "Infernal Cranium",
             "c": "cap",
-            "tc": "lyel"
+            "tc": "lyel",
+            "hdi": "armor/helmet/war_bonnet"
         },
         {
             "id": 42,
@@ -15553,21 +15588,24 @@ export let generated_remodded_constants_99 = {
             "index": "Infernal Sign",
             "n": "Infernal Sign",
             "c": "tbl",
-            "tc": "lyel"
+            "tc": "lyel",
+            "hdi": "armor/belt/heavy_belt"
         },
         {
             "id": 44,
             "index": "Berserker's Headgear",
             "n": "Berserker's Headgear",
             "c": "hlm",
-            "tc": "dred"
+            "tc": "dred",
+            "hdi": "armor/helmet/coif_of_glory"
         },
         {
             "id": 45,
             "index": "Berserker's Hauberk",
             "n": "Berserker's Hauberk",
             "c": "spl",
-            "tc": "dred"
+            "tc": "dred",
+            "hdi": "armor/armor/splint_mail"
         },
         {
             "id": 46,
@@ -15582,14 +15620,16 @@ export let generated_remodded_constants_99 = {
             "index": "Death's Hand",
             "n": "Death's Hand",
             "c": "lgl",
-            "tc": "lred"
+            "tc": "lred",
+            "hdi": "armor/glove/gloves_l"
         },
         {
             "id": 48,
             "index": "Death's Guard",
             "n": "Death's Guard",
             "c": "lbl",
-            "tc": "lred"
+            "tc": "lred",
+            "hdi": "armor/belt/sash_l"
         },
         {
             "id": 49,
@@ -15612,21 +15652,24 @@ export let generated_remodded_constants_99 = {
             "index": "Angelic Mantle",
             "n": "Angelic Mantle",
             "c": "rng",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "armor/armor/ring_mail"
         },
         {
             "id": 52,
             "index": "Angelic Halo",
             "n": "Angelic Halo",
             "c": "rin",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "misc/ring/ring"
         },
         {
             "id": 53,
             "index": "Angelic Wings",
             "n": "Angelic Wings",
             "c": "amu",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "misc/amulet/amulet"
         },
         {
             "id": 54,
@@ -15641,28 +15684,32 @@ export let generated_remodded_constants_99 = {
             "index": "Arctic Furs",
             "n": "Arctic Furs",
             "c": "qui",
-            "tc": "lgld"
+            "tc": "lgld",
+            "hdi": "armor/armor/quilted_armor"
         },
         {
             "id": 56,
             "index": "Arctic Binding",
             "n": "Arctic Binding",
             "c": "vbl",
-            "tc": "lgld"
+            "tc": "lgld",
+            "hdi": "armor/belt/light_belt"
         },
         {
             "id": 57,
             "index": "Arctic Mitts",
             "n": "Arctic Mitts",
             "c": "tgl",
-            "tc": "lgld"
+            "tc": "lgld",
+            "hdi": "armor/glove/light_gauntlets"
         },
         {
             "id": 58,
             "index": "Arcanna's Sign",
             "n": "Arcanna's Sign",
             "c": "amu",
-            "tc": "blac"
+            "tc": "blac",
+            "hdi": "misc/amulet/amulet"
         },
         {
             "id": 59,
@@ -15677,21 +15724,24 @@ export let generated_remodded_constants_99 = {
             "index": "Arcanna's Head",
             "n": "Arcanna's Head",
             "c": "skp",
-            "tc": "blac"
+            "tc": "blac",
+            "hdi": "armor/helmet/skull_cap"
         },
         {
             "id": 61,
             "index": "Arcanna's Flesh",
             "n": "Arcanna's Flesh",
             "c": "ltp",
-            "tc": "blac"
+            "tc": "blac",
+            "hdi": "armor/armor/light_plate"
         },
         {
             "id": 62,
             "index": "Natalya's Totem",
             "n": "Natalya's Totem",
             "c": "xlm",
-            "tc": "dgry"
+            "tc": "dgry",
+            "hdi": "armor/helmet/coif_of_glory"
         },
         {
             "id": 63,
@@ -15714,21 +15764,24 @@ export let generated_remodded_constants_99 = {
             "index": "Natalya's Soul",
             "n": "Natalya's Soul",
             "c": "xmb",
-            "tc": "dgry"
+            "tc": "dgry",
+            "hdi": "armor/boot/chain_boots"
         },
         {
             "id": 66,
             "index": "Aldur's Stony Gaze",
             "n": "Aldur's Stony Gaze",
             "c": "dr8",
-            "tc": "oran"
+            "tc": "oran",
+            "hdi": "armor/pelt/antlers"
         },
         {
             "id": 67,
             "index": "Aldur's Deception",
             "n": "Aldur's Deception",
             "c": "uul",
-            "tc": "oran"
+            "tc": "oran",
+            "hdi": "armor/armor/full_plate_mail"
         },
         {
             "id": 68,
@@ -15743,42 +15796,48 @@ export let generated_remodded_constants_99 = {
             "index": "Aldur's Advance",
             "n": "Aldur's Advance",
             "c": "xtb",
-            "tc": "oran"
+            "tc": "oran",
+            "hdi": "armor/boot/light_plate_boots"
         },
         {
             "id": 70,
             "index": "Immortal King's Will",
             "n": "Immortal King's Will",
             "c": "ba5",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "armor/helmet/avenger_guard"
         },
         {
             "id": 71,
             "index": "Immortal King's Soul Cage",
             "n": "Immortal King's Soul Cage",
             "c": "uar",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "armor/armor/victors_silk"
         },
         {
             "id": 72,
             "index": "Immortal King's Detail",
             "n": "Immortal King's Detail",
             "c": "zhb",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "armor/belt/girdle_h"
         },
         {
             "id": 73,
             "index": "Immortal King's Forge",
             "n": "Immortal King's Forge",
             "c": "xhg",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "armor/glove/gaunlets_h"
         },
         {
             "id": 74,
             "index": "Immortal King's Pillar",
             "n": "Immortal King's Pillar",
             "c": "xhb",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "armor/boot/plate_boots"
         },
         {
             "id": 75,
@@ -15793,14 +15852,16 @@ export let generated_remodded_constants_99 = {
             "index": "Tal Rasha's Fire-Spun Cloth",
             "n": "Tal Rasha's Fine-Spun Cloth",
             "c": "zmb",
-            "tc": "dpur"
+            "tc": "dpur",
+            "hdi": "armor/belt/belt_m"
         },
         {
             "id": 77,
             "index": "Tal Rasha's Adjudication",
             "n": "Tal Rasha's Adjudication",
             "c": "amu",
-            "tc": "dpur"
+            "tc": "dpur",
+            "hdi": "misc/amulet/amulet"
         },
         {
             "id": 78,
@@ -15815,28 +15876,32 @@ export let generated_remodded_constants_99 = {
             "index": "Tal Rasha's Howling Wind",
             "n": "Tal Rasha's Guardianship",
             "c": "uth",
-            "tc": "dpur"
+            "tc": "dpur",
+            "hdi": "armor/armor/gothic_plate"
         },
         {
             "id": 80,
             "index": "Tal Rasha's Horadric Crest",
             "n": "Tal Rasha's Horadric Crest",
             "c": "xsk",
-            "tc": "dpur"
+            "tc": "dpur",
+            "hdi": "armor/helmet/mask"
         },
         {
             "id": 81,
             "index": "Griswold's Valor",
             "n": "Griswold's Valor",
             "c": "Pc3",
-            "tc": "dgld"
+            "tc": "dgld",
+            "hdi": "armor/helmet/crown"
         },
         {
             "id": 82,
             "index": "Griswold's Heart",
             "n": "Griswold's Heart",
             "c": "xar",
-            "tc": "dgld"
+            "tc": "dgld",
+            "hdi": "armor/armor/corpsemourn"
         },
         {
             "id": 83,
@@ -15851,70 +15916,80 @@ export let generated_remodded_constants_99 = {
             "index": "Griswold's Honor",
             "n": "Griswold's Honor",
             "c": "paf",
-            "tc": "dgld"
+            "tc": "dgld",
+            "hdi": "armor/shield/crown_shield"
         },
         {
             "id": 85,
             "index": "Trang-Oul's Guise",
             "n": "Trang-Oul's Guise",
             "c": "uh9",
-            "tc": "dgld"
+            "tc": "dgld",
+            "hdi": "armor/helmet/wormskull"
         },
         {
             "id": 86,
             "index": "Trang-Oul's Scales",
             "n": "Trang-Oul's Scales",
             "c": "xul",
-            "tc": "dyel"
+            "tc": "dyel",
+            "hdi": "armor/armor/full_plate_mail"
         },
         {
             "id": 87,
             "index": "Trang-Oul's Wing",
             "n": "Trang-Oul's Wing",
             "c": "ne9",
-            "tc": "dyel"
+            "tc": "dyel",
+            "hdi": "armor/voodoo_head/gargoyle_head"
         },
         {
             "id": 88,
             "index": "Trang-Oul's Claws",
             "n": "Trang-Oul's Claws",
             "c": "xmg",
-            "tc": "dyel"
+            "tc": "dyel",
+            "hdi": "armor/glove/bracers_m"
         },
         {
             "id": 89,
             "index": "Trang-Oul's Girth",
             "n": "Trang-Oul's Girth",
             "c": "utc",
-            "tc": "dyel"
+            "tc": "dyel",
+            "hdi": "armor/belt/heavy_belt"
         },
         {
             "id": 90,
             "index": "M'avina's True Sight",
             "n": "M'avina's True Sight",
             "c": "ci3",
-            "tc": "whit"
+            "tc": "whit",
+            "hdi": "armor/circlet/diadem"
         },
         {
             "id": 91,
             "index": "M'avina's Embrace",
             "n": "M'avina's Embrace",
             "c": "uld",
-            "tc": "whit"
+            "tc": "whit",
+            "hdi": "armor/armor/field_plate"
         },
         {
             "id": 92,
             "index": "M'avina's Icy Clutch",
             "n": "M'avina's Icy Clutch",
             "c": "xtg",
-            "tc": "whit"
+            "tc": "whit",
+            "hdi": "armor/glove/light_gauntlets"
         },
         {
             "id": 93,
             "index": "M'avina's Tenet",
             "n": "M'avina's Tenet",
             "c": "zvb",
-            "tc": "whit"
+            "tc": "whit",
+            "hdi": "armor/belt/light_belt"
         },
         {
             "id": 94,
@@ -15929,35 +16004,40 @@ export let generated_remodded_constants_99 = {
             "index": "Telling of Beads",
             "n": "Telling of Beads",
             "c": "amu",
-            "tc": "lblu"
+            "tc": "lblu",
+            "hdi": "misc/amulet/amulet"
         },
         {
             "id": 96,
             "index": "Laying of Hands",
             "n": "Laying of Hands",
             "c": "ulg",
-            "tc": "lblu"
+            "tc": "lblu",
+            "hdi": "armor/glove/gloves_l"
         },
         {
             "id": 97,
             "index": "Rite of Passage",
             "n": "Rite of Passage",
             "c": "xlb",
-            "tc": "lblu"
+            "tc": "lblu",
+            "hdi": "armor/boot/leather_boots"
         },
         {
             "id": 98,
             "index": "Spiritual Custodian",
             "n": "Dark Adherent",
             "c": "uui",
-            "tc": "lblu"
+            "tc": "lblu",
+            "hdi": "armor/armor/quilted_armor"
         },
         {
             "id": 99,
             "index": "Credendum",
             "n": "Credendum",
             "c": "umc",
-            "tc": "lblu"
+            "tc": "lblu",
+            "hdi": "armor/belt/belt_m"
         },
         {
             "id": 100,
@@ -15970,65 +16050,75 @@ export let generated_remodded_constants_99 = {
             "id": 101,
             "index": "Heaven's Taebaek",
             "n": "Taebaek's Glory",
-            "c": "uts"
+            "c": "uts",
+            "hdi": "armor/shield/heavens_taebaek"
         },
         {
             "id": 102,
             "index": "Haemosu's Adament",
             "n": "Haemosu's Adamant",
-            "c": "xrs"
+            "c": "xrs",
+            "hdi": "armor/armor/haemosus_adament"
         },
         {
             "id": 103,
             "index": "Ondal's Almighty",
             "n": "Ondal's Almighty",
-            "c": "uhm"
+            "c": "uhm",
+            "hdi": "armor/helmet/ondals_almighty"
         },
         {
             "id": 104,
             "index": "Guillaume's Face",
             "n": "Guillaume's Face",
             "c": "xhm",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "armor/helmet/great_helm"
         },
         {
             "id": 105,
             "index": "Wilhelm's Pride",
             "n": "Wilhelm's Pride",
             "c": "ztb",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "armor/belt/heavy_belt"
         },
         {
             "id": 106,
             "index": "Magnus' Skin",
             "n": "Magnus' Skin",
             "c": "xvg",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "armor/glove/heavy_gloves"
         },
         {
             "id": 107,
             "index": "Wihtstan's Guard",
             "n": "Whitstan's Guard",
             "c": "xml",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "armor/shield/mosers_blessed_circle"
         },
         {
             "id": 108,
             "index": "Hwanin's Splendor",
             "n": "Hwanin's Splendor",
-            "c": "xrn"
+            "c": "xrn",
+            "hdi": "armor/helmet/crown_of_thieves"
         },
         {
             "id": 109,
             "index": "Hwanin's Refuge",
             "n": "Hwanin's Refuge",
-            "c": "xcl"
+            "c": "xcl",
+            "hdi": "armor/armor/scale_mail"
         },
         {
             "id": 110,
             "index": "Hwanin's Seal",
             "n": "Hwanin's Blessing",
-            "c": "mbl"
+            "c": "mbl",
+            "hdi": "armor/belt/belt_m"
         },
         {
             "id": 111,
@@ -16050,14 +16140,16 @@ export let generated_remodded_constants_99 = {
             "index": "Sazabi's Ghost Liberator",
             "n": "Sazabi's Ghost Liberator",
             "c": "upl",
-            "tc": "dblu"
+            "tc": "dblu",
+            "hdi": "armor/armor/splint_mail"
         },
         {
             "id": 114,
             "index": "Sazabi's Mental Sheath",
             "n": "Sazabi's Mental Sheath",
             "c": "xhl",
-            "tc": "dblu"
+            "tc": "dblu",
+            "hdi": "armor/helmet/duskdeep"
         },
         {
             "id": 115,
@@ -16079,19 +16171,22 @@ export let generated_remodded_constants_99 = {
             "id": 117,
             "index": "Cow King's Horns",
             "n": "Cow King's Horns",
-            "c": "xap"
+            "c": "xap",
+            "hdi": "armor/helmet/cap_hat"
         },
         {
             "id": 118,
             "index": "Cow King's Hide",
             "n": "Cow King's Hide",
-            "c": "stu"
+            "c": "stu",
+            "hdi": "armor/armor/studded_leather"
         },
         {
             "id": 119,
             "index": "Cow King's Hoofs",
             "n": "Cow King's Hooves",
-            "c": "vbt"
+            "c": "vbt",
+            "hdi": "armor/boot/heavy_boots"
         },
         {
             "id": 120,
@@ -16104,34 +16199,39 @@ export let generated_remodded_constants_99 = {
             "id": 121,
             "index": "Naj's Light Plate",
             "n": "Naj's Light Plate",
-            "c": "ult"
+            "c": "ult",
+            "hdi": "armor/armor/plate_mail"
         },
         {
             "id": 122,
             "index": "Naj's Circlet",
             "n": "Naj's Circlet",
-            "c": "ci0"
+            "c": "ci0",
+            "hdi": "armor/circlet/circlet"
         },
         {
             "id": 123,
             "index": "McAuley's Paragon",
             "n": "Sander's Paragon",
             "c": "cap",
-            "tc": "lpur"
+            "tc": "lpur",
+            "hdi": "armor/helmet/war_bonnet"
         },
         {
             "id": 124,
             "index": "McAuley's Riprap",
             "n": "Sander's Riprap",
             "c": "vbt",
-            "tc": "lpur"
+            "tc": "lpur",
+            "hdi": "armor/boot/heavy_boots"
         },
         {
             "id": 125,
             "index": "McAuley's Taboo",
             "n": "Sander's Taboo",
             "c": "vgl",
-            "tc": "lpur"
+            "tc": "lpur",
+            "hdi": "armor/glove/heavy_gloves"
         },
         {
             "id": 126,
@@ -16154,7 +16254,8 @@ export let generated_remodded_constants_99 = {
             "index": "Vessel's Fufillment",
             "n": "Vessel's Fulfillment",
             "c": "pa3",
-            "tc": "dgld"
+            "tc": "dgld",
+            "hdi": "armor/shield/heraldic_shield"
         },
         {
             "id": 129,
@@ -16184,14 +16285,16 @@ export let generated_remodded_constants_99 = {
             "index": "True Parry",
             "n": "True Parry",
             "c": "lrg",
-            "tc": "dyel"
+            "tc": "dyel",
+            "hdi": "armor/shield/stormguild"
         },
         {
             "id": 133,
             "index": "Solidarity",
             "n": "Solidarity",
             "c": "Zc1",
-            "tc": "dyel"
+            "tc": "dyel",
+            "hdi": "armor/circlet/diadem"
         },
         {
             "id": 134,
@@ -16206,42 +16309,48 @@ export let generated_remodded_constants_99 = {
             "index": "Raging Seas",
             "n": "Raging Seas",
             "c": "vgl",
-            "tc": "cblu"
+            "tc": "cblu",
+            "hdi": "armor/glove/heavy_gloves"
         },
         {
             "id": 136,
             "index": "Eye of the Storm",
             "n": "Eye of the Storm",
             "c": "aqv",
-            "tc": "cblu"
+            "tc": "cblu",
+            "hdi": "misc/quiver/arrows"
         },
         {
             "id": 137,
             "index": "Sturdy Garment",
             "n": "Sturdy Garment",
             "c": "zmb",
-            "tc": "dgld"
+            "tc": "dgld",
+            "hdi": "armor/belt/belt_m"
         },
         {
             "id": 138,
             "index": "True Deflector",
             "n": "True Deflector",
             "c": "xkp",
-            "tc": "oran"
+            "tc": "oran",
+            "hdi": "armor/helmet/rockstopper"
         },
         {
             "id": 139,
             "index": "Encased Corset",
             "n": "Encased Corset",
             "c": "xtu",
-            "tc": "oran"
+            "tc": "oran",
+            "hdi": "armor/armor/ironpelt"
         },
         {
             "id": 140,
             "index": "Silver Bracers",
             "n": "Silver Bracers",
             "c": "xtg",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "armor/glove/light_gauntlets"
         },
         {
             "id": 141,
@@ -16264,7 +16373,8 @@ export let generated_remodded_constants_99 = {
             "index": "Inner Focus",
             "n": "Inner Focus",
             "c": "ci0",
-            "tc": "dyel"
+            "tc": "dyel",
+            "hdi": "armor/circlet/circlet"
         },
         {
             "id": 144,
@@ -16279,35 +16389,40 @@ export let generated_remodded_constants_99 = {
             "index": "Bursting Desire",
             "n": "Bursting Desire",
             "c": "xit",
-            "tc": "cred"
+            "tc": "cred",
+            "hdi": "armor/shield/steelclash"
         },
         {
             "id": 146,
             "index": "Underestimated",
             "n": "Underestimated",
             "c": "xea",
-            "tc": "cred"
+            "tc": "cred",
+            "hdi": "armor/armor/leather_armor"
         },
         {
             "id": 147,
             "index": "Tundra Storm",
             "n": "Tundra Storm",
             "c": "xsk",
-            "tc": "cblu"
+            "tc": "cblu",
+            "hdi": "armor/helmet/mask"
         },
         {
             "id": 148,
             "index": "Enduring Onslaught",
             "n": "Enduring Onslaught",
             "c": "zlb",
-            "tc": "cblu"
+            "tc": "cblu",
+            "hdi": "armor/belt/sash_l"
         },
         {
             "id": 149,
             "index": "Frozen Goliath",
             "n": "Frozen Goliath",
             "c": "xpk",
-            "tc": "cblu"
+            "tc": "cblu",
+            "hdi": "armor/shield/lance_guard"
         },
         {
             "id": 150,
@@ -16321,7 +16436,8 @@ export let generated_remodded_constants_99 = {
             "index": "Rathma's Shelter",
             "n": "Rathma's Shelter",
             "c": "ush",
-            "tc": "blac"
+            "tc": "blac",
+            "hdi": "armor/shield/wall_of_the_eyeless"
         },
         {
             "id": 152,
@@ -16341,13 +16457,15 @@ export let generated_remodded_constants_99 = {
             "id": 154,
             "index": "Stacato's Sigil",
             "n": "Stacato's Sigil",
-            "c": "rin"
+            "c": "rin",
+            "hdi": "misc/ring/ring"
         },
         {
             "id": 155,
             "index": "Mamba's Circle",
             "n": "Mamba's Circle",
-            "c": "rin"
+            "c": "rin",
+            "hdi": "misc/ring/ring"
         },
         {
             "id": 156,
@@ -16386,21 +16504,24 @@ export let generated_remodded_constants_99 = {
             "index": "Ysenob's Blood",
             "n": "Ysenob's Blood",
             "c": "uhb",
-            "tc": "dred"
+            "tc": "dred",
+            "hdi": "armor/boot/plate_boots"
         },
         {
             "id": 161,
             "index": "Noertap's Pride",
             "n": "Noertap's Pride",
             "c": "uhc",
-            "tc": "dred"
+            "tc": "dred",
+            "hdi": "armor/belt/girdle_h"
         },
         {
             "id": 162,
             "index": "Olbaid's Deceipt",
             "n": "Olbaid's Deceipt",
             "c": "uhg",
-            "tc": "dred"
+            "tc": "dred",
+            "hdi": "armor/glove/gaunlets_h"
         },
         {
             "id": 163,
@@ -16420,7 +16541,8 @@ export let generated_remodded_constants_99 = {
             "id": 165,
             "index": "Thirst for Blood",
             "n": "Thirst for Blood",
-            "c": "umb"
+            "c": "umb",
+            "hdi": "armor/boot/chain_boots"
         },
         {
             "id": 166,
@@ -16433,61 +16555,71 @@ export let generated_remodded_constants_99 = {
             "id": 167,
             "index": "Siphon String",
             "n": "Siphon String",
-            "c": "uvc"
+            "c": "uvc",
+            "hdi": "armor/belt/light_belt"
         },
         {
             "id": 168,
             "index": "Crown of Cold",
             "n": "Crown of Cold",
-            "c": "ci3"
+            "c": "ci3",
+            "hdi": "armor/circlet/diadem"
         },
         {
             "id": 169,
             "index": "Blazing Band",
             "n": "Blazing Band",
-            "c": "rin"
+            "c": "rin",
+            "hdi": "misc/ring/ring"
         },
         {
             "id": 170,
             "index": "Lightning Locket",
             "n": "Lightning Locket",
-            "c": "amu"
+            "c": "amu",
+            "hdi": "misc/amulet/amulet"
         },
         {
             "id": 171,
             "index": "Brewing Storm",
             "n": "Brewing Storm",
-            "c": "uts"
+            "c": "uts",
+            "hdi": "armor/shield/gothic_shield"
         },
         {
             "id": 172,
             "index": "Charged Chaos",
             "n": "Charged Chaos",
-            "c": "uld"
+            "c": "uld",
+            "hdi": "armor/armor/field_plate"
         },
         {
             "id": 173,
             "index": "Electron Emitter",
             "n": "Electron Emitter",
-            "c": "urn"
+            "c": "urn",
+            "hdi": "armor/helmet/crown"
         },
         {
             "id": 174,
             "index": "Achyls' Armament",
             "n": "Achyls' Armament",
-            "c": "uhn"
+            "c": "uhn",
+            "hdi": "armor/armor/chain_mail"
         },
         {
             "id": 175,
             "index": "Pendant of Pestilence",
             "n": "Pendant of Pestilence",
-            "c": "amu"
+            "c": "amu",
+            "hdi": "misc/amulet/amulet"
         },
         {
             "id": 176,
             "index": "Plague Protector",
             "n": "Plague Protector",
-            "c": "ush"
+            "c": "ush",
+            "hdi": "armor/shield/bone_shield"
         },
         {
             "id": 177,
@@ -16500,7 +16632,8 @@ export let generated_remodded_constants_99 = {
             "id": 178,
             "index": "Supreme Strength",
             "n": "Supreme Strength",
-            "c": "utg"
+            "c": "utg",
+            "hdi": "armor/glove/light_gauntlets"
         },
         {
             "id": 179,
@@ -16513,13 +16646,15 @@ export let generated_remodded_constants_99 = {
             "id": 180,
             "index": "Fletcher's Friend",
             "n": "Fletcher's Friend",
-            "c": "Ag6"
+            "c": "Ag6",
+            "hdi": "armor/glove/heavy_gloves"
         },
         {
             "id": 181,
             "index": "Band of Brothers",
             "n": "Band of Brothers",
-            "c": "rin"
+            "c": "rin",
+            "hdi": "misc/ring/ring"
         },
         {
             "id": 182,
@@ -16533,7 +16668,8 @@ export let generated_remodded_constants_99 = {
             "id": 183,
             "index": "Animal Instinct",
             "n": "Animal Instinct",
-            "c": "umc"
+            "c": "umc",
+            "hdi": "armor/belt/belt_m"
         },
         {
             "id": 184,
@@ -16546,55 +16682,64 @@ export let generated_remodded_constants_99 = {
             "id": 185,
             "index": "Justitia's Embrace",
             "n": "Justitia's Embrace",
-            "c": "paf"
+            "c": "paf",
+            "hdi": "armor/shield/crown_shield"
         },
         {
             "id": 186,
             "index": "Hand of Efreeti",
             "n": "Hand of Efreeti",
-            "c": "ulg"
+            "c": "ulg",
+            "hdi": "armor/glove/gloves_l"
         },
         {
             "id": 187,
             "index": "Morning Frost",
             "n": "Morning Frost",
-            "c": "uvb"
+            "c": "uvb",
+            "hdi": "armor/boot/heavy_boots"
         },
         {
             "id": 188,
             "index": "Thunderlord's Vision",
             "n": "Thunderlord's Vision",
-            "c": "usk"
+            "c": "usk",
+            "hdi": "armor/helmet/mask"
         },
         {
             "id": 189,
             "index": "Coil of Heaven",
             "n": "Coil of Heaven",
-            "c": "rin"
+            "c": "rin",
+            "hdi": "misc/ring/ring"
         },
         {
             "id": 190,
             "index": "Band of Divinity",
             "n": "Band of Divinity",
-            "c": "rin"
+            "c": "rin",
+            "hdi": "misc/ring/ring"
         },
         {
             "id": 191,
             "index": "Godly Locket",
             "n": "Godly Locket",
-            "c": "amu"
+            "c": "amu",
+            "hdi": "misc/amulet/amulet"
         },
         {
             "id": 192,
             "index": "Chains of Bondage",
             "n": "Chains of Bondage",
-            "c": "ci3"
+            "c": "ci3",
+            "hdi": "armor/circlet/diadem"
         },
         {
             "id": 193,
             "index": "Chains of Force",
             "n": "Chains of Force",
-            "c": "utp"
+            "c": "utp",
+            "hdi": "armor/armor/light_plate"
         },
         {
             "id": 194,
@@ -16614,19 +16759,22 @@ export let generated_remodded_constants_99 = {
             "id": 196,
             "index": "Toxic Grasp",
             "n": "Toxic Grasp",
-            "c": "uvg"
+            "c": "uvg",
+            "hdi": "armor/glove/heavy_gloves"
         },
         {
             "id": 197,
             "index": "Blade Binding",
             "n": "Blade Binding",
-            "c": "uvc"
+            "c": "uvc",
+            "hdi": "armor/belt/light_belt"
         },
         {
             "id": 198,
             "index": "Murderous Intent",
             "n": "Murderous Intent",
-            "c": "uap"
+            "c": "uap",
+            "hdi": "armor/helmet/cap_hat"
         }
     ],
     "unq_items": [
@@ -21199,8 +21347,7 @@ export let generated_remodded_constants_99 = {
             "id": 546,
             "index": "Rainbow Facet",
             "n": "Rainbow Facet",
-            "c": "jew",
-            "hdi": "misc/gem/perfect_diamond"
+            "c": "jew"
         },
         {
             "id": 547,
@@ -21291,7 +21438,8 @@ export let generated_remodded_constants_99 = {
             "n": "Magefist",
             "i": "D2R_Jank",
             "c": "tgl",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "armor/glove/light_gauntlets"
         },
         {
             "id": 561,
@@ -21299,7 +21447,8 @@ export let generated_remodded_constants_99 = {
             "n": "Magefist",
             "i": "D2R_Jank",
             "c": "tgl",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "armor/glove/light_gauntlets"
         },
         {
             "id": 562,
@@ -21307,7 +21456,8 @@ export let generated_remodded_constants_99 = {
             "n": "Magefist",
             "i": "D2R_Jank",
             "c": "tgl",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "armor/glove/light_gauntlets"
         },
         {
             "id": 563,
@@ -21315,7 +21465,8 @@ export let generated_remodded_constants_99 = {
             "n": "Magefist",
             "i": "D2R_Jank",
             "c": "tgl",
-            "tc": "lgry"
+            "tc": "lgry",
+            "hdi": "armor/glove/light_gauntlets"
         },
         {
             "id": 564,
@@ -46686,8 +46837,7 @@ export let generated_remodded_constants_99 = {
                 "Miscellaneous",
                 "Potion",
                 "Miscellaneous"
-            ],
-            "hdi": "misc/gem/perfect_diamond"
+            ]
         },
         "ice": {
             "nc": "ice",

@@ -48,13 +48,15 @@ function D2RPostTreatment(input_dir, constants) {
     for (let itemOverride of itemOverrides) {
       // The matching item code
       const itemCode = Object.keys(itemOverride)[0];
+      if (itemCode == "jew")
+        continue; // There is no HD image for jewels, it puts diamond instead
       // Retrieve the item section
       let baseItemSection = getBaseItemSection(constants, itemCode);
       if (baseItemSection) {
         // Check if an override .sprite image exist
         const inventoryImage = path.normalize(`${subFolders[baseItemSection]}/${itemOverride[itemCode].asset}`)
         const inventoryImageAbsolutePath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}.sprite`);
-        // Change the ".i" attribute in game constants
+        // Add the ".hdi" attribute in game constants
         if (fs.existsSync(inventoryImageAbsolutePath)) {
           constants[baseItemSection][itemCode].hdi = inventoryImage.replaceAll("\\", "/");
         }
@@ -70,22 +72,25 @@ function D2RPostTreatment(input_dir, constants) {
       for (let uniqOrSetOverride of uniqOrSetOverrides) {
         // The matching item code
         const itemSnakeCaseIndex = Object.keys(uniqOrSetOverride)[0]; // Matches the index column of uniqueitems.txt, and a strings.json key, but with snake case
-        
-        let idx = constants[category.section].findIndex(item => _.snakeCase(item.index) == itemSnakeCaseIndex)
+        if (itemSnakeCaseIndex == "rainbow_facet")
+          continue; // There is no HD image for jewels, it puts diamond instead
 
-        if (idx > -1) {
-          const item = constants.unq_items[idx]
-          let baseItemSection = getBaseItemSection(constants, item.c)
-          if (baseItemSection) {
-            // Check if an override .sprite image exist
-            const inventoryImage = path.normalize(`${subFolders[baseItemSection]}/${uniqOrSetOverride[itemSnakeCaseIndex].normal}`)
-            const inventoryImageAbsolutePath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}.sprite`);
-            // Change the ".i" attribute in game constants
-            if (fs.existsSync(inventoryImageAbsolutePath)) {
-              constants[category.section][idx].hdi = inventoryImage.replaceAll("\\", "/");
+        // There can be multiple matches for an index
+        constants[category.section].forEach(item => {
+          if (_.snakeCase(item.index) == itemSnakeCaseIndex) {
+            // It's a match !
+            let baseItemSection = getBaseItemSection(constants, item.c)
+            if (baseItemSection) {
+              // Check if an override .sprite image exist
+              const inventoryImage = path.normalize(`${subFolders[baseItemSection]}/${uniqOrSetOverride[itemSnakeCaseIndex].normal}`)
+              const inventoryImageAbsolutePath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}.sprite`);
+              // Add the ".hdi" attribute in game constants
+              if (fs.existsSync(inventoryImageAbsolutePath)) {
+                item.hdi = inventoryImage.replaceAll("\\", "/");
+              }
             }
           }
-        }
+        })
       }
     }
   }
