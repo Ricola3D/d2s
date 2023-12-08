@@ -192,7 +192,7 @@ Runemaster	189	100	1			1	1	80	72	72a	ettin axe		5	5000	lblu	lblu		D2R_Jank				dm
 Cranebeak	190	100	1			1	1	71	63	7mp	Reaper Sickle (Necro)		3	5000	dgry			D2R_Jank				dmg%		240	300	dmg-ltng		1	305	swing		40	40	reduce-ac		25	25	mag%		20	50	charged	Murder Calling	30	8																					oskill	CharmSkill	1	1		0
 Deathcleaver	191	100	1			1	1	78	70	7wa	berserker axe		5	5000	dred			D2R_Jank				dmg%		230	280	deadly		33	33	reduce-ac		33	33	swing		40	40	heal-kill		6	9																									oskill	CharmSkill	1	1		0
 Blessed Beheader	192	100	1			1	1	80	72	7la	Feral Axe		5	5000	dgry	dgry		D2R_Jank				dmg-min		25	35	dmg%		220	270	deadly		5	20	openwounds		5	15	dmg-demon		100	110	dmg-undead		100	110	lifesteal		4	7	att-demon		180	200	att-undead		180	200									oskill	CharmSkill	1	1		0
-Ethereal Edge	193	100	1			1	1	82	74	7ba	silver-edged axe		5	5000	whit	whit		D2R_Jank				dmg%		150	180	swing		25	25	abs-fire		10	12	dmg-demon		150	200	demon-heal		5	10	att		270	350	ethereal		1	1	indestruct		1	1													oskill	CharmSkill	1	1		0
+Ethereal Edge	193	100	1			1	1	82	74	7ba	silver-edged axe		5	5000	whit	whit		D2R_Jank				dmg%		250	280	swing		45	45	abs-fire		10	12	dmg-demon		150	200	demon-heal		5	10	att		270	350	ethereal		1	1	indestruct		1	1	allskills		1	1									oskill	CharmSkill	1	1		0
 Hellslayer	194	100	1			1	1	71	66	7bt	Decapitator		5	5000	dred	dred		D2R_Jank				str/lvl	4			vit/lvl	4			dmg%/lvl	24			dmg-fire		150	250	hp		25	25	dmg%		100	100	att-skill	CTC_GlacialSpike	10	0																	oskill	CharmSkill	1	1		0
 Messerschmidt's Reaver	195	100	1			1	1	75	70	7ga	Champion Axe (Barb)		5	5000	blac	blac		D2R_Jank				dmg%/lvl	20			dmg%		200	200	str		15	15	dex		15	15	vit		15	15	enr		15	15	dmg-fire		20	240	dur		25	25	att%		100	100									oskill	CharmSkill	1	1		0
 Executioner's Justice	196	100	1			1	1	83	75	7gi	glorious axe (Barb)		5	5000	blac	blac		D2R_Jank				dmg%		240	290	crush		10	20	reduce-ac		33	33	kill-skill	CTC_Decrepify	50	6	swing		30	30																									oskill	CharmSkill	1	1		0
@@ -224,7 +224,7 @@ Gleam Rod	221	100	1			1	1	85	68	7cm	Highland Blade		5	5000				D2R_Jank				splash
 Flamebellow	222	100	1			1	1	79	71	7gs	balrog blade		5	5000	cred	cred		D2R_Jank				dmg%		170	240	dmg-fire		233	482	fireskill		3	3	abs-fire%		20	30	hit-skill	CTC_Firestorm	4	12	str		10	20	vit		5	10	oskill	Inferno	12	18													oskill	CharmSkill	1	1		0
 Doombringer	223	100	1			1	1	75	69	7b7	Champion Sword		5	5000	dred	dred		D2R_Jank				hp%		20	20	dmg%		180	250	att%		40	40	dmg-norm		30	100	hit-skill	CTC_Weaken	8	3	lifesteal		5	7																					oskill	CharmSkill	1	1		0
 Burning Bane	224	100	1			1	1	83	79	7fb	Colossal Sword		5	5000				D2R_Jank				aura	ReduceFireResist	15	20	dmg-fire		250	400	dmg%		300	300	hit-skill	Ignite	50	10	hidden-vit		-500	-500	deadly		15	15	swing		50	50	move		20	20													oskill	CharmSkill	1	1		0
-The Grandfather	225	100	1			1	1	85	81	7gd	Colossus Blade		5	5000	lyel	lyel		D2R_Jank				all-stats		20	20	att%		50	50	hp		80	80	dmg/lvl	20			dmg%		150	250																									oskill	CharmSkill	1	1		0
+The Grandfather	225	100	1			1	1	85	81	7gd	Colossus Blade		5	5000	lyel	lyel		D2R_Jank				all-stats		20	20	att%		50	50	hp		80	80	dmg/lvl	20			dmg%		250	350	aura	ReducePhysResist	5	15	swing		30	30																	oskill	CharmSkill	1	1		0
 Wizardspike	226	100	1			1	1	69	61	7dg	Bone Knife		5	5000	lgry	lgry		D2R_Jank				mana/lvl	16			regen-mana		15	15	mana%		15	15	res-all		75	75	cast		50	50	ease		-50	-50																					oskill	CharmSkill	1	1		0
 Rapid Strike	227	100	1			1	1	72	64	7di	Mithral Point		5	5000				D2R_Jank				dmg%		333	333	swing		50	50	move		40	40	dmg		60	60	deadly		25	25	heal-perhit		9	9																					oskill	CharmSkill	1	1		0
 Fleshripper	228	100	1			1	1	76	68	7kr	fanged knife (Necro)		5	5000	dred	dred		D2R_Jank				dmg%		200	300	reduce-ac		50	50	noheal		1	1	crush		10	10	openwounds		5	20	deadly		10	10	slow		20	20	oskill	PatientZero	6	10													oskill	CharmSkill	1	1		0
@@ -409,7 +409,7 @@ Tangled Fellow	406	100	1			1	1	20	16	ne3	Unraveller Head		5	5000	dgld	dgld		D2R_
 Stubborn Stone	407	100	1			1	1	24	20	ne4	Gargoyle Head		5	5000	dblu	dblu		D2R_Jank				skill	Clay Golem	3	3	skill	Summon Mastery	2	2	sum-hp		6	8	red-dmg		2	2	dur		20	20	block		5	5	hp		15	25																						0
 Spiked Dreamcatcher	408	100	1			1	1	28	24	ne5	Demon Head		5	5000	blac	blac		D2R_Jank				skilltab	7	2	2	extra-pois		4	6	extra-mag		4	6	thorns		6	7	dex		8	14																														0
 Journeyman's Band	409	100	1			1	1	24	16	ci0	Circlet		5	5000				D2R_Jank				Weight-Capacity		3	5	allskills		1	1	abs-fire%		1	3	abs-cold%		1	3	abs-ltng%		1	3	all-stats		10	15																										0
-Hygieia's Purity	410	100	1			1	1	52	39	ci1	Coronet		5	5000				D2R_Jank				Weight-Capacity		3	5	res-pois-len		25	25	aura	Clear Ailment	5	8	cdr		30	40	ext-missile		1	3	allskills		1	1																										0
+Hygieia's Purity	410	100	1			1	1	52	39	ci1	Coronet		5	5000				D2R_Jank				Weight-Capacity		3	5	res-pois-len		25	25	aura	Cleansing_I	5	8	cdr		30	40	ext-missile		1	3	allskills		1	1																										0
 Kira's Guardian	411	100	1			1	1	85	77	ci2	tiara		3	5000	blac	blac		D2R_Jank				ac		50	120	res-all		50	70	nofreeze		1	1	balance		20	20	Weight-Capacity		3	5																														0
 Griffon's Eye	412	100	1			1	1	84	76	ci3	diadem		5	5000				D2R_Jank				ac		100	200	cast		25	25	allskills		1	1	extra-ltng		10	15	pierce-ltng		15	20	pierce-immunity-light		10	10	Weight-Capacity		3	5																						0
 Harlequin Crest	413	100	1			1	1	69	62	uap	Shako		3	5000	cgrn	cgrn		D2R_Jank				allskills		2	2	hp/lvl	12			mana/lvl	12			mag%		50	50	red-dmg%		10	10	str		2	2	dex		2	2	vit		2	2	enr		2	2														0
@@ -519,8 +519,8 @@ Oa3	516	100						76	57	Oa3	Oaken Armor							D2R_Jank																											
 Vg1	517	100						20	0	Vg1	Arcanic Touch							D2R_Jank																																																					0
 Vg2	518	100						49	25	Vg2	Elemental Outreach							D2R_Jank																																																					0
 Firebelr	519	100	1			1	1	76	57	Vg3	Vizjerei Vestige		3	5000				D2R_Jank				sum-ex		2	3	FireBall-Radius		3	5	skill	Fire Ball	3	7	pierce-immunity-fire		10	20	cast		25	25	extra-fire		15	15																										0
-Flightless	520	100	1			1	1	5	7	aqv	Arrows		3	1				D2R_Jank				swing		10	10	dex		5	15	rep-quant	100			dmg%		20	30	pierce		33	33																														0
-Pinpoint	521	100	1			1	1	15	16	aqv	Arrows		3	1				D2R_Jank				swing		20	20	rep-quant	100			stupidity		4	5	dmg%		30	45	res-all		7	10	move		10	10	att		60	180																						0
+Flightless	520	100	1			1	1	5	7	aqv	Arrows		3	1				D2R_Jank				swing		10	10	dex		5	15	noconsume		100	100	dmg%		20	30	pierce		33	33																														0
+Pinpoint	521	100	1			1	1	15	16	aqv	Arrows		3	1				D2R_Jank				swing		20	20	noconsume		100	100	stupidity		4	5	dmg%		30	45	res-all		7	10	move		10	10	att		60	180																						0
 Nokozan Relic	522	0	1			20	1	14	10	amu	Amulet		5	5000	lgld			D2R_Jank				dmg-fire		3	6	res-fire-max		10	10	res-fire		50	50	light		3	3	balance		20	20																														0
 The Eye of Etlich	523	0	1			5	1	20	15	amu	Amulet		5	5000	dgld			D2R_Jank				ac-miss		10	40	light		1	5	allskills		1	1	lifesteal		3	7	cold-min		1	2	cold-max		3	5	cold-len		50	250																						0
 The Mahim-Oak Curio	524	0	1			10	1	34	25	amu	Amulet		5	5000	lpur			D2R_Jank				dex		10	10	str		10	10	enr		10	10	vit		10	10	light		10	10	att%		10	10	res-all		10	10	ac%		10	10	cdr		10	10														0
@@ -553,11 +553,11 @@ Rainbow Facet	550	100	1			1	1	85	1	jew	jewel		3	5000								dmg-ltng		1	74	pierc
 Rainbow Facet	551	100	1			1	1	85	1	jew	jewel		3	5000								dmg-cold	3	24	38	pierce-cold		3	5	extra-cold		3	5	levelup-skill	CTC_FrostNova	100	43	pierce-immunity-cold		5	5																														0
 Rainbow Facet	552	100	1			1	1	85	1	jew	jewel		3	5000								dmg-fire		17	45	pierce-fire		3	5	extra-fire		3	5	levelup-skill	CTC_Blaze	100	29	pierce-immunity-fire		5	5																														0
 Rainbow Facet	553	100	1			1	1	85	1	jew	jewel		3	5000								dmg-pois	50	187	187	pierce-pois		3	5	extra-pois		3	5	levelup-skill	CTC_Venom	100	23	pierce-immunity-poison		5	5																														0
-Rainbow Facet	554	100	1			1	1	85	1	jew	jewel		3	5000								dmg-norm		10	20	dmg%		5	10	death-skill	Landslide	100	50	pierce-immunity-damage		5	5																																		0
-Rainbow Facet	555	100	1			1	1	85	1	jew	jewel		3	5000								dmg-norm		10	20	dmg%		5	10	levelup-skill	Landslide	100	50	pierce-immunity-damage		5	5																																		0
+Rainbow Facet	554	100	1			1	1	85	1	jew	jewel		3	5000								dmg		5	10	dmg%		5	10	death-skill	Landslide	100	50	pierce-immunity-damage		5	5																																		0
+Rainbow Facet	555	100	1			1	1	85	1	jew	jewel		3	5000								dmg		5	10	dmg%		5	10	levelup-skill	Landslide	100	50	pierce-immunity-damage		5	5																																		0
 Hellfire Torch	556	100	1			1	1	110	75	cm2	charm	1	3	5000				D2R_Jank				randclassskill		0	6	all-stats		10	20	res-all		10	20	light		8	8	hit-skill	CTC_Tornado	3	10	charged	Hydra	10	30																					Weight-Tracker		4	4		0
 Beacon of Hope	557	100	1			1	1	30	35	BoH	Beacon											oskill	Teleport	1	1																																														0
-MythosLog	558	100	1			999	1	1	1	y08	KillTracker											skill-kill	496	100	1	kill-tracker		1	1	skill-death	497	100	1	death-tracker		1	1																																		0
+MythosLog	558	100	1			0	1	1	1	y08	KillTracker											skill-kill	496	100	1	kill-tracker		1	1	skill-death	497	100	1	death-tracker		1	1																																		0
 Storage Bag	559	100	1			1	1	1	1	Z01	bag											GB-Total		1	1	RB-Low		1	1	RB-Mid		1	1	RB-High		1	1	ucore		1	1	score		1	1	JB-Rare		1	1																						0
 Magefist	560	0	1			1	1	31	23	tgl	Light Gauntlets		5	5000	lgry	lgry		D2R_Jank				cast		20	20	regen-mana		25	25	lightskill		1	1	dmg-ltng		1	6	ac		10	10	ac%		20	30																										0
 Magefist	561	0	1			1	1	31	23	tgl	Light Gauntlets		5	5000	lgry	lgry		D2R_Jank				cast		20	20	regen-mana		25	25	coldskill		1	1	dmg-cold		1	6	ac		10	10	ac%		20	30																										0
@@ -575,25 +575,28 @@ Fletcher's Fury	572	100	1			1	1	57	28	Ag4	Trainee Gloves		5	5000								skilltab
 Indra's Guidance	573	100	1			1	1	60	45	Ag5	Adept Gloves		5	5000								ama		1	1	skill-rand	3	6	35	att%		20	30	swing		10	20	mana-kill		2	4	dex/lvl	2			extra-ltng		5	15																						0
 Ag6	574																																																																						0
 Robbin's Temple	575	100	1			1	1	52	39	ci1	Coronet		5	5000								Weight-Capacity		3	5	allskills		1	1	cast		10	20	move		30	30	oskill	Cloak of Shadows	1	1	res-all		10	20	mag%/lvl	4																								0
-Trials Charm c1	576	100	1			1	1	99	75	a59	Large Charm	1	5	5000				D2R_Jank				all-stats		10	10	Weight-Tracker	2	2																																											0
-Trials Charm c2	577	100	1			1	1	99	75	a60	Large Charm	1	5	5000				D2R_Jank				res-all		10	10	Weight-Tracker	2	2																																											0
-Trials Charm c3	578	100	1			1	1	99	75	a61	Large Charm	1	5	5000				D2R_Jank				red-dmg%		5	5	Weight-Tracker	2	2																																											0
-Trials Charm c4	579	100	1			1	1	99	75	a62	Large Charm	1	5	5000				D2R_Jank				allskills		1	1	Weight-Tracker	2	2																																											0
-Trials Charm c5	580	100	1			1	1	99	75	a63	Large Charm	1	5	5000				D2R_Jank				all-stats%		3	3	Weight-Tracker	2	2																																											0
-Trials Charm c6	581	100	1			1	1	99	75	a64	Large Charm	1	5	5000				D2R_Jank				pierce-all		10	10	Weight-Tracker	2	2																																											0
-Trials Charm c7	582	100	1			1	1	99	75	a65	Large Charm	1	5	5000				D2R_Jank				pierce-immunity-all		10	10	Weight-Tracker	2	2																																											0
-MegaCharm	583	100	1			1	1	99	75	a66	Large Charm	1	5	5000				D2R_Jank				all-stats		25	25	res-all		25	25	red-dmg%		10	10	allskills		3	3	all-stats%		5	5	pierce-all		20	20	pierce-immunity-all		20	20	cdr		25	25	aura	Vigor_I	6	6	gethit-skill	Blood Shield	75	5	att%		50	50	Weight-Tracker		20	20		0
-Spirit Striker	584	100	1			1	1	35	31	aqv	Arrows		3	1								hit-skill	CTC_BoneSpirit	20	10	rep-quant	100			swing		10	20	manasteal		5	8	att		150	150																														0
-Aim of Indra	585	100	1			1	1	49	44	aqv	Arrows		3	1								hit-skill	CTC_Nova	20	15	rep-quant	100			swing		15	25	pierce-ltng		10	15	ext-att		1	2																														0
-Enchanted Flame	586	100	1			1	1	67	61	aqv	Arrows		3	1								kill-skill	CTC_Enchant	20	20	rep-quant	100			swing		20	30	pierce-immunity-fire		10	20	ama		1	1	ext-missile		1	3																										0
-Mageflight	587	100	1			1	1	81	77	aqv	Arrows		3	1								hit-skill	CTC_BoltNova	20	25	rep-quant	100			swing		20	30	extra-mag		20	30	pierce-immunity-magic		20	30	deadly/dex	3			att%		200	200																						0
+Trials Charm c1	576	100	1			1	1	95	75	a59	Large Charm	1	5	5000				D2R_Jank				all-stats		20	20	Weight-Tracker	2	2																																											0
+Trials Charm c2	577	100	1			1	1	95	75	a60	Large Charm	1	5	5000				D2R_Jank				res-all		15	15	Weight-Tracker	2	2																																											0
+Trials Charm c3	578	100	1			1	1	95	75	a61	Large Charm	1	5	5000				D2R_Jank				red-dmg%		5	5	Weight-Tracker	2	2																																											0
+Trials Charm c4	579	100	1			1	1	95	75	a62	Large Charm	1	5	5000				D2R_Jank				allskills		1	1	Weight-Tracker	2	2																																											0
+Trials Charm c5	580	100	1			1	1	95	75	a63	Large Charm	1	5	5000				D2R_Jank				all-stats%		3	3	Weight-Tracker	2	2																																											0
+Trials Charm c6	581	100	1			1	1	95	75	a64	Large Charm	1	5	5000				D2R_Jank				pierce-all		10	10	Weight-Tracker	2	2																																											0
+Trials Charm c7	582	100	1			1	1	95	75	a65	Large Charm	1	5	5000				D2R_Jank				pierce-immunity-all		10	10	Weight-Tracker	2	2																																											0
+MegaCharm	583	100	1			1	1	95	75	a66	Large Charm	1	5	5000				D2R_Jank				all-stats		25	25	res-all		25	25	red-dmg%		10	10	allskills		5	5	all-stats%		5	5	pierce-all		20	20	pierce-immunity-all		20	20	cdr		25	25	aura	Vigor_I	6	6	gethit-skill	Blood Shield	75	5	att%		150	150	Weight-Tracker		20	20		0
+Spirit Striker	584	100	1			1	1	35	31	aqv	Arrows		3	1								hit-skill	CTC_BoneSpirit	20	10	noconsume		100	100	swing		10	20	manasteal		5	8	att		150	150																														0
+Aim of Indra	585	100	1			1	1	49	44	aqv	Arrows		3	1								hit-skill	CTC_Nova	20	15	noconsume		100	100	swing		15	25	pierce-ltng		10	15	ext-att		1	2																														0
+Enchanted Flame	586	100	1			1	1	67	61	aqv	Arrows		3	1								kill-skill	CTC_Enchant	20	20	noconsume		100	100	swing		20	30	pierce-immunity-fire		10	20	ama		1	1	ext-missile		1	3																										0
+Mageflight	587	100	1			1	1	81	77	aqv	Arrows		3	1								hit-skill	CTC_BoltNova	20	25	noconsume		100	100	swing		20	30	extra-mag		20	30	pierce-immunity-magic		20	30	deadly/dex	3			att%		200	200																						0
 Energy Manipulator	588	100	1			2	1	81	76	amu	amulet		5	5000				D2R_Jank				buff-length		25	35	allskills		1	1	oskill	Warmth	1	1	skill	Energy Shield	3	5	enr/lvl	3			cdr		25	35																										0
 Trinity	589	100	1			2	1	88	83	amu	amulet		5	5000				D2R_Jank				kill-skill	Tri-Hydra	20	10	extra-elem		15	25	pierce-immunity-cold		15	25	pierce-immunity-fire		15	25	pierce-immunity-light		15	25																														0
 Quintessence	590	100	1			2	1	95	90	amu	amulet		5	5000				D2R_Jank				cast/enr	1			swing/str	1			wounds/str	2			deadly/dex	2			pierce/dex	2			ar/enr	16			all-stats%		5	15																						0
 Life Everlasting	591	100	1			3	1	81	76	rin	ring		5	5000				D2R_Jank				aura	Prayer	10	15	hp		25	50	mana		25	50	regen		8	8	regen-mana		75	75	heal-kill		3	5	mana-kill		3	5	res-pois-len		25	25																		0
 Hunter's Mark	592	100	1			3	1	84	79	rin	ring		5	5000				D2R_Jank				aura	Blessed Aim	5	10	dex		25	25	hit-skill	CTC_TearDown	7	3	att		200	200	manasteal		6	10																														0
-Unholy Commander	593	100	1			1	1	88	70	cm3	charm	1	3	5000	lgld			D2R_Jank				skelcommand		1	1	oskill	Skeleton Commander	1	1	all-stats		10	15																																						0
+Unholy Commander	593	100	1			0	1	94	70	cm3	charm	1	3	5000	lgld			D2R_Jank				skelcommand		1	1	oskill	Skeleton Commander	1	1	all-stats		10	15																																						0
 Tommy's Enlightener	594	100	1			1	1	80	72	7qs	Seraph Rod		3	5000				D2R_Jank				dmg%		250	300	dmg		60	120	pal		2	2	skill	Blessed Hammer	3	7	light		3	3	extra-mag		15	20	pierce-immunity-magic		10	15																	oskill	CharmSkill	1	1		0
 Curtis's Fortifier	595	100	1			1	1	85	67	uhc	Colossus Girdle		5	5000	whit	whit		D2R_Jank				ac%		200	250	all-stats		10	20	res-all		10	20	dualsteal		5	8	res-fire-max		5	5	res-cold-max		5	5	res-ltng-max		5	5	res-pois-max		5	5	levelreq		-25	-25	ease		-50	-50										0
 Kurec's Pride	596	100	1			1	1	75	67	drd	earth spirit		5	5000	oran	oran		D2R_Jank				ac%		170	190	balance		20	20	red-dmg%		10	15	res-fire		30	40	dmg%		100	150	res-fire-max		10	10	dru		1	2	swing		15	15																		0
 Spiritual Guardian	597	100	1			1	1	95	63	utp	Archon Plate							D2R_Jank				oskill	Spirit's Charge	5	5	mana		50	100	mana%		5	10	allskills		1	1	pierce-immunity-light		30	50	pierce-all		10	15																										0
+Blackmaw's Brutality	598	100	1			1	1	56	48	xld	Sharktooth Armor		3	5000	blac	blac		D2R_Jank				ac%		160	220	aura	ReducePhysResist	10	15	str		30	30	hidden-vit		-500	-500	ac%		100	100	swing		10	15	res-all		20	30																						0
+Spencer's Dispenser	599	100	1			1	1	81	61	oba	Swirling Crystal		5	5000	whit	whit		D2R_Jank				sor		2	2	skill	Rolling Thunder	2	4	pierce-immunity-light		15	25	cast		30	30	extra-ltng		15	25	vit		20	20	enr		20	20	ext-missile		2	2	mag%		50	50									oskill	CharmSkill	1	1		0
+Fletching of Frostbite	587	100	1			1	1	81	77	aqv	Arrows		3	1	cblu	cblu						hit-skill	CTC_Blizzard	20	20	noconsume		100	100	swing		20	30	extra-cold		20	30	pierce-immunity-cold		20	30	ignore-ac		1	1	freeze		1	1																						0

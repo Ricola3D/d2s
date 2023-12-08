@@ -95,7 +95,7 @@ function D2RPostTreatment(input_dir, constants) {
 function ReMoDDeDPostTreatment(input_dir, constants) {
   // Make some hidden properties visible
   let visibilityChanges = [
-    { section: "magical_properties", key:  92, from: "item_levelreq", assign: { s: "item_extra_level_req", so: 999, dF: 19, dP: "Req levels %+d (Enhances)" } },
+    { section: "magical_properties", key:  92, from: "item_levelreq", assign: { s: "item_extra_level_req", so: 999, dF: 19, dP: "Req levels %+d (Enhances)", dN: "Req levels %d (Enhances)" } },
     { section: "magical_properties", key: 126, from: "item_elemskill", assign: { so: 157, dF: 19, dP: "%+d to Elemental Skills" } },
     { section: "magical_properties", key: 370, from: "Soul_Ama", assign: { so: 999, dF: 19, dP: "Amazon Soul Tier: %d" } },
     { section: "magical_properties", key: 371, from: "Soul_Sor", assign: { so: 999, dF: 19, dP: "Sorceress Soul Tier: %d" } },
@@ -104,7 +104,6 @@ function ReMoDDeDPostTreatment(input_dir, constants) {
     { section: "magical_properties", key: 374, from: "Soul_Bar", assign: { so: 999, dF: 19, dP: "Barbarian Soul Tier: %d" } },
     { section: "magical_properties", key: 375, from: "Soul_Dru", assign: { so: 999, dF: 19, dP: "Druid Soul Tier: %d" } },
     { section: "magical_properties", key: 376, from: "Soul_Ass", assign: { so: 999, dF: 19, dP: "Assassin Soul Tier: %d" } },
-    { section: "magical_properties", key: 377, from: "RW_Tracker", assign: { so: 999, dF: 19, dP: "One-use recipe consumed: %d" } },
     { section: "magical_properties", key: 412, from: "Soul_Level", assign: { so: 999, dF: 19, dP: "Soul Count: %d" } },
   ]
   for (change of visibilityChanges) {
@@ -112,7 +111,7 @@ function ReMoDDeDPostTreatment(input_dir, constants) {
       Object.assign(constants[change.section][change.key], change.assign)
     }
     else {
-      console.log(`WARN: Magical Property ${propId} changed to "${constants[change.section][change.key].s}"`)
+      console.log(`WARN: Magical Property ${change.key} changed to "${constants[change.section][change.key].s}"`)
     }
   }
 

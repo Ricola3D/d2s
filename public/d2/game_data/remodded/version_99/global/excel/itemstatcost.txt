@@ -102,8 +102,8 @@ item_fastergethitrate	99	1	1	9											200	20		7	20	8	60																139	19
 monster_playercount	100														0	0		7	20																																0
 skill_poison_override_length	101			8											0	0		6	20																																0
 item_fasterblockrate	102	1	1	9											200	20		7	50	8	50																136	19		ModStr4y	ModStr4y									2	0
-skill_bypass_undead	103			1											0	0		7	20																																0
-skill_bypass_demons	104			1											0	0		6	20																																0
+skill_bypass_undead	103			1														7	20																																0
+skill_bypass_demons	104			1														6	20																																0
 item_fastercastrate	105	1	1	9											500	20		7	20	8	60																142	19		ModStr4v	ModStr4v									2	0
 skill_bypass_beasts	106			1											0	0		7	20																																0
 item_singleskill	107		1	15	9						1			1	20	20		14	0	3	0	9															81	27		ItemModifierClassSkill	ItemModifierClassSkill										0
@@ -120,8 +120,8 @@ item_preventheal	117		1	8											29	17		7	0	7	0											1					81	19		ModStr
 item_halffreezeduration	118		1	2											250	20		1	0	1	0																19	19		ModStr4b	ModStr4b									2	0
 item_tohit_percent	119		1	12											300	13		9	20	9	20											1					117	19		ModStr4c	ModStr4c									2	0
 item_damagetargetac	120		1	8											14	-7		7	128	7	117											1					75	19		ModStr4d	ModStr4d									2	0
-item_demondamage_percent	121		1	12											11	4		9	20	9	20											1					112	19		ModStr4e	ModStr4e									2	0
-item_undeaddamage_percent	122		1	12											8	4		9	20	9	20											1					108	19		ModStr4f	ModStr4f									2	0
+item_demondamage_percent	121		1	12											19	12		9	20	9	20											1					112	19		ModStr4e	ModStr4e									2	0
+item_undeaddamage_percent	122		1	12											13	12		9	20	9	20											1					108	19		ModStr4f	ModStr4f									2	0
 item_demon_tohit	123		1	13											9	2		10	128	10	128											1					110	19		ModStr4j	ModStr4j									2	0
 item_undead_tohit	124		1	13											7	2		10	128	10	128											1					106	19		ModStr4k	ModStr4k									2	0
 item_throwable	125		1	2											49	20		1	0	1	0																5	19		ModStr5a	ModStr5a										0
@@ -141,7 +141,7 @@ item_manaafterkill	138		1	7							1				10	20		7	0	7	0												kill	17			16	19
 item_healafterdemonkill	139		1	7							1				11	20		7	0	7	0												kill	18			15	19		ModStr6c	ModStr6c									2	0
 item_extrablood	140		1	7											9	3		7	0	7	0											1																			0
 item_deadlystrike	141		1	7											19	8		7	0	7	5											1					85	19		ModStr5q	ModStr5q									2	0
-item_absorbfire_percent	142		1	7											500	20		7	0	7	0																23	19		ModStr5h	ModStr5h									2	0
+item_absorbfire_percent	142		1	7											500	20		7	0	7	0																23	19		ModStr5g	ModStr5g									2	0
 item_absorbfire	143		1	7											500	20		7	0	7	0																27	19		ModStr5h	ModStr5h									2	0
 item_absorblight_percent	144		1	7											500	20		7	0	7	0																24	19		ModStr5i	ModStr5i									2	0
 item_absorblight	145		1	7											500	20		7	0	7	0																29	19		ModStr5j	ModStr5j									2	0
@@ -377,7 +377,7 @@ Soul_Bar	374			16											102	20	1024	10	10	11	10																													
 Soul_Dru	375			16											102	20	1024	10	10	11	10																														0
 Soul_Ass	376			16											102	20	1024	10	10	11	10																														0
 RW_Tracker	377		1	2											0	0		1	0	1																															0
-Unused378	378														0	0		21	0																																0
+Celestial_Aid	377		1	2											0	0		1	0	1																	1	19		ModCelestialAid	ModCelestialAid									2	0
 boneadded	379			32								1	0		0	0	1024	10	10	20	0																1	19	0	ModBoneArmor											0
 vitality_hidden	380		1	16											800	20		6	10	10	500			11			vitality										999	19		MercenaryOnly	MercenaryOnly										0
 hsbonus	381		1	31											0	0	1024	31	0	31	0																														0

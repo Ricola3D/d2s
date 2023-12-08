@@ -43,3 +43,18 @@ Rathma's Calling	Rathma's Calling	100	sum-speed		40	40	regen		20	20													
 Stacatomamba's Guidance	Stacatomamba's Guidance	100																																	res-all		10	10	vit		10	10	dex		10	10	mag%		25	25																	0
 Kreigur's Mastery	Kreigur's Mastery	100																																	pierce-immunity-all		20	20	skilltab	18	2	2	oskill	Blink Strike	5	5																					0
 Scarlet Sukami	Scarlet Sukami	100																																	pierce-immunity-damage		30	30	skill	Frenzy	7	7	bar		3	3	dmg		100	100	crush/str	1															0
+Mirrored Flames	Mirrored Flames	100																																	allskills		3	3	all-stats		20	20	oskill	Fire Mastery	1	1	extra-fire		30	30																	0
+Unstoppable Force	Unstoppable Force	100																																	bar		5	5	dmg		500	500	crush		30	30	att%		300	300	skill	Double Throw	7	7													0
+Underworld's Unrest	Underworld's Unrest	100																																	nec		4	4	sum-ex		5	5	pierce-immunity-all		20	20	addxp		10	10	skill	Blood Golem	5	5													0
+Elemental Blueprints	Elemental Blueprints	100																																	allskills		3	3	all-stats%		15	15	extra-elem		30	30	cdr		35	35	buff-length		20	20													0
+Raijin's Rebellion	Raijin's Rebellion	100																																	allskills		3	3	all-stats		20	20	oskill	Lightning Mastery	1	1	extra-ltng		30	30																	0
+Mikael's Toxicity	Mikael's Toxicity	100																																	allskills		2	2	poisskill		2	2	pierce-immunity-poison		40	40	vit		50	50	extra-pois		40	40													0
+Warrior's Wrath	Warrior's Wrath	100																																	bar		4	4	dru		4	4	ext-att		10	10	pierce-immunity-damage		40	40	dmg		250	250	str		30	30									0
+Blessings of Artemis	Blessings of Artemis	100																																	allskills		2	2	ama		2	2	ext-att		3	3	ext-missile		3	3	dmg		100	100	dex		30	30									0
+Artio's Calling	Artio's Calling	100																																	dru		5	5	sum-ex		5	5	pierce-immunity-all		30	30	res-all		40	40	enr		30	30													0
+Justitia's Divinity	Justitia's Divinity	100																																	pal		3	3	pierce-immunity-magic		30	30	ext-missile		5	5	hp%		10	10	skill	Fist of the Heavens	7	7													0
+Pulsing Presence	Pulsing Presence	100																																	allskills		2	2	cdr		50	50	pierce-immunity-cold		30	30	pierce-immunity-fire		30	30	pierce-immunity-light		30	30	all-stats		20	20									0
+Celestial Caress	Celestial Caress	100																																	allskills		3	3	celestial		1	1	pierce-immunity-all		20	20	ext-missile		5	5	enr		40	40													0
+Breaker of Chains	Breaker of Chains	100																																	pal		4	4	ama		4	4	pierce-immunity-light		30	30	pierce-immunity-magic		30	30	ext-missile		5	5	ext-att		5	5									0
+Silhouette of Silence	Silhouette of Silence	100																																	ass		4	4	charge-noconsume		50	50	pierce-immunity-all		20	20	all-stats%		10	10	light		10	10													0
+Mangala's Teachings	Mangala's Teachings	100																																	allskills		2	2	ass		2	2	oskill	Fade	3	3	ext-att		5	5	pierce-immunity-damage		40	40													0
