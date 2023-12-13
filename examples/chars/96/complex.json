@@ -326,18 +326,18 @@
         "energy": 35,
         "dexterity": 25,
         "vitality": 366,
-        "unused_stats": 0,
-        "unused_skill_points": 0,
-        "current_hp": 3158,
-        "max_hp": 906,
-        "current_mana": 1417,
-        "max_mana": 223,
-        "current_stamina": 1447,
-        "max_stamina": 524,
+        "statpts": 0,
+        "newskills": 0,
+        "hitpoints": 3158,
+        "maxhp": 906,
+        "mana": 1417,
+        "maxmana": 223,
+        "stamina": 1447,
+        "maxstamina": 524,
         "level": 95,
         "experience": 2652381693,
         "gold": 947511,
-        "stashed_gold": 2500000
+        "goldbank": 2500000
     },
     "skills": [
         {

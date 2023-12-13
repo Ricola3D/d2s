@@ -6,18 +6,18 @@ import { getConstantData } from "./constants";
 //todo use constants.magical_properties and csvBits
 export function readAttributes(char: types.ID2S, reader: BitReader, mod: string): void {
   const constants = getConstantData(mod, char.header.version);
-  char.attributes = {
-    // For optional values, set default
-    unused_stats: 0,
-    unused_skill_points: 0,
-    experience: 0,
-    gold: 0,
-    stashed_gold: 0,
-    killtrack: 0,
-    deathtrack: 0,
-    unused210: 0,
-    unused211: 0,
-  } as types.IAttributes;
+
+  // Stats = magical_properties with "Saved" = 1.
+  // There are report that only stat ids 0 to 255 can be saved. It doesn't work for stats 256-510.
+  const attributeIds = constants.magical_properties.filter((val, idx) => val && val.c && idx < 256).map((val, idx) => idx);
+
+  // Initial values
+  char.attributes = attributeIds.reduce((acc, curr) => {
+    const attr = constants.magical_properties[curr];
+    acc[attr.s] = 0; // Add the attribute with value 0
+    return acc;
+  }, {} as types.IAttributes);
+
   const header = reader.ReadString(2); //0x0000 [attributes header = 0x67, 0x66 "gf"]
   if (header != "gf") {
     // header is not present in first save after char is created
@@ -29,22 +29,18 @@ export function readAttributes(char: types.ID2S, reader: BitReader, mod: string)
         energy: +classData.int,
         dexterity: +classData.dex,
         vitality: +classData.vit,
-        unused_stats: 0,
-        unused_skill_points: 0,
-        current_hp: +classData.vit + +classData.hpadd,
-        max_hp: +classData.vit + +classData.hpadd,
-        current_mana: +classData.int,
-        max_mana: +classData.int,
-        current_stamina: +classData.stam,
-        max_stamina: +classData.stam,
+        statpts: 0,
+        newskills: 0,
+        hitpoints: +classData.vit + +classData.hpadd,
+        maxhp: +classData.vit + +classData.hpadd,
+        mana: +classData.int,
+        maxmana: +classData.int,
+        stamina: +classData.stam,
+        maxstamina: +classData.stam,
         level: 1,
         experience: 0,
         gold: 0,
-        stashed_gold: 0,
-        killtrack: 0,
-        deathtrack: 0,
-        unused210: 0,
-        unused211: 0,
+        goldbank: 0,
       };
 
       return;
@@ -62,11 +58,16 @@ export function readAttributes(char: types.ID2S, reader: BitReader, mod: string)
       throw new Error(`Invalid attribute id: ${id}`);
     }
     const size = field.cB;
-    char.attributes[Attributes[field.s]] = reader.ReadUInt32(size);
-    //current_hp - max_stamina need to be bit shifted
-    if (id >= 6 && id <= 11) {
-      char.attributes[Attributes[field.s]] >>>= 8;
+    if (size === undefined) {
+      throw new Error(`Missing CSV save bits for id: ${id}`);
     }
+    char.attributes[field.s] = reader.ReadUInt32(size);
+    if (field.cVS) {
+      //hitpoints - maxstamina need to be bit shifted
+      char.attributes[field.s] >>>= field.cVS;
+    }
+
+    // Next attribute
     bitoffset += size;
     id = reader.ReadUInt16(9);
   }
@@ -77,48 +78,31 @@ export function readAttributes(char: types.ID2S, reader: BitReader, mod: string)
 export async function writeAttributes(char: types.ID2S, constants: types.IConstantData): Promise<Uint8Array> {
   const writer = new BitWriter();
   writer.WriteString("gf", 2); //0x0000 [attributes header = 0x67, 0x66 "gf"]
-  const attributeIds = Array.from(Array(16).keys()).concat([210, 211]);
+
+  // Stats = magical_properties with "Saved" = 1.
+  // There are report that only stat ids 0 to 255 can be saved. It doesn't work for stats 256-510.
+  const attributeIds = constants.magical_properties.filter((val, idx) => val && val.c && idx < 256).map((val, idx) => idx);
+
   for (const i of attributeIds) {
     const property = constants.magical_properties[i];
     if (property === undefined) {
       throw new Error(`Invalid attribute: ${property}`);
     }
-    let value = char.attributes[Attributes[property.s]];
+    let value = char.attributes[property.s];
     if (!value) {
       continue;
     }
     const size = property.cB;
-    if (i >= 6 && i <= 11) {
-      value <<= 8;
+    if (size === undefined) {
+      throw new Error(`Missing CSV save bits for attribute: ${property}`);
+    }
+    if (property.cVS) {
+      value <<= property.cVS;
     }
     writer.WriteUInt16(i, 9);
     writer.WriteUInt32(value, size);
   }
-  writer.WriteUInt16(0x1ff, 9);
+  writer.WriteUInt16(0x1ff, 9); // Attribute 511 is reserved for end tag
   writer.Align();
   return writer.ToArray();
 }
-
-//nokkas names
-const Attributes = {
-  strength: "strength",
-  energy: "energy",
-  dexterity: "dexterity",
-  vitality: "vitality",
-  statpts: "unused_stats",
-  newskills: "unused_skill_points",
-  hitpoints: "current_hp",
-  maxhp: "max_hp",
-  mana: "current_mana",
-  maxmana: "max_mana",
-  stamina: "current_stamina",
-  maxstamina: "max_stamina",
-  level: "level",
-  experience: "experience",
-  gold: "gold",
-  goldbank: "stashed_gold",
-  killtrack: "killtrack",
-  deathtrack: "deathtrack",
-  unused210: "unused210",
-  unused211: "unused211",
-};

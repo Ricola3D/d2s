@@ -36,5 +36,19 @@
   "liveServer.settings.AdvanceCustomBrowserCmdLine": "chrome --incognito --remote-debugging-port=9222",
   "liveServer.settings.mount": [
 
-  ]
+  ],
+  "mocha.coverage": {
+    "enable": true,
+    "decoration": true,
+    "runWithInterval": false,
+    "autoUpdateInterval": 20000,
+    "activeOnStart": true,
+    "runAfterTest": false,
+    "runCoverageAfterFileSave": false,
+    "reporters": []
+  },
+  "mocha.files.glob": "test/**/*.ts",
+  "mocha.requires": [
+    "ts-node/register"
+  ],
 }

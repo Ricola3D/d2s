@@ -401,18 +401,18 @@
     "energy": 10,
     "dexterity": 20,
     "vitality": 25,
-    "unused_stats": 0,
-    "unused_skill_points": 0,
-    "current_hp": 55,
-    "max_hp": 55,
-    "current_mana": 10,
-    "max_mana": 10,
-    "current_stamina": 92,
-    "max_stamina": 92,
+    "statpts": 0,
+    "newskills": 0,
+    "hitpoints": 55,
+    "maxhp": 55,
+    "mana": 10,
+    "maxmana": 10,
+    "stamina": 92,
+    "maxstamina": 92,
     "level": 1,
     "experience": 0,
     "gold": 0,
-    "stashed_gold": 0
+    "goldbank": 0
   },
   "skills": [
     {

@@ -886,6 +886,8 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
 
     if (item.socketed === 1) {
       item.total_nr_of_sockets = reader.ReadUInt8(4);
+    } else {
+      item.total_nr_of_sockets = 0;
     }
 
     /**

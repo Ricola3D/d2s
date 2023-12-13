@@ -302,31 +302,31 @@ export interface ISkill {
 
 export interface IItem {
   identified: number;
-  socketed: number;
+  socketed: number; // 1: has sockets
   new: number;
   is_ear: number;
   starter_item: number;
   simple_item: number;
-  ethereal: number;
+  ethereal: number; //1: ethereal
   personalized: number;
   personalized_name: string;
-  given_runeword: number;
+  given_runeword: number; // 1: is a runeword
   version: string;
-  location_id: number;
-  equipped_id: number;
-  position_x: number;
-  position_y: number;
-  alt_position_id: number;
-  type: string;
-  type_id: number;
-  type_name: string;
+  location_id: number; // 0: stored, 1: equipped, 2: belt, 4: cursor, 6: socketed
+  equipped_id: number; // 1: helm, 2: amulet, 3: armor, 4: right-hand, 5: left-hand, 6: right ring, 7: left ring, 8: belt, 9: boots, 10: gloves, 11: right-hand switch, 12: left-hand switch
+  position_x: number; // 0-indexed column
+  position_y: number; // 0-indexed row
+  alt_position_id: number; // 1: inventory, 4: cube, 5: stash
+  type: string; // 4 characters code
+  type_id: number; // 1: armor, 2: weapon, 3: shield, 4: other
+  type_name: string; // Type en-US name
   quest_difficulty: number;
-  nr_of_items_in_sockets: number;
-  id: number;
+  nr_of_items_in_sockets: number; // Number of socketed items
+  id: number; // Uint32 identifier
   level: number;
-  quality: number;
-  multiple_pictures: number;
-  picture_id: number;
+  quality: number; // 1: low, 2: normal, 3: superior, 4: magic, 5: set, 6: rare, 7: unique, 8: crafted
+  multiple_pictures: number; // 1: has multiple skins
+  picture_id: number; // current skin index
   class_specific: number;
   low_quality_id: number;
   timestamp: number;

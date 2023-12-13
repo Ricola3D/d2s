@@ -48,17 +48,38 @@ function D2RPostTreatment(input_dir, constants) {
     for (let itemOverride of itemOverrides) {
       // The matching item code
       const itemCode = Object.keys(itemOverride)[0];
-      if (itemCode == "jew")
-        continue; // There is no HD image for jewels, it puts diamond instead
+      
       // Retrieve the item section
       let baseItemSection = getBaseItemSection(constants, itemCode);
       if (baseItemSection) {
         // Check if an override .sprite image exist
-        const inventoryImage = path.normalize(`${subFolders[baseItemSection]}/${itemOverride[itemCode].asset}`)
+        const inventoryImage = path.normalize(`${subFolders[baseItemSection]}/${itemOverride[itemCode].asset}`).replaceAll("\\", "/")
         const inventoryImageAbsolutePath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}.sprite`);
+        
         // Add the ".hdi" attribute in game constants
         if (fs.existsSync(inventoryImageAbsolutePath)) {
-          constants[baseItemSection][itemCode].hdi = inventoryImage.replaceAll("\\", "/");
+          constants[baseItemSection][itemCode].hdi = inventoryImage
+        }
+
+        // Check if multiple images
+        if (! /\d$/.test(inventoryImage) ) { // Except if image already ends with a number
+          if (itemCode == "gpw")
+            continue; // Skip. perfect_diamond1..6 files are for jewels. I don't know why Blizzard mixed the names...
+
+          if (itemCode == "vip")
+            continue; // Skip. All files are identical, plus it's an unique.
+
+          for (let i = 1; ; i++) {
+            const invGfxPath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}${i}.sprite`);
+            if (fs.existsSync(invGfxPath)) {
+              if (i == 1) {
+                constants[baseItemSection][itemCode].hdig = []
+              }
+              constants[baseItemSection][itemCode].hdig.push(`${inventoryImage}${i}`)
+            } else {
+              break;
+            }
+          }
         }
       }
     }
@@ -721,6 +742,7 @@ function _readItems(tsv, itemtypes, strings) {
   const cReqstr = tsv.header.indexOf("reqstr");
   const cReqdex = tsv.header.indexOf("reqdex");
   const cHasinv = tsv.header.indexOf("hasinv");
+  const cGemSockets = tsv.header.indexOf("gemsockets")
   const cGemapplytype = tsv.header.indexOf("gemapplytype");
   const cInvfile = tsv.header.indexOf("invfile");
   const cUniqueInvfile = tsv.header.indexOf("uniqueinvfile");
@@ -761,6 +783,7 @@ function _readItems(tsv, itemtypes, strings) {
       if (tsv.lines[i][cReqstr]) item.rs = +tsv.lines[i][cReqstr];
       if (tsv.lines[i][cReqdex]) item.rd = +tsv.lines[i][cReqdex];
       if (tsv.lines[i][cHasinv]) item.hi = +tsv.lines[i][cHasinv];
+      if (tsv.lines[i][cGemSockets]) item.gs = +tsv.lines[i][cGemSockets];
       if (tsv.lines[i][cGemapplytype]) item.gt = +tsv.lines[i][cGemapplytype];
       if (tsv.lines[i][cInvfile] && tsv.lines[i][cInvfile]) item.i = tsv.lines[i][cInvfile];
       if (tsv.lines[i][cUniqueInvfile]) item.ui = tsv.lines[i][cUniqueInvfile];
@@ -854,11 +877,13 @@ function _readItemStatCosts(tsv, strings) {
   if (cId < 0) {
     cId = tsv.header.indexOf("*ID");
   }
+  const cCSvSaved = tsv.header.indexOf("Saved");
   const cCSvBits = tsv.header.indexOf("CSvBits");
   const cCSvParam = tsv.header.indexOf("CSvParam");
   const cCSvSigned = tsv.header.indexOf("CSvSigned");
-  const cEncode = tsv.header.indexOf("Encode");
   const cValShift = tsv.header.indexOf("ValShift");
+
+  const cEncode = tsv.header.indexOf("Encode");
   const cSigned = tsv.header.indexOf("Signed");
   const cSaveBits = tsv.header.indexOf("Save Bits");
   const cSaveAdd = tsv.header.indexOf("Save Add");
@@ -888,11 +913,12 @@ function _readItemStatCosts(tsv, strings) {
       const o = {};
       o.id = id;
       o.s = stat;
+      if (tsv.lines[i][cCSvSaved]) o.c = +tsv.lines[i][cCSvSaved];
       if (tsv.lines[i][cCSvBits]) o.cB = +tsv.lines[i][cCSvBits];
       if (tsv.lines[i][cCSvParam]) o.cP = +tsv.lines[i][cCSvParam];
       if (tsv.lines[i][cCSvSigned]) o.cS = +tsv.lines[i][cCSvSigned];
       if (tsv.lines[i][cEncode]) o.e = +tsv.lines[i][cEncode];
-      if (tsv.lines[i][cValShift]) o.vS = +tsv.lines[i][cValShift];
+      if (tsv.lines[i][cValShift]) o.cVS = +tsv.lines[i][cValShift];
       if (tsv.lines[i][cSigned]) o.sS = +tsv.lines[i][cSigned];
       if (tsv.lines[i][cSaveBits]) o.sB = +tsv.lines[i][cSaveBits];
       if (tsv.lines[i][cSaveAdd]) o.sA = +tsv.lines[i][cSaveAdd];
@@ -992,6 +1018,30 @@ function createBundle(input_dir, output_dir, output_name, alt_input_dir, modPost
   console.log(`Generated file ${output_file_path_es5format}`);
 }
 
+function addMissingFieldsToLegacy(input_name, output_dir, output_name) {
+  const input_file_path_es5format = path.join(__dirname, `${output_dir}${input_name}.bundle.js`);
+  const text = fs.readFileSync(input_file_path_es5format, 'utf8');
+  const jsonText = text.split(" = ")[1].slice(0, -1);
+  const json_data = JSON.parse(jsonText);
+  for (key in json_data) {
+    const section = json_data[key];
+    if (Array.isArray(section)) {
+      section.forEach((_, idx) => {
+        // Add an id property equal to index, except if null/undefined
+        if (typeof section[idx] === 'object' && section[idx] !== null) {
+          section[idx] = { id: idx, ...section[idx] };
+        }
+      })
+    }
+  }
+  json_data.version = output_name;
+
+  const to_write_es5format = `export let ${output_name} = ${JSON.stringify(json_data, null, 4)};`;
+  const output_file_path_es5format = path.join(__dirname, `${output_dir}${output_name}.bundle.js`);
+  fs.writeFileSync(output_file_path_es5format, to_write_es5format);
+}
+
 // Note: currently I don't know how to read the 96 version, because for ex ItemStatCosts.txt is missing necessary columns
-//createBundle('../public/d2/game_data/vanilla/version_99/', '../public/d2/', 'generated_vanilla_constants_99');
+addMissingFieldsToLegacy('vanilla_constants_96', '../public/d2/', 'generated_vanilla_constants_96')
+createBundle('../public/d2/game_data/vanilla/version_99/', '../public/d2/', 'generated_vanilla_constants_99');
 createBundle('../public/d2/game_data/remodded/version_99/', '../public/d2/', 'generated_remodded_constants_99', '../public/d2/game_data/vanilla/version_99/', ReMoDDeDPostTreatment);

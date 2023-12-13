@@ -52,10 +52,10 @@ describe("header", () => {
       await readAttributes(d2s, reader, "vanilla");
       d2s.attributes.experience = 3520485254;
       d2s.attributes.level = 99;
-      d2s.attributes.unused_stats = 0x3ff;
-      d2s.attributes.unused_skill_points = 0xff;
+      d2s.attributes.statpts = 0x3ff;
+      d2s.attributes.newskills = 0xff;
       d2s.attributes.gold = 990000;
-      d2s.attributes.stashed_gold = 2500000;
+      d2s.attributes.goldbank = 2500000;
       writer.WriteArray(await writeAttributes(d2s, vanilla_constants_96));
 
       await readSkills(d2s, reader, "vanilla");

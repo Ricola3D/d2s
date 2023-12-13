@@ -28,8 +28,8 @@ function buildExcel(lines, columns) {
 }
 
 function writeOutput (iOutputPath, iSection, iData, iColumns) {
-  const jsonFile = path.join(iOutputPath, iSection + ".json");
-  const txtFile = path.join(iOutputPath, iSection + ".txt");
+  const jsonFile = path.join(iOutputPath, `${iSection}.json`);
+  const txtFile = path.join(iOutputPath, `_${iSection}.txt`);
   fs.writeFileSync(txtFile, buildExcel(iData[iSection], iColumns[iSection]));
   fs.writeFileSync(jsonFile, JSON.stringify(iData[iSection], null, '\t'));
   console.log(`- "${iSection}.txt" and "${iSection}.json" updated.`);

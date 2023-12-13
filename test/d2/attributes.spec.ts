@@ -21,12 +21,12 @@ describe("attributes", () => {
       energy: 10,
       dexterity: 20,
       vitality: 25,
-      current_hp: 55,
-      max_hp: 55,
-      current_mana: 10,
-      max_mana: 10,
-      current_stamina: 92,
-      max_stamina: 92,
+      hitpoints: 55,
+      maxhp: 55,
+      mana: 10,
+      maxmana: 10,
+      stamina: 92,
+      maxstamina: 92,
       level: 1,
     } as types.IAttributes;
     const bytes = await writeAttributes(d2s, vanilla_constants_96);

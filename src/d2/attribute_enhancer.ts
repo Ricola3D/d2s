@@ -59,6 +59,11 @@ export function enhanceItems(
   }
 }
 
+// Bound values (inclusive min and max)
+function boundValue(v: number, min: number, max: number) {
+  return Math.min(max, Math.max(min, v));
+}
+
 export function enhanceItem(
   item: types.IItem,
   mod: string,
@@ -76,6 +81,8 @@ export function enhanceItem(
       item.magic_attributes = _compactAttributes(t.m[pt.gt], constants);
     }
   }
+  // Enforce boundaries
+  item.level = boundValue(item.level, 1, 99);
   let details = null;
   if (constants.armor_items[item.type]) {
     details = constants.armor_items[item.type];
@@ -127,8 +134,26 @@ export function enhanceItem(
         item.max_durability = details.durability - Math.ceil(details.durability / 2) + 1;
       }
     }
-    if (item.multiple_pictures && details.ig && details.ig[item.picture_id]) {
+    item.total_nr_of_sockets = boundValue(item.total_nr_of_sockets, 0, details.gs || item.inv_width * item.inv_height);
+    // Enforce coherence between total_nr_of_sockets & socketed
+    if (item.total_nr_of_sockets > 0) {
+      item.socketed = 1;
+    } else {
+      item.socketed = 0;
+    }
+    if (details.ig && details.ig.length && !item.multiple_pictures) {
+      // Activate multiple pictures
+      item.multiple_pictures = 1;
+      item.picture_id = 0;
+    } else if (!details.ig && item.multiple_pictures) {
+      item.multiple_pictures = 0; // Type changed to a not-multiple pictures one
+      item.picture_id = 0;
+    }
+    if (item.multiple_pictures && details.ig && details.ig.length && details.ig[item.picture_id]) {
       item.inv_file = details.ig[item.picture_id];
+    }
+    if (item.multiple_pictures && details.hdig && details.hdig.length && details.hdig[item.picture_id]) {
+      item.hd_inv_file = details.hdig[item.picture_id];
     }
     if (item.magic_prefix || item.magic_suffix) {
       if (item.magic_prefix && constants.magic_prefixes[item.magic_prefix]?.tc) {
@@ -152,15 +177,27 @@ export function enhanceItem(
       }
     } else if (item.unique_id) {
       const unq = constants.unq_items[item.unique_id];
-      if (details.ui) item.inv_file = details.ui;
-      if (unq && unq.i) item.inv_file = unq.i;
-      if (unq && unq.hdi) item.hd_inv_file = unq.hdi;
+      if (details.ui) {
+        item.inv_file = details.ui;
+      }
+      if (unq && unq.i) {
+        item.inv_file = unq.i;
+      }
+      if (unq && unq.hdi) {
+        item.hd_inv_file = unq.hdi;
+      }
       if (unq && unq.tc) item.transform_color = unq.tc;
     } else if (item.set_id) {
       const set = constants.set_items[item.set_id];
-      if (details.ui) item.inv_file = details.ui;
-      if (set && set.i) item.inv_file = set.i;
-      if (set && set.hdi) item.hd_inv_file = set.hdi;
+      if (details.ui) {
+        item.inv_file = details.ui;
+      }
+      if (set && set.i) {
+        item.inv_file = set.i;
+      }
+      if (set && set.hdi) {
+        item.hd_inv_file = set.hdi;
+      }
       if (set && set.tc) item.transform_color = set.tc;
     }
   }
