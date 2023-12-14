@@ -6,3 +6,4 @@ export { enhanceAttributes, enhanceItems, enhancePlayerAttributes } from "./attr
 export { getConstantData, setConstantData } from "./constants";
 export { ItemType, Quality } from "./items";
 export * as types from "./types";
+export * from "./utils";

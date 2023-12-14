@@ -1,5 +1,6 @@
 import { getConstantData } from "./constants";
 import * as types from "./types";
+import { nameRegex } from "./utils";
 
 enum ItemType {
   Armor = 0x01,
@@ -141,6 +142,19 @@ export function enhanceItem(
     } else {
       item.socketed = 0;
     }
+    // Enforce personalization validity
+    if (item.personalized_name && item.personalized_name.length) {
+      // Check it is valid (0-16 letters)
+      const valid = nameRegex.test(item.personalized_name);
+      if (!valid) {
+        item.personalized_name = "";
+        item.personalized = 0;
+      } else {
+        item.personalized = 1;
+      }
+    } else {
+      item.personalized = 0;
+    }
     if (details.ig && details.ig.length && !item.multiple_pictures) {
       // Activate multiple pictures
       item.multiple_pictures = 1;
@@ -155,6 +169,7 @@ export function enhanceItem(
     if (item.multiple_pictures && details.hdig && details.hdig.length && details.hdig[item.picture_id]) {
       item.hd_inv_file = details.hdig[item.picture_id];
     }
+    // Transform color and specific gfx
     if (item.magic_prefix || item.magic_suffix) {
       if (item.magic_prefix && constants.magic_prefixes[item.magic_prefix]?.tc) {
         item.transform_color = constants.magic_prefixes[item.magic_prefix].tc;
