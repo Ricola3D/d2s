@@ -1127,6 +1127,7 @@ function addMissingFieldsToLegacy(mod, version, output_dir, output_prefix) {
 
 // Note: currently I don't know how to read the 96 version, because for ex ItemStatCosts.txt is missing necessary columns
 addMissingFieldsToLegacy('vanilla', 96, '../public/d2/', 'generated')
+addMissingFieldsToLegacy('vanilla', 97, '../public/d2/', 'generated')
 createBundle('vanilla', 98, '../public/d2/', 'generated');
 createBundle('vanilla', 99, '../public/d2/', 'generated');
 createBundle('remodded', 98, '../public/d2/', 'generated', ReMoDDeDPostTreatment);

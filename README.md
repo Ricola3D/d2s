@@ -1,3 +1,9 @@
+### TODO
+- Waypoints per game mod
+- Complete all Q: do not use Larzuk Q, reset stats/skills Q, imbue Q, personalize Q
+- Max gold (char, stash) per game mod
+- Stackables max quantity (for ex, Ramaladni's gift <=99 or can't be cubed/separated)
+
 ### d2s
 
 ![](https://github.com/Ricola3D/d2s/workflows/.github/workflows/release.yml/badge.svg)
