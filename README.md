@@ -49,6 +49,7 @@ function write(data: types.ID2S, mod: string, version: number, userConfig?: type
 ```
 
 ##### Useful Links:
+* https://github.com/WalterCouto/D2CE/blob/main/d2s_File_Format.md#versions
 * https://github.com/d07RiV/d07riv.github.io/blob/master/d2r.html (credits to d07riv for reversing the item code on D2R)
 * https://github.com/Ricola3D/D2SLib (c# version of this library)
 * https://github.com/nokka/d2s (go d2s parser)

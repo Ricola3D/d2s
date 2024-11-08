@@ -80,21 +80,21 @@ export async function writeAttributes(char: types.ID2S, constants: types.IConsta
 
   // Stats = magical_properties with "Saved" = 1.
   // There are report that only stat ids 0 to 255 can be saved. It doesn't work for stats 256-510.
-  const attributes = constants.magical_properties.filter((val, idx) => val && val.c && idx < 256);
+  const charStatDefs = constants.magical_properties.filter((val, idx) => val && val.c && idx < 256);
 
-  for (const property of attributes) {
-    let value = char.attributes[property.s];
+  for (const charStatDef of charStatDefs) {
+    let value = char.attributes[charStatDef.s];
     if (!value) {
       continue;
     }
-    const size = property.cB;
+    const size = charStatDef.cB;
     if (size === undefined) {
-      throw new Error(`Missing CSV save bits for attribute: ${property}`);
+      throw new Error(`Missing CSV save bits for attribute: ${charStatDef}`);
     }
-    if (property.cVS) {
-      value <<= property.cVS;
+    if (charStatDef.cVS) {
+      value <<= charStatDef.cVS;
     }
-    writer.WriteUInt16(property.id, 9);
+    writer.WriteUInt16(charStatDef.id, 9);
     writer.WriteUInt32(value, size);
   }
   writer.WriteUInt16(0x1ff, 9); // Attribute 511 is reserved for end tag

@@ -25,6 +25,7 @@ export interface ID2S {
   header: IHeader;
   attributes: IAttributes;
   item_bonuses: IMagicProperty[];
+  displayed_item_bonuses: IMagicProperty[];
   skills: ISkill[]; //Skill
   items: IItem[]; //Item
   corpse_items: IItem[];
@@ -313,18 +314,18 @@ export interface IItem {
   given_runeword: number; // 1: is a runeword
   version: string;
   location_id: number; // 0: stored, 1: equipped, 2: belt, 4: cursor, 6: socketed
-  equipped_id: number; // 1: helm, 2: amulet, 3: armor, 4: right-hand, 5: left-hand, 6: right ring, 7: left ring, 8: belt, 9: boots, 10: gloves, 11: right-hand switch, 12: left-hand switch
+  equipped_id: number; // 0: stored, 1: helm, 2: amulet, 3: armor, 4: right-hand, 5: left-hand, 6: right ring, 7: left ring, 8: belt, 9: boots, 10: gloves, 11: right-hand switch, 12: left-hand switch
   position_x: number; // 0-indexed column
   position_y: number; // 0-indexed row
   alt_position_id: number; // 1: inventory, 4: cube, 5: stash
   type: string; // 4 characters code
-  type_id: number; // 1: armor, 2: weapon, 3: shield, 4: other
+  type_id: number; // 0:undefined, 1: armor, 2: shield, 3: weapon, 4: other
   type_name: string; // Type en-US name
   quest_difficulty: number;
   nr_of_items_in_sockets: number; // Number of socketed items
   id: number; // Uint32 identifier
   level: number;
-  quality: number; // 1: low, 2: normal, 3: superior, 4: magic, 5: set, 6: rare, 7: unique, 8: crafted
+  quality: number; // 0:undefined, 1: low, 2: normal, 3: superior, 4: magic, 5: set, 6: rare, 7: unique, 8: crafted
   multiple_pictures: number; // 1: has multiple skins
   picture_id: number; // current skin index
   class_specific: number;
@@ -349,12 +350,13 @@ export interface IItem {
   set_attributes_ids_req: number;
   rare_name: string;
   rare_name2: string;
-  magical_name_ids: number[] | null[];
+  magical_name_ids: [number, number, number, number, number, number];
   unique_id: number;
   unique_name: string;
   magic_attributes: IMagicProperty[];
-  combined_magic_attributes: IMagicProperty[];
+  combined_magic_attributes: IMagicProperty[]; // Read-only
   socketed_items: IItem[];
+  socketed_attributes: IMagicProperty[];
   base_damage: IWeaponDamage;
   reqstr: number;
   reqdex: number;
@@ -383,6 +385,7 @@ export interface IItem {
   rare_name_id2: number;
   displayed_magic_attributes: IMagicProperty[];
   displayed_runeword_attributes: IMagicProperty[];
+  displayed_socketed_attributes: IMagicProperty[];
   displayed_combined_magic_attributes: IMagicProperty[];
 }
 
@@ -433,4 +436,22 @@ export enum EItemQuality {
   normal,
   exceptional,
   elite,
+}
+
+export enum ItemType {
+  Armor = 0x01,
+  Shield = 0x02, //treated the same as armor... only here to be able to parse nokkas jsons
+  Weapon = 0x03,
+  Other = 0x04,
+}
+
+export enum Quality {
+  Low = 0x01,
+  Normal = 0x02,
+  Superior = 0x03,
+  Magic = 0x04,
+  Set = 0x05,
+  Rare = 0x06,
+  Unique = 0x07,
+  Crafted = 0x08,
 }

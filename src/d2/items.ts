@@ -2,24 +2,7 @@ import * as types from "./types";
 import { BitReader } from "../binary/bitreader";
 import { BitWriter } from "../binary/bitwriter";
 import { getConstantData } from "./constants";
-
-export enum ItemType {
-  Armor = 0x01,
-  Shield = 0x02, //treated the same as armor... only here to be able to parse nokkas jsons
-  Weapon = 0x03,
-  Other = 0x04,
-}
-
-export enum Quality {
-  Low = 0x01,
-  Normal = 0x02,
-  Superior = 0x03,
-  Magic = 0x04,
-  Set = 0x05,
-  Rare = 0x06,
-  Unique = 0x07,
-  Crafted = 0x08,
-}
+import { ItemType, Quality } from "./types";
 
 // Right now I'm missing characters (case sensitive) E, F, I, J, L, M, Q, U, X.
 // prettier-ignore
@@ -278,7 +261,10 @@ const HUFFMAN = [
                                   /*00001001 111101000*/ [],
                                   /*10001001 111101000*/ "V"
                                 ],
-                                /*1001001 111101000*/ []
+                                /*1001001 111101000*/ [
+                                  /*01001001 111101000*/ "L",
+                                  /*11001001 111101000*/ []
+                                ]
                               ],
                               /*101001 111101000*/ [
                                 /*0101001 111101000*/ [],
@@ -624,7 +610,7 @@ const HUFFMAN_LOOKUP = {
   //"I": { "v": 0, "l": 0 }, /**/
   //"J": { "v": 0, "l": 0 }, /**/
   "K": { "v": 19432, "l": 17 }, /*00100101111101000*/
-  //"L": { "v": 0, "l": 0 }, /**/
+  "L": { "v": 37864, "l": 17 }, /*01001001111101000*/
   //"M": { "v": 0, "l": 0 }, /**/
   "N": { "v": 16872, "l": 16 }, /*0100000111101000*/
   "O": { "v": 110568, "l": 17 }, /*11010111111101000*/
@@ -640,6 +626,96 @@ const HUFFMAN_LOOKUP = {
   "Y": { "v": 98280, "l": 17 }, /*10111111111101000*/
   "Z": { "v": 17384, "l": 17 } /*00100001111101000*/
 };
+
+export function newItem(): types.IItem {
+  return {
+    // Default values
+    identified: 0,
+    socketed: 0,
+    new: 0,
+    is_ear: 0,
+    starter_item: 0,
+    simple_item: 0,
+    ethereal: 0,
+    personalized: 0,
+    personalized_name: "",
+    given_runeword: 0,
+    version: "",
+    location_id: 0,
+    equipped_id: 0,
+    position_x: 0,
+    position_y: 0,
+    alt_position_id: 0,
+    type: "",
+    type_id: 0,
+    type_name: "",
+    quest_difficulty: 0,
+    nr_of_items_in_sockets: 0,
+    id: 0,
+    level: 0,
+    quality: 0,
+    multiple_pictures: 0,
+    picture_id: 0,
+    class_specific: 0,
+    low_quality_id: 0,
+    timestamp: 0,
+    ear_attributes: {
+      class: 0,
+      level: 0,
+      name: "",
+    },
+    defense_rating: 0,
+    max_durability: 0,
+    current_durability: 0,
+    total_nr_of_sockets: 0,
+    quantity: 0,
+    magic_prefix: 0,
+    magic_suffix: 0,
+    runeword_id: 0,
+    runeword_name: "",
+    runeword_attributes: [],
+    set_id: 0,
+    set_name: "",
+    set_list_count: 0,
+    set_attributes: [],
+    set_attributes_num_req: 0,
+    set_attributes_ids_req: 0,
+    rare_name: "",
+    rare_name2: "",
+    magical_name_ids: [0, 0, 0, 0, 0, 0],
+    unique_id: 0,
+    unique_name: "",
+    magic_attributes: [],
+    combined_magic_attributes: [],
+    socketed_items: [],
+    socketed_attributes: [], // read-only
+    base_damage: {
+      mindam: 0,
+      maxdam: 0,
+      twohandmindam: 0,
+      twohandmaxdam: 0,
+    },
+    reqstr: 0,
+    reqdex: 0,
+    inv_width: 0,
+    inv_height: 0,
+    inv_file: "",
+    hd_inv_file: "",
+    inv_transform: 0,
+    transform_color: "",
+    item_quality: 0,
+    categories: [],
+    file_index: 0,
+    auto_affix_id: 0,
+    _unknown_data: {},
+    rare_name_id: 0,
+    rare_name_id2: 0,
+    displayed_magic_attributes: [], // Read-only
+    displayed_runeword_attributes: [], // Read-only
+    displayed_socketed_attributes: [], // Read-only
+    displayed_combined_magic_attributes: [], // Read-only
+  };
+}
 
 export async function readCharItems(char: types.ID2S, reader: BitReader, mod: string, config: types.IConfig): Promise<void> {
   char.items = await readItems(reader, mod, char.header.version, config, char);
@@ -742,7 +818,7 @@ export async function readItems(
   mod: string,
   version: number,
   config: types.IConfig,
-  char?: types.ID2S
+  char?: types.ID2S,
 ): Promise<types.IItem[]> {
   const items = [] as types.IItem[];
   const header = reader.ReadString(2); //0x0000 [item list header = 0x4a, 0x4d "JM"]
@@ -780,7 +856,8 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
     }
   }
   const constants = getConstantData(mod, version);
-  const item = {} as types.IItem;
+  const item = newItem();
+
   _readSimpleBits(item, reader, version, constants, config);
   if (!item.simple_item) {
     item.id = reader.ReadUInt32(32);
@@ -809,26 +886,25 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
         break;
       case Quality.Set:
         item.set_id = reader.ReadUInt16(12);
-        item.set_name = constants.set_items[item.set_id] ? constants.set_items[item.set_id].n : null;
+        item.set_name = constants.set_items[item.set_id] ? constants.set_items[item.set_id].n : "";
         break;
       case Quality.Unique:
         item.unique_id = reader.ReadUInt16(12);
-        item.unique_name = constants.unq_items[item.unique_id] ? constants.unq_items[item.unique_id].n : null;
+        item.unique_name = constants.unq_items[item.unique_id] ? constants.unq_items[item.unique_id].n : "";
         break;
       case Quality.Rare:
       case Quality.Crafted:
         item.rare_name_id = reader.ReadUInt8(8);
-        if (item.rare_name_id) item.rare_name = constants.rare_names[item.rare_name_id] ? constants.rare_names[item.rare_name_id].n : null;
+        if (item.rare_name_id) item.rare_name = constants.rare_names[item.rare_name_id] ? constants.rare_names[item.rare_name_id].n : "";
         item.rare_name_id2 = reader.ReadUInt8(8);
         if (item.rare_name_id2)
-          item.rare_name2 = constants.rare_names[item.rare_name_id2] ? constants.rare_names[item.rare_name_id2].n : null;
-        item.magical_name_ids = [];
+          item.rare_name2 = constants.rare_names[item.rare_name_id2] ? constants.rare_names[item.rare_name_id2].n : "";
         for (let i = 0; i < 6; i++) {
           const prefix = reader.ReadBit();
           if (prefix === 1) {
             item.magical_name_ids[i] = reader.ReadUInt16(11);
           } else {
-            item.magical_name_ids[i] = null;
+            item.magical_name_ids[i] = 0;
           }
         }
         break;
@@ -836,11 +912,16 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
         break;
     }
     if (item.given_runeword) {
-      item.runeword_id = reader.ReadUInt16(12);
-      //fix delerium on d2gs??? why is this a thing?
-      if (item.runeword_id == 2718) {
-        item.runeword_id = 48;
+      item.runeword_id = reader.ReadUInt16(12) - 26;
+      // Delirium - temp fix
+      if (item.runeword_id == 2692) {
+        item.runeword_id = 22;
       }
+      // Lord of Terror - temp fix
+      if (item.runeword_id == 2626) {
+        item.runeword_id = 170;
+      }
+
       if (constants.runewords[item.runeword_id]) {
         item.runeword_name = constants.runewords[item.runeword_id]!.n!;
       }
@@ -902,13 +983,13 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
     }
 
     //magical properties
-    let magic_attributes = _readMagicProperties(reader, constants);
+    let magic_attributes = _readMagicAttributes(reader, constants);
     item.magic_attributes = magic_attributes;
 
     while (plist_flag > 0) {
       if (plist_flag & 1) {
         item.set_list_count += 1;
-        magic_attributes = _readMagicProperties(reader, constants);
+        magic_attributes = _readMagicAttributes(reader, constants);
         if (item.set_attributes) {
           item.set_attributes.push(magic_attributes);
         } else {
@@ -919,7 +1000,7 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
     }
 
     if (item.given_runeword === 1) {
-      magic_attributes = _readMagicProperties(reader, constants);
+      magic_attributes = _readMagicAttributes(reader, constants);
       if (magic_attributes && magic_attributes.length > 0) {
         item.runeword_attributes = magic_attributes;
       }
@@ -928,7 +1009,6 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
   reader.Align();
 
   if (item.nr_of_items_in_sockets > 0 && item.simple_item === 0) {
-    item.socketed_items = [];
     for (let i = 0; i < item.nr_of_items_in_sockets; i++) {
       item.socketed_items.push(await readItem(reader, mod, version, config));
     }
@@ -987,7 +1067,7 @@ export async function writeItem(item: types.IItem, mod: string, version: number,
         writer.WriteUInt8(item.rare_name_id !== undefined ? item.rare_name_id : _lookupRareId(item.rare_name, constants), 8);
         writer.WriteUInt8(item.rare_name_id2 !== undefined ? item.rare_name_id2 : _lookupRareId(item.rare_name2, constants), 8);
         for (let i = 0; i < 6; i++) {
-          const magical_name_id = item.magical_name_ids !== undefined ? item.magical_name_ids[i] : undefined;
+          const magical_name_id = item.magical_name_ids !== undefined ? item.magical_name_ids[i] : 0;
           if (magical_name_id) {
             writer.WriteBit(1);
             writer.WriteUInt16(magical_name_id, 11);
@@ -1001,12 +1081,16 @@ export async function writeItem(item: types.IItem, mod: string, version: number,
     }
 
     if (item.given_runeword) {
-      //fix delerium on d2gs??? why is this a thing?
       let runeword_id = item.runeword_id;
-      if (runeword_id == 2718) {
-        runeword_id = 48;
+      // Delirium - temp fix
+      if (runeword_id == 22) {
+        runeword_id = 2692;
       }
-      writer.WriteUInt16(runeword_id, 12);
+      // Lord of Terror - temp fix
+      if (runeword_id == 170) {
+        runeword_id = 2626;
+      }
+      writer.WriteUInt16(runeword_id + 26, 12);
       writer.WriteUInt8(5, 4); //always 5?
     }
 
@@ -1056,15 +1140,15 @@ export async function writeItem(item: types.IItem, mod: string, version: number,
       writer.WriteUInt8(item._unknown_data.plist_flag || plist_flag, 5);
     }
 
-    _writeMagicProperties(writer, item.magic_attributes, constants);
+    _writeMagicAttributes(writer, item.magic_attributes, constants);
     if (item.set_attributes && item.set_attributes.length > 0) {
       for (let i = 0; i < item.set_attributes.length; i++) {
-        _writeMagicProperties(writer, item.set_attributes[i], constants);
+        _writeMagicAttributes(writer, item.set_attributes[i], constants);
       }
     }
 
     if (item.given_runeword === 1) {
-      _writeMagicProperties(writer, item.runeword_attributes, constants);
+      _writeMagicAttributes(writer, item.runeword_attributes, constants);
     }
   }
 
@@ -1153,6 +1237,7 @@ function _readSimpleBits(item: types.IItem, reader: BitReader, version: number, 
     item.type = item.type.trim().replace(/\0/g, "");
     let details = _GetItemTXT(item, constants);
     item.categories = details?.c;
+    if (!item.categories) throw new Error(`Item category ${details?.c} does not exist`);
     if (item?.categories.includes("Any Armor")) {
       item.type_id = ItemType.Armor;
     } else if (item?.categories.includes("Weapon")) {
@@ -1174,7 +1259,7 @@ function _readSimpleBits(item: types.IItem, reader: BitReader, version: number, 
 function _lookupRareId(name: string, constants: types.IConstantData): number {
   //some inconsistencies with txt data and nokka. so have to hack it with startsWith
   return constants.rare_names.findIndex(
-    (k) => k && k.n && (k.n.toLowerCase().startsWith(name.toLowerCase()) || name.toLowerCase().startsWith(k.n.toLowerCase()))
+    (k) => k && k.n && (k.n.toLowerCase().startsWith(name.toLowerCase()) || name.toLowerCase().startsWith(k.n.toLowerCase())),
   );
 }
 
@@ -1239,23 +1324,23 @@ function _writeSimpleBits(writer: BitWriter, mod: string, version: number, item:
   }
 }
 
-export function _readMagicProperties(reader: BitReader, constants: types.IConstantData): types.IMagicProperty[] {
+export function _readMagicAttributes(reader: BitReader, constants: types.IConstantData): types.IMagicProperty[] {
   let id = reader.ReadUInt16(9);
   const magic_attributes = [];
   while (id != 0x1ff) {
     const values = [];
     if (!constants.magical_properties[id]) {
-      throw new Error(`Invalid magic property Id: ${id} at position ${reader.offset - 9}`);
+      throw new Error(`Invalid magic attribute Id: ${id} at position ${reader.offset - 9}`);
     }
     const num_of_properties = constants.magical_properties[id].np || 1;
     for (let i = 0; i < num_of_properties; i++) {
-      const prop = constants.magical_properties[id + i];
-      if (prop == null) {
+      const itemStatDef = constants.magical_properties[id + i];
+      if (itemStatDef == null) {
         throw new Error(`Cannot find Magical Property for id: ${id} at position ${reader.offset}`);
       }
-      if (prop.sP) {
-        let param = reader.ReadUInt32(prop.sP);
-        switch (prop.dF) {
+      if (itemStatDef.sP) {
+        let param = reader.ReadUInt32(itemStatDef.sP);
+        switch (itemStatDef.dF) {
           case 14: //+skill to skilltab
             values.push(param & 0x7);
             param = (param >> 3) & 0x1fff;
@@ -1264,11 +1349,11 @@ export function _readMagicProperties(reader: BitReader, constants: types.IConsta
             break;
         }
         //encode
-        switch (prop.e) {
+        switch (itemStatDef.e) {
           case 1:
-            //throw new Error(`Unimplemented encoding: ${prop.encode}`);
+            //throw new Error(`Unimplemented encoding: ${propertyDef.encode}`);
             break;
-          case 2: //chance to cast
+          case 2: //chance to cast: 10bits skill id - 6bits skill level
           case 3: //charges
             values.push(param & 0x3f); //skill level
             param = (param >> 6) & 0x3ff; //skll id
@@ -1278,14 +1363,14 @@ export function _readMagicProperties(reader: BitReader, constants: types.IConsta
         }
         values.push(param);
       }
-      if (!prop.sB) {
-        throw new Error(`Save Bits is undefined for stat: ${id}:${prop.s} at position ${reader.offset}`);
+      if (!itemStatDef.sB) {
+        throw new Error(`Save Bits is undefined for stat: ${id}:${itemStatDef.s} at position ${reader.offset}`);
       }
-      let v = reader.ReadUInt32(prop.sB);
-      if (prop.sA) {
-        v -= prop.sA;
+      let v = reader.ReadUInt32(itemStatDef.sB);
+      if (itemStatDef.sA) {
+        v -= itemStatDef.sA;
       }
-      switch (prop.e) {
+      switch (itemStatDef.e) {
         case 3:
           values.push(v & 0xff); // current charges
           values.push((v >> 8) & 0xff); //max charges
@@ -1305,56 +1390,56 @@ export function _readMagicProperties(reader: BitReader, constants: types.IConsta
   return magic_attributes;
 }
 
-export function _writeMagicProperties(writer: BitWriter, properties: types.IMagicProperty[], constants: types.IConstantData): void {
-  if (properties) {
-    for (let i = 0; i < properties.length; i++) {
-      const property = properties[i];
+export function _writeMagicAttributes(writer: BitWriter, magic_attributes: types.IMagicProperty[], constants: types.IConstantData): void {
+  if (magic_attributes) {
+    for (let i = 0; i < magic_attributes.length; i++) {
+      const magical_attribute = magic_attributes[i];
       let valueIdx = 0;
-      writer.WriteUInt16(property.id, 9);
-      const num_of_properties = constants.magical_properties[property!.id].np || 1;
+      writer.WriteUInt16(magical_attribute.id, 9);
+      const num_of_properties = constants.magical_properties[magical_attribute!.id].np || 1;
       for (let j = 0; j < num_of_properties; j++) {
-        const prop = constants.magical_properties[property!.id + j];
-        if (prop == null) {
-          throw new Error(`Cannot find Magical Property for id: ${property.id}`);
+        const itemStatDef = constants.magical_properties[magical_attribute!.id + j];
+        if (itemStatDef == null) {
+          throw new Error(`Cannot find Magical Property for id: ${magical_attribute.id}`);
         }
-        if (prop.sP) {
-          let param = property.values[valueIdx++]!;
-          switch (prop.dF) {
+        if (itemStatDef.sP) {
+          let param = magical_attribute.values[valueIdx++]!;
+          switch (itemStatDef.dF) {
             case 14: //+skill to skilltab
-              param |= (property.values[valueIdx++]! & 0x1fff) << 3;
+              param |= (magical_attribute.values[valueIdx++]! & 0x1fff) << 3;
               break;
             default:
               break;
           }
           //encode
-          switch (prop.e) {
+          switch (itemStatDef.e) {
             case 1:
-              //throw new Error(`Unimplemented encoding: ${prop.encode}`);
+              //throw new Error(`Unimplemented encoding: ${propertyDef.encode}`);
               break;
             case 2: //chance to cast
             case 3: //charges
-              param |= (property.values[valueIdx++]! & 0x3ff) << 6;
+              param |= (magical_attribute.values[valueIdx++]! & 0x3ff) << 6;
               break;
             default:
               break;
           }
-          writer.WriteUInt32(param, prop.sP);
+          writer.WriteUInt32(param, itemStatDef.sP);
         }
-        let v = property.values[valueIdx++]!;
-        if (prop.sA) {
-          v += prop.sA;
+        let v = magical_attribute.values[valueIdx++]!;
+        if (itemStatDef.sA) {
+          v += itemStatDef.sA;
         }
-        switch (prop.e) {
+        switch (itemStatDef.e) {
           case 3:
-            v |= (property.values[valueIdx++]! & 0xff) << 8;
+            v |= (magical_attribute.values[valueIdx++]! & 0xff) << 8;
             break;
           default:
             break;
         }
-        if (!prop.sB) {
-          throw new Error(`Save Bits is undefined for stat: ${property.id}:${prop.s}`);
+        if (!itemStatDef.sB) {
+          throw new Error(`Save Bits is undefined for stat: ${magical_attribute.id}:${itemStatDef.s}`);
         }
-        writer.WriteUInt32(v, prop.sB);
+        writer.WriteUInt32(v, itemStatDef.sB);
       }
     }
   }

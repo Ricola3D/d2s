@@ -66,7 +66,7 @@ async function readStashHeader(stash: types.IStash, reader: BitReader) {
     default:
       debugger;
       throw new Error(
-        `shared stash header 'SSS' / 0xAA55AA55 / private stash header 'CSTM' not found at position ${reader.offset - 3 * 8}`
+        `shared stash header 'SSS' / 0xAA55AA55 / private stash header 'CSTM' not found at position ${reader.offset - 3 * 8}`,
       );
   }
 }
@@ -93,7 +93,7 @@ async function readStashPage(stash: types.IStash, reader: BitReader, mod: string
 
   page.name = reader.ReadNullTerminatedString();
   page.items = await items.readItems(reader, mod, version, defaultConfig);
-  enhanceItems(page.items, mod, version, 1);
+  enhanceItems(page.items, mod, version);
   stash.pages.push(page);
 }
 
@@ -104,7 +104,7 @@ async function readStashPart(stash: types.IStash, reader: BitReader, mod: string
     type: 0,
   };
   page.items = await items.readItems(reader, mod, version, defaultConfig);
-  enhanceItems(page.items, mod, version, 1);
+  enhanceItems(page.items, mod, version);
   stash.pages.push(page);
 }
 
@@ -148,7 +148,7 @@ async function writeStashSection(
   page: types.IStashPage,
   mod: string,
   version: number,
-  userConfig: types.IConfig
+  userConfig: types.IConfig,
 ): Promise<Uint8Array> {
   const writer = new BitWriter();
   writer.WriteUInt32(0xaa55aa55);

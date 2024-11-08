@@ -7,12 +7,14 @@ const difficulties = ["normal", "nm", "hell"];
 export function readHeader(char: types.ID2S, reader: BitReader, constants: types.IConstantData) {
   char.header.filesize = reader.ReadUInt32(); //0x0008
   char.header.checksum = reader.ReadUInt32().toString(16).padStart(8, "0"); //0x000c
-  reader.SkipBytes(4); //0x0010
+  reader.SkipBytes(4); //0x0010 (previously active_arms ?)
   if (char.header.version > 0x61) {
+    // In version >97, char name is found at a later position
     reader.SeekByte(267);
   }
-  char.header.name = reader.ReadString(16).replace(/\0/g, ""); //0x0014
+  char.header.name = reader.ReadString(16).replace(/\0/g, ""); //0x0014 (or 0x010b if version>97)
   if (char.header.version > 0x61) {
+    // In version >97, back to the header start
     reader.SeekByte(36);
   }
   char.header.status = _readStatus(reader.ReadUInt8()); //0x0024

@@ -12,8 +12,8 @@ function getConstantData(mod: string, version: number): types.IConstantData {
   if (!(version.toString() in versionedConstants[mod])) {
     throw new Error(
       `No constant data found for version ${version} of mod ${mod}. Supported versions are: ${Object.keys(versionedConstants[mod]).join(
-        ", "
-      )}`
+        ", ",
+      )}`,
     );
   }
   const constants = versionedConstants[mod][version.toString()];

@@ -4,8 +4,6 @@
 const fs = require("fs");
 const path = require("path");
 
-const { readString } = require("../utils.js");
-
 function decodePropertiesFile(inputDir) {
   let items = []
   const inputFile = path.join(inputDir, "properties.bin");

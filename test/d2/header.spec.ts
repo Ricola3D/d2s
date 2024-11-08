@@ -90,7 +90,7 @@ describe("header", () => {
       }
       fs.writeFileSync(
         `${process.env["USERPROFILE"]}/Saved Games/Diablo II Resurrected Tech Alpha/${d2s.header.name}.d2s`,
-        writer.ToArray()
+        writer.ToArray(),
       );
     }
   });

@@ -8,7 +8,7 @@ const { readString } = require("../utils.js");
 
 function decodeSetItemsFile(inputDir) {
   let items = []
-  const inputFile = path.join("C:/Program Files (x86)/Diablo II Resurrected/Data/global/excel" /*inputDir*/, "setitems.bin");
+  const inputFile = path.join(inputDir, "setitems.bin");
 
   if (fs.existsSync(inputFile)) {
     const fileBuffer = fs.readFileSync(inputFile);
@@ -93,7 +93,7 @@ function decodeSetItemsFile(inputDir) {
       {
         let offset = 136
         for (let i = 1; i <= 9; i++) {
-          item[`prop${1}`] = lineBuffer.readUint32LE(offset)
+          item[`propertyDef${1}`] = lineBuffer.readUint32LE(offset)
           offset += 4
           item[`par${1}`] = lineBuffer.readUint32LE(offset)
           offset += 4

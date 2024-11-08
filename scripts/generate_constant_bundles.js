@@ -35,86 +35,157 @@ function getBaseItemSection(constants, itemCode) {
 }
 
 function D2RPostTreatment(input_dir, constants) {
+  // Missing items data
+  if (constants.other_items.r34 && constants.other_items.r34.n && constants.other_items.r34.n == "Di Rune") {
+    constants.other_items.r34.m = [
+      [
+        {
+          code: "r34",
+          type: "weapon",
+          m: "ex-attacks",
+          min: 2,
+          max: 2
+        }
+      ],
+      [
+        {
+          code: "r34",
+          type: "helm",
+          m: "ex-missiles",
+          min: 2,
+          max: 2
+        }
+      ],
+      [
+        {
+          code: "r34",
+          type: "shield",
+          m: "sum-ex",
+          min: 2,
+          max: 2
+        }
+      ]
+    ];
+  }
+
+  if (constants.other_items.r35 && constants.other_items.r35.n && constants.other_items.r35.n == "Ab Rune") {
+    constants.other_items.r35.m = [
+      [
+        {
+          code: "r35",
+          type: "weapon",
+          m: "weight-capacity",
+          min: 3,
+          max: 3
+        }
+      ],
+      [
+        {
+          code: "r35",
+          type: "helm",
+          m: "weight-capacity",
+          min: 3,
+          max: 3
+        }
+      ],
+      [
+        {
+          code: "r35",
+          type: "shield",
+          m: "weight-capacity",
+          min: 3,
+          max: 3
+        }
+      ]
+    ];
+  }
+  // ------------------
+
+  // HD overrides
   let subFolders = {
     "weapon_items": "weapon",
     "armor_items": "armor",
     "other_items": "misc"
   }
-  // HD UI images
   const items_override_file_path = path.join(__dirname, `${input_dir}/hd/items/items.json`);
   if (fs.existsSync(items_override_file_path)) {
-    //file exists. It contains "asset" override (inventory image) for some base items
+    // item override file exists, apply it (particularly HD UI images)
     const itemOverrides = JSON.parse(fs.readFileSync(items_override_file_path, 'utf8'));
-    for (let itemOverride of itemOverrides) {
-      // The matching item code
-      const itemCode = Object.keys(itemOverride)[0];
-      
-      // Retrieve the item section
-      let baseItemSection = getBaseItemSection(constants, itemCode);
-      if (baseItemSection) {
-        // Check if an override .sprite image exist
-        const inventoryImage = path.normalize(`${subFolders[baseItemSection]}/${itemOverride[itemCode].asset}`).replaceAll("\\", "/")
-        const inventoryImageAbsolutePath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}.sprite`);
-        
-        // Add the ".hdi" attribute in game constants
-        if (fs.existsSync(inventoryImageAbsolutePath)) {
-          constants[baseItemSection][itemCode].hdi = inventoryImage
-        }
-
-        // Check if multiple images
-        if (! /\d$/.test(inventoryImage) ) { // Except if image already ends with a number
-          if (itemCode == "gpw")
-            continue; // Skip. perfect_diamond1..6 files are for jewels. I don't know why Blizzard mixed the names...
-
-          if (itemCode == "vip")
-            continue; // Skip. All files are identical, plus it's an unique.
-
-          for (let i = 1; ; i++) {
-            const invGfxPath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}${i}.sprite`);
-            if (fs.existsSync(invGfxPath)) {
-              if (i == 1) {
-                constants[baseItemSection][itemCode].hdig = []
-              }
-              constants[baseItemSection][itemCode].hdig.push(`${inventoryImage}${i}`)
-            } else {
-              break;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  for (let category of [{ name: "uniques", section: "unq_items", short: "u "}, { name: "sets", section: "set_items", short: "s" }]) {
-    const uniqOrSet_override_file_path = path.join(__dirname, `${input_dir}/hd/items/${category.name}.json`);
-    if (fs.existsSync(uniqOrSet_override_file_path)) {
-      //file exists. It contains inventory image override for some unique items
-      const uniqOrSetOverrides = JSON.parse(fs.readFileSync(uniqOrSet_override_file_path, 'utf8'));
-      for (let uniqOrSetOverride of uniqOrSetOverrides) {
+    {
+      // Item types
+      for (let itemOverride of itemOverrides) {
         // The matching item code
-        const itemSnakeCaseIndex = Object.keys(uniqOrSetOverride)[0]; // Matches the index column of uniqueitems.txt, and a strings.json key, but with snake case
-        if (itemSnakeCaseIndex == "rainbow_facet")
-          continue; // There is no HD image for jewels, it puts diamond instead
+        const itemCode = Object.keys(itemOverride)[0];
+        
+        // Retrieve the item section
+        let baseItemSection = getBaseItemSection(constants, itemCode);
+        if (baseItemSection) {
+          // Check if an override .sprite image exist
+          const inventoryImage = path.normalize(`${subFolders[baseItemSection]}/${itemOverride[itemCode].asset}`).replaceAll("\\", "/")
+          const inventoryImageAbsolutePath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}.sprite`);
+          
+          // Add the ".hdi" attribute in game constants
+          if (fs.existsSync(inventoryImageAbsolutePath)) {
+            constants[baseItemSection][itemCode].hdi = inventoryImage
+          }
 
-        // There can be multiple matches for an index
-        constants[category.section].forEach(item => {
-          if (_.snakeCase(item.index) == itemSnakeCaseIndex) {
-            // It's a match !
-            let baseItemSection = getBaseItemSection(constants, item.c)
-            if (baseItemSection) {
-              // Check if an override .sprite image exist
-              const inventoryImage = path.normalize(`${subFolders[baseItemSection]}/${uniqOrSetOverride[itemSnakeCaseIndex].normal}`)
-              const inventoryImageAbsolutePath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}.sprite`);
-              // Add the ".hdi" attribute in game constants
-              if (fs.existsSync(inventoryImageAbsolutePath)) {
-                item.hdi = inventoryImage.replaceAll("\\", "/");
+          // Check if multiple images
+          if (! /\d$/.test(inventoryImage) ) { // Except if image already ends with a number
+            if (itemCode == "gpw")
+              continue; // Skip. perfect_diamond1..6 files are for jewels. I don't know why Blizzard mixed the names...
+
+            if (itemCode == "vip")
+              continue; // Skip. All files are identical, plus it's an unique.
+
+            for (let i = 1; ; i++) {
+              const invGfxPath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}${i}.sprite`);
+              if (fs.existsSync(invGfxPath)) {
+                if (i == 1) {
+                  constants[baseItemSection][itemCode].hdig = []
+                }
+                constants[baseItemSection][itemCode].hdig.push(`${inventoryImage}${i}`)
+              } else {
+                break;
               }
             }
           }
-        })
+        }
+      }
+    }
+
+    // Uniques/sets
+    for (let category of [{ name: "uniques", section: "unq_items", short: "u "}, { name: "sets", section: "set_items", short: "s" }]) {
+      const uniqOrSet_override_file_path = path.join(__dirname, `${input_dir}/hd/items/${category.name}.json`);
+      if (fs.existsSync(uniqOrSet_override_file_path)) {
+        //file exists. It contains inventory image override for some unique items
+        const uniqOrSetOverrides = JSON.parse(fs.readFileSync(uniqOrSet_override_file_path, 'utf8'));
+        for (let uniqOrSetOverride of uniqOrSetOverrides) {
+          // The matching item code
+          const itemSnakeCaseIndex = Object.keys(uniqOrSetOverride)[0]; // Matches the index column of uniqueitems.txt, and a strings.json key, but with snake case
+          if (itemSnakeCaseIndex == "rainbow_facet")
+            continue; // There is no HD image for jewels, it puts diamond instead
+  
+          // There can be multiple matches for an index
+          constants[category.section].forEach(item => {
+            if (_.snakeCase(item.index) == itemSnakeCaseIndex) {
+              // It's a match !
+              let baseItemSection = getBaseItemSection(constants, item.c)
+              if (baseItemSection) {
+                // Check if an override .sprite image exist
+                const inventoryImage = path.normalize(`${subFolders[baseItemSection]}/${uniqOrSetOverride[itemSnakeCaseIndex].normal}`)
+                const inventoryImageAbsolutePath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}.sprite`);
+                // Add the ".hdi" attribute in game constants
+                if (fs.existsSync(inventoryImageAbsolutePath)) {
+                  item.hdi = inventoryImage.replaceAll("\\", "/");
+                }
+              }
+            }
+          })
+        }
       }
     }
   }
+  // ------------
 }
 
 // Post treatment for ReMoDDeD
@@ -593,7 +664,7 @@ function _readRareNames(tsv, idx, strings) {
     if (name) {
       arr[id - idx] = {
         id,
-        index: id - idx,
+        // index: id - idx,
         n: strings[name],
       };
       id++;
@@ -633,8 +704,8 @@ function _readProperties(tsv, strings) {
   for (let i = 1; i < tsv.lines.length; i++) {
     const code = tsv.lines[i][cCode];
     if (code != "Expansion") {
-      const prop = [];
-      //prop.code = code;
+      const property = [];
+      //propertyDef.code = code;
       for (let j = 1; j <= 7; j++) {
         const stat = tsv.lines[i][cStats[j].cStat];
         const func = tsv.lines[i][cStats[j].cFunc];
@@ -644,10 +715,10 @@ function _readProperties(tsv, strings) {
         const s = {};
         if (stat) s.s = stat;
         if (func) s.f = +func;
-        prop[j - 1] = s;
+        property[j - 1] = s;
       }
-      if (prop.length) {
-        arr[code] = prop;
+      if (property.length) {
+        arr[code] = property;
       }
     }
   }
@@ -655,24 +726,25 @@ function _readProperties(tsv, strings) {
 }
 
 function _readRunewords(tsv, strings) {
-  const arr = [];
+  let arr = [];
   const cName = tsv.header.indexOf("Name");
   for (let i = 1; i < tsv.lines.length; i++) {
     const name = tsv.lines[i][cName];
     if (name) {
-      let id = +name.substring(8);
-      //TODO: why?
-      if (id > 75) {
-        id += 25;
-      } else {
-        id += 26;
-      }
-      arr[id] = {
-        id,
+      let index = +name.substring(8); // In LoD runewords were in disorder in the runes.txt file. So we use index to sort them back.
+      arr[index] = {
+        index, // Just for safe keep
         n: strings[tsv.lines[i][cName]],
       };
     }
   }
+  // Ids will be calculated from index after removing nulls. They're 1-indexed
+  arr = arr.filter(item => !!item) // Remove nulls/undefined
+  let id = 1;
+  for (let i = 0; i < arr.length; i++) {
+    arr[i].id = id++;
+  }
+  arr.unshift(null) // So that array index matches id. Easier for later searchs
   return arr;
 }
 
@@ -954,7 +1026,13 @@ function _readItemStatCosts(tsv, strings) {
   return arr;
 }
 
-function createBundle(input_dir, output_dir, output_name, alt_input_dir, modPostTreatmentFunction) {
+function createBundle(mod, version, output_dir, output_prefix, modPostTreatmentFunction) {
+  const input_dir = `../public/d2/game_data/${mod}/version_${version}/`;
+  const output_name = `${mod}_constants_${version}`;
+  
+  // Failsafe to generate even if some files are missing
+  const alt_input_dir = mod == "vanilla" ? null : `../public/d2/game_data/vanilla/version_${version}/`;
+  
   const input_files = [
     // Strings for versions 96 and prior
     "local/lng/eng/string.txt",
@@ -993,18 +1071,21 @@ function createBundle(input_dir, output_dir, output_name, alt_input_dir, modPost
   // Read the files
   for (const input_file of input_files) {
     const input_file_path = path.join(__dirname, `${input_dir}${input_file}`);
-    const alt_input_file_path = path.join(__dirname, `${alt_input_dir}${input_file}`);
     if (fs.existsSync(input_file_path)) {
       //file exists
       game_data[input_file] = fs.readFileSync(input_file_path, 'utf8');
-    } else if (fs.existsSync(alt_input_file_path)) {
-      // Alternative file exists
-      game_data[input_file] = fs.readFileSync(alt_input_file_path, 'utf8');
+    } else if (alt_input_dir) {
+      // Failsafe
+      const alt_input_file_path = path.join(__dirname, `${alt_input_dir}${input_file}`);
+      if (fs.existsSync(alt_input_file_path)) {
+        // Alternative file exists
+        game_data[input_file] = fs.readFileSync(alt_input_file_path, 'utf8');
+      }
     }
   }
 
   const json_data = makeBundle(game_data);
-  json_data.version = `${output_name}`;
+  json_data.version = `${mod}_constants_${version}`;
 
   D2RPostTreatment(input_dir, json_data)
 
@@ -1013,12 +1094,14 @@ function createBundle(input_dir, output_dir, output_name, alt_input_dir, modPost
   }
 
   const to_write_es5format = `export let ${output_name} = ${JSON.stringify(json_data, null, 4)};`;
-  const output_file_path_es5format = path.join(__dirname, `${output_dir}${output_name}.bundle.js`);
+  const output_file_path_es5format = path.join(__dirname, `${output_dir}${output_prefix}_${output_name}.bundle.js`);
   fs.writeFileSync(output_file_path_es5format, to_write_es5format);
   console.log(`Generated file ${output_file_path_es5format}`);
 }
 
-function addMissingFieldsToLegacy(input_name, output_dir, output_name) {
+function addMissingFieldsToLegacy(mod, version, output_dir, output_prefix) {
+  const input_name = `${mod}_constants_${version}`
+  const output_name = `${input_name}`
   const input_file_path_es5format = path.join(__dirname, `${output_dir}${input_name}.bundle.js`);
   const text = fs.readFileSync(input_file_path_es5format, 'utf8');
   const jsonText = text.split(" = ")[1].slice(0, -1);
@@ -1034,14 +1117,17 @@ function addMissingFieldsToLegacy(input_name, output_dir, output_name) {
       })
     }
   }
-  json_data.version = output_name;
+  json_data.version = input_name;
 
   const to_write_es5format = `export let ${output_name} = ${JSON.stringify(json_data, null, 4)};`;
-  const output_file_path_es5format = path.join(__dirname, `${output_dir}${output_name}.bundle.js`);
+  const output_file_path_es5format = path.join(__dirname, `${output_dir}${output_prefix}_${output_name}.bundle.js`);
   fs.writeFileSync(output_file_path_es5format, to_write_es5format);
+  console.log(`Generated file ${output_file_path_es5format}`);
 }
 
 // Note: currently I don't know how to read the 96 version, because for ex ItemStatCosts.txt is missing necessary columns
-addMissingFieldsToLegacy('vanilla_constants_96', '../public/d2/', 'generated_vanilla_constants_96')
-createBundle('../public/d2/game_data/vanilla/version_99/', '../public/d2/', 'generated_vanilla_constants_99');
-createBundle('../public/d2/game_data/remodded/version_99/', '../public/d2/', 'generated_remodded_constants_99', '../public/d2/game_data/vanilla/version_99/', ReMoDDeDPostTreatment);
+addMissingFieldsToLegacy('vanilla', 96, '../public/d2/', 'generated')
+createBundle('vanilla', 98, '../public/d2/', 'generated');
+createBundle('vanilla', 99, '../public/d2/', 'generated');
+createBundle('remodded', 98, '../public/d2/', 'generated', ReMoDDeDPostTreatment);
+createBundle('remodded', 99, '../public/d2/', 'generated', ReMoDDeDPostTreatment);

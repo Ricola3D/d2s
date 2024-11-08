@@ -5,7 +5,7 @@ import { readItems, readItem, writeItem } from "../../src/d2/items";
 import * as types from "../../src/d2/types";
 import { BitReader } from "../../src/binary/bitreader";
 import { read } from "../../src/d2/d2s";
-import { enhanceItems } from "../../src/d2/attribute_enhancer";
+// import { enhanceItems } from "../../src/d2/attribute_enhancer";
 
 describe("items", () => {
   const config = {

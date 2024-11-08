@@ -54,7 +54,7 @@ describe("d2s", () => {
     const save = await read(inputstream, "vanilla");
 
     const output = await write(save, "vanilla", 98);
-    expect(output.length).to.eq(2684);
+    expect(output.length).to.eq(2675);
 
     // re-reading from saved data, amd comparing
     const readAgain = await read(output, "vanilla");
