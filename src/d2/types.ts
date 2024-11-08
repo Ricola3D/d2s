@@ -445,7 +445,7 @@ export enum ItemType {
   Other = 0x04,
 }
 
-export enum Quality {
+export enum Quality { // TODO naming convention EQuality
   Low = 0x01,
   Normal = 0x02,
   Superior = 0x03,
@@ -455,3 +455,22 @@ export enum Quality {
   Unique = 0x07,
   Crafted = 0x08,
 }
+
+export enum EGemPosition {
+  Weapon = "weapon",
+  Helm = "helm",
+  Shield = "shield",
+}
+
+export interface IGemMod {
+  code: string; // Gem identifier
+  type: EGemPosition;
+  m: string; // Property identifier
+  p: number; // Additional param besides min & max (usually cold/poison length)
+  min: number;
+  max: number;
+}
+
+export type GemModList = Array<IGemMod>;
+
+export type GemMods = [GemModList, GemModList, GemModList];

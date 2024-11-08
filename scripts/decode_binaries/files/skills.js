@@ -8,7 +8,7 @@ const { readString } = require("../utils.js");
 
 function decodeSkillsFile(inputDir) {
   let items = []
-  const inputFile = path.join("C:/Program Files (x86)/Diablo II Resurrected/Data/global/excel" /*inputDir*/, "skills.bin");
+  const inputFile = path.join(inputDir, "skills.bin");
 
   if (fs.existsSync(inputFile)) {
     const fileBuffer = fs.readFileSync(inputFile);

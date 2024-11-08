@@ -1,4 +1,4 @@
-import { expect, should } from "chai";
+import { expect /*, should*/ } from "chai";
 import { read, write } from "../../src/d2/stash";
 import * as path from "path";
 import * as fs from "fs";

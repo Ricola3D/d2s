@@ -176,8 +176,8 @@ describe("d2s", () => {
     for (const file of files) {
       const buffer = fs.readFileSync(path.join(__dirname, `../../../d2/113c/d2s/save/${file}`));
       console.log(file);
-      const d2s = await read(buffer, "vanilla");
-      //fs.writeFileSync(path.join(__dirname,`../../../data/json/${d2s.header.name}.d2s`), output);
+      /*const d2s =*/ await read(buffer, "vanilla");
+      //fs.writeFileSync(path.join(__dirname, `../../../data/json/${d2s.header.name}.d2s`), output);
     }
   }).timeout(Infinity);
 
@@ -189,7 +189,7 @@ describe("d2s", () => {
         });
       });
     }
-    const chars = [] as any[];
+    const chars = [] as string[];
     for (const c of chars) {
       console.log(c);
       const char = c.toLowerCase();

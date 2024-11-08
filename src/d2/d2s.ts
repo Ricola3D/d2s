@@ -44,10 +44,6 @@ async function readItem(buffer: ArrayBuffer, mod: string, version: number, userC
   return item;
 }
 
-function writer(buffer: Uint8Array) {
-  return new BitWriter();
-}
-
 async function write(data: types.ID2S, mod: string, version: number, userConfig?: types.IConfig): Promise<Uint8Array> {
   const config = Object.assign(defaultConfig, userConfig);
   const writer = new BitWriter();
@@ -74,4 +70,4 @@ async function writeItem(item: types.IItem, mod: string, version: number, userCo
   return writer.ToArray();
 }
 
-export { reader, writer, read, write, readItem, writeItem };
+export { reader, read, write, readItem, writeItem };

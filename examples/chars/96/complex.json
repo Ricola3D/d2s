@@ -4497,7 +4497,7 @@
             "max_durability": 86,
             "current_durability": 98,
             "total_nr_of_sockets": 2,
-            "runeword_id": 119, // 145,
+            "runeword_id": 119,
             "runeword_name": "Rhyme",
             "runeword_attributes": [
                 {
@@ -4918,7 +4918,7 @@
             "max_durability": 86,
             "current_durability": 79,
             "total_nr_of_sockets": 4,
-            "runeword_id": 129, // 155,
+            "runeword_id": 129,
             "runeword_name": "Spirit",
             "runeword_attributes": [
                 {
@@ -5352,7 +5352,7 @@
             "max_durability": 25,
             "current_durability": 25,
             "total_nr_of_sockets": 3,
-            "runeword_id": 147, // 173,
+            "runeword_id": 147,
             "runeword_name": "Treachery",
             "runeword_attributes": [
                 {
@@ -5568,7 +5568,7 @@
             "max_durability": 33,
             "current_durability": 33,
             "total_nr_of_sockets": 5,
-            "runeword_id": 91, // 117,
+            "runeword_id": 91,
             "runeword_name": "Obedience",
             "runeword_attributes": [
                 {

@@ -75,7 +75,7 @@ describe("header", () => {
       writer.WriteArray(charm);
       writer.WriteArray(endBytes);
 
-      const end = writer.offset;
+      // const end = writer.offset;
       await fixHeader(writer);
 
       for (const f of [
@@ -101,7 +101,7 @@ describe("header", () => {
     const pre = writer.SeekByte(0x000c).PeekBytes(4);
     await fixHeader(writer);
     const post = writer.SeekByte(0x000c).PeekBytes(4);
-    expect(new DataView(post.buffer).getUint32(0)).to.eq(new DataView(post.buffer).getUint32(0));
+    expect(new DataView(pre.buffer).getUint32(0)).to.eq(new DataView(post.buffer).getUint32(0));
   });
 
   it("should read", async () => {

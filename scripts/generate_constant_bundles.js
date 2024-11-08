@@ -633,7 +633,7 @@ function _readSkillDesc(tsv, strings) {
   return arr;
 }
 
-function _readSkills(tsv, skillDescs, strings) {
+function _readSkills(tsv, skillDescs/*, strings*/) {
   const arr = [];
   const cSkillDesc = tsv.header.indexOf("skilldesc");
   let cId = tsv.header.indexOf("Id");
@@ -692,7 +692,7 @@ function _readMagicNames(tsv, strings) {
   return arr;
 }
 
-function _readProperties(tsv, strings) {
+function _readProperties(tsv/*, strings*/) {
   const arr = {};
   const cCode = tsv.header.indexOf("code");
   const cStats = [];
@@ -748,7 +748,7 @@ function _readRunewords(tsv, strings) {
   return arr;
 }
 
-function _readTypes(tsv, strings) {
+function _readTypes(tsv/*, strings*/) {
   const arr = {};
   const cCode = tsv.header.indexOf("Code");
   const cItemType = tsv.header.indexOf("ItemType");
@@ -876,7 +876,7 @@ function _readItems(tsv, itemtypes, strings) {
   return arr;
 }
 
-function _readGems(miscItems, tsv, strings) {
+function _readGems(miscItems, tsv/*, strings*/) {
   const cCode = tsv.header.indexOf("code");
   const types = ["weapon", "helm", "shield"];
   const cols = {};

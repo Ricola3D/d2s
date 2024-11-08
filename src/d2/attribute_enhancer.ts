@@ -34,7 +34,7 @@ export function enhancePlayerAttributes(char: types.ID2S, mod: string, version: 
   char.item_bonuses = ([] as types.IMagicProperty[]).concat
     .apply(
       [],
-      items.map((item) => _allAttributes(item, constants)),
+      items.map((item) => _allAttributes(item /*, constants*/)),
     )
     .filter((attribute) => attribute != null);
   char.item_bonuses = _groupAttributes(char.item_bonuses, constants);
@@ -299,11 +299,11 @@ export function enhanceItem(
     item.displayed_runeword_attributes = _enhanceAttributeDescription(item.runeword_attributes, constants, attributes, config);
 
     // Just the socketed attributes
-    item.socketed_attributes = _groupAttributes(_socketedAttributes(item, constants), constants);
+    item.socketed_attributes = _groupAttributes(_socketedAttributes(item /*, constants*/), constants);
     item.displayed_socketed_attributes = _enhanceAttributeDescription(item.socketed_attributes, constants, attributes, config);
 
     // All attributes together
-    item.combined_magic_attributes = _groupAttributes(_allAttributes(item, constants), constants);
+    item.combined_magic_attributes = _groupAttributes(_allAttributes(item /*, constants*/), constants);
     item.displayed_combined_magic_attributes = _enhanceAttributeDescription(item.combined_magic_attributes, constants, attributes, config);
   }
 }
@@ -453,7 +453,7 @@ function _enhanceAttributeDescription(
   return magic_attributes;
 }
 
-function _compactAttributes(mods: any[], constants: types.IConstantData): types.IMagicProperty[] {
+function _compactAttributes(mods: types.GemModList, constants: types.IConstantData): types.IMagicProperty[] {
   const magic_attributes = [] as types.IMagicProperty[];
   for (const mod of mods) {
     const properties = constants.properties[mod.m] || [];
@@ -482,7 +482,7 @@ function _compactAttributes(mods: any[], constants: types.IConstantData): types.
         }
       }
       const id = _itemStatCostFromStat(stat, constants);
-      const itemStatDef = constants.magical_properties[id];
+      // const itemStatDef = constants.magical_properties[id];
       if (propertyDef.np) i += propertyDef.np;
       const v = [mod.min, mod.max];
       if (mod.p) {
@@ -745,7 +745,7 @@ function _classFromCode(code: string, constants: types.IConstantData): any {
   return constants.classes.filter((e) => e.c === code)[0];
 }
 
-function _socketedAttributes(item: types.IItem, constants: types.IConstantData): types.IMagicProperty[] {
+function _socketedAttributes(item: types.IItem /*, constants: types.IConstantData*/): types.IMagicProperty[] {
   let socketed_attributes = [] as types.IMagicProperty[];
   if (item.socketed_items) {
     for (const i of item.socketed_items) {
@@ -757,8 +757,8 @@ function _socketedAttributes(item: types.IItem, constants: types.IConstantData):
   return socketed_attributes;
 }
 
-function _allAttributes(item: types.IItem, constants: types.IConstantData): types.IMagicProperty[] {
-  const socketed_attributes = _socketedAttributes(item, constants);
+function _allAttributes(item: types.IItem /*, constants: types.IConstantData*/): types.IMagicProperty[] {
+  const socketed_attributes = _socketedAttributes(item /*, constants*/);
   const magic_attributes = item.magic_attributes || [];
   //const set_attributes = item.set_attributes || [];
   const runeword_attributes = item.runeword_attributes || [];

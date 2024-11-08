@@ -31,7 +31,7 @@ export function readHeader(char: types.ID2S, reader: BitReader, constants: types
   char.header.right_skill = constants.skills[reader.ReadUInt32()]?.s; //0x007c
   char.header.left_swap_skill = constants.skills[reader.ReadUInt32()]?.s; //0x0080
   char.header.right_swap_skill = constants.skills[reader.ReadUInt32()]?.s; //0x0084
-  char.header.menu_appearance = _readCharMenuAppearance(reader.ReadArray(32), constants); //0x0088 [char menu appearance]
+  char.header.menu_appearance = _readCharMenuAppearance(reader.ReadArray(32) /*, constants*/); //0x0088 [char menu appearance]
   char.header.difficulty = _readDifficulty(reader.ReadArray(3)); //0x00a8
   char.header.map_id = reader.ReadUInt32(); //0x00ab
   reader.SkipBytes(2); //0x00af [unk = 0x0, 0x0]
@@ -84,7 +84,7 @@ export function writeHeader(char: types.ID2S, writer: BitWriter, constants: type
     .WriteUInt32(_skillId(char.header.right_skill, constants)) //0x007c
     .WriteUInt32(_skillId(char.header.left_swap_skill, constants)) //0x0080
     .WriteUInt32(_skillId(char.header.right_swap_skill, constants)) //0x0084
-    .WriteArray(_writeCharMenuAppearance(char.header.menu_appearance, constants)) //0x0088 [char menu appearance]
+    .WriteArray(_writeCharMenuAppearance(char.header.menu_appearance /*, constants*/)) //0x0088 [char menu appearance]
     .WriteArray(_writeDifficulty(char.header.difficulty)) //0x00a8
     .WriteUInt32(char.header.map_id) //0x00ab
     .WriteArray(new Uint8Array([0x00, 0x00])) //0x00af [unk = 0x0, 0x0]
@@ -150,7 +150,7 @@ function _writeStatus(status: types.IStatus): Uint8Array {
   return arr;
 }
 
-function _readCharMenuAppearance(bytes: Uint8Array, constants: types.IConstantData): types.ICharMenuAppearance {
+function _readCharMenuAppearance(bytes: Uint8Array /*, constants: types.IConstantData*/): types.ICharMenuAppearance {
   const appearance = {} as types.ICharMenuAppearance;
   const reader = new BitReader(bytes);
   const graphics = reader.ReadArray(16);
@@ -174,7 +174,7 @@ function _readCharMenuAppearance(bytes: Uint8Array, constants: types.IConstantDa
   return appearance;
 }
 
-function _writeCharMenuAppearance(appearance: types.ICharMenuAppearance, constants: types.IConstantData): Uint8Array {
+function _writeCharMenuAppearance(appearance: types.ICharMenuAppearance /*, constants: types.IConstantData*/): Uint8Array {
   const writer = new BitWriter(32);
   writer.length = 32 * 8;
 

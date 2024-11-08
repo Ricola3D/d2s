@@ -858,7 +858,7 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
   const constants = getConstantData(mod, version);
   const item = newItem();
 
-  _readSimpleBits(item, reader, version, constants, config);
+  _readSimpleBits(item, reader, version, constants /*, config*/);
   if (!item.simple_item) {
     item.id = reader.ReadUInt32(32);
     item.level = reader.ReadUInt8(7);
@@ -1162,7 +1162,12 @@ export async function writeItem(item: types.IItem, mod: string, version: number,
   return writer.ToArray();
 }
 
-function _readSimpleBits(item: types.IItem, reader: BitReader, version: number, constants: types.IConstantData, config: types.IConfig) {
+function _readSimpleBits(
+  item: types.IItem,
+  reader: BitReader,
+  version: number,
+  constants: types.IConstantData /*, config: types.IConfig*/,
+) {
   //init so we do not have npe's
   item._unknown_data = {};
   //1.10-1.14d

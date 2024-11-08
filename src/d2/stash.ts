@@ -8,10 +8,10 @@ const defaultConfig = {
   extendedStash: false,
 } as types.IConfig;
 
-export async function read(buffer: Uint8Array, mod: string, userConfig?: types.IConfig): Promise<types.IStash> {
+export async function read(buffer: Uint8Array, mod: string /*, userConfig?: types.IConfig*/): Promise<types.IStash> {
   const stash = {} as types.IStash;
   const reader = new BitReader(buffer);
-  const config = Object.assign(defaultConfig, userConfig);
+  // const config = Object.assign(defaultConfig, userConfig);
   const firstHeader = reader.ReadUInt32();
   reader.SeekByte(0);
   if (firstHeader == 0xaa55aa55) {

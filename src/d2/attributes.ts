@@ -47,11 +47,11 @@ export function readAttributes(char: types.ID2S, reader: BitReader, mod: string)
 
     throw new Error(`Attribute header 'gf' not found at position ${reader.offset - 2 * 8}`);
   }
-  let bitoffset = 0;
+  //let bitOffset = 0;
   let id = reader.ReadUInt16(9);
   //read till 0x1ff end of attributes is found
   while (id != 0x1ff) {
-    bitoffset += 9;
+    // bitOffset += 9;
     const field = constants.magical_properties[id];
     if (field === undefined) {
       throw new Error(`Invalid attribute id: ${id}`);
@@ -67,7 +67,7 @@ export function readAttributes(char: types.ID2S, reader: BitReader, mod: string)
     }
 
     // Next attribute
-    bitoffset += size;
+    // bitOffset += size;
     id = reader.ReadUInt16(9);
   }
 
