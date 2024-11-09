@@ -15,10 +15,10 @@ How to edit binary of a D2 item
 const fs = require("fs");
 const path = require("path");
 
-// const input_file_path = path.join("C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/ReMoDDeD", "input.d2s");
-// const output_file_path = path.join("C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/ReMoDDeD", "output.txt");
-const input_file_path = path.join("C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/RMD-MP", "input.d2s");
-const output_file_path = path.join("C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/RMD-MP", "output.txt");
+// const mod = "ReMoDDeD"
+const mod = "RMD-MP"
+const input_file_path = path.join(`C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/${mod}`, "input.d2s");
+const output_file_path = path.join(`C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/${mod}`, "output.txt");
 if (fs.existsSync(input_file_path)) {
   const fileBuffer = fs.readFileSync(input_file_path);
 
