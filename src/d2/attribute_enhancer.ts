@@ -386,9 +386,8 @@ function _enhanceAttributeDescription(
         // Fallback
         descString = itemStatDef.dP;
       }
-    } else {
-      descString = "Missing description";
     }
+
     //hack for d2r...?
     if (magical_attribute.id == 39 || magical_attribute.id == 41 || magical_attribute.id == 43 || magical_attribute.id == 45) {
       descString = itemStatDef.dP;
@@ -428,11 +427,13 @@ function _enhanceAttributeDescription(
           descString = `+%d% ${descString.replace(/}/gi, "").replace(/%\+?d%%/gi, "")}`;
         }
       }
+      descString ||= "Missing description"; // To avoid crashs
       magical_attribute.description = descString.replace(/%d/gi, () => {
         const v = magical_attribute.values[count++];
         return v;
       });
     } else {
+      descString ||= "Missing description"; // To avoid crashs
       _descFunc(magical_attribute, constants, v, descFunc, descVal, descString, desc2);
     }
   }
