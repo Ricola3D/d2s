@@ -3,6 +3,10 @@
 - Complete all Q: do not use Larzuk Q, reset stats/skills Q, imbue Q, personalize Q
 - Max gold (char, stash) per game mod
 - Stackables max quantity (for ex, Ramaladni's gift <=99 or can't be cubed/separated)
+- MuleRareArmJew > amulets have "+6req level" ??
+- MuleRareWeap > rework the activate weight system
+- Parsing reason runeforge id + 1000x tier ?
+- Button to add an item in socket
 
 ### d2s
 

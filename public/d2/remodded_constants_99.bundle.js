@@ -1881,7 +1881,10 @@ export let remodded_constants_99 = {
             "s": "Shiver Armor"
         },
         null,
-        null,
+        {
+            "id": 488,
+            "s": "Fire Wall"
+        },
         {
             "id": 489,
             "s": "Cyclone Armor"
@@ -17250,7 +17253,7 @@ export let remodded_constants_99 = {
             "id": 204,
             "index": "Girdle of Resilience",
             "n": "Girdle of Resilience",
-            "hdi": "armor/belt/girdle"
+            "hdi": "armor/belt/girdle_h"
         },
         {
             "id": 205,
