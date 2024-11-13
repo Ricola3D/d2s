@@ -1,4 +1,5 @@
 ### TODO
+- Regenerate constant bundles but with Remodded string txt files updated
 - Waypoints per game mod
 - Complete all Q: do not use Larzuk Q, reset stats/skills Q, imbue Q, personalize Q
 - Max gold (char, stash) per game mod
