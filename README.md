@@ -1,4 +1,6 @@
 ### TODO
+- Make a ReMoDDeD item pack for item creation
+- Very slow pictures loading
 - Regenerate constant bundles but with Remodded string txt files updated
 - Waypoints per game mod
 - Complete all Q: do not use Larzuk Q, reset stats/skills Q, imbue Q, personalize Q
@@ -8,6 +10,7 @@
 - MuleRareWeap > rework the activate weight system
 - Parsing reason runeforge id + 1000x tier ?
 - Button to add an item in socket
+- Skills in editor: group by tab
 
 ### d2s
 
