@@ -17,7 +17,6 @@ describe("stash", () => {
     const jsonData = await read(inputBuffer, "vanilla");
 
     const outputBuffer = await write(jsonData, "vanilla", 0x62);
-    fs.writeFileSync(path.join(__dirname, `../../examples/stash/SharedStashSoftCoreV2_new.d2i`), outputBuffer);
     expect(inputBuffer.compare(outputBuffer)).to.eq(0);
   });
 
@@ -44,7 +43,6 @@ describe("stash", () => {
     const inputBuffer = fs.readFileSync(path.join(__dirname, `../../examples/stash/_LOD_SharedStashSave.sss`));
     const inputJson = await read(inputBuffer, "vanilla");
     const outputBuffer = await write(inputJson, "vanilla", 0x60);
-    fs.writeFileSync(path.join(__dirname, `../../examples/stash/_LOD_SharedStashSave_new.sss`), outputBuffer);
     const outputJson = await read(outputBuffer, "vanilla");
 
     expect(inputBuffer.length, "file size").to.eq(outputBuffer.length);
@@ -63,7 +61,6 @@ describe("stash", () => {
     const inputBuffer = fs.readFileSync(path.join(__dirname, `../../examples/stash/PrivateStash.d2x`));
     const inputJson = await read(inputBuffer, "vanilla");
     const outputBuffer = await write(inputJson, "vanilla", 0x60);
-    fs.writeFileSync(path.join(__dirname, `../../examples/stash/PrivateStash_new.d2x`), outputBuffer);
     const outputJson = await read(outputBuffer, "vanilla");
 
     expect(inputBuffer.length, "file size").to.eq(outputBuffer.length);
