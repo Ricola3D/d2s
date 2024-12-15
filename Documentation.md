@@ -1,4 +1,8 @@
-https://www.d2rmodding.com/_files/ugd/698f72_5d9678d029d74fa68dc06293f6405208.pdf
+Data guide: https://www.d2rmodding.com/_files/ugd/698f72_5d9678d029d74fa68dc06293f6405208.pdf
+D2S file format:
+- http://user.xmission.com/~trevin/DiabloIIv1.09_File_Format.shtml
+- https://github.com/WalterCouto/D2CE/blob/main/d2s_File_Format.md
+- https://github.com/krisives/d2s-format?tab=readme-ov-file
 
 ### Item stats
 

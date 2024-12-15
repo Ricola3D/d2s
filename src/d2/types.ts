@@ -304,6 +304,7 @@ export interface ISkill {
 export interface IItem {
   identified: number;
   socketed: number; // 1: has sockets
+  max_sockets: number;
   new: number;
   is_ear: number;
   starter_item: number;
@@ -315,8 +316,8 @@ export interface IItem {
   version: string;
   location_id: number; // 0: stored, 1: equipped, 2: belt, 4: cursor, 6: socketed
   equipped_id: number; // 0: stored, 1: helm, 2: amulet, 3: armor, 4: right-hand, 5: left-hand, 6: right ring, 7: left ring, 8: belt, 9: boots, 10: gloves, 11: right-hand switch, 12: left-hand switch
-  position_x: number; // 0-indexed column
-  position_y: number; // 0-indexed row
+  position_x: number; // 0-indexed column, from left to right
+  position_y: number; // 0-indexed row, from top to bottom
   alt_position_id: number; // 1: inventory, 4: cube, 5: stash
   type: string; // 4 characters code
   type_id: number; // 0:undefined, 1: armor, 2: shield, 3: weapon, 4: other
@@ -331,6 +332,7 @@ export interface IItem {
   class_specific: number;
   low_quality_id: number;
   timestamp: number;
+  time: number;
   ear_attributes: IEarAttributes;
   defense_rating: number;
   max_durability: number;
@@ -366,7 +368,7 @@ export interface IItem {
   hd_inv_file: string;
   inv_transform: number;
   transform_color: string;
-  item_quality: EItemQuality;
+  item_quality: EItemQuality; // 0:normal, 1: exceptional or NA, 2: elite
   categories: string[];
   file_index: number;
   auto_affix_id: number;
@@ -436,6 +438,36 @@ export enum EItemQuality {
   normal,
   exceptional,
   elite,
+}
+
+export enum IItemAltPosition {
+  Inventory = 1,
+  Cube = 4,
+  Stash = 5,
+}
+
+export enum EItemLocation {
+  Stored = 0,
+  Equipped = 1,
+  Belt = 2,
+  Cursor = 4,
+  Socketed = 6,
+}
+
+export enum EItemEquipPosition {
+  Stored = 0,
+  Helm = 1,
+  Amulet = 2,
+  Armor = 3,
+  RightHand = 4,
+  LeftHand = 5,
+  RightRing = 6,
+  LeftRing = 7,
+  Belt = 8,
+  Boots = 9,
+  Gloves = 10,
+  RightHandSwitch = 11,
+  LeftHandSwitch = 12,
 }
 
 export enum ItemType {

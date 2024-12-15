@@ -1,16 +1,52 @@
 ### TODO
+- Grouping elemental max res
+- Grouping min&max properly
+- Left & right ring are inversed compared to game? for merc only?
+- Paste in socketed
+- Double click on cube & not all grids = opens cube grid ?
+- Matriarchal javelins quantity issue?
+- HC: add dead edit button
+- If not a runeword, buttons to unsocket 1 only.
+- Drag to socket in ?
+- Base combobox options
+- Remove enhance button?
+- When selecting an inv item, then a socketed equipped item, then reclicking it, it goes back to the inv item?
+- According to this site, there is a "Broken" field in unknown item data (https://github.com/WalterCouto/D2CE/blob/main/d2s_File_Format.md#single-item-layout)
+- Ear: fill tooltip, add edit inputs
+- Organs/herbs/flags: if timestamp, display edit input for time/timestamp
+- HeroEditor: add buttons reset all stats / reset all skills
+- Drag issue when socketed
+- Base options: 2 groups (norm/excep/elite, others). Maybe add precision of difficulty for each option ?
+- Weapon dmg in tooltip: doesn't reflex %ed, +min, +max, +flat, etc..
+- Consistency: runewords can't get customized ? (only in old d2 versions?)
+- ItemStatEditor: min/max values, check encode cases
+- ItemEditor: ethereal checkbox not visible for misc
 - Make a ReMoDDeD item pack for item creation
-- Very slow pictures loading
-- Regenerate constant bundles but with Remodded string txt files updated
 - Waypoints per game mod
 - Complete all Q: do not use Larzuk Q, reset stats/skills Q, imbue Q, personalize Q
 - Max gold (char, stash) per game mod
-- Stackables max quantity (for ex, Ramaladni's gift <=99 or can't be cubed/separated)
+- Stackables max quantity (for scroll of torments 10->100 when cube bug is fixed)
 - MuleRareArmJew > amulets have "+6req level" ??
 - MuleRareWeap > rework the activate weight system
 - Parsing reason runeforge id + 1000x tier ?
 - Button to add an item in socket
 - Skills in editor: group by tab
+- lazy loading of some inv_files (runes, gems, tomes, charms ?)
+- d2s update dependencies but careful mocha & chai & esm/commonjs
+- store vuex + move window.work_mod there for watching
+- Selected item: color it like on hover.
+- socketStyle: 4s in armor: add paddings ?
+- memoize
+- Editor: create new chars from v99, not 97
+- Base combobox (also for socketed items)
+- Attribute 270 - cheatcheck
+- Item tooltip not always properly updated, displays 1 as attr value
+- in constants get full set magical_attributes, add set items in _allAttributes, finish enhancePlayerAttributes
+- quests: better states management. Readme, D:\Games\Diablo II\D2Bot-with-Kolbot\Basic-Blizzhacker-and-Autosmurf-plugin\trunk\d2bs\kolbot\D2BotBlank.dbj
+- Select classskill update choices on class change
+- drag&drop between item UIs & for merc
+- Update rune effects in constants ?
+- In the constant data "properties" (used to group attributes), remove/fix changed attributes
 
 ### d2s
 

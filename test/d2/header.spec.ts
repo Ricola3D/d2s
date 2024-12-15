@@ -12,8 +12,8 @@ describe("header", () => {
   xit("should make all char classes w/ custom charm", async () => {
     for (const c of vanilla_constants_96.classes) {
       const writer = new BitWriter();
-      const inputstream = fs.readFileSync(path.join(__dirname, `../../examples/chars/97/${c.n}.d2s`));
-      const reader = new BitReader(inputstream);
+      const inputBuffer = fs.readFileSync(path.join(__dirname, `../../examples/chars/97/${c.n}.d2s`));
+      const reader = new BitReader(inputBuffer);
       const d2s = {} as types.ID2S;
       await readHeader(d2s, reader);
       writer.WriteArray(await writeHeader(d2s));
@@ -96,8 +96,8 @@ describe("header", () => {
   });
 
   it("should calulcate checksum", async () => {
-    const inputstream = fs.readFileSync(path.join(__dirname, "../../examples/chars/96/simple.d2s"));
-    const writer = new BitWriter().WriteArray(inputstream);
+    const inputBuffer = fs.readFileSync(path.join(__dirname, "../../examples/chars/96/simple.d2s"));
+    const writer = new BitWriter().WriteArray(inputBuffer);
     const pre = writer.SeekByte(0x000c).PeekBytes(4);
     await fixHeader(writer);
     const post = writer.SeekByte(0x000c).PeekBytes(4);
@@ -105,8 +105,8 @@ describe("header", () => {
   });
 
   it("should read", async () => {
-    const inputstream = fs.readFileSync(path.join(__dirname, "../../examples/chars/96/simple.d2s"));
-    const reader = new BitReader(inputstream);
+    const inputBuffer = fs.readFileSync(path.join(__dirname, "../../examples/chars/96/simple.d2s"));
+    const reader = new BitReader(inputBuffer);
     const d2s = {} as types.ID2S;
     await readHeader(d2s, reader);
     await readHeaderData(d2s, reader, "vanilla");
@@ -116,9 +116,9 @@ describe("header", () => {
   it("should write", async () => {
     const json = fs.readFileSync(path.join(__dirname, "../../examples/chars/96/simple.json"), "utf-8");
     const d2s = JSON.parse(json);
-    const output = new BitWriter();
-    output.WriteArray(await writeHeader(d2s));
-    output.WriteArray(await writeHeaderData(d2s, vanilla_constants_96));
-    expect(output.length / 8).to.eq(765);
+    const outputBuffer = new BitWriter();
+    outputBuffer.WriteArray(await writeHeader(d2s));
+    outputBuffer.WriteArray(await writeHeaderData(d2s, vanilla_constants_96));
+    expect(outputBuffer.length / 8).to.eq(765);
   });
 });

@@ -802,6 +802,8 @@ function _readItems(tsv, itemtypes, strings) {
   const cCode = tsv.header.indexOf("code");
   const cNameStr = tsv.header.indexOf("namestr");
   const cStackable = tsv.header.indexOf("stackable");
+  const cMaxStack = tsv.header.indexOf("maxstack");
+  const cSpawnStack = tsv.header.indexOf("spawnstack");
   const cMinac = tsv.header.indexOf("minac");
   const cMaxac = tsv.header.indexOf("maxac");
   const cDurability = tsv.header.indexOf("durability");
@@ -842,7 +844,11 @@ function _readItems(tsv, itemtypes, strings) {
           ? EItemQuality.elite
           : EItemQuality.normal;
       item.n = strings[tsv.lines[i][cNameStr]];
-      if (tsv.lines[i][cStackable] && +tsv.lines[i][cStackable] > 0) item.s = 1;
+      if (tsv.lines[i][cStackable] && +tsv.lines[i][cStackable] > 0) {
+        item.s = 1;
+        if (tsv.lines[i][cMaxStack] &&  +tsv.lines[i][cMaxStack]> 0) item.smax = +tsv.lines[i][cMaxStack];
+        if (tsv.lines[i][cSpawnStack] &&  +tsv.lines[i][cSpawnStack]> 0) item.sspawn = +tsv.lines[i][cSpawnStack];
+      }
       if (tsv.lines[i][cMinac] && +tsv.lines[i][cMinac] > 0) item.minac = +tsv.lines[i][cMinac];
       if (tsv.lines[i][cMaxac] && +tsv.lines[i][cMaxac] > 0) item.maxac = +tsv.lines[i][cMaxac];
       if (tsv.lines[i][cDurability]) item.durability = +tsv.lines[i][cDurability];

@@ -10,7 +10,7 @@
     "public/d2/vanilla_constants_*.js": true,
     "**/.nyc_output": true,
   },
-  "files.eol": "\n",
+  "files.eol": "\r\n",
   "files.exclude": {
     "**/node_modules": true
   },

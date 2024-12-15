@@ -179,6 +179,7 @@ export function enhanceItem(
     if (details.it) item.inv_transform = details.it;
     if (details.iq) item.item_quality = details.iq;
     if (details.c) item.categories = details.c;
+    if (details.gs) item.max_sockets = details.gs;
     if (details.durability) {
       if (item.ethereal == 0) {
         item.current_durability = details.durability;
@@ -188,9 +189,23 @@ export function enhanceItem(
         item.max_durability = details.durability - Math.ceil(details.durability / 2) + 1;
       }
     }
+    if (details.eq2n && details.eq2n.endsWith(" Item")) {
+      // eq2n values "<Class> Item"
+      item.class_specific = 1;
+    } else {
+      item.class_specific = 0;
+      item.auto_affix_id = 0;
+    }
+
+    // Enforce stackable consistency
+    if (details.s) {
+      item.quantity = boundValue(item.quantity, 1, details.smax || 500);
+    } else {
+      item.quantity = 0;
+    }
 
     // Enforce total_nr_of_sockets between 0 and max for this item type
-    item.total_nr_of_sockets = boundValue(item.total_nr_of_sockets, 0, details.gs || item.inv_width * item.inv_height);
+    item.total_nr_of_sockets = boundValue(item.total_nr_of_sockets, 0, details.gs || 0);
 
     // Enforce coherence between total_nr_of_sockets & socketed
     if (item.total_nr_of_sockets > 0) {
@@ -430,7 +445,7 @@ function _enhanceAttributeDescription(
         }
       }
       descString ||= "Missing description"; // To avoid crashs
-      magical_attribute.description = descString.replace(/%d/gi, () => {
+      magical_attribute.description = descString.replace(/%\+?d/gi, () => {
         const v = magical_attribute.values[count++];
         return v;
       });

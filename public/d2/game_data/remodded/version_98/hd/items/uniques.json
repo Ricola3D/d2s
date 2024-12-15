@@ -2507,9 +2507,9 @@
   },
   {
     "bloodravens_charge": {
-      "normal": "bow/hellclap",
-      "uber": "bow/hellclap",
-      "ultra": "bow/hellclap"
+      "normal": "..//custom/rmd_bow1",
+      "uber": "..//custom/rmd_bow1",
+      "ultra": "..//custom/rmd_bow1"
     }
   },
   {
@@ -2870,6 +2870,13 @@
     }
   },
   {
+    "healthy_breakfast": {
+      "normal": "..\\custom\\hbreakfast",
+      "uber": "..\\custom\\hbreakfast",
+      "ultra": "..\\custom\\hbreakfast"
+    }
+  },
+  {
     "ariocs_needle": {
       "normal": "spear/spear",
       "uber": "spear/spear",
@@ -3214,6 +3221,55 @@
   },
   {
     "mythos_log": {
+      "normal": "..\\custom\\mythos_log",
+      "uber": "..\\custom\\mythos_log",
+      "ultra": "..\\custom\\mythos_log"
+    }
+  },
+  {
+    "mythos_log_amazon": {
+      "normal": "..\\custom\\mythos_log",
+      "uber": "..\\custom\\mythos_log",
+      "ultra": "..\\custom\\mythos_log"
+    }
+  },
+  {
+    "mythos_log_assassin": {
+      "normal": "..\\custom\\mythos_log",
+      "uber": "..\\custom\\mythos_log",
+      "ultra": "..\\custom\\mythos_log"
+    }
+  },
+  {
+    "mythos_log_barbarian": {
+      "normal": "..\\custom\\mythos_log",
+      "uber": "..\\custom\\mythos_log",
+      "ultra": "..\\custom\\mythos_log"
+    }
+  },
+  {
+    "mythos_log_druid": {
+      "normal": "..\\custom\\mythos_log",
+      "uber": "..\\custom\\mythos_log",
+      "ultra": "..\\custom\\mythos_log"
+    }
+  },
+  {
+    "mythos_log_necromancer": {
+      "normal": "..\\custom\\mythos_log",
+      "uber": "..\\custom\\mythos_log",
+      "ultra": "..\\custom\\mythos_log"
+    }
+  },
+  {
+    "mythos_log_paladin": {
+      "normal": "..\\custom\\mythos_log",
+      "uber": "..\\custom\\mythos_log",
+      "ultra": "..\\custom\\mythos_log"
+    }
+  },
+  {
+    "mythos_log_sorceress": {
       "normal": "..\\custom\\mythos_log",
       "uber": "..\\custom\\mythos_log",
       "ultra": "..\\custom\\mythos_log"
@@ -3974,9 +4030,9 @@
   },
   {
     "constricting_ring": {
-      "normal": "..//custom//storagebag",
-      "uber": "..//custom//storagebag",
-      "ultra": "..//custom//storagebag"
+      "normal": "ring/ring",
+      "uber": "ring/ring",
+      "ultra": "ring/ring"
     }
   },
   {
@@ -4425,6 +4481,41 @@
       "normal": "..//custom/leoric_charm",
       "uber": "..//custom/leoric_charm",
       "ultra": "..//custom/leoric_charm"
+    }
+  },
+  {
+    "cola_cube": {
+      "normal": "..//custom/cola_cube",
+      "uber": "..//custom/cola_cube",
+      "ultra": "..//custom/cola_cube"
+    }
+  },
+  {
+    "null_charm": {
+      "normal": "..//custom/null_charm",
+      "uber": "..//custom/null_charm",
+      "ultra": "..//custom/null_charm"
+    }
+  },
+  {
+    "prismatic_facet": {
+      "normal": "..//custom/prismaticfacet",
+      "uber": "..//custom/prismaticfacet",
+      "ultra": "..//custom/prismaticfacet"
+    }
+  },
+  {
+    "spiritual_sentinel": {
+      "normal": "..//custom//spiritarmor4",
+      "uber": "..//custom//spiritarmor4",
+      "ultra": "..//custom//spiritarmor4"
+    }
+  },
+  {
+    "spiritual_warden": {
+      "normal": "..//custom//spiritarmor5",
+      "uber": "..//custom//spiritarmor5",
+      "ultra": "..//custom//spiritarmor5"
     }
   }
 ]

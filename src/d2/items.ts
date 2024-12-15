@@ -211,7 +211,10 @@ const HUFFMAN = [
                             ],
                             /*11110 111101000*/ [
                               /*011110 111101000*/ [
-                                /*0011110 111101000*/ [],
+                                /*0011110 111101000*/ [
+                                  /*00011110 111101000*/ "E",
+                                  /*10011110 111101000*/ []
+                                ],
                                 /*1011110 111101000*/ []
                               ],
                               /*111110 111101000*/ [
@@ -603,7 +606,7 @@ const HUFFMAN_LOOKUP = {
   "B": { "v": 59368, "l": 17 }, /*01110011111101000*/
   "C": { "v": 79848, "l": 17 }, /*10011011111101000*/
   "D": { "v": 127976, "l": 17 }, /*11111001111101000*/
-  //"E": { "v": 0, "l": 0 }, /**/
+  "E": { "v": 15848, "l": 17 }, /*00011110111101000*/
   //"F": { "v": 0, "l": 0 }, /**/
   "G": { "v": 109544, "l": 17 }, /*11010101111101000*/
   "H": { "v": 80872, "l": 17 }, /**/
@@ -632,6 +635,7 @@ export function newItem(): types.IItem {
     // Default values
     identified: 0,
     socketed: 0,
+    max_sockets: 0,
     new: 0,
     is_ear: 0,
     starter_item: 0,
@@ -640,7 +644,7 @@ export function newItem(): types.IItem {
     personalized: 0,
     personalized_name: "",
     given_runeword: 0,
-    version: "",
+    version: "101",
     location_id: 0,
     equipped_id: 0,
     position_x: 0,
@@ -658,7 +662,8 @@ export function newItem(): types.IItem {
     picture_id: 0,
     class_specific: 0,
     low_quality_id: 0,
-    timestamp: 0,
+    timestamp: 0, // 1 for returned body piece, 0 otherwise
+    time: 0, // for body pieces
     ear_attributes: {
       class: 0,
       level: 0,
@@ -950,6 +955,9 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
 
     //realm data
     item.timestamp = reader.ReadUInt8(1);
+    if (item.timestamp || item.categories.includes("Body Part")) {
+      item.time = reader.ReadUInt32(30);
+    }
 
     if (item.type_id === ItemType.Armor) {
       item.defense_rating = reader.ReadUInt16(constants.magical_properties[31].sB) - constants.magical_properties[31].sA;
@@ -1113,6 +1121,9 @@ export async function writeItem(item: types.IItem, mod: string, version: number,
     }
 
     writer.WriteUInt8(item.timestamp, 1);
+    if (item.timestamp || item.categories.includes("Body Part")) {
+      writer.WriteUInt32(item.time, 30);
+    }
 
     if (item.type_id === ItemType.Armor || item.type_id === ItemType.Shield) {
       writer.WriteUInt16(item.defense_rating + constants.magical_properties[31].sA, constants.magical_properties[31].sB);
@@ -1176,33 +1187,36 @@ function _readSimpleBits(
   //[flags:32][version:3][mode:3]([invloc:4][x:4][y:4][page:3])([itemcode:variable])([sockets:3])
   item._unknown_data.b0_3 = reader.ReadBitArray(4);
   item.identified = reader.ReadBit();
-  item._unknown_data.b5_10 = reader.ReadBitArray(6);
+  item._unknown_data.b5_10 = reader.ReadBitArray(6); // 3b>unk, 1b>broken, 2b>unk
   item.socketed = reader.ReadBit();
-  item._unknown_data.b12 = reader.ReadBitArray(1);
+  item._unknown_data.b12 = reader.ReadBitArray(1); // ? 0x00
   item.new = reader.ReadBit();
-  item._unknown_data.b14_15 = reader.ReadBitArray(2);
+  item._unknown_data.b14_15 = reader.ReadBitArray(2); // ? 0x00
   item.is_ear = reader.ReadBit();
   item.starter_item = reader.ReadBit();
-  item._unknown_data.b18_20 = reader.ReadBitArray(3);
-  item.simple_item = reader.ReadBit();
+  item._unknown_data.b18_20 = reader.ReadBitArray(3); // 1b>unk, 2b>? 0x03 for version 71 with 15, 26 or 31 bytes, otherwise 0x00
+  item.simple_item = reader.ReadBit(); // compact
   item.ethereal = reader.ReadBit();
-  item._unknown_data.b23 = reader.ReadBitArray(1);
+  item._unknown_data.b23 = reader.ReadBitArray(1); // ? 0x01 for versions 87+, otherwise 0x00
   item.personalized = reader.ReadBit();
-  item._unknown_data.b25 = reader.ReadBitArray(1);
+  item._unknown_data.b25 = reader.ReadBitArray(1); // ? 0x00
   item.given_runeword = reader.ReadBit();
-  item._unknown_data.b27_31 = reader.ReadBitArray(5);
+  item._unknown_data.b27_31 = reader.ReadBitArray(5); // ? 0x00
 
   if (version <= 0x60) {
-    item.version = reader.ReadUInt16(10).toString(10);
+    item.version = reader.ReadUInt16(10).toString(10); // I don't know the values
   } else if (version >= 0x61) {
     item.version = reader.ReadUInt16(3).toString(2);
   }
+  if (["0", "000", " ", "   ", ""].includes(item.version)) item.version = "101"; // Just in case
+
   item.location_id = reader.ReadUInt8(3);
   item.equipped_id = reader.ReadUInt8(4);
   item.position_x = reader.ReadUInt8(4);
   item.position_y = reader.ReadUInt8(4);
   item.alt_position_id = reader.ReadUInt8(3);
   if (item.is_ear) {
+    item.type = "ear";
     const clazz = reader.ReadUInt8(3);
     const level = reader.ReadUInt8(7);
     const arr = new Uint8Array(15);
@@ -1241,15 +1255,22 @@ function _readSimpleBits(
     }
     item.type = item.type.trim().replace(/\0/g, "");
     let details = _GetItemTXT(item, constants);
-    item.categories = details?.c;
-    if (!item.categories) throw new Error(`Item category ${details?.c} does not exist`);
-    if (item?.categories.includes("Any Armor")) {
-      item.type_id = ItemType.Armor;
-    } else if (item?.categories.includes("Weapon")) {
-      item.type_id = ItemType.Weapon;
-      details = constants.weapon_items[item.type];
+    if (details) {
+      if (details.c) {
+        item.categories = details.c;
+        if (item?.categories.includes("Any Armor")) {
+          item.type_id = ItemType.Armor;
+        } else if (item?.categories.includes("Weapon")) {
+          item.type_id = ItemType.Weapon;
+          details = constants.weapon_items[item.type];
+        } else {
+          item.type_id = ItemType.Other;
+        }
+      } else {
+        throw new Error(`Cannot find categories for type ${item.type} does not exist`);
+      }
     } else {
-      item.type_id = ItemType.Other;
+      throw new Error(`Cannot find details for type ${item.type} does not exist`);
     }
 
     let bits = item.simple_item ? 1 : 3;
@@ -1288,7 +1309,7 @@ function _writeSimpleBits(writer: BitWriter, mod: string, version: number, item:
   writer.WriteBit(item.given_runeword);
   writer.WriteBits(item._unknown_data.b27_31 || new Uint8Array(5), 5);
 
-  const itemVersion = item.version != null ? item.version : "101";
+  const itemVersion = !!item.version ? item.version : "101";
   if (version <= 0x60) {
     // 0 = pre-1.08; 1 = 1.08/1.09 normal; 2 = 1.10 normal; 100 = 1.08/1.09 expansion; 101 = 1.10 expansion
     writer.WriteUInt16(parseInt(itemVersion, 10), 10);

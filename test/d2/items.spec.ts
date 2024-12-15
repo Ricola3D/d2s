@@ -65,8 +65,8 @@ describe("items", () => {
   });
 
   it("should read item list from 99 version saves", async () => {
-    const inputstream = fs.readFileSync(path.join(__dirname, "../../examples/chars/99/Barbarian.d2s"));
-    const char = await read(inputstream, "vanilla", config);
+    const inputBuffer = fs.readFileSync(path.join(__dirname, "../../examples/chars/99/Barbarian.d2s"));
+    const char = await read(inputBuffer, "vanilla", config);
     expect(char.header.version).to.eq(99);
     expect(char.items.length).to.eq(86);
   });

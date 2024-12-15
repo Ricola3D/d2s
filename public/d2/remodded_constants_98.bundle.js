@@ -1,4 +1,4 @@
-export let remodded_constants_98 = {
+let remodded_constants_98 = {
     "classes": [
         {
             "id": 0,
@@ -1629,26 +1629,29 @@ export let remodded_constants_98 = {
         },
         {
             "id": 387,
-            "s": "Reduce Fire Resistance"
+            "s": "Fire Conviction"
         },
         {
             "id": 388,
-            "s": "Reduce Cold Resistance"
+            "s": "Cold Conviction"
         },
         {
             "id": 389,
-            "s": "Reduce Magic Resistance"
+            "s": "Magic Conviction"
         },
         {
             "id": 390,
-            "s": "Reduce Lightning Resistance"
+            "s": "Lightning Conviction"
         },
         null,
         {
             "id": 392,
             "s": "Hidden Death/Kill Detection ?"
         },
-        null,
+        {
+            "id": 393,
+            "s": "Hidden Beacon of Hope ?"
+        },
         null,
         null,
         null,
@@ -1889,7 +1892,10 @@ export let remodded_constants_98 = {
         },
         null,
         null,
-        null,
+        {
+            "id": 495,
+            "s": "Poison Conviction"
+        },
         null,
         null,
         {
@@ -1902,7 +1908,7 @@ export let remodded_constants_98 = {
         null,
         {
             "id": 503,
-            "s": "Reduce Physical Resistance"
+            "s": "Physical Conviction"
         },
         {
             "id": 504,
@@ -2285,7 +2291,10 @@ export let remodded_constants_98 = {
             "s": "Shield of Forsaken Light"
         },
         null, // 650
-        null,
+        {
+            "id": 651,
+            "s": "Spirit Retribution"
+        },
         null,
         {
             "id": 653,
@@ -2357,6 +2366,45 @@ export let remodded_constants_98 = {
         {
             "id": 695,
             "s": "Activate Weight System 3"
+        },
+        null,
+        null,
+        null,
+        null,
+        {
+            "id": 700,
+            "s": "Heart of Wolverine"
+        },
+        {
+            "id": 701,
+            "s": "Disarm"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+            "id": 709,
+            "s": "Spirit's Intervention"
+        },
+        {
+            "id": 710,
+            "s": "Spirit's Decay"
+        },
+        {
+            "id": 711,
+            "s": "Cleave"
+        },
+        {
+            "id": 712,
+            "s": "Sweep"
+        },
+        {
+            "id": 713,
+            "s": "Pierce"
         }
     ],
     "rare_names": [
@@ -9652,7 +9700,7 @@ export let remodded_constants_98 = {
         "ex-missiles": [
             {
                 "s": "ex_missiles",
-                "f": 37
+                "f": 1
             }
         ],
         "ex-attacks": [
@@ -9673,6 +9721,18 @@ export let remodded_constants_98 = {
                 "f": 1
             }
         ],
+        "item-cooldownreduction": [
+            {
+                "s": "item_cooldownreduction",
+                "f": 1
+            }
+        ],
+        "buff-length-modifier": [
+            {
+                "s": "buff_length_modifier",
+                "f": 1
+            }
+        ]
     },
     "magical_properties": [
         {
@@ -11462,14 +11522,14 @@ export let remodded_constants_98 = {
         },
         {
             "id": 183,
-            "s": "killtrack",
+            "s": "unknown_183", // killtrack ?
             "c": 1,
             "cB": 32,
             "cS": 0
         },
         {
             "id": 184,
-            "s": "deathtrack",
+            "s": "unknown_184", // deathtrack ?
             "c": 1,
             "cB": 32,
             "cS": 0
@@ -11688,20 +11748,20 @@ export let remodded_constants_98 = {
         },
         {
             "id": 209,
-            "s": "pali_killtrack",
+            "s": "unknown_209", // pali_killtrack ?
             "c": 1,
             "cS": 0
         },
         {
             "id": 210,
-            "s": "unused210",
+            "s": "killtrack", // unused210 ?
             "c": 1,
             "cB": 32,
             "cS": 0
         },
         {
             "id": 211,
-            "s": "unused211",
+            "s": "deathtrack",
             "c": 1,
             "cB": 32,
             "cS": 0
@@ -14835,6 +14895,45 @@ export let remodded_constants_98 = {
             "dV": 2,
             "dP": "Rune Points (Ultra):",
             "dN": "Rune Points (Ultra):"
+        },
+        {
+            "id": 477,
+            "s": "item_sweep_damage",
+            "e": 2,
+            "sS": 1,
+            "sB": 7,
+            "sA": 0,
+            "sP": 16,
+            "so": 160,
+            "dF": 15,
+            "dP": "Sweeping Damage (%d%% Chance to cast level %d %s on attack)",
+            "dN": "Sweeping Damage (%d%% Chance to cast level %d %s on attack)"
+        },
+        {
+            "id": 478,
+            "s": "item_cleave_damage",
+            "e": 2,
+            "sS": 1,
+            "sB": 7,
+            "sA": 0,
+            "sP": 16,
+            "so": 160,
+            "dF": 15,
+            "dP": "Cleaving Damage (%d%% Chance to cast level %d %s on attack)",
+            "dN": "Cleaving Damage (%d%% Chance to cast level %d %s on attack)"
+        },
+        {
+            "id": 479,
+            "s": "item_pierce_damage",
+            "e": 2,
+            "sS": 1,
+            "sB": 7,
+            "sA": 0,
+            "sP": 16,
+            "so": 160,
+            "dF": 15,
+            "dP": "Piercing Damage (%d%% Chance to cast level %d %s on attack)",
+            "dN": "Piercing Damage (%d%% Chance to cast level %d %s on attack)"
         }
     ],
     "runewords": [
@@ -17309,7 +17408,7 @@ export let remodded_constants_98 = {
             "id": 206,
             "index": "Sub-zero Sash",
             "n": "Sub-zero Sash",
-            "hdi": "armor/belt/sash"
+            "hdi": "armor/belt/sash_l"
         },
         {
             "id": 207,
@@ -19808,7 +19907,7 @@ export let remodded_constants_98 = {
             "i": "D2R_Jank",
             "c": "amb",
             "tc": "dgld",
-            "hdi": "weapon/bow/hellclap"
+            "hdi": "custom/rmd_bow1"
         },
         {
             "id": 294,
@@ -21849,7 +21948,7 @@ export let remodded_constants_98 = {
             "i": "D2R_Jank",
             "c": "rin",
             "tc": "cblu",
-            "hdi": "custom/storagebag"
+            "hdi": "misc/ring/ring"
         },
         {
             "id": 542,
@@ -22266,7 +22365,7 @@ export let remodded_constants_98 = {
             "index": "Healthy Breakfast",
             "n": "Well maybe not healthy, but it does make you glow<br>A Healthy Breakfast",
             "i": "D2R_Jank",
-            "c": "m35",
+            "c": "m36",
             "hdi": "custom/Hbreakfast"
         },
         {
@@ -22360,6 +22459,47 @@ export let remodded_constants_98 = {
             "i": "D2R_Jank",
             "c": "m34",
             "hdi": "custom/Null_Charm"
+        },
+        null, // 615
+        null,
+        null,
+        null,
+        null,
+        null, // 620
+        null,
+        null,
+        null,
+        {
+            "id": 624,
+            "index": "Crainte Vomir",
+            "n": "Crainte Vomir",
+            "i": "D2R_Jank",
+            "c": "Ss3",
+            "hdi": "custom/katana"
+        },
+        {
+            "id": 625,
+            "index": "Crainte Vomir",
+            "n": "Crainte Vomir",
+            "i": "D2R_Jank",
+            "c": "Ss4",
+            "hdi": "custom/katana"
+        },
+        {
+            "id": 626,
+            "index": "Spiritual Sentinel",
+            "n": "Spiritual Sentinel",
+            "i": "D2R_Jank",
+            "c": "utp",
+            "hdi": "custom/spiritarmor4"
+        },
+        {
+            "id": 627,
+            "index": "Spiritual Warden",
+            "n": "Spiritual Warden",
+            "i": "D2R_Jank",
+            "c": "utp",
+            "hdi": "custom/spiritarmor5"
         }
     ],
     "stackables": {
@@ -32988,6 +33128,8 @@ export let remodded_constants_98 = {
             "iq": 0,
             "n": "Throwing Knife",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 10,
             "mind": 3,
             "maxd": 4,
@@ -33030,6 +33172,8 @@ export let remodded_constants_98 = {
             "iq": 0,
             "n": "Throwing Axe",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 64,
             "mind": 5,
             "maxd": 9,
@@ -33069,6 +33213,8 @@ export let remodded_constants_98 = {
             "iq": 0,
             "n": "Balanced Knife",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 20,
             "mind": 2,
             "maxd": 10,
@@ -33111,6 +33257,8 @@ export let remodded_constants_98 = {
             "iq": 0,
             "n": "Balanced Axe",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 26,
             "mind": 7,
             "maxd": 13,
@@ -33154,6 +33302,8 @@ export let remodded_constants_98 = {
             "iq": 0,
             "n": "Javelin",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 6,
             "mind": 2,
             "maxd": 7,
@@ -33195,6 +33345,8 @@ export let remodded_constants_98 = {
             "iq": 0,
             "n": "Pilum",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 8,
             "mind": 5,
             "maxd": 12,
@@ -33237,6 +33389,8 @@ export let remodded_constants_98 = {
             "iq": 0,
             "n": "Short Spear",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 10,
             "mind": 3,
             "maxd": 17,
@@ -33279,6 +33433,8 @@ export let remodded_constants_98 = {
             "iq": 0,
             "n": "Glaive",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 14,
             "mind": 7,
             "maxd": 22,
@@ -33318,6 +33474,8 @@ export let remodded_constants_98 = {
             "iq": 0,
             "n": "Throwing Spear",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 16,
             "mind": 7,
             "maxd": 19,
@@ -34209,6 +34367,8 @@ export let remodded_constants_98 = {
             "iq": 0,
             "n": "Rancid Gas Potion",
             "s": 1,
+            "smax": 25,
+            "sspawn": 6,
             "durability": 6,
             "maxd": 2,
             "gt": 0,
@@ -34234,6 +34394,8 @@ export let remodded_constants_98 = {
             "iq": 0,
             "n": "Oil Potion",
             "s": 1,
+            "smax": 25,
+            "sspawn": 6,
             "durability": 6,
             "maxd": 2,
             "gt": 0,
@@ -34259,6 +34421,8 @@ export let remodded_constants_98 = {
             "iq": 0,
             "n": "Choking Gas Potion",
             "s": 1,
+            "smax": 25,
+            "sspawn": 6,
             "durability": 6,
             "maxd": 2,
             "gt": 0,
@@ -34284,6 +34448,8 @@ export let remodded_constants_98 = {
             "iq": 0,
             "n": "Exploding Potion",
             "s": 1,
+            "smax": 25,
+            "sspawn": 6,
             "durability": 6,
             "maxd": 2,
             "gt": 0,
@@ -34309,6 +34475,8 @@ export let remodded_constants_98 = {
             "iq": 0,
             "n": "Strangling Gas Potion",
             "s": 1,
+            "smax": 25,
+            "sspawn": 6,
             "durability": 6,
             "maxd": 2,
             "gt": 0,
@@ -34334,6 +34502,8 @@ export let remodded_constants_98 = {
             "iq": 0,
             "n": "Fulminating Potion",
             "s": 1,
+            "smax": 25,
+            "sspawn": 6,
             "durability": 6,
             "maxd": 2,
             "gt": 0,
@@ -35952,6 +36122,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Battle Dart",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 16,
             "mind": 10,
             "maxd": 20,
@@ -35995,6 +36167,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Francisca",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 38,
             "mind": 14,
             "maxd": 28,
@@ -36035,6 +36209,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "War Dart",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 50,
             "mind": 8,
             "maxd": 30,
@@ -36078,6 +36254,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Hurlbat",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 40,
             "mind": 17,
             "maxd": 34,
@@ -36122,6 +36300,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "War Javelin",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 26,
             "mind": 8,
             "maxd": 24,
@@ -36164,6 +36344,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Great Pilum",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 30,
             "mind": 14,
             "maxd": 33,
@@ -36206,6 +36388,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Simbilan",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 36,
             "mind": 10,
             "maxd": 40,
@@ -36248,6 +36432,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Spiculum",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 40,
             "mind": 17,
             "maxd": 48,
@@ -36287,6 +36473,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Harpoon",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 46,
             "mind": 17,
             "maxd": 44,
@@ -39084,6 +39272,92 @@ export let remodded_constants_98 = {
             ],
             "hdi": "custom/katana"
         },
+        "Ss3": {
+            "nc": "2hs",
+            "exc": "92h",
+            "elc": "Ss3",
+            "iq": 2,
+            "n": "Shinogi",
+            "durability": 110,
+            "mind": 28,
+            "maxd": 70,
+            "min2d": 63,
+            "max2d": 118,
+            "rs": 105,
+            "rd": 125,
+            "hi": 1,
+            "gs": 4,
+            "gt": 0,
+            "i": "inv2hs",
+            "ui": "inv2hsu",
+            "si": "inv2hsu",
+            "iw": 1,
+            "ih": 4,
+            "it": 2,
+            "ig": [],
+            "eq1n": "Assassin Claws",
+            "eq2n": "Sword",
+            "c": [
+                "Assassin Katanas",
+                "Assassin Claws",
+                "Melee Weapon",
+                "Weapon",
+                "Gold",
+                "Miscellaneous",
+                "Assassin Item",
+                "Class Specific",
+                "Sword",
+                "Melee Weapon",
+                "Weapon",
+                "Gold",
+                "Miscellaneous",
+                "Merc 5 Weapon"
+            ],
+            "hdi": "custom/katana"
+        },
+        "Ss4": {
+            "nc": "2hs",
+            "exc": "92h",
+            "elc": "Ss4",
+            "iq": 2,
+            "n": "Shinogi",
+            "durability": 110,
+            "mind": 28,
+            "maxd": 70,
+            "min2d": 63,
+            "max2d": 118,
+            "rs": 105,
+            "rd": 125,
+            "hi": 1,
+            "gs": 4,
+            "gt": 0,
+            "i": "inv2hs",
+            "ui": "inv2hsu",
+            "si": "inv2hsu",
+            "iw": 1,
+            "ih": 4,
+            "it": 2,
+            "ig": [],
+            "eq1n": "Assassin Claws",
+            "eq2n": "Sword",
+            "c": [
+                "Assassin Katanas",
+                "Assassin Claws",
+                "Melee Weapon",
+                "Weapon",
+                "Gold",
+                "Miscellaneous",
+                "Assassin Item",
+                "Class Specific",
+                "Sword",
+                "Melee Weapon",
+                "Weapon",
+                "Gold",
+                "Miscellaneous",
+                "Merc 5 Weapon"
+            ],
+            "hdi": "custom/katana"
+        },
         "7cm": {
             "nc": "clm",
             "exc": "9cm",
@@ -39377,6 +39651,8 @@ export let remodded_constants_98 = {
             "iq": 2,
             "n": "Flying Knife",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 16,
             "mind": 29,
             "maxd": 68,
@@ -39420,6 +39696,8 @@ export let remodded_constants_98 = {
             "iq": 2,
             "n": "Flying Axe",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 38,
             "mind": 22,
             "maxd": 82,
@@ -39460,6 +39738,8 @@ export let remodded_constants_98 = {
             "iq": 2,
             "n": "Winged Knife",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 50,
             "mind": 34,
             "maxd": 44,
@@ -39504,6 +39784,8 @@ export let remodded_constants_98 = {
             "iq": 2,
             "n": "Winged Axe",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 40,
             "mind": 14,
             "maxd": 70,
@@ -39548,6 +39830,8 @@ export let remodded_constants_98 = {
             "iq": 2,
             "n": "Hyperion Javelin",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 26,
             "mind": 27,
             "maxd": 72,
@@ -39590,6 +39874,8 @@ export let remodded_constants_98 = {
             "iq": 2,
             "n": "Stygian Pilum",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 30,
             "mind": 18,
             "maxd": 80,
@@ -39632,6 +39918,8 @@ export let remodded_constants_98 = {
             "iq": 2,
             "n": "Balrog Spear",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 36,
             "mind": 42,
             "maxd": 79,
@@ -39674,6 +39962,8 @@ export let remodded_constants_98 = {
             "iq": 2,
             "n": "Ghost Glaive",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 40,
             "mind": 24,
             "maxd": 75,
@@ -39713,6 +40003,8 @@ export let remodded_constants_98 = {
             "iq": 2,
             "n": "Winged Harpoon",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "durability": 46,
             "mind": 34,
             "maxd": 44,
@@ -40905,6 +41197,8 @@ export let remodded_constants_98 = {
             "iq": 0,
             "n": "Maiden Javelin",
             "s": 1,
+            "smax": 250,
+            "sspawn": 250,
             "durability": 16,
             "mind": 10,
             "maxd": 18,
@@ -41245,6 +41539,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Ceremonial Javelin",
             "s": 1,
+            "smax": 250,
+            "sspawn": 250,
             "durability": 16,
             "mind": 23,
             "maxd": 44,
@@ -41585,6 +41881,8 @@ export let remodded_constants_98 = {
             "iq": 2,
             "n": "Matriarchal Javelin",
             "s": 1,
+            "smax": 250,
+            "sspawn": 250,
             "durability": 16,
             "mind": 38,
             "maxd": 68,
@@ -42609,7 +42907,8 @@ export let remodded_constants_98 = {
                 "Gold",
                 "Miscellaneous",
                 "Merc 5 Weapon"
-            ]
+            ],
+            "hdi": "custom/DemonGreatSword"
         }
     },
     "other_items": {
@@ -42861,6 +43160,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Tome of Town Portal",
             "s": 1,
+            "smax": 250,
+            "sspawn": 5,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -42883,6 +43184,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Tome of Identify",
             "s": 1,
+            "smax": 250,
+            "sspawn": 5,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -43007,6 +43310,7 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Gold",
             "s": 1,
+            "smax": 5000,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -43067,6 +43371,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Arrows",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "mind": 1,
             "hi": 0,
             "gs": 0,
@@ -43114,6 +43420,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Bolts",
             "s": 1,
+            "smax": 500,
+            "sspawn": 500,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -43436,6 +43744,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Key",
             "s": 1,
+            "smax": 500,
+            "sspawn": 6,
             "mind": 1,
             "maxd": 1,
             "hi": 0,
@@ -46364,6 +46674,7 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Small Red Potion",
             "s": 1,
+            "smax": 10,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -46387,6 +46698,7 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Large Red Potion",
             "s": 1,
+            "smax": 10,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -46410,6 +46722,7 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Small Blue Potion",
             "s": 1,
+            "smax": 10,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -46433,6 +46746,7 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Large Blue Potion",
             "s": 1,
+            "smax": 10,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -46485,8 +46799,8 @@ export let remodded_constants_98 = {
                         "code": "r01",
                         "type": "weapon",
                         "m": "att",
-                        "min": 50,
-                        "max": 50
+                        "min": 30,
+                        "max": 30
                     }
                 ],
                 [
@@ -46501,8 +46815,8 @@ export let remodded_constants_98 = {
                         "code": "r01",
                         "type": "helm",
                         "m": "ac",
-                        "min": 15,
-                        "max": 15
+                        "min": 10,
+                        "max": 10
                     }
                 ],
                 [
@@ -46568,9 +46882,9 @@ export let remodded_constants_98 = {
                     {
                         "code": "r02",
                         "type": "helm",
-                        "m": "stamdrain",
-                        "min": 15,
-                        "max": 15
+                        "m": "swing2",
+                        "min": 5,
+                        "max": 5
                     }
                 ],
                 [
@@ -46731,8 +47045,8 @@ export let remodded_constants_98 = {
                         "code": "r05",
                         "type": "helm",
                         "m": "regen-mana",
-                        "min": 15,
-                        "max": 15
+                        "min": 10,
+                        "max": 10
                     }
                 ],
                 [
@@ -46776,8 +47090,8 @@ export let remodded_constants_98 = {
                         "code": "r06",
                         "type": "weapon",
                         "m": "dmg-max",
-                        "min": 9,
-                        "max": 9
+                        "min": 6,
+                        "max": 6
                     }
                 ],
                 [
@@ -46785,8 +47099,8 @@ export let remodded_constants_98 = {
                         "code": "r06",
                         "type": "helm",
                         "m": "dmg-to-mana",
-                        "min": 15,
-                        "max": 15
+                        "min": 10,
+                        "max": 10
                     }
                 ],
                 [
@@ -46831,8 +47145,8 @@ export let remodded_constants_98 = {
                         "type": "weapon",
                         "m": "dmg-pois",
                         "p": 125,
-                        "min": 154,
-                        "max": 154
+                        "min": 77,
+                        "max": 77
                     }
                 ],
                 [
@@ -46840,8 +47154,8 @@ export let remodded_constants_98 = {
                         "code": "r07",
                         "type": "helm",
                         "m": "res-pois",
-                        "min": 30,
-                        "max": 30
+                        "min": 10,
+                        "max": 10
                     }
                 ],
                 [
@@ -46849,8 +47163,8 @@ export let remodded_constants_98 = {
                         "code": "r07",
                         "type": "shield",
                         "m": "res-pois",
-                        "min": 35,
-                        "max": 35
+                        "min": 20,
+                        "max": 20
                     }
                 ]
             ],
@@ -46885,8 +47199,8 @@ export let remodded_constants_98 = {
                         "code": "r08",
                         "type": "weapon",
                         "m": "dmg-fire",
-                        "min": 5,
-                        "max": 30
+                        "min": 3,
+                        "max": 15
                     }
                 ],
                 [
@@ -46894,8 +47208,8 @@ export let remodded_constants_98 = {
                         "code": "r08",
                         "type": "helm",
                         "m": "res-fire",
-                        "min": 30,
-                        "max": 30
+                        "min": 10,
+                        "max": 10
                     }
                 ],
                 [
@@ -46903,8 +47217,8 @@ export let remodded_constants_98 = {
                         "code": "r08",
                         "type": "shield",
                         "m": "res-fire",
-                        "min": 35,
-                        "max": 35
+                        "min": 20,
+                        "max": 20
                     }
                 ]
             ],
@@ -46940,7 +47254,7 @@ export let remodded_constants_98 = {
                         "type": "weapon",
                         "m": "dmg-ltng",
                         "min": 1,
-                        "max": 50
+                        "max": 25
                     }
                 ],
                 [
@@ -46948,8 +47262,8 @@ export let remodded_constants_98 = {
                         "code": "r09",
                         "type": "helm",
                         "m": "res-ltng",
-                        "min": 30,
-                        "max": 30
+                        "min": 10,
+                        "max": 10
                     }
                 ],
                 [
@@ -46957,8 +47271,8 @@ export let remodded_constants_98 = {
                         "code": "r09",
                         "type": "shield",
                         "m": "res-ltng",
-                        "min": 35,
-                        "max": 35
+                        "min": 20,
+                        "max": 20
                     }
                 ]
             ],
@@ -46994,8 +47308,8 @@ export let remodded_constants_98 = {
                         "type": "weapon",
                         "m": "dmg-cold",
                         "p": 75,
-                        "min": 3,
-                        "max": 14
+                        "min": 2,
+                        "max": 7
                     }
                 ],
                 [
@@ -47003,8 +47317,8 @@ export let remodded_constants_98 = {
                         "code": "r10",
                         "type": "helm",
                         "m": "res-cold",
-                        "min": 30,
-                        "max": 30
+                        "min": 10,
+                        "max": 10
                     }
                 ],
                 [
@@ -47012,8 +47326,8 @@ export let remodded_constants_98 = {
                         "code": "r10",
                         "type": "shield",
                         "m": "res-cold",
-                        "min": 35,
-                        "max": 35
+                        "min": 20,
+                        "max": 20
                     }
                 ]
             ],
@@ -47048,8 +47362,8 @@ export let remodded_constants_98 = {
                         "code": "r11",
                         "type": "weapon",
                         "m": "lifesteal",
-                        "min": 7,
-                        "max": 7
+                        "min": 5,
+                        "max": 5
                     }
                 ],
                 [
@@ -47111,8 +47425,8 @@ export let remodded_constants_98 = {
                         "code": "r12",
                         "type": "helm",
                         "m": "red-dmg",
-                        "min": 7,
-                        "max": 7
+                        "min": 4,
+                        "max": 4
                     }
                 ],
                 [
@@ -47156,8 +47470,8 @@ export let remodded_constants_98 = {
                         "code": "r13",
                         "type": "weapon",
                         "m": "swing2",
-                        "min": 20,
-                        "max": 20
+                        "min": 10,
+                        "max": 10
                     }
                 ],
                 [
@@ -47165,8 +47479,8 @@ export let remodded_constants_98 = {
                         "code": "r13",
                         "type": "helm",
                         "m": "balance2",
-                        "min": 20,
-                        "max": 20
+                        "min": 10,
+                        "max": 10
                     }
                 ],
                 [
@@ -47210,8 +47524,8 @@ export let remodded_constants_98 = {
                         "code": "r14",
                         "type": "weapon",
                         "m": "howl",
-                        "min": 32,
-                        "max": 32
+                        "min": 25,
+                        "max": 25
                     }
                 ],
                 [
@@ -47219,8 +47533,8 @@ export let remodded_constants_98 = {
                         "code": "r14",
                         "type": "helm",
                         "m": "regen",
-                        "min": 7,
-                        "max": 7
+                        "min": 3,
+                        "max": 3
                     }
                 ],
                 [
@@ -47588,15 +47902,15 @@ export let remodded_constants_98 = {
                         "code": "r21",
                         "type": "weapon",
                         "m": "att-demon",
-                        "min": 100,
-                        "max": 100
+                        "min": 50,
+                        "max": 50
                     },
                     {
                         "code": "r21",
                         "type": "weapon",
                         "m": "dmg-demon",
-                        "min": 75,
-                        "max": 75
+                        "min": 20,
+                        "max": 20
                     }
                 ],
                 [
@@ -47649,8 +47963,8 @@ export let remodded_constants_98 = {
                         "code": "r22",
                         "type": "weapon",
                         "m": "openwounds",
-                        "min": 25,
-                        "max": 25
+                        "min": 10,
+                        "max": 10
                     }
                 ],
                 [
@@ -47658,8 +47972,8 @@ export let remodded_constants_98 = {
                         "code": "r22",
                         "type": "helm",
                         "m": "res-all",
-                        "min": 15,
-                        "max": 15
+                        "min": 10,
+                        "max": 10
                     }
                 ],
                 [
@@ -47712,8 +48026,8 @@ export let remodded_constants_98 = {
                         "code": "r23",
                         "type": "helm",
                         "m": "red-mag",
-                        "min": 7,
-                        "max": 7
+                        "min": 3,
+                        "max": 3
                     }
                 ],
                 [
@@ -47757,8 +48071,8 @@ export let remodded_constants_98 = {
                         "code": "r24",
                         "type": "weapon",
                         "m": "mag%",
-                        "min": 30,
-                        "max": 30
+                        "min": 15,
+                        "max": 15
                     }
                 ],
                 [
@@ -47766,8 +48080,8 @@ export let remodded_constants_98 = {
                         "code": "r24",
                         "type": "helm",
                         "m": "mag%",
-                        "min": 25,
-                        "max": 25
+                        "min": 10,
+                        "max": 10
                     }
                 ],
                 [
@@ -47811,8 +48125,8 @@ export let remodded_constants_98 = {
                         "code": "r25",
                         "type": "weapon",
                         "m": "att%",
-                        "min": 20,
-                        "max": 20
+                        "min": 15,
+                        "max": 15
                     }
                 ],
                 [
@@ -47865,8 +48179,8 @@ export let remodded_constants_98 = {
                         "code": "r26",
                         "type": "weapon",
                         "m": "manasteal",
-                        "min": 7,
-                        "max": 7
+                        "min": 5,
+                        "max": 5
                     }
                 ],
                 [
@@ -47919,8 +48233,8 @@ export let remodded_constants_98 = {
                         "code": "r27",
                         "type": "weapon",
                         "m": "dmg%",
-                        "min": 50,
-                        "max": 50
+                        "min": 35,
+                        "max": 35
                     }
                 ],
                 [
@@ -47973,8 +48287,8 @@ export let remodded_constants_98 = {
                         "code": "r28",
                         "type": "weapon",
                         "m": "deadly",
-                        "min": 20,
-                        "max": 20
+                        "min": 10,
+                        "max": 10
                     }
                 ],
                 [
@@ -48144,8 +48458,8 @@ export let remodded_constants_98 = {
                         "code": "r31",
                         "type": "helm",
                         "m": "hp%",
-                        "min": 5,
-                        "max": 5
+                        "min": 2,
+                        "max": 2
                     }
                 ],
                 [
@@ -48189,15 +48503,15 @@ export let remodded_constants_98 = {
                         "code": "r32",
                         "type": "weapon",
                         "m": "freeze",
-                        "min": 3,
-                        "max": 3
+                        "min": 2,
+                        "max": 2
                     }
                 ],
                 [
                     {
                         "code": "r32",
                         "type": "helm",
-                        "m": "nofreeze",
+                        "m": "half-freeze",
                         "min": 1,
                         "max": 1
                     }
@@ -48206,7 +48520,7 @@ export let remodded_constants_98 = {
                     {
                         "code": "r32",
                         "type": "shield",
-                        "m": "nofreeze",
+                        "m": "half-freeze",
                         "min": 1,
                         "max": 1
                     }
@@ -48245,6 +48559,27 @@ export let remodded_constants_98 = {
                         "m": "indestruct",
                         "min": 1,
                         "max": 1
+                    },
+                    {
+                        "code": "r33",
+                        "type": "helm",
+                        "m": "abs-fire%",
+                        "min": 5,
+                        "max": 5,
+                    },
+                    {
+                        "code": "r33",
+                        "type": "helm",
+                        "m": "abs-cold%",
+                        "min": 5,
+                        "max": 5,
+                    },
+                    {
+                        "code": "r33",
+                        "type": "helm",
+                        "m": "abs-ltng%",
+                        "min": 5,
+                        "max": 5,
                     }
                 ],
                 [
@@ -48254,6 +48589,34 @@ export let remodded_constants_98 = {
                         "m": "indestruct",
                         "min": 1,
                         "max": 1
+                    },
+                    {
+                        "code": "r33",
+                        "type": "helm",
+                        "m": "abs-fire%",
+                        "min": 5,
+                        "max": 5,
+                    },
+                    {
+                        "code": "r33",
+                        "type": "helm",
+                        "m": "abs-cold%",
+                        "min": 5,
+                        "max": 5,
+                    },
+                    {
+                        "code": "r33",
+                        "type": "helm",
+                        "m": "abs-ltng%",
+                        "min": 5,
+                        "max": 5,
+                    },
+                    {
+                        "code": "r33",
+                        "type": "helm",
+                        "m": "abs-mag%",
+                        "min": 5,
+                        "max": 5,
                     }
                 ],
                 [
@@ -48263,6 +48626,34 @@ export let remodded_constants_98 = {
                         "m": "indestruct",
                         "min": 1,
                         "max": 1
+                    },
+                    {
+                        "code": "r33",
+                        "type": "shield",
+                        "m": "abs-fire%",
+                        "min": 5,
+                        "max": 5,
+                    },
+                    {
+                        "code": "r33",
+                        "type": "shield",
+                        "m": "abs-cold%",
+                        "min": 5,
+                        "max": 5,
+                    },
+                    {
+                        "code": "r33",
+                        "type": "shield",
+                        "m": "abs-ltng%",
+                        "min": 5,
+                        "max": 5,
+                    },
+                    {
+                        "code": "r33",
+                        "type": "shield",
+                        "m": "abs-mag%",
+                        "min": 5,
+                        "max": 5,
                     }
                 ]
             ],
@@ -48403,7 +48794,7 @@ export let remodded_constants_98 = {
             "c": [
                 "Quest"
             ],
-            "hdi": "misc/key/mephisto_key"
+            "hdi": "misc/key/mephisto_key2"
         },
         "pk3": {
             "nc": "pk3",
@@ -48422,7 +48813,7 @@ export let remodded_constants_98 = {
             "c": [
                 "Quest"
             ],
-            "hdi": "misc/key/mephisto_key"
+            "hdi": "misc/key/mephisto_key3"
         },
         "dhn": {
             "nc": "dhn",
@@ -48736,6 +49127,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Ramaladni's Gift",
             "s": 1,
+            "smax": 100,
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -49535,6 +49928,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Gold Bar",
             "s": 1,
+            "smax": 100,
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -49735,7 +50130,7 @@ export let remodded_constants_98 = {
                 "Token",
                 "Miscellaneous"
             ],
-            "hdi": "custom/token_global"
+            "hdi": "custom/evil_token"
         },
         "TK1": {
             "nc": "TK1",
@@ -49889,7 +50284,7 @@ export let remodded_constants_98 = {
             "exc": "Z01",
             "elc": "Z01",
             "iq": 1,
-            "n": "------------------<br>(Cube with item to store it)<br>Storage Bag<br>Quality of Life",
+            "n": "Storage Bag<br>Quality of Life",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -49911,7 +50306,7 @@ export let remodded_constants_98 = {
             "exc": "Z02",
             "elc": "Z02",
             "iq": 1,
-            "n": "(cube to change)<br>Amethyst Remover",
+            "n": "Amethyst Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -49932,7 +50327,7 @@ export let remodded_constants_98 = {
             "exc": "Z03",
             "elc": "Z03",
             "iq": 1,
-            "n": "(cube to change)<br>Topaz Remover",
+            "n": "Topaz Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -49953,7 +50348,7 @@ export let remodded_constants_98 = {
             "exc": "Z04",
             "elc": "Z04",
             "iq": 1,
-            "n": "(cube to change)<br>Sapphire Remover",
+            "n": "Sapphire Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -49974,7 +50369,7 @@ export let remodded_constants_98 = {
             "exc": "Z05",
             "elc": "Z05",
             "iq": 1,
-            "n": "(cube to change)<br>Emerald Remover",
+            "n": "Emerald Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -49995,7 +50390,7 @@ export let remodded_constants_98 = {
             "exc": "Z06",
             "elc": "Z06",
             "iq": 1,
-            "n": "(cube to change)<br>Ruby Remover",
+            "n": "Ruby Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50016,7 +50411,7 @@ export let remodded_constants_98 = {
             "exc": "Z07",
             "elc": "Z07",
             "iq": 1,
-            "n": "(cube to change)<br>Diamond Remover",
+            "n": "Diamond Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50037,7 +50432,7 @@ export let remodded_constants_98 = {
             "exc": "Z08",
             "elc": "Z08",
             "iq": 1,
-            "n": "(cube to change)<br>Skull Remover",
+            "n": "Skull Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50058,7 +50453,7 @@ export let remodded_constants_98 = {
             "exc": "Z09",
             "elc": "Z09",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: +15 Defense, +1 to Light Radius<br>Helms/Belts: +10 Defense, +1 to Light Radius<br>Armors/Boots: +10 Defense, +1 to Light Radius<br>Weapons/Gloves: +30 to Attack Rating, +1 to Light Radius<br>Rune Preview:<br><br>(Low Points -1)<br>El Remover",
+            "n": "Shields/Jewelry: +15 Defense, +1 to Light Radius<br>Helms/Belts: +10 Defense, +1 to Light Radius<br>Armors/Boots: +10 Defense, +1 to Light Radius<br>Weapons/Gloves: +30 to Attack Rating, +1 to Light Radius<br>Rune Preview:<br><br>(Low Points -1)<br>El Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50079,7 +50474,7 @@ export let remodded_constants_98 = {
             "exc": "Z10",
             "elc": "Z10",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: 7% Increased Chance of Blocking<br>Helms/Belts: +5% Faster Run/Walk<br>Armors/Boots: +5% Faster Run/Walk<br>Weapons/Gloves: +75% Damage and +50% Attack Rating to Undead<br>Rune Preview:<br><br>(Low Points -2)<br>Eld Remover",
+            "n": "Shields/Jewelry: 7% Increased Chance of Blocking<br>Helms/Belts: +5% Faster Run/Walk<br>Armors/Boots: +5% Faster Run/Walk<br>Weapons/Gloves: +75% Damage and +50% Attack Rating to Undead<br>Rune Preview:<br><br>(Low Points -2)<br>Eld Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50100,7 +50495,7 @@ export let remodded_constants_98 = {
             "exc": "Z11",
             "elc": "Z11",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: +2 Mana after each kill<br>Helms/Belts: +2 Mana after each kill<br>Armors/Boots: +2 Mana after each kill<br>Weapons/Gloves: +2 Mana after each kill<br>Rune Preview:<br><br>(Low Points -4)<br>Tir Remover",
+            "n": "Shields/Jewelry: +2 Mana after each kill<br>Helms/Belts: +2 Mana after each kill<br>Armors/Boots: +2 Mana after each kill<br>Weapons/Gloves: +2 Mana after each kill<br>Rune Preview:<br><br>(Low Points -4)<br>Tir Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50121,7 +50516,7 @@ export let remodded_constants_98 = {
             "exc": "Z12",
             "elc": "Z12",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: +30 Defense vs. Missile<br>Helms/Belts: +30 Defense vs. Missile<br>Armors/Boots: +30 Defense vs. Missile<br>Weapons/Gloves: Knockback<br>Rune Preview:<br><br>(Low Points -8)<br>Nef Remover",
+            "n": "Shields/Jewelry: +30 Defense vs. Missile<br>Helms/Belts: +30 Defense vs. Missile<br>Armors/Boots: +30 Defense vs. Missile<br>Weapons/Gloves: Knockback<br>Rune Preview:<br><br>(Low Points -8)<br>Nef Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50142,7 +50537,7 @@ export let remodded_constants_98 = {
             "exc": "Z13",
             "elc": "Z13",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: Regenerate Mana 15%<br>Helms/Belts: Regenerate Mana 10%<br>Armors/Boots: Regenerate Mana 10%<br>Weapons/Gloves: -25% Target Defense<br>Rune Preview:<br><br>(Low Points -16)<br>Eth Remover",
+            "n": "Shields/Jewelry: Regenerate Mana 15%<br>Helms/Belts: Regenerate Mana 10%<br>Armors/Boots: Regenerate Mana 10%<br>Weapons/Gloves: -25% Target Defense<br>Rune Preview:<br><br>(Low Points -16)<br>Eth Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50163,7 +50558,7 @@ export let remodded_constants_98 = {
             "exc": "Z14",
             "elc": "Z14",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: +15% Damage Taken Goes to Mana<br>Helms/Belts: +10% Damage Taken Goes to Mana<br>Armors/Boots: +10% Damage Taken Goes to Mana<br>Weapons/Gloves: +6 to Maximum Damage<br>Rune Preview:<br><br>(Low Points -32)<br>Ith Remover",
+            "n": "Shields/Jewelry: +15% Damage Taken Goes to Mana<br>Helms/Belts: +10% Damage Taken Goes to Mana<br>Armors/Boots: +10% Damage Taken Goes to Mana<br>Weapons/Gloves: +6 to Maximum Damage<br>Rune Preview:<br><br>(Low Points -32)<br>Ith Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50184,7 +50579,7 @@ export let remodded_constants_98 = {
             "exc": "Z15",
             "elc": "Z15",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: Poison Resist +20%<br>Helms/Belts: Poison Resist +10%<br>Armors/Boots: Poison Resist +10%<br>Weapons/Gloves: +38 Poison Damage over 5 Seconds<br>Rune Preview:<br><br>(Low Points -64)<br>Tal Remover",
+            "n": "Shields/Jewelry: Poison Resist +20%<br>Helms/Belts: Poison Resist +10%<br>Armors/Boots: Poison Resist +10%<br>Weapons/Gloves: +38 Poison Damage over 5 Seconds<br>Rune Preview:<br><br>(Low Points -64)<br>Tal Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50205,7 +50600,7 @@ export let remodded_constants_98 = {
             "exc": "Z16",
             "elc": "Z16",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: Fire Resist +20%<br>Helms/Belts: Fire Resist +10%<br>Armors/Boots: Fire Resist +10%<br>Weapons/Gloves: Adds 3-15 Fire Damage<br>Rune Preview:<br><br>(Low Points -128)<br>Ral Remover",
+            "n": "Shields/Jewelry: Fire Resist +20%<br>Helms/Belts: Fire Resist +10%<br>Armors/Boots: Fire Resist +10%<br>Weapons/Gloves: Adds 3-15 Fire Damage<br>Rune Preview:<br><br>(Low Points -128)<br>Ral Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50226,7 +50621,7 @@ export let remodded_constants_98 = {
             "exc": "Z17",
             "elc": "Z17",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: Lightning Resist +20%<br>Helms/Belts: Lightning Resist +10%<br>Armors/Boots: Lightning Resist +10%<br>Weapons/Gloves: Adds 1-25 Lightning Damage<br>Rune Preview:<br><br>(Low Points -256)<br>Ort Remover",
+            "n": "Shields/Jewelry: Lightning Resist +20%<br>Helms/Belts: Lightning Resist +10%<br>Armors/Boots: Lightning Resist +10%<br>Weapons/Gloves: Adds 1-25 Lightning Damage<br>Rune Preview:<br><br>(Low Points -256)<br>Ort Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50247,7 +50642,7 @@ export let remodded_constants_98 = {
             "exc": "Z18",
             "elc": "Z18",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: Cold Resist +20%<br>Helms/Belts: Cold Resist +10%<br>Armors/Boots: Cold Resist +10%<br>Weapons/Gloves: Adds 2-7 Cold Damage<br>Rune Preview:<br><br>(Low Points -512)<br>Thul Remover",
+            "n": "Shields/Jewelry: Cold Resist +20%<br>Helms/Belts: Cold Resist +10%<br>Armors/Boots: Cold Resist +10%<br>Weapons/Gloves: Adds 2-7 Cold Damage<br>Rune Preview:<br><br>(Low Points -512)<br>Thul Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50268,7 +50663,7 @@ export let remodded_constants_98 = {
             "exc": "Z19",
             "elc": "Z19",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: Thorns: +14<br>Helms/Belts: Thorns: +14<br>Armors/Boots: Thorns: +14<br>Weapons/Gloves: 5% Life Stolen Per Hit<br>Rune Preview:<br><br>(Low Points -1024)<br>Amn Remover",
+            "n": "Shields/Jewelry: Thorns: +14<br>Helms/Belts: Thorns: +14<br>Armors/Boots: Thorns: +14<br>Weapons/Gloves: 5% Life Stolen Per Hit<br>Rune Preview:<br><br>(Low Points -1024)<br>Amn Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50289,7 +50684,7 @@ export let remodded_constants_98 = {
             "exc": "Z20",
             "elc": "Z20",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: Damage Reduced by 7<br>Helms/Belts: Damage Reduced by 4<br>Armors/Boots: Damage Reduced by 4<br>Weapons/Gloves: +9 to Minimum Damage<br>Rune Preview:<br><br>(Mid Points -1)<br>Sol Remover",
+            "n": "Shields/Jewelry: Damage Reduced by 7<br>Helms/Belts: Damage Reduced by 4<br>Armors/Boots: Damage Reduced by 4<br>Weapons/Gloves: +9 to Minimum Damage<br>Rune Preview:<br><br>(Mid Points -1)<br>Sol Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50310,7 +50705,7 @@ export let remodded_constants_98 = {
             "exc": "Z21",
             "elc": "Z21",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: 20% Faster Block Rate<br>Helms/Belts: 10% Faster Hit Recovery<br>Armors/Boots: 10% Faster Hit Recovery<br>Weapons/Gloves: 10% Increased Attack Speed<br>Rune Preview:<br><br>(Mid Points -2)<br>Shael Remover",
+            "n": "Shields/Jewelry: 20% Faster Block Rate<br>Helms/Belts: 10% Faster Hit Recovery<br>Armors/Boots: 10% Faster Hit Recovery<br>Weapons/Gloves: 10% Increased Attack Speed<br>Rune Preview:<br><br>(Mid Points -2)<br>Shael Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50331,7 +50726,7 @@ export let remodded_constants_98 = {
             "exc": "Z22",
             "elc": "Z22",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: Replenish Life +7<br>Helms/Belts: Replenish Life +3<br>Armors/Boots: Replenish Life +3<br>Weapons/Gloves: Hit Causes Monster to Flee 25%<br>Rune Preview:<br><br>(Mid Points -4)<br>Dol Remover",
+            "n": "Shields/Jewelry: Replenish Life +7<br>Helms/Belts: Replenish Life +3<br>Armors/Boots: Replenish Life +3<br>Weapons/Gloves: Hit Causes Monster to Flee 25%<br>Rune Preview:<br><br>(Mid Points -4)<br>Dol Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50352,7 +50747,7 @@ export let remodded_constants_98 = {
             "exc": "Z23",
             "elc": "Z23",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: Requirements -15%<br>Helms/Belts: Requirements -15%<br>Armors/Boots: Requirements -15%<br>Weapons/Gloves: Requirements -20%<br>Rune Preview:<br><br>(Mid Points -8)<br>Hel Remover",
+            "n": "Shields/Jewelry: Requirements -15%<br>Helms/Belts: Requirements -15%<br>Armors/Boots: Requirements -15%<br>Weapons/Gloves: Requirements -20%<br>Rune Preview:<br><br>(Mid Points -8)<br>Hel Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50373,7 +50768,7 @@ export let remodded_constants_98 = {
             "exc": "Z24",
             "elc": "Z24",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: +10 to Vitality<br>Helms/Belts: +10 to Vitality<br>Armors/Boots: +10 to Vitality<br>Weapons/Gloves: +10 to Vitality<br>Rune Preview:<br><br>(Mid Points -16)<br>Io Remover",
+            "n": "Shields/Jewelry: +10 to Vitality<br>Helms/Belts: +10 to Vitality<br>Armors/Boots: +10 to Vitality<br>Weapons/Gloves: +10 to Vitality<br>Rune Preview:<br><br>(Mid Points -16)<br>Io Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50394,7 +50789,7 @@ export let remodded_constants_98 = {
             "exc": "Z25",
             "elc": "Z25",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: +10 to Energy<br>Helms/Belts: +10 to Energy<br>Armors/Boots: +10 to Energy<br>Weapons/Gloves: +10 to Energy<br>Rune Preview:<br><br>(Mid Points -32)<br>Lum Remover",
+            "n": "Shields/Jewelry: +10 to Energy<br>Helms/Belts: +10 to Energy<br>Armors/Boots: +10 to Energy<br>Weapons/Gloves: +10 to Energy<br>Rune Preview:<br><br>(Mid Points -32)<br>Lum Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50415,7 +50810,7 @@ export let remodded_constants_98 = {
             "exc": "Z26",
             "elc": "Z26",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: +10 to Dexterity<br>Helms/Belts: +10 to Dexterity<br>Armors/Boots: +10 to Dexterity<br>Weapons/Gloves: +10 to Dexterity<br>Rune Preview:<br><br>(Mid Points -64)<br>Ko Remover",
+            "n": "Shields/Jewelry: +10 to Dexterity<br>Helms/Belts: +10 to Dexterity<br>Armors/Boots: +10 to Dexterity<br>Weapons/Gloves: +10 to Dexterity<br>Rune Preview:<br><br>(Mid Points -64)<br>Ko Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50436,7 +50831,7 @@ export let remodded_constants_98 = {
             "exc": "Z27",
             "elc": "Z27",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: +10 to Strength<br>Helms/Belts: +10 to Strength<br>Armors/Boots: +10 to Strength<br>Weapons/Gloves: +10 to Strength<br>Rune Preview:<br><br>(Mid Points -128)<br>Fal Remover",
+            "n": "Shields/Jewelry: +10 to Strength<br>Helms/Belts: +10 to Strength<br>Armors/Boots: +10 to Strength<br>Weapons/Gloves: +10 to Strength<br>Rune Preview:<br><br>(Mid Points -128)<br>Fal Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50457,7 +50852,7 @@ export let remodded_constants_98 = {
             "exc": "Z28",
             "elc": "Z28",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: +50% Extra Gold from Monsters<br>Helms/Belts: +50% Extra Gold from Monsters<br>Armors/Boots: +50% Extra Gold from Monsters<br>Weapons/Gloves: +75% Extra Gold from Monsters<br>Rune Preview:<br><br>(Mid Points -256)<br>Lem Remover",
+            "n": "Shields/Jewelry: +50% Extra Gold from Monsters<br>Helms/Belts: +50% Extra Gold from Monsters<br>Armors/Boots: +50% Extra Gold from Monsters<br>Weapons/Gloves: +75% Extra Gold from Monsters<br>Rune Preview:<br><br>(Mid Points -256)<br>Lem Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50478,7 +50873,7 @@ export let remodded_constants_98 = {
             "exc": "Z29",
             "elc": "Z29",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: +30% Enhanced Defense<br>Helms/Belts: +20% Enhanced Defense<br>Armors/Boots: +20% Enhanced Defense<br>Weapons/Gloves: +50 to Attack Rating and +40% Damage to Demons<br>Rune Preview:<br><br>(Mid Points -512)<br>Pul Remover",
+            "n": "Shields/Jewelry: +30% Enhanced Defense<br>Helms/Belts: +20% Enhanced Defense<br>Armors/Boots: +20% Enhanced Defense<br>Weapons/Gloves: +50 to Attack Rating and +40% Damage to Demons<br>Rune Preview:<br><br>(Mid Points -512)<br>Pul Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50499,7 +50894,7 @@ export let remodded_constants_98 = {
             "exc": "Z30",
             "elc": "Z30",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: All Resistances +22<br>Helms/Belts: All Resistances +10<br>Armors/Boots: All Resistances +10<br>Weapons/Gloves: 10% Chance of Open Wounds<br>Rune Preview:<br><br>(Mid Points -1024)<br>Um Remover",
+            "n": "Shields/Jewelry: All Resistances +22<br>Helms/Belts: All Resistances +10<br>Armors/Boots: All Resistances +10<br>Weapons/Gloves: 10% Chance of Open Wounds<br>Rune Preview:<br><br>(Mid Points -1024)<br>Um Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50520,7 +50915,7 @@ export let remodded_constants_98 = {
             "exc": "Z31",
             "elc": "Z31",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: Magic Damage Reduced by 7<br>Helms/Belts: Magic Damage Reduced by 3<br>Armors/Boots: Magic Damage Reduced by 3<br>Weapons/Gloves: Prevent Monster Heal<br>Rune Preview:<br><br>(High Points -1)<br>Mal Remover",
+            "n": "Shields/Jewelry: Magic Damage Reduced by 7<br>Helms/Belts: Magic Damage Reduced by 3<br>Armors/Boots: Magic Damage Reduced by 3<br>Weapons/Gloves: Prevent Monster Heal<br>Rune Preview:<br><br>(High Points -1)<br>Mal Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50541,7 +50936,7 @@ export let remodded_constants_98 = {
             "exc": "Z32",
             "elc": "Z32",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: +25% Increased Magic Find<br>Helms/Belts: +10% Increased Magic Find<br>Armors/Boots: +10% Increased Magic Find<br>Weapons/Gloves: +15% Increased Magic find<br>Rune Preview:<br><br>(High Points -2)<br>Ist Remover",
+            "n": "Shields/Jewelry: +25% Increased Magic Find<br>Helms/Belts: +10% Increased Magic Find<br>Armors/Boots: +10% Increased Magic Find<br>Weapons/Gloves: +15% Increased Magic find<br>Rune Preview:<br><br>(High Points -2)<br>Ist Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50562,7 +50957,7 @@ export let remodded_constants_98 = {
             "exc": "Z33",
             "elc": "Z33",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: +5% to Maximum Poison Resist<br>Helms/Belts: +5% to Maximum Poison Resist<br>Armors/Boots: +5% to Maximum Poison Resist<br>Weapons/Gloves: 15% Bonus to Attack Rating<br>Rune Preview:<br><br>(High Points -4)<br>Gul Remover",
+            "n": "Shields/Jewelry: +5% to Maximum Poison Resist<br>Helms/Belts: +5% to Maximum Poison Resist<br>Armors/Boots: +5% to Maximum Poison Resist<br>Weapons/Gloves: 15% Bonus to Attack Rating<br>Rune Preview:<br><br>(High Points -4)<br>Gul Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50583,7 +50978,7 @@ export let remodded_constants_98 = {
             "exc": "Z34",
             "elc": "Z34",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: +5% to Maximum Fire Resist<br>Helms/Belts: +5% to Maximum Fire Resist<br>Armors/Boots: +5% to Maximum Fire Resist<br>Weapons/Gloves: 5% Mana Stolen Per Hit<br>Rune Preview:<br><br>(High Points -8)<br>Vex Remover",
+            "n": "Shields/Jewelry: +5% to Maximum Fire Resist<br>Helms/Belts: +5% to Maximum Fire Resist<br>Armors/Boots: +5% to Maximum Fire Resist<br>Weapons/Gloves: 5% Mana Stolen Per Hit<br>Rune Preview:<br><br>(High Points -8)<br>Vex Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50604,7 +50999,7 @@ export let remodded_constants_98 = {
             "exc": "Z35",
             "elc": "Z35",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: +5% to Maximum Cold Resist<br>Helms/Belts: +5% to Maximum Cold Resist<br>Armors/Boots: +5% to Maximum Cold Resist<br>Weapons/Gloves: +35% Enhanced Damage<br>Rune Preview:<br><br>(High Points -16)<br>Ohm Remover",
+            "n": "Shields/Jewelry: +5% to Maximum Cold Resist<br>Helms/Belts: +5% to Maximum Cold Resist<br>Armors/Boots: +5% to Maximum Cold Resist<br>Weapons/Gloves: +35% Enhanced Damage<br>Rune Preview:<br><br>(High Points -16)<br>Ohm Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50625,7 +51020,7 @@ export let remodded_constants_98 = {
             "exc": "Z36",
             "elc": "Z36",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: +5% to Maximum Lightning Resist<br>Helms/Belts: +5% to Maximum Lightning Resist<br>Armors/Boots: +5% to Maximum Lightning Resist<br>Weapons/Gloves: 10% Deadly Strike<br>Rune Preview:<br><br>(High Points -32)<br>Lo Remover",
+            "n": "Shields/Jewelry: +5% to Maximum Lightning Resist<br>Helms/Belts: +5% to Maximum Lightning Resist<br>Armors/Boots: +5% to Maximum Lightning Resist<br>Weapons/Gloves: 10% Deadly Strike<br>Rune Preview:<br><br>(High Points -32)<br>Lo Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50646,7 +51041,7 @@ export let remodded_constants_98 = {
             "exc": "Z37",
             "elc": "Z37",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: +50 to Mana<br>Helms/Belts: Maximum Mana +5%<br>Armors/Boots: Maximum Mana +5%<br>Weapons/Gloves: Hit Blinds Target<br>Rune Preview:<br><br>(High Points -64)<br>Sur Remover",
+            "n": "Shields/Jewelry: +50 to Mana<br>Helms/Belts: Maximum Mana +5%<br>Armors/Boots: Maximum Mana +5%<br>Weapons/Gloves: Hit Blinds Target<br>Rune Preview:<br><br>(High Points -64)<br>Sur Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50667,7 +51062,7 @@ export let remodded_constants_98 = {
             "exc": "Z38",
             "elc": "Z38",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: Damage Reduced by 8%<br>Helms/Belts: Damage Reduced by 8%<br>Armors/Boots: Damage Reduced by 8%<br>Weapons/Gloves: +10% Chance of Crushing Blow<br>Rune Preview:<br><br>(High Points -128)<br>Ber Remover",
+            "n": "Shields/Jewelry: Damage Reduced by 8%<br>Helms/Belts: Damage Reduced by 8%<br>Armors/Boots: Damage Reduced by 8%<br>Weapons/Gloves: +10% Chance of Crushing Blow<br>Rune Preview:<br><br>(High Points -128)<br>Ber Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50688,7 +51083,7 @@ export let remodded_constants_98 = {
             "exc": "Z39",
             "elc": "Z39",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: +50 to Life<br>Helms/Belts: Maximum Life +2%<br>Armors/Boots: Maximum Life +2%<br>Weapons/Gloves: Ignore Target's Defense<br>Rune Preview:<br><br>(High Points -256)<br>Jah Remover",
+            "n": "Shields/Jewelry: +50 to Life<br>Helms/Belts: Maximum Life +2%<br>Armors/Boots: Maximum Life +2%<br>Weapons/Gloves: Ignore Target's Defense<br>Rune Preview:<br><br>(High Points -256)<br>Jah Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50709,7 +51104,7 @@ export let remodded_constants_98 = {
             "exc": "Z40",
             "elc": "Z40",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: Half Freeze Duration<br>Helms/Belts: Half Freeze Duration<br>Armors/Boots: Half Freeze Duration<br>Weapons/Gloves: Freezes Target +2<br>Rune Preview:<br><br>(High Points -512)<br>Cham Remover",
+            "n": "Shields/Jewelry: Half Freeze Duration<br>Helms/Belts: Half Freeze Duration<br>Armors/Boots: Half Freeze Duration<br>Weapons/Gloves: Freezes Target +2<br>Rune Preview:<br><br>(High Points -512)<br>Cham Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50730,7 +51125,7 @@ export let remodded_constants_98 = {
             "exc": "Z41",
             "elc": "Z41",
             "iq": 1,
-            "n": "Cube alone to change to next remover type<br><br>Shields/Jewelry: Indestructible, +5% Cold, Lightning, Fire, Magic Absorb<br>Helms/Belts: Indestructible, +5% Cold, Lightning, Fire, Magic Absorb<br>Armors/Boots: Indestructible, +5% Cold, Lightning, Fire, Magic Absorb<br>Weapons/Gloves: Indestructible, +5% Elemental Absorb<br>Rune Preview:<br><br>(High Points -1024)<br>Zod Remover",
+            "n": "Shields/Jewelry: Indestructible, +5% Cold, Lightning, Fire, Magic Absorb<br>Helms/Belts: Indestructible, +5% Cold, Lightning, Fire, Magic Absorb<br>Armors/Boots: Indestructible, +5% Cold, Lightning, Fire, Magic Absorb<br>Weapons/Gloves: Indestructible, +5% Elemental Absorb<br>Rune Preview:<br><br>(High Points -1024)<br>Zod Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50751,7 +51146,7 @@ export let remodded_constants_98 = {
             "exc": "Z42",
             "elc": "Z42",
             "iq": 1,
-            "n": "(cube to change)<br>Key of Terror Remover",
+            "n": "Key of Terror Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50772,7 +51167,7 @@ export let remodded_constants_98 = {
             "exc": "Z43",
             "elc": "Z43",
             "iq": 1,
-            "n": "(cube to change)<br>Key of Hate Remover",
+            "n": "Key of Hate Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50793,7 +51188,7 @@ export let remodded_constants_98 = {
             "exc": "Z44",
             "elc": "Z44",
             "iq": 1,
-            "n": "(cube to change)<br>Key of Destruction Remover",
+            "n": "Key of Destruction Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50814,7 +51209,7 @@ export let remodded_constants_98 = {
             "exc": "Z45",
             "elc": "Z45",
             "iq": 1,
-            "n": "(cube to change)<br>Diablo's Horn Remover",
+            "n": "Diablo's Horn Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50835,7 +51230,7 @@ export let remodded_constants_98 = {
             "exc": "Z46",
             "elc": "Z46",
             "iq": 1,
-            "n": "(cube to change)<br>Baal's Eye Remover",
+            "n": "Baal's Eye Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50856,7 +51251,7 @@ export let remodded_constants_98 = {
             "exc": "Z47",
             "elc": "Z47",
             "iq": 1,
-            "n": "(cube to change)<br>Mephisto's Brain Remover",
+            "n": "Mephisto's Brain Remover",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50898,7 +51293,7 @@ export let remodded_constants_98 = {
             "exc": "Z49",
             "elc": "Z49",
             "iq": 1,
-            // "n": "(cube to change)<br>(2048 Mid -> 1 High)<br>Rune Points Converter",
+            // "n": "(2048 Mid -> 1 High)<br>Rune Points Converter",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50919,7 +51314,7 @@ export let remodded_constants_98 = {
             "exc": "Z50",
             "elc": "Z50",
             "iq": 1,
-            // "n": "(cube to change)<br>(2048 Low <- 1 Mid)<br>Rune Points Converter",
+            // "n": "(2048 Low <- 1 Mid)<br>Rune Points Converter",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -50940,7 +51335,7 @@ export let remodded_constants_98 = {
             "exc": "Z51",
             "elc": "Z51",
             "iq": 1,
-            // "n": "(cube to change)<br>(2048 Mid <- 1 High)<br>Rune Points Converter",
+            // "n": "(2048 Mid <- 1 High)<br>Rune Points Converter",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -53623,14 +54018,14 @@ export let remodded_constants_98 = {
                 "Ingredient",
                 "Miscellaneous"
             ],
-            "hdi": "custom/reroller"
+            "hdi": "custom/BelialScroll"
         },
         "a00": {
             "nc": "a00",
             "exc": "a00",
             "elc": "a00",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -53649,7 +54044,7 @@ export let remodded_constants_98 = {
             "exc": "a01",
             "elc": "a01",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -53668,7 +54063,7 @@ export let remodded_constants_98 = {
             "exc": "a02",
             "elc": "a02",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -53687,7 +54082,7 @@ export let remodded_constants_98 = {
             "exc": "a03",
             "elc": "a03",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -53706,7 +54101,7 @@ export let remodded_constants_98 = {
             "exc": "a04",
             "elc": "a04",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -53725,7 +54120,7 @@ export let remodded_constants_98 = {
             "exc": "a05",
             "elc": "a05",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -53763,7 +54158,7 @@ export let remodded_constants_98 = {
             "exc": "a07",
             "elc": "a07",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -53782,7 +54177,7 @@ export let remodded_constants_98 = {
             "exc": "a08",
             "elc": "a08",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -53801,7 +54196,7 @@ export let remodded_constants_98 = {
             "exc": "a09",
             "elc": "a09",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55032,7 +55427,7 @@ export let remodded_constants_98 = {
             "exc": "a67",
             "elc": "a67",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55051,7 +55446,7 @@ export let remodded_constants_98 = {
             "exc": "a68",
             "elc": "a68",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55070,7 +55465,7 @@ export let remodded_constants_98 = {
             "exc": "a69",
             "elc": "a69",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55089,7 +55484,7 @@ export let remodded_constants_98 = {
             "exc": "a70",
             "elc": "a70",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55108,7 +55503,7 @@ export let remodded_constants_98 = {
             "exc": "a71",
             "elc": "a71",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55127,7 +55522,7 @@ export let remodded_constants_98 = {
             "exc": "a72",
             "elc": "a72",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55146,7 +55541,7 @@ export let remodded_constants_98 = {
             "exc": "a73",
             "elc": "a73",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55165,7 +55560,7 @@ export let remodded_constants_98 = {
             "exc": "a74",
             "elc": "a74",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55184,7 +55579,7 @@ export let remodded_constants_98 = {
             "exc": "a75",
             "elc": "a75",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55203,7 +55598,7 @@ export let remodded_constants_98 = {
             "exc": "a76",
             "elc": "a76",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55222,7 +55617,7 @@ export let remodded_constants_98 = {
             "exc": "a77",
             "elc": "a77",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55241,7 +55636,7 @@ export let remodded_constants_98 = {
             "exc": "a78",
             "elc": "a78",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55260,7 +55655,7 @@ export let remodded_constants_98 = {
             "exc": "a79",
             "elc": "a79",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55279,7 +55674,7 @@ export let remodded_constants_98 = {
             "exc": "a80",
             "elc": "a80",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55298,7 +55693,7 @@ export let remodded_constants_98 = {
             "exc": "a81",
             "elc": "a81",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55317,7 +55712,7 @@ export let remodded_constants_98 = {
             "exc": "a82",
             "elc": "a82",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55336,7 +55731,7 @@ export let remodded_constants_98 = {
             "exc": "a83",
             "elc": "a83",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55355,7 +55750,7 @@ export let remodded_constants_98 = {
             "exc": "a84",
             "elc": "a84",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55374,7 +55769,7 @@ export let remodded_constants_98 = {
             "exc": "a85",
             "elc": "a85",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55393,7 +55788,7 @@ export let remodded_constants_98 = {
             "exc": "a86",
             "elc": "a86",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55412,7 +55807,7 @@ export let remodded_constants_98 = {
             "exc": "a87",
             "elc": "a87",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55431,7 +55826,7 @@ export let remodded_constants_98 = {
             "exc": "a88",
             "elc": "a88",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55450,7 +55845,7 @@ export let remodded_constants_98 = {
             "exc": "a89",
             "elc": "a89",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55469,7 +55864,7 @@ export let remodded_constants_98 = {
             "exc": "a90",
             "elc": "a90",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55488,7 +55883,7 @@ export let remodded_constants_98 = {
             "exc": "a91",
             "elc": "a91",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55507,7 +55902,7 @@ export let remodded_constants_98 = {
             "exc": "a92",
             "elc": "a92",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55526,7 +55921,7 @@ export let remodded_constants_98 = {
             "exc": "a93",
             "elc": "a93",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55545,7 +55940,7 @@ export let remodded_constants_98 = {
             "exc": "a94",
             "elc": "a94",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55564,7 +55959,7 @@ export let remodded_constants_98 = {
             "exc": "a95",
             "elc": "a95",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55583,7 +55978,7 @@ export let remodded_constants_98 = {
             "exc": "a96",
             "elc": "a96",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55602,7 +55997,7 @@ export let remodded_constants_98 = {
             "exc": "a97",
             "elc": "a97",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55621,7 +56016,7 @@ export let remodded_constants_98 = {
             "exc": "a98",
             "elc": "a98",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55640,7 +56035,7 @@ export let remodded_constants_98 = {
             "exc": "a99",
             "elc": "a99",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55659,7 +56054,7 @@ export let remodded_constants_98 = {
             "exc": "A00",
             "elc": "A00",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "Unique Weapon Blood Contract",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55678,7 +56073,7 @@ export let remodded_constants_98 = {
             "exc": "A01",
             "elc": "A01",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "Unique Armor Blood Contract",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55697,7 +56092,7 @@ export let remodded_constants_98 = {
             "exc": "A02",
             "elc": "A02",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "Unique Jewelry Blood Contract",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55716,7 +56111,7 @@ export let remodded_constants_98 = {
             "exc": "A03",
             "elc": "A03",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "Set Weapon Blood Contract",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55735,7 +56130,7 @@ export let remodded_constants_98 = {
             "exc": "A04",
             "elc": "A04",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "Set Armor Blood Contract",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55754,7 +56149,7 @@ export let remodded_constants_98 = {
             "exc": "A05",
             "elc": "A05",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "Set Jewelry Blood Contract",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55773,7 +56168,7 @@ export let remodded_constants_98 = {
             "exc": "A06",
             "elc": "A06",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55792,7 +56187,7 @@ export let remodded_constants_98 = {
             "exc": "A07",
             "elc": "A07",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55811,7 +56206,7 @@ export let remodded_constants_98 = {
             "exc": "A08",
             "elc": "A08",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55830,7 +56225,7 @@ export let remodded_constants_98 = {
             "exc": "A09",
             "elc": "A09",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55849,7 +56244,7 @@ export let remodded_constants_98 = {
             "exc": "A10",
             "elc": "A10",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55868,7 +56263,7 @@ export let remodded_constants_98 = {
             "exc": "A11",
             "elc": "A11",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55887,7 +56282,7 @@ export let remodded_constants_98 = {
             "exc": "A12",
             "elc": "A12",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55906,7 +56301,7 @@ export let remodded_constants_98 = {
             "exc": "A13",
             "elc": "A13",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55925,7 +56320,7 @@ export let remodded_constants_98 = {
             "exc": "A14",
             "elc": "A14",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55944,7 +56339,7 @@ export let remodded_constants_98 = {
             "exc": "A15",
             "elc": "A15",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55963,7 +56358,7 @@ export let remodded_constants_98 = {
             "exc": "A16",
             "elc": "A16",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -55982,7 +56377,7 @@ export let remodded_constants_98 = {
             "exc": "A17",
             "elc": "A17",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56001,7 +56396,7 @@ export let remodded_constants_98 = {
             "exc": "A18",
             "elc": "A18",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56020,7 +56415,7 @@ export let remodded_constants_98 = {
             "exc": "A19",
             "elc": "A19",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56039,7 +56434,7 @@ export let remodded_constants_98 = {
             "exc": "A20",
             "elc": "A20",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56058,7 +56453,7 @@ export let remodded_constants_98 = {
             "exc": "A21",
             "elc": "A21",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56077,7 +56472,7 @@ export let remodded_constants_98 = {
             "exc": "A22",
             "elc": "A22",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56096,7 +56491,7 @@ export let remodded_constants_98 = {
             "exc": "A23",
             "elc": "A23",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56115,7 +56510,7 @@ export let remodded_constants_98 = {
             "exc": "A24",
             "elc": "A24",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56134,7 +56529,7 @@ export let remodded_constants_98 = {
             "exc": "A25",
             "elc": "A25",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56153,7 +56548,7 @@ export let remodded_constants_98 = {
             "exc": "A26",
             "elc": "A26",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56172,7 +56567,7 @@ export let remodded_constants_98 = {
             "exc": "A27",
             "elc": "A27",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56191,7 +56586,7 @@ export let remodded_constants_98 = {
             "exc": "A28",
             "elc": "A28",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56210,7 +56605,7 @@ export let remodded_constants_98 = {
             "exc": "A29",
             "elc": "A29",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56229,7 +56624,7 @@ export let remodded_constants_98 = {
             "exc": "A30",
             "elc": "A30",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56248,7 +56643,7 @@ export let remodded_constants_98 = {
             "exc": "A31",
             "elc": "A31",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56267,7 +56662,7 @@ export let remodded_constants_98 = {
             "exc": "A32",
             "elc": "A32",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56286,7 +56681,7 @@ export let remodded_constants_98 = {
             "exc": "A33",
             "elc": "A33",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56305,7 +56700,7 @@ export let remodded_constants_98 = {
             "exc": "A34",
             "elc": "A34",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56324,7 +56719,7 @@ export let remodded_constants_98 = {
             "exc": "A35",
             "elc": "A35",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56343,7 +56738,7 @@ export let remodded_constants_98 = {
             "exc": "A36",
             "elc": "A36",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56362,7 +56757,7 @@ export let remodded_constants_98 = {
             "exc": "A37",
             "elc": "A37",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56381,7 +56776,7 @@ export let remodded_constants_98 = {
             "exc": "A38",
             "elc": "A38",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56400,7 +56795,7 @@ export let remodded_constants_98 = {
             "exc": "A39",
             "elc": "A39",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56419,7 +56814,7 @@ export let remodded_constants_98 = {
             "exc": "A40",
             "elc": "A40",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56438,7 +56833,7 @@ export let remodded_constants_98 = {
             "exc": "A41",
             "elc": "A41",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56457,7 +56852,7 @@ export let remodded_constants_98 = {
             "exc": "A42",
             "elc": "A42",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56476,7 +56871,7 @@ export let remodded_constants_98 = {
             "exc": "A43",
             "elc": "A43",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56495,7 +56890,7 @@ export let remodded_constants_98 = {
             "exc": "A44",
             "elc": "A44",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56514,7 +56909,7 @@ export let remodded_constants_98 = {
             "exc": "A45",
             "elc": "A45",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56533,7 +56928,7 @@ export let remodded_constants_98 = {
             "exc": "A46",
             "elc": "A46",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56552,7 +56947,7 @@ export let remodded_constants_98 = {
             "exc": "A47",
             "elc": "A47",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56571,7 +56966,7 @@ export let remodded_constants_98 = {
             "exc": "A48",
             "elc": "A48",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56590,7 +56985,7 @@ export let remodded_constants_98 = {
             "exc": "A49",
             "elc": "A49",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56609,7 +57004,7 @@ export let remodded_constants_98 = {
             "exc": "A50",
             "elc": "A50",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56628,7 +57023,7 @@ export let remodded_constants_98 = {
             "exc": "A51",
             "elc": "A51",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56647,7 +57042,7 @@ export let remodded_constants_98 = {
             "exc": "A52",
             "elc": "A52",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56666,7 +57061,7 @@ export let remodded_constants_98 = {
             "exc": "A53",
             "elc": "A53",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56685,7 +57080,7 @@ export let remodded_constants_98 = {
             "exc": "A54",
             "elc": "A54",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56704,7 +57099,7 @@ export let remodded_constants_98 = {
             "exc": "A55",
             "elc": "A55",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56723,7 +57118,7 @@ export let remodded_constants_98 = {
             "exc": "A56",
             "elc": "A56",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56742,7 +57137,7 @@ export let remodded_constants_98 = {
             "exc": "A57",
             "elc": "A57",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56761,7 +57156,7 @@ export let remodded_constants_98 = {
             "exc": "A58",
             "elc": "A58",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56780,7 +57175,7 @@ export let remodded_constants_98 = {
             "exc": "A59",
             "elc": "A59",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56799,7 +57194,7 @@ export let remodded_constants_98 = {
             "exc": "A60",
             "elc": "A60",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56818,7 +57213,7 @@ export let remodded_constants_98 = {
             "exc": "A61",
             "elc": "A61",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56837,7 +57232,7 @@ export let remodded_constants_98 = {
             "exc": "A62",
             "elc": "A62",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56856,7 +57251,7 @@ export let remodded_constants_98 = {
             "exc": "A63",
             "elc": "A63",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56875,7 +57270,7 @@ export let remodded_constants_98 = {
             "exc": "A64",
             "elc": "A64",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56894,7 +57289,7 @@ export let remodded_constants_98 = {
             "exc": "A65",
             "elc": "A65",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56913,7 +57308,7 @@ export let remodded_constants_98 = {
             "exc": "A66",
             "elc": "A66",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56932,7 +57327,7 @@ export let remodded_constants_98 = {
             "exc": "A67",
             "elc": "A67",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56951,7 +57346,7 @@ export let remodded_constants_98 = {
             "exc": "A68",
             "elc": "A68",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56970,7 +57365,7 @@ export let remodded_constants_98 = {
             "exc": "A69",
             "elc": "A69",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -56989,7 +57384,7 @@ export let remodded_constants_98 = {
             "exc": "A70",
             "elc": "A70",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57008,7 +57403,7 @@ export let remodded_constants_98 = {
             "exc": "A71",
             "elc": "A71",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57027,7 +57422,7 @@ export let remodded_constants_98 = {
             "exc": "A72",
             "elc": "A72",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57046,7 +57441,7 @@ export let remodded_constants_98 = {
             "exc": "A73",
             "elc": "A73",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57065,7 +57460,7 @@ export let remodded_constants_98 = {
             "exc": "A74",
             "elc": "A74",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57084,7 +57479,7 @@ export let remodded_constants_98 = {
             "exc": "A75",
             "elc": "A75",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57103,7 +57498,7 @@ export let remodded_constants_98 = {
             "exc": "A76",
             "elc": "A76",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57122,7 +57517,7 @@ export let remodded_constants_98 = {
             "exc": "A77",
             "elc": "A77",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57141,7 +57536,7 @@ export let remodded_constants_98 = {
             "exc": "A78",
             "elc": "A78",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57160,7 +57555,7 @@ export let remodded_constants_98 = {
             "exc": "A79",
             "elc": "A79",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57179,7 +57574,7 @@ export let remodded_constants_98 = {
             "exc": "A80",
             "elc": "A80",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57198,7 +57593,7 @@ export let remodded_constants_98 = {
             "exc": "A81",
             "elc": "A81",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57217,7 +57612,7 @@ export let remodded_constants_98 = {
             "exc": "A82",
             "elc": "A82",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57236,7 +57631,7 @@ export let remodded_constants_98 = {
             "exc": "A83",
             "elc": "A83",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57255,7 +57650,7 @@ export let remodded_constants_98 = {
             "exc": "A84",
             "elc": "A84",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57274,7 +57669,7 @@ export let remodded_constants_98 = {
             "exc": "A85",
             "elc": "A85",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57293,7 +57688,7 @@ export let remodded_constants_98 = {
             "exc": "A86",
             "elc": "A86",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57312,7 +57707,7 @@ export let remodded_constants_98 = {
             "exc": "A87",
             "elc": "A87",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57331,7 +57726,7 @@ export let remodded_constants_98 = {
             "exc": "A88",
             "elc": "A88",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57350,7 +57745,7 @@ export let remodded_constants_98 = {
             "exc": "A89",
             "elc": "A89",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57369,7 +57764,7 @@ export let remodded_constants_98 = {
             "exc": "A90",
             "elc": "A90",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57388,7 +57783,7 @@ export let remodded_constants_98 = {
             "exc": "A91",
             "elc": "A91",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57407,7 +57802,7 @@ export let remodded_constants_98 = {
             "exc": "A92",
             "elc": "A92",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57426,7 +57821,7 @@ export let remodded_constants_98 = {
             "exc": "A93",
             "elc": "A93",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57445,7 +57840,7 @@ export let remodded_constants_98 = {
             "exc": "A94",
             "elc": "A94",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57464,7 +57859,7 @@ export let remodded_constants_98 = {
             "exc": "A95",
             "elc": "A95",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57483,7 +57878,7 @@ export let remodded_constants_98 = {
             "exc": "A96",
             "elc": "A96",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57502,7 +57897,7 @@ export let remodded_constants_98 = {
             "exc": "A97",
             "elc": "A97",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57521,7 +57916,7 @@ export let remodded_constants_98 = {
             "exc": "A98",
             "elc": "A98",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57540,7 +57935,7 @@ export let remodded_constants_98 = {
             "exc": "A99",
             "elc": "A99",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57559,7 +57954,7 @@ export let remodded_constants_98 = {
             "exc": "b00",
             "elc": "b00",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57578,7 +57973,7 @@ export let remodded_constants_98 = {
             "exc": "b01",
             "elc": "b01",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57597,7 +57992,7 @@ export let remodded_constants_98 = {
             "exc": "b02",
             "elc": "b02",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57616,7 +58011,7 @@ export let remodded_constants_98 = {
             "exc": "b03",
             "elc": "b03",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57635,7 +58030,7 @@ export let remodded_constants_98 = {
             "exc": "b04",
             "elc": "b04",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57654,7 +58049,7 @@ export let remodded_constants_98 = {
             "exc": "b05",
             "elc": "b05",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57673,7 +58068,7 @@ export let remodded_constants_98 = {
             "exc": "b06",
             "elc": "b06",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57692,7 +58087,7 @@ export let remodded_constants_98 = {
             "exc": "b07",
             "elc": "b07",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57711,7 +58106,7 @@ export let remodded_constants_98 = {
             "exc": "b08",
             "elc": "b08",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57730,7 +58125,7 @@ export let remodded_constants_98 = {
             "exc": "b09",
             "elc": "b09",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57749,7 +58144,7 @@ export let remodded_constants_98 = {
             "exc": "b10",
             "elc": "b10",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57768,7 +58163,7 @@ export let remodded_constants_98 = {
             "exc": "b11",
             "elc": "b11",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57787,7 +58182,7 @@ export let remodded_constants_98 = {
             "exc": "b12",
             "elc": "b12",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57806,7 +58201,7 @@ export let remodded_constants_98 = {
             "exc": "b13",
             "elc": "b13",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57825,7 +58220,7 @@ export let remodded_constants_98 = {
             "exc": "b14",
             "elc": "b14",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57844,7 +58239,7 @@ export let remodded_constants_98 = {
             "exc": "b15",
             "elc": "b15",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57863,7 +58258,7 @@ export let remodded_constants_98 = {
             "exc": "b16",
             "elc": "b16",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57882,7 +58277,7 @@ export let remodded_constants_98 = {
             "exc": "b17",
             "elc": "b17",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57901,7 +58296,7 @@ export let remodded_constants_98 = {
             "exc": "b18",
             "elc": "b18",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57920,7 +58315,7 @@ export let remodded_constants_98 = {
             "exc": "b19",
             "elc": "b19",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57939,7 +58334,7 @@ export let remodded_constants_98 = {
             "exc": "b20",
             "elc": "b20",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57958,7 +58353,7 @@ export let remodded_constants_98 = {
             "exc": "b21",
             "elc": "b21",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57977,7 +58372,7 @@ export let remodded_constants_98 = {
             "exc": "b22",
             "elc": "b22",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -57996,7 +58391,7 @@ export let remodded_constants_98 = {
             "exc": "b23",
             "elc": "b23",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58015,7 +58410,7 @@ export let remodded_constants_98 = {
             "exc": "b24",
             "elc": "b24",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58034,7 +58429,7 @@ export let remodded_constants_98 = {
             "exc": "b25",
             "elc": "b25",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58053,7 +58448,7 @@ export let remodded_constants_98 = {
             "exc": "b26",
             "elc": "b26",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58072,7 +58467,7 @@ export let remodded_constants_98 = {
             "exc": "b27",
             "elc": "b27",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58091,7 +58486,7 @@ export let remodded_constants_98 = {
             "exc": "b28",
             "elc": "b28",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58110,7 +58505,7 @@ export let remodded_constants_98 = {
             "exc": "b29",
             "elc": "b29",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58129,7 +58524,7 @@ export let remodded_constants_98 = {
             "exc": "b30",
             "elc": "b30",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58148,7 +58543,7 @@ export let remodded_constants_98 = {
             "exc": "b31",
             "elc": "b31",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58167,7 +58562,7 @@ export let remodded_constants_98 = {
             "exc": "b32",
             "elc": "b32",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58186,7 +58581,7 @@ export let remodded_constants_98 = {
             "exc": "b33",
             "elc": "b33",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58205,7 +58600,7 @@ export let remodded_constants_98 = {
             "exc": "b34",
             "elc": "b34",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58224,7 +58619,7 @@ export let remodded_constants_98 = {
             "exc": "b35",
             "elc": "b35",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58243,7 +58638,7 @@ export let remodded_constants_98 = {
             "exc": "b36",
             "elc": "b36",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58262,7 +58657,7 @@ export let remodded_constants_98 = {
             "exc": "b37",
             "elc": "b37",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58281,7 +58676,7 @@ export let remodded_constants_98 = {
             "exc": "b38",
             "elc": "b38",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58300,7 +58695,7 @@ export let remodded_constants_98 = {
             "exc": "b39",
             "elc": "b39",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58319,7 +58714,7 @@ export let remodded_constants_98 = {
             "exc": "b40",
             "elc": "b40",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58338,7 +58733,7 @@ export let remodded_constants_98 = {
             "exc": "b41",
             "elc": "b41",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58357,7 +58752,7 @@ export let remodded_constants_98 = {
             "exc": "b42",
             "elc": "b42",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58376,7 +58771,7 @@ export let remodded_constants_98 = {
             "exc": "b43",
             "elc": "b43",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58395,7 +58790,7 @@ export let remodded_constants_98 = {
             "exc": "b44",
             "elc": "b44",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58414,7 +58809,7 @@ export let remodded_constants_98 = {
             "exc": "b45",
             "elc": "b45",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58433,7 +58828,7 @@ export let remodded_constants_98 = {
             "exc": "b46",
             "elc": "b46",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58452,7 +58847,7 @@ export let remodded_constants_98 = {
             "exc": "b47",
             "elc": "b47",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58471,7 +58866,7 @@ export let remodded_constants_98 = {
             "exc": "b48",
             "elc": "b48",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58490,7 +58885,7 @@ export let remodded_constants_98 = {
             "exc": "b49",
             "elc": "b49",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58509,7 +58904,7 @@ export let remodded_constants_98 = {
             "exc": "b50",
             "elc": "b50",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58528,7 +58923,7 @@ export let remodded_constants_98 = {
             "exc": "b51",
             "elc": "b51",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58547,7 +58942,7 @@ export let remodded_constants_98 = {
             "exc": "b52",
             "elc": "b52",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58566,7 +58961,7 @@ export let remodded_constants_98 = {
             "exc": "b53",
             "elc": "b53",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58585,7 +58980,7 @@ export let remodded_constants_98 = {
             "exc": "b54",
             "elc": "b54",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58604,7 +58999,7 @@ export let remodded_constants_98 = {
             "exc": "b55",
             "elc": "b55",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58623,7 +59018,7 @@ export let remodded_constants_98 = {
             "exc": "b56",
             "elc": "b56",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58642,7 +59037,7 @@ export let remodded_constants_98 = {
             "exc": "b57",
             "elc": "b57",
             "iq": 1,
-            "n": "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+            "n": "(Reserved)", // Reserved Blood Pact Slot
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58792,6 +59187,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Socket Remover",
             "s": 1,
+            "smax": 100,
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58812,6 +59209,8 @@ export let remodded_constants_98 = {
             "iq": 1,
             "n": "Premium Socket Remover",
             "s": 1,
+            "smax": 100,
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58830,8 +59229,10 @@ export let remodded_constants_98 = {
             "exc": "K01",
             "elc": "K01",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 11 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 6 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58852,8 +59253,10 @@ export let remodded_constants_98 = {
             "exc": "K02",
             "elc": "K02",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 12 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 7 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58874,8 +59277,10 @@ export let remodded_constants_98 = {
             "exc": "K03",
             "elc": "K03",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 13 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 8 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58896,8 +59301,10 @@ export let remodded_constants_98 = {
             "exc": "K04",
             "elc": "K04",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 14 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 9 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58918,8 +59325,10 @@ export let remodded_constants_98 = {
             "exc": "K05",
             "elc": "K05",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 15 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 10 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58940,8 +59349,10 @@ export let remodded_constants_98 = {
             "exc": "K06",
             "elc": "K06",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 16 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 11 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58962,8 +59373,10 @@ export let remodded_constants_98 = {
             "exc": "K07",
             "elc": "K07",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 17 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 12 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -58984,8 +59397,10 @@ export let remodded_constants_98 = {
             "exc": "K08",
             "elc": "K08",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 18 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 13 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59006,8 +59421,10 @@ export let remodded_constants_98 = {
             "exc": "K09",
             "elc": "K09",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 19 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 14 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59028,8 +59445,10 @@ export let remodded_constants_98 = {
             "exc": "K10",
             "elc": "K10",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 20 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 15 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59050,8 +59469,10 @@ export let remodded_constants_98 = {
             "exc": "K11",
             "elc": "K11",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 21 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 16 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59072,8 +59493,10 @@ export let remodded_constants_98 = {
             "exc": "K12",
             "elc": "K12",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 22 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 17 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59094,8 +59517,10 @@ export let remodded_constants_98 = {
             "exc": "K13",
             "elc": "K13",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 23 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 18 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59116,8 +59541,10 @@ export let remodded_constants_98 = {
             "exc": "K14",
             "elc": "K14",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 24 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 19 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59138,8 +59565,10 @@ export let remodded_constants_98 = {
             "exc": "K15",
             "elc": "K15",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 25 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 20 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59160,8 +59589,10 @@ export let remodded_constants_98 = {
             "exc": "K16",
             "elc": "K16",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 26 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 21 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59182,8 +59613,10 @@ export let remodded_constants_98 = {
             "exc": "K17",
             "elc": "K17",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 27 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 22 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59204,8 +59637,10 @@ export let remodded_constants_98 = {
             "exc": "K18",
             "elc": "K18",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 28 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 23 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59226,8 +59661,10 @@ export let remodded_constants_98 = {
             "exc": "K19",
             "elc": "K19",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 29 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 24 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59248,8 +59685,10 @@ export let remodded_constants_98 = {
             "exc": "K20",
             "elc": "K20",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 30 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 25 of Torment Trial",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59270,8 +59709,10 @@ export let remodded_constants_98 = {
             "exc": "K21",
             "elc": "K21",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 31 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 6 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59292,8 +59733,10 @@ export let remodded_constants_98 = {
             "exc": "K22",
             "elc": "K22",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 32 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 7 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59314,8 +59757,10 @@ export let remodded_constants_98 = {
             "exc": "K23",
             "elc": "K23",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 33 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 8 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59336,8 +59781,10 @@ export let remodded_constants_98 = {
             "exc": "K24",
             "elc": "K24",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 34 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 9 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59358,8 +59805,10 @@ export let remodded_constants_98 = {
             "exc": "K25",
             "elc": "K25",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 35 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 10 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59380,8 +59829,10 @@ export let remodded_constants_98 = {
             "exc": "K26",
             "elc": "K26",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 36 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 11 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59402,8 +59853,10 @@ export let remodded_constants_98 = {
             "exc": "K27",
             "elc": "K27",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 37 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 12 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59424,8 +59877,10 @@ export let remodded_constants_98 = {
             "exc": "K28",
             "elc": "K28",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 38 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 13 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59446,8 +59901,10 @@ export let remodded_constants_98 = {
             "exc": "K29",
             "elc": "K29",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 39 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 14 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59468,8 +59925,10 @@ export let remodded_constants_98 = {
             "exc": "K30",
             "elc": "K30",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 40 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 15 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59490,8 +59949,10 @@ export let remodded_constants_98 = {
             "exc": "K31",
             "elc": "K31",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 41 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 16 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59512,8 +59973,10 @@ export let remodded_constants_98 = {
             "exc": "K32",
             "elc": "K32",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 42 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 17 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59534,8 +59997,10 @@ export let remodded_constants_98 = {
             "exc": "K33",
             "elc": "K33",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 43 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 18 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59556,8 +60021,10 @@ export let remodded_constants_98 = {
             "exc": "K34",
             "elc": "K34",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 44 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 19 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59578,8 +60045,10 @@ export let remodded_constants_98 = {
             "exc": "K35",
             "elc": "K35",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 45 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 20 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59600,8 +60069,10 @@ export let remodded_constants_98 = {
             "exc": "K36",
             "elc": "K36",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 46 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 21 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59622,8 +60093,10 @@ export let remodded_constants_98 = {
             "exc": "K37",
             "elc": "K37",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 47 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 22 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59644,8 +60117,10 @@ export let remodded_constants_98 = {
             "exc": "K38",
             "elc": "K38",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 48 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 23 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59666,8 +60141,10 @@ export let remodded_constants_98 = {
             "exc": "K39",
             "elc": "K39",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 49 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 24 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59688,8 +60165,10 @@ export let remodded_constants_98 = {
             "exc": "K40",
             "elc": "K40",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 50 of Icy Hell",
+            "n": "Scroll of Torment<br>Level 25 of Icy Hell",
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59710,8 +60189,10 @@ export let remodded_constants_98 = {
             "exc": "K41",
             "elc": "K41",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 11 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59732,8 +60213,10 @@ export let remodded_constants_98 = {
             "exc": "K42",
             "elc": "K42",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 12 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59754,8 +60237,10 @@ export let remodded_constants_98 = {
             "exc": "K43",
             "elc": "K43",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 13 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59776,8 +60261,10 @@ export let remodded_constants_98 = {
             "exc": "K44",
             "elc": "K44",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 14 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59798,8 +60285,10 @@ export let remodded_constants_98 = {
             "exc": "K45",
             "elc": "K45",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 15 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59820,8 +60309,10 @@ export let remodded_constants_98 = {
             "exc": "K46",
             "elc": "K46",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 16 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59842,8 +60333,10 @@ export let remodded_constants_98 = {
             "exc": "K47",
             "elc": "K47",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 17 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59864,8 +60357,10 @@ export let remodded_constants_98 = {
             "exc": "K48",
             "elc": "K48",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 18 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59886,8 +60381,10 @@ export let remodded_constants_98 = {
             "exc": "K49",
             "elc": "K49",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 19 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59908,8 +60405,10 @@ export let remodded_constants_98 = {
             "exc": "K50",
             "elc": "K50",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 20 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59930,8 +60429,10 @@ export let remodded_constants_98 = {
             "exc": "K51",
             "elc": "K51",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 21 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59952,8 +60453,10 @@ export let remodded_constants_98 = {
             "exc": "K52",
             "elc": "K52",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 22 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59974,8 +60477,10 @@ export let remodded_constants_98 = {
             "exc": "K53",
             "elc": "K53",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 23 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -59996,8 +60501,10 @@ export let remodded_constants_98 = {
             "exc": "K54",
             "elc": "K54",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 24 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60018,8 +60525,10 @@ export let remodded_constants_98 = {
             "exc": "K55",
             "elc": "K55",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 25 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60040,8 +60549,10 @@ export let remodded_constants_98 = {
             "exc": "K56",
             "elc": "K56",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 26 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60062,8 +60573,10 @@ export let remodded_constants_98 = {
             "exc": "K57",
             "elc": "K57",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 27 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60084,8 +60597,10 @@ export let remodded_constants_98 = {
             "exc": "K58",
             "elc": "K58",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 28 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60106,8 +60621,10 @@ export let remodded_constants_98 = {
             "exc": "K59",
             "elc": "K59",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 29 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60128,8 +60645,10 @@ export let remodded_constants_98 = {
             "exc": "K60",
             "elc": "K60",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 30 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60150,8 +60669,10 @@ export let remodded_constants_98 = {
             "exc": "K61",
             "elc": "K61",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 31 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60172,8 +60693,10 @@ export let remodded_constants_98 = {
             "exc": "K62",
             "elc": "K62",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 32 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60194,8 +60717,10 @@ export let remodded_constants_98 = {
             "exc": "K63",
             "elc": "K63",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 33 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60216,8 +60741,10 @@ export let remodded_constants_98 = {
             "exc": "K64",
             "elc": "K64",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 34 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60238,8 +60765,10 @@ export let remodded_constants_98 = {
             "exc": "K65",
             "elc": "K65",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 35 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60260,8 +60789,10 @@ export let remodded_constants_98 = {
             "exc": "K66",
             "elc": "K66",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 36 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60282,8 +60813,10 @@ export let remodded_constants_98 = {
             "exc": "K67",
             "elc": "K67",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 37 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60304,8 +60837,10 @@ export let remodded_constants_98 = {
             "exc": "K68",
             "elc": "K68",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 38 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60326,8 +60861,10 @@ export let remodded_constants_98 = {
             "exc": "K69",
             "elc": "K69",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 39 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60348,8 +60885,10 @@ export let remodded_constants_98 = {
             "exc": "K70",
             "elc": "K70",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 40 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60370,8 +60909,10 @@ export let remodded_constants_98 = {
             "exc": "K71",
             "elc": "K71",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 41 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60392,8 +60933,10 @@ export let remodded_constants_98 = {
             "exc": "K72",
             "elc": "K72",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 42 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60414,8 +60957,10 @@ export let remodded_constants_98 = {
             "exc": "K73",
             "elc": "K73",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 43 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60436,8 +60981,10 @@ export let remodded_constants_98 = {
             "exc": "K74",
             "elc": "K74",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 44 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60458,8 +61005,10 @@ export let remodded_constants_98 = {
             "exc": "K75",
             "elc": "K75",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 45 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60480,8 +61029,10 @@ export let remodded_constants_98 = {
             "exc": "K76",
             "elc": "K76",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 46 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60502,8 +61053,10 @@ export let remodded_constants_98 = {
             "exc": "K77",
             "elc": "K77",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 47 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60524,8 +61077,10 @@ export let remodded_constants_98 = {
             "exc": "K78",
             "elc": "K78",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 48 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60546,8 +61101,10 @@ export let remodded_constants_98 = {
             "exc": "K79",
             "elc": "K79",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 49 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60568,8 +61125,10 @@ export let remodded_constants_98 = {
             "exc": "K80",
             "elc": "K80",
             "iq": 1,
-            "n": "Scroll of Torment<br>Level 50 of Torment Trial",
+            "n": "(Reserved)", // Reserved Scroll of Torment Slot
             "s": 1,
+            "smax": 10, // TODO raise to 100 again once the cubing bug is fixed
+            "sspawn": 1,
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -60667,18 +61226,18 @@ export let remodded_constants_98 = {
                     {
                         "code": "r35",
                         "type": "weapon",
-                        "m": "weight-capacity",
-                        "min": 3,
-                        "max": 3
+                        "m": "item-cooldownreduction",
+                        "min": 10,
+                        "max": 10
                     }
                 ],
                 [
                     {
                         "code": "r35",
                         "type": "helm",
-                        "m": "weight-capacity",
-                        "min": 3,
-                        "max": 3
+                        "m": "buff-length-modifier",
+                        "min": 10,
+                        "max": 10
                     }
                 ],
                 [
@@ -60686,8 +61245,8 @@ export let remodded_constants_98 = {
                         "code": "r35",
                         "type": "shield",
                         "m": "weight-capacity",
-                        "min": 3,
-                        "max": 3
+                        "min": 10,
+                        "max": 10
                     }
                 ]
             ],
@@ -61892,7 +62451,7 @@ export let remodded_constants_98 = {
             "exc": "L60",
             "elc": "L60",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "Black Tempest's Forsaken Pact",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -61911,7 +62470,7 @@ export let remodded_constants_98 = {
             "exc": "L61",
             "elc": "L61",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -61930,7 +62489,7 @@ export let remodded_constants_98 = {
             "exc": "L62",
             "elc": "L62",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -61949,7 +62508,7 @@ export let remodded_constants_98 = {
             "exc": "L63",
             "elc": "L63",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -61968,7 +62527,7 @@ export let remodded_constants_98 = {
             "exc": "L64",
             "elc": "L64",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -61987,7 +62546,7 @@ export let remodded_constants_98 = {
             "exc": "L65",
             "elc": "L65",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62006,7 +62565,7 @@ export let remodded_constants_98 = {
             "exc": "L66",
             "elc": "L66",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62025,7 +62584,7 @@ export let remodded_constants_98 = {
             "exc": "L67",
             "elc": "L67",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62044,7 +62603,7 @@ export let remodded_constants_98 = {
             "exc": "L68",
             "elc": "L68",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62063,7 +62622,7 @@ export let remodded_constants_98 = {
             "exc": "L69",
             "elc": "L69",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62082,7 +62641,7 @@ export let remodded_constants_98 = {
             "exc": "L70",
             "elc": "L70",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62101,7 +62660,7 @@ export let remodded_constants_98 = {
             "exc": "L71",
             "elc": "L71",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62120,7 +62679,7 @@ export let remodded_constants_98 = {
             "exc": "L72",
             "elc": "L72",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62139,7 +62698,7 @@ export let remodded_constants_98 = {
             "exc": "L73",
             "elc": "L73",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62158,7 +62717,7 @@ export let remodded_constants_98 = {
             "exc": "L74",
             "elc": "L74",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62177,7 +62736,7 @@ export let remodded_constants_98 = {
             "exc": "L75",
             "elc": "L75",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62196,7 +62755,7 @@ export let remodded_constants_98 = {
             "exc": "L76",
             "elc": "L76",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62215,7 +62774,7 @@ export let remodded_constants_98 = {
             "exc": "L77",
             "elc": "L77",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62234,7 +62793,7 @@ export let remodded_constants_98 = {
             "exc": "L78",
             "elc": "L78",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62253,7 +62812,7 @@ export let remodded_constants_98 = {
             "exc": "L79",
             "elc": "L79",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62272,7 +62831,7 @@ export let remodded_constants_98 = {
             "exc": "L80",
             "elc": "L80",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62291,7 +62850,7 @@ export let remodded_constants_98 = {
             "exc": "L81",
             "elc": "L81",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62310,7 +62869,7 @@ export let remodded_constants_98 = {
             "exc": "L82",
             "elc": "L82",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62329,7 +62888,7 @@ export let remodded_constants_98 = {
             "exc": "L83",
             "elc": "L83",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62348,7 +62907,7 @@ export let remodded_constants_98 = {
             "exc": "L84",
             "elc": "L84",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62367,7 +62926,7 @@ export let remodded_constants_98 = {
             "exc": "L85",
             "elc": "L85",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62386,7 +62945,7 @@ export let remodded_constants_98 = {
             "exc": "L86",
             "elc": "L86",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62405,7 +62964,7 @@ export let remodded_constants_98 = {
             "exc": "L87",
             "elc": "L87",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62424,7 +62983,7 @@ export let remodded_constants_98 = {
             "exc": "L88",
             "elc": "L88",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62443,7 +63002,7 @@ export let remodded_constants_98 = {
             "exc": "L89",
             "elc": "L89",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62462,7 +63021,7 @@ export let remodded_constants_98 = {
             "exc": "L90",
             "elc": "L90",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62481,7 +63040,7 @@ export let remodded_constants_98 = {
             "exc": "L91",
             "elc": "L91",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62500,7 +63059,7 @@ export let remodded_constants_98 = {
             "exc": "L92",
             "elc": "L92",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62519,7 +63078,7 @@ export let remodded_constants_98 = {
             "exc": "L93",
             "elc": "L93",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62538,7 +63097,7 @@ export let remodded_constants_98 = {
             "exc": "L94",
             "elc": "L94",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62557,7 +63116,7 @@ export let remodded_constants_98 = {
             "exc": "L95",
             "elc": "L95",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62576,7 +63135,7 @@ export let remodded_constants_98 = {
             "exc": "L96",
             "elc": "L96",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62595,7 +63154,7 @@ export let remodded_constants_98 = {
             "exc": "L97",
             "elc": "L97",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62614,7 +63173,7 @@ export let remodded_constants_98 = {
             "exc": "L98",
             "elc": "L98",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62633,7 +63192,7 @@ export let remodded_constants_98 = {
             "exc": "L99",
             "elc": "L99",
             "iq": 1,
-            "n": "Tal Rasha's Forsaken Pact",
+            "n": "(Reserved Forsaken Pact Slot)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62665,7 +63224,8 @@ export let remodded_constants_98 = {
             "c": [
                 "Ingredient",
                 "Miscellaneous"
-            ]
+            ],
+            "hdi": "misc/body_part/jawbone"
         },
         "C01": {
             "nc": "C01",
@@ -64009,7 +64569,8 @@ export let remodded_constants_98 = {
             "c": [
                 "Ingredient",
                 "Miscellaneous"
-            ]
+            ],
+            "hdi": "custom/easteregg"
         },
         "Ev2": {
             "nc": "Ev2",
@@ -64029,7 +64590,8 @@ export let remodded_constants_98 = {
             "c": [
                 "Ingredient",
                 "Miscellaneous"
-            ]
+            ],
+            "hdi": "custom/easteregg"
         },
         "Ev3": {
             "nc": "Ev3",
@@ -64049,7 +64611,8 @@ export let remodded_constants_98 = {
             "c": [
                 "Ingredient",
                 "Miscellaneous"
-            ]
+            ],
+            "hdi": "custom/easteregg"
         },
         "Ev4": {
             "nc": "Ev4",
@@ -64069,7 +64632,8 @@ export let remodded_constants_98 = {
             "c": [
                 "Ingredient",
                 "Miscellaneous"
-            ]
+            ],
+            "hdi": "custom/easteregg"
         },
         "Ev5": {
             "nc": "Ev5",
@@ -64089,7 +64653,8 @@ export let remodded_constants_98 = {
             "c": [
                 "Ingredient",
                 "Miscellaneous"
-            ]
+            ],
+            "hdi": "custom/easteregg"
         },
         "Ev6": {
             "nc": "Ev6",
@@ -64109,7 +64674,8 @@ export let remodded_constants_98 = {
             "c": [
                 "Ingredient",
                 "Miscellaneous"
-            ]
+            ],
+            "hdi": "custom/easteregg"
         },
         "Ev7": {
             "nc": "Ev7",
@@ -64129,7 +64695,8 @@ export let remodded_constants_98 = {
             "c": [
                 "Ingredient",
                 "Miscellaneous"
-            ]
+            ],
+            "hdi": "custom/easteregg"
         },
         "Ev8": {
             "nc": "Ev8",
@@ -64149,7 +64716,8 @@ export let remodded_constants_98 = {
             "c": [
                 "Ingredient",
                 "Miscellaneous"
-            ]
+            ],
+            "hdi": "custom/easteregg"
         },
         "m00": {
             "nc": "m00",
@@ -64995,7 +65563,17 @@ export let remodded_constants_98 = {
                 "Parchment",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapl",
+            "hdig": [
+                "custom/Parchment1",
+                "custom/Parchment2",
+                "custom/Parchment3",
+                "custom/Parchment4",
+                "custom/Parchment5",
+                "custom/Parchment6",
+                "custom/Parchment7",
+                "custom/Parchment8"
+            ]
         },
         "m30": {
             "nc": "m30",
@@ -65015,7 +65593,7 @@ export let remodded_constants_98 = {
                 "Ingredient",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/Quill"
         },
         "m31": {
             "nc": "m31",
@@ -65035,7 +65613,7 @@ export let remodded_constants_98 = {
                 "Ingredient",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/Ink"
         },
         "m32": {
             "nc": "m32",
@@ -65063,7 +65641,12 @@ export let remodded_constants_98 = {
                 "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "misc/charm/charm_small",
+            "hdig": [
+                "misc/charm/charm_small1",
+                "misc/charm/charm_small2",
+                "misc/charm/charm_small3"
+            ]
         },
         "m33": {
             "nc": "m33",
@@ -65091,7 +65674,12 @@ export let remodded_constants_98 = {
                 "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "misc/charm/charm_medium",
+            "hdig": [
+                "misc/charm/charm_medium1",
+                "misc/charm/charm_medium2",
+                "misc/charm/charm_medium3"
+            ]
         },
         "m34": {
             "nc": "m34",
@@ -65119,7 +65707,46 @@ export let remodded_constants_98 = {
                 "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "misc/charm/charm_large",
+            "hdig": [
+                "misc/charm/charm_large1",
+                "misc/charm/charm_large2",
+                "misc/charm/charm_large3"
+            ]
+        },
+        // m35 is previous Healthy Breakfast (before fix so it displays in gold when looted)
+        "m36": {
+            "nc": "m36",
+            "exc": "m36",
+            "elc": "m36",
+            "iq": 1,
+            "n": "Small Charm", // Unique Small Charm
+            "hi": 0,
+            "gs": 0,
+            "gt": 0,
+            "i": "invchm",
+            "iw": 1,
+            "ih": 1,
+            "it": 0,
+            "ig": [
+                "invch1",
+                "invch4",
+                "invch7"
+            ],
+            "eq1n": "Charm",
+            "c": [
+                "Small Charm",
+                "Charm",
+                "Miscellaneous",
+                "Potion",
+                "Miscellaneous"
+            ],
+            "hdi": "misc/charm/charm_small",
+            "hdig": [
+                "misc/charm/charm_small1",
+                "misc/charm/charm_small2",
+                "misc/charm/charm_small3"
+            ]
         },
         "j00": {
             "nc": "j00",
@@ -65156,3 +65783,19 @@ export let remodded_constants_98 = {
     },
     "version": "remodded_constants_98"
 };
+
+remodded_constants_98.unq_items[4095] = {
+    "id": 4095,
+    "index": "Standard of Heroes",
+    "n": "Standard of Heroes",
+    "i": "D2R_Jank",
+    "c": "std",
+    "hdi": "misc/body_part/flag"
+};
+
+remodded_constants_98.gold = {
+    "perCharLevel": 100000,
+    "bank": 25000000
+};
+
+export { remodded_constants_98 };

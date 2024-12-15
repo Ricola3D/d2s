@@ -9,7 +9,7 @@ export function readAttributes(char: types.ID2S, reader: BitReader, mod: string)
 
   // Stats = magical_properties with "Saved" = 1.
   // There are report that only stat ids 0 to 255 can be saved. It doesn't work for stats 256-510.
-  const attributes = constants.magical_properties.filter((val, idx) => val && val.c && idx < 256);
+  const attributes = constants.magical_properties.filter((val, idx) => val && val.c && val.cB && idx < 256);
 
   // Initial values
   char.attributes = attributes.reduce((acc, curr) => {
@@ -85,7 +85,7 @@ export async function writeAttributes(char: types.ID2S, constants: types.IConsta
   for (const charStatDef of charStatDefs) {
     let value = char.attributes[charStatDef.s];
     if (!value) {
-      continue;
+      continue; // 0 values are not saved to gain file size
     }
     const size = charStatDef.cB;
     if (size === undefined) {
