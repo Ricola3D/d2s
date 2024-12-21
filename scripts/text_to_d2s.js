@@ -3,7 +3,6 @@
 const fs = require("fs");
 const path = require("path");
 
-
 function writeBits(bits, position, toWrite, numberOfBits) {
   for (let i = 0; i < numberOfBits; i++) {
     bits[position + i] = toWrite[i];
@@ -24,7 +23,6 @@ function writeBytes(bits, position, bytes, numberOfBits = bytes.length * 8) {
   }, 0);
   writeBits(bits, position, toWrite, numberOfBits);
 }
-
 
 function writeUInt32(bits, position, value, numberOfBits = 8 * 4) {
   const buffer = new Uint8Array(4);
@@ -72,8 +70,11 @@ function fixHeader(bits) {
 const input_file_path = path.join("C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/ReMoDDeD", "input.txt");
 const output_file_path = path.join("C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/ReMoDDeD", "output.d2s");
 if (fs.existsSync(input_file_path)) {
-  const text = fs.readFileSync(input_file_path, 'utf-8');
-  const bits = text.split("").map(x => parseInt(x)).reverse();
+  const text = fs.readFileSync(input_file_path, "utf-8");
+  const bits = text
+    .split("")
+    .map((x) => parseInt(x))
+    .reverse();
   fixHeader(bits);
   const le_binary = new Uint8Array((bits.length - 1) / 8 + 1);
   let byteIndex = 0;

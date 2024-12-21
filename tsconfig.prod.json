@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig",
   "compilerOptions": {
-    "removeComments": true,
+    "removeComments": true
   }
 }

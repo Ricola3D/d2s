@@ -8431,6 +8431,38 @@ let remodded_constants_99 = {
                 "f": 1
             }
         ],
+        "abs-all%": [
+            {
+                "s": "item_absorbfire_percent",
+                "f": 1
+            },
+            {
+                "s": "item_absorblight_percent",
+                "f": 1
+            },
+            {
+                "s": "item_absorbmagic_percent",
+                "f": 1
+            },
+            {
+                "s": "item_absorbcold_percent",
+                "f": 1
+            },
+        ],
+        "abs-elem%": [
+            {
+                "s": "item_absorbfire_percent",
+                "f": 1
+            },
+            {
+                "s": "item_absorblight_percent",
+                "f": 1
+            },
+            {
+                "s": "item_absorbcold_percent",
+                "f": 1
+            },
+        ]
         "dur": [
             {
                 "s": "maxdurability",
@@ -22401,7 +22433,7 @@ let remodded_constants_99 = {
             "n": "Well maybe not healthy, but it does make you glow<br>A Healthy Breakfast",
             "i": "D2R_Jank",
             "c": "m36",
-            "hdi": "custom/Hbreakfast"
+            "hdi": "custom/hbreakfast"
         },
         {
             "id": 602,
@@ -22952,15 +22984,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/cap_hat"
         },
@@ -22984,15 +23011,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/skull_cap"
         },
@@ -23018,15 +23040,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/helm"
         },
@@ -23052,15 +23069,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/full_helm"
         },
@@ -23084,15 +23096,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/great_helm"
         },
@@ -23116,15 +23123,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/crown"
         },
@@ -23148,15 +23150,10 @@ let remodded_constants_99 = {
             "it": 2,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/mask"
         },
@@ -23183,8 +23180,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/quilted_armor"
         },
@@ -23211,8 +23207,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/leather_armor"
         },
@@ -23239,8 +23234,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/hard_leather_armor"
         },
@@ -23267,8 +23261,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/studded_leather"
         },
@@ -23295,8 +23288,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/ring_mail"
         },
@@ -23323,8 +23315,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/scale_mail"
         },
@@ -23351,8 +23342,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/chain_mail"
         },
@@ -23379,8 +23369,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/breast_plate"
         },
@@ -23407,8 +23396,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/splint_mail"
         },
@@ -23435,8 +23423,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/plate_mail"
         },
@@ -23463,8 +23450,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/field_plate"
         },
@@ -23491,8 +23477,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/gothic_plate"
         },
@@ -23521,8 +23506,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/full_plate_mail"
         },
@@ -23551,8 +23535,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/ancient_armor"
         },
@@ -23579,8 +23562,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/light_plate"
         },
@@ -23612,8 +23594,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/buckler"
@@ -23646,8 +23627,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/small_shield"
@@ -23680,8 +23660,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/large_shield"
@@ -23714,8 +23693,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/kite_shield"
@@ -23748,8 +23726,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/tower_shield"
@@ -23782,8 +23759,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/gothic_shield"
@@ -23808,15 +23784,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/glove/gloves_l"
         },
@@ -23840,15 +23812,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/glove/heavy_gloves"
         },
@@ -23872,15 +23840,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/glove/bracers_m"
         },
@@ -23904,15 +23868,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/glove/light_gauntlets"
         },
@@ -23936,15 +23896,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/glove/gaunlets_h"
         },
@@ -23970,15 +23926,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/boot/leather_boots"
         },
@@ -24004,15 +23956,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/boot/heavy_boots"
         },
@@ -24038,15 +23986,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/boot/chain_boots"
         },
@@ -24072,15 +24016,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/boot/light_plate_boots"
         },
@@ -24106,15 +24046,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/boot/plate_boots"
         },
@@ -24138,15 +24074,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/belt/sash_l"
         },
@@ -24170,15 +24102,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/belt/light_belt"
         },
@@ -24202,15 +24130,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/belt/belt_m"
         },
@@ -24234,15 +24158,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/belt/heavy_belt"
         },
@@ -24266,15 +24186,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/belt/girdle_h"
         },
@@ -24300,15 +24216,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/bone_helm"
         },
@@ -24340,8 +24251,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/bone_shield"
@@ -24374,8 +24284,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/spiked_shield"
@@ -24400,15 +24309,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/cap_hat"
         },
@@ -24434,15 +24338,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/skull_cap"
         },
@@ -24468,15 +24367,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/helm"
         },
@@ -24502,15 +24396,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/full_helm"
         },
@@ -24534,15 +24423,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/great_helm"
         },
@@ -24568,15 +24452,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/crown"
         },
@@ -24600,15 +24479,10 @@ let remodded_constants_99 = {
             "it": 2,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/mask"
         },
@@ -24635,8 +24509,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/quilted_armor"
         },
@@ -24663,8 +24536,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/leather_armor"
         },
@@ -24691,8 +24563,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/hard_leather_armor"
         },
@@ -24721,8 +24592,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/studded_leather"
         },
@@ -24749,8 +24619,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/ring_mail"
         },
@@ -24777,8 +24646,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/scale_mail"
         },
@@ -24805,8 +24673,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/chain_mail"
         },
@@ -24834,8 +24701,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/breast_plate"
         },
@@ -24862,8 +24728,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/splint_mail"
         },
@@ -24890,8 +24755,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/plate_mail"
         },
@@ -24918,8 +24782,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/field_plate"
         },
@@ -24946,8 +24809,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/gothic_plate"
         },
@@ -24974,8 +24836,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/full_plate_mail"
         },
@@ -25004,8 +24865,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/ancient_armor"
         },
@@ -25032,8 +24892,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/light_plate"
         },
@@ -25065,8 +24924,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/buckler"
@@ -25099,8 +24957,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/small_shield"
@@ -25133,8 +24990,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/large_shield"
@@ -25167,8 +25023,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/kite_shield"
@@ -25201,8 +25056,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/tower_shield"
@@ -25235,8 +25089,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/gothic_shield"
@@ -25261,15 +25114,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/glove/gloves_l"
         },
@@ -25293,15 +25142,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/glove/heavy_gloves"
         },
@@ -25325,15 +25170,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/glove/bracers_m"
         },
@@ -25357,15 +25198,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/glove/light_gauntlets"
         },
@@ -25389,15 +25226,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/glove/gaunlets_h"
         },
@@ -25423,15 +25256,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/boot/leather_boots"
         },
@@ -25457,15 +25286,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/boot/heavy_boots"
         },
@@ -25491,15 +25316,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/boot/chain_boots"
         },
@@ -25525,15 +25346,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/boot/light_plate_boots"
         },
@@ -25559,15 +25376,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/boot/plate_boots"
         },
@@ -25591,15 +25404,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/belt/sash_l"
         },
@@ -25623,15 +25432,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/belt/light_belt"
         },
@@ -25655,15 +25460,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/belt/belt_m"
         },
@@ -25687,15 +25488,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/belt/heavy_belt"
         },
@@ -25719,15 +25516,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/belt/girdle_h"
         },
@@ -25753,15 +25546,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/bone_helm"
         },
@@ -25793,8 +25581,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/bone_shield"
@@ -25827,8 +25614,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/spiked_shield"
@@ -25852,17 +25638,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Druid Item",
             "c": [
                 "Druid Helms",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -25887,17 +25669,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Druid Item",
             "c": [
                 "Druid Helms",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -25922,17 +25700,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Druid Item",
             "c": [
                 "Druid Helms",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -25957,17 +25731,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Druid Item",
             "c": [
                 "Druid Helms",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -25992,17 +25762,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Druid Item",
             "c": [
                 "Druid Helms",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -26027,17 +25793,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Barbarian Item",
             "c": [
                 "Barbarian Helm",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -26062,17 +25824,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Barbarian Item",
             "c": [
                 "Barbarian Helm",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -26097,17 +25855,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Barbarian Item",
             "c": [
                 "Barbarian Helm",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -26132,17 +25886,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Barbarian Item",
             "c": [
                 "Barbarian Helm",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -26167,17 +25917,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Barbarian Item",
             "c": [
                 "Barbarian Helm",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -26210,8 +25956,7 @@ let remodded_constants_99 = {
                 "Paladin Shields",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Paladin Item",
                 "Class Specific"
@@ -26245,8 +25990,7 @@ let remodded_constants_99 = {
                 "Paladin Shields",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Paladin Item",
                 "Class Specific"
@@ -26280,8 +26024,7 @@ let remodded_constants_99 = {
                 "Paladin Shields",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Paladin Item",
                 "Class Specific"
@@ -26315,8 +26058,7 @@ let remodded_constants_99 = {
                 "Paladin Shields",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Paladin Item",
                 "Class Specific"
@@ -26350,8 +26092,7 @@ let remodded_constants_99 = {
                 "Paladin Shields",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Paladin Item",
                 "Class Specific"
@@ -26383,8 +26124,7 @@ let remodded_constants_99 = {
                 "Necromancer Heads",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Necromancer Item",
                 "Class Specific"
@@ -26416,8 +26156,7 @@ let remodded_constants_99 = {
                 "Necromancer Heads",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Necromancer Item",
                 "Class Specific"
@@ -26449,8 +26188,7 @@ let remodded_constants_99 = {
                 "Necromancer Heads",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Necromancer Item",
                 "Class Specific"
@@ -26482,8 +26220,7 @@ let remodded_constants_99 = {
                 "Necromancer Heads",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Necromancer Item",
                 "Class Specific"
@@ -26515,8 +26252,7 @@ let remodded_constants_99 = {
                 "Necromancer Heads",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Necromancer Item",
                 "Class Specific"
@@ -26542,16 +26278,12 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 2,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "c": [
                 "Circlet",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/circlet/circlet"
         },
@@ -26574,16 +26306,12 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 2,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "c": [
                 "Circlet",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/circlet/coronet"
         },
@@ -26606,16 +26334,12 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 2,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "c": [
                 "Circlet",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/circlet/tiara"
         },
@@ -26638,16 +26362,12 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 2,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "c": [
                 "Circlet",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/circlet/diadem"
         },
@@ -26671,15 +26391,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/cap_hat"
         },
@@ -26703,15 +26418,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/skull_cap"
         },
@@ -26737,15 +26447,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/helm"
         },
@@ -26771,15 +26476,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/full_helm"
         },
@@ -26804,15 +26504,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/great_helm"
         },
@@ -26836,15 +26531,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/crown"
         },
@@ -26868,15 +26558,10 @@ let remodded_constants_99 = {
             "it": 2,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/mask"
         },
@@ -26903,8 +26588,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/quilted_armor"
         },
@@ -26931,8 +26615,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/leather_armor"
         },
@@ -26959,8 +26642,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/hard_leather_armor"
         },
@@ -26987,8 +26669,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/studded_leather"
         },
@@ -27015,8 +26696,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/ring_mail"
         },
@@ -27043,8 +26723,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/scale_mail"
         },
@@ -27071,8 +26750,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/chain_mail"
         },
@@ -27099,8 +26777,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/breast_plate"
         },
@@ -27127,8 +26804,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/splint_mail"
         },
@@ -27155,8 +26831,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/plate_mail"
         },
@@ -27183,8 +26858,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/field_plate"
         },
@@ -27211,8 +26885,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/gothic_plate"
         },
@@ -27239,8 +26912,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/full_plate_mail"
         },
@@ -27269,8 +26941,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/ancient_armor"
         },
@@ -27297,8 +26968,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/armor/light_plate"
         },
@@ -27330,8 +27000,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/buckler"
@@ -27364,8 +27033,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/small_shield"
@@ -27398,8 +27066,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/large_shield"
@@ -27432,8 +27099,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/kite_shield"
@@ -27466,8 +27132,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/tower_shield"
@@ -27500,8 +27165,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/gothic_shield"
@@ -27526,15 +27190,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/glove/gloves_l"
         },
@@ -27558,15 +27218,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/glove/heavy_gloves"
         },
@@ -27590,15 +27246,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/glove/bracers_m"
         },
@@ -27622,15 +27274,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/glove/light_gauntlets"
         },
@@ -27654,15 +27302,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/glove/gaunlets_h"
         },
@@ -27688,15 +27332,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/boot/leather_boots"
         },
@@ -27722,15 +27362,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/boot/heavy_boots"
         },
@@ -27756,15 +27392,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/boot/chain_boots"
         },
@@ -27790,15 +27422,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/boot/light_plate_boots"
         },
@@ -27824,15 +27452,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/boot/plate_boots"
         },
@@ -27856,15 +27480,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/belt/sash_l"
         },
@@ -27888,15 +27508,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/belt/light_belt"
         },
@@ -27920,15 +27536,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/belt/belt_m"
         },
@@ -27952,15 +27564,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/belt/heavy_belt"
         },
@@ -27984,15 +27592,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "armor/belt/girdle_h"
         },
@@ -28018,15 +27622,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/bone_helm"
         },
@@ -28058,8 +27657,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/bone_shield"
@@ -28092,8 +27690,7 @@ let remodded_constants_99 = {
                 "Shield",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand"
             ],
             "hdi": "armor/shield/spiked_shield"
@@ -28117,17 +27714,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Druid Item",
             "c": [
                 "Druid Helms",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -28152,17 +27745,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Druid Item",
             "c": [
                 "Druid Helms",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -28187,17 +27776,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Druid Item",
             "c": [
                 "Druid Helms",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -28222,17 +27807,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Druid Item",
             "c": [
                 "Druid Helms",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -28257,17 +27838,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Druid Item",
             "c": [
                 "Druid Helms",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -28292,17 +27869,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 0,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Barbarian Item",
             "c": [
                 "Barbarian Helm",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -28327,17 +27900,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 0,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Barbarian Item",
             "c": [
                 "Barbarian Helm",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -28362,17 +27931,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Barbarian Item",
             "c": [
                 "Barbarian Helm",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -28397,17 +27962,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Barbarian Item",
             "c": [
                 "Barbarian Helm",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -28432,17 +27993,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 0,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Barbarian Item",
             "c": [
                 "Barbarian Helm",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -28475,8 +28032,7 @@ let remodded_constants_99 = {
                 "Paladin Shields",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Paladin Item",
                 "Class Specific"
@@ -28510,8 +28066,7 @@ let remodded_constants_99 = {
                 "Paladin Shields",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Paladin Item",
                 "Class Specific"
@@ -28545,8 +28100,7 @@ let remodded_constants_99 = {
                 "Paladin Shields",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Paladin Item",
                 "Class Specific"
@@ -28580,8 +28134,7 @@ let remodded_constants_99 = {
                 "Paladin Shields",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Paladin Item",
                 "Class Specific"
@@ -28615,8 +28168,7 @@ let remodded_constants_99 = {
                 "Paladin Shields",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Paladin Item",
                 "Class Specific"
@@ -28648,8 +28200,7 @@ let remodded_constants_99 = {
                 "Necromancer Heads",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Necromancer Item",
                 "Class Specific"
@@ -28681,8 +28232,7 @@ let remodded_constants_99 = {
                 "Necromancer Heads",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Necromancer Item",
                 "Class Specific"
@@ -28714,8 +28264,7 @@ let remodded_constants_99 = {
                 "Necromancer Heads",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Necromancer Item",
                 "Class Specific"
@@ -28747,8 +28296,7 @@ let remodded_constants_99 = {
                 "Necromancer Heads",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Necromancer Item",
                 "Class Specific"
@@ -28780,8 +28328,7 @@ let remodded_constants_99 = {
                 "Necromancer Heads",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Necromancer Item",
                 "Class Specific"
@@ -28807,17 +28354,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Druid Item",
             "c": [
                 "Druid Helms",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -28842,17 +28385,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Druid Item",
             "c": [
                 "Druid Helms",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -28877,17 +28416,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Druid Item",
             "c": [
                 "Druid Helms",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -28912,17 +28447,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Druid Item",
             "c": [
                 "Druid Helms",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -28947,17 +28478,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 8,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Druid Item",
             "c": [
                 "Druid Helms",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -28982,17 +28509,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 0,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Barbarian Item",
             "c": [
                 "Barbarian Helm",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -29017,17 +28540,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 0,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Barbarian Item",
             "c": [
                 "Barbarian Helm",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -29052,17 +28571,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 0,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Barbarian Item",
             "c": [
                 "Barbarian Helm",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -29087,17 +28602,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 0,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Barbarian Item",
             "c": [
                 "Barbarian Helm",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -29122,17 +28633,13 @@ let remodded_constants_99 = {
             "ih": 2,
             "it": 0,
             "ig": [],
-            "eq1n": "Merc Equip",
+            "eq1n": "Helm",
             "eq2n": "Barbarian Item",
             "c": [
                 "Barbarian Helm",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -29165,8 +28672,7 @@ let remodded_constants_99 = {
                 "Paladin Shields",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Paladin Item",
                 "Class Specific"
@@ -29200,8 +28706,7 @@ let remodded_constants_99 = {
                 "Paladin Shields",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Paladin Item",
                 "Class Specific"
@@ -29235,8 +28740,7 @@ let remodded_constants_99 = {
                 "Paladin Shields",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Paladin Item",
                 "Class Specific"
@@ -29270,8 +28774,7 @@ let remodded_constants_99 = {
                 "Paladin Shields",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Paladin Item",
                 "Class Specific"
@@ -29305,8 +28808,7 @@ let remodded_constants_99 = {
                 "Paladin Shields",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Paladin Item",
                 "Class Specific"
@@ -29338,8 +28840,7 @@ let remodded_constants_99 = {
                 "Necromancer Heads",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Necromancer Item",
                 "Class Specific"
@@ -29371,8 +28872,7 @@ let remodded_constants_99 = {
                 "Necromancer Heads",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Necromancer Item",
                 "Class Specific"
@@ -29404,8 +28904,7 @@ let remodded_constants_99 = {
                 "Necromancer Heads",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Necromancer Item",
                 "Class Specific"
@@ -29437,8 +28936,7 @@ let remodded_constants_99 = {
                 "Necromancer Heads",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Necromancer Item",
                 "Class Specific"
@@ -29470,8 +28968,7 @@ let remodded_constants_99 = {
                 "Necromancer Heads",
                 "Any Shield",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Second Hand",
                 "Necromancer Item",
                 "Class Specific"
@@ -29503,8 +29000,7 @@ let remodded_constants_99 = {
                 "Assassin Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -29535,8 +29031,7 @@ let remodded_constants_99 = {
                 "Assassin Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -29567,8 +29062,7 @@ let remodded_constants_99 = {
                 "Assassin Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -29599,8 +29093,7 @@ let remodded_constants_99 = {
                 "Assassin Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -29631,8 +29124,7 @@ let remodded_constants_99 = {
                 "Assassin Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -29663,8 +29155,7 @@ let remodded_constants_99 = {
                 "Assassin Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -29695,8 +29186,7 @@ let remodded_constants_99 = {
                 "Druid Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -29727,8 +29217,7 @@ let remodded_constants_99 = {
                 "Druid Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -29759,8 +29248,7 @@ let remodded_constants_99 = {
                 "Druid Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -29791,8 +29279,7 @@ let remodded_constants_99 = {
                 "Druid Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -29825,8 +29312,7 @@ let remodded_constants_99 = {
                 "Druid Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -29857,8 +29343,7 @@ let remodded_constants_99 = {
                 "Druid Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -29891,11 +29376,7 @@ let remodded_constants_99 = {
                 "Assassin Boots",
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Merc Equip",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -29928,11 +29409,7 @@ let remodded_constants_99 = {
                 "Assassin Boots",
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Merc Equip",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -29965,11 +29442,7 @@ let remodded_constants_99 = {
                 "Assassin Boots",
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Merc Equip",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -30002,11 +29475,7 @@ let remodded_constants_99 = {
                 "Assassin Boots",
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Merc Equip",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -30039,11 +29508,7 @@ let remodded_constants_99 = {
                 "Assassin Boots",
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Merc Equip",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -30076,11 +29541,7 @@ let remodded_constants_99 = {
                 "Assassin Boots",
                 "Boots",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Merc Equip",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -30113,8 +29574,7 @@ let remodded_constants_99 = {
                 "Paladin Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Paladin Item",
                 "Class Specific"
             ],
@@ -30145,8 +29605,7 @@ let remodded_constants_99 = {
                 "Paladin Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Paladin Item",
                 "Class Specific"
             ],
@@ -30177,8 +29636,7 @@ let remodded_constants_99 = {
                 "Paladin Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Paladin Item",
                 "Class Specific"
             ],
@@ -30211,8 +29669,7 @@ let remodded_constants_99 = {
                 "Paladin Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Paladin Item",
                 "Class Specific"
             ],
@@ -30243,8 +29700,7 @@ let remodded_constants_99 = {
                 "Paladin Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Paladin Item",
                 "Class Specific"
             ],
@@ -30275,8 +29731,7 @@ let remodded_constants_99 = {
                 "Paladin Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Paladin Item",
                 "Class Specific"
             ],
@@ -30307,8 +29762,7 @@ let remodded_constants_99 = {
                 "Druid Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -30339,8 +29793,7 @@ let remodded_constants_99 = {
                 "Druid Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -30371,8 +29824,7 @@ let remodded_constants_99 = {
                 "Druid Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -30403,11 +29855,7 @@ let remodded_constants_99 = {
                 "Sorceress Gauntlets",
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Merc Equip",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -30438,11 +29886,7 @@ let remodded_constants_99 = {
                 "Sorceress Gauntlets",
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Merc Equip",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -30473,11 +29917,7 @@ let remodded_constants_99 = {
                 "Sorceress Gauntlets",
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Merc Equip",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -30508,11 +29948,7 @@ let remodded_constants_99 = {
                 "Sorceress Gauntlets",
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Merc Equip",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -30543,11 +29979,7 @@ let remodded_constants_99 = {
                 "Sorceress Gauntlets",
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Merc Equip",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -30578,11 +30010,7 @@ let remodded_constants_99 = {
                 "Sorceress Gauntlets",
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Merc Equip",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -30608,15 +30036,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "custom/strong_belt"
         },
@@ -30640,15 +30064,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "custom/strong_belt"
         },
@@ -30672,15 +30092,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "custom/strong_belt"
         },
@@ -30704,15 +30120,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "custom/strong_belt"
         },
@@ -30736,15 +30148,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "custom/strong_belt"
         },
@@ -30768,15 +30176,11 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Belt",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "custom/strong_belt"
         },
@@ -30804,13 +30208,9 @@ let remodded_constants_99 = {
             "c": [
                 "Amazon Circlet",
                 "Circlet",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -30840,13 +30240,9 @@ let remodded_constants_99 = {
             "c": [
                 "Amazon Circlet",
                 "Circlet",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -30876,13 +30272,9 @@ let remodded_constants_99 = {
             "c": [
                 "Amazon Circlet",
                 "Circlet",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -30912,13 +30304,9 @@ let remodded_constants_99 = {
             "c": [
                 "Amazon Circlet",
                 "Circlet",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -30948,13 +30336,9 @@ let remodded_constants_99 = {
             "c": [
                 "Amazon Circlet",
                 "Circlet",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -30984,13 +30368,9 @@ let remodded_constants_99 = {
             "c": [
                 "Amazon Circlet",
                 "Circlet",
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Any Armor",
+                "Merc Equip",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -31018,8 +30398,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ]
         },
         "St2": {
@@ -31044,8 +30423,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ]
         },
         "Pc1": {
@@ -31068,15 +30446,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/crown"
         },
@@ -31100,15 +30473,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/crown"
         },
@@ -31132,15 +30500,10 @@ let remodded_constants_99 = {
             "it": 8,
             "ig": [],
             "eq1n": "Any Armor",
-            "eq2n": "Helm",
             "c": [
-                "Merc Equip",
-                "Any Armor",
-                "Gold",
-                "Miscellaneous",
                 "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Any Armor",
+                "Merc Equip"
             ],
             "hdi": "armor/helmet/crown"
         },
@@ -31169,11 +30532,7 @@ let remodded_constants_99 = {
                 "Amazon Gloves",
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Merc Equip",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -31204,11 +30563,7 @@ let remodded_constants_99 = {
                 "Amazon Gloves",
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Merc Equip",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -31239,11 +30594,7 @@ let remodded_constants_99 = {
                 "Amazon Gloves",
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Merc Equip",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -31274,11 +30625,7 @@ let remodded_constants_99 = {
                 "Amazon Gloves",
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Merc Equip",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -31309,11 +30656,7 @@ let remodded_constants_99 = {
                 "Amazon Gloves",
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Merc Equip",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -31344,11 +30687,7 @@ let remodded_constants_99 = {
                 "Amazon Gloves",
                 "Gloves",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous",
+                "Merc Equip",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -31379,8 +30718,7 @@ let remodded_constants_99 = {
                 "Necromancer Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -31411,8 +30749,7 @@ let remodded_constants_99 = {
                 "Necromancer Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -31443,8 +30780,7 @@ let remodded_constants_99 = {
                 "Necromancer Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -31475,8 +30811,7 @@ let remodded_constants_99 = {
                 "Necromancer Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -31507,8 +30842,7 @@ let remodded_constants_99 = {
                 "Necromancer Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -31539,8 +30873,7 @@ let remodded_constants_99 = {
                 "Necromancer Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -31571,8 +30904,7 @@ let remodded_constants_99 = {
                 "Sorceress Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -31603,8 +30935,7 @@ let remodded_constants_99 = {
                 "Sorceress Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -31635,8 +30966,7 @@ let remodded_constants_99 = {
                 "Sorceress Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -31667,8 +30997,7 @@ let remodded_constants_99 = {
                 "Sorceress Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -31699,8 +31028,7 @@ let remodded_constants_99 = {
                 "Sorceress Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -31731,8 +31059,7 @@ let remodded_constants_99 = {
                 "Sorceress Armor",
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous",
+                "Merc Equip",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -31760,8 +31087,7 @@ let remodded_constants_99 = {
             "c": [
                 "Armor",
                 "Any Armor",
-                "Gold",
-                "Miscellaneous"
+                "Merc Equip"
             ]
         }
     },
@@ -31791,8 +31117,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/hand_axe"
@@ -31823,8 +31147,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/axe"
@@ -31853,8 +31175,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/double_axe"
@@ -31886,8 +31206,6 @@ let remodded_constants_99 = {
                 "Polearm",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -31917,8 +31235,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/war_axe"
@@ -31949,8 +31265,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/large_axe"
@@ -31981,8 +31295,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/broad_axe"
@@ -32015,8 +31327,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/battle_axe"
@@ -32049,8 +31359,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/great_axe"
@@ -32081,8 +31389,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/giant_axe"
@@ -32115,8 +31421,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -32148,8 +31452,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -32183,8 +31485,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -32216,8 +31516,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -32250,8 +31548,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -32284,8 +31580,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Paladin Item",
                 "Class Specific"
             ],
@@ -32318,8 +31612,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Paladin Item",
                 "Class Specific"
             ],
@@ -32352,8 +31644,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Paladin Item",
                 "Class Specific"
             ],
@@ -32386,8 +31676,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -32416,9 +31704,7 @@ let remodded_constants_99 = {
                 "Mace",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/mace/mace"
         },
@@ -32447,9 +31733,7 @@ let remodded_constants_99 = {
                 "Mace",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/mace/morning_star"
         },
@@ -32477,9 +31761,7 @@ let remodded_constants_99 = {
                 "Mace",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/mace/flail"
         },
@@ -32506,9 +31788,7 @@ let remodded_constants_99 = {
                 "Hammer",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/hammer/war_hammer"
         },
@@ -32537,9 +31817,7 @@ let remodded_constants_99 = {
                 "Hammer",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/hammer/maul"
         },
@@ -32568,9 +31846,7 @@ let remodded_constants_99 = {
                 "Hammer",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/hammer/great_maul"
         },
@@ -32597,8 +31873,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/short_sword"
@@ -32629,8 +31903,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/scimitar"
@@ -32662,8 +31934,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/saber"
@@ -32694,8 +31964,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/falchion"
@@ -32726,8 +31994,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/crystal_sword"
@@ -32758,8 +32024,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/broad_sword"
@@ -32791,8 +32055,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/long_sword"
@@ -32822,8 +32084,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/war_sword"
@@ -32858,15 +32118,9 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Assassin Item",
                 "Class Specific",
                 "Sword",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "custom/katana"
@@ -32897,8 +32151,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/claymore"
@@ -32932,8 +32184,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/giant_sword"
@@ -32967,8 +32217,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon",
                 "Barbarian Item",
                 "Class Specific"
@@ -33002,8 +32250,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/flamberge"
@@ -33037,8 +32283,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/great_sword"
@@ -33064,9 +32308,7 @@ let remodded_constants_99 = {
             "c": [
                 "Knife",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/knife/dagger"
         },
@@ -33092,9 +32334,7 @@ let remodded_constants_99 = {
             "c": [
                 "Knife",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/knife/dirk"
         },
@@ -33122,9 +32362,7 @@ let remodded_constants_99 = {
             "c": [
                 "Knife",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/knife/kriss"
         },
@@ -33150,9 +32388,7 @@ let remodded_constants_99 = {
             "c": [
                 "Knife",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/knife/blade"
         },
@@ -33186,17 +32422,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Knife",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Knife"
             ],
             "hdi": "weapon/knife/throwing_knife"
         },
@@ -33230,12 +32457,7 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -33271,17 +32493,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Knife",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Knife"
             ],
             "hdi": "weapon/knife/balanced_knife"
         },
@@ -33315,17 +32528,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Axe",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/balanced_axe"
@@ -33359,17 +32563,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Polearm",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Polearm"
             ],
             "hdi": "weapon/javelin/javelin"
         },
@@ -33403,17 +32598,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Polearm",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Polearm"
             ],
             "hdi": "weapon/javelin/pilum"
         },
@@ -33447,17 +32633,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Polearm",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Polearm"
             ],
             "hdi": "weapon/javelin/short_spear"
         },
@@ -33491,12 +32668,7 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -33532,12 +32704,7 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -33565,9 +32732,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/spear/spear"
         },
@@ -33596,9 +32761,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/spear/trident"
         },
@@ -33625,9 +32788,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/spear/brandistock"
         },
@@ -33654,9 +32815,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/spear/spetum"
         },
@@ -33683,9 +32842,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/spear/pike"
         },
@@ -33711,9 +32868,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/polearm/bardiche"
         },
@@ -33739,9 +32894,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/polearm/voulge"
         },
@@ -33772,8 +32925,6 @@ let remodded_constants_99 = {
                 "Polearm",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -33801,9 +32952,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/polearm/poleaxe"
         },
@@ -33830,9 +32979,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/polearm/halberd"
         },
@@ -33861,8 +33008,6 @@ let remodded_constants_99 = {
                 "Polearm",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -33894,8 +33039,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -33927,8 +33070,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -33962,8 +33103,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -33995,8 +33134,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -34028,8 +33165,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -34057,9 +33192,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/short_bow"
         },
@@ -34085,9 +33218,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/hunters_bow"
         },
@@ -34114,9 +33245,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/long_bow"
         },
@@ -34145,9 +33274,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/composite_bow"
         },
@@ -34176,9 +33303,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/short_battle_bow"
         },
@@ -34205,9 +33330,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/long_battle_bow"
         },
@@ -34236,9 +33359,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/short_war_bow"
         },
@@ -34265,9 +33386,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/long_war_bow"
         },
@@ -34296,9 +33415,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/light_crossbow"
         },
@@ -34327,9 +33444,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/crossbow"
         },
@@ -34358,9 +33473,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/heavy_crossbow"
         },
@@ -34389,9 +33502,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/repeating_crossbow"
         },
@@ -34416,9 +33527,7 @@ let remodded_constants_99 = {
             "c": [
                 "Missile Potion",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/potion/rancid_gas_potion"
         },
@@ -34443,9 +33552,7 @@ let remodded_constants_99 = {
             "c": [
                 "Missile Potion",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/potion/oil_potion"
         },
@@ -34470,9 +33577,7 @@ let remodded_constants_99 = {
             "c": [
                 "Missile Potion",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/potion/choking_gas_potion"
         },
@@ -34497,9 +33602,7 @@ let remodded_constants_99 = {
             "c": [
                 "Missile Potion",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/potion/exploding_potion"
         },
@@ -34524,9 +33627,7 @@ let remodded_constants_99 = {
             "c": [
                 "Missile Potion",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/potion/strangling_gas_potion"
         },
@@ -34551,9 +33652,7 @@ let remodded_constants_99 = {
             "c": [
                 "Missile Potion",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/potion/fulminating_potion"
         },
@@ -34578,9 +33677,7 @@ let remodded_constants_99 = {
             "c": [
                 "Knife",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/knife/decoy_dagger"
         },
@@ -34605,9 +33702,7 @@ let remodded_constants_99 = {
             "c": [
                 "Knife",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/knife/gidbinn"
         },
@@ -34631,9 +33726,7 @@ let remodded_constants_99 = {
                 "Club",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/club/wirts_leg"
         },
@@ -34659,9 +33752,7 @@ let remodded_constants_99 = {
                 "Hammer",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/hammer/horadric_malus"
         },
@@ -34685,9 +33776,7 @@ let remodded_constants_99 = {
                 "Hammer",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/hammer/hellforge_hammer"
         },
@@ -34713,9 +33802,7 @@ let remodded_constants_99 = {
                 "Staves And Rods",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/staff/horadric_staff"
         },
@@ -34741,9 +33828,7 @@ let remodded_constants_99 = {
                 "Staves And Rods",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/staff/staff_of_the_kings"
         },
@@ -34774,8 +33859,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/hand_axe"
@@ -34806,8 +33889,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/axe"
@@ -34836,8 +33917,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/double_axe"
@@ -34869,8 +33948,6 @@ let remodded_constants_99 = {
                 "Polearm",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -34900,8 +33977,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/war_axe"
@@ -34932,8 +34007,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/large_axe"
@@ -34964,8 +34037,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/broad_axe"
@@ -34998,8 +34069,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/battle_axe"
@@ -35032,8 +34101,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/great_axe"
@@ -35066,8 +34133,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/giant_axe"
@@ -35099,8 +34164,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -35133,8 +34196,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -35169,8 +34230,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -35205,8 +34264,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -35240,8 +34297,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -35274,8 +34329,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Paladin Item",
                 "Class Specific"
             ],
@@ -35308,8 +34361,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Paladin Item",
                 "Class Specific"
             ],
@@ -35342,8 +34393,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Paladin Item",
                 "Class Specific"
             ],
@@ -35377,8 +34426,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -35407,9 +34454,7 @@ let remodded_constants_99 = {
                 "Mace",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/mace/mace"
         },
@@ -35438,9 +34483,7 @@ let remodded_constants_99 = {
                 "Mace",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/mace/morning_star"
         },
@@ -35468,9 +34511,7 @@ let remodded_constants_99 = {
                 "Mace",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/mace/flail"
         },
@@ -35497,9 +34538,7 @@ let remodded_constants_99 = {
                 "Hammer",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/hammer/war_hammer"
         },
@@ -35526,9 +34565,7 @@ let remodded_constants_99 = {
                 "Hammer",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/hammer/maul"
         },
@@ -35557,9 +34594,7 @@ let remodded_constants_99 = {
                 "Hammer",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/hammer/great_maul"
         },
@@ -35587,8 +34622,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/short_sword"
@@ -35620,8 +34653,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/scimitar"
@@ -35653,8 +34684,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/saber"
@@ -35684,8 +34713,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/falchion"
@@ -35717,8 +34744,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/crystal_sword"
@@ -35748,8 +34773,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/broad_sword"
@@ -35781,8 +34804,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/long_sword"
@@ -35812,8 +34833,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/war_sword"
@@ -35848,15 +34867,9 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Assassin Item",
                 "Class Specific",
                 "Sword",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "custom/katana"
@@ -35888,8 +34901,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/claymore"
@@ -35923,8 +34934,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/giant_sword"
@@ -35958,8 +34967,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/bastard_sword"
@@ -35993,8 +35000,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/flamberge"
@@ -36028,8 +35033,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/great_sword"
@@ -36056,9 +35059,7 @@ let remodded_constants_99 = {
             "c": [
                 "Knife",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/knife/dagger"
         },
@@ -36084,9 +35085,7 @@ let remodded_constants_99 = {
             "c": [
                 "Knife",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/knife/dirk"
         },
@@ -36114,9 +35113,7 @@ let remodded_constants_99 = {
             "c": [
                 "Knife",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/knife/kriss"
         },
@@ -36144,9 +35141,7 @@ let remodded_constants_99 = {
             "c": [
                 "Knife",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/knife/blade"
         },
@@ -36181,17 +35176,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Knife",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Knife"
             ],
             "hdi": "weapon/knife/throwing_knife"
         },
@@ -36226,12 +35212,7 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -36268,17 +35249,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Knife",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Knife"
             ],
             "hdi": "weapon/knife/balanced_knife"
         },
@@ -36313,17 +35285,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Axe",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/balanced_axe"
@@ -36358,17 +35321,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Polearm",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Polearm"
             ],
             "hdi": "weapon/javelin/javelin"
         },
@@ -36402,17 +35356,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Polearm",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Polearm"
             ],
             "hdi": "weapon/javelin/pilum"
         },
@@ -36446,17 +35391,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Polearm",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Polearm"
             ],
             "hdi": "weapon/javelin/short_spear"
         },
@@ -36490,12 +35426,7 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -36531,12 +35462,7 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -36565,9 +35491,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/spear/spear"
         },
@@ -36596,9 +35520,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/spear/trident"
         },
@@ -36627,9 +35549,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/spear/brandistock"
         },
@@ -36655,9 +35575,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/spear/spetum"
         },
@@ -36684,9 +35602,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/spear/pike"
         },
@@ -36712,9 +35628,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/polearm/bardiche"
         },
@@ -36740,9 +35654,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/polearm/voulge"
         },
@@ -36773,8 +35685,6 @@ let remodded_constants_99 = {
                 "Polearm",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -36803,9 +35713,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/polearm/poleaxe"
         },
@@ -36832,9 +35740,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/polearm/halberd"
         },
@@ -36863,8 +35769,6 @@ let remodded_constants_99 = {
                 "Polearm",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -36897,8 +35801,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -36931,8 +35833,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -36967,8 +35867,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -37001,8 +35899,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -37037,8 +35933,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -37067,9 +35961,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/short_bow"
         },
@@ -37096,9 +35988,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/hunters_bow"
         },
@@ -37127,9 +36017,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/long_bow"
         },
@@ -37158,9 +36046,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/composite_bow"
         },
@@ -37189,9 +36075,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/short_battle_bow"
         },
@@ -37218,9 +36102,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/long_battle_bow"
         },
@@ -37249,9 +36131,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/short_war_bow"
         },
@@ -37278,9 +36158,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/long_war_bow"
         },
@@ -37309,9 +36187,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/light_crossbow"
         },
@@ -37340,9 +36216,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/crossbow"
         },
@@ -37371,9 +36245,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/heavy_crossbow"
         },
@@ -37402,9 +36274,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/repeating_crossbow"
         },
@@ -37430,9 +36300,7 @@ let remodded_constants_99 = {
                 "Mace",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/mace/khalim_flail"
         },
@@ -37456,9 +36324,7 @@ let remodded_constants_99 = {
                 "Mace",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/mace/super_khalim_flail"
         },
@@ -37487,8 +36353,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -37519,8 +36383,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -37553,8 +36415,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -37587,8 +36447,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -37619,8 +36477,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -37651,8 +36507,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -37685,8 +36539,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -37717,8 +36569,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -37749,8 +36599,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -37783,8 +36631,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -37818,10 +36664,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Assassin Item",
-                "Class Specific",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -37853,10 +36695,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Assassin Item",
-                "Class Specific",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -37888,10 +36726,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Assassin Item",
-                "Class Specific",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -37925,10 +36759,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Assassin Item",
-                "Class Specific",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -37960,10 +36790,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Assassin Item",
-                "Class Specific",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -37995,10 +36821,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Assassin Item",
-                "Class Specific",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -38032,10 +36854,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Assassin Item",
-                "Class Specific",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -38069,10 +36887,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Assassin Item",
-                "Class Specific",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -38104,10 +36918,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Assassin Item",
-                "Class Specific",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -38139,10 +36949,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Assassin Item",
-                "Class Specific",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -38176,10 +36982,6 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Assassin Item",
-                "Class Specific",
                 "Assassin Item",
                 "Class Specific"
             ],
@@ -38212,8 +37014,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/hand_axe"
@@ -38245,8 +37045,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/axe"
@@ -38276,8 +37074,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/double_axe"
@@ -38310,8 +37106,6 @@ let remodded_constants_99 = {
                 "Polearm",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -38342,8 +37136,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/war_axe"
@@ -38374,8 +37166,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/large_axe"
@@ -38407,8 +37197,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/broad_axe"
@@ -38442,8 +37230,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/battle_axe"
@@ -38476,8 +37262,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/great_axe"
@@ -38508,8 +37292,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/giant_axe"
@@ -38541,8 +37323,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -38575,8 +37355,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -38611,8 +37389,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -38645,8 +37421,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -38681,8 +37455,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -38716,8 +37488,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Paladin Item",
                 "Class Specific"
             ],
@@ -38751,8 +37521,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Paladin Item",
                 "Class Specific"
             ],
@@ -38786,8 +37554,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Paladin Item",
                 "Class Specific"
             ],
@@ -38821,8 +37587,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Druid Item",
                 "Class Specific"
             ],
@@ -38853,9 +37617,7 @@ let remodded_constants_99 = {
                 "Mace",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/mace/mace"
         },
@@ -38885,9 +37647,7 @@ let remodded_constants_99 = {
                 "Mace",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/mace/morning_star"
         },
@@ -38915,9 +37675,7 @@ let remodded_constants_99 = {
                 "Mace",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/mace/flail"
         },
@@ -38944,9 +37702,7 @@ let remodded_constants_99 = {
                 "Hammer",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/hammer/war_hammer"
         },
@@ -38973,9 +37729,7 @@ let remodded_constants_99 = {
                 "Hammer",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/hammer/maul"
         },
@@ -39002,9 +37756,7 @@ let remodded_constants_99 = {
                 "Hammer",
                 "Blunt",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/hammer/great_maul"
         },
@@ -39033,8 +37785,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/short_sword"
@@ -39066,8 +37816,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/scimitar"
@@ -39099,8 +37847,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/saber"
@@ -39130,8 +37876,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/falchion"
@@ -39163,8 +37907,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/crystal_sword"
@@ -39194,8 +37936,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/broad_sword"
@@ -39227,8 +37967,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/long_sword"
@@ -39258,8 +37996,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/war_sword"
@@ -39294,15 +38030,9 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Assassin Item",
                 "Class Specific",
                 "Sword",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "custom/katana"
@@ -39337,15 +38067,9 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Assassin Item",
                 "Class Specific",
                 "Sword",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "custom/katana"
@@ -39380,15 +38104,9 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Assassin Item",
                 "Class Specific",
                 "Sword",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "custom/katana"
@@ -39420,8 +38138,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/claymore"
@@ -39455,8 +38171,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/giant_sword"
@@ -39490,8 +38204,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/bastard_sword"
@@ -39523,8 +38235,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/flamberge"
@@ -39558,8 +38268,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/sword/great_sword"
@@ -39587,9 +38295,7 @@ let remodded_constants_99 = {
             "c": [
                 "Knife",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/knife/dagger"
         },
@@ -39615,9 +38321,7 @@ let remodded_constants_99 = {
             "c": [
                 "Knife",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/knife/dirk"
         },
@@ -39645,9 +38349,7 @@ let remodded_constants_99 = {
             "c": [
                 "Knife",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/knife/kriss"
         },
@@ -39673,9 +38375,7 @@ let remodded_constants_99 = {
             "c": [
                 "Knife",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/knife/blade"
         },
@@ -39710,17 +38410,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Knife",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Knife"
             ],
             "hdi": "weapon/knife/throwing_knife"
         },
@@ -39755,12 +38446,7 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -39798,17 +38484,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Knife",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Knife"
             ],
             "hdi": "weapon/knife/balanced_knife"
         },
@@ -39843,17 +38520,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Axe",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "weapon/axe/balanced_axe"
@@ -39888,17 +38556,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Polearm",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Polearm"
             ],
             "hdi": "weapon/javelin/javelin"
         },
@@ -39932,17 +38591,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Polearm",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Polearm"
             ],
             "hdi": "weapon/javelin/pilum"
         },
@@ -39976,17 +38626,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
-                "Polearm",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Polearm"
             ],
             "hdi": "weapon/javelin/short_spear"
         },
@@ -40020,12 +38661,7 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -40061,12 +38697,7 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -40095,9 +38726,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/spear/spear"
         },
@@ -40126,9 +38755,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/spear/trident"
         },
@@ -40155,9 +38782,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/spear/brandistock"
         },
@@ -40184,9 +38809,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/spear/spetum"
         },
@@ -40213,9 +38836,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/spear/pike"
         },
@@ -40242,9 +38863,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/polearm/bardiche"
         },
@@ -40271,9 +38890,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/polearm/voulge"
         },
@@ -40301,9 +38918,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/polearm/scythe"
         },
@@ -40330,9 +38945,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/polearm/poleaxe"
         },
@@ -40359,9 +38972,7 @@ let remodded_constants_99 = {
             "c": [
                 "Polearm",
                 "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/polearm/halberd"
         },
@@ -40390,8 +39001,6 @@ let remodded_constants_99 = {
                 "Polearm",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Necromancer Item",
                 "Class Specific"
             ],
@@ -40424,8 +39033,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -40458,8 +39065,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -40494,8 +39099,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -40528,8 +39131,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -40562,8 +39163,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -40592,9 +39191,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/short_bow"
         },
@@ -40621,9 +39218,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/hunters_bow"
         },
@@ -40650,9 +39245,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/long_bow"
         },
@@ -40681,9 +39274,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/composite_bow"
         },
@@ -40712,9 +39303,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/short_battle_bow"
         },
@@ -40741,9 +39330,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/long_battle_bow"
         },
@@ -40772,9 +39359,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/short_war_bow"
         },
@@ -40801,9 +39386,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/long_war_bow"
         },
@@ -40832,9 +39415,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/light_crossbow"
         },
@@ -40863,9 +39444,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/crossbow"
         },
@@ -40894,9 +39473,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/heavy_crossbow"
         },
@@ -40925,9 +39502,7 @@ let remodded_constants_99 = {
             "c": [
                 "Bow and Crossbow",
                 "Missile Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous"
+                "Weapon"
             ],
             "hdi": "weapon/bow/repeating_crossbow"
         },
@@ -40956,8 +39531,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -40988,8 +39561,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -41020,8 +39591,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -41052,8 +39621,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -41084,8 +39651,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -41119,8 +39684,6 @@ let remodded_constants_99 = {
                 "Bow and Crossbow",
                 "Missile Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -41152,8 +39715,6 @@ let remodded_constants_99 = {
                 "Bow and Crossbow",
                 "Missile Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -41185,8 +39746,6 @@ let remodded_constants_99 = {
                 "Spear",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -41218,8 +39777,6 @@ let remodded_constants_99 = {
                 "Spear",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -41257,17 +39814,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Polearm",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -41298,8 +39846,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -41330,8 +39876,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -41362,8 +39906,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -41394,8 +39936,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -41426,8 +39966,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -41461,8 +39999,6 @@ let remodded_constants_99 = {
                 "Bow and Crossbow",
                 "Missile Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -41494,8 +40030,6 @@ let remodded_constants_99 = {
                 "Bow and Crossbow",
                 "Missile Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -41527,8 +40061,6 @@ let remodded_constants_99 = {
                 "Spear",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -41560,8 +40092,6 @@ let remodded_constants_99 = {
                 "Spear",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -41599,17 +40129,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Polearm",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -41640,8 +40161,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -41672,8 +40191,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -41704,8 +40221,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -41736,8 +40251,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -41768,8 +40281,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Sorceress Item",
                 "Class Specific"
             ],
@@ -41803,8 +40314,6 @@ let remodded_constants_99 = {
                 "Bow and Crossbow",
                 "Missile Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -41836,8 +40345,6 @@ let remodded_constants_99 = {
                 "Bow and Crossbow",
                 "Missile Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -41869,8 +40376,6 @@ let remodded_constants_99 = {
                 "Spear",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -41902,8 +40407,6 @@ let remodded_constants_99 = {
                 "Spear",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -41941,17 +40444,8 @@ let remodded_constants_99 = {
                 "Combo Weapon",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Thrown Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Polearm",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Amazon Item",
                 "Class Specific"
             ],
@@ -41987,15 +40481,9 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Assassin Item",
                 "Class Specific",
                 "Sword",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "custom/katana"
@@ -42030,15 +40518,9 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Assassin Item",
                 "Class Specific",
                 "Sword",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "custom/katana"
@@ -42073,15 +40555,9 @@ let remodded_constants_99 = {
                 "Assassin Claws",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Assassin Item",
                 "Class Specific",
                 "Sword",
-                "Melee Weapon",
-                "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "custom/katana"
@@ -42112,8 +40588,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Class Specific"
             ],
             "hdi": "weapon/staff/short_staff"
@@ -42145,8 +40619,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Class Specific"
             ],
             "hdi": "weapon/staff/short_staff"
@@ -42178,8 +40650,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Class Specific"
             ],
             "hdi": "weapon/staff/short_staff"
@@ -42210,8 +40680,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Class Specific"
             ],
             "hdi": "weapon/staff/war_staff"
@@ -42245,8 +40713,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Class Specific"
             ],
             "hdi": "weapon/staff/war_staff"
@@ -42278,8 +40744,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Class Specific"
             ],
             "hdi": "weapon/staff/war_staff"
@@ -42310,8 +40774,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Paladin Item",
                 "Class Specific"
             ],
@@ -42343,8 +40805,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Paladin Item",
                 "Class Specific"
             ],
@@ -42378,8 +40838,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Paladin Item",
                 "Class Specific"
             ],
@@ -42412,8 +40870,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon",
                 "Barbarian Item",
                 "Class Specific"
@@ -42449,8 +40905,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon",
                 "Barbarian Item",
                 "Class Specific"
@@ -42484,8 +40938,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon",
                 "Barbarian Item",
                 "Class Specific"
@@ -42522,8 +40974,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon",
                 "Barbarian Item",
                 "Class Specific"
@@ -42560,8 +41010,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon",
                 "Barbarian Item",
                 "Class Specific"
@@ -42598,8 +41046,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon",
                 "Barbarian Item",
                 "Class Specific"
@@ -42634,8 +41080,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -42669,8 +41113,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -42702,8 +41144,6 @@ let remodded_constants_99 = {
                 "Blunt",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Barbarian Item",
                 "Class Specific"
             ],
@@ -42734,8 +41174,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon",
                 "Barbarian Item",
                 "Class Specific"
@@ -42767,8 +41205,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon",
                 "Barbarian Item",
                 "Class Specific"
@@ -42801,8 +41237,6 @@ let remodded_constants_99 = {
                 "Axe",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon",
                 "Barbarian Item",
                 "Class Specific"
@@ -42836,8 +41270,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon",
                 "Barbarian Item",
                 "Class Specific"
@@ -42870,8 +41302,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon",
                 "Barbarian Item",
                 "Class Specific"
@@ -42904,8 +41334,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon",
                 "Barbarian Item",
                 "Class Specific"
@@ -42939,8 +41367,6 @@ let remodded_constants_99 = {
                 "Sword",
                 "Melee Weapon",
                 "Weapon",
-                "Gold",
-                "Miscellaneous",
                 "Merc 5 Weapon"
             ],
             "hdi": "custom/DemonGreatSword"
@@ -43131,9 +41557,7 @@ let remodded_constants_99 = {
                 "Healing Potion",
                 "Potion",
                 "Miscellaneous",
-                "Mana Potion",
-                "Potion",
-                "Miscellaneous"
+                "Mana Potion"
             ],
             "hdi": "misc/potion/rejuv_potion"
         },
@@ -43158,9 +41582,7 @@ let remodded_constants_99 = {
                 "Healing Potion",
                 "Potion",
                 "Miscellaneous",
-                "Mana Potion",
-                "Potion",
-                "Miscellaneous"
+                "Mana Potion"
             ],
             "hdi": "misc/potion/full_rejuv_potion"
         },
@@ -43255,13 +41677,11 @@ let remodded_constants_99 = {
                 "invamu3"
             ],
             "eq1n": "Miscellaneous",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Amulet",
                 "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "misc/amulet/amulet",
             "hdig": [
@@ -43290,13 +41710,11 @@ let remodded_constants_99 = {
                 "invamu3"
             ],
             "eq1n": "Miscellaneous",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Amulet",
                 "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "misc/amulet/viper_amulet"
         },
@@ -43321,13 +41739,11 @@ let remodded_constants_99 = {
                 "invrin5"
             ],
             "eq1n": "Miscellaneous",
-            "eq2n": "Helm",
+            "eq2n": "Merc Equip",
             "c": [
                 "Ring",
                 "Miscellaneous",
-                "Helm",
-                "Potion",
-                "Miscellaneous"
+                "Merc Equip"
             ],
             "hdi": "misc/ring/ring",
             "hdig": [
@@ -44067,8 +42483,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -44124,8 +42539,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -44181,8 +42595,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -44238,8 +42651,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -44295,8 +42707,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -44352,8 +42763,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -44417,8 +42827,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -44482,8 +42891,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -44547,8 +42955,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -44612,8 +43019,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -44677,8 +43083,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -44750,8 +43155,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -44823,8 +43227,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -44896,8 +43299,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -44969,8 +43371,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -45042,8 +43443,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -45115,8 +43515,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -45188,8 +43587,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -45261,8 +43659,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -45334,8 +43731,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -45407,8 +43803,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -45472,8 +43867,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -45537,8 +43931,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -45602,8 +43995,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -45667,8 +44059,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -45732,8 +44123,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -45789,8 +44179,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -45846,8 +44235,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -45903,8 +44291,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -45960,8 +44347,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -46237,8 +44623,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -46310,8 +44695,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -46383,8 +44767,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -46456,8 +44839,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -46529,8 +44911,7 @@ let remodded_constants_99 = {
                 "Gem",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -46625,8 +45006,6 @@ let remodded_constants_99 = {
             "c": [
                 "Small Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "misc/charm/charm_small",
@@ -46658,8 +45037,6 @@ let remodded_constants_99 = {
             "c": [
                 "Medium Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "misc/charm/charm_medium",
@@ -46681,7 +45058,7 @@ let remodded_constants_99 = {
             "i": "invsst",
             "iw": 1,
             "ih": 3,
-            "it": 8,
+            "it": 0,
             "ig": [
                 "invch3",
                 "invch6",
@@ -46691,8 +45068,6 @@ let remodded_constants_99 = {
             "c": [
                 "Large Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "misc/charm/charm_large",
@@ -46818,8 +45193,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -46893,8 +45267,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -46954,8 +45327,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47008,8 +45380,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47062,8 +45433,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47116,8 +45486,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47170,8 +45539,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47225,8 +45593,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47279,8 +45646,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47333,8 +45699,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47343,8 +45708,8 @@ let remodded_constants_99 = {
                         "type": "weapon",
                         "m": "dmg-cold",
                         "p": 75,
-                        "min": 7,
-                        "max": 2
+                        "min": 2,
+                        "max": 7
                     }
                 ],
                 [
@@ -47388,8 +45753,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47442,8 +45806,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47496,8 +45859,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47505,8 +45867,8 @@ let remodded_constants_99 = {
                         "code": "r13",
                         "type": "weapon",
                         "m": "swing2",
-                        "min": 20,
-                        "max": 20
+                        "min": 10,
+                        "max": 10
                     }
                 ],
                 [
@@ -47550,8 +45912,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47604,8 +45965,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47658,8 +46018,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47712,8 +46071,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47766,8 +46124,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47820,8 +46177,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47874,8 +46230,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47928,8 +46283,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -47989,8 +46343,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -48043,8 +46396,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -48097,8 +46449,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -48151,8 +46502,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -48205,8 +46555,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -48259,8 +46608,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -48313,8 +46661,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -48367,8 +46714,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -48421,8 +46767,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -48475,8 +46820,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -48529,8 +46873,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -48583,8 +46926,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -48598,23 +46940,9 @@ let remodded_constants_99 = {
                     {
                         "code": "r33",
                         "type": "weapon",
-                        "m": "abs-fire%",
+                        "m": "abs-elem%",
                         "min": 5,
-                        "max": 5,
-                    },
-                    {
-                        "code": "r33",
-                        "type": "weapon",
-                        "m": "abs-cold%",
-                        "min": 5,
-                        "max": 5,
-                    },
-                    {
-                        "code": "r33",
-                        "type": "weapon",
-                        "m": "abs-ltng%",
-                        "min": 5,
-                        "max": 5,
+                        "max": 5
                     }
                 ],
                 [
@@ -48628,30 +46956,9 @@ let remodded_constants_99 = {
                     {
                         "code": "r33",
                         "type": "helm",
-                        "m": "abs-fire%",
+                        "m": "abs-all%",
                         "min": 5,
-                        "max": 5,
-                    },
-                    {
-                        "code": "r33",
-                        "type": "helm",
-                        "m": "abs-cold%",
-                        "min": 5,
-                        "max": 5,
-                    },
-                    {
-                        "code": "r33",
-                        "type": "helm",
-                        "m": "abs-ltng%",
-                        "min": 5,
-                        "max": 5,
-                    },
-                    {
-                        "code": "r33",
-                        "type": "helm",
-                        "m": "abs-mag%",
-                        "min": 5,
-                        "max": 5,
+                        "max": 5
                     }
                 ],
                 [
@@ -48665,30 +46972,9 @@ let remodded_constants_99 = {
                     {
                         "code": "r33",
                         "type": "shield",
-                        "m": "abs-fire%",
+                        "m": "abs-all%",
                         "min": 5,
-                        "max": 5,
-                    },
-                    {
-                        "code": "r33",
-                        "type": "shield",
-                        "m": "abs-cold%",
-                        "min": 5,
-                        "max": 5,
-                    },
-                    {
-                        "code": "r33",
-                        "type": "shield",
-                        "m": "abs-ltng%",
-                        "min": 5,
-                        "max": 5,
-                    },
-                    {
-                        "code": "r33",
-                        "type": "shield",
-                        "m": "abs-mag%",
-                        "min": 5,
-                        "max": 5,
+                        "max": 5
                     }
                 ]
             ],
@@ -48721,8 +47007,7 @@ let remodded_constants_99 = {
                 "Jewel",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "hdi": "misc/gem/perfect_diamond",
             "hdig": [
@@ -49420,8 +47705,6 @@ let remodded_constants_99 = {
             "c": [
                 "Medium Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "custom/mythos_log"
@@ -49445,8 +47728,6 @@ let remodded_constants_99 = {
             "c": [
                 "Beacon",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous",
                 "Quest"
             ],
@@ -55248,8 +53529,6 @@ let remodded_constants_99 = {
             "c": [
                 "Medium Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "custom/Charm1"
@@ -55277,8 +53556,6 @@ let remodded_constants_99 = {
             "c": [
                 "Medium Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "custom/Charm2"
@@ -55306,8 +53583,6 @@ let remodded_constants_99 = {
             "c": [
                 "Medium Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "custom/Charm3"
@@ -55335,8 +53610,6 @@ let remodded_constants_99 = {
             "c": [
                 "Medium Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "custom/Charm4"
@@ -55364,8 +53637,6 @@ let remodded_constants_99 = {
             "c": [
                 "Medium Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "custom/Charm5"
@@ -55393,8 +53664,6 @@ let remodded_constants_99 = {
             "c": [
                 "Medium Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "custom/Charm6"
@@ -55422,8 +53691,6 @@ let remodded_constants_99 = {
             "c": [
                 "Medium Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "custom/Charm7"
@@ -55451,8 +53718,6 @@ let remodded_constants_99 = {
             "c": [
                 "Medium Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "custom/MegaCharm"
@@ -61188,7 +59453,7 @@ let remodded_constants_99 = {
             "hi": 0,
             "gs": 0,
             "gt": 0,
-            "i": "invrZod",
+            "i": "invrDi",
             "iw": 1,
             "ih": 1,
             "it": 0,
@@ -61199,8 +59464,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -61242,7 +59506,7 @@ let remodded_constants_99 = {
             "hi": 0,
             "gs": 0,
             "gt": 0,
-            "i": "invrZod",
+            "i": "invrAb",
             "iw": 1,
             "ih": 1,
             "it": 0,
@@ -61253,8 +59517,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -61296,7 +59559,7 @@ let remodded_constants_99 = {
             "hi": 0,
             "gs": 0,
             "gt": 0,
-            "i": "invrZod",
+            "i": "invrEr",
             "iw": 1,
             "ih": 1,
             "it": 0,
@@ -61307,8 +59570,7 @@ let remodded_constants_99 = {
                 "Rune",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
             "m": [
                 [
@@ -64406,8 +62668,6 @@ let remodded_constants_99 = {
             "c": [
                 "Amazon M Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "custom/mythos_log"
@@ -64435,8 +62695,6 @@ let remodded_constants_99 = {
             "c": [
                 "Assassin M Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "custom/mythos_log"
@@ -64464,8 +62722,6 @@ let remodded_constants_99 = {
             "c": [
                 "Barbarian M Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "custom/mythos_log"
@@ -64493,8 +62749,6 @@ let remodded_constants_99 = {
             "c": [
                 "Druid M Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "custom/mythos_log"
@@ -64522,8 +62776,6 @@ let remodded_constants_99 = {
             "c": [
                 "Necromancer M Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "custom/mythos_log"
@@ -64551,8 +62803,6 @@ let remodded_constants_99 = {
             "c": [
                 "Paladin M Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "custom/mythos_log"
@@ -64580,8 +62830,6 @@ let remodded_constants_99 = {
             "c": [
                 "Sorceress M Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "custom/mythos_log"
@@ -64773,16 +63021,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m01": {
             "nc": "m01",
@@ -64803,16 +63044,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m02": {
             "nc": "m02",
@@ -64833,16 +63067,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m03": {
             "nc": "m03",
@@ -64863,16 +63090,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m04": {
             "nc": "m04",
@@ -64893,16 +63113,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m05": {
             "nc": "m05",
@@ -64923,16 +63136,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m06": {
             "nc": "m06",
@@ -64953,16 +63159,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m07": {
             "nc": "m07",
@@ -64983,16 +63182,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m08": {
             "nc": "m08",
@@ -65013,16 +63205,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m09": {
             "nc": "m09",
@@ -65043,16 +63228,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m10": {
             "nc": "m10",
@@ -65073,16 +63251,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m11": {
             "nc": "m11",
@@ -65103,16 +63274,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m12": {
             "nc": "m12",
@@ -65133,16 +63297,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m13": {
             "nc": "m13",
@@ -65163,16 +63320,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m14": {
             "nc": "m14",
@@ -65193,16 +63343,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m15": {
             "nc": "m15",
@@ -65223,16 +63366,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m16": {
             "nc": "m16",
@@ -65253,16 +63389,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m17": {
             "nc": "m17",
@@ -65283,16 +63412,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m18": {
             "nc": "m18",
@@ -65313,16 +63435,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m19": {
             "nc": "m19",
@@ -65343,16 +63458,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m20": {
             "nc": "m20",
@@ -65373,16 +63481,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m21": {
             "nc": "m21",
@@ -65403,16 +63504,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m22": {
             "nc": "m22",
@@ -65433,16 +63527,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m23": {
             "nc": "m23",
@@ -65463,16 +63550,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m24": {
             "nc": "m24",
@@ -65493,16 +63573,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m25": {
             "nc": "m25",
@@ -65523,16 +63596,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m26": {
             "nc": "m26",
@@ -65553,16 +63619,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
-                "Miscellaneous",
-                "Maps",
-                "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMapI"
         },
         "m27": {
             "nc": "m27",
@@ -65582,11 +63641,9 @@ let remodded_constants_99 = {
             "c": [
                 "Maps",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/AdventureMap"
         },
         "m28": {
             "nc": "m28",
@@ -65607,7 +63664,7 @@ let remodded_constants_99 = {
                 "Ingredient",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl"
+            "hdi": "custom/Scribbles"
         },
         "m29": {
             "nc": "m29",
@@ -65628,7 +63685,6 @@ let remodded_constants_99 = {
                 "Parchment",
                 "Miscellaneous"
             ],
-            "hdi": "custom/AdventureMapl",
             "hdig": [
                 "custom/Parchment1",
                 "custom/Parchment2",
@@ -65704,8 +63760,6 @@ let remodded_constants_99 = {
             "c": [
                 "Small Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "misc/charm/charm_small",
@@ -65737,8 +63791,6 @@ let remodded_constants_99 = {
             "c": [
                 "Medium Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "misc/charm/charm_medium",
@@ -65770,8 +63822,6 @@ let remodded_constants_99 = {
             "c": [
                 "Large Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "misc/charm/charm_large",
@@ -65804,8 +63854,6 @@ let remodded_constants_99 = {
             "c": [
                 "Small Charm",
                 "Charm",
-                "Miscellaneous",
-                "Potion",
                 "Miscellaneous"
             ],
             "hdi": "misc/charm/charm_small",
@@ -65842,10 +63890,9 @@ let remodded_constants_99 = {
                 "Jewel",
                 "Socket Filler",
                 "Miscellaneous",
-                "Potion",
-                "Miscellaneous"
+                "Potion"
             ],
-            "hdi": "custom/PrimsaticFacet"
+            "hdi": "custom/PrismaticFacet"
         }
     },
     "version": "vanilla_constants_99"

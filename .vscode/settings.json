@@ -8,7 +8,7 @@
     "package-lock.json": true,
     "public/d2/game_data/vanilla/": true,
     "public/d2/vanilla_constants_*.js": true,
-    "**/.nyc_output": true,
+    "**/.nyc_output": true
   },
   "files.eol": "\r\n",
   "files.exclude": {
@@ -35,9 +35,7 @@
   },
   "peacock.color": "#007fff",
   "liveServer.settings.AdvanceCustomBrowserCmdLine": "chrome --incognito --remote-debugging-port=9222",
-  "liveServer.settings.mount": [
-
-  ],
+  "liveServer.settings.mount": [],
   "mocha.coverage": {
     "enable": true,
     "decoration": true,
@@ -49,7 +47,5 @@
     "reporters": []
   },
   "mocha.files.glob": "test/**/*.ts",
-  "mocha.requires": [
-    "ts-node/register"
-  ],
+  "mocha.requires": ["ts-node/register"]
 }

@@ -6,9 +6,7 @@
       "request": "launch",
       "name": "Mocha Tests",
       "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
-      "args": [
-        "--colors"
-      ],
+      "args": ["--colors"],
       "internalConsoleOptions": "openOnSessionStart"
     },
     {
@@ -16,10 +14,7 @@
       "request": "launch",
       "name": "Mocha 1 Test",
       "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
-      "args": [
-        "-g 'should write version 98 complex character'",
-        "--colors"
-      ],
+      "args": ["-g 'should write version 98 complex character'", "--colors"],
       "internalConsoleOptions": "openOnSessionStart"
     },
     {
@@ -27,9 +22,7 @@
       "request": "launch",
       "name": "Generate Bundles",
       "program": "${workspaceFolder}/scripts/generate_constant_bundles.js",
-      "args": [
-        "--colors"
-      ],
+      "args": ["--colors"],
       "internalConsoleOptions": "openOnSessionStart"
     },
     {
@@ -37,9 +30,7 @@
       "request": "launch",
       "name": "Decode Binaries",
       "program": "${workspaceFolder}/scripts/decode_binaries/index.js",
-      "args": [
-        "--colors"
-      ],
+      "args": ["--colors"],
       "internalConsoleOptions": "openOnSessionStart"
     }
   ]

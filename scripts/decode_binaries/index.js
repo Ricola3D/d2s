@@ -25,39 +25,38 @@ const { decodeWeaponsFile } = require("./files/weapons.js");
 const inputDir = "C:/Program Files (x86)/Diablo II Resurrected/mods/ReMoDDeD/ReMoDDeD.mpq/data/global/excel";
 const outputDir = "C:/Program Files (x86)/Diablo II Resurrected/mods/ReMoDDeD/ReMoDDeD.mpq/data/global/excel";
 
-const data = {}
-const columns = {}
+const data = {};
+const columns = {};
 
 // --------------------------------------------------
 // --------------------------------------------------
 // input
 // --------------------------------------------------
 // --------------------------------------------------
-data.armor = decodeArmorFile(inputDir) // armor.bin
-data.charstats = decodeCharStatsFile(inputDir) // charstats.bin
-data.gems = decodeGemsFile(inputDir) // gems.bin
-data.itemstatcost = decodeItemStatCostFile(inputDir) // itemstatcost.bin
-data.itemtypes = decodeItemTypesFile(inputDir) // itemtypes.bin
-data.magicprefix = decodeMagicAffixFile(inputDir, "prefix") // magicprefix.bin
-data.magicsuffix = decodeMagicAffixFile(inputDir, "suffix") // magicsuffix.bin
-data.misc = decodeMiscFile(inputDir) // misc.bin
-data.playerclass = decodePlayerClassFile(inputDir) // playerclass.bin
-data.properties = decodePropertiesFile(inputDir) // properties.bin
-data.rareprefix = decodeRareAffixFile(inputDir, "prefix") // rareprefix.bin
-data.raresuffix = decodeRareAffixFile(inputDir, "suffix") // raresuffix.bin
-data.runes = decodeRunesFile(inputDir) // runes.bin
-data.setitems = decodeSetItemsFile(inputDir) // setitems.bin
-data.skilldesc = decodeSkillDescFile(inputDir) // skilldesc.bin
-data.skills = decodeSkillsFile(inputDir) // skills.bin
-data.uniqueitems = decodeUniqueItemsFile(inputDir) // uniqueitems.bin
-data.weapons = decodeWeaponsFile(inputDir) // weapons.bin
+data.armor = decodeArmorFile(inputDir); // armor.bin
+data.charstats = decodeCharStatsFile(inputDir); // charstats.bin
+data.gems = decodeGemsFile(inputDir); // gems.bin
+data.itemstatcost = decodeItemStatCostFile(inputDir); // itemstatcost.bin
+data.itemtypes = decodeItemTypesFile(inputDir); // itemtypes.bin
+data.magicprefix = decodeMagicAffixFile(inputDir, "prefix"); // magicprefix.bin
+data.magicsuffix = decodeMagicAffixFile(inputDir, "suffix"); // magicsuffix.bin
+data.misc = decodeMiscFile(inputDir); // misc.bin
+data.playerclass = decodePlayerClassFile(inputDir); // playerclass.bin
+data.properties = decodePropertiesFile(inputDir); // properties.bin
+data.rareprefix = decodeRareAffixFile(inputDir, "prefix"); // rareprefix.bin
+data.raresuffix = decodeRareAffixFile(inputDir, "suffix"); // raresuffix.bin
+data.runes = decodeRunesFile(inputDir); // runes.bin
+data.setitems = decodeSetItemsFile(inputDir); // setitems.bin
+data.skilldesc = decodeSkillDescFile(inputDir); // skilldesc.bin
+data.skills = decodeSkillsFile(inputDir); // skills.bin
+data.uniqueitems = decodeUniqueItemsFile(inputDir); // uniqueitems.bin
+data.weapons = decodeWeaponsFile(inputDir); // weapons.bin
 
 // --------------------------------------------------
 // --------------------------------------------------
 // Links resolution
 // --------------------------------------------------
 // --------------------------------------------------
-
 
 // --------------------------------------------------
 // --------------------------------------------------
@@ -233,7 +232,7 @@ columns.armor = [
   "HellUpgrade",
   "Nameable",
   "PermStoreItem",
-  "diablocloneweight"
+  "diablocloneweight",
 ];
 writeOutput(outputDir, "armor", data, columns);
 
@@ -320,7 +319,7 @@ columns.charstats = [
   "item10",
   "item10loc",
   "item10count",
-  "item10quality"
+  "item10quality",
 ];
 writeOutput(outputDir, "charstats", data, columns);
 
@@ -364,8 +363,8 @@ columns.gems = [
   "shieldMod3Code",
   "shieldMod3Param",
   "shieldMod3Min",
-  "shieldMod3Max"
-]
+  "shieldMod3Max",
+];
 writeOutput(outputDir, "gems", data, columns);
 
 columns.itemstatcost = [
@@ -420,8 +419,8 @@ columns.itemstatcost = [
   "dgrpstr2",
   "stuff",
   "advdisplay",
-  "*eol"
-]
+  "*eol",
+];
 writeOutput(outputDir, "itemstatcost", data, columns);
 
 columns.itemtypes = [
@@ -460,8 +459,8 @@ columns.itemtypes = [
   "InvGfx5",
   "InvGfx6",
   "StorePage",
-  "*eol"
-]
+  "*eol",
+];
 writeOutput(outputDir, "itemtypes", data, columns);
 
 columns.magicprefix = [
@@ -503,16 +502,22 @@ columns.magicprefix = [
   "etype4",
   "etype5",
   "multiply",
-  "add"
+  "add",
 ];
-columns.magicsuffix = columns.magicprefix 
+columns.magicsuffix = columns.magicprefix;
 writeOutput(outputDir, "magicprefix", data, columns);
 writeOutput(outputDir, "magicsuffix", data, columns);
 
 const magicPrefixListFile = path.join(outputDir, "magicPrefixListFile.json");
-fs.writeFileSync(magicPrefixListFile, JSON.stringify([ null, ...data.magicprefix.map((item, index) => ({id: index+1, n: item.Name})) ], null, '\t'));
+fs.writeFileSync(
+  magicPrefixListFile,
+  JSON.stringify([null, ...data.magicprefix.map((item, index) => ({ id: index + 1, n: item.Name }))], null, "\t"),
+);
 const magicSuffixListFile = path.join(outputDir, "magicSuffixListFile.json");
-fs.writeFileSync(magicSuffixListFile, JSON.stringify([ null, ...data.magicsuffix.map((item, index) => ({id: index+1, n: item.Name})) ], null, '\t'));
+fs.writeFileSync(
+  magicSuffixListFile,
+  JSON.stringify([null, ...data.magicsuffix.map((item, index) => ({ id: index + 1, n: item.Name }))], null, "\t"),
+);
 
 columns.misc = [
   "name",
@@ -681,15 +686,12 @@ columns.misc = [
   "PermStoreItem",
   "multibuy",
   "Nameable",
-  "diablocloneweight"
-]
-writeOutput(outputDir, "misc", data, columns)
+  "diablocloneweight",
+];
+writeOutput(outputDir, "misc", data, columns);
 
-columns.playerclass = [
-  "Player Class",
-  "Code"
-]
-writeOutput(outputDir, "playerclass", data, columns)
+columns.playerclass = ["Player Class", "Code"];
+writeOutput(outputDir, "playerclass", data, columns);
 
 columns.properties = [
   "code",
@@ -727,26 +729,26 @@ columns.properties = [
   "*Min",
   "*Max",
   "*Notes",
-  "*eol"
-]
-writeOutput(outputDir, "properties", data, columns)
+  "*eol",
+];
+writeOutput(outputDir, "properties", data, columns);
 
 columns.rareprefix = [
   "name",
-	"version",
-	"itype1",
-	"itype2",
-	"itype3",
-	"itype4",
-	"itype5",
-	"itype6",
-	"itype7",
-	"etype1",
-	"etype2",
-	"etype3",
-	"etype4"
-]
-columns.raresuffix = columns.rareprefix
+  "version",
+  "itype1",
+  "itype2",
+  "itype3",
+  "itype4",
+  "itype5",
+  "itype6",
+  "itype7",
+  "etype1",
+  "etype2",
+  "etype3",
+  "etype4",
+];
+columns.raresuffix = columns.rareprefix;
 writeOutput(outputDir, "rareprefix", data, columns);
 writeOutput(outputDir, "raresuffix", data, columns);
 
@@ -801,108 +803,108 @@ columns.runes = [
   "T1Param7",
   "T1Min7",
   "T1Max7",
-  "*eol"
-]
+  "*eol",
+];
 writeOutput(outputDir, "runes", data, columns);
 
 columns.setitems = [
-	"index",
-	"*ID",
-	"set",
-	"item",
-	"*ItemName",
-	"rarity",
-	"lvl",
-	"lvl req",
-	"chrtransform",
-	"invtransform",
-	"invfile",
-	"flippyfile",
-	"dropsound",
-	"dropsfxframe",
-	"usesound",
-	"cost mult",
-	"cost add",
-	"add func",
-	"prop1",
-	"par1",
-	"min1",
-	"max1",
-	"prop2",
-	"par2",
-	"min2",
-	"max2",
-	"prop3",
-	"par3",
-	"min3",
-	"max3",
-	"prop4",
-	"par4",
-	"min4",
-	"max4",
-	"prop5",
-	"par5",
-	"min5",
-	"max5",
-	"prop6",
-	"par6",
-	"min6",
-	"max6",
-	"prop7",
-	"par7",
-	"min7",
-	"max7",
-	"prop8",
-	"par8",
-	"min8",
-	"max8",
-	"prop9",
-	"par9",
-	"min9",
-	"max9",
-	"aprop1a",
-	"apar1a",
-	"amin1a",
-	"amax1a",
-	"aprop1b",
-	"apar1b",
-	"amin1b",
-	"amax1b",
-	"aprop2a",
-	"apar2a",
-	"amin2a",
-	"amax2a",
-	"aprop2b",
-	"apar2b",
-	"amin2b",
-	"amax2b",
-	"aprop3a",
-	"apar3a",
-	"amin3a",
-	"amax3a",
-	"aprop3b",
-	"apar3b",
-	"amin3b",
-	"amax3b",
-	"aprop4a",
-	"apar4a",
-	"amin4a",
-	"amax4a",
-	"aprop4b",
-	"apar4b",
-	"amin4b",
-	"amax4b",
-	"aprop5a",
-	"apar5a",
-	"amin5a",
-	"amax5a",
-	"aprop5b",
-	"apar5b",
-	"amin5b",
-	"amax5b",
-	"diablocloneweight",
-	"*eol"
-]
+  "index",
+  "*ID",
+  "set",
+  "item",
+  "*ItemName",
+  "rarity",
+  "lvl",
+  "lvl req",
+  "chrtransform",
+  "invtransform",
+  "invfile",
+  "flippyfile",
+  "dropsound",
+  "dropsfxframe",
+  "usesound",
+  "cost mult",
+  "cost add",
+  "add func",
+  "prop1",
+  "par1",
+  "min1",
+  "max1",
+  "prop2",
+  "par2",
+  "min2",
+  "max2",
+  "prop3",
+  "par3",
+  "min3",
+  "max3",
+  "prop4",
+  "par4",
+  "min4",
+  "max4",
+  "prop5",
+  "par5",
+  "min5",
+  "max5",
+  "prop6",
+  "par6",
+  "min6",
+  "max6",
+  "prop7",
+  "par7",
+  "min7",
+  "max7",
+  "prop8",
+  "par8",
+  "min8",
+  "max8",
+  "prop9",
+  "par9",
+  "min9",
+  "max9",
+  "aprop1a",
+  "apar1a",
+  "amin1a",
+  "amax1a",
+  "aprop1b",
+  "apar1b",
+  "amin1b",
+  "amax1b",
+  "aprop2a",
+  "apar2a",
+  "amin2a",
+  "amax2a",
+  "aprop2b",
+  "apar2b",
+  "amin2b",
+  "amax2b",
+  "aprop3a",
+  "apar3a",
+  "amin3a",
+  "amax3a",
+  "aprop3b",
+  "apar3b",
+  "amin3b",
+  "amax3b",
+  "aprop4a",
+  "apar4a",
+  "amin4a",
+  "amax4a",
+  "aprop4b",
+  "apar4b",
+  "amin4b",
+  "amax4b",
+  "aprop5a",
+  "apar5a",
+  "amin5a",
+  "amax5a",
+  "aprop5b",
+  "apar5b",
+  "amin5b",
+  "amax5b",
+  "diablocloneweight",
+  "*eol",
+];
 writeOutput(outputDir, "setitems", data, columns);
 
 columns.skilldesc = [
@@ -1025,8 +1027,8 @@ columns.skilldesc = [
   "dsc3calcb7",
   "item proc text",
   "item proc descline count",
-  "*eol"
-]
+  "*eol",
+];
 writeOutput(outputDir, "skilldesc", data, columns);
 
 columns.skills = [
@@ -1322,6 +1324,6 @@ columns.skills = [
   "aibonus",
   "cost mult",
   "cost add",
-  "*eol"
-]
+  "*eol",
+];
 writeOutput(outputDir, "skills", data, columns);

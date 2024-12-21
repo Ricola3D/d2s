@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const fs = require("fs");
 const path = require("path");
-const _ = require("lodash")
+const _ = require("lodash");
 
 //special stats. read the next N properties.
 //seems to be hardcode in d2 and not in itemstatcost
@@ -19,7 +19,7 @@ const EItemQuality = {
   normal: 0,
   exceptional: 1,
   elite: 2,
-}
+};
 
 // In D2R, item definitions are overrided by files from "hd\items" and "hd\global\ui\items"
 function getBaseItemSection(constants, itemCode) {
@@ -31,119 +31,118 @@ function getBaseItemSection(constants, itemCode) {
   } else if (constants.other_items[itemCode] != undefined) {
     section = "other_items";
   }
-  return section
+  return section;
 }
 
 function D2RPostTreatment(input_dir, constants) {
   // Missing items data
-  if (constants.other_items.r34 && constants.other_items.r34.n && constants.other_items.r34.n == "Di Rune") {
-    constants.other_items.r34.m = [
-      [
-        {
-          code: "r34",
-          type: "weapon",
-          m: "ex-attacks",
-          min: 2,
-          max: 2
-        }
-      ],
-      [
-        {
-          code: "r34",
-          type: "helm",
-          m: "ex-missiles",
-          min: 2,
-          max: 2
-        }
-      ],
-      [
-        {
-          code: "r34",
-          type: "shield",
-          m: "sum-ex",
-          min: 2,
-          max: 2
-        }
-      ]
-    ];
-  }
+  // if (constants.other_items.r34 && constants.other_items.r34.n && constants.other_items.r34.n == "Di Rune") {
+  //   constants.other_items.r34.m = [
+  //     [
+  //       {
+  //         code: "r34",
+  //         type: "weapon",
+  //         m: "ex-attacks",
+  //         min: 2,
+  //         max: 2,
+  //       },
+  //     ],
+  //     [
+  //       {
+  //         code: "r34",
+  //         type: "helm",
+  //         m: "ex-missiles",
+  //         min: 2,
+  //         max: 2,
+  //       },
+  //     ],
+  //     [
+  //       {
+  //         code: "r34",
+  //         type: "shield",
+  //         m: "sum-ex",
+  //         min: 2,
+  //         max: 2,
+  //       },
+  //     ],
+  //   ];
+  // }
 
-  if (constants.other_items.r35 && constants.other_items.r35.n && constants.other_items.r35.n == "Ab Rune") {
-    constants.other_items.r35.m = [
-      [
-        {
-          code: "r35",
-          type: "weapon",
-          m: "weight-capacity",
-          min: 3,
-          max: 3
-        }
-      ],
-      [
-        {
-          code: "r35",
-          type: "helm",
-          m: "weight-capacity",
-          min: 3,
-          max: 3
-        }
-      ],
-      [
-        {
-          code: "r35",
-          type: "shield",
-          m: "weight-capacity",
-          min: 3,
-          max: 3
-        }
-      ]
-    ];
-  }
+  // if (constants.other_items.r35 && constants.other_items.r35.n && constants.other_items.r35.n == "Ab Rune") {
+  //   constants.other_items.r35.m = [
+  //     [
+  //       {
+  //         code: "r35",
+  //         type: "weapon",
+  //         m: "weight-capacity",
+  //         min: 3,
+  //         max: 3,
+  //       },
+  //     ],
+  //     [
+  //       {
+  //         code: "r35",
+  //         type: "helm",
+  //         m: "weight-capacity",
+  //         min: 3,
+  //         max: 3,
+  //       },
+  //     ],
+  //     [
+  //       {
+  //         code: "r35",
+  //         type: "shield",
+  //         m: "weight-capacity",
+  //         min: 3,
+  //         max: 3,
+  //       },
+  //     ],
+  //   ];
+  // }
   // ------------------
 
   // HD overrides
   let subFolders = {
-    "weapon_items": "weapon",
-    "armor_items": "armor",
-    "other_items": "misc"
-  }
+    weapon_items: "weapon",
+    armor_items: "armor",
+    other_items: "misc",
+  };
   const items_override_file_path = path.join(__dirname, `${input_dir}/hd/items/items.json`);
   if (fs.existsSync(items_override_file_path)) {
     // item override file exists, apply it (particularly HD UI images)
-    const itemOverrides = JSON.parse(fs.readFileSync(items_override_file_path, 'utf8'));
+    const itemOverrides = JSON.parse(fs.readFileSync(items_override_file_path, "utf8"));
     {
       // Item types
       for (let itemOverride of itemOverrides) {
         // The matching item code
         const itemCode = Object.keys(itemOverride)[0];
-        
+
         // Retrieve the item section
         let baseItemSection = getBaseItemSection(constants, itemCode);
         if (baseItemSection) {
           // Check if an override .sprite image exist
-          const inventoryImage = path.normalize(`${subFolders[baseItemSection]}/${itemOverride[itemCode].asset}`).replaceAll("\\", "/")
+          const inventoryImage = path.normalize(`${subFolders[baseItemSection]}/${itemOverride[itemCode].asset}`).replaceAll("\\", "/");
           const inventoryImageAbsolutePath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}.sprite`);
-          
+
           // Add the ".hdi" attribute in game constants
           if (fs.existsSync(inventoryImageAbsolutePath)) {
-            constants[baseItemSection][itemCode].hdi = inventoryImage
+            constants[baseItemSection][itemCode].hdi = inventoryImage;
           }
 
           // Check if multiple images
-          if (! /\d$/.test(inventoryImage) ) { // Except if image already ends with a number
-            if (itemCode == "gpw")
-              continue; // Skip. perfect_diamond1..6 files are for jewels. I don't know why Blizzard mixed the names...
+          if (!/\d$/.test(inventoryImage)) {
+            // Except if image already ends with a number
+            if (itemCode == "gpw") continue; // Skip. perfect_diamond1..6 files are for jewels. I don't know why Blizzard mixed the names...
 
-            if (itemCode == "vip")
-              continue; // Skip. All files are identical, plus it's an unique.
+            if (itemCode == "vip") continue; // Skip. All files are identical, plus it's an unique.
 
             for (let i = 1; ; i++) {
               const invGfxPath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}${i}.sprite`);
               if (fs.existsSync(invGfxPath)) {
                 if (i == 1) {
-                  constants[baseItemSection][itemCode].hdig = []
+                  constants[baseItemSection][itemCode].hdig = [];
                 }
-                constants[baseItemSection][itemCode].hdig.push(`${inventoryImage}${i}`)
+                constants[baseItemSection][itemCode].hdig.push(`${inventoryImage}${i}`);
               } else {
                 break;
               }
@@ -154,25 +153,27 @@ function D2RPostTreatment(input_dir, constants) {
     }
 
     // Uniques/sets
-    for (let category of [{ name: "uniques", section: "unq_items", short: "u "}, { name: "sets", section: "set_items", short: "s" }]) {
+    for (let category of [
+      { name: "uniques", section: "unq_items", short: "u " },
+      { name: "sets", section: "set_items", short: "s" },
+    ]) {
       const uniqOrSet_override_file_path = path.join(__dirname, `${input_dir}/hd/items/${category.name}.json`);
       if (fs.existsSync(uniqOrSet_override_file_path)) {
         //file exists. It contains inventory image override for some unique items
-        const uniqOrSetOverrides = JSON.parse(fs.readFileSync(uniqOrSet_override_file_path, 'utf8'));
+        const uniqOrSetOverrides = JSON.parse(fs.readFileSync(uniqOrSet_override_file_path, "utf8"));
         for (let uniqOrSetOverride of uniqOrSetOverrides) {
           // The matching item code
           const itemSnakeCaseIndex = Object.keys(uniqOrSetOverride)[0]; // Matches the index column of uniqueitems.txt, and a strings.json key, but with snake case
-          if (itemSnakeCaseIndex == "rainbow_facet")
-            continue; // There is no HD image for jewels, it puts diamond instead
-  
+          if (itemSnakeCaseIndex == "rainbow_facet") continue; // There is no HD image for jewels, it puts diamond instead
+
           // There can be multiple matches for an index
-          constants[category.section].forEach(item => {
+          constants[category.section].forEach((item) => {
             if (_.snakeCase(item.index) == itemSnakeCaseIndex) {
               // It's a match !
-              let baseItemSection = getBaseItemSection(constants, item.c)
+              let baseItemSection = getBaseItemSection(constants, item.c);
               if (baseItemSection) {
                 // Check if an override .sprite image exist
-                const inventoryImage = path.normalize(`${subFolders[baseItemSection]}/${uniqOrSetOverride[itemSnakeCaseIndex].normal}`)
+                const inventoryImage = path.normalize(`${subFolders[baseItemSection]}/${uniqOrSetOverride[itemSnakeCaseIndex].normal}`);
                 const inventoryImageAbsolutePath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}.sprite`);
                 // Add the ".hdi" attribute in game constants
                 if (fs.existsSync(inventoryImageAbsolutePath)) {
@@ -180,7 +181,7 @@ function D2RPostTreatment(input_dir, constants) {
                 }
               }
             }
-          })
+          });
         }
       }
     }
@@ -192,7 +193,12 @@ function D2RPostTreatment(input_dir, constants) {
 function ReMoDDeDPostTreatment(input_dir, constants) {
   // Make some hidden properties visible
   let visibilityChanges = [
-    { section: "magical_properties", key:  92, from: "item_levelreq", assign: { s: "item_extra_level_req", so: 999, dF: 19, dP: "Req levels %+d (Enhances)", dN: "Req levels %d (Enhances)" } },
+    {
+      section: "magical_properties",
+      key: 92,
+      from: "item_levelreq",
+      assign: { s: "item_extra_level_req", so: 999, dF: 19, dP: "Req levels %+d (Enhances)", dN: "Req levels %d (Enhances)" },
+    },
     { section: "magical_properties", key: 126, from: "item_elemskill", assign: { so: 157, dF: 19, dP: "%+d to Elemental Skills" } },
     { section: "magical_properties", key: 370, from: "Soul_Ama", assign: { so: 999, dF: 19, dP: "Amazon Soul Tier: %d" } },
     { section: "magical_properties", key: 371, from: "Soul_Sor", assign: { so: 999, dF: 19, dP: "Sorceress Soul Tier: %d" } },
@@ -202,27 +208,112 @@ function ReMoDDeDPostTreatment(input_dir, constants) {
     { section: "magical_properties", key: 375, from: "Soul_Dru", assign: { so: 999, dF: 19, dP: "Druid Soul Tier: %d" } },
     { section: "magical_properties", key: 376, from: "Soul_Ass", assign: { so: 999, dF: 19, dP: "Assassin Soul Tier: %d" } },
     { section: "magical_properties", key: 412, from: "Soul_Level", assign: { so: 999, dF: 19, dP: "Soul Count: %d" } },
-  ]
+  ];
   for (change of visibilityChanges) {
     if (constants[change.section][change.key].s == change.from) {
-      Object.assign(constants[change.section][change.key], change.assign)
-    }
-    else {
-      console.log(`WARN: Magical Property ${change.key} changed to "${constants[change.section][change.key].s}"`)
+      Object.assign(constants[change.section][change.key], change.assign);
+    } else {
+      console.log(`WARN: Magical Property ${change.key} changed to "${constants[change.section][change.key].s}"`);
     }
   }
 
   // Change some names
-  let nameChanges = []
+  let nameChanges = [];
   for (let i = 0; i < 40; i++) {
-    key = `K${(1+i).toString().padStart(2, "0")}`
-    nameChanges.push({ section: "stackables", key: key, from: "Scroll of Torment", to: `Scroll of Torment<br>Level ${11+i} of Icy Hell` })
-    nameChanges.push({ section: "other_items", key: key, from: "Scroll of Torment", to: `Scroll of Torment<br>Level ${11+i} of Icy Hell` })
+    key = `K${(1 + i).toString().padStart(2, "0")}`;
+    nameChanges.push({
+      section: "stackables",
+      key: key,
+      from: "Scroll of Torment",
+      to: `Scroll of Torment<br>Level ${11 + i} of Icy Hell`,
+    });
+    nameChanges.push({
+      section: "other_items",
+      key: key,
+      from: "Scroll of Torment",
+      to: `Scroll of Torment<br>Level ${11 + i} of Icy Hell`,
+    });
   }
   for (let i = 0; i < 40; i++) {
-    key = `K${(41+i).toString().padStart(2, "0")}`
-    nameChanges.push({ section: "stackables", key: key, from: "Scroll of Torment", to: `Scroll of Torment<br>Level ${11+i} of Torment Trial` })
-    nameChanges.push({ section: "other_items", key: key, from: "Scroll of Torment", to: `Scroll of Torment<br>Level ${11+i} of Torment Trial` })
+    key = `K${(41 + i).toString().padStart(2, "0")}`;
+    nameChanges.push({
+      section: "stackables",
+      key: key,
+      from: "Scroll of Torment",
+      to: `Scroll of Torment<br>Level ${11 + i} of Torment Trial`,
+    });
+  }
+  for (let i = 0; i < 7; i++) {
+    key = `Z${(2 + i).toString().padStart(2, "0")}`;
+    nameChanges.push({
+      section: "other_items",
+      key: key,
+      from: /^\(cube to change\)<br>(?<name>.+)$/,
+      to: groups => `${groups.name}`,
+    });
+  }
+  for (let i = 0; i < 7; i++) {
+    key = `Z${(42 + i).toString().padStart(2, "0")}`;
+    nameChanges.push({
+      section: "other_items",
+      key: key,
+      from: /^\(cube to change\)<br>(?<name>.+)$/,
+      to: groups => `${groups.name}`,
+    });
+  }
+  for (let i = 0; i < 33; i++) {
+    key = `Z${(9 + i).toString().padStart(2, "0")}`;
+    nameChanges.push({
+      section: "other_items",
+      key: key,
+      from: /^Cube alone to change to next remover type<br><br>(?<name>.+)$/,
+      to: groups => `${groups.name}`,
+    });
+  }
+  for (let i = 0; i < 10; i++) {
+    key = `a${(0 + i).toString().padStart(2, "0")}`;
+    nameChanges.push({
+      section: "other_items",
+      key: key,
+      from: "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+      to: "(Reserved)",
+    });
+  }
+  for (let i = 0; i < 33; i++) {
+    key = `a${(67 + i).toString().padStart(2, "0")}`;
+    nameChanges.push({
+      section: "other_items",
+      key: key,
+      from: "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+      to: "(Reserved)",
+    });
+  }
+  for (let i = 0; i < 94; i++) {
+    key = `A${(6 + i).toString().padStart(2, "0")}`;
+    nameChanges.push({
+      section: "other_items",
+      key: key,
+      from: "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+      to: "(Reserved)",
+    });
+  }
+  for (let i = 0; i < 58; i++) {
+    key = `b${(0 + i).toString().padStart(2, "0")}`;
+    nameChanges.push({
+      section: "other_items",
+      key: key,
+      from: "A pact with the dark lord serves you well....for now....<br>Blood Contract",
+      to: "(Reserved)",
+    });
+  }
+  for (let i = 0; i < 39; i++) {
+    key = `L${(61 + i).toString().padStart(2, "0")}`;
+    nameChanges.push({
+      section: "other_items",
+      key: key,
+      from: "Tal Rasha's Forsaken Pact",
+      to: "(Reserved Forsaken Pact Slot)",
+    });
   }
   nameChanges = nameChanges.concat([
     { section: "stackables", key: "key", from: " ±", to: "Key" },
@@ -280,39 +371,39 @@ function ReMoDDeDPostTreatment(input_dir, constants) {
     { section: "other_items", key: "sku", from: " ¹ ", to: "Skull" },
     { section: "other_items", key: "skl", from: " ¹ ", to: "Flawless Skull" },
     { section: "other_items", key: "skz", from: " ¹ ", to: "Perfect Skull" },
-    { section: "other_items", key: "r01", from: "⅐ El", to: "El Rune" },
-    { section: "other_items", key: "r02", from: "⅑ Eld", to: "Eld Rune" },
-    { section: "other_items", key: "r03", from: "⅒ Tir", to: "Tir Rune" },
-    { section: "other_items", key: "r04", from: "⅓ Nef", to: "Nef Rune" },
-    { section: "other_items", key: "r05", from: "⅔ Eth", to: "Eth Rune" },
-    { section: "other_items", key: "r06", from: "⅕ Ith", to: "Ith Rune" },
-    { section: "other_items", key: "r07", from: "⅖ Tal", to: "Tal Rune" },
-    { section: "other_items", key: "r08", from: "⅗ Ral", to: "Ral Rune" },
-    { section: "other_items", key: "r09", from: "⅘ Ort", to: "Ort Rune" },
-    { section: "other_items", key: "r10", from: "⅙ Thul", to: "Thul Rune" },
-    { section: "other_items", key: "r11", from: "⅚ Amn", to: "Amn Rune" },
-    { section: "other_items", key: "r12", from: "⅛ Sol", to: "Sol Rune" },
-    { section: "other_items", key: "r13", from: "⅜ Shael", to: "Shael Rune" },
-    { section: "other_items", key: "r14", from: "⅝ Dol", to: "Dol Rune" },
-    { section: "other_items", key: "r15", from: "⅞ Hel", to: "Hel Rune" },
-    { section: "other_items", key: "r16", from: "⅟ Io", to: "Io Rune" },
-    { section: "other_items", key: "r17", from: "Ⅰ Lum", to: "Lum Rune" },
-    { section: "other_items", key: "r18", from: "Ⅱ Ko", to: "Ko Rune" },
-    { section: "other_items", key: "r19", from: "Ⅲ Fal", to: "Fal Rune" },
-    { section: "other_items", key: "r20", from: "Ⅳ Lem", to: "Lem Rune" },
-    { section: "other_items", key: "r21", from: "Ⅴ Pul", to: "Pul Rune" },
-    { section: "other_items", key: "r22", from: "Ⅵ Um", to: "Um Rune" },
-    { section: "other_items", key: "r23", from: "Ⅶ Mal", to: "Mal Rune" },
-    { section: "other_items", key: "r24", from: "Ⅷ Ist", to: "Ist Rune" },
-    { section: "other_items", key: "r25", from: "Ⅸ Gul", to: "Gul Rune" },
-    { section: "other_items", key: "r26", from: "Ⅹ Vex", to: "Vex Rune" },
-    { section: "other_items", key: "r27", from: "Ⅺ Ohm", to: "Ohm Rune" },
-    { section: "other_items", key: "r28", from: "Ⅻ Lo", to: "Lo Rune" },
-    { section: "other_items", key: "r29", from: "Ⅼ Sur", to: "Sur Rune" },
-    { section: "other_items", key: "r30", from: "Ⅽ Ber", to: "Ber Rune" },
-    { section: "other_items", key: "r31", from: "Ⅾ Jah", to: "Jah Rune" },
-    { section: "other_items", key: "r32", from: "Ⅿ Cham", to: "Cham Rune" },
-    { section: "other_items", key: "r33", from: "ⅰ Zod", to: "Zod Rune" },
+    // { section: "other_items", key: "r01", from: "⅐ El", to: "El Rune" },
+    // { section: "other_items", key: "r02", from: "⅑ Eld", to: "Eld Rune" },
+    // { section: "other_items", key: "r03", from: "⅒ Tir", to: "Tir Rune" },
+    // { section: "other_items", key: "r04", from: "⅓ Nef", to: "Nef Rune" },
+    // { section: "other_items", key: "r05", from: "⅔ Eth", to: "Eth Rune" },
+    // { section: "other_items", key: "r06", from: "⅕ Ith", to: "Ith Rune" },
+    // { section: "other_items", key: "r07", from: "⅖ Tal", to: "Tal Rune" },
+    // { section: "other_items", key: "r08", from: "⅗ Ral", to: "Ral Rune" },
+    // { section: "other_items", key: "r09", from: "⅘ Ort", to: "Ort Rune" },
+    // { section: "other_items", key: "r10", from: "⅙ Thul", to: "Thul Rune" },
+    // { section: "other_items", key: "r11", from: "⅚ Amn", to: "Amn Rune" },
+    // { section: "other_items", key: "r12", from: "⅛ Sol", to: "Sol Rune" },
+    // { section: "other_items", key: "r13", from: "⅜ Shael", to: "Shael Rune" },
+    // { section: "other_items", key: "r14", from: "⅝ Dol", to: "Dol Rune" },
+    // { section: "other_items", key: "r15", from: "⅞ Hel", to: "Hel Rune" },
+    // { section: "other_items", key: "r16", from: "⅟ Io", to: "Io Rune" },
+    // { section: "other_items", key: "r17", from: "Ⅰ Lum", to: "Lum Rune" },
+    // { section: "other_items", key: "r18", from: "Ⅱ Ko", to: "Ko Rune" },
+    // { section: "other_items", key: "r19", from: "Ⅲ Fal", to: "Fal Rune" },
+    // { section: "other_items", key: "r20", from: "Ⅳ Lem", to: "Lem Rune" },
+    // { section: "other_items", key: "r21", from: "Ⅴ Pul", to: "Pul Rune" },
+    // { section: "other_items", key: "r22", from: "Ⅵ Um", to: "Um Rune" },
+    // { section: "other_items", key: "r23", from: "Ⅶ Mal", to: "Mal Rune" },
+    // { section: "other_items", key: "r24", from: "Ⅷ Ist", to: "Ist Rune" },
+    // { section: "other_items", key: "r25", from: "Ⅸ Gul", to: "Gul Rune" },
+    // { section: "other_items", key: "r26", from: "Ⅹ Vex", to: "Vex Rune" },
+    // { section: "other_items", key: "r27", from: "Ⅺ Ohm", to: "Ohm Rune" },
+    // { section: "other_items", key: "r28", from: "Ⅻ Lo", to: "Lo Rune" },
+    // { section: "other_items", key: "r29", from: "Ⅼ Sur", to: "Sur Rune" },
+    // { section: "other_items", key: "r30", from: "Ⅽ Ber", to: "Ber Rune" },
+    // { section: "other_items", key: "r31", from: "Ⅾ Jah", to: "Jah Rune" },
+    // { section: "other_items", key: "r32", from: "Ⅿ Cham", to: "Cham Rune" },
+    // { section: "other_items", key: "r33", from: "ⅰ Zod", to: "Zod Rune" },
     { section: "other_items", key: "a10", from: "Codex of Gluttony", to: "Codex of Gluttony 1:1" },
     { section: "other_items", key: "a11", from: "Codex of Gluttony", to: "Codex of Gluttony 1:2" },
     { section: "other_items", key: "a12", from: "Codex of Gluttony", to: "Codex of Gluttony 1:3" },
@@ -370,32 +461,61 @@ function ReMoDDeDPostTreatment(input_dir, constants) {
     { section: "other_items", key: "a64", from: "Large Charm", to: "Vanagloria's Testament of Vanity" },
     { section: "other_items", key: "a65", from: "Large Charm", to: "Superbia's Testament of Hubris" },
     { section: "other_items", key: "b65", from: "Socket Remover", to: "Premium Socket Remover" },
-  ])
+    { section: "other_items", key: "Z01", from: "------------------<br>(Cube with item to store it)<br>Storage Bag<br>Quality of Life", to: "Storage Bag<br>Quality of Life" },
+    { section: "other_items", key: "A00", from: "A pact with the dark lord serves you well....for now....<br>Blood Contract", to: "Unique Weapon Blood Contract" },
+    { section: "other_items", key: "A01", from: "A pact with the dark lord serves you well....for now....<br>Blood Contract", to: "Unique Armor Blood Contract" },
+    { section: "other_items", key: "A02", from: "A pact with the dark lord serves you well....for now....<br>Blood Contract", to: "Unique Jewelry Blood Contract" },
+    { section: "other_items", key: "A03", from: "A pact with the dark lord serves you well....for now....<br>Blood Contract", to: "Set Weapon Blood Contract" },
+    { section: "other_items", key: "A04", from: "A pact with the dark lord serves you well....for now....<br>Blood Contract", to: "Set Armor Blood Contract" },
+    { section: "other_items", key: "A05", from: "A pact with the dark lord serves you well....for now....<br>Blood Contract", to: "Set Jewelry Blood Contract" },
+    { section: "other_items", key: "L60", from: "Tal Rasha's Forsaken Pact", to: "Black Tempest's Forsaken Pact" },
+    { section: "other_items", key: "Ev8", from: "Easter Egg Easter Egg", to: "Easter Egg" },
+    { section: "other_items", key: "m36", from: undefined, to: "Small Charm" },
+  ]);
   for (change of nameChanges) {
-    if (constants[change.section][change.key].n == change.from) {
-      constants[change.section][change.key].n = change.to
-    } else {
-      console.log(`WARN: name of misc "${change.key}" changed to "${constants[change.section][change.key].n}"`)
+    if (!change.from || typeof change.to === 'string' || change.to instanceof String) {
+      // String or undefined change
+      if (constants[change.section][change.key].n == change.from) {
+        constants[change.section][change.key].n = change.to;
+        console.log(`WARN: name of "${change.key}" changed to "${constants[change.section][change.key].n}"`);
+      }
+    } else if (change.from.constructor == RegExp || change.from instanceof RegExp) {
+      // Regex change
+      const matches = constants[change.section][change.key].n.match(change.from)
+      if (matches) {
+        console.log(`"${constants[change.section][change.key].n}" matches "${change.from}"`)
+        if (typeof change.to === 'string' || change.to instanceof String) {
+          constants[change.section][change.key].n = change.to;
+          console.log(`WARN: name of "${change.key}" changed to "${constants[change.section][change.key].n}"`);
+        } else if (typeof change.to === "function" || change.to instanceof Function) {
+          if (matches.groups) {
+            constants[change.section][change.key].n = change.to(matches.groups);
+            console.log(`WARN: name of "${change.key}" changed to "${constants[change.section][change.key].n}"`);
+          }
+        }
+      } else {
+        // console.log(`"${constants[change.section][change.key].n}" does not match "${change.from}"`)
+      }
     }
   }
   function removeEbSymbol(item) {
     if (item.n && item.n.startsWith("ⅲ")) {
-      item.n = item.n.slice(2)
+      item.n = item.n.slice(2);
     }
   }
   for (const key in constants.stackables) {
-    removeEbSymbol(constants.stackables[key])
+    removeEbSymbol(constants.stackables[key]);
   }
   for (const key in constants.weapon_items) {
-    removeEbSymbol(constants.weapon_items[key])
+    removeEbSymbol(constants.weapon_items[key]);
   }
   for (const key in constants.armor_items) {
-    removeEbSymbol(constants.armor_items[key])
+    removeEbSymbol(constants.armor_items[key]);
   }
-  constants.unq_items.forEach(item => removeEbSymbol(item))
-  constants.set_items.forEach(item => removeEbSymbol(item))
+  constants.unq_items.forEach((item) => removeEbSymbol(item));
+  constants.set_items.forEach((item) => removeEbSymbol(item));
 }
-  
+
 // Function to convert the Diablo 2 casc data to a single file.
 // Expect a dictionary whose keys are filenames (without the path), and values the text within the file.
 // Required files are:
@@ -434,7 +554,7 @@ function makeBundle(buffers) {
   let strings = {};
   if (_hasKey(buffers, "local/lng/strings/item-modifiers.json")) {
     // Method for version 99 (better)
-    strings =                        _readJSONStrings(_getKey(buffers, "local/lng/strings/item-gems.json"));
+    strings = _readJSONStrings(_getKey(buffers, "local/lng/strings/item-gems.json"));
     strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, "local/lng/strings/item-modifiers.json")));
     strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, "local/lng/strings/item-nameaffixes.json")));
     strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, "local/lng/strings/item-names.json")));
@@ -442,17 +562,21 @@ function makeBundle(buffers) {
     strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, "local/lng/strings/skills.json")));
   } else {
     // Method for versions 96 and prior
-    strings =                        _readStrings(_getKey(buffers, "local/lng/eng/string.txt"));
+    strings = _readStrings(_getKey(buffers, "local/lng/eng/string.txt"));
     strings = Object.assign(strings, _readStrings(_getKey(buffers, "local/lng/eng/expansionstring.txt")));
     strings = Object.assign(strings, _readStrings(_getKey(buffers, "local/lng/eng/patchstring.txt")));
   }
 
-  constants.classes = _readClasses(_getArray(buffers, "global/excel/CharStats.txt"), _getArray(buffers, "global/excel/PlayerClass.txt"), strings);
+  constants.classes = _readClasses(
+    _getArray(buffers, "global/excel/CharStats.txt"),
+    _getArray(buffers, "global/excel/PlayerClass.txt"),
+    strings,
+  );
   const skillDescs = _readSkillDesc(_getArray(buffers, "global/excel/SkillDesc.txt"), strings);
   constants.skills = _readSkills(_getArray(buffers, "global/excel/skills.txt"), skillDescs, strings);
   constants.rare_names = [null].concat(_readRareNames(_getArray(buffers, "global/excel/RareSuffix.txt"), 1, strings));
   constants.rare_names = constants.rare_names.concat(
-    _readRareNames(_getArray(buffers, "global/excel/RarePrefix.txt"), constants.rare_names.length, strings)
+    _readRareNames(_getArray(buffers, "global/excel/RarePrefix.txt"), constants.rare_names.length, strings),
   );
   constants.magic_prefixes = _readMagicNames(_getArray(buffers, "global/excel/MagicPrefix.txt"), strings);
   constants.magic_suffixes = _readMagicNames(_getArray(buffers, "global/excel/MagicSuffix.txt"), strings);
@@ -529,12 +653,12 @@ function formatString(string) {
   // ÿc6 = black
   // ÿc7 = gold
   // ÿc9 = Yellow
-  // ÿc; = Purple 
+  // ÿc; = Purple
 
   // Remove EB special character
 
   // Replace \n by <br>
-  return string.replace(/ÿc./gi, "").replace(/\n/g, "<br>")
+  return string.replace(/ÿc./gi, "").replace(/\n/g, "<br>");
 }
 
 function _readStrings(file) {
@@ -633,7 +757,7 @@ function _readSkillDesc(tsv, strings) {
   return arr;
 }
 
-function _readSkills(tsv, skillDescs/*, strings*/) {
+function _readSkills(tsv, skillDescs /*, strings*/) {
   const arr = [];
   const cSkillDesc = tsv.header.indexOf("skilldesc");
   let cId = tsv.header.indexOf("Id");
@@ -692,7 +816,7 @@ function _readMagicNames(tsv, strings) {
   return arr;
 }
 
-function _readProperties(tsv/*, strings*/) {
+function _readProperties(tsv /*, strings*/) {
   const arr = {};
   const cCode = tsv.header.indexOf("code");
   const cStats = [];
@@ -739,16 +863,16 @@ function _readRunewords(tsv, strings) {
     }
   }
   // Ids will be calculated from index after removing nulls. They're 1-indexed
-  arr = arr.filter(item => !!item) // Remove nulls/undefined
+  arr = arr.filter((item) => !!item); // Remove nulls/undefined
   let id = 1;
   for (let i = 0; i < arr.length; i++) {
     arr[i].id = id++;
   }
-  arr.unshift(null) // So that array index matches id. Easier for later searchs
+  arr.unshift(null); // So that array index matches id. Easier for later searchs
   return arr;
 }
 
-function _readTypes(tsv/*, strings*/) {
+function _readTypes(tsv /*, strings*/) {
   const arr = {};
   const cCode = tsv.header.indexOf("Code");
   const cItemType = tsv.header.indexOf("ItemType");
@@ -761,7 +885,7 @@ function _readTypes(tsv/*, strings*/) {
   for (let i = 1; i < tsv.lines.length; i++) {
     const code = tsv.lines[i][cCode];
     if (code) {
-      const o = {code};
+      const o = { code };
       const invgfx = [];
       for (let j = 0; j <= 6; j++) {
         if (tsv.lines[i][cInvGfx[j]]) invgfx[j] = tsv.lines[i][cInvGfx[j]];
@@ -772,17 +896,20 @@ function _readTypes(tsv/*, strings*/) {
       o.n = tsv.lines[i][cItemType];
       o.c = [o.n];
       arr[code] = o;
+      // console.log(o.n + "=" + code + "-->" + o.eq1 + "/" + o.eq2)
     }
   }
 
-  for (const k of Object.keys(arr)) {
-    arr[k].c = [..._resolvetItemTypeCategories(arr, k)];
-    if (arr[k] !== undefined && arr[arr[k].eq1] !== undefined) {
-      arr[k].eq1n = arr[arr[k].eq1].n;
-    }
+  for (const code of Object.keys(arr)) {
+    arr[code].c = [..._resolvetItemTypeCategories(arr, code)];
+    arr[code].c = [...new Set(arr[code].c)]; // Remove duplicates
 
-    if (arr[k] !== undefined && arr[arr[k].eq2] !== undefined) {
-      arr[k].eq2n = arr[arr[k].eq2].n;
+    if (arr[code] !== undefined && arr[arr[code].eq1] !== undefined) {
+      arr[code].eq1n = arr[arr[code].eq1].n;
+
+      if (arr[code] !== undefined && arr[arr[code].eq2] !== undefined) {
+        arr[code].eq2n = arr[arr[code].eq2].n;
+      }
     }
   }
 
@@ -792,6 +919,7 @@ function _readTypes(tsv/*, strings*/) {
 function _resolvetItemTypeCategories(arr, key) {
   let res = [];
   if (arr[key] !== undefined) {
+    // console.log(key + "-->" + arr[key].eq1 + "/" + arr[key].eq2)
     res = [arr[key].n, ..._resolvetItemTypeCategories(arr, arr[key].eq1), ..._resolvetItemTypeCategories(arr, arr[key].eq2)];
   }
   return res;
@@ -816,7 +944,7 @@ function _readItems(tsv, itemtypes, strings) {
   const cReqstr = tsv.header.indexOf("reqstr");
   const cReqdex = tsv.header.indexOf("reqdex");
   const cHasinv = tsv.header.indexOf("hasinv");
-  const cGemSockets = tsv.header.indexOf("gemsockets")
+  const cGemSockets = tsv.header.indexOf("gemsockets");
   const cGemapplytype = tsv.header.indexOf("gemapplytype");
   const cInvfile = tsv.header.indexOf("invfile");
   const cUniqueInvfile = tsv.header.indexOf("uniqueinvfile");
@@ -837,17 +965,12 @@ function _readItems(tsv, itemtypes, strings) {
       item.nc = tsv.lines[i][cNormCode];
       item.exc = tsv.lines[i][cUberCode];
       item.elc = tsv.lines[i][cUltraCode];
-      item.iq =
-        item.code === item.exc
-          ? EItemQuality.exceptional
-          : item.code === item.elc
-          ? EItemQuality.elite
-          : EItemQuality.normal;
+      item.iq = item.code === item.exc ? EItemQuality.exceptional : item.code === item.elc ? EItemQuality.elite : EItemQuality.normal;
       item.n = strings[tsv.lines[i][cNameStr]];
       if (tsv.lines[i][cStackable] && +tsv.lines[i][cStackable] > 0) {
         item.s = 1;
-        if (tsv.lines[i][cMaxStack] &&  +tsv.lines[i][cMaxStack]> 0) item.smax = +tsv.lines[i][cMaxStack];
-        if (tsv.lines[i][cSpawnStack] &&  +tsv.lines[i][cSpawnStack]> 0) item.sspawn = +tsv.lines[i][cSpawnStack];
+        if (tsv.lines[i][cMaxStack] && +tsv.lines[i][cMaxStack] > 0) item.smax = +tsv.lines[i][cMaxStack];
+        if (tsv.lines[i][cSpawnStack] && +tsv.lines[i][cSpawnStack] > 0) item.sspawn = +tsv.lines[i][cSpawnStack];
       }
       if (tsv.lines[i][cMinac] && +tsv.lines[i][cMinac] > 0) item.minac = +tsv.lines[i][cMinac];
       if (tsv.lines[i][cMaxac] && +tsv.lines[i][cMaxac] > 0) item.maxac = +tsv.lines[i][cMaxac];
@@ -882,7 +1005,7 @@ function _readItems(tsv, itemtypes, strings) {
   return arr;
 }
 
-function _readGems(miscItems, tsv/*, strings*/) {
+function _readGems(miscItems, tsv /*, strings*/) {
   const cCode = tsv.header.indexOf("code");
   const types = ["weapon", "helm", "shield"];
   const cols = {};
@@ -900,6 +1023,9 @@ function _readGems(miscItems, tsv/*, strings*/) {
     const code = tsv.lines[i][cCode];
     if (code && code != "Expansion") {
       const item = miscItems[code];
+      if (!item) {
+        console.log("Missing misc code \"" + code + "\"")
+      }
       for (let k = 0; k < 3; k++) {
         const type = types[k];
         for (let j = 1; j <= 3; j++) {
@@ -911,7 +1037,7 @@ function _readGems(miscItems, tsv/*, strings*/) {
             if (!item.m) item.m = [];
             item.m[k] = [];
           }
-          const m = {code, type};
+          const m = { code, type };
           m.m = mod;
           if (tsv.lines[i][cols[type][j].cParam]) m.p = +tsv.lines[i][cols[type][j].cParam];
           if (tsv.lines[i][cols[type][j].cMin]) m.min = +tsv.lines[i][cols[type][j].cMin];
@@ -936,7 +1062,7 @@ function _readSetOrUnqItems(tsv, strings) {
     if (index && index != "Expansion") {
       const o = {};
       o.id = id;
-      o.index = index
+      o.index = index;
       o.n = strings[tsv.lines[i][cIndex]];
       if (tsv.lines[i][cInvfile]) o.i = tsv.lines[i][cInvfile];
       if (tsv.lines[i][cCode]) o.c = tsv.lines[i][cCode];
@@ -1035,10 +1161,10 @@ function _readItemStatCosts(tsv, strings) {
 function createBundle(mod, version, output_dir, output_prefix, modPostTreatmentFunction) {
   const input_dir = `../public/d2/game_data/${mod}/version_${version}/`;
   const output_name = `${mod}_constants_${version}`;
-  
+
   // Failsafe to generate even if some files are missing
   const alt_input_dir = mod == "vanilla" ? null : `../public/d2/game_data/vanilla/version_${version}/`;
-  
+
   const input_files = [
     // Strings for versions 96 and prior
     "local/lng/eng/string.txt",
@@ -1079,13 +1205,15 @@ function createBundle(mod, version, output_dir, output_prefix, modPostTreatmentF
     const input_file_path = path.join(__dirname, `${input_dir}${input_file}`);
     if (fs.existsSync(input_file_path)) {
       //file exists
-      game_data[input_file] = fs.readFileSync(input_file_path, 'utf8');
+      game_data[input_file] = fs.readFileSync(input_file_path, "utf8");
+      // console.log(`File "${input_file_path}" exists`)
     } else if (alt_input_dir) {
+      console.log(`File "${input_file_path}" does not exist, switching to vanilla version`)
       // Failsafe
       const alt_input_file_path = path.join(__dirname, `${alt_input_dir}${input_file}`);
       if (fs.existsSync(alt_input_file_path)) {
         // Alternative file exists
-        game_data[input_file] = fs.readFileSync(alt_input_file_path, 'utf8');
+        game_data[input_file] = fs.readFileSync(alt_input_file_path, "utf8");
       }
     }
   }
@@ -1093,10 +1221,10 @@ function createBundle(mod, version, output_dir, output_prefix, modPostTreatmentF
   const json_data = makeBundle(game_data);
   json_data.version = `${mod}_constants_${version}`;
 
-  D2RPostTreatment(input_dir, json_data)
+  D2RPostTreatment(input_dir, json_data);
 
   if (modPostTreatmentFunction) {
-    modPostTreatmentFunction(input_dir, json_data)
+    modPostTreatmentFunction(input_dir, json_data);
   }
 
   const to_write_es5format = `export let ${output_name} = ${JSON.stringify(json_data, null, 4)};`;
@@ -1106,35 +1234,39 @@ function createBundle(mod, version, output_dir, output_prefix, modPostTreatmentF
 }
 
 function addMissingFieldsToLegacy(mod, version, output_dir, output_prefix) {
-  const input_name = `${mod}_constants_${version}`
-  const output_name = `${input_name}`
+  const input_name = `${mod}_constants_${version}`;
+  const output_name = `${input_name}`;
   const input_file_path_es5format = path.join(__dirname, `${output_dir}${input_name}.bundle.js`);
-  const text = fs.readFileSync(input_file_path_es5format, 'utf8');
-  const jsonText = text.split(" = ")[1].slice(0, -1);
+  let text = fs.readFileSync(input_file_path_es5format, "utf8");
+  const jsInstructions = text.split(/;\r?\n/) // Instructions end with ";<endline>"
+  let [letVar, jsonText] = jsInstructions[0].split(" = "); // First instruction is let varName = <JSON>;
   const json_data = JSON.parse(jsonText);
   for (key in json_data) {
     const section = json_data[key];
     if (Array.isArray(section)) {
       section.forEach((_, idx) => {
         // Add an id property equal to index, except if null/undefined
-        if (typeof section[idx] === 'object' && section[idx] !== null) {
+        if (typeof section[idx] === "object" && section[idx] !== null) {
           section[idx] = { id: idx, ...section[idx] };
         }
-      })
+      });
     }
   }
   json_data.version = input_name;
 
-  const to_write_es5format = `export let ${output_name} = ${JSON.stringify(json_data, null, 4)};`;
+  jsonText = JSON.stringify(json_data, null, 4)
+  jsInstructions[0] = `${letVar} = ${jsonText}`
+  text = jsInstructions.join(";\r\n")
+
   const output_file_path_es5format = path.join(__dirname, `${output_dir}${output_prefix}_${output_name}.bundle.js`);
-  fs.writeFileSync(output_file_path_es5format, to_write_es5format);
+  fs.writeFileSync(output_file_path_es5format, text);
   console.log(`Generated file ${output_file_path_es5format}`);
 }
 
 // Note: currently I don't know how to read the 96 version, because for ex ItemStatCosts.txt is missing necessary columns
-addMissingFieldsToLegacy('vanilla', 96, '../public/d2/', 'generated')
-addMissingFieldsToLegacy('vanilla', 97, '../public/d2/', 'generated')
-createBundle('vanilla', 98, '../public/d2/', 'generated');
-createBundle('vanilla', 99, '../public/d2/', 'generated');
-createBundle('remodded', 98, '../public/d2/', 'generated', ReMoDDeDPostTreatment);
-createBundle('remodded', 99, '../public/d2/', 'generated', ReMoDDeDPostTreatment);
+addMissingFieldsToLegacy("vanilla", 96, "../public/d2/", "generated");
+addMissingFieldsToLegacy("vanilla", 97, "../public/d2/", "generated");
+createBundle("vanilla", 98, "../public/d2/", "generated");
+createBundle("vanilla", 99, "../public/d2/", "generated");
+createBundle("remodded", 98, "../public/d2/", "generated", ReMoDDeDPostTreatment);
+createBundle("remodded", 99, "../public/d2/", "generated", ReMoDDeDPostTreatment);
