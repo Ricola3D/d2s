@@ -1,5 +1,6 @@
 ### TODO
-- Can't paste a 2nd time same unique misc item
+- Button to paste 5x or 10x ?
+- Consistency check: Can't paste a 2nd time same unique misc item
 - Skipped bytes: rewrite same value as read
 - replace const constants = window[`${window.work_mod}_constants_${window.work_version}`] by calls to getConstantData with version string/number attention
 - On setting a quest, enabling town wp for this act?
