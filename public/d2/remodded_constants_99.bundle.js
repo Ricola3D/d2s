@@ -1051,7 +1051,9 @@ let remodded_constants_99 = {
         },
         {
             "id": 169,
-            "s":"Summon Spirit Wolf"},
+            "s":"Summon Dire Wolf"
+            // "s":"Summon Spirit Wolf"
+        },
         {
             "id": 170,
             "s": "Lightning",
@@ -1098,7 +1100,7 @@ let remodded_constants_99 = {
         },
         {
             "id": 180,
-            "s": "Patient Zero", // New
+            "s": "Patient Zero"
         }, // 180
         {
             "id": 181,
@@ -1216,7 +1218,7 @@ let remodded_constants_99 = {
         },
         {
             "id": 230,
-            "s": "Thickening Fog",
+            "s": "Beast Mastery",
             //"s": "Arctic Blast",
             "c": "dru"
         },
@@ -2363,7 +2365,10 @@ let remodded_constants_99 = {
         null, // 690
         null,
         null,
-        null,
+        {
+            "id": 693,
+            "s": "Summon Dire Wolf"
+        },
         {
             "id": 694,
             "s": "Activate Weight System 2"
@@ -8462,7 +8467,7 @@ let remodded_constants_99 = {
                 "s": "item_absorbcold_percent",
                 "f": 1
             },
-        ]
+        ],
         "dur": [
             {
                 "s": "maxdurability",
@@ -9756,7 +9761,7 @@ let remodded_constants_99 = {
         "ex-missiles": [
             {
                 "s": "ex_missiles",
-                "f": 37
+                "f": 1
             }
         ],
         "ex-attacks": [
@@ -10248,7 +10253,10 @@ let remodded_constants_99 = {
             "so": 42,
             "dF": 19,
             "dP": "%+d%% to Maximum Fire Resist",
-            "dN": "%+d%% to Maximum Fire Resist"
+            "dN": "%+d%% to Maximum Fire Resist",
+            "dg": 3,
+            "dgF": 19,
+            "dgP": "%+d%% to All Maximum Resist"
         },
         {
             "id": 41,
@@ -10273,7 +10281,10 @@ let remodded_constants_99 = {
             "so": 43,
             "dF": 19,
             "dP": "%+d%% to Maximum Lightning Resist",
-            "dN": "%+d%% to Maximum Lightning Resist"
+            "dN": "%+d%% to Maximum Lightning Resist",
+            "dg": 3,
+            "dgF": 19,
+            "dgP": "%+d%% to All Maximum Resist"
         },
         {
             "id": 43,
@@ -10298,7 +10309,10 @@ let remodded_constants_99 = {
             "so": 44,
             "dF": 19,
             "dP": "%+d%% to Maximum Cold Resist",
-            "dN": "%+d%% to Maximum Cold Resist"
+            "dN": "%+d%% to Maximum Cold Resist",
+            "dg": 3,
+            "dgF": 19,
+            "dgP": "%+d%% to All Maximum Resist"
         },
         {
             "id": 45,
@@ -10323,7 +10337,10 @@ let remodded_constants_99 = {
             "so": 45,
             "dF": 19,
             "dP": "%+d%% to Maximum Poison Resist",
-            "dN": "%+d%% to Maximum Poison Resist"
+            "dN": "%+d%% to Maximum Poison Resist",
+            "dg": 3,
+            "dgF": 19,
+            "dgP": "%+d%% to All Maximum Resist"
         },
         {
             "id": 47,
@@ -11782,7 +11799,7 @@ let remodded_constants_99 = {
         },
         {
             "id": 202,
-            "s": "modifierlist_castid"
+            "s": "modifierlist_castid" // unused202 ?
         },
         {
             "id": 203,
@@ -14926,7 +14943,12 @@ let remodded_constants_99 = {
             "sA": 0,
             "sP": 16
         },
-        null,
+        {
+            "id": 472,
+            "s": "item_cannot_have_sockets", // Added after cubing a set item with 5 gold bars
+            "sB": 11,
+            "sA": 99,
+        },
         null,
         {
             "id": 474,
@@ -15867,6 +15889,7 @@ let remodded_constants_99 = {
         },
         {
             "index": 174,
+            "n": "Alacrity",
             "id": 173
         },
         {
@@ -22052,61 +22075,61 @@ let remodded_constants_99 = {
         {
             "id": 546,
             "index": "Rainbow Facet1",
-            "n": "Rainbow Facet",
+            // "n": "Rainbow Facet",
             "c": "jew"
         },
         {
             "id": 547,
             "index": "Rainbow Facet2",
-            "n": "Rainbow Facet",
+            // "n": "Rainbow Facet",
             "c": "jew"
         },
         {
             "id": 548,
             "index": "Rainbow Facet3",
-            "n": "Rainbow Facet",
+            // "n": "Rainbow Facet",
             "c": "jew"
         },
         {
             "id": 549,
             "index": "Rainbow Facet4",
-            "n": "Rainbow Facet",
+            // "n": "Rainbow Facet",
             "c": "jew"
         },
         {
             "id": 550,
             "index": "Rainbow Facet1",
-            "n": "Rainbow Facet",
+            "n": "Rainbow Facet (Lightning)",
             "c": "jew"
         },
         {
             "id": 551,
             "index": "Rainbow Facet2",
-            "n": "Rainbow Facet",
+            "n": "Rainbow Facet (Cold)",
             "c": "jew"
         },
         {
             "id": 552,
             "index": "Rainbow Facet3",
-            "n": "Rainbow Facet",
+            "n": "Rainbow Facet (Fire)",
             "c": "jew"
         },
         {
             "id": 553,
             "index": "Rainbow Facet4",
-            "n": "Rainbow Facet",
+            "n": "Rainbow Facet (Poison)",
             "c": "jew"
         },
         {
             "id": 554,
             "index": "Rainbow Facet5",
-            "n": "Rainbow Facet",
+            // "n": "Rainbow Facet",
             "c": "jew"
         },
         {
             "id": 555,
             "index": "Rainbow Facet5",
-            "n": "Rainbow Facet",
+            "n": "Rainbow Facet (Physical)",
             "c": "jew"
         },
         {
@@ -22567,6 +22590,14 @@ let remodded_constants_99 = {
             "i": "D2R_Jank",
             "c": "utp",
             "hdi": "custom/spiritarmor5"
+        },
+        {
+            "id": 628,
+            "index": "Edyrem's Revenge",
+            "n": "Edyrem's Revenge",
+            "i": "D2R_Jank",
+            "c": "Ev9",
+            "hdi": "custom/snowball"
         }
     ],
     "stackables": {
@@ -38037,6 +38068,36 @@ let remodded_constants_99 = {
             ],
             "hdi": "custom/katana"
         },
+        "Ss1": {
+            "nc": "Ss1",
+            "exc": "Ss1",
+            "elc": "Ss1",
+            "iq": 2,
+            "n": "Champion Axe (1-hand)",
+            "durability": 110,
+            "mind": 44,
+            "maxd": 88,
+            "rs": 200,
+            "hi": 1,
+            "gs": 6,
+            "gt": 0,
+            "i": "invgax",
+            "ui": "invgaxu",
+            "si": "invgaxu",
+            "iw": 2,
+            "ih": 4,
+            "it": 2,
+            "ig": [],
+            "eq1n": "Melee Weapon",
+            "eq2n": "Merc 5 Weapon",
+            "c": [
+                "Axe",
+                "Melee Weapon",
+                "Weapon",
+                "Merc 5 Weapon"
+            ],
+            "hdi": "weapon/axe/brainhew"
+        },
         "Ss3": {
             "nc": "2hs",
             "exc": "92h",
@@ -41370,6 +41431,30 @@ let remodded_constants_99 = {
                 "Merc 5 Weapon"
             ],
             "hdi": "custom/DemonGreatSword"
+        },
+        "Ev9": {
+            "nc": "Ev9",
+            "exc": "Ev9",
+            "elc": "Ev9",
+            "iq": 1,
+            "n": "Snowball",
+            "durability": 100,
+            "mind": 100,
+            "maxd": 200,
+            "hi": 0,
+            "gs": 0,
+            "gt": 0,
+            "i": "invchm",
+            "iw": 1,
+            "ih": 1,
+            "it": 2,
+            "ig": [],
+            "eq1n": "Melee Weapon",
+            "c": [
+                "Melee Weapon",
+                "Weapon"
+            ],
+            "hdi": "custom/snowball"
         }
     },
     "other_items": {
@@ -52301,7 +52386,7 @@ let remodded_constants_99 = {
             "exc": "y66",
             "elc": "y66",
             "iq": 1,
-            "n": "(Cube alone to receive rewards)<br><br>-Endless Keyring<br>-Book of Insight<br>-Book of Safe Return<br>Contains:<br><br>Starter's Cube of Endless Convenience",
+            "n": "Starter's Cube of Endless Convenience",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63002,6 +63087,27 @@ let remodded_constants_99 = {
             ],
             "hdi": "custom/easteregg"
         },
+        "Ev0": {
+            "nc": "Ev0",
+            "exc": "Ev0",
+            "elc": "Ev0",
+            "iq": 1,
+            "n": "3-Year Old Gift Box",
+            "hi": 0,
+            "gs": 0,
+            "gt": 0,
+            "i": "invchm",
+            "iw": 2,
+            "ih": 2,
+            "it": 0,
+            "ig": [],
+            "eq1n": "Miscellaneous",
+            "c": [
+                "Ingredient",
+                "Miscellaneous"
+            ],
+            "hdi": "custom/BrokenGift"
+        },
         "m00": {
             "nc": "m00",
             "exc": "m00",
@@ -63895,7 +64001,7 @@ let remodded_constants_99 = {
             "hdi": "custom/PrismaticFacet"
         }
     },
-    "version": "vanilla_constants_99"
+    "version": "remodded_constants_99"
 };
 
 remodded_constants_99.unq_items[4095] = {
@@ -63905,6 +64011,14 @@ remodded_constants_99.unq_items[4095] = {
     "i": "D2R_Jank",
     "c": "std",
     "hdi": "misc/body_part/flag"
+};
+
+// runeword_id - read/write value
+remodded_constants_99.runeword_fixes = {
+    22: 2692,
+    170: 2626,
+    171: 2627,
+    172: 2006
 };
 
 remodded_constants_99.gold = {

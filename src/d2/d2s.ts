@@ -1,12 +1,12 @@
-import * as types from "./types";
-import { readHeader, readHeaderData, writeHeader, writeHeaderData, fixHeader } from "./header";
-import { readAttributes, writeAttributes } from "./attributes";
-import { BitReader } from "../binary/bitreader";
-import { BitWriter } from "../binary/bitwriter";
-import { readSkills, writeSkills } from "./skills";
-import * as items from "./items";
-import { getConstantData } from "./constants";
-import { enhanceAttributes, enhanceItems } from "./attribute_enhancer";
+import * as types from './types';
+import { readHeader, readHeaderData, writeHeader, writeHeaderData, fixHeader } from './header';
+import { readAttributes, writeAttributes } from './attributes';
+import { BitReader } from '../binary/bitreader';
+import { BitWriter } from '../binary/bitwriter';
+import { readSkills, writeSkills } from './skills';
+import * as items from './items';
+import { getConstantData } from './constants';
+import { enhanceAttributes, enhanceItems } from './attribute_enhancer';
 
 const defaultConfig = {
   extendedStash: false,

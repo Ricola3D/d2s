@@ -1,16 +1,9 @@
-import { isEqual, cloneDeep } from "lodash";
+import { isEqual, cloneDeep } from 'lodash';
 
-import { getConstantData } from "./constants";
-import * as types from "./types";
-import { nameRegex } from "./utils";
-import { Quality } from "./types";
-
-enum ItemType {
-  Armor = 0x01,
-  Shield = 0x02, //treated the same as armor... only here to be able to parse nokkas jsons
-  Weapon = 0x03,
-  Other = 0x04,
-}
+import { getConstantData } from './constants';
+import * as types from './types';
+import { nameRegex, getItemTypeDef, numValues } from './utils';
+import { EQuality, ETypeId } from './types';
 
 //do nice stuff
 //combine group properties (all resists/all stats) and build friendly strings for a ui
@@ -89,143 +82,164 @@ export function enhanceItem(
   parent?: types.IItem,
 ): void {
   const constants = getConstantData(mod, version);
-  if (parent) {
-    //socket item.
-    const pt = constants.armor_items[parent.type] || constants.weapon_items[parent.type] || constants.other_items[parent.type];
-    const t = constants.other_items[item.type];
-    if (t.m) {
-      item.magic_attributes = _compactAttributes(t.m[pt.gt], constants);
+  const itemTypeDef = getItemTypeDef(item, constants);
+  if (itemTypeDef.m) {
+    // Socketable gem/rune. Magical Attributes are computed dynamically
+    if (parent) {
+      // Socketed: re-compute magic_attributes
+      const parentTypeDef = constants.armor_items[parent.type] || constants.weapon_items[parent.type] || constants.other_items[parent.type];
+      const gemMods = itemTypeDef.m[parentTypeDef.gt];
+      item.magic_attributes = _gemModsToAttributes(gemMods, constants);
+    } else {
+      // In inventory/stash/cube
+      item.magic_attributes = [
+        ..._gemModsToAttributes(itemTypeDef.m[0], constants).map((magicalProp) =>
+          Object.assign(magicalProp, { condition: 'Weapon/Gloves' }),
+        ),
+        ..._gemModsToAttributes(itemTypeDef.m[1], constants).map((magicalProp) =>
+          Object.assign(magicalProp, { condition: 'Armor/Boots/Helm/Belt' }),
+        ),
+        ..._gemModsToAttributes(itemTypeDef.m[2], constants).map((magicalProp) =>
+          Object.assign(magicalProp, { condition: 'Shield/Jewelry' }),
+        ),
+      ];
     }
   }
+
   // Enforce level is between 1 and 99
   item.level = boundValue(item.level, 1, 99);
 
-  if (item.quality !== Quality.Magic) {
+  if (item.quality !== EQuality.Magic) {
     item.magic_prefix = 0;
     item.magic_suffix = 0;
   }
-  if (item.quality === Quality.Rare || item.quality === Quality.Crafted) {
-    item.rare_name = constants.rare_names[item.rare_name_id] ? constants.rare_names[item.rare_name_id].n : "";
-    item.rare_name2 = constants.rare_names[item.rare_name_id2] ? constants.rare_names[item.rare_name_id2].n : "";
+  if (item.quality === EQuality.Rare || item.quality === EQuality.Crafted) {
+    item.rare_name = constants.rare_names[item.rare_name_id] ? constants.rare_names[item.rare_name_id].n : '';
+    item.rare_name2 = constants.rare_names[item.rare_name_id2] ? constants.rare_names[item.rare_name_id2].n : '';
   } else {
     item.rare_name_id = 0;
-    item.rare_name = "";
+    item.rare_name = '';
     item.rare_name_id2 = 0;
-    item.rare_name2 = "";
+    item.rare_name2 = '';
     item.magical_name_ids = [0, 0, 0, 0, 0, 0];
   }
-  if (item.quality === Quality.Set) {
-    item.set_name = constants.set_items[item.set_id] ? constants.set_items[item.set_id].n : "";
+  if (item.quality === EQuality.Set) {
+    item.set_name = constants.set_items[item.set_id] ? constants.set_items[item.set_id].n : '';
   } else {
     item.set_id = 0;
-    item.set_name = "";
+    item.set_name = '';
     item.set_attributes = [];
   }
-  if (item.quality === Quality.Unique) {
-    item.unique_name = constants.unq_items[item.unique_id] ? constants.unq_items[item.unique_id].n : "";
+  if (item.quality === EQuality.Unique) {
+    item.unique_name = constants.unq_items[item.unique_id] ? constants.unq_items[item.unique_id].n : '';
   } else {
     item.unique_id = 0;
-    item.unique_name = "";
+    item.unique_name = '';
   }
-  if (item.quality !== Quality.Magic && item.quality !== Quality.Unique) {
-    item.personalized = 0;
-    item.personalized_name = "";
+  if (item.quality !== EQuality.Magic && item.quality !== EQuality.Unique) {
+    item.personalized = false;
+    item.personalized_name = '';
   }
-
-  let details = null;
 
   // Set type_id
   // Also for armors: set defense_rating to the max
   // Also for weapons: set base_damage
   if (constants.armor_items[item.type]) {
-    details = constants.armor_items[item.type];
-    item.type_id = ItemType.Armor;
-    if (details.maxac) {
-      if (item.ethereal == 0) {
-        item.defense_rating = details.maxac;
-      } else if (item.ethereal == 1) {
-        item.defense_rating = Math.floor(details.maxac * 1.5);
+    item.type_id = ETypeId.Armor;
+    if (itemTypeDef.maxac) {
+      if (!item.ethereal) {
+        item.defense_rating = itemTypeDef.maxac;
+      } else if (item.ethereal) {
+        item.defense_rating = Math.floor(itemTypeDef.maxac * 1.5);
       }
     }
   } else if (constants.weapon_items[item.type]) {
-    details = constants.weapon_items[item.type];
-    item.type_id = ItemType.Weapon;
+    item.type_id = ETypeId.Weapon;
     const base_damage = {} as types.IWeaponDamage;
-    if (item.ethereal == 0) {
-      if (details.mind) base_damage.mindam = details.mind;
-      if (details.maxd) base_damage.maxdam = details.maxd;
-      if (details.min2d) base_damage.twohandmindam = details.min2d;
-      if (details.max2d) base_damage.twohandmaxdam = details.max2d;
-    } else if (item.ethereal == 1) {
-      if (details.mind) base_damage.mindam = Math.floor(details.mind * 1.5);
-      if (details.maxd) base_damage.maxdam = Math.floor(details.maxd * 1.5);
-      if (details.min2d) base_damage.twohandmindam = Math.floor(details.min2d * 1.5);
-      if (details.max2d) base_damage.twohandmaxdam = Math.floor(details.max2d * 1.5);
+    if (!item.ethereal) {
+      if (itemTypeDef.mind) base_damage.mindam = itemTypeDef.mind;
+      if (itemTypeDef.maxd) base_damage.maxdam = itemTypeDef.maxd;
+      if (itemTypeDef.min2d) base_damage.twohandmindam = itemTypeDef.min2d;
+      if (itemTypeDef.max2d) base_damage.twohandmaxdam = itemTypeDef.max2d;
+    } else if (item.ethereal) {
+      if (itemTypeDef.mind) base_damage.mindam = Math.floor(itemTypeDef.mind * 1.5);
+      if (itemTypeDef.maxd) base_damage.maxdam = Math.floor(itemTypeDef.maxd * 1.5);
+      if (itemTypeDef.min2d) base_damage.twohandmindam = Math.floor(itemTypeDef.min2d * 1.5);
+      if (itemTypeDef.max2d) base_damage.twohandmaxdam = Math.floor(itemTypeDef.max2d * 1.5);
     }
     item.base_damage = base_damage;
   } else if (constants.other_items[item.type]) {
-    item.type_id = ItemType.Other;
-    details = constants.other_items[item.type];
+    item.type_id = ETypeId.Other;
+    item.ethereal = false;
   }
 
-  if (details) {
-    if (details.n) item.type_name = details.n;
-    if (details.rs) item.reqstr = details.rs;
-    if (details.rd) item.reqdex = details.rd;
-    if (details.i) item.inv_file = details.i;
-    if (details.hdi) item.hd_inv_file = details.hdi;
-    if (details.ih) item.inv_height = details.ih;
-    if (details.iw) item.inv_width = details.iw;
-    if (details.it) item.inv_transform = details.it;
-    if (details.iq) item.item_quality = details.iq;
-    if (details.c) item.categories = details.c;
-    if (details.gs) item.max_sockets = details.gs;
-    if (details.durability) {
-      if (item.ethereal == 0) {
-        item.current_durability = details.durability;
-        item.max_durability = details.durability;
-      } else if (item.ethereal == 1) {
-        item.current_durability = details.durability - Math.ceil(details.durability / 2) + 1;
-        item.max_durability = details.durability - Math.ceil(details.durability / 2) + 1;
+  if (itemTypeDef) {
+    if (itemTypeDef.n) item.type_name = itemTypeDef.n;
+    if (itemTypeDef.rs) item.reqstr = itemTypeDef.rs;
+    if (itemTypeDef.rd) item.reqdex = itemTypeDef.rd;
+    if (itemTypeDef.i) item.inv_file = itemTypeDef.i;
+    if (itemTypeDef.hdi) item.hd_inv_file = itemTypeDef.hdi;
+    if (itemTypeDef.ih) item.inv_height = itemTypeDef.ih;
+    if (itemTypeDef.iw) item.inv_width = itemTypeDef.iw;
+    if (itemTypeDef.it) item.inv_transform = itemTypeDef.it;
+    if (itemTypeDef.iq) item.item_quality = itemTypeDef.iq;
+    if (itemTypeDef.c) item.categories = itemTypeDef.c;
+    if (itemTypeDef.gs) item.max_sockets = itemTypeDef.gs;
+    if (itemTypeDef.durability) {
+      if (!item.ethereal) {
+        item.current_durability = itemTypeDef.durability;
+        item.max_durability = itemTypeDef.durability;
+      } else if (item.ethereal) {
+        item.current_durability = itemTypeDef.durability - Math.ceil(itemTypeDef.durability / 2) + 1;
+        item.max_durability = itemTypeDef.durability - Math.ceil(itemTypeDef.durability / 2) + 1;
       }
     }
-    if (details.eq2n && details.eq2n.endsWith(" Item")) {
-      // eq2n values "<Class> Item"
-      item.class_specific = 1;
-    } else {
-      item.class_specific = 0;
-      item.auto_affix_id = 0;
+    if (itemTypeDef.c) {
+      let classSpecific = false;
+      if (item.quality <= EQuality.Superior) {
+        // Does any of the category is "<class> Item" ?
+        for (const cat of itemTypeDef.c) {
+          if (cat.endsWith(' Item')) {
+            classSpecific = true;
+            break;
+          }
+        }
+      }
+      // Other qualities have the bit class_specific set to false, and no auto_affix_id
+
+      if (classSpecific) {
+        item.class_specific = true;
+      } else {
+        item.class_specific = false;
+        item.auto_affix_id = 0;
+      }
     }
 
     // Enforce stackable consistency
-    if (details.s) {
-      item.quantity = boundValue(item.quantity, 1, details.smax || 500);
+    if (itemTypeDef.s) {
+      item.quantity = boundValue(item.quantity, 1, itemTypeDef.smax || 500);
     } else {
       item.quantity = 0;
     }
 
     // Enforce total_nr_of_sockets between 0 and max for this item type
-    item.total_nr_of_sockets = boundValue(item.total_nr_of_sockets, 0, details.gs || 0);
+    item.total_nr_of_sockets = boundValue(item.total_nr_of_sockets, 0, itemTypeDef.gs || 0);
 
     // Enforce coherence between total_nr_of_sockets & socketed
-    if (item.total_nr_of_sockets > 0) {
-      item.socketed = 1;
-    } else {
-      item.socketed = 0;
-    }
+    item.socketed = item.total_nr_of_sockets > 0;
 
     // Enforce nr_of_items_in_sockets & socketed_items inferior or equal to total_nr_of_sockets
     item.nr_of_items_in_sockets = boundValue(item.nr_of_items_in_sockets, 0, item.total_nr_of_sockets);
     item.socketed_items = (item.socketed_items || []).slice(0, item.nr_of_items_in_sockets);
 
     // Ensure coherence of other attributes with quality
-    item.given_runeword = item.quality <= Quality.Superior && item.nr_of_items_in_sockets && item.runeword_id ? 1 : 0;
+    item.given_runeword = item.quality <= EQuality.Superior && item.nr_of_items_in_sockets > 0 && item.runeword_id > 0;
     if (item.given_runeword) {
-      item.runeword_name = constants.runewords[item.runeword_id] ? constants.runewords[item.runeword_id].n : "";
+      item.runeword_name = constants.runewords[item.runeword_id] ? constants.runewords[item.runeword_id].n : '';
     } else {
-      item.given_runeword = 0;
+      item.given_runeword = false;
       item.runeword_id = 0;
-      item.runeword_name = "";
+      item.runeword_name = '';
       item.runeword_attributes = [];
     }
 
@@ -234,31 +248,31 @@ export function enhanceItem(
       // Check it is valid
       const valid = nameRegex.test(item.personalized_name);
       if (!valid) {
-        item.personalized_name = "";
-        item.personalized = 0;
+        item.personalized_name = '';
+        item.personalized = false;
       } else {
-        item.personalized = 1;
+        item.personalized = true;
       }
     } else {
-      item.personalized = 0;
+      item.personalized = false;
     }
 
     // Multiple_pictures: ensure coherence with base item type
-    if (details.ig && details.ig.length && !item.multiple_pictures) {
+    if (itemTypeDef.ig && itemTypeDef.ig.length && !item.multiple_pictures) {
       // Activate multiple pictures
-      item.multiple_pictures = 1;
+      item.multiple_pictures = true;
       item.picture_id = 0;
-    } else if (!details.ig && item.multiple_pictures) {
-      item.multiple_pictures = 0; // Type changed to a not-multiple pictures one
+    } else if (!itemTypeDef.ig && item.multiple_pictures) {
+      item.multiple_pictures = false; // Type changed to a not-multiple pictures one
       item.picture_id = 0;
     }
 
     // Set inv_file, hd_inv_file & transform_color
-    if (item.multiple_pictures && details.ig && details.ig.length && details.ig[item.picture_id]) {
-      item.inv_file = details.ig[item.picture_id];
+    if (item.multiple_pictures && itemTypeDef.ig && itemTypeDef.ig.length && itemTypeDef.ig[item.picture_id]) {
+      item.inv_file = itemTypeDef.ig[item.picture_id];
     }
-    if (item.multiple_pictures && details.hdig && details.hdig.length && details.hdig[item.picture_id]) {
-      item.hd_inv_file = details.hdig[item.picture_id];
+    if (item.multiple_pictures && itemTypeDef.hdig && itemTypeDef.hdig.length && itemTypeDef.hdig[item.picture_id]) {
+      item.hd_inv_file = itemTypeDef.hdig[item.picture_id];
     }
     if (item.magic_prefix || item.magic_suffix) {
       if (item.magic_prefix && constants.magic_prefixes[item.magic_prefix]?.tc) {
@@ -267,7 +281,7 @@ export function enhanceItem(
       if (item.magic_suffix && constants.magic_suffixes[item.magic_suffix]?.tc) {
         item.transform_color = constants.magic_suffixes[item.magic_suffix].tc;
       }
-    } else if (item.quality == Quality.Rare && item.magical_name_ids) {
+    } else if (item.quality == EQuality.Rare && item.magical_name_ids) {
       for (let i = 0; i < 6; i++) {
         const id = item.magical_name_ids[i];
         if (id) {
@@ -282,8 +296,8 @@ export function enhanceItem(
       }
     } else if (item.unique_id) {
       const unq = constants.unq_items[item.unique_id];
-      if (details.ui) {
-        item.inv_file = details.ui;
+      if (itemTypeDef.ui) {
+        item.inv_file = itemTypeDef.ui;
       }
       if (unq && unq.i) {
         item.inv_file = unq.i;
@@ -294,8 +308,8 @@ export function enhanceItem(
       if (unq && unq.tc) item.transform_color = unq.tc;
     } else if (item.set_id) {
       const set = constants.set_items[item.set_id];
-      if (details.ui) {
-        item.inv_file = details.ui;
+      if (itemTypeDef.ui) {
+        item.inv_file = itemTypeDef.ui;
       }
       if (set && set.i) {
         item.inv_file = set.i;
@@ -376,7 +390,7 @@ function _enhanceAttributeDescription(
         case 3:
         case 4:
         case 5: {
-          v = Math.floor((attributes[itemStatDef.ob] * v) / 2 ** itemStatDef.op);
+          v = Math.floor((attributes[itemStatDef.ob] * v) / 2 ** (itemStatDef.op || 0));
           break;
         }
         default: {
@@ -409,26 +423,26 @@ function _enhanceAttributeDescription(
     if (magical_attribute.id == 39 || magical_attribute.id == 41 || magical_attribute.id == 43 || magical_attribute.id == 45) {
       descString = itemStatDef.dP;
     }
-    let descVal = itemStatDef.dV;
-    let desc2 = itemStatDef.d2;
+    let descVal = itemStatDef.dV || 0;
+    let desc2 = itemStatDef.d2 || '';
     if (itemStatDef.dg && groupsCount[itemStatDef.dg] == groupsSize[itemStatDef.dg]) {
       v = groupsVal[itemStatDef.dg];
       descString = v >= 0 ? itemStatDef.dgP : itemStatDef.dgN ? itemStatDef.dgN : itemStatDef.dgP;
-      descVal = itemStatDef.dgV;
-      descFunc = itemStatDef.dgF;
-      desc2 = itemStatDef.dg2;
+      descVal = itemStatDef.dgV || descVal;
+      descFunc = itemStatDef.dgF || descFunc;
+      desc2 = itemStatDef.dg2 || desc2;
     }
     if (itemStatDef.np) {
       //damage range or enhanced damage.
       let count = 0;
       descString = itemStatDef.dR;
 
-      if (itemStatDef.s === "coldmindam") {
+      if (itemStatDef.s === 'coldmindam') {
         const seconds = Math.round(magical_attribute.values[2] / 25);
         magical_attribute.values[2] = seconds;
       }
 
-      if (itemStatDef.s === "poisonmindam") {
+      if (itemStatDef.s === 'poisonmindam') {
         //poisonmindam see https://user.xmission.com/~trevin/DiabloIIv1.09_Magic_Properties.shtml for reference
         const min = Math.round((magical_attribute.values[0] * magical_attribute.values[2]) / 256);
         const max = Math.round((magical_attribute.values[1] * magical_attribute.values[2]) / 256);
@@ -438,19 +452,21 @@ function _enhanceAttributeDescription(
 
       if (magical_attribute.values[0] === magical_attribute.values[1]) {
         count++;
-        descString = itemStatDef.dE;
+        descString = itemStatDef.dE || 'Missing description';
         //TODO. why???
-        if (itemStatDef.s === "item_maxdamage_percent") {
-          descString = `+%d% ${descString.replace(/}/gi, "").replace(/%\+?d%%/gi, "")}`;
+        if (itemStatDef.s === 'item_maxdamage_percent') {
+          descString = `+%d% ${descString.replace(/}/gi, '').replace(/%\+?d%%/gi, '')}`;
         }
       }
-      descString ||= "Missing description"; // To avoid crashs
+      descString ||= 'Missing description'; // To avoid crashs
+      if (magical_attribute.condition) descString = `[${magical_attribute.condition}] ${descString}`;
       magical_attribute.description = descString.replace(/%\+?d/gi, () => {
         const v = magical_attribute.values[count++];
-        return v;
+        return v.toString();
       });
     } else {
-      descString ||= "Missing description"; // To avoid crashs
+      descString ||= 'Missing description'; // To avoid crashs
+      if (magical_attribute.condition) descString = `[${magical_attribute.condition}] ${descString}`;
       _descFunc(magical_attribute, constants, v, descFunc, descVal, descString, desc2);
     }
   }
@@ -471,38 +487,46 @@ function _enhanceAttributeDescription(
   return magic_attributes;
 }
 
-function _compactAttributes(mods: types.GemModList, constants: types.IConstantData): types.IMagicProperty[] {
+function _gemModsToAttributes(mods: types.GemModList, constants: types.IConstantData): types.IMagicProperty[] {
   const magic_attributes = [] as types.IMagicProperty[];
   for (const mod of mods) {
     const properties = constants.properties[mod.m] || [];
-    for (let i = 0; i < properties.length; i++) {
-      const propertyDef = properties[i];
+
+    // Some properties are made of a few consecutive properties (ex min/max ED%, coldmin/max/length)
+    for (let propertyCount = 0; propertyCount < properties.length; propertyCount++) {
+      const propertyDef = properties[propertyCount];
       let stat = propertyDef.s;
       switch (propertyDef.f) {
         case 5: {
-          stat = "mindamage";
+          stat = 'mindamage';
           break;
         }
         case 6: {
-          stat = "maxdamage";
+          stat = 'maxdamage';
           break;
         }
         case 7: {
-          stat = "item_maxdamage_percent";
+          stat = 'item_maxdamage_percent';
           break;
         }
         case 20: {
-          stat = "item_indesctructible";
+          stat = 'item_indesctructible';
           break;
         }
         default: {
           break;
         }
       }
-      const id = _itemStatCostFromStat(stat, constants);
+      const id = _itemStatFromName(stat, constants);
       // const itemStatDef = constants.magical_properties[id];
-      if (propertyDef.np) i += propertyDef.np;
-      const v = [mod.min, mod.max];
+      if (propertyDef.np) propertyCount += propertyDef.np;
+      const numVal = numValues(id, constants.magical_properties) - (mod.p ? 1 : 0);
+      let v;
+      if (mod.min == mod.max && numVal == 1) {
+        v = [mod.min]; // Ex: +1 allsk
+      } else {
+        v = [mod.min, mod.max];
+      }
       if (mod.p) {
         v.push(mod.p);
       }
@@ -528,7 +552,7 @@ function _descFunc(
   if (!descFunc) {
     return;
   }
-  const sign = v >= 0 ? "+" : "";
+  const sign = v >= 0 ? '+' : '';
   let value = null;
   switch (descFunc) {
     case 1:
@@ -565,7 +589,7 @@ function _descFunc(
     // [value*100/128]% [string1]
     case 10: {
       // [value*100/128]% [string1] [string2]
-      if (descString.indexOf("%%") < 0) {
+      if (descString.indexOf('%%') < 0) {
         value = `${(v * 100) / 128}%`;
       } else {
         value = (v * 100) / 128;
@@ -595,10 +619,10 @@ function _descFunc(
       // [chance]% to cast [slvl] [skill] on [event]
       const skillId = attribute.values[1] || -1;
       const skill = constants.skills[skillId];
-      let skillStr = "";
+      let skillStr = '';
       if (skill) {
         skillStr = skill.s;
-        if (skillId > 5 && !skill.c) skillStr += " (item)";
+        if (skillId > 5 && !skill.c) skillStr += ' (item)';
       } else {
         skillStr = `Unknown_Skill_${skillId}`;
       }
@@ -610,10 +634,10 @@ function _descFunc(
       // Level [sLvl] [skill] Aura When Equipped
       const skillId = attribute.values[0] || -1;
       const skill = constants.skills[skillId];
-      let skillStr = "";
+      let skillStr = '';
       if (skill) {
         skillStr = skill.s;
-        if (skillId > 5 && !skill.c) skillStr += " (item)";
+        if (skillId > 5 && !skill.c) skillStr += ' (item)';
       } else {
         skillStr = `Unknown_Skill_${skillId}`;
       }
@@ -663,10 +687,10 @@ function _descFunc(
       const curCharges = attribute.values[2] || 0;
       const maxCharges = attribute.values[3] || 0;
       const skill = constants.skills[skillId];
-      let skillStr = "";
+      let skillStr = '';
       if (skill) {
         skillStr = skill.s;
-        if (skillId > 5 && !skill.c) skillStr += " (item)";
+        if (skillId > 5 && !skill.c) skillStr += ' (item)';
       } else {
         skillStr = `Unknown_Skill_${skillId}`;
       }
@@ -677,13 +701,13 @@ function _descFunc(
       // +[value] to [skill] ([class] Only)
       const skillId = attribute.values[0] || -1;
       const skill = constants.skills[skillId];
-      let skillStr = "";
-      let clazzStr = "";
+      let skillStr = '';
+      let clazzStr = '';
       if (skill) {
         skillStr = skill.s;
-        if (skillId > 5 && !skill.c) skillStr += " (item)";
+        if (skillId > 5 && !skill.c) skillStr += ' (item)';
         const clazz = _classFromCode(skill.c, constants);
-        clazzStr = clazz ? clazz.co : "(Unknown_Class)";
+        clazzStr = clazz ? clazz.co : '(Unknown_Class)';
       } else {
         skillStr = `Unknown_Skill_${skillId}`;
       }
@@ -698,10 +722,10 @@ function _descFunc(
       // +[value] to [skill]
       const skillId = attribute.values[0] || -1;
       const skill = constants.skills[skillId];
-      let skillStr = "";
+      let skillStr = '';
       if (skill) {
         skillStr = skill.s;
-        if (skillId > 5 && !skill.c) skillStr += " (item)";
+        if (skillId > 5 && !skill.c) skillStr += ' (item)';
       } else {
         skillStr = `Unknown_Skill_${skillId}`;
       }
@@ -747,15 +771,15 @@ function _sprintf(str: string, ...args: any[]): string {
   return str
     .replace(/%\+?d|%\+?s/gi, (m) => {
       let v = args[i++].toString();
-      if (m.indexOf("+") >= 0) {
-        v = "+" + v;
+      if (m.indexOf('+') >= 0) {
+        v = '+' + v;
       }
       return v;
     })
-    .replace("%%", "%");
+    .replace('%%', '%');
 }
 
-function _itemStatCostFromStat(stat: string, constants: types.IConstantData): number {
+function _itemStatFromName(stat: string, constants: types.IConstantData): number {
   return constants.magical_properties.findIndex((e) => e && e.s === stat);
 }
 
@@ -792,19 +816,23 @@ function _groupAttributes(all_magical_attributes: types.IMagicProperty[], consta
   const combined_magical_attributes = [] as types.IMagicProperty[];
   for (const magical_attribute of all_magical_attributes) {
     const itemStatDef = constants.magical_properties[magical_attribute.id];
+
+    // Check in already treated attributes if there is one we can combine with
     const combined_magical_attribute = combined_magical_attributes.find((attr) => {
       // Id must be the same
       if (attr.id !== magical_attribute.id) return false;
 
+      if (attr.condition != magical_attribute.condition) return false;
+
       if (itemStatDef.sP) {
         // Param(s) & Value(s)
-        if (itemStatDef.e === 2 || itemStatDef.e === 2 || itemStatDef.dF === 14) {
+        if (itemStatDef.e === 2 || itemStatDef.e === 3 || itemStatDef.dF === 14) {
           // e2 - "%d%% Chance to cast level %d [Skill] on [...]": to combine, skill id and level must be the same. Values = [level, skillId, chances%]
           // e3 - "Level %d [Skill] (%d/%d Charges)": to combine, skill id and level must be the same. Values = [level, skillId, currentCharges, maxCharges]
           // dF14 - "%+d to [Tab] Skill Levels ([Class] only)": to combine, tab & class must be the same. Values = [tabId, classId, bonusPts]
           if (attr.values[0] !== magical_attribute.values[0]) return false;
           if (attr.values[1] !== magical_attribute.values[1]) return false;
-        } else if (itemStatDef.s === "state") {
+        } else if (itemStatDef.s === 'state') {
           // Identical states are merged, different ones are not combined
           if (!isEqual(attr.values, magical_attribute.values)) return false;
         } else {
@@ -827,6 +855,8 @@ function _groupAttributes(all_magical_attributes: types.IMagicProperty[], consta
     });
 
     if (combined_magical_attribute) {
+      // Let's merge into the already treated attribute
+
       if (itemStatDef.np) {
         //+ Damage props. Values = [Min, Max, (Length)]
         // Sum for Min & Max, Max for Length
@@ -845,7 +875,7 @@ function _groupAttributes(all_magical_attributes: types.IMagicProperty[], consta
           // e3 - "Level %d [Skill] (%d/%d Charges)": sum current & max charges. Values = [level, skillId, currentCharges, maxCharges]
           combined_magical_attribute.values[2] += magical_attribute.values[2];
           combined_magical_attribute.values[3] += magical_attribute.values[3];
-        } else if (itemStatDef.s === "state") {
+        } else if (itemStatDef.s === 'state') {
           // Identical states are combined with no change
         } else {
           /*if (propertyDef.e === 1 || [13, 16, 19, 22, 23].includes(propertyDef.dF))*/
@@ -869,6 +899,7 @@ function _groupAttributes(all_magical_attributes: types.IMagicProperty[], consta
         id: magical_attribute.id,
         values: magical_attribute.values,
         name: magical_attribute.name,
+        condition: magical_attribute.condition,
       } as types.IMagicProperty);
     }
   }

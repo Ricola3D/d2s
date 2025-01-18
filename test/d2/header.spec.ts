@@ -1,15 +1,15 @@
-import { expect } from "chai";
-import { readSkills, writeSkills } from "../../src/d2/skills";
-import { readHeader, writeHeader, fixHeader, writeHeaderData, readHeaderData } from "../../src/d2/header";
-import { writeAttributes, readAttributes } from "../../src/d2/attributes";
-import * as types from "../../src/d2/types";
-import { BitReader } from "../../src/binary/bitreader";
-import { BitWriter } from "../../src/binary/bitwriter";
-import * as fs from "fs";
-import * as path from "path";
-import { vanilla_constants_96 } from "../../public/d2/vanilla_constants_96.bundle.js";
-describe("header", () => {
-  xit("should make all char classes w/ custom charm", async () => {
+import { expect } from 'chai';
+import { readSkills, writeSkills } from '../../src/d2/skills';
+import { readHeader, writeHeader, fixHeader, writeHeaderData, readHeaderData } from '../../src/d2/header';
+import { writeAttributes, readAttributes } from '../../src/d2/attributes';
+import * as types from '../../src/d2/types';
+import { BitReader } from '../../src/binary/bitreader';
+import { BitWriter } from '../../src/binary/bitwriter';
+import * as fs from 'fs';
+import * as path from 'path';
+import { vanilla_constants_96 } from '../../public/d2/vanilla_constants_96.bundle.js';
+describe('header', () => {
+  xit('should make all char classes w/ custom charm', async () => {
     for (const c of vanilla_constants_96.classes) {
       const writer = new BitWriter();
       const inputBuffer = fs.readFileSync(path.join(__dirname, `../../examples/chars/97/${c.n}.d2s`));
@@ -19,37 +19,61 @@ describe("header", () => {
       writer.WriteArray(await writeHeader(d2s));
 
       // make lvl 99 w/ quests/wp/diff
-      await readHeaderData(d2s, reader, "vanilla");
+      await readHeaderData(d2s, reader, 'vanilla');
       d2s.header.progression = 15;
       d2s.header.level = 99;
       d2s.header.status.ladder = true;
 
-      for (const i of ["quests_normal", "quests_nm", "quests_hell"]) {
-        for (const j of ["act_i", "act_ii", "act_iii", "act_iv", "act_v"]) {
-          d2s.header[i][j].introduced = true;
-          d2s.header[i][j].completed = true;
+      for (const i of ['quests_normal', 'quests_nm', 'quests_hell']) {
+        for (const j of ['act_i', 'act_ii', 'act_iii', 'act_iv', 'act_v']) {
+          ((d2s.header[i as keyof types.IHeader] as types.IQuests)[j as keyof types.IQuests] as types.IActQuests).introduced = true;
+          ((d2s.header[i as keyof types.IHeader] as types.IQuests)[j as keyof types.IQuests] as types.IActQuests).completed = true;
         }
-        d2s.header[i].act_iii.the_guardian.b0_is_completed = true;
-        d2s.header[i].act_iv.terrors_end.b0_is_completed = true;
+        (d2s.header[i as keyof types.IHeader] as types.IQuests).act_iii.the_guardian.b0_is_completed = true;
+        (d2s.header[i as keyof types.IHeader] as types.IQuests).act_iv.terrors_end.b0_is_completed = true;
       }
 
-      for (const i of ["normal", "nm", "hell"]) {
-        d2s.header.waypoints[i].act_i.rogue_encampement = true;
-        d2s.header.waypoints[i].act_iii.kurast_docks = true;
-        d2s.header.waypoints[i].act_iv.the_pandemonium_fortress = true;
-        d2s.header.waypoints[i].act_v.harrogath = true;
+      for (const i of ['normal', 'nm', 'hell']) {
+        d2s.header.waypoints[i as keyof types.IWaypointData].act_i.rogue_encampement = true;
+        d2s.header.waypoints[i as keyof types.IWaypointData].act_iii.kurast_docks = true;
+        d2s.header.waypoints[i as keyof types.IWaypointData].act_iv.the_pandemonium_fortress = true;
+        d2s.header.waypoints[i as keyof types.IWaypointData].act_v.harrogath = true;
       }
-      for (const i of ["normal", "nm", "hell"]) {
-        for (const a in d2s.header.waypoints[i]) {
-          for (const w in d2s.header.waypoints[i][a]) {
-            d2s.header.waypoints[i][a][w] = true;
+      for (const d of ['normal', 'nm', 'hell']) {
+        const typed_d = d as keyof types.IWaypointData;
+        for (const a in d2s.header.waypoints[typed_d]) {
+          if (!['unk_align', 'unk_last'].includes(a)) {
+            const typed_a = a as keyof types.IWaypoints;
+            for (const z in d2s.header.waypoints[typed_d][typed_a]) {
+              switch (a) {
+                case 'act_i':
+                  const act_i_z = z as keyof types.IActIWaypoints;
+                  (d2s.header.waypoints[typed_d][typed_a] as types.IActIWaypoints)[act_i_z] = true;
+                case 'act_ii':
+                  const act_ii_z = z as keyof types.IActIIWaypoints;
+                  (d2s.header.waypoints[typed_d][typed_a] as types.IActIIWaypoints)[act_ii_z] = true;
+                  break;
+                case 'act_iii':
+                  const act_iii_z = z as keyof types.IActIIIWaypoints;
+                  (d2s.header.waypoints[typed_d][typed_a] as types.IActIIIWaypoints)[act_iii_z] = true;
+                  break;
+                case 'act_iv':
+                  const act_iv_z = z as keyof types.IActIVWaypoints;
+                  (d2s.header.waypoints[typed_d][typed_a] as types.IActIVWaypoints)[act_iv_z] = true;
+                  break;
+                case 'act_v':
+                  const act_v_z = z as keyof types.IActVWaypoints;
+                  (d2s.header.waypoints[typed_d][typed_a] as types.IActVWaypoints)[act_v_z] = true;
+                  break;
+              }
+            }
           }
         }
       }
 
       writer.WriteArray(await writeHeaderData(d2s, vanilla_constants_96));
 
-      await readAttributes(d2s, reader, "vanilla");
+      await readAttributes(d2s, reader, 'vanilla');
       d2s.attributes.experience = 3520485254;
       d2s.attributes.level = 99;
       d2s.attributes.statpts = 0x3ff;
@@ -58,7 +82,7 @@ describe("header", () => {
       d2s.attributes.goldbank = 2500000;
       writer.WriteArray(await writeAttributes(d2s, vanilla_constants_96));
 
-      await readSkills(d2s, reader, "vanilla");
+      await readSkills(d2s, reader, 'vanilla');
       for (const s of d2s.skills) {
         s.points = 20;
       }
@@ -79,24 +103,24 @@ describe("header", () => {
       await fixHeader(writer);
 
       for (const f of [
-        `${process.env["USERPROFILE"]}/Saved Games/Diablo II Resurrected Tech Alpha/${d2s.header.name}.d2s`,
-        `${process.env["USERPROFILE"]}/Saved Games/Diablo II Resurrected Tech Alpha/${d2s.header.name}.ctl`,
-        `${process.env["USERPROFILE"]}/Saved Games/Diablo II Resurrected Tech Alpha/${d2s.header.name}.ma0`,
-        `${process.env["USERPROFILE"]}/Saved Games/Diablo II Resurrected Tech Alpha/${d2s.header.name}.ma1`,
-        `${process.env["USERPROFILE"]}/Saved Games/Diablo II Resurrected Tech Alpha/${d2s.header.name}.map`,
-        `${process.env["USERPROFILE"]}/Saved Games/Diablo II Resurrected Tech Alpha/${d2s.header.name}.key`,
+        `${process.env['USERPROFILE']}/Saved Games/Diablo II Resurrected Tech Alpha/${d2s.header.name}.d2s`,
+        `${process.env['USERPROFILE']}/Saved Games/Diablo II Resurrected Tech Alpha/${d2s.header.name}.ctl`,
+        `${process.env['USERPROFILE']}/Saved Games/Diablo II Resurrected Tech Alpha/${d2s.header.name}.ma0`,
+        `${process.env['USERPROFILE']}/Saved Games/Diablo II Resurrected Tech Alpha/${d2s.header.name}.ma1`,
+        `${process.env['USERPROFILE']}/Saved Games/Diablo II Resurrected Tech Alpha/${d2s.header.name}.map`,
+        `${process.env['USERPROFILE']}/Saved Games/Diablo II Resurrected Tech Alpha/${d2s.header.name}.key`,
       ]) {
         if (fs.existsSync(f)) fs.unlinkSync(f);
       }
       fs.writeFileSync(
-        `${process.env["USERPROFILE"]}/Saved Games/Diablo II Resurrected Tech Alpha/${d2s.header.name}.d2s`,
+        `${process.env['USERPROFILE']}/Saved Games/Diablo II Resurrected Tech Alpha/${d2s.header.name}.d2s`,
         writer.ToArray(),
       );
     }
   });
 
-  it("should calulcate checksum", async () => {
-    const inputBuffer = fs.readFileSync(path.join(__dirname, "../../examples/chars/96/simple.d2s"));
+  it('should calulcate checksum', async () => {
+    const inputBuffer = fs.readFileSync(path.join(__dirname, '../../examples/chars/96/simple.d2s'));
     const writer = new BitWriter().WriteArray(inputBuffer);
     const pre = writer.SeekByte(0x000c).PeekBytes(4);
     await fixHeader(writer);
@@ -104,17 +128,17 @@ describe("header", () => {
     expect(new DataView(pre.buffer).getUint32(0)).to.eq(new DataView(post.buffer).getUint32(0));
   });
 
-  it("should read", async () => {
-    const inputBuffer = fs.readFileSync(path.join(__dirname, "../../examples/chars/96/simple.d2s"));
+  it('should read', async () => {
+    const inputBuffer = fs.readFileSync(path.join(__dirname, '../../examples/chars/96/simple.d2s'));
     const reader = new BitReader(inputBuffer);
     const d2s = {} as types.ID2S;
     await readHeader(d2s, reader);
-    await readHeaderData(d2s, reader, "vanilla");
+    await readHeaderData(d2s, reader, 'vanilla');
     expect(d2s.header.version).to.eq(96);
   });
 
-  it("should write", async () => {
-    const json = fs.readFileSync(path.join(__dirname, "../../examples/chars/96/simple.json"), "utf-8");
+  it('should write', async () => {
+    const json = fs.readFileSync(path.join(__dirname, '../../examples/chars/96/simple.json'), 'utf-8');
     const d2s = JSON.parse(json);
     const outputBuffer = new BitWriter();
     outputBuffer.WriteArray(await writeHeader(d2s));

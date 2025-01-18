@@ -31,8 +31,8 @@ export class BitWriter {
     bytes.reduce((acc, c) => {
       const b = c
         .toString(2)
-        .padStart(8, "0")
-        .split("")
+        .padStart(8, '0')
+        .split('')
         .reverse()
         .map((e) => parseInt(e, 2));
       b.forEach((bit) => (toWrite[acc++] = bit));

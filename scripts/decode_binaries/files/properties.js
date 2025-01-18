@@ -1,12 +1,12 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
 function decodePropertiesFile(inputDir) {
   let items = [];
-  const inputFile = path.join(inputDir, "properties.bin");
+  const inputFile = path.join(inputDir, 'properties.bin');
 
   if (fs.existsSync(inputFile)) {
     const fileBuffer = fs.readFileSync(inputFile);
@@ -15,7 +15,7 @@ function decodePropertiesFile(inputDir) {
     const lineLength = (fileBuffer.byteLength - 4) / lineCount;
 
     if (lineLength != 46) {
-      console.log("WARNING: expected line length is 46, but actual is " + lineLength);
+      console.log('WARNING: expected line length is 46, but actual is ' + lineLength);
     }
 
     let lineStart = 4; // We skip 4 first bytes
@@ -27,13 +27,13 @@ function decodePropertiesFile(inputDir) {
       // lineBuffer.copy(lineUint8Array, 0, 0, lineBuffer.byteLength);
 
       let item = {
-        "*Enabled": 1,
-        "*Tooltip": "",
-        "*Parameter": "",
-        "*Min": "",
-        "*Max": "",
-        "*Notes": "",
-        "*eol": "",
+        '*Enabled': 1,
+        '*Tooltip': '',
+        '*Parameter': '',
+        '*Min': '',
+        '*Max': '',
+        '*Notes': '',
+        '*eol': '',
       };
 
       //item.bytes = lineBuffer.reduce((acc, byte) => acc + " " + byte, "")

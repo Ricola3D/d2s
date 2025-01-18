@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-var-requires */
 /*
 How to edit binary of a D2 item
@@ -13,14 +13,14 @@ How to edit binary of a D2 item
 9 - Use the vault, or d2s-editor error to know the propertyDef id to search.
 10 - Use internet to convert decimal to binary, and search the id on 9 bits.
 */
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
 // const mod = "ReMoDDeD"
-const mod = "RMD-MP";
-const input_file_path = path.join(`C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/${mod}`, "input.d2s");
+const mod = 'RMD-MP';
+const input_file_path = path.join(`C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/${mod}`, 'input.d2s');
 // const input_file_path = path.join("C:/Users/Admin/Saved Games/Diablo II Resurrected", "TestTest.d2s");
-const output_file_path = path.join(`C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/${mod}`, "output.txt");
+const output_file_path = path.join(`C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/${mod}`, 'output.txt');
 if (fs.existsSync(input_file_path)) {
   const fileBuffer = fs.readFileSync(input_file_path);
 
@@ -37,15 +37,15 @@ if (fs.existsSync(input_file_path)) {
   fileBuffer.reduce((acc, c) => {
     const b = c // c is a char/uint8/octet (hexa)
       .toString(2) // to a string of 0s and 1s
-      .padStart(8, "0") // completed by leading 0s to a length of 8
-      .split("") // Split to an array or "0"s and "1"s
+      .padStart(8, '0') // completed by leading 0s to a length of 8
+      .split('') // Split to an array or "0"s and "1"s
       .reverse() // reverse the octet (=to big endian hexa)
       .map((e) => parseInt(e, 2)); // Transform each element from a string to a number
     b.forEach((bit) => (bits[acc++] = bit)); // Push front the bits
     return acc;
   }, 0);
 
-  const text = bits.map((v) => v.toString()).reduce((acc, c) => c + acc, ""); // Push front the bits
+  const text = bits.map((v) => v.toString()).reduce((acc, c) => c + acc, ''); // Push front the bits
 
   fs.writeFileSync(output_file_path, text);
   console.log(`File ${output_file_path} updated.`);

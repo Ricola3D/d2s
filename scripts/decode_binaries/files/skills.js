@@ -1,14 +1,14 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
-const { readString } = require("../utils.js");
+const { readString } = require('../utils.js');
 
 function decodeSkillsFile(inputDir) {
   let items = [];
-  const inputFile = path.join(inputDir, "skills.bin");
+  const inputFile = path.join(inputDir, 'skills.bin');
 
   if (fs.existsSync(inputFile)) {
     const fileBuffer = fs.readFileSync(inputFile);
@@ -17,7 +17,7 @@ function decodeSkillsFile(inputDir) {
     const lineLength = (fileBuffer.byteLength - 4) / lineCount;
 
     if (lineLength != 692) {
-      console.log("WARNING: expected line length is 444, but actual is " + lineLength);
+      console.log('WARNING: expected line length is 444, but actual is ' + lineLength);
     }
 
     let lineStart = 4; // We skip 4 first bytes
@@ -30,7 +30,7 @@ function decodeSkillsFile(inputDir) {
 
       let item = {};
 
-      item.bytes = lineBuffer.reduce((acc, byte) => acc + " " + byte, "");
+      item.bytes = lineBuffer.reduce((acc, byte) => acc + ' ' + byte, '');
 
       // 0-1 Id
       item.Id = lineBuffer.readUint16LE(0);
@@ -339,11 +339,11 @@ function decodeSkillsFile(inputDir) {
       // 222 pettype
       item.pettype = lineBuffer.readUint8(222); // PetType
 
-      //     unsigned char vsummode; 
+      //     unsigned char vsummode;
       // 223 summode
       item.summode = lineBuffer.readUint8(223); // MonMode
 
-      //     unsigned int vpetmax;   
+      //     unsigned int vpetmax;
       // 224-227 petmax
       item.petmax = lineBuffer.readUint32LE(224); // skillscode
 
@@ -371,12 +371,12 @@ function decodeSkillsFile(inputDir) {
       //     unsigned short vsumumod;
       // 260-261 sumumod
       item.sumumod = lineBuffer.readUint16LE(260);
-      
+
       //     unsigned short vsumoverlay;
       // 262-263 sumoverlay
       item.sumoverlay = lineBuffer.readUint16LE(262); // overlay
 
-      //     unsigned short vcltmissile; 
+      //     unsigned short vcltmissile;
       // 264-265 cltmissile
       item.cltmissile = lineBuffer.readUint16LE(264); // missiles
 

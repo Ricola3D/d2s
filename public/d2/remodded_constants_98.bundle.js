@@ -1051,7 +1051,9 @@ let remodded_constants_98 = {
         },
         {
             "id": 169,
-            "s":"Summon Spirit Wolf"},
+            "s":"Summon Dire Wolf"
+            // "s":"Summon Spirit Wolf"
+        },
         {
             "id": 170,
             "s": "Lightning",
@@ -1098,7 +1100,7 @@ let remodded_constants_98 = {
         },
         {
             "id": 180,
-            "s": "Patient Zero", // New
+            "s": "Patient Zero"
         }, // 180
         {
             "id": 181,
@@ -1216,7 +1218,7 @@ let remodded_constants_98 = {
         },
         {
             "id": 230,
-            "s": "Thickening Fog",
+            "s": "Beast Mastery",
             //"s": "Arctic Blast",
             "c": "dru"
         },
@@ -2358,7 +2360,10 @@ let remodded_constants_98 = {
         null, // 690
         null,
         null,
-        null,
+        {
+            "id": 693,
+            "s": "Summon Dire Wolf"
+        },
         {
             "id": 694,
             "s": "Activate Weight System 2"
@@ -2396,15 +2401,15 @@ let remodded_constants_98 = {
         },
         {
             "id": 711,
-            "s": "Cleave"
+            "s": "Cleave (Circular 25% range 3)"
         },
         {
             "id": 712,
-            "s": "Sweep"
+            "s": "Sweep (Fan 50% range 5)"
         },
         {
             "id": 713,
-            "s": "Pierce"
+            "s": "Pierce (Line 100% range 13)"
         }
     ],
     "rare_names": [
@@ -8449,6 +8454,38 @@ let remodded_constants_98 = {
                 "f": 1
             }
         ],
+        "abs-all%": [
+            {
+                "s": "item_absorbfire_percent",
+                "f": 1
+            },
+            {
+                "s": "item_absorblight_percent",
+                "f": 1
+            },
+            {
+                "s": "item_absorbmagic_percent",
+                "f": 1
+            },
+            {
+                "s": "item_absorbcold_percent",
+                "f": 1
+            },
+        ],
+        "abs-elem%": [
+            {
+                "s": "item_absorbfire_percent",
+                "f": 1
+            },
+            {
+                "s": "item_absorblight_percent",
+                "f": 1
+            },
+            {
+                "s": "item_absorbcold_percent",
+                "f": 1
+            },
+        ],
         "dur": [
             {
                 "s": "maxdurability",
@@ -9697,6 +9734,12 @@ let remodded_constants_98 = {
                 "f": 1
             }
         ],
+        "charge-noconsume": [
+            {
+                "s": "item_charge_noconsume",
+                "f": 1
+            }
+        ],
         "ex-missiles": [
             {
                 "s": "ex_missiles",
@@ -9924,8 +9967,8 @@ let remodded_constants_98 = {
             "sA": 0,
             "so": 74,
             "dF": 19,
-            "dP": "%+d%%Enhanced Defense",
-            "dN": "%+d%%Enhanced Defense",
+            "dP": "%+d%% Enhanced Defense",
+            "dN": "%+d%% Enhanced Defense",
             "o": 13,
             "os": [
                 "armorclass"
@@ -9939,8 +9982,8 @@ let remodded_constants_98 = {
             "sA": 0,
             "so": 129,
             "dF": 19,
-            "dP": "%+d%%Enhanced Maximum Damage",
-            "dN": "%+d%%Enhanced Maximum Damage",
+            "dP": "%+d%% Enhanced Maximum Damage",
+            "dN": "%+d%% Enhanced Maximum Damage",
             "o": 13,
             "os": [
                 "maxdamage",
@@ -9949,7 +9992,7 @@ let remodded_constants_98 = {
             ],
             "np": 2,
             "dR": "Adds %d-%d damage",
-            "dE": "%+d%%Enhanced Damage"
+            "dE": "%+d%% Enhanced Damage"
         },
         {
             "id": 18,
@@ -9959,8 +10002,8 @@ let remodded_constants_98 = {
             "sA": 0,
             "so": 130,
             "dF": 19,
-            "dP": "%+d%%Enhanced Minimum Damage",
-            "dN": "%+d%%Enhanced Minimum Damage",
+            "dP": "%+d%% Enhanced Minimum Damage",
+            "dN": "%+d%% Enhanced Minimum Damage",
             "o": 13,
             "os": [
                 "mindamage",
@@ -9987,8 +10030,8 @@ let remodded_constants_98 = {
             "sA": 80,
             "so": 134,
             "dF": 19,
-            "dP": "%d%%Increased Chance of Blocking",
-            "dN": "%d%%Increased Chance of Blocking"
+            "dP": "%d%% Increased Chance of Blocking",
+            "dN": "%d%% Increased Chance of Blocking"
         },
         {
             "id": 21,
@@ -10059,8 +10102,8 @@ let remodded_constants_98 = {
             "sA": 200,
             "so": 52,
             "dF": 19,
-            "dP": "Regenerate Mana%d%%",
-            "dN": "Regenerate Mana%d%%"
+            "dP": "Regenerate Mana %d%%",
+            "dN": "Regenerate Mana %d%%"
         },
         {
             "id": 28,
@@ -10070,8 +10113,8 @@ let remodded_constants_98 = {
             "sA": 40,
             "so": 48,
             "dF": 19,
-            "dP": "Heal Stamina Plus%d%%",
-            "dN": "Heal Stamina Plus%d%%"
+            "dP": "Heal Stamina Plus %d%%",
+            "dN": "Heal Stamina Plus %d%%"
         },
         {
             "id": 29,
@@ -10122,8 +10165,8 @@ let remodded_constants_98 = {
             "sA": 5,
             "so": 22,
             "dF": 19,
-            "dP": "Damage Reduced by%d",
-            "dN": "Damage Reduced by%d"
+            "dP": "Damage Reduced by %d",
+            "dN": "Damage Reduced by %d"
         },
         {
             "id": 35,
@@ -10133,8 +10176,8 @@ let remodded_constants_98 = {
             "sA": 5,
             "so": 21,
             "dF": 19,
-            "dP": "Magic Damage Reduced by%d",
-            "dN": "Magic Damage Reduced by%d"
+            "dP": "Magic Damage Reduced by %d",
+            "dN": "Magic Damage Reduced by %d"
         },
         {
             "id": 36,
@@ -10146,8 +10189,8 @@ let remodded_constants_98 = {
             "sA": 200,
             "so": 22,
             "dF": 19,
-            "dP": " Damage  Reduced by%d%%",
-            "dN": " Damage Reduced by %d%%"
+            "dP": "Damage Reduced by %d%%",
+            "dN": "Damage Reduced by %d%%"
         },
         {
             "id": 37,
@@ -10159,8 +10202,8 @@ let remodded_constants_98 = {
             "sA": 200,
             "so": 41,
             "dF": 19,
-            "dP": "Magic Resist%+d%%",
-            "dN": "Magic Resist%+d%%"
+            "dP": "Magic Resist %+d%%",
+            "dN": "Magic Resist %+d%%"
         },
         {
             "id": 38,
@@ -10170,8 +10213,8 @@ let remodded_constants_98 = {
             "sA": 16,
             "so": 46,
             "dF": 19,
-            "dP": "%+d%%to Maximum Magic Resist",
-            "dN": "%+d%%to Maximum Magic Resist"
+            "dP": "%+d%% to Maximum Magic Resist",
+            "dN": "%+d%% to Maximum Magic Resist"
         },
         {
             "id": 39,
@@ -10197,8 +10240,11 @@ let remodded_constants_98 = {
             "sA": 16,
             "so": 42,
             "dF": 19,
-            "dP": "%+d%%to Maximum Fire Resist",
-            "dN": "%+d%%to Maximum Fire Resist"
+            "dP": "%+d%% to Maximum Fire Resist",
+            "dN": "%+d%% to Maximum Fire Resist",
+            "dg": 3,
+            "dgF": 19,
+            "dgP": "%+d%% to All Maximum Resist"
         },
         {
             "id": 41,
@@ -10224,8 +10270,11 @@ let remodded_constants_98 = {
             "sA": 16,
             "so": 43,
             "dF": 19,
-            "dP": "%+d%%to Maximum Lightning Resist",
-            "dN": "%+d%%to Maximum Lightning Resist"
+            "dP": "%+d%% to Maximum Lightning Resist",
+            "dN": "%+d%% to Maximum Lightning Resist",
+            "dg": 3,
+            "dgF": 19,
+            "dgP": "%+d%% to All Maximum Resist"
         },
         {
             "id": 43,
@@ -10251,8 +10300,11 @@ let remodded_constants_98 = {
             "sA": 16,
             "so": 44,
             "dF": 19,
-            "dP": "%+d%%to Maximum Cold Resist",
-            "dN": "%+d%%to Maximum Cold Resist"
+            "dP": "%+d%% to Maximum Cold Resist",
+            "dN": "%+d%% to Maximum Cold Resist",
+            "dg": 3,
+            "dgF": 19,
+            "dgP": "%+d%% to All Maximum Resist"
         },
         {
             "id": 45,
@@ -10276,8 +10328,11 @@ let remodded_constants_98 = {
             "sA": 16,
             "so": 45,
             "dF": 19,
-            "dP": "%+d%%to Maximum Poison Resist",
-            "dN": "%+d%%to Maximum Poison Resist"
+            "dP": "%+d%% to Maximum Poison Resist",
+            "dN": "%+d%% to Maximum Poison Resist",
+            "dg": 3,
+            "dgF": 19,
+            "dgP": "%+d%% to All Maximum Resist"
         },
         {
             "id": 47,
@@ -10431,8 +10486,8 @@ let remodded_constants_98 = {
             "sA": 25,
             "so": 88,
             "dF": 19,
-            "dP": "%d%%Life stolen per hit",
-            "dN": "%d%%Life stolen per hit"
+            "dP": "%d%% Life stolen per hit",
+            "dN": "%d%% Life stolen per hit"
         },
         {
             "id": 61,
@@ -10447,8 +10502,8 @@ let remodded_constants_98 = {
             "sA": 1,
             "so": 89,
             "dF": 19,
-            "dP": "%d%%Mana stolen per hit",
-            "dN": "%d%%Mana stolen per hit"
+            "dP": "%d%% Mana stolen per hit",
+            "dN": "%d%% Mana stolen per hit"
         },
         {
             "id": 63,
@@ -10529,8 +10584,8 @@ let remodded_constants_98 = {
             "sA": 60,
             "so": 56,
             "dF": 19,
-            "dP": "Replenish Life%+d",
-            "dN": "Drain Life%d"
+            "dP": "Replenish Life %+d",
+            "dN": "Drain Life %d"
         },
         {
             "id": 75,
@@ -10540,8 +10595,8 @@ let remodded_constants_98 = {
             "sA": 20,
             "so": 3,
             "dF": 19,
-            "dP": "Increase Maximum Durability%d%%",
-            "dN": "Increase Maximum Durability%d%%",
+            "dP": "Increase Maximum Durability %d%%",
+            "dN": "Increase Maximum Durability %d%%",
             "o": 13,
             "os": [
                 "maxdurability"
@@ -10860,7 +10915,7 @@ let remodded_constants_98 = {
             "sA": 0,
             "so": 35,
             "dF": 19,
-            "dP": "Curse Length Reduced By%+d%%",
+            "dP": "Curse Length Reduced By %+d%%",
             "dN": "Curse Length Reduced By: %d%%"
         },
         {
@@ -10882,7 +10937,7 @@ let remodded_constants_98 = {
             "sA": 20,
             "so": 122,
             "dF": 19,
-            "dP": "Damage%+d",
+            "dP": "Damage %+d",
             "dN": "Damage %+d"
         },
         {
@@ -11687,8 +11742,7 @@ let remodded_constants_98 = {
         },
         {
             "id": 202,
-            "s": "unused202"
-            // "s": "modifierlist_castid"
+            "s": "modifierlist_castid" // unused202 ?
         },
         {
             "id": 203,
@@ -11761,7 +11815,7 @@ let remodded_constants_98 = {
         },
         {
             "id": 211,
-            "s": "deathtrack",
+            "s": "deathtrack", // unused211 ?
             "c": 1,
             "cB": 32,
             "cS": 0
@@ -15800,6 +15854,7 @@ let remodded_constants_98 = {
         },
         {
             "index": 174,
+            "n": "Alacrity",
             "id": 173
         },
         {
@@ -21985,61 +22040,61 @@ let remodded_constants_98 = {
         {
             "id": 546,
             "index": "Rainbow Facet1",
-            "n": "Rainbow Facet",
+            // "n": "Rainbow Facet",
             "c": "jew"
         },
         {
             "id": 547,
             "index": "Rainbow Facet2",
-            "n": "Rainbow Facet",
+            // "n": "Rainbow Facet",
             "c": "jew"
         },
         {
             "id": 548,
             "index": "Rainbow Facet3",
-            "n": "Rainbow Facet",
+            // "n": "Rainbow Facet",
             "c": "jew"
         },
         {
             "id": 549,
             "index": "Rainbow Facet4",
-            "n": "Rainbow Facet",
+            // "n": "Rainbow Facet",
             "c": "jew"
         },
         {
             "id": 550,
             "index": "Rainbow Facet1",
-            "n": "Rainbow Facet",
+            "n": "Rainbow Facet (Lightning)",
             "c": "jew"
         },
         {
             "id": 551,
             "index": "Rainbow Facet2",
-            "n": "Rainbow Facet",
+            "n": "Rainbow Facet (Cold)",
             "c": "jew"
         },
         {
             "id": 552,
             "index": "Rainbow Facet3",
-            "n": "Rainbow Facet",
+            "n": "Rainbow Facet (Fire)",
             "c": "jew"
         },
         {
             "id": 553,
             "index": "Rainbow Facet4",
-            "n": "Rainbow Facet",
+            "n": "Rainbow Facet (Poison)",
             "c": "jew"
         },
         {
             "id": 554,
             "index": "Rainbow Facet5",
-            "n": "Rainbow Facet",
+            // "n": "Rainbow Facet",
             "c": "jew"
         },
         {
             "id": 555,
             "index": "Rainbow Facet5",
-            "n": "Rainbow Facet",
+            "n": "Rainbow Facet (Physical)",
             "c": "jew"
         },
         {
@@ -22436,6 +22491,7 @@ let remodded_constants_98 = {
             "id": 611,
             "index": "MapReceipt01",
             "c": "m27"
+            // "hdi": "custom/AdventureMap"
         },
         {
             "id": 612,
@@ -22449,7 +22505,7 @@ let remodded_constants_98 = {
             "index": "Prismatic Facet",
             "n": "Prismatic Facet",
             "c": "j00",
-            "hdi": "custom/prismaticfacet"
+            "hdi": "custom/PrismaticFacet"
         },
         {
             "id": 614,
@@ -22457,7 +22513,7 @@ let remodded_constants_98 = {
             "n": "Blank Talent",
             "i": "D2R_Jank",
             "c": "m34",
-            "hdi": "custom/null_charm"
+            "hdi": "custom/Null_Charm"
         },
         null, // 615
         null,
@@ -22499,6 +22555,14 @@ let remodded_constants_98 = {
             "i": "D2R_Jank",
             "c": "utp",
             "hdi": "custom/spiritarmor5"
+        },
+        {
+            "id": 628,
+            "index": "Edyrem's Revenge",
+            "n": "Edyrem's Revenge",
+            "i": "D2R_Jank",
+            "c": "Ev9",
+            "hdi": "custom/snowball"
         }
     ],
     "stackables": {
@@ -37969,6 +38033,36 @@ let remodded_constants_98 = {
             ],
             "hdi": "custom/katana"
         },
+        "Ss1": {
+            "nc": "Ss1",
+            "exc": "Ss1",
+            "elc": "Ss1",
+            "iq": 2,
+            "n": "Champion Axe (1-hand)",
+            "durability": 110,
+            "mind": 44,
+            "maxd": 88,
+            "rs": 200,
+            "hi": 1,
+            "gs": 6,
+            "gt": 0,
+            "i": "invgax",
+            "ui": "invgaxu",
+            "si": "invgaxu",
+            "iw": 2,
+            "ih": 4,
+            "it": 2,
+            "ig": [],
+            "eq1n": "Melee Weapon",
+            "eq2n": "Merc 5 Weapon",
+            "c": [
+                "Axe",
+                "Melee Weapon",
+                "Weapon",
+                "Merc 5 Weapon"
+            ],
+            "hdi": "weapon/axe/brainhew"
+        },
         "Ss3": {
             "nc": "2hs",
             "exc": "92h",
@@ -41302,6 +41396,30 @@ let remodded_constants_98 = {
                 "Merc 5 Weapon"
             ],
             "hdi": "custom/DemonGreatSword"
+        },
+        "Ev9": {
+            "nc": "Ev9",
+            "exc": "Ev9",
+            "elc": "Ev9",
+            "iq": 1,
+            "n": "Snowball",
+            "durability": 100,
+            "mind": 100,
+            "maxd": 200,
+            "hi": 0,
+            "gs": 0,
+            "gt": 0,
+            "i": "invchm",
+            "iw": 1,
+            "ih": 1,
+            "it": 2,
+            "ig": [],
+            "eq1n": "Melee Weapon",
+            "c": [
+                "Melee Weapon",
+                "Weapon"
+            ],
+            "hdi": "custom/snowball"
         }
     },
     "other_items": {
@@ -62934,11 +63052,33 @@ let remodded_constants_98 = {
             ],
             "hdi": "custom/easteregg"
         },
+        "Ev0": {
+            "nc": "Ev0",
+            "exc": "Ev0",
+            "elc": "Ev0",
+            "iq": 1,
+            "n": "3-Year Old Gift Box",
+            "hi": 0,
+            "gs": 0,
+            "gt": 0,
+            "i": "invchm",
+            "iw": 2,
+            "ih": 2,
+            "it": 0,
+            "ig": [],
+            "eq1n": "Miscellaneous",
+            "c": [
+                "Ingredient",
+                "Miscellaneous"
+            ],
+            "hdi": "custom/BrokenGift"
+        },
         "m00": {
             "nc": "m00",
             "exc": "m00",
             "elc": "m00",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62961,6 +63101,7 @@ let remodded_constants_98 = {
             "exc": "m01",
             "elc": "m01",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -62983,6 +63124,7 @@ let remodded_constants_98 = {
             "exc": "m02",
             "elc": "m02",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63005,6 +63147,7 @@ let remodded_constants_98 = {
             "exc": "m03",
             "elc": "m03",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63027,6 +63170,7 @@ let remodded_constants_98 = {
             "exc": "m04",
             "elc": "m04",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63049,6 +63193,7 @@ let remodded_constants_98 = {
             "exc": "m05",
             "elc": "m05",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63071,6 +63216,7 @@ let remodded_constants_98 = {
             "exc": "m06",
             "elc": "m06",
             "iq": 1,
+            //"n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63093,6 +63239,7 @@ let remodded_constants_98 = {
             "exc": "m07",
             "elc": "m07",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63115,6 +63262,7 @@ let remodded_constants_98 = {
             "exc": "m08",
             "elc": "m08",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63137,6 +63285,7 @@ let remodded_constants_98 = {
             "exc": "m09",
             "elc": "m09",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63159,6 +63308,7 @@ let remodded_constants_98 = {
             "exc": "m10",
             "elc": "m10",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63181,6 +63331,7 @@ let remodded_constants_98 = {
             "exc": "m11",
             "elc": "m11",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63203,6 +63354,7 @@ let remodded_constants_98 = {
             "exc": "m12",
             "elc": "m12",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63225,6 +63377,7 @@ let remodded_constants_98 = {
             "exc": "m13",
             "elc": "m13",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63247,6 +63400,7 @@ let remodded_constants_98 = {
             "exc": "m14",
             "elc": "m14",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63269,6 +63423,7 @@ let remodded_constants_98 = {
             "exc": "m15",
             "elc": "m15",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63291,6 +63446,7 @@ let remodded_constants_98 = {
             "exc": "m16",
             "elc": "m16",
             "iq": 1,
+            //"n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63313,6 +63469,7 @@ let remodded_constants_98 = {
             "exc": "m17",
             "elc": "m17",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63335,6 +63492,7 @@ let remodded_constants_98 = {
             "exc": "m18",
             "elc": "m18",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63357,6 +63515,7 @@ let remodded_constants_98 = {
             "exc": "m19",
             "elc": "m19",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63379,6 +63538,7 @@ let remodded_constants_98 = {
             "exc": "m20",
             "elc": "m20",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63401,6 +63561,7 @@ let remodded_constants_98 = {
             "exc": "m21",
             "elc": "m21",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63423,6 +63584,7 @@ let remodded_constants_98 = {
             "exc": "m22",
             "elc": "m22",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63445,6 +63607,7 @@ let remodded_constants_98 = {
             "exc": "m23",
             "elc": "m23",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63467,6 +63630,7 @@ let remodded_constants_98 = {
             "exc": "m24",
             "elc": "m24",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63489,6 +63653,7 @@ let remodded_constants_98 = {
             "exc": "m25",
             "elc": "m25",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63511,6 +63676,7 @@ let remodded_constants_98 = {
             "exc": "m26",
             "elc": "m26",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63533,6 +63699,7 @@ let remodded_constants_98 = {
             "exc": "m27",
             "elc": "m27",
             "iq": 1,
+            // "n": "(>'')> Map <(''<)",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63554,6 +63721,7 @@ let remodded_constants_98 = {
             "exc": "m28",
             "elc": "m28",
             "iq": 1,
+            "n": "Surveyor's Scribbles",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63574,6 +63742,7 @@ let remodded_constants_98 = {
             "exc": "m29",
             "elc": "m29",
             "iq": 1,
+            "n": "Parchment of Potency",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63603,6 +63772,7 @@ let remodded_constants_98 = {
             "exc": "m30",
             "elc": "m30",
             "iq": 1,
+            "n": "Quill of Quality",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63623,6 +63793,7 @@ let remodded_constants_98 = {
             "exc": "m31",
             "elc": "m31",
             "iq": 1,
+            "n": "Ink of Insanity",
             "hi": 0,
             "gs": 0,
             "gt": 0,
@@ -63805,6 +63976,14 @@ remodded_constants_98.unq_items[4095] = {
     "i": "D2R_Jank",
     "c": "std",
     "hdi": "misc/body_part/flag"
+};
+
+// runeword_id - read/write value
+remodded_constants_98.runeword_fixes = {
+    22: 2692,
+    170: 2626,
+    171: 2627,
+    172: 2006
 };
 
 remodded_constants_98.gold = {

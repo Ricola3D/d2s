@@ -3,6 +3,6 @@
   "recursive": true,
   "color": true,
   "spec": "test/**/*.spec.ts",
-  "require": ["ts-node/register", "./test/bootstrap.ts"],
+  "require": ["ts-node/register", "./test/bootstrap.ts"], // "ts-node/register" would an issue if you set type="module" in package.json
   "timeout": 10000
 }

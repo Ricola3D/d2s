@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
-    "suppressImplicitAnyIndexErrors": true,
+    // "suppressImplicitAnyIndexErrors": true,
     "ignoreDeprecations": "5.0",
-    "target": "es5",
-    "module": "commonjs",
+    "target": "esnext", // Type 'Uint8Array' can only be iterated through if using es2015 or higher
+    // "module": "ESNext", // Somehow I can't put type="module" in package.json, or make it work with chai
+    // "moduleResolution": "bundler", // Somehow I can't put type="module" in package.json, or make it work with chai
+    "module": "CommonJS",
     "declaration": true,
     "outDir": "./lib",
     "rootDir": "./src",
@@ -23,6 +25,6 @@
     "dist",
     "scripts",
     "public", // Because of "allowJS" it must be excluded
-    "webpack.config.js" // Because of "allowJS" it must be excluded
+    "webpack.config.cjs" // If of "allowJS" in tsconfig and type="module" in package.json, it must be excluded
   ]
 }

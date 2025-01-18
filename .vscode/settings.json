@@ -4,13 +4,14 @@
   "search.exclude": {
     "**/.git": true,
     "**/node_modules": true,
+    "**/lib": true,
     "**/dist": true,
     "package-lock.json": true,
     "public/d2/game_data/vanilla/": true,
     "public/d2/vanilla_constants_*.js": true,
     "**/.nyc_output": true
   },
-  "files.eol": "\r\n",
+  "files.eol": "\n",
   "files.exclude": {
     "**/node_modules": true
   },

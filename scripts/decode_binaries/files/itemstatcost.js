@@ -1,12 +1,12 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
 function decodeItemStatCostFile(inputDir) {
   let items = [];
-  const inputFile = path.join(inputDir, "itemstatcost.bin");
+  const inputFile = path.join(inputDir, 'itemstatcost.bin');
 
   if (fs.existsSync(inputFile)) {
     const fileBuffer = fs.readFileSync(inputFile);
@@ -15,7 +15,7 @@ function decodeItemStatCostFile(inputDir) {
     const lineLength = (fileBuffer.byteLength - 4) / lineCount;
 
     if (lineLength != 324) {
-      console.log("WARNING: expected line length is 324, but actual is " + lineLength);
+      console.log('WARNING: expected line length is 324, but actual is ' + lineLength);
     }
 
     let lineStart = 4; // We skip 4 first bytes
@@ -26,12 +26,12 @@ function decodeItemStatCostFile(inputDir) {
       // const lineUint8Array = new Uint8Array(lineBuffer.byteLength);
       // lineBuffer.copy(lineUint8Array, 0, 0, lineBuffer.byteLength);
 
-      let item = { advdisplay: "", "*eol": 0 };
+      let item = { advdisplay: '', '*eol': 0 };
 
       //item.bytes = lineBuffer.reduce((acc, byte) => acc + " " + byte, "")
 
       // 0-3 *ID
-      item["*ID"] = lineBuffer.readUint32LE(0);
+      item['*ID'] = lineBuffer.readUint32LE(0);
 
       // 4 - 5 Combined bits
       let bits = lineBuffer.readUint16LE(4);
@@ -42,7 +42,7 @@ function decodeItemStatCostFile(inputDir) {
       /* b4 - itemspecific */ item.itemspecific = !!(bits & (1 << 3));
       /* b5 - damagerelated */ item.damagerelated = !!(bits & (1 << 2));
       /* b6 - Signed */ item.Signed = !!(bits & (1 << 1));
-      /* b7 - Send Other */ item["Send Other"] = !!(bits & 1);
+      /* b7 - Send Other */ item['Send Other'] = !!(bits & 1);
 
       /* b8 - padding */
       /* b9 - UpdateAnimRate */ item.UpdateAnimRate = !!(bits & (1 << 8));
@@ -56,10 +56,10 @@ function decodeItemStatCostFile(inputDir) {
       // 6-7 Padding
 
       // 8 Send Bits
-      item["Send Bits"] = lineBuffer.readUint8(8);
+      item['Send Bits'] = lineBuffer.readUint8(8);
 
       // 9 Send Param Bits
-      item["Send Param Bits"] = lineBuffer.readUint8(9);
+      item['Send Param Bits'] = lineBuffer.readUint8(9);
 
       // 10 CSvBits
       item.CSvBits = lineBuffer.readUint8(10);
@@ -77,22 +77,22 @@ function decodeItemStatCostFile(inputDir) {
       item.ValShift = lineBuffer.readUint8(20);
 
       // 21 Save Bits
-      item["Save Bits"] = lineBuffer.readUint8(21);
+      item['Save Bits'] = lineBuffer.readUint8(21);
 
       // 22 1.09-Save Bits
-      item["1.09-Save Bits"] = lineBuffer.readUint8(22);
+      item['1.09-Save Bits'] = lineBuffer.readUint8(22);
 
       // 23 Unknown
       item.unknown23 = lineBuffer.readUint8(23);
 
       // 24-27 Save Add
-      item["Save Add"] = lineBuffer.readInt32LE(24);
+      item['Save Add'] = lineBuffer.readInt32LE(24);
 
       // 28-31 1.09-Save Add
-      item["1.09-Save Add"] = lineBuffer.readInt32LE(28);
+      item['1.09-Save Add'] = lineBuffer.readInt32LE(28);
 
       // 32-35 Save Param Bits
-      item["Save Param Bits"] = lineBuffer.readUint32LE(32);
+      item['Save Param Bits'] = lineBuffer.readUint32LE(32);
 
       // 36-39 Padding
 
@@ -163,19 +163,19 @@ function decodeItemStatCostFile(inputDir) {
       item.op = lineBuffer.readUint8(80);
 
       // 81 op param
-      item["op param"] = lineBuffer.readUint8(81);
+      item['op param'] = lineBuffer.readUint8(81);
 
       // 82-83 op param
-      item["op base"] = lineBuffer.readUint16LE(82);
+      item['op base'] = lineBuffer.readUint16LE(82);
 
       // 84-85 op param
-      item["op stat1"] = lineBuffer.readUint16LE(84);
+      item['op stat1'] = lineBuffer.readUint16LE(84);
 
       // 86-87 op param
-      item["op stat2"] = lineBuffer.readUint16LE(86);
+      item['op stat2'] = lineBuffer.readUint16LE(86);
 
       // 88-89 op param
-      item["op stat3"] = lineBuffer.readUint16LE(88);
+      item['op stat3'] = lineBuffer.readUint16LE(88);
 
       // 90-314 Padding
 

@@ -1,18 +1,21 @@
-import * as types from "./types";
+import * as types from './types';
 
-const versionedConstants = {
+type ModVersionedConstants = { [key: string]: types.IConstantData };
+type VersionedConstants = { [key: string]: ModVersionedConstants };
+
+const versionedConstants: VersionedConstants = {
   vanilla: {},
   remodded: {},
 };
 
 function getConstantData(mod: string, version: number): types.IConstantData {
   if (!(mod in versionedConstants)) {
-    throw new Error(`No constant data found for this mod ${mod}. Supported mods are: ${Object.keys(versionedConstants).join(", ")}`);
+    throw new Error(`No constant data found for this mod ${mod}. Supported mods are: ${Object.keys(versionedConstants).join(', ')}`);
   }
   if (!(version.toString() in versionedConstants[mod])) {
     throw new Error(
       `No constant data found for version ${version} of mod ${mod}. Supported versions are: ${Object.keys(versionedConstants[mod]).join(
-        ", ",
+        ', ',
       )}`,
     );
   }

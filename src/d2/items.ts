@@ -1,8 +1,9 @@
-import * as types from "./types";
-import { BitReader } from "../binary/bitreader";
-import { BitWriter } from "../binary/bitwriter";
-import { getConstantData } from "./constants";
-import { ItemType, Quality } from "./types";
+import * as types from './types';
+import { BitReader } from '../binary/bitreader';
+import { BitWriter } from '../binary/bitwriter';
+import { getConstantData } from './constants';
+import { ETypeId, EQuality } from './types';
+import { swapObjectKeyValue, getItemTypeDef } from './utils';
 
 // Right now I'm missing characters (case sensitive) E, F, I, J, L, M, Q, U, X.
 // prettier-ignore
@@ -564,7 +565,7 @@ const HUFFMAN = [
 ];
 
 // prettier-ignore
-const HUFFMAN_LOOKUP = {
+const HUFFMAN_LOOKUP: { [key: string]: { v: number, l: number } } = {
   "0": { "v": 223, "l": 8 }, /*11011111*/
   "1": { "v": 31, "l": 7 }, /*0011111*/
   "2": { "v": 12, "l": 6 }, /*001100*/
@@ -633,41 +634,41 @@ const HUFFMAN_LOOKUP = {
 export function newItem(): types.IItem {
   return {
     // Default values
-    identified: 0,
-    socketed: 0,
+    identified: false,
+    socketed: false,
     max_sockets: 0,
-    new: 0,
-    is_ear: 0,
-    starter_item: 0,
-    simple_item: 0,
-    ethereal: 0,
-    personalized: 0,
-    personalized_name: "",
-    given_runeword: 0,
-    version: "101",
+    new: false,
+    is_ear: false,
+    starter_item: false,
+    simple_item: false,
+    ethereal: false,
+    personalized: false,
+    personalized_name: '',
+    given_runeword: false,
+    version: '101',
     location_id: 0,
     equipped_id: 0,
     position_x: 0,
     position_y: 0,
-    alt_position_id: 0,
-    type: "",
-    type_id: 0,
-    type_name: "",
+    alt_position_id: types.EAltPositionId.Inventory,
+    type: '',
+    type_id: types.ETypeId.Other,
+    type_name: '',
     quest_difficulty: 0,
     nr_of_items_in_sockets: 0,
     id: 0,
     level: 0,
-    quality: 0,
-    multiple_pictures: 0,
+    quality: types.EQuality.Normal,
+    multiple_pictures: false,
     picture_id: 0,
-    class_specific: 0,
+    class_specific: false,
     low_quality_id: 0,
     timestamp: 0, // 1 for returned body piece, 0 otherwise
     time: 0, // for body pieces
     ear_attributes: {
       class: 0,
       level: 0,
-      name: "",
+      name: '',
     },
     defense_rating: 0,
     max_durability: 0,
@@ -677,19 +678,19 @@ export function newItem(): types.IItem {
     magic_prefix: 0,
     magic_suffix: 0,
     runeword_id: 0,
-    runeword_name: "",
+    runeword_name: '',
     runeword_attributes: [],
     set_id: 0,
-    set_name: "",
+    set_name: '',
     set_list_count: 0,
     set_attributes: [],
     set_attributes_num_req: 0,
     set_attributes_ids_req: 0,
-    rare_name: "",
-    rare_name2: "",
+    rare_name: '',
+    rare_name2: '',
     magical_name_ids: [0, 0, 0, 0, 0, 0],
     unique_id: 0,
-    unique_name: "",
+    unique_name: '',
     magic_attributes: [],
     combined_magic_attributes: [],
     socketed_items: [],
@@ -704,10 +705,10 @@ export function newItem(): types.IItem {
     reqdex: 0,
     inv_width: 0,
     inv_height: 0,
-    inv_file: "",
-    hd_inv_file: "",
+    inv_file: '',
+    hd_inv_file: '',
     inv_transform: 0,
-    transform_color: "",
+    transform_color: '',
     item_quality: 0,
     categories: [],
     file_index: 0,
@@ -735,7 +736,7 @@ export async function writeCharItems(char: types.ID2S, mod: string, version: num
 export async function readMercItems(char: types.ID2S, reader: BitReader, mod: string, config: types.IConfig): Promise<void> {
   char.merc_items = [] as types.IItem[];
   const header = reader.ReadString(2); //0x0000 [merc item list header = "jf"]
-  if (header !== "jf") {
+  if (header !== 'jf') {
     // header is not present in first save after char is created
     if (char?.header.level === 1) {
       return;
@@ -750,7 +751,7 @@ export async function readMercItems(char: types.ID2S, reader: BitReader, mod: st
 
 export async function writeMercItems(char: types.ID2S, mod: string, version: number, config: types.IConfig): Promise<Uint8Array> {
   const writer = new BitWriter();
-  writer.WriteString("jf", 2);
+  writer.WriteString('jf', 2);
   if (char.header.merc_id && parseInt(char.header.merc_id, 16) !== 0) {
     char.merc_items = char.merc_items || [];
     writer.WriteArray(await writeItems(char.merc_items, mod, version, config));
@@ -760,7 +761,7 @@ export async function writeMercItems(char: types.ID2S, mod: string, version: num
 
 export async function readGolemItems(char: types.ID2S, reader: BitReader, mod: string, config: types.IConfig): Promise<void> {
   const header = reader.ReadString(2); //0x0000 [golem item list header = "kf"]
-  if (header !== "kf") {
+  if (header !== 'kf') {
     // header is not present in first save after char is created
     if (char?.header.level === 1) {
       return;
@@ -776,7 +777,7 @@ export async function readGolemItems(char: types.ID2S, reader: BitReader, mod: s
 
 export async function writeGolemItems(char: types.ID2S, mod: string, version: number, config: types.IConfig): Promise<Uint8Array> {
   const writer = new BitWriter();
-  writer.WriteString("kf", 2);
+  writer.WriteString('kf', 2);
   if (char.golem_item) {
     writer.WriteUInt8(1);
     writer.WriteArray(await writeItem(char.golem_item, mod, version, config));
@@ -789,7 +790,7 @@ export async function writeGolemItems(char: types.ID2S, mod: string, version: nu
 export async function readCorpseItems(char: types.ID2S, reader: BitReader, mod: string, config: types.IConfig): Promise<void> {
   char.corpse_items = [] as types.IItem[];
   const header = reader.ReadString(2); //0x0000 [item list header = 0x4a, 0x4d "JM"]
-  if (header !== "JM") {
+  if (header !== 'JM') {
     // header is not present in first save after char is created
     if (char.header.level === 1) {
       char.is_dead = 0;
@@ -800,14 +801,15 @@ export async function readCorpseItems(char: types.ID2S, reader: BitReader, mod: 
   }
   char.is_dead = reader.ReadUInt16(); //0x0002 [corpse count]
   for (let i = 0; i < char.is_dead; i++) {
-    reader.SkipBytes(12); //0x0004 [b4_entered_area, x_pos, y_pos]
+    char.corpse_unk004 = reader.ReadArray(12);
+    // reader.SkipBytes(12); //0x0004 [b4_entered_area, x_pos, y_pos]
     char.corpse_items = char.corpse_items.concat(await readItems(reader, mod, char.header.version, config, char));
   }
 }
 
 export async function writeCorpseItem(char: types.ID2S, mod: string, version: number, config: types.IConfig): Promise<Uint8Array> {
   const writer = new BitWriter();
-  writer.WriteString("JM", 2);
+  writer.WriteString('JM', 2);
   writer.WriteUInt16(char.is_dead);
   //json struct doesnt support multiple corpses without modifying it
   if (char.is_dead) {
@@ -827,7 +829,7 @@ export async function readItems(
 ): Promise<types.IItem[]> {
   const items = [] as types.IItem[];
   const header = reader.ReadString(2); //0x0000 [item list header = 0x4a, 0x4d "JM"]
-  if (header !== "JM") {
+  if (header !== 'JM') {
     // header is not present in first save after char is created
     if (char?.header.level === 1) {
       return []; // TODO: return starter items based on class
@@ -845,7 +847,7 @@ export async function readItems(
 
 export async function writeItems(items: types.IItem[], mod: string, version: number, config: types.IConfig): Promise<Uint8Array> {
   const writer = new BitWriter();
-  writer.WriteString("JM", 2);
+  writer.WriteString('JM', 2);
   writer.WriteUInt16(items.length);
   for (let i = 0; i < items.length; i++) {
     writer.WriteArray(await writeItem(items[i], mod, version, config));
@@ -856,7 +858,7 @@ export async function writeItems(items: types.IItem[], mod: string, version: num
 export async function readItem(reader: BitReader, mod: string, version: number, config: types.IConfig): Promise<types.IItem> {
   if (version <= 0x60) {
     const header = reader.ReadString(2); //0x0000 [item header = 0x4a, 0x4d "JM"]
-    if (header !== "JM") {
+    if (header !== 'JM') {
       throw new Error(`Item header 'JM' not found at position ${reader.offset - 2 * 8}`);
     }
   }
@@ -868,42 +870,42 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
     item.id = reader.ReadUInt32(32);
     item.level = reader.ReadUInt8(7);
     item.quality = reader.ReadUInt8(4);
-    item.multiple_pictures = reader.ReadBit();
+    item.multiple_pictures = reader.ReadBit() == 1;
     if (item.multiple_pictures) {
       item.picture_id = reader.ReadUInt8(3);
     }
-    item.class_specific = reader.ReadBit();
+    item.class_specific = reader.ReadBit() == 1;
     if (item.class_specific) {
       item.auto_affix_id = reader.ReadUInt16(11);
     }
     switch (item.quality) {
-      case Quality.Low:
+      case EQuality.Low:
         item.low_quality_id = reader.ReadUInt8(3);
         break;
-      case Quality.Normal:
+      case EQuality.Normal:
         break;
-      case Quality.Superior:
+      case EQuality.Superior:
         item.file_index = reader.ReadUInt8(3);
         break;
-      case Quality.Magic:
+      case EQuality.Magic:
         item.magic_prefix = reader.ReadUInt16(11);
         item.magic_suffix = reader.ReadUInt16(11);
         break;
-      case Quality.Set:
+      case EQuality.Set:
         item.set_id = reader.ReadUInt16(12);
-        item.set_name = constants.set_items[item.set_id] ? constants.set_items[item.set_id].n : "";
+        item.set_name = constants.set_items[item.set_id] ? constants.set_items[item.set_id].n : '';
         break;
-      case Quality.Unique:
+      case EQuality.Unique:
         item.unique_id = reader.ReadUInt16(12);
-        item.unique_name = constants.unq_items[item.unique_id] ? constants.unq_items[item.unique_id].n : "";
+        item.unique_name = constants.unq_items[item.unique_id] ? constants.unq_items[item.unique_id].n : '';
         break;
-      case Quality.Rare:
-      case Quality.Crafted:
+      case EQuality.Rare:
+      case EQuality.Crafted:
         item.rare_name_id = reader.ReadUInt8(8);
-        if (item.rare_name_id) item.rare_name = constants.rare_names[item.rare_name_id] ? constants.rare_names[item.rare_name_id].n : "";
+        if (item.rare_name_id) item.rare_name = constants.rare_names[item.rare_name_id] ? constants.rare_names[item.rare_name_id].n : '';
         item.rare_name_id2 = reader.ReadUInt8(8);
         if (item.rare_name_id2)
-          item.rare_name2 = constants.rare_names[item.rare_name_id2] ? constants.rare_names[item.rare_name_id2].n : "";
+          item.rare_name2 = constants.rare_names[item.rare_name_id2] ? constants.rare_names[item.rare_name_id2].n : '';
         for (let i = 0; i < 6; i++) {
           const prefix = reader.ReadBit();
           if (prefix === 1) {
@@ -918,13 +920,12 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
     }
     if (item.given_runeword) {
       item.runeword_id = reader.ReadUInt16(12) - 26;
-      // Delirium - temp fix
-      if (item.runeword_id == 2692) {
-        item.runeword_id = 22;
-      }
-      // Lord of Terror - temp fix
-      if (item.runeword_id == 2626) {
-        item.runeword_id = 170;
+
+      if (constants.runeword_fixes) {
+        const reverse_runeword_fixes = swapObjectKeyValue(constants.runeword_fixes);
+        if (reverse_runeword_fixes[item.runeword_id]) {
+          item.runeword_id = reverse_runeword_fixes[item.runeword_id];
+        }
       }
 
       if (constants.runewords[item.runeword_id]) {
@@ -945,27 +946,27 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
           break;
         }
       }
-      item.personalized_name = new BitReader(arr).ReadString(16).trim().replace(/\0/g, "");
+      item.personalized_name = new BitReader(arr).ReadString(16).trim().replace(/\0/g, '');
     }
 
     //tomes
-    if (item.type === "tbk" || item.type == "ibk") {
+    if (item.type === 'tbk' || item.type == 'ibk') {
       reader.ReadUInt8(5);
     }
 
     //realm data
     item.timestamp = reader.ReadUInt8(1);
-    if (item.timestamp || item.categories.includes("Body Part")) {
+    if (item.timestamp || item.categories.includes('Body Part')) {
       item.time = reader.ReadUInt32(30);
     }
 
-    if (item.type_id === ItemType.Armor) {
-      item.defense_rating = reader.ReadUInt16(constants.magical_properties[31].sB) - constants.magical_properties[31].sA;
+    if (item.type_id === ETypeId.Armor) {
+      item.defense_rating = reader.ReadUInt16(constants.magical_properties[31].sB) - (constants.magical_properties[31].sA || 0);
     }
-    if (item.type_id === ItemType.Armor || item.type_id === ItemType.Weapon) {
-      item.max_durability = reader.ReadUInt16(constants.magical_properties[73].sB) - constants.magical_properties[73].sA;
+    if (item.type_id === ETypeId.Armor || item.type_id === ETypeId.Weapon) {
+      item.max_durability = reader.ReadUInt16(constants.magical_properties[73].sB) - (constants.magical_properties[73].sA || 0);
       if (item.max_durability > 0) {
-        item.current_durability = reader.ReadUInt16(constants.magical_properties[72].sB) - constants.magical_properties[72].sA;
+        item.current_durability = reader.ReadUInt16(constants.magical_properties[72].sB) - (constants.magical_properties[72].sA || 0);
       }
     }
 
@@ -973,7 +974,7 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
       item.quantity = reader.ReadUInt16(9);
     }
 
-    if (item.socketed === 1) {
+    if (item.socketed) {
       item.total_nr_of_sockets = reader.ReadUInt8(4);
     } else {
       item.total_nr_of_sockets = 0;
@@ -984,7 +985,7 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
      * means +1 to the set_list_count
      */
     let plist_flag = 0;
-    if (item.quality === Quality.Set) {
+    if (item.quality === EQuality.Set) {
       plist_flag = reader.ReadUInt8(5);
       item.set_list_count = 0;
       item._unknown_data.plist_flag = plist_flag;
@@ -1007,7 +1008,7 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
       plist_flag >>>= 1;
     }
 
-    if (item.given_runeword === 1) {
+    if (item.given_runeword) {
       magic_attributes = _readMagicAttributes(reader, constants);
       if (magic_attributes && magic_attributes.length > 0) {
         item.runeword_attributes = magic_attributes;
@@ -1016,7 +1017,7 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
   }
   reader.Align();
 
-  if (item.nr_of_items_in_sockets > 0 && item.simple_item === 0) {
+  if (item.nr_of_items_in_sockets > 0 && !item.simple_item) {
     for (let i = 0; i < item.nr_of_items_in_sockets; i++) {
       item.socketed_items.push(await readItem(reader, mod, version, config));
     }
@@ -1027,51 +1028,52 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
 
 export async function writeItem(item: types.IItem, mod: string, version: number, config: types.IConfig): Promise<Uint8Array> {
   const constants = getConstantData(mod, version);
+  const itemTypeDef = getItemTypeDef(item, constants);
   if (item._unknown_data === undefined) {
     item._unknown_data = {};
   }
   if (item.categories === undefined) {
-    item.categories = _GetItemTXT(item, constants)?.c;
+    item.categories = itemTypeDef.c;
   }
 
   const writer = new BitWriter();
   if (version <= 0x60) {
-    writer.WriteString("JM", 2);
+    writer.WriteString('JM', 2);
   }
   _writeSimpleBits(writer, mod, version, item);
   if (!item.simple_item) {
     writer.WriteUInt32(item.id, 32);
     writer.WriteUInt8(item.level, 7);
     writer.WriteUInt8(item.quality, 4);
-    writer.WriteUInt8(item.multiple_pictures, 1);
+    writer.WriteBit(item.multiple_pictures ? 1 : 0);
     if (item.multiple_pictures) {
       writer.WriteUInt8(item.picture_id, 3);
     }
-    writer.WriteUInt8(item.class_specific, 1);
-    if (item.class_specific === 1) {
+    writer.WriteUInt8(item.class_specific ? 1 : 0, 1);
+    if (item.class_specific) {
       writer.WriteUInt16(item.auto_affix_id || 0, 11);
     }
     switch (item.quality) {
-      case Quality.Low:
+      case EQuality.Low:
         writer.WriteUInt8(item.low_quality_id, 3);
         break;
-      case Quality.Normal:
+      case EQuality.Normal:
         break;
-      case Quality.Superior:
+      case EQuality.Superior:
         writer.WriteUInt8(item.file_index || 0, 3);
         break;
-      case Quality.Magic:
+      case EQuality.Magic:
         writer.WriteUInt16(item.magic_prefix, 11);
         writer.WriteUInt16(item.magic_suffix, 11);
         break;
-      case Quality.Set:
+      case EQuality.Set:
         writer.WriteUInt16(item.set_id, 12);
         break;
-      case Quality.Unique:
+      case EQuality.Unique:
         writer.WriteUInt16(item.unique_id, 12);
         break;
-      case Quality.Rare:
-      case Quality.Crafted:
+      case EQuality.Rare:
+      case EQuality.Crafted:
         writer.WriteUInt8(item.rare_name_id !== undefined ? item.rare_name_id : _lookupRareId(item.rare_name, constants), 8);
         writer.WriteUInt8(item.rare_name_id2 !== undefined ? item.rare_name_id2 : _lookupRareId(item.rare_name2, constants), 8);
         for (let i = 0; i < 6; i++) {
@@ -1089,15 +1091,12 @@ export async function writeItem(item: types.IItem, mod: string, version: number,
     }
 
     if (item.given_runeword) {
-      let runeword_id = item.runeword_id;
-      // Delirium - temp fix
-      if (runeword_id == 22) {
-        runeword_id = 2692;
+      let runeword_id = item.runeword_id; // It's important to modify a copy, not the actual attribute
+
+      if (constants.runeword_fixes && constants.runeword_fixes[runeword_id]) {
+        runeword_id = constants.runeword_fixes[runeword_id];
       }
-      // Lord of Terror - temp fix
-      if (runeword_id == 170) {
-        runeword_id = 2626;
-      }
+
       writer.WriteUInt16(runeword_id + 26, 12);
       writer.WriteUInt8(5, 4); //always 5?
     }
@@ -1114,22 +1113,22 @@ export async function writeItem(item: types.IItem, mod: string, version: number,
       writer.WriteUInt8(0x00, version > 0x61 ? 8 : 7);
     }
 
-    if (item.type === "tbk") {
+    if (item.type === 'tbk') {
       writer.WriteUInt8(0, 5);
-    } else if (item.type === "ibk") {
+    } else if (item.type === 'ibk') {
       writer.WriteUInt8(1, 5);
     }
 
     writer.WriteUInt8(item.timestamp, 1);
-    if (item.timestamp || item.categories.includes("Body Part")) {
+    if (item.timestamp || item.categories.includes('Body Part')) {
       writer.WriteUInt32(item.time, 30);
     }
 
-    if (item.type_id === ItemType.Armor || item.type_id === ItemType.Shield) {
-      writer.WriteUInt16(item.defense_rating + constants.magical_properties[31].sA, constants.magical_properties[31].sB);
+    if (item.type_id === ETypeId.Armor || item.type_id === ETypeId.Shield) {
+      writer.WriteUInt16(item.defense_rating + (constants.magical_properties[31].sA || 0), constants.magical_properties[31].sB);
     }
 
-    if (item.type_id === ItemType.Armor || item.type_id === ItemType.Shield || item.type_id === ItemType.Weapon) {
+    if (item.type_id === ETypeId.Armor || item.type_id === ETypeId.Shield || item.type_id === ETypeId.Weapon) {
       writer.WriteUInt16(item.max_durability || 0, constants.magical_properties[73].sB);
       if (item.max_durability > 0) {
         writer.WriteUInt16(item.current_durability, constants.magical_properties[72].sB);
@@ -1140,32 +1139,38 @@ export async function writeItem(item: types.IItem, mod: string, version: number,
       writer.WriteUInt16(item.quantity, 9);
     }
 
-    if (item.socketed === 1) {
+    if (item.socketed) {
       writer.WriteUInt8(item.total_nr_of_sockets, 4);
     }
 
-    if (item.quality === Quality.Set) {
+    if (item.quality === EQuality.Set) {
       const set_attribute_count = item.set_attributes != null ? item.set_attributes.length : 0;
       //reduced by -1 removed as this seems to be wrong
       const plist_flag = (1 << set_attribute_count) - 1;
       writer.WriteUInt8(item._unknown_data.plist_flag || plist_flag, 5);
     }
 
-    _writeMagicAttributes(writer, item.magic_attributes, constants);
+    if (itemTypeDef.m) {
+      // Dynamic attributes are not written (anyway D2 will erase them)
+      _writeMagicAttributes(writer, [], constants);
+    } else {
+      _writeMagicAttributes(writer, item.magic_attributes, constants);
+    }
+
     if (item.set_attributes && item.set_attributes.length > 0) {
       for (let i = 0; i < item.set_attributes.length; i++) {
         _writeMagicAttributes(writer, item.set_attributes[i], constants);
       }
     }
 
-    if (item.given_runeword === 1) {
+    if (item.given_runeword) {
       _writeMagicAttributes(writer, item.runeword_attributes, constants);
     }
   }
 
   writer.Align();
 
-  if (item.nr_of_items_in_sockets > 0 && item.simple_item === 0) {
+  if (item.nr_of_items_in_sockets > 0 && !item.simple_item) {
     for (let i = 0; i < item.nr_of_items_in_sockets; i++) {
       writer.WriteArray(await writeItem(item.socketed_items[i], mod, version, config));
     }
@@ -1186,21 +1191,21 @@ function _readSimpleBits(
   //1.15
   //[flags:32][version:3][mode:3]([invloc:4][x:4][y:4][page:3])([itemcode:variable])([sockets:3])
   item._unknown_data.b0_3 = reader.ReadBitArray(4);
-  item.identified = reader.ReadBit();
+  item.identified = reader.ReadBit() == 1;
   item._unknown_data.b5_10 = reader.ReadBitArray(6); // 3b>unk, 1b>broken, 2b>unk
-  item.socketed = reader.ReadBit();
+  item.socketed = reader.ReadBit() == 1;
   item._unknown_data.b12 = reader.ReadBitArray(1); // ? 0x00
-  item.new = reader.ReadBit();
+  item.new = reader.ReadBit() == 1;
   item._unknown_data.b14_15 = reader.ReadBitArray(2); // ? 0x00
-  item.is_ear = reader.ReadBit();
-  item.starter_item = reader.ReadBit();
+  item.is_ear = reader.ReadBit() == 1;
+  item.starter_item = reader.ReadBit() == 1;
   item._unknown_data.b18_20 = reader.ReadBitArray(3); // 1b>unk, 2b>? 0x03 for version 71 with 15, 26 or 31 bytes, otherwise 0x00
-  item.simple_item = reader.ReadBit(); // compact
-  item.ethereal = reader.ReadBit();
+  item.simple_item = reader.ReadBit() == 1; // compact
+  item.ethereal = reader.ReadBit() == 1;
   item._unknown_data.b23 = reader.ReadBitArray(1); // ? 0x01 for versions 87+, otherwise 0x00
-  item.personalized = reader.ReadBit();
+  item.personalized = reader.ReadBit() == 1;
   item._unknown_data.b25 = reader.ReadBitArray(1); // ? 0x00
-  item.given_runeword = reader.ReadBit();
+  item.given_runeword = reader.ReadBit() == 1;
   item._unknown_data.b27_31 = reader.ReadBitArray(5); // ? 0x00
 
   if (version <= 0x60) {
@@ -1208,7 +1213,7 @@ function _readSimpleBits(
   } else if (version >= 0x61) {
     item.version = reader.ReadUInt16(3).toString(2);
   }
-  if (["0", "000", " ", "   ", ""].includes(item.version)) item.version = "101"; // Just in case
+  if (['0', '000', ' ', '   ', ''].includes(item.version)) item.version = '101'; // Just in case
 
   item.location_id = reader.ReadUInt8(3);
   item.equipped_id = reader.ReadUInt8(4);
@@ -1216,7 +1221,7 @@ function _readSimpleBits(
   item.position_y = reader.ReadUInt8(4);
   item.alt_position_id = reader.ReadUInt8(3);
   if (item.is_ear) {
-    item.type = "ear";
+    item.type = 'ear';
     const clazz = reader.ReadUInt8(3);
     const level = reader.ReadUInt8(7);
     const arr = new Uint8Array(15);
@@ -1226,7 +1231,7 @@ function _readSimpleBits(
         break;
       }
     }
-    const name = new BitReader(arr).ReadString(15).trim().replace(/\0/g, "");
+    const name = new BitReader(arr).ReadString(15).trim().replace(/\0/g, '');
     item.ear_attributes = {
       class: clazz,
       level: level,
@@ -1236,35 +1241,35 @@ function _readSimpleBits(
     if (version <= 0x60) {
       item.type = reader.ReadString(4);
     } else if (version >= 0x61) {
-      item.type = "";
+      item.type = '';
       //props to d07riv
       //https://github.com/d07RiV/d07riv.github.io/blob/master/d2r.html#L11-L20
       for (let i = 0; i < 4; i++) {
         let node = HUFFMAN as any;
-        let bits = "";
+        let bits = '';
         do {
           const bit = reader.ReadBit();
           bits += bit;
           node = node[bit];
           if (node === undefined) {
-            console.log("Huffman value starting by " + bits.split("").reverse().join("") + "... is undefined.");
+            console.log('Huffman value starting by ' + bits.split('').reverse().join('') + '... is undefined.');
           }
         } while (Array.isArray(node));
         item.type += node;
       }
     }
-    item.type = item.type.trim().replace(/\0/g, "");
-    let details = _GetItemTXT(item, constants);
+    item.type = item.type.trim().replace(/\0/g, '');
+    let details = getItemTypeDef(item, constants);
     if (details) {
       if (details.c) {
         item.categories = details.c;
-        if (item?.categories.includes("Any Armor")) {
-          item.type_id = ItemType.Armor;
-        } else if (item?.categories.includes("Weapon")) {
-          item.type_id = ItemType.Weapon;
+        if (item?.categories.includes('Any Armor')) {
+          item.type_id = ETypeId.Armor;
+        } else if (item?.categories.includes('Weapon')) {
+          item.type_id = ETypeId.Weapon;
           details = constants.weapon_items[item.type];
         } else {
-          item.type_id = ItemType.Other;
+          item.type_id = ETypeId.Other;
         }
       } else {
         throw new Error(`Cannot find categories for type ${item.type} does not exist`);
@@ -1274,8 +1279,8 @@ function _readSimpleBits(
     }
 
     let bits = item.simple_item ? 1 : 3;
-    if (item.categories?.includes("Quest")) {
-      item.quest_difficulty = reader.ReadUInt16(constants.magical_properties[356].sB) - constants.magical_properties[356].sA;
+    if (item.categories?.includes('Quest')) {
+      item.quest_difficulty = reader.ReadUInt16(constants.magical_properties[356].sB) - (constants.magical_properties[356].sA || 0);
       bits = 1;
     }
     item.nr_of_items_in_sockets = reader.ReadUInt8(bits);
@@ -1292,24 +1297,24 @@ function _lookupRareId(name: string, constants: types.IConstantData): number {
 function _writeSimpleBits(writer: BitWriter, mod: string, version: number, item: types.IItem) {
   const constants = getConstantData(mod, version);
   writer.WriteBits(item._unknown_data.b0_3 || new Uint8Array(4), 4);
-  writer.WriteBit(item.identified);
+  writer.WriteBit(item.identified ? 1 : 0);
   writer.WriteBits(item._unknown_data.b5_10 || new Uint8Array(6), 6);
-  writer.WriteBit(item.socketed);
+  writer.WriteBit(item.socketed ? 1 : 0);
   writer.WriteBits(item._unknown_data.b12 || new Uint8Array(1), 1);
-  writer.WriteBit(item.new);
+  writer.WriteBit(item.new ? 1 : 0);
   writer.WriteBits(item._unknown_data.b14_15 || new Uint8Array(2), 2);
-  writer.WriteBit(item.is_ear);
-  writer.WriteBit(item.starter_item);
+  writer.WriteBit(item.is_ear ? 1 : 0);
+  writer.WriteBit(item.starter_item ? 1 : 0);
   writer.WriteBits(item._unknown_data.b18_20 || new Uint8Array(3), 3);
-  writer.WriteBit(item.simple_item);
-  writer.WriteBit(item.ethereal);
+  writer.WriteBit(item.simple_item ? 1 : 0);
+  writer.WriteBit(item.ethereal ? 1 : 0);
   writer.WriteBits(item._unknown_data.b23 || new Uint8Array([1]), 1); //always 1? IFLAG_JUSTSAVED
-  writer.WriteBit(item.personalized);
+  writer.WriteBit(item.personalized ? 1 : 0);
   writer.WriteBits(item._unknown_data.b25 || new Uint8Array(1), 1); //IFLAG_LOWQUALITY
-  writer.WriteBit(item.given_runeword);
+  writer.WriteBit(item.given_runeword ? 1 : 0);
   writer.WriteBits(item._unknown_data.b27_31 || new Uint8Array(5), 5);
 
-  const itemVersion = !!item.version ? item.version : "101";
+  const itemVersion = !!item.version ? item.version : '101';
   if (version <= 0x60) {
     // 0 = pre-1.08; 1 = 1.08/1.09 normal; 2 = 1.10 normal; 100 = 1.08/1.09 expansion; 101 = 1.10 expansion
     writer.WriteUInt16(parseInt(itemVersion, 10), 10);
@@ -1330,7 +1335,7 @@ function _writeSimpleBits(writer: BitWriter, mod: string, version: number, item:
     }
     writer.WriteUInt8(0x00, 7);
   } else {
-    const t = item.type.padEnd(4, " ");
+    const t = item.type.padEnd(4, ' ');
     if (version <= 0x60) {
       writer.WriteString(t, 4);
     } else {
@@ -1341,9 +1346,9 @@ function _writeSimpleBits(writer: BitWriter, mod: string, version: number, item:
     }
 
     let bits = item.simple_item ? 1 : 3;
-    if (item.categories?.includes("Quest")) {
+    if (item.categories?.includes('Quest')) {
       const difficulty = item.quest_difficulty || 0;
-      writer.WriteUInt16(difficulty + constants.magical_properties[356].sA, constants.magical_properties[356].sB);
+      writer.WriteUInt16(difficulty + (constants.magical_properties[356].sA || 0), constants.magical_properties[356].sB);
       bits = 1;
     }
     writer.WriteUInt8(item.nr_of_items_in_sockets, bits);
@@ -1470,14 +1475,4 @@ export function _writeMagicAttributes(writer: BitWriter, magic_attributes: types
     }
   }
   writer.WriteUInt16(0x1ff, 9);
-}
-
-function _GetItemTXT(item: types.IItem, constants: types.IConstantData): any {
-  if (constants.armor_items[item.type]) {
-    return constants.armor_items[item.type];
-  } else if (constants.weapon_items[item.type]) {
-    return constants.weapon_items[item.type];
-  } else if (constants.other_items[item.type]) {
-    return constants.other_items[item.type];
-  }
 }

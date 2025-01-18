@@ -1,14 +1,14 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
-const { readString } = require("../utils.js");
+const { readString } = require('../utils.js');
 
 function decodePlayerClassFile(inputDir) {
   let items = [];
-  const inputFile = path.join(inputDir, "playerclass.bin");
+  const inputFile = path.join(inputDir, 'playerclass.bin');
 
   if (fs.existsSync(inputFile)) {
     const fileBuffer = fs.readFileSync(inputFile);
@@ -17,7 +17,7 @@ function decodePlayerClassFile(inputDir) {
     const lineLength = (fileBuffer.byteLength - 4) / lineCount;
 
     if (lineLength != 52) {
-      console.log("WARNING: expected line length is 52, but actual is " + lineLength);
+      console.log('WARNING: expected line length is 52, but actual is ' + lineLength);
     }
 
     let lineStart = 4; // We skip 4 first bytes
@@ -33,7 +33,7 @@ function decodePlayerClassFile(inputDir) {
       //item.bytes = lineBuffer.reduce((acc, byte) => acc + " " + byte, "")
 
       // 0-31 Player Class
-      item["Player Class"] = readString(lineBuffer, 0, 32);
+      item['Player Class'] = readString(lineBuffer, 0, 32);
 
       // 32-47 Padding
 

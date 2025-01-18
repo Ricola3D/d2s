@@ -1,31 +1,35 @@
-import * as types from "../types";
-import { BitReader } from "../../binary/bitreader";
-import { BitWriter } from "../../binary/bitwriter";
+import * as types from '../types';
+import { BitReader } from '../../binary/bitreader';
+import { BitWriter } from '../../binary/bitwriter';
 
-const difficulties = ["normal", "nm", "hell"];
+const difficulties = ['normal', 'nm', 'hell'];
 
 export function readHeader(char: types.ID2S, reader: BitReader, constants: types.IConstantData) {
   char.header.filesize = reader.ReadUInt32(); //0x0008
-  char.header.checksum = reader.ReadUInt32().toString(16).padStart(8, "0"); //0x000c
-  reader.SkipBytes(4); //0x0010 (previously active_arms ?)
+  char.header.checksum = reader.ReadUInt32().toString(16).padStart(8, '0'); //0x000c
+  char.header.unk0016 = reader.ReadArray(4);
+  // reader.SkipBytes(4); //0x0010 (previously active_arms ?)
   if (char.header.version > 0x61) {
     // In version >97, char name is found at a later position
+    char.header.unk0020 = reader.ReadArray(16);
     reader.SeekByte(267);
   }
-  char.header.name = reader.ReadString(16).replace(/\0/g, ""); //0x0014 (or 0x010b if version>97)
+  char.header.name = reader.ReadString(16).replace(/\0/g, ''); //0x0014 (or 0x010b if version>97)
   if (char.header.version > 0x61) {
-    // In version >97, back to the header start
+    // In version >97, after reading the char name at a later position, return to byte 36
     reader.SeekByte(36);
   }
   char.header.status = _readStatus(reader.ReadUInt8()); //0x0024
   char.header.progression = reader.ReadUInt8(); //0x0025
   char.header.active_arms = reader.ReadUInt16(); //0x0026 [unk = 0x0, 0x0]
   char.header.class = constants.classes[reader.ReadUInt8()]!.n; //0x0028
-  reader.SkipBytes(2); //0x0029 [unk = 0x10, 0x1E]
+  char.header.unk0041 = reader.ReadArray(2);
+  // reader.SkipBytes(2); //0x0029 [unk = 0x10, 0x1E]
   char.header.level = reader.ReadUInt8(); //0x002b
   char.header.created = reader.ReadUInt32(); //0x002c
   char.header.last_played = reader.ReadUInt32(); //0x0030
-  reader.SkipBytes(4); //0x0034 [unk = 0xff, 0xff, 0xff, 0xff]
+  char.header.unk0052 = reader.ReadArray(4);
+  // reader.SkipBytes(4); //0x0034 [unk = 0xff, 0xff, 0xff, 0xff]
   char.header.assigned_skills = _readAssignedSkills(reader.ReadArray(64), constants); //0x0038
   char.header.left_skill = constants.skills[reader.ReadUInt32()]?.s; //0x0078
   char.header.right_skill = constants.skills[reader.ReadUInt32()]?.s; //0x007c
@@ -34,26 +38,38 @@ export function readHeader(char: types.ID2S, reader: BitReader, constants: types
   char.header.menu_appearance = _readCharMenuAppearance(reader.ReadArray(32) /*, constants*/); //0x0088 [char menu appearance]
   char.header.difficulty = _readDifficulty(reader.ReadArray(3)); //0x00a8
   char.header.map_id = reader.ReadUInt32(); //0x00ab
-  reader.SkipBytes(2); //0x00af [unk = 0x0, 0x0]
+  char.header.unk0175 = reader.ReadArray(2);
+  // reader.SkipBytes(2); //0x00af [unk = 0x0, 0x0]
   char.header.dead_merc = reader.ReadUInt16(); //0x00b1
   char.header.merc_id = reader.ReadUInt32().toString(16); //0x00b3
   char.header.merc_name_id = reader.ReadUInt16(); //0x00b7
   char.header.merc_type = reader.ReadUInt16(); //0x00b9
   char.header.merc_experience = reader.ReadUInt32(); //0x00bb
-  reader.SkipBytes(144); //0x00bf [unk]
-  reader.SkipBytes(4); //0x014f [quests header identifier = 0x57, 0x6f, 0x6f, 0x21 "Woo!"]
-  reader.SkipBytes(4); //0x0153 [version = 0x6, 0x0, 0x0, 0x0]
-  reader.SkipBytes(2); //0x0153 [quests header length = 0x2a, 0x1]
+  char.header.unk0191 = reader.ReadArray(144);
+  // reader.SkipBytes(144); //0x00bf [unk]
+  char.header.unk0335 = reader.ReadArray(4);
+  // reader.SkipBytes(4); //0x014f [quests header identifier = 0x57, 0x6f, 0x6f, 0x21 "Woo!"]
+  char.header.unk0339 = reader.ReadArray(4);
+  // reader.SkipBytes(4); //0x0153 [version = 0x6, 0x0, 0x0, 0x0]
+  char.header.unk0343 = reader.ReadArray(2);
+  // reader.SkipBytes(2); //0x0157 [quests header length = 0x2a, 0x1]
   char.header.quests_normal = _readQuests(reader.ReadArray(96)); //0x0159
   char.header.quests_nm = _readQuests(reader.ReadArray(96)); //0x01b9
   char.header.quests_hell = _readQuests(reader.ReadArray(96)); //0x0219
-  reader.SkipBytes(2); //0x0279 [waypoint header identifier = 0x57, 0x53 "WS"]
-  reader.SkipBytes(4); //0x027b [waypoint header version = 0x1, 0x0, 0x0, 0x0]
-  reader.SkipBytes(2); //0x027f [waypoint header length = 0x50, 0x0]
+  char.header.unk0633 = reader.ReadArray(2);
+  // reader.SkipBytes(2); //0x0279 [waypoint header identifier = 0x57, 0x53 "WS"]
+  char.header.unk0635 = reader.ReadArray(4);
+  // reader.SkipBytes(4); //0x027b [waypoint header version = 0x1, 0x0, 0x0, 0x0]
+  char.header.unk0639 = reader.ReadArray(2);
+  // reader.SkipBytes(2); //0x027f [waypoint header length = 0x50, 0x0]
   char.header.waypoints = _readWaypointData(reader.ReadArray(0x48)); //0x0281
-  reader.SkipBytes(2); //0x02c9 [npc header identifier  = 0x01, 0x77 ".w"]
-  reader.SkipBytes(2); //0x02ca [npc header length = 0x34]
-  char.header.npcs = _readNPCData(reader.ReadArray(0x30)); //0x02cc
+  char.header.unk0713 = reader.ReadArray(2);
+  // reader.SkipBytes(2); //0x02c9 [npc header identifier  = 0x01, 0x77 ".w"]
+  char.header.unk0715 = reader.ReadArray(2);
+  // reader.SkipBytes(2); //0x02ca [npc header length = 0x34]
+  const npcBytes = reader.ReadArray(0x30);
+  char.header.raw_npcs = npcBytes;
+  char.header.npcs = _readNPCData(npcBytes); //0x02cc
 }
 
 export function writeHeader(char: types.ID2S, writer: BitWriter, constants: types.IConstantData) {
@@ -106,12 +122,12 @@ export function writeHeader(char: types.ID2S, writer: BitWriter, constants: type
   }
 
   writer
-    .WriteString("Woo!", 4) //0x014f [quests = 0x57, 0x6f, 0x6f, 0x21 "Woo!"]
+    .WriteString('Woo!', 4) //0x014f [quests = 0x57, 0x6f, 0x6f, 0x21 "Woo!"]
     .WriteArray(new Uint8Array([0x06, 0x00, 0x00, 0x00, 0x2a, 0x01])) //0x0153 [unk = 0x6, 0x0, 0x0, 0x0, 0x2a, 0x1]
     .WriteArray(_writeQuests(char.header.quests_normal)) //0x0159
     .WriteArray(_writeQuests(char.header.quests_nm)) //0x01b9
     .WriteArray(_writeQuests(char.header.quests_hell)) //0x0219
-    .WriteString("WS", 2) //0x0279 [waypoint data = 0x57, 0x53 "WS"]
+    .WriteString('WS', 2) //0x0279 [waypoint data = 0x57, 0x53 "WS"]
     .WriteArray(new Uint8Array([0x01, 0x00, 0x00, 0x00, 0x50, 0x00])) //0x027b [unk = 0x1, 0x0, 0x0, 0x0, 0x50, 0x0]
     .WriteArray(_writeWaypointData(char.header.waypoints)) //0x0281
     .WriteArray(new Uint8Array([0x01, 0x77])) //0x02c9 [npc header = 0x01, 0x77 ".w"]
@@ -126,7 +142,7 @@ function _classId(name: string, constants: types.IConstantData): number {
 
 function _skillId(name: string, constants: types.IConstantData): number {
   //default to "attack" if empty string or can't find spellname.
-  if (name === "") return 0;
+  if (name === '') return 0;
   if (!name) return -1;
   const idx = constants.skills.findIndex((s) => s && s.s == name);
   return idx >= 0 ? idx : 0;
@@ -134,10 +150,13 @@ function _skillId(name: string, constants: types.IConstantData): number {
 
 function _readStatus(byte: number): types.IStatus {
   const status = {} as types.IStatus;
+  status.unk0 = (byte & 1) === 1;
+  status.unk1 = ((byte >>> 1) & 1) === 1;
   status.hardcore = ((byte >>> 2) & 1) === 1;
   status.died = ((byte >>> 3) & 1) === 1;
   status.expansion = ((byte >>> 5) & 1) === 1;
   status.ladder = ((byte >>> 6) & 1) === 1;
+  status.unk7 = ((byte >>> 7) & 1) === 1;
   return status;
 }
 
@@ -306,23 +325,29 @@ function _readQuests(bytes: Uint8Array): types.IQuests {
   quests.act_iv.terrors_end = _readQuest(reader.ReadArray(2));
   quests.act_iv.hellforge = _readQuest(reader.ReadArray(2));
   quests.act_iv.completed = reader.ReadUInt16() === 0x1; //0x0038
-  reader.SkipBytes(10); //0x003a
+  quests.unk058 = reader.ReadArray(10);
+  // reader.SkipBytes(10); //0x003a
   quests.act_v = {} as types.IActVQuests;
-  quests.act_v.introduced = reader.ReadUInt16() === 0x1;
+  quests.act_v.introduced = reader.ReadUInt16() === 0x1; // 0x0044
   quests.act_v.siege_on_harrogath = _readQuest(reader.ReadArray(2)); //0x0046
-  quests.act_v.rescue_on_mount_arreat = _readQuest(reader.ReadArray(2));
-  quests.act_v.prison_of_ice = _readQuest(reader.ReadArray(2));
-  quests.act_v.betrayal_of_harrogath = _readQuest(reader.ReadArray(2));
-  quests.act_v.rite_of_passage = _readQuest(reader.ReadArray(2));
-  quests.act_v.eve_of_destruction = _readQuest(reader.ReadArray(2));
-  quests.act_v.completed = reader.ReadUInt16() === 0x1;
-  reader.SkipBytes(12);
+  quests.act_v.rescue_on_mount_arreat = _readQuest(reader.ReadArray(2)); //0x0048
+  quests.act_v.prison_of_ice = _readQuest(reader.ReadArray(2)); //0x004a
+  quests.act_v.betrayal_of_harrogath = _readQuest(reader.ReadArray(2)); //0x004c
+  quests.act_v.rite_of_passage = _readQuest(reader.ReadArray(2)); //0x004e
+  quests.act_v.eve_of_destruction = _readQuest(reader.ReadArray(2)); //0x0050
+  const act_5_completion_flag = reader.ReadUInt16(); //0x0052
+  quests.act_v.completed = (act_5_completion_flag & 1) === 1;
+  quests.act_v.reset_consumed = ((act_5_completion_flag >> 1) & 1) !== 1;
+  quests.unk084 = reader.ReadArray(12); //0x0054
+  // reader.SkipBytes(12); // 0x0054
   return quests; //sizeof [0x0060]
 }
 
 function _writeQuests(quests: types.IQuests): Uint8Array {
   const writer = new BitWriter(96);
   writer.length = 96 * 8;
+  const act_5_completion_flag = (quests.act_v.completed ? 1 : 0) | (quests.act_v.reset_consumed ? 0 : 2);
+
   const difficultyCompleted = +quests.act_v.completed || +quests.act_v.eve_of_destruction.b0_is_completed;
   return writer
     .WriteUInt16(+quests.act_i.introduced)
@@ -363,7 +388,7 @@ function _writeQuests(quests: types.IQuests): Uint8Array {
     .WriteArray(_writeQuest(quests.act_v.betrayal_of_harrogath))
     .WriteArray(_writeQuest(quests.act_v.rite_of_passage))
     .WriteArray(_writeQuest(quests.act_v.eve_of_destruction))
-    .WriteUInt8(difficultyCompleted)
+    .WriteUInt8(act_5_completion_flag)
     .WriteUInt8(difficultyCompleted ? 0x80 : 0x0) //is this right?
     .WriteArray(new Uint8Array(12))
     .ToArray();
@@ -416,9 +441,9 @@ function _writeQuest(quest: types.IQuest): Uint8Array {
 function _readWaypointData(bytes: Uint8Array): types.IWaypointData {
   const waypoints = {} as types.IWaypointData;
   const reader = new BitReader(bytes);
-  for (let i = 0; i < difficulties.length; i++) {
-    waypoints[difficulties[i]] = _readWaypoints(reader.ReadArray(24));
-  }
+  waypoints.normal = _readWaypoints(reader.ReadArray(24));
+  waypoints.nm = _readWaypoints(reader.ReadArray(24));
+  waypoints.hell = _readWaypoints(reader.ReadArray(24));
   return waypoints;
 }
 
@@ -470,17 +495,22 @@ function _readWaypoints(bytes: Uint8Array): types.IWaypoints {
   waypoints.act_v.frozen_tundra = reader.ReadBit() === 1;
   waypoints.act_v.the_ancients_way = reader.ReadBit() === 1;
   waypoints.act_v.worldstone_keep_lvl_2 = reader.ReadBit() === 1;
-  reader.Align().SkipBytes(17);
+  const prevOffset = reader.offset;
+  reader.Align();
+  const newOffset = reader.offset;
+  waypoints.unk_align = reader.bits.subarray(prevOffset, newOffset);
+  waypoints.unk_last = reader.ReadArray(17);
+  // reader.SkipBytes(17);
   return waypoints;
 }
 
 function _writeWaypointData(waypoints: types.IWaypointData): Uint8Array {
   const writer = new BitWriter(72);
   writer.length = 72 * 8;
-  for (let i = 0; i < difficulties.length; i++) {
-    const w = waypoints != null ? waypoints[difficulties[i]] : null;
-    writer.WriteArray(_writeWaypoints(w));
-  }
+  // Somehow a test with simple.json doesn't have waypoint data, so check for null
+  if (waypoints && waypoints.normal) writer.WriteArray(_writeWaypoints(waypoints.normal));
+  if (waypoints && waypoints.nm) writer.WriteArray(_writeWaypoints(waypoints.nm));
+  if (waypoints && waypoints.hell) writer.WriteArray(_writeWaypoints(waypoints.hell));
   return writer.ToArray();
 }
 
@@ -544,15 +574,16 @@ function _writeWaypoints(waypoints: types.IWaypoints): Uint8Array {
     writer.WriteArray(new Uint8Array([0xff, 0xff, 0xff, 0xff, 0x7f]));
     //_writeBits(writer, 0x3fffffffff, start, 0, 38);
   }
-  writer.Align().WriteArray(new Uint8Array(17));
+  writer.Align();
+  writer.WriteArray(new Uint8Array(17));
   return writer.ToArray();
 }
 
 function _readNPCData(bytes: Uint8Array): types.INPCData {
   const npcs = { normal: {}, nm: {}, hell: {} } as types.INPCData;
   const reader = new BitReader(bytes);
-  for (let j = 0; j < 3; j++) {
-    npcs[difficulties[j]] = {
+  for (const difficulty of difficulties) {
+    npcs[difficulty as keyof types.INPCData] = {
       warriv_act_ii: { intro: false, congrats: false },
       charsi: { intro: false, congrats: false },
       warriv_act_i: { intro: false, congrats: false },
@@ -582,9 +613,9 @@ function _readNPCData(bytes: Uint8Array): types.INPCData {
     } as types.INPCS;
   }
   //introductions
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < difficulties.length; i++) {
     const j = i * 5;
-    const npc = npcs[difficulties[i]];
+    const npc = npcs[difficulties[i] as keyof types.INPCData];
     npc.warriv_act_ii.intro = reader.bits[0 + j * 8] === 1;
     npc.charsi.intro = reader.bits[2 + j * 8] === 1;
     npc.warriv_act_i.intro = reader.bits[3 + j * 8] === 1;
@@ -612,10 +643,13 @@ function _readNPCData(bytes: Uint8Array): types.INPCData {
     npc.qualkehk.intro = reader.bits[38 + j * 8] === 1;
     npc.nihlathak.intro = reader.bits[39 + j * 8] === 1;
   }
+
+  // 120-191 ?
+
   //congrats
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < difficulties.length; i++) {
     const j = i * 5;
-    const npc = npcs[difficulties[i]];
+    const npc = npcs[difficulties[i] as keyof types.INPCData];
     npc.warriv_act_ii.congrats = reader.bits[192 + (0 + j * 8)] === 1;
     npc.charsi.congrats = reader.bits[192 + (2 + j * 8)] === 1;
     npc.warriv_act_i.congrats = reader.bits[192 + (3 + j * 8)] === 1;
@@ -650,8 +684,8 @@ function _writeNPCData(npcs: types.INPCData): Uint8Array {
   const writer = new BitWriter(0x30);
   writer.length = 0x30 * 8;
   if (npcs) {
-    for (let j = 0; j < 3; j++) {
-      const npc = npcs[difficulties[j]];
+    for (let j = 0; j < difficulties.length; j++) {
+      const npc = npcs[difficulties[j] as keyof types.INPCData];
       writer.SeekByte(j * 5);
       writer.WriteBit(+npc.warriv_act_ii.intro);
       writer.WriteBit(0);
@@ -688,9 +722,9 @@ function _writeNPCData(npcs: types.INPCData): Uint8Array {
       writer.WriteBit(+npc.qualkehk.intro);
       writer.WriteBit(+npc.nihlathak.intro);
     }
-    for (let j = 0; j < 3; j++) {
+    for (let j = 0; j < difficulties.length; j++) {
       writer.SeekByte(24 + j * 5);
-      const npc = npcs[difficulties[j]];
+      const npc = npcs[difficulties[j] as keyof types.INPCData];
       writer.WriteBit(+npc.warriv_act_ii.congrats);
       writer.WriteBit(0);
       writer.WriteBit(+npc.charsi.congrats);

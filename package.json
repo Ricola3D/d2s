@@ -10,6 +10,7 @@
     "test": "mocha",
     "web": "webpack",
     "web-dev": "webpack --env=development",
+    "serve": "node -e \"console.log('Use live-server extension with the Go Live button in the bottom bar')\"",
     "prepack": "npm run build",
     "prepare": "npm run build && husky install",
     "prepublish": "npm run build",
@@ -17,10 +18,11 @@
     "postversion": "git push && git push --tags",
     "lint": "eslint \"*/**/*.{js,ts,tsx}\" --quiet --fix",
     "eslint": "eslint",
-    "generate": "node scripts/generate_constant_bundles",
+    "generate_constants": "node scripts/generate_constant_bundles",
     "d2t": "node scripts/d2s_to_text",
     "t2d": "node scripts/text_to_d2s",
-    "decode": "node scripts/decode_binaries/index.js"
+    "decode": "node scripts/decode_binaries/index.js",
+    "generate_charpack": "node scripts/generate_charpack"
   },
   "devDependencies": {
     "@types/chai": "^4.3.11",

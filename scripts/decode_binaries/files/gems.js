@@ -1,14 +1,14 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
-const { readString } = require("../utils.js");
+const { readString } = require('../utils.js');
 
 function decodeGemsFile(inputDir) {
   let items = [];
-  const inputFile = path.join(inputDir, "gems.bin");
+  const inputFile = path.join(inputDir, 'gems.bin');
 
   if (fs.existsSync(inputFile)) {
     const fileBuffer = fs.readFileSync(inputFile);
@@ -17,7 +17,7 @@ function decodeGemsFile(inputDir) {
     const lineLength = (fileBuffer.byteLength - 4) / lineCount;
 
     if (lineLength != 192) {
-      console.log("WARNING: expected line length is 192, but actual is " + lineLength);
+      console.log('WARNING: expected line length is 192, but actual is ' + lineLength);
     }
 
     let lineStart = 4; // We skip 4 first bytes

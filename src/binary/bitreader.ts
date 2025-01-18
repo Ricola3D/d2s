@@ -9,8 +9,8 @@ export class BitReader {
     typedArray.reduce((acc: number, c: number) => {
       const b = c
         .toString(2)
-        .padStart(8, "0")
-        .split("")
+        .padStart(8, '0')
+        .split('')
         .reverse()
         .map((e) => parseInt(e, 2));
       b.forEach((bit) => (this.bits[acc++] = bit));

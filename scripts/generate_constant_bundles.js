@@ -1,18 +1,18 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-var-requires */
-const fs = require("fs");
-const path = require("path");
-const _ = require("lodash");
+const fs = require('fs');
+const path = require('path');
+const _ = require('lodash');
 
 //special stats. read the next N properties.
 //seems to be hardcode in d2 and not in itemstatcost
 const item_property_stat_count = {
-  item_maxdamage_percent: { numprops: 2, rangestr: "strModMinDamageRange", equalstr: "strModEnhancedDamage" },
-  firemindam: { numprops: 2, rangestr: "strModFireDamageRange", equalstr: "strModFireDamage" },
-  lightmindam: { numprops: 2, rangestr: "strModLightningDamageRange", equalstr: "strModLightningDamage" },
-  magicmindam: { numprops: 2, rangestr: "strModMagicDamageRange", equalstr: "strModMagicDamage" },
-  coldmindam: { numprops: 3, rangestr: "strModColdDamageRange", equalstr: "strModColdDamage" },
-  poisonmindam: { numprops: 3, rangestr: "strModPoisonDamageRange", equalstr: "strModPoisonDamage" },
+  item_maxdamage_percent: { numprops: 2, rangestr: 'strModMinDamageRange', equalstr: 'strModEnhancedDamage' },
+  firemindam: { numprops: 2, rangestr: 'strModFireDamageRange', equalstr: 'strModFireDamage' },
+  lightmindam: { numprops: 2, rangestr: 'strModLightningDamageRange', equalstr: 'strModLightningDamage' },
+  magicmindam: { numprops: 2, rangestr: 'strModMagicDamageRange', equalstr: 'strModMagicDamage' },
+  coldmindam: { numprops: 3, rangestr: 'strModColdDamageRange', equalstr: 'strModColdDamage' },
+  poisonmindam: { numprops: 3, rangestr: 'strModPoisonDamageRange', equalstr: 'strModPoisonDamage' },
 };
 
 const EItemQuality = {
@@ -25,11 +25,11 @@ const EItemQuality = {
 function getBaseItemSection(constants, itemCode) {
   let section = null;
   if (constants.weapon_items[itemCode] != undefined) {
-    section = "weapon_items";
+    section = 'weapon_items';
   } else if (constants.armor_items[itemCode] != undefined) {
-    section = "armor_items";
+    section = 'armor_items';
   } else if (constants.other_items[itemCode] != undefined) {
-    section = "other_items";
+    section = 'other_items';
   }
   return section;
 }
@@ -103,14 +103,14 @@ function D2RPostTreatment(input_dir, constants) {
 
   // HD overrides
   let subFolders = {
-    weapon_items: "weapon",
-    armor_items: "armor",
-    other_items: "misc",
+    weapon_items: 'weapon',
+    armor_items: 'armor',
+    other_items: 'misc',
   };
   const items_override_file_path = path.join(__dirname, `${input_dir}/hd/items/items.json`);
   if (fs.existsSync(items_override_file_path)) {
     // item override file exists, apply it (particularly HD UI images)
-    const itemOverrides = JSON.parse(fs.readFileSync(items_override_file_path, "utf8"));
+    const itemOverrides = JSON.parse(fs.readFileSync(items_override_file_path, 'utf8'));
     {
       // Item types
       for (let itemOverride of itemOverrides) {
@@ -121,7 +121,7 @@ function D2RPostTreatment(input_dir, constants) {
         let baseItemSection = getBaseItemSection(constants, itemCode);
         if (baseItemSection) {
           // Check if an override .sprite image exist
-          const inventoryImage = path.normalize(`${subFolders[baseItemSection]}/${itemOverride[itemCode].asset}`).replaceAll("\\", "/");
+          const inventoryImage = path.normalize(`${subFolders[baseItemSection]}/${itemOverride[itemCode].asset}`).replaceAll('\\', '/');
           const inventoryImageAbsolutePath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}.sprite`);
 
           // Add the ".hdi" attribute in game constants
@@ -132,9 +132,9 @@ function D2RPostTreatment(input_dir, constants) {
           // Check if multiple images
           if (!/\d$/.test(inventoryImage)) {
             // Except if image already ends with a number
-            if (itemCode == "gpw") continue; // Skip. perfect_diamond1..6 files are for jewels. I don't know why Blizzard mixed the names...
+            if (itemCode == 'gpw') continue; // Skip. perfect_diamond1..6 files are for jewels. I don't know why Blizzard mixed the names...
 
-            if (itemCode == "vip") continue; // Skip. All files are identical, plus it's an unique.
+            if (itemCode == 'vip') continue; // Skip. All files are identical, plus it's an unique.
 
             for (let i = 1; ; i++) {
               const invGfxPath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}${i}.sprite`);
@@ -154,17 +154,17 @@ function D2RPostTreatment(input_dir, constants) {
 
     // Uniques/sets
     for (let category of [
-      { name: "uniques", section: "unq_items", short: "u " },
-      { name: "sets", section: "set_items", short: "s" },
+      { name: 'uniques', section: 'unq_items', short: 'u ' },
+      { name: 'sets', section: 'set_items', short: 's' },
     ]) {
       const uniqOrSet_override_file_path = path.join(__dirname, `${input_dir}/hd/items/${category.name}.json`);
       if (fs.existsSync(uniqOrSet_override_file_path)) {
         //file exists. It contains inventory image override for some unique items
-        const uniqOrSetOverrides = JSON.parse(fs.readFileSync(uniqOrSet_override_file_path, "utf8"));
+        const uniqOrSetOverrides = JSON.parse(fs.readFileSync(uniqOrSet_override_file_path, 'utf8'));
         for (let uniqOrSetOverride of uniqOrSetOverrides) {
           // The matching item code
           const itemSnakeCaseIndex = Object.keys(uniqOrSetOverride)[0]; // Matches the index column of uniqueitems.txt, and a strings.json key, but with snake case
-          if (itemSnakeCaseIndex == "rainbow_facet") continue; // There is no HD image for jewels, it puts diamond instead
+          if (itemSnakeCaseIndex == 'rainbow_facet') continue; // There is no HD image for jewels, it puts diamond instead
 
           // There can be multiple matches for an index
           constants[category.section].forEach((item) => {
@@ -177,7 +177,7 @@ function D2RPostTreatment(input_dir, constants) {
                 const inventoryImageAbsolutePath = path.join(__dirname, `${input_dir}/hd/global/ui/items/${inventoryImage}.sprite`);
                 // Add the ".hdi" attribute in game constants
                 if (fs.existsSync(inventoryImageAbsolutePath)) {
-                  item.hdi = inventoryImage.replaceAll("\\", "/");
+                  item.hdi = inventoryImage.replaceAll('\\', '/');
                 }
               }
             }
@@ -194,20 +194,20 @@ function ReMoDDeDPostTreatment(input_dir, constants) {
   // Make some hidden properties visible
   let visibilityChanges = [
     {
-      section: "magical_properties",
+      section: 'magical_properties',
       key: 92,
-      from: "item_levelreq",
-      assign: { s: "item_extra_level_req", so: 999, dF: 19, dP: "Req levels %+d (Enhances)", dN: "Req levels %d (Enhances)" },
+      from: 'item_levelreq',
+      assign: { s: 'item_extra_level_req', so: 999, dF: 19, dP: 'Req levels %+d (Enhances)', dN: 'Req levels %d (Enhances)' },
     },
-    { section: "magical_properties", key: 126, from: "item_elemskill", assign: { so: 157, dF: 19, dP: "%+d to Elemental Skills" } },
-    { section: "magical_properties", key: 370, from: "Soul_Ama", assign: { so: 999, dF: 19, dP: "Amazon Soul Tier: %d" } },
-    { section: "magical_properties", key: 371, from: "Soul_Sor", assign: { so: 999, dF: 19, dP: "Sorceress Soul Tier: %d" } },
-    { section: "magical_properties", key: 372, from: "Soul_Nec", assign: { so: 999, dF: 19, dP: "Necromancer Soul Tier: %d" } },
-    { section: "magical_properties", key: 373, from: "Soul_Pal", assign: { so: 999, dF: 19, dP: "Paladin Soul Tier: %d" } },
-    { section: "magical_properties", key: 374, from: "Soul_Bar", assign: { so: 999, dF: 19, dP: "Barbarian Soul Tier: %d" } },
-    { section: "magical_properties", key: 375, from: "Soul_Dru", assign: { so: 999, dF: 19, dP: "Druid Soul Tier: %d" } },
-    { section: "magical_properties", key: 376, from: "Soul_Ass", assign: { so: 999, dF: 19, dP: "Assassin Soul Tier: %d" } },
-    { section: "magical_properties", key: 412, from: "Soul_Level", assign: { so: 999, dF: 19, dP: "Soul Count: %d" } },
+    { section: 'magical_properties', key: 126, from: 'item_elemskill', assign: { so: 157, dF: 19, dP: '%+d to Elemental Skills' } },
+    { section: 'magical_properties', key: 370, from: 'Soul_Ama', assign: { so: 999, dF: 19, dP: 'Amazon Soul Tier: %d' } },
+    { section: 'magical_properties', key: 371, from: 'Soul_Sor', assign: { so: 999, dF: 19, dP: 'Sorceress Soul Tier: %d' } },
+    { section: 'magical_properties', key: 372, from: 'Soul_Nec', assign: { so: 999, dF: 19, dP: 'Necromancer Soul Tier: %d' } },
+    { section: 'magical_properties', key: 373, from: 'Soul_Pal', assign: { so: 999, dF: 19, dP: 'Paladin Soul Tier: %d' } },
+    { section: 'magical_properties', key: 374, from: 'Soul_Bar', assign: { so: 999, dF: 19, dP: 'Barbarian Soul Tier: %d' } },
+    { section: 'magical_properties', key: 375, from: 'Soul_Dru', assign: { so: 999, dF: 19, dP: 'Druid Soul Tier: %d' } },
+    { section: 'magical_properties', key: 376, from: 'Soul_Ass', assign: { so: 999, dF: 19, dP: 'Assassin Soul Tier: %d' } },
+    { section: 'magical_properties', key: 412, from: 'Soul_Level', assign: { so: 999, dF: 19, dP: 'Soul Count: %d' } },
   ];
   for (change of visibilityChanges) {
     if (constants[change.section][change.key].s == change.from) {
@@ -220,157 +220,157 @@ function ReMoDDeDPostTreatment(input_dir, constants) {
   // Change some names
   let nameChanges = [];
   for (let i = 0; i < 40; i++) {
-    key = `K${(1 + i).toString().padStart(2, "0")}`;
+    key = `K${(1 + i).toString().padStart(2, '0')}`;
     nameChanges.push({
-      section: "stackables",
+      section: 'stackables',
       key: key,
-      from: "Scroll of Torment",
+      from: 'Scroll of Torment',
       to: `Scroll of Torment<br>Level ${11 + i} of Icy Hell`,
     });
     nameChanges.push({
-      section: "other_items",
+      section: 'other_items',
       key: key,
-      from: "Scroll of Torment",
+      from: 'Scroll of Torment',
       to: `Scroll of Torment<br>Level ${11 + i} of Icy Hell`,
     });
   }
   for (let i = 0; i < 40; i++) {
-    key = `K${(41 + i).toString().padStart(2, "0")}`;
+    key = `K${(41 + i).toString().padStart(2, '0')}`;
     nameChanges.push({
-      section: "stackables",
+      section: 'stackables',
       key: key,
-      from: "Scroll of Torment",
+      from: 'Scroll of Torment',
       to: `Scroll of Torment<br>Level ${11 + i} of Torment Trial`,
     });
   }
   for (let i = 0; i < 7; i++) {
-    key = `Z${(2 + i).toString().padStart(2, "0")}`;
+    key = `Z${(2 + i).toString().padStart(2, '0')}`;
     nameChanges.push({
-      section: "other_items",
+      section: 'other_items',
       key: key,
       from: /^\(cube to change\)<br>(?<name>.+)$/,
-      to: groups => `${groups.name}`,
+      to: (groups) => `${groups.name}`,
     });
   }
   for (let i = 0; i < 7; i++) {
-    key = `Z${(42 + i).toString().padStart(2, "0")}`;
+    key = `Z${(42 + i).toString().padStart(2, '0')}`;
     nameChanges.push({
-      section: "other_items",
+      section: 'other_items',
       key: key,
       from: /^\(cube to change\)<br>(?<name>.+)$/,
-      to: groups => `${groups.name}`,
+      to: (groups) => `${groups.name}`,
     });
   }
   for (let i = 0; i < 33; i++) {
-    key = `Z${(9 + i).toString().padStart(2, "0")}`;
+    key = `Z${(9 + i).toString().padStart(2, '0')}`;
     nameChanges.push({
-      section: "other_items",
+      section: 'other_items',
       key: key,
       from: /^Cube alone to change to next remover type<br><br>(?<name>.+)$/,
-      to: groups => `${groups.name}`,
+      to: (groups) => `${groups.name}`,
     });
   }
   for (let i = 0; i < 10; i++) {
-    key = `a${(0 + i).toString().padStart(2, "0")}`;
+    key = `a${(0 + i).toString().padStart(2, '0')}`;
     nameChanges.push({
-      section: "other_items",
+      section: 'other_items',
       key: key,
-      from: "A pact with the dark lord serves you well....for now....<br>Blood Contract",
-      to: "(Reserved)",
+      from: 'A pact with the dark lord serves you well....for now....<br>Blood Contract',
+      to: '(Reserved)',
     });
   }
   for (let i = 0; i < 33; i++) {
-    key = `a${(67 + i).toString().padStart(2, "0")}`;
+    key = `a${(67 + i).toString().padStart(2, '0')}`;
     nameChanges.push({
-      section: "other_items",
+      section: 'other_items',
       key: key,
-      from: "A pact with the dark lord serves you well....for now....<br>Blood Contract",
-      to: "(Reserved)",
+      from: 'A pact with the dark lord serves you well....for now....<br>Blood Contract',
+      to: '(Reserved)',
     });
   }
   for (let i = 0; i < 94; i++) {
-    key = `A${(6 + i).toString().padStart(2, "0")}`;
+    key = `A${(6 + i).toString().padStart(2, '0')}`;
     nameChanges.push({
-      section: "other_items",
+      section: 'other_items',
       key: key,
-      from: "A pact with the dark lord serves you well....for now....<br>Blood Contract",
-      to: "(Reserved)",
+      from: 'A pact with the dark lord serves you well....for now....<br>Blood Contract',
+      to: '(Reserved)',
     });
   }
   for (let i = 0; i < 58; i++) {
-    key = `b${(0 + i).toString().padStart(2, "0")}`;
+    key = `b${(0 + i).toString().padStart(2, '0')}`;
     nameChanges.push({
-      section: "other_items",
+      section: 'other_items',
       key: key,
-      from: "A pact with the dark lord serves you well....for now....<br>Blood Contract",
-      to: "(Reserved)",
+      from: 'A pact with the dark lord serves you well....for now....<br>Blood Contract',
+      to: '(Reserved)',
     });
   }
   for (let i = 0; i < 39; i++) {
-    key = `L${(61 + i).toString().padStart(2, "0")}`;
+    key = `L${(61 + i).toString().padStart(2, '0')}`;
     nameChanges.push({
-      section: "other_items",
+      section: 'other_items',
       key: key,
       from: "Tal Rasha's Forsaken Pact",
-      to: "(Reserved Forsaken Pact Slot)",
+      to: '(Reserved Forsaken Pact Slot)',
     });
   }
   nameChanges = nameChanges.concat([
-    { section: "stackables", key: "key", from: " ±", to: "Key" },
-    { section: "stackables", key: "b65", from: "Socket Remover", to: "Premium Socket Remover" },
-    { section: "other_items", key: "vps", from: " ³ ", to: "Stamina Potion" },
-    { section: "other_items", key: "yps", from: " ³ ", to: "Antidote Potion" },
-    { section: "other_items", key: "rvs", from: " ³ ", to: "Rejuvenation Potion" },
-    { section: "other_items", key: "rvl", from: " ¸ ", to: "Full Rejuvenation Potion" },
-    { section: "other_items", key: "wms", from: " ³ ", to: "Thawing Potion" },
-    { section: "other_items", key: "tsc", from: " ¯ ", to: "Scroll of Town Portal" },
-    { section: "other_items", key: "isc", from: " ¯ ", to: "Scroll of Identify" },
-    { section: "other_items", key: "key", from: " ±", to: "Key" },
-    { section: "other_items", key: "gcv", from: "¶ ", to: "Chipped Amethyst" },
-    { section: "other_items", key: "gfv", from: "¶ ", to: "Flawed Amethyst" },
-    { section: "other_items", key: "gsv", from: "¶ ", to: "Amethyst" },
-    { section: "other_items", key: "gzv", from: "¶ ", to: "Flawless Amethyst" },
-    { section: "other_items", key: "gpv", from: "¶ ", to: "Perfect Amethyst" },
-    { section: "other_items", key: "gcy", from: "¶ ", to: "Chipped Topaz" },
-    { section: "other_items", key: "gfy", from: "¶ ", to: "Flawed Topaz" },
-    { section: "other_items", key: "gsy", from: "¶ ", to: "Topaz" },
-    { section: "other_items", key: "gly", from: "¶ ", to: "Flawless Topaz" },
-    { section: "other_items", key: "gpy", from: "¶ ", to: "Perfect Topaz" },
-    { section: "other_items", key: "gcb", from: "¶ ", to: "Chipped Sapphire" },
-    { section: "other_items", key: "gfb", from: "¶ ", to: "Flawed Sapphire" },
-    { section: "other_items", key: "gsb", from: "¶ ", to: "Sapphire" },
-    { section: "other_items", key: "glb", from: "¶ ", to: "Flawless Sapphire" },
-    { section: "other_items", key: "gpb", from: "¶ ", to: "Perfect Sapphire" },
-    { section: "other_items", key: "gcg", from: "¶ ", to: "Chipped Emerald" },
-    { section: "other_items", key: "gfg", from: "¶ ", to: "Flawed Emerald" },
-    { section: "other_items", key: "gsg", from: "¶ ", to: "Emerald" },
-    { section: "other_items", key: "glg", from: "¶ ", to: "Flawless Emerald" },
-    { section: "other_items", key: "gpg", from: "¶ ", to: "Perfect Emerald" },
-    { section: "other_items", key: "gcr", from: "¶ ", to: "Chipped Ruby" },
-    { section: "other_items", key: "gfr", from: "¶ ", to: "Flawed Ruby" },
-    { section: "other_items", key: "gsr", from: "¶ ", to: "Ruby" },
-    { section: "other_items", key: "glr", from: "¶ ", to: "Flawless Ruby" },
-    { section: "other_items", key: "gpr", from: "¶ ", to: "Perfect Ruby" },
-    { section: "other_items", key: "gcw", from: "¶ ", to: "Chipped Diamond" },
-    { section: "other_items", key: "gfw", from: "¶ ", to: "Flawed Diamond" },
-    { section: "other_items", key: "gsw", from: "¶ ", to: "Diamond" },
-    { section: "other_items", key: "glw", from: "¶ ", to: "Flawless Diamond" },
-    { section: "other_items", key: "gpw", from: "¶ ", to: "Perfect Diamond" },
-    { section: "other_items", key: "hp1", from: " ³ ", to: "Minor Healing Potion" },
-    { section: "other_items", key: "hp2", from: " ³ ", to: "Light Healing Potion" },
-    { section: "other_items", key: "hp3", from: " ³ ", to: "Healing Potion" },
-    { section: "other_items", key: "hp4", from: " ¸ ", to: "Greater Healing Potion" },
-    { section: "other_items", key: "hp5", from: " ¸ ", to: "Super Healing Potion" },
-    { section: "other_items", key: "mp1", from: " ³ ", to: "Minor Mana Potion" },
-    { section: "other_items", key: "mp2", from: " ³ ", to: "Light Mana Potion" },
-    { section: "other_items", key: "mp3", from: " ³ ", to: "Mana Potion" },
-    { section: "other_items", key: "mp4", from: " ¸ ", to: "Greater Mana Potion" },
-    { section: "other_items", key: "mp5", from: " ¸ ", to: "Super Mana Potion" },
-    { section: "other_items", key: "skc", from: " ¹ ", to: "Chipped Skull" },
-    { section: "other_items", key: "skf", from: " ¹ ", to: "Flawed Skull" },
-    { section: "other_items", key: "sku", from: " ¹ ", to: "Skull" },
-    { section: "other_items", key: "skl", from: " ¹ ", to: "Flawless Skull" },
-    { section: "other_items", key: "skz", from: " ¹ ", to: "Perfect Skull" },
+    { section: 'stackables', key: 'key', from: ' ±', to: 'Key' },
+    { section: 'stackables', key: 'b65', from: 'Socket Remover', to: 'Premium Socket Remover' },
+    { section: 'other_items', key: 'vps', from: ' ³ ', to: 'Stamina Potion' },
+    { section: 'other_items', key: 'yps', from: ' ³ ', to: 'Antidote Potion' },
+    { section: 'other_items', key: 'rvs', from: ' ³ ', to: 'Rejuvenation Potion' },
+    { section: 'other_items', key: 'rvl', from: ' ¸ ', to: 'Full Rejuvenation Potion' },
+    { section: 'other_items', key: 'wms', from: ' ³ ', to: 'Thawing Potion' },
+    { section: 'other_items', key: 'tsc', from: ' ¯ ', to: 'Scroll of Town Portal' },
+    { section: 'other_items', key: 'isc', from: ' ¯ ', to: 'Scroll of Identify' },
+    { section: 'other_items', key: 'key', from: ' ±', to: 'Key' },
+    { section: 'other_items', key: 'gcv', from: '¶ ', to: 'Chipped Amethyst' },
+    { section: 'other_items', key: 'gfv', from: '¶ ', to: 'Flawed Amethyst' },
+    { section: 'other_items', key: 'gsv', from: '¶ ', to: 'Amethyst' },
+    { section: 'other_items', key: 'gzv', from: '¶ ', to: 'Flawless Amethyst' },
+    { section: 'other_items', key: 'gpv', from: '¶ ', to: 'Perfect Amethyst' },
+    { section: 'other_items', key: 'gcy', from: '¶ ', to: 'Chipped Topaz' },
+    { section: 'other_items', key: 'gfy', from: '¶ ', to: 'Flawed Topaz' },
+    { section: 'other_items', key: 'gsy', from: '¶ ', to: 'Topaz' },
+    { section: 'other_items', key: 'gly', from: '¶ ', to: 'Flawless Topaz' },
+    { section: 'other_items', key: 'gpy', from: '¶ ', to: 'Perfect Topaz' },
+    { section: 'other_items', key: 'gcb', from: '¶ ', to: 'Chipped Sapphire' },
+    { section: 'other_items', key: 'gfb', from: '¶ ', to: 'Flawed Sapphire' },
+    { section: 'other_items', key: 'gsb', from: '¶ ', to: 'Sapphire' },
+    { section: 'other_items', key: 'glb', from: '¶ ', to: 'Flawless Sapphire' },
+    { section: 'other_items', key: 'gpb', from: '¶ ', to: 'Perfect Sapphire' },
+    { section: 'other_items', key: 'gcg', from: '¶ ', to: 'Chipped Emerald' },
+    { section: 'other_items', key: 'gfg', from: '¶ ', to: 'Flawed Emerald' },
+    { section: 'other_items', key: 'gsg', from: '¶ ', to: 'Emerald' },
+    { section: 'other_items', key: 'glg', from: '¶ ', to: 'Flawless Emerald' },
+    { section: 'other_items', key: 'gpg', from: '¶ ', to: 'Perfect Emerald' },
+    { section: 'other_items', key: 'gcr', from: '¶ ', to: 'Chipped Ruby' },
+    { section: 'other_items', key: 'gfr', from: '¶ ', to: 'Flawed Ruby' },
+    { section: 'other_items', key: 'gsr', from: '¶ ', to: 'Ruby' },
+    { section: 'other_items', key: 'glr', from: '¶ ', to: 'Flawless Ruby' },
+    { section: 'other_items', key: 'gpr', from: '¶ ', to: 'Perfect Ruby' },
+    { section: 'other_items', key: 'gcw', from: '¶ ', to: 'Chipped Diamond' },
+    { section: 'other_items', key: 'gfw', from: '¶ ', to: 'Flawed Diamond' },
+    { section: 'other_items', key: 'gsw', from: '¶ ', to: 'Diamond' },
+    { section: 'other_items', key: 'glw', from: '¶ ', to: 'Flawless Diamond' },
+    { section: 'other_items', key: 'gpw', from: '¶ ', to: 'Perfect Diamond' },
+    { section: 'other_items', key: 'hp1', from: ' ³ ', to: 'Minor Healing Potion' },
+    { section: 'other_items', key: 'hp2', from: ' ³ ', to: 'Light Healing Potion' },
+    { section: 'other_items', key: 'hp3', from: ' ³ ', to: 'Healing Potion' },
+    { section: 'other_items', key: 'hp4', from: ' ¸ ', to: 'Greater Healing Potion' },
+    { section: 'other_items', key: 'hp5', from: ' ¸ ', to: 'Super Healing Potion' },
+    { section: 'other_items', key: 'mp1', from: ' ³ ', to: 'Minor Mana Potion' },
+    { section: 'other_items', key: 'mp2', from: ' ³ ', to: 'Light Mana Potion' },
+    { section: 'other_items', key: 'mp3', from: ' ³ ', to: 'Mana Potion' },
+    { section: 'other_items', key: 'mp4', from: ' ¸ ', to: 'Greater Mana Potion' },
+    { section: 'other_items', key: 'mp5', from: ' ¸ ', to: 'Super Mana Potion' },
+    { section: 'other_items', key: 'skc', from: ' ¹ ', to: 'Chipped Skull' },
+    { section: 'other_items', key: 'skf', from: ' ¹ ', to: 'Flawed Skull' },
+    { section: 'other_items', key: 'sku', from: ' ¹ ', to: 'Skull' },
+    { section: 'other_items', key: 'skl', from: ' ¹ ', to: 'Flawless Skull' },
+    { section: 'other_items', key: 'skz', from: ' ¹ ', to: 'Perfect Skull' },
     // { section: "other_items", key: "r01", from: "⅐ El", to: "El Rune" },
     // { section: "other_items", key: "r02", from: "⅑ Eld", to: "Eld Rune" },
     // { section: "other_items", key: "r03", from: "⅒ Tir", to: "Tir Rune" },
@@ -404,73 +404,114 @@ function ReMoDDeDPostTreatment(input_dir, constants) {
     // { section: "other_items", key: "r31", from: "Ⅾ Jah", to: "Jah Rune" },
     // { section: "other_items", key: "r32", from: "Ⅿ Cham", to: "Cham Rune" },
     // { section: "other_items", key: "r33", from: "ⅰ Zod", to: "Zod Rune" },
-    { section: "other_items", key: "a10", from: "Codex of Gluttony", to: "Codex of Gluttony 1:1" },
-    { section: "other_items", key: "a11", from: "Codex of Gluttony", to: "Codex of Gluttony 1:2" },
-    { section: "other_items", key: "a12", from: "Codex of Gluttony", to: "Codex of Gluttony 1:3" },
-    { section: "other_items", key: "a13", from: "Codex of Gluttony", to: "Codex of Gluttony 1:4" },
-    { section: "other_items", key: "a14", from: "Codex of Gluttony", to: "Codex of Gluttony 1:5" },
-    { section: "other_items", key: "a15", from: "Codex of Gluttony", to: "Codex of Gluttony 1:6" },
-    { section: "other_items", key: "a16", from: "Codex of Gluttony", to: "Codex of Gluttony 1:7" },
-    { section: "other_items", key: "a17", from: "Codex of Lust", to: "Codex of Lust 2:1" },
-    { section: "other_items", key: "a18", from: "Codex of Lust", to: "Codex of Lust 2:2" },
-    { section: "other_items", key: "a19", from: "Codex of Lust", to: "Codex of Lust 2:3" },
-    { section: "other_items", key: "a20", from: "Codex of Lust", to: "Codex of Lust 2:4" },
-    { section: "other_items", key: "a21", from: "Codex of Lust", to: "Codex of Lust 2:5" },
-    { section: "other_items", key: "a22", from: "Codex of Lust", to: "Codex of Lust 2:6" },
-    { section: "other_items", key: "a23", from: "Codex of Lust", to: "Codex of Lust 2:7" },
-    { section: "other_items", key: "a24", from: "Codex of Greed", to: "Codex of Greed 3:1" },
-    { section: "other_items", key: "a25", from: "Codex of Greed", to: "Codex of Greed 3:2" },
-    { section: "other_items", key: "a26", from: "Codex of Greed", to: "Codex of Greed 3:3" },
-    { section: "other_items", key: "a27", from: "Codex of Greed", to: "Codex of Greed 3:4" },
-    { section: "other_items", key: "a28", from: "Codex of Greed", to: "Codex of Greed 3:5" },
-    { section: "other_items", key: "a29", from: "Codex of Greed", to: "Codex of Greed 3:6" },
-    { section: "other_items", key: "a30", from: "Codex of Greed", to: "Codex of Greed 3:7" },
-    { section: "other_items", key: "a31", from: "Codex of Wrath", to: "Codex of Wrath 4:1" },
-    { section: "other_items", key: "a32", from: "Codex of Wrath", to: "Codex of Wrath 4:2" },
-    { section: "other_items", key: "a33", from: "Codex of Wrath", to: "Codex of Wrath 4:3" },
-    { section: "other_items", key: "a34", from: "Codex of Wrath", to: "Codex of Wrath 4:4" },
-    { section: "other_items", key: "a35", from: "Codex of Wrath", to: "Codex of Wrath 4:5" },
-    { section: "other_items", key: "a36", from: "Codex of Wrath", to: "Codex of Wrath 4:6" },
-    { section: "other_items", key: "a37", from: "Codex of Wrath", to: "Codex of Wrath 4:7" },
-    { section: "other_items", key: "a38", from: "Codex of Sloth", to: "Codex of Sloth 5:1" },
-    { section: "other_items", key: "a39", from: "Codex of Sloth", to: "Codex of Sloth 5:2" },
-    { section: "other_items", key: "a40", from: "Codex of Sloth", to: "Codex of Sloth 5:3" },
-    { section: "other_items", key: "a41", from: "Codex of Sloth", to: "Codex of Sloth 5:4" },
-    { section: "other_items", key: "a42", from: "Codex of Sloth", to: "Codex of Sloth 5:5" },
-    { section: "other_items", key: "a43", from: "Codex of Sloth", to: "Codex of Sloth 5:6" },
-    { section: "other_items", key: "a44", from: "Codex of Sloth", to: "Codex of Sloth 5:7" },
-    { section: "other_items", key: "a45", from: "Codex of Vanity", to: "Codex of Vanity 6:1" },
-    { section: "other_items", key: "a46", from: "Codex of Vanity", to: "Codex of Vanity 6:2" },
-    { section: "other_items", key: "a47", from: "Codex of Vanity", to: "Codex of Vanity 6:3" },
-    { section: "other_items", key: "a48", from: "Codex of Vanity", to: "Codex of Vanity 6:4" },
-    { section: "other_items", key: "a49", from: "Codex of Vanity", to: "Codex of Vanity 6:5" },
-    { section: "other_items", key: "a50", from: "Codex of Vanity", to: "Codex of Vanity 6:6" },
-    { section: "other_items", key: "a51", from: "Codex of Vanity", to: "Codex of Vanity 6:7" },
-    { section: "other_items", key: "a52", from: "Codex of Hubris", to: "Codex of Hubris 7:1" },
-    { section: "other_items", key: "a53", from: "Codex of Hubris", to: "Codex of Hubris 7:2" },
-    { section: "other_items", key: "a54", from: "Codex of Hubris", to: "Codex of Hubris 7:3" },
-    { section: "other_items", key: "a55", from: "Codex of Hubris", to: "Codex of Hubris 7:4" },
-    { section: "other_items", key: "a56", from: "Codex of Hubris", to: "Codex of Hubris 7:5" },
-    { section: "other_items", key: "a57", from: "Codex of Hubris", to: "Codex of Hubris 7:6" },
-    { section: "other_items", key: "a58", from: "Codex of Hubris", to: "Codex of Hubris 7:7" },
-    { section: "other_items", key: "a59", from: "Large Charm", to: "Gula's Testament of Gluttony" },
-    { section: "other_items", key: "a60", from: "Large Charm", to: "Luxuria's Testament of Lust" },
-    { section: "other_items", key: "a61", from: "Large Charm", to: "Avaritia's Testament of Greed" },
-    { section: "other_items", key: "a62", from: "Large Charm", to: "Ira's Testament of Wrath" },
-    { section: "other_items", key: "a63", from: "Large Charm", to: "Acedia's Testament of Sloth" },
-    { section: "other_items", key: "a64", from: "Large Charm", to: "Vanagloria's Testament of Vanity" },
-    { section: "other_items", key: "a65", from: "Large Charm", to: "Superbia's Testament of Hubris" },
-    { section: "other_items", key: "b65", from: "Socket Remover", to: "Premium Socket Remover" },
-    { section: "other_items", key: "Z01", from: "------------------<br>(Cube with item to store it)<br>Storage Bag<br>Quality of Life", to: "Storage Bag<br>Quality of Life" },
-    { section: "other_items", key: "A00", from: "A pact with the dark lord serves you well....for now....<br>Blood Contract", to: "Unique Weapon Blood Contract" },
-    { section: "other_items", key: "A01", from: "A pact with the dark lord serves you well....for now....<br>Blood Contract", to: "Unique Armor Blood Contract" },
-    { section: "other_items", key: "A02", from: "A pact with the dark lord serves you well....for now....<br>Blood Contract", to: "Unique Jewelry Blood Contract" },
-    { section: "other_items", key: "A03", from: "A pact with the dark lord serves you well....for now....<br>Blood Contract", to: "Set Weapon Blood Contract" },
-    { section: "other_items", key: "A04", from: "A pact with the dark lord serves you well....for now....<br>Blood Contract", to: "Set Armor Blood Contract" },
-    { section: "other_items", key: "A05", from: "A pact with the dark lord serves you well....for now....<br>Blood Contract", to: "Set Jewelry Blood Contract" },
-    { section: "other_items", key: "L60", from: "Tal Rasha's Forsaken Pact", to: "Black Tempest's Forsaken Pact" },
-    { section: "other_items", key: "Ev8", from: "Easter Egg Easter Egg", to: "Easter Egg" },
-    { section: "other_items", key: "m36", from: undefined, to: "Small Charm" },
+    { section: 'other_items', key: 'a10', from: 'Codex of Gluttony', to: 'Codex of Gluttony 1:1' },
+    { section: 'other_items', key: 'a11', from: 'Codex of Gluttony', to: 'Codex of Gluttony 1:2' },
+    { section: 'other_items', key: 'a12', from: 'Codex of Gluttony', to: 'Codex of Gluttony 1:3' },
+    { section: 'other_items', key: 'a13', from: 'Codex of Gluttony', to: 'Codex of Gluttony 1:4' },
+    { section: 'other_items', key: 'a14', from: 'Codex of Gluttony', to: 'Codex of Gluttony 1:5' },
+    { section: 'other_items', key: 'a15', from: 'Codex of Gluttony', to: 'Codex of Gluttony 1:6' },
+    { section: 'other_items', key: 'a16', from: 'Codex of Gluttony', to: 'Codex of Gluttony 1:7' },
+    { section: 'other_items', key: 'a17', from: 'Codex of Lust', to: 'Codex of Lust 2:1' },
+    { section: 'other_items', key: 'a18', from: 'Codex of Lust', to: 'Codex of Lust 2:2' },
+    { section: 'other_items', key: 'a19', from: 'Codex of Lust', to: 'Codex of Lust 2:3' },
+    { section: 'other_items', key: 'a20', from: 'Codex of Lust', to: 'Codex of Lust 2:4' },
+    { section: 'other_items', key: 'a21', from: 'Codex of Lust', to: 'Codex of Lust 2:5' },
+    { section: 'other_items', key: 'a22', from: 'Codex of Lust', to: 'Codex of Lust 2:6' },
+    { section: 'other_items', key: 'a23', from: 'Codex of Lust', to: 'Codex of Lust 2:7' },
+    { section: 'other_items', key: 'a24', from: 'Codex of Greed', to: 'Codex of Greed 3:1' },
+    { section: 'other_items', key: 'a25', from: 'Codex of Greed', to: 'Codex of Greed 3:2' },
+    { section: 'other_items', key: 'a26', from: 'Codex of Greed', to: 'Codex of Greed 3:3' },
+    { section: 'other_items', key: 'a27', from: 'Codex of Greed', to: 'Codex of Greed 3:4' },
+    { section: 'other_items', key: 'a28', from: 'Codex of Greed', to: 'Codex of Greed 3:5' },
+    { section: 'other_items', key: 'a29', from: 'Codex of Greed', to: 'Codex of Greed 3:6' },
+    { section: 'other_items', key: 'a30', from: 'Codex of Greed', to: 'Codex of Greed 3:7' },
+    { section: 'other_items', key: 'a31', from: 'Codex of Wrath', to: 'Codex of Wrath 4:1' },
+    { section: 'other_items', key: 'a32', from: 'Codex of Wrath', to: 'Codex of Wrath 4:2' },
+    { section: 'other_items', key: 'a33', from: 'Codex of Wrath', to: 'Codex of Wrath 4:3' },
+    { section: 'other_items', key: 'a34', from: 'Codex of Wrath', to: 'Codex of Wrath 4:4' },
+    { section: 'other_items', key: 'a35', from: 'Codex of Wrath', to: 'Codex of Wrath 4:5' },
+    { section: 'other_items', key: 'a36', from: 'Codex of Wrath', to: 'Codex of Wrath 4:6' },
+    { section: 'other_items', key: 'a37', from: 'Codex of Wrath', to: 'Codex of Wrath 4:7' },
+    { section: 'other_items', key: 'a38', from: 'Codex of Sloth', to: 'Codex of Sloth 5:1' },
+    { section: 'other_items', key: 'a39', from: 'Codex of Sloth', to: 'Codex of Sloth 5:2' },
+    { section: 'other_items', key: 'a40', from: 'Codex of Sloth', to: 'Codex of Sloth 5:3' },
+    { section: 'other_items', key: 'a41', from: 'Codex of Sloth', to: 'Codex of Sloth 5:4' },
+    { section: 'other_items', key: 'a42', from: 'Codex of Sloth', to: 'Codex of Sloth 5:5' },
+    { section: 'other_items', key: 'a43', from: 'Codex of Sloth', to: 'Codex of Sloth 5:6' },
+    { section: 'other_items', key: 'a44', from: 'Codex of Sloth', to: 'Codex of Sloth 5:7' },
+    { section: 'other_items', key: 'a45', from: 'Codex of Vanity', to: 'Codex of Vanity 6:1' },
+    { section: 'other_items', key: 'a46', from: 'Codex of Vanity', to: 'Codex of Vanity 6:2' },
+    { section: 'other_items', key: 'a47', from: 'Codex of Vanity', to: 'Codex of Vanity 6:3' },
+    { section: 'other_items', key: 'a48', from: 'Codex of Vanity', to: 'Codex of Vanity 6:4' },
+    { section: 'other_items', key: 'a49', from: 'Codex of Vanity', to: 'Codex of Vanity 6:5' },
+    { section: 'other_items', key: 'a50', from: 'Codex of Vanity', to: 'Codex of Vanity 6:6' },
+    { section: 'other_items', key: 'a51', from: 'Codex of Vanity', to: 'Codex of Vanity 6:7' },
+    { section: 'other_items', key: 'a52', from: 'Codex of Hubris', to: 'Codex of Hubris 7:1' },
+    { section: 'other_items', key: 'a53', from: 'Codex of Hubris', to: 'Codex of Hubris 7:2' },
+    { section: 'other_items', key: 'a54', from: 'Codex of Hubris', to: 'Codex of Hubris 7:3' },
+    { section: 'other_items', key: 'a55', from: 'Codex of Hubris', to: 'Codex of Hubris 7:4' },
+    { section: 'other_items', key: 'a56', from: 'Codex of Hubris', to: 'Codex of Hubris 7:5' },
+    { section: 'other_items', key: 'a57', from: 'Codex of Hubris', to: 'Codex of Hubris 7:6' },
+    { section: 'other_items', key: 'a58', from: 'Codex of Hubris', to: 'Codex of Hubris 7:7' },
+    { section: 'other_items', key: 'a59', from: 'Large Charm', to: "Gula's Testament of Gluttony" },
+    { section: 'other_items', key: 'a60', from: 'Large Charm', to: "Luxuria's Testament of Lust" },
+    { section: 'other_items', key: 'a61', from: 'Large Charm', to: "Avaritia's Testament of Greed" },
+    { section: 'other_items', key: 'a62', from: 'Large Charm', to: "Ira's Testament of Wrath" },
+    { section: 'other_items', key: 'a63', from: 'Large Charm', to: "Acedia's Testament of Sloth" },
+    { section: 'other_items', key: 'a64', from: 'Large Charm', to: "Vanagloria's Testament of Vanity" },
+    { section: 'other_items', key: 'a65', from: 'Large Charm', to: "Superbia's Testament of Hubris" },
+    { section: 'other_items', key: 'b65', from: 'Socket Remover', to: 'Premium Socket Remover' },
+    {
+      section: 'other_items',
+      key: 'Z01',
+      from: '------------------<br>(Cube with item to store it)<br>Storage Bag<br>Quality of Life',
+      to: 'Storage Bag<br>Quality of Life',
+    },
+    {
+      section: 'other_items',
+      key: 'A00',
+      from: 'A pact with the dark lord serves you well....for now....<br>Blood Contract',
+      to: 'Unique Weapon Blood Contract',
+    },
+    {
+      section: 'other_items',
+      key: 'A01',
+      from: 'A pact with the dark lord serves you well....for now....<br>Blood Contract',
+      to: 'Unique Armor Blood Contract',
+    },
+    {
+      section: 'other_items',
+      key: 'A02',
+      from: 'A pact with the dark lord serves you well....for now....<br>Blood Contract',
+      to: 'Unique Jewelry Blood Contract',
+    },
+    {
+      section: 'other_items',
+      key: 'A03',
+      from: 'A pact with the dark lord serves you well....for now....<br>Blood Contract',
+      to: 'Set Weapon Blood Contract',
+    },
+    {
+      section: 'other_items',
+      key: 'A04',
+      from: 'A pact with the dark lord serves you well....for now....<br>Blood Contract',
+      to: 'Set Armor Blood Contract',
+    },
+    {
+      section: 'other_items',
+      key: 'A05',
+      from: 'A pact with the dark lord serves you well....for now....<br>Blood Contract',
+      to: 'Set Jewelry Blood Contract',
+    },
+    { section: 'other_items', key: 'L60', from: "Tal Rasha's Forsaken Pact", to: "Black Tempest's Forsaken Pact" },
+    { section: 'other_items', key: 'Ev8', from: 'Easter Egg Easter Egg', to: 'Easter Egg' },
+    { section: 'other_items', key: 'm36', from: undefined, to: 'Small Charm' },
+    {
+      section: 'other_items',
+      key: 'y66',
+      from: "(Cube alone to receive rewards)<br><br>-Endless Keyring<br>-Book of Insight<br>-Book of Safe Return<br>Contains:<br><br>Starter's Cube of Endless Convenience",
+      to: "Starter's Cube of Endless Convenience",
+    },
   ]);
   for (change of nameChanges) {
     if (!change.from || typeof change.to === 'string' || change.to instanceof String) {
@@ -481,13 +522,13 @@ function ReMoDDeDPostTreatment(input_dir, constants) {
       }
     } else if (change.from.constructor == RegExp || change.from instanceof RegExp) {
       // Regex change
-      const matches = constants[change.section][change.key].n.match(change.from)
+      const matches = constants[change.section][change.key].n.match(change.from);
       if (matches) {
-        console.log(`"${constants[change.section][change.key].n}" matches "${change.from}"`)
+        console.log(`"${constants[change.section][change.key].n}" matches "${change.from}"`);
         if (typeof change.to === 'string' || change.to instanceof String) {
           constants[change.section][change.key].n = change.to;
           console.log(`WARN: name of "${change.key}" changed to "${constants[change.section][change.key].n}"`);
-        } else if (typeof change.to === "function" || change.to instanceof Function) {
+        } else if (typeof change.to === 'function' || change.to instanceof Function) {
           if (matches.groups) {
             constants[change.section][change.key].n = change.to(matches.groups);
             console.log(`WARN: name of "${change.key}" changed to "${constants[change.section][change.key].n}"`);
@@ -499,7 +540,7 @@ function ReMoDDeDPostTreatment(input_dir, constants) {
     }
   }
   function removeEbSymbol(item) {
-    if (item.n && item.n.startsWith("ⅲ")) {
+    if (item.n && item.n.startsWith('ⅲ')) {
       item.n = item.n.slice(2);
     }
   }
@@ -552,43 +593,43 @@ function ReMoDDeDPostTreatment(input_dir, constants) {
 function makeBundle(buffers) {
   const constants = {};
   let strings = {};
-  if (_hasKey(buffers, "local/lng/strings/item-modifiers.json")) {
+  if (_hasKey(buffers, 'local/lng/strings/item-modifiers.json')) {
     // Method for version 99 (better)
-    strings = _readJSONStrings(_getKey(buffers, "local/lng/strings/item-gems.json"));
-    strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, "local/lng/strings/item-modifiers.json")));
-    strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, "local/lng/strings/item-nameaffixes.json")));
-    strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, "local/lng/strings/item-names.json")));
-    strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, "local/lng/strings/item-runes.json")));
-    strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, "local/lng/strings/skills.json")));
+    strings = _readJSONStrings(_getKey(buffers, 'local/lng/strings/item-gems.json'));
+    strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, 'local/lng/strings/item-modifiers.json')));
+    strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, 'local/lng/strings/item-nameaffixes.json')));
+    strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, 'local/lng/strings/item-names.json')));
+    strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, 'local/lng/strings/item-runes.json')));
+    strings = Object.assign(strings, _readJSONStrings(_getKey(buffers, 'local/lng/strings/skills.json')));
   } else {
     // Method for versions 96 and prior
-    strings = _readStrings(_getKey(buffers, "local/lng/eng/string.txt"));
-    strings = Object.assign(strings, _readStrings(_getKey(buffers, "local/lng/eng/expansionstring.txt")));
-    strings = Object.assign(strings, _readStrings(_getKey(buffers, "local/lng/eng/patchstring.txt")));
+    strings = _readStrings(_getKey(buffers, 'local/lng/eng/string.txt'));
+    strings = Object.assign(strings, _readStrings(_getKey(buffers, 'local/lng/eng/expansionstring.txt')));
+    strings = Object.assign(strings, _readStrings(_getKey(buffers, 'local/lng/eng/patchstring.txt')));
   }
 
   constants.classes = _readClasses(
-    _getArray(buffers, "global/excel/CharStats.txt"),
-    _getArray(buffers, "global/excel/PlayerClass.txt"),
+    _getArray(buffers, 'global/excel/CharStats.txt'),
+    _getArray(buffers, 'global/excel/PlayerClass.txt'),
     strings,
   );
-  const skillDescs = _readSkillDesc(_getArray(buffers, "global/excel/SkillDesc.txt"), strings);
-  constants.skills = _readSkills(_getArray(buffers, "global/excel/skills.txt"), skillDescs, strings);
-  constants.rare_names = [null].concat(_readRareNames(_getArray(buffers, "global/excel/RareSuffix.txt"), 1, strings));
+  const skillDescs = _readSkillDesc(_getArray(buffers, 'global/excel/SkillDesc.txt'), strings);
+  constants.skills = _readSkills(_getArray(buffers, 'global/excel/skills.txt'), skillDescs, strings);
+  constants.rare_names = [null].concat(_readRareNames(_getArray(buffers, 'global/excel/RareSuffix.txt'), 1, strings));
   constants.rare_names = constants.rare_names.concat(
-    _readRareNames(_getArray(buffers, "global/excel/RarePrefix.txt"), constants.rare_names.length, strings),
+    _readRareNames(_getArray(buffers, 'global/excel/RarePrefix.txt'), constants.rare_names.length, strings),
   );
-  constants.magic_prefixes = _readMagicNames(_getArray(buffers, "global/excel/MagicPrefix.txt"), strings);
-  constants.magic_suffixes = _readMagicNames(_getArray(buffers, "global/excel/MagicSuffix.txt"), strings);
-  constants.properties = _readProperties(_getArray(buffers, "global/excel/Properties.txt"), strings);
-  constants.magical_properties = _readItemStatCosts(_getArray(buffers, "global/excel/ItemStatCost.txt"), strings);
-  constants.runewords = _readRunewords(_getArray(buffers, "global/excel/Runes.txt"), strings);
-  constants.set_items = _readSetOrUnqItems(_getArray(buffers, "global/excel/SetItems.txt"), strings);
-  constants.unq_items = _readSetOrUnqItems(_getArray(buffers, "global/excel/UniqueItems.txt"), strings);
-  const item_types = _readTypes(_getArray(buffers, "global/excel/ItemTypes.txt"), strings);
-  const armor_items = _readItems(_getArray(buffers, "global/excel/Armor.txt"), item_types, strings);
-  const weapon_items = _readItems(_getArray(buffers, "global/excel/Weapons.txt"), item_types, strings);
-  const other_items = _readItems(_getArray(buffers, "global/excel/Misc.txt"), item_types, strings);
+  constants.magic_prefixes = _readMagicNames(_getArray(buffers, 'global/excel/MagicPrefix.txt'), strings);
+  constants.magic_suffixes = _readMagicNames(_getArray(buffers, 'global/excel/MagicSuffix.txt'), strings);
+  constants.properties = _readProperties(_getArray(buffers, 'global/excel/Properties.txt'), strings);
+  constants.magical_properties = _readItemStatCosts(_getArray(buffers, 'global/excel/ItemStatCost.txt'), strings);
+  constants.runewords = _readRunewords(_getArray(buffers, 'global/excel/Runes.txt'), strings);
+  constants.set_items = _readSetOrUnqItems(_getArray(buffers, 'global/excel/SetItems.txt'), strings);
+  constants.unq_items = _readSetOrUnqItems(_getArray(buffers, 'global/excel/UniqueItems.txt'), strings);
+  const item_types = _readTypes(_getArray(buffers, 'global/excel/ItemTypes.txt'), strings);
+  const armor_items = _readItems(_getArray(buffers, 'global/excel/Armor.txt'), item_types, strings);
+  const weapon_items = _readItems(_getArray(buffers, 'global/excel/Weapons.txt'), item_types, strings);
+  const other_items = _readItems(_getArray(buffers, 'global/excel/Misc.txt'), item_types, strings);
 
   constants.stackables = {};
   [...armor_items, ...weapon_items, ...other_items]
@@ -609,7 +650,7 @@ function makeBundle(buffers) {
     constants.other_items[item.code] = item;
     delete item.code;
   });
-  _readGems(constants.other_items, _getArray(buffers, "global/excel/Gems.txt"), strings);
+  _readGems(constants.other_items, _getArray(buffers, 'global/excel/Gems.txt'), strings);
 
   return constants;
 }
@@ -658,7 +699,7 @@ function formatString(string) {
   // Remove EB special character
 
   // Replace \n by <br>
-  return string.replace(/ÿc./gi, "").replace(/\n/g, "<br>");
+  return string.replace(/ÿc./gi, '').replace(/\n/g, '<br>');
 }
 
 function _readStrings(file) {
@@ -689,30 +730,30 @@ function _readJSONStrings(file) {
 
 function _readClasses(tsv, tsv2, strings) {
   const arr = [];
-  const cClass = tsv.header.indexOf("class");
+  const cClass = tsv.header.indexOf('class');
   // str	dex	int	vit	tot	stamina
-  const cStr = tsv.header.indexOf("str");
-  const cDex = tsv.header.indexOf("dex");
-  const cInt = tsv.header.indexOf("int");
-  const cVit = tsv.header.indexOf("vit");
-  const cStam = tsv.header.indexOf("stamina");
-  const cHpadd = tsv.header.indexOf("hpadd");
-  const cLifePerLvl = tsv.header.indexOf("LifePerLevel");
-  const cStamPerLvl = tsv.header.indexOf("StaminaPerLevel");
-  const cManaPerLvl = tsv.header.indexOf("ManaPerLevel");
-  const cLifePerVit = tsv.header.indexOf("LifePerVitality");
-  const cStamPerVit = tsv.header.indexOf("StaminaPerVitality");
-  const cManaPerMag = tsv.header.indexOf("ManaPerMagic");
-  const cAllSkills = tsv.header.indexOf("StrAllSkills");
-  const cSkillTab1 = tsv.header.indexOf("StrSkillTab1");
-  const cSkillTab2 = tsv.header.indexOf("StrSkillTab2");
-  const cSkillTab3 = tsv.header.indexOf("StrSkillTab3");
-  const cClassOnly = tsv.header.indexOf("StrClassOnly");
-  const cCode = tsv2.header.indexOf("Code");
+  const cStr = tsv.header.indexOf('str');
+  const cDex = tsv.header.indexOf('dex');
+  const cInt = tsv.header.indexOf('int');
+  const cVit = tsv.header.indexOf('vit');
+  const cStam = tsv.header.indexOf('stamina');
+  const cHpadd = tsv.header.indexOf('hpadd');
+  const cLifePerLvl = tsv.header.indexOf('LifePerLevel');
+  const cStamPerLvl = tsv.header.indexOf('StaminaPerLevel');
+  const cManaPerLvl = tsv.header.indexOf('ManaPerLevel');
+  const cLifePerVit = tsv.header.indexOf('LifePerVitality');
+  const cStamPerVit = tsv.header.indexOf('StaminaPerVitality');
+  const cManaPerMag = tsv.header.indexOf('ManaPerMagic');
+  const cAllSkills = tsv.header.indexOf('StrAllSkills');
+  const cSkillTab1 = tsv.header.indexOf('StrSkillTab1');
+  const cSkillTab2 = tsv.header.indexOf('StrSkillTab2');
+  const cSkillTab3 = tsv.header.indexOf('StrSkillTab3');
+  const cClassOnly = tsv.header.indexOf('StrClassOnly');
+  const cCode = tsv2.header.indexOf('Code');
   let id = 0;
   for (let i = 1; i < tsv.lines.length; i++) {
     const clazz = tsv.lines[i][cClass];
-    if (clazz && clazz != "Expansion") {
+    if (clazz && clazz != 'Expansion') {
       arr[id] = {
         id,
         n: clazz,
@@ -745,8 +786,8 @@ function _readClasses(tsv, tsv2, strings) {
 
 function _readSkillDesc(tsv, strings) {
   const arr = {};
-  const cSkillDesc = tsv.header.indexOf("skilldesc");
-  const cStrName = tsv.header.indexOf("str name");
+  const cSkillDesc = tsv.header.indexOf('skilldesc');
+  const cStrName = tsv.header.indexOf('str name');
   for (let i = 1; i < tsv.lines.length; i++) {
     const id = tsv.lines[i][cSkillDesc];
     const skillStrName = tsv.lines[i][cStrName];
@@ -759,12 +800,12 @@ function _readSkillDesc(tsv, strings) {
 
 function _readSkills(tsv, skillDescs /*, strings*/) {
   const arr = [];
-  const cSkillDesc = tsv.header.indexOf("skilldesc");
-  let cId = tsv.header.indexOf("Id");
+  const cSkillDesc = tsv.header.indexOf('skilldesc');
+  let cId = tsv.header.indexOf('Id');
   if (cId < 0) {
-    cId = tsv.header.indexOf("*Id");
+    cId = tsv.header.indexOf('*Id');
   }
-  const cCharclass = tsv.header.indexOf("charclass");
+  const cCharclass = tsv.header.indexOf('charclass');
   for (let i = 1; i < tsv.lines.length; i++) {
     const id = +tsv.lines[i][cId];
     const skillDesc = tsv.lines[i][cSkillDesc];
@@ -781,7 +822,7 @@ function _readSkills(tsv, skillDescs /*, strings*/) {
 
 function _readRareNames(tsv, idx, strings) {
   const arr = [];
-  const cName = tsv.header.indexOf("name");
+  const cName = tsv.header.indexOf('name');
   let id = idx;
   for (let i = 1; i < tsv.lines.length; i++) {
     const name = tsv.lines[i][cName];
@@ -799,12 +840,12 @@ function _readRareNames(tsv, idx, strings) {
 
 function _readMagicNames(tsv, strings) {
   const arr = [];
-  const cName = tsv.header.indexOf("Name");
-  const cTransformcolor = tsv.header.indexOf("transformcolor");
+  const cName = tsv.header.indexOf('Name');
+  const cTransformcolor = tsv.header.indexOf('transformcolor');
   let id = 1;
   for (let i = 1; i < tsv.lines.length; i++) {
     const name = tsv.lines[i][cName];
-    if (name != "Expansion") {
+    if (name != 'Expansion') {
       const o = {};
       o.id = id;
       o.n = strings[name];
@@ -818,7 +859,7 @@ function _readMagicNames(tsv, strings) {
 
 function _readProperties(tsv /*, strings*/) {
   const arr = {};
-  const cCode = tsv.header.indexOf("code");
+  const cCode = tsv.header.indexOf('code');
   const cStats = [];
   for (let j = 1; j <= 7; j++) {
     cStats[j] = {};
@@ -827,7 +868,7 @@ function _readProperties(tsv /*, strings*/) {
   }
   for (let i = 1; i < tsv.lines.length; i++) {
     const code = tsv.lines[i][cCode];
-    if (code != "Expansion") {
+    if (code != 'Expansion') {
       const property = [];
       //propertyDef.code = code;
       for (let j = 1; j <= 7; j++) {
@@ -851,7 +892,7 @@ function _readProperties(tsv /*, strings*/) {
 
 function _readRunewords(tsv, strings) {
   let arr = [];
-  const cName = tsv.header.indexOf("Name");
+  const cName = tsv.header.indexOf('Name');
   for (let i = 1; i < tsv.lines.length; i++) {
     const name = tsv.lines[i][cName];
     if (name) {
@@ -874,10 +915,10 @@ function _readRunewords(tsv, strings) {
 
 function _readTypes(tsv /*, strings*/) {
   const arr = {};
-  const cCode = tsv.header.indexOf("Code");
-  const cItemType = tsv.header.indexOf("ItemType");
-  const cEquiv1 = tsv.header.indexOf("Equiv1");
-  const cEquiv2 = tsv.header.indexOf("Equiv2");
+  const cCode = tsv.header.indexOf('Code');
+  const cItemType = tsv.header.indexOf('ItemType');
+  const cEquiv1 = tsv.header.indexOf('Equiv1');
+  const cEquiv2 = tsv.header.indexOf('Equiv2');
   const cInvGfx = [];
   for (let i = 1; i <= 6; i++) {
     cInvGfx.push(tsv.header.indexOf(`InvGfx${i}`));
@@ -927,35 +968,35 @@ function _resolvetItemTypeCategories(arr, key) {
 
 function _readItems(tsv, itemtypes, strings) {
   const arr = [];
-  const cCode = tsv.header.indexOf("code");
-  const cNameStr = tsv.header.indexOf("namestr");
-  const cStackable = tsv.header.indexOf("stackable");
-  const cMaxStack = tsv.header.indexOf("maxstack");
-  const cSpawnStack = tsv.header.indexOf("spawnstack");
-  const cMinac = tsv.header.indexOf("minac");
-  const cMaxac = tsv.header.indexOf("maxac");
-  const cDurability = tsv.header.indexOf("durability");
-  const cMindam = tsv.header.indexOf("mindam");
-  const cMaxdam = tsv.header.indexOf("maxdam");
-  const cTwoHandMindam = tsv.header.indexOf("2handmindam");
-  const cTwoHandMaxdam = tsv.header.indexOf("2handmaxdam");
-  const cMinmisdam = tsv.header.indexOf("minmisdam");
-  const cMaxmisdam = tsv.header.indexOf("maxmisdam");
-  const cReqstr = tsv.header.indexOf("reqstr");
-  const cReqdex = tsv.header.indexOf("reqdex");
-  const cHasinv = tsv.header.indexOf("hasinv");
-  const cGemSockets = tsv.header.indexOf("gemsockets");
-  const cGemapplytype = tsv.header.indexOf("gemapplytype");
-  const cInvfile = tsv.header.indexOf("invfile");
-  const cUniqueInvfile = tsv.header.indexOf("uniqueinvfile");
-  const cSetInvfile = tsv.header.indexOf("setinvfile");
-  const cInvwidth = tsv.header.indexOf("invwidth");
-  const cInvheight = tsv.header.indexOf("invheight");
-  const cInvtransform = tsv.header.indexOf("InvTrans");
-  const cType = tsv.header.indexOf("type");
-  const cNormCode = tsv.header.indexOf("normcode");
-  const cUberCode = tsv.header.indexOf("ubercode");
-  const cUltraCode = tsv.header.indexOf("ultracode");
+  const cCode = tsv.header.indexOf('code');
+  const cNameStr = tsv.header.indexOf('namestr');
+  const cStackable = tsv.header.indexOf('stackable');
+  const cMaxStack = tsv.header.indexOf('maxstack');
+  const cSpawnStack = tsv.header.indexOf('spawnstack');
+  const cMinac = tsv.header.indexOf('minac');
+  const cMaxac = tsv.header.indexOf('maxac');
+  const cDurability = tsv.header.indexOf('durability');
+  const cMindam = tsv.header.indexOf('mindam');
+  const cMaxdam = tsv.header.indexOf('maxdam');
+  const cTwoHandMindam = tsv.header.indexOf('2handmindam');
+  const cTwoHandMaxdam = tsv.header.indexOf('2handmaxdam');
+  const cMinmisdam = tsv.header.indexOf('minmisdam');
+  const cMaxmisdam = tsv.header.indexOf('maxmisdam');
+  const cReqstr = tsv.header.indexOf('reqstr');
+  const cReqdex = tsv.header.indexOf('reqdex');
+  const cHasinv = tsv.header.indexOf('hasinv');
+  const cGemSockets = tsv.header.indexOf('gemsockets');
+  const cGemapplytype = tsv.header.indexOf('gemapplytype');
+  const cInvfile = tsv.header.indexOf('invfile');
+  const cUniqueInvfile = tsv.header.indexOf('uniqueinvfile');
+  const cSetInvfile = tsv.header.indexOf('setinvfile');
+  const cInvwidth = tsv.header.indexOf('invwidth');
+  const cInvheight = tsv.header.indexOf('invheight');
+  const cInvtransform = tsv.header.indexOf('InvTrans');
+  const cType = tsv.header.indexOf('type');
+  const cNormCode = tsv.header.indexOf('normcode');
+  const cUberCode = tsv.header.indexOf('ubercode');
+  const cUltraCode = tsv.header.indexOf('ultracode');
 
   for (let i = 1; i < tsv.lines.length; i++) {
     const code = tsv.lines[i][cCode];
@@ -1006,8 +1047,8 @@ function _readItems(tsv, itemtypes, strings) {
 }
 
 function _readGems(miscItems, tsv /*, strings*/) {
-  const cCode = tsv.header.indexOf("code");
-  const types = ["weapon", "helm", "shield"];
+  const cCode = tsv.header.indexOf('code');
+  const types = ['weapon', 'helm', 'shield'];
   const cols = {};
   for (const type of types) {
     cols[type] = [];
@@ -1021,10 +1062,10 @@ function _readGems(miscItems, tsv /*, strings*/) {
   }
   for (let i = 1; i < tsv.lines.length; i++) {
     const code = tsv.lines[i][cCode];
-    if (code && code != "Expansion") {
+    if (code && code != 'Expansion') {
       const item = miscItems[code];
       if (!item) {
-        console.log("Missing misc code \"" + code + "\"")
+        console.log('Missing misc code "' + code + '"');
       }
       for (let k = 0; k < 3; k++) {
         const type = types[k];
@@ -1051,15 +1092,15 @@ function _readGems(miscItems, tsv /*, strings*/) {
 
 function _readSetOrUnqItems(tsv, strings) {
   const arr = [];
-  const cIndex = tsv.header.indexOf("index");
-  const cInvfile = tsv.header.indexOf("invfile");
-  let cCode = tsv.header.indexOf("code");
-  if (cCode < 0) cCode = tsv.header.indexOf("item");
-  const cInvtransform = tsv.header.indexOf("invtransform");
+  const cIndex = tsv.header.indexOf('index');
+  const cInvfile = tsv.header.indexOf('invfile');
+  let cCode = tsv.header.indexOf('code');
+  if (cCode < 0) cCode = tsv.header.indexOf('item');
+  const cInvtransform = tsv.header.indexOf('invtransform');
   let id = 0;
   for (let i = 1; i < tsv.lines.length; i++) {
     const index = tsv.lines[i][cIndex];
-    if (index && index != "Expansion") {
+    if (index && index != 'Expansion') {
       const o = {};
       o.id = id;
       o.index = index;
@@ -1076,40 +1117,40 @@ function _readSetOrUnqItems(tsv, strings) {
 
 function _readItemStatCosts(tsv, strings) {
   const arr = [];
-  const cStat = tsv.header.indexOf("Stat");
-  let cId = tsv.header.indexOf("ID");
+  const cStat = tsv.header.indexOf('Stat');
+  let cId = tsv.header.indexOf('ID');
   if (cId < 0) {
-    cId = tsv.header.indexOf("*ID");
+    cId = tsv.header.indexOf('*ID');
   }
-  const cCSvSaved = tsv.header.indexOf("Saved");
-  const cCSvBits = tsv.header.indexOf("CSvBits");
-  const cCSvParam = tsv.header.indexOf("CSvParam");
-  const cCSvSigned = tsv.header.indexOf("CSvSigned");
-  const cValShift = tsv.header.indexOf("ValShift");
+  const cCSvSaved = tsv.header.indexOf('Saved');
+  const cCSvBits = tsv.header.indexOf('CSvBits');
+  const cCSvParam = tsv.header.indexOf('CSvParam');
+  const cCSvSigned = tsv.header.indexOf('CSvSigned');
+  const cValShift = tsv.header.indexOf('ValShift');
 
-  const cEncode = tsv.header.indexOf("Encode");
-  const cSigned = tsv.header.indexOf("Signed");
-  const cSaveBits = tsv.header.indexOf("Save Bits");
-  const cSaveAdd = tsv.header.indexOf("Save Add");
-  const cSaveParamBits = tsv.header.indexOf("Save Param Bits");
-  const cDescPriority = tsv.header.indexOf("descpriority");
-  const cDescFunc = tsv.header.indexOf("descfunc");
-  const cDescVal = tsv.header.indexOf("descval");
-  const cDescstrpos = tsv.header.indexOf("descstrpos");
-  const cDescstrneg = tsv.header.indexOf("descstrneg");
-  const cDescstr2 = tsv.header.indexOf("descstr2");
-  const cDgrp = tsv.header.indexOf("dgrp");
-  const cDgrpFunc = tsv.header.indexOf("dgrpfunc");
-  const cDgrpVal = tsv.header.indexOf("dgrpval");
-  const cDgrpstrpos = tsv.header.indexOf("dgrpstrpos");
-  const cDgrpstrneg = tsv.header.indexOf("dgrpstrneg");
-  const cDgrpstr2 = tsv.header.indexOf("dgrpstr2");
-  const cOp = tsv.header.indexOf("op");
-  const cOpParam = tsv.header.indexOf("op param");
-  const cOpBase = tsv.header.indexOf("op base");
-  const cOpStat1 = tsv.header.indexOf("op stat1");
-  const cOpStat2 = tsv.header.indexOf("op stat2");
-  const cOpStat3 = tsv.header.indexOf("op stat3");
+  const cEncode = tsv.header.indexOf('Encode');
+  const cSigned = tsv.header.indexOf('Signed');
+  const cSaveBits = tsv.header.indexOf('Save Bits');
+  const cSaveAdd = tsv.header.indexOf('Save Add');
+  const cSaveParamBits = tsv.header.indexOf('Save Param Bits');
+  const cDescPriority = tsv.header.indexOf('descpriority');
+  const cDescFunc = tsv.header.indexOf('descfunc');
+  const cDescVal = tsv.header.indexOf('descval');
+  const cDescstrpos = tsv.header.indexOf('descstrpos');
+  const cDescstrneg = tsv.header.indexOf('descstrneg');
+  const cDescstr2 = tsv.header.indexOf('descstr2');
+  const cDgrp = tsv.header.indexOf('dgrp');
+  const cDgrpFunc = tsv.header.indexOf('dgrpfunc');
+  const cDgrpVal = tsv.header.indexOf('dgrpval');
+  const cDgrpstrpos = tsv.header.indexOf('dgrpstrpos');
+  const cDgrpstrneg = tsv.header.indexOf('dgrpstrneg');
+  const cDgrpstr2 = tsv.header.indexOf('dgrpstr2');
+  const cOp = tsv.header.indexOf('op');
+  const cOpParam = tsv.header.indexOf('op param');
+  const cOpBase = tsv.header.indexOf('op base');
+  const cOpStat1 = tsv.header.indexOf('op stat1');
+  const cOpStat2 = tsv.header.indexOf('op stat2');
+  const cOpStat3 = tsv.header.indexOf('op stat3');
   for (let i = 1; i < tsv.lines.length; i++) {
     const id = +tsv.lines[i][cId];
     const stat = tsv.lines[i][cStat];
@@ -1163,39 +1204,39 @@ function createBundle(mod, version, output_dir, output_prefix, modPostTreatmentF
   const output_name = `${mod}_constants_${version}`;
 
   // Failsafe to generate even if some files are missing
-  const alt_input_dir = mod == "vanilla" ? null : `../public/d2/game_data/vanilla/version_${version}/`;
+  const alt_input_dir = mod == 'vanilla' ? null : `../public/d2/game_data/vanilla/version_${version}/`;
 
   const input_files = [
     // Strings for versions 96 and prior
-    "local/lng/eng/string.txt",
-    "local/lng/eng/patchstring.txt",
-    "local/lng/eng/expansionstring.txt",
+    'local/lng/eng/string.txt',
+    'local/lng/eng/patchstring.txt',
+    'local/lng/eng/expansionstring.txt',
     // Strings for version 99
-    "local/lng/strings/item-gems.json",
-    "local/lng/strings/item-modifiers.json",
-    "local/lng/strings/item-nameaffixes.json",
-    "local/lng/strings/item-names.json",
-    "local/lng/strings/item-runes.json",
-    "local/lng/strings/skills.json",
+    'local/lng/strings/item-gems.json',
+    'local/lng/strings/item-modifiers.json',
+    'local/lng/strings/item-nameaffixes.json',
+    'local/lng/strings/item-names.json',
+    'local/lng/strings/item-runes.json',
+    'local/lng/strings/skills.json',
     // Datas
-    "global/excel/CharStats.txt",
-    "global/excel/PlayerClass.txt",
-    "global/excel/SkillDesc.txt",
-    "global/excel/Skills.txt",
-    "global/excel/RareSuffix.txt",
-    "global/excel/RarePrefix.txt",
-    "global/excel/MagicPrefix.txt",
-    "global/excel/MagicSuffix.txt",
-    "global/excel/Properties.txt",
-    "global/excel/ItemStatCost.txt",
-    "global/excel/Runes.txt",
-    "global/excel/SetItems.txt",
-    "global/excel/UniqueItems.txt",
-    "global/excel/ItemTypes.txt",
-    "global/excel/Armor.txt",
-    "global/excel/Weapons.txt",
-    "global/excel/Misc.txt",
-    "global/excel/Gems.txt",
+    'global/excel/CharStats.txt',
+    'global/excel/PlayerClass.txt',
+    'global/excel/SkillDesc.txt',
+    'global/excel/Skills.txt',
+    'global/excel/RareSuffix.txt',
+    'global/excel/RarePrefix.txt',
+    'global/excel/MagicPrefix.txt',
+    'global/excel/MagicSuffix.txt',
+    'global/excel/Properties.txt',
+    'global/excel/ItemStatCost.txt',
+    'global/excel/Runes.txt',
+    'global/excel/SetItems.txt',
+    'global/excel/UniqueItems.txt',
+    'global/excel/ItemTypes.txt',
+    'global/excel/Armor.txt',
+    'global/excel/Weapons.txt',
+    'global/excel/Misc.txt',
+    'global/excel/Gems.txt',
   ];
 
   const game_data = {};
@@ -1205,15 +1246,15 @@ function createBundle(mod, version, output_dir, output_prefix, modPostTreatmentF
     const input_file_path = path.join(__dirname, `${input_dir}${input_file}`);
     if (fs.existsSync(input_file_path)) {
       //file exists
-      game_data[input_file] = fs.readFileSync(input_file_path, "utf8");
+      game_data[input_file] = fs.readFileSync(input_file_path, 'utf8');
       // console.log(`File "${input_file_path}" exists`)
     } else if (alt_input_dir) {
-      console.log(`File "${input_file_path}" does not exist, switching to vanilla version`)
+      console.log(`File "${input_file_path}" does not exist, switching to vanilla version`);
       // Failsafe
       const alt_input_file_path = path.join(__dirname, `${alt_input_dir}${input_file}`);
       if (fs.existsSync(alt_input_file_path)) {
         // Alternative file exists
-        game_data[input_file] = fs.readFileSync(alt_input_file_path, "utf8");
+        game_data[input_file] = fs.readFileSync(alt_input_file_path, 'utf8');
       }
     }
   }
@@ -1237,16 +1278,16 @@ function addMissingFieldsToLegacy(mod, version, output_dir, output_prefix) {
   const input_name = `${mod}_constants_${version}`;
   const output_name = `${input_name}`;
   const input_file_path_es5format = path.join(__dirname, `${output_dir}${input_name}.bundle.js`);
-  let text = fs.readFileSync(input_file_path_es5format, "utf8");
-  const jsInstructions = text.split(/;\r?\n/) // Instructions end with ";<endline>"
-  let [letVar, jsonText] = jsInstructions[0].split(" = "); // First instruction is let varName = <JSON>;
+  let text = fs.readFileSync(input_file_path_es5format, 'utf8');
+  const jsInstructions = text.split(/;\r?\n/); // Instructions end with ";<endline>"
+  let [letVar, jsonText] = jsInstructions[0].split(' = '); // First instruction is let varName = <JSON>;
   const json_data = JSON.parse(jsonText);
   for (key in json_data) {
     const section = json_data[key];
     if (Array.isArray(section)) {
       section.forEach((_, idx) => {
         // Add an id property equal to index, except if null/undefined
-        if (typeof section[idx] === "object" && section[idx] !== null) {
+        if (typeof section[idx] === 'object' && section[idx] !== null) {
           section[idx] = { id: idx, ...section[idx] };
         }
       });
@@ -1254,9 +1295,9 @@ function addMissingFieldsToLegacy(mod, version, output_dir, output_prefix) {
   }
   json_data.version = input_name;
 
-  jsonText = JSON.stringify(json_data, null, 4)
-  jsInstructions[0] = `${letVar} = ${jsonText}`
-  text = jsInstructions.join(";\r\n")
+  jsonText = JSON.stringify(json_data, null, 4);
+  jsInstructions[0] = `${letVar} = ${jsonText}`;
+  text = jsInstructions.join(';\r\n');
 
   const output_file_path_es5format = path.join(__dirname, `${output_dir}${output_prefix}_${output_name}.bundle.js`);
   fs.writeFileSync(output_file_path_es5format, text);
@@ -1264,9 +1305,9 @@ function addMissingFieldsToLegacy(mod, version, output_dir, output_prefix) {
 }
 
 // Note: currently I don't know how to read the 96 version, because for ex ItemStatCosts.txt is missing necessary columns
-addMissingFieldsToLegacy("vanilla", 96, "../public/d2/", "generated");
-addMissingFieldsToLegacy("vanilla", 97, "../public/d2/", "generated");
-createBundle("vanilla", 98, "../public/d2/", "generated");
-createBundle("vanilla", 99, "../public/d2/", "generated");
-createBundle("remodded", 98, "../public/d2/", "generated", ReMoDDeDPostTreatment);
-createBundle("remodded", 99, "../public/d2/", "generated", ReMoDDeDPostTreatment);
+addMissingFieldsToLegacy('vanilla', 96, '../public/d2/', 'generated');
+addMissingFieldsToLegacy('vanilla', 97, '../public/d2/', 'generated');
+createBundle('vanilla', 98, '../public/d2/', 'generated');
+createBundle('vanilla', 99, '../public/d2/', 'generated');
+createBundle('remodded', 98, '../public/d2/', 'generated', ReMoDDeDPostTreatment);
+createBundle('remodded', 99, '../public/d2/', 'generated', ReMoDDeDPostTreatment);

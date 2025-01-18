@@ -1,14 +1,14 @@
-import * as types from "./types";
-import { BitReader } from "../binary/bitreader";
-import { BitWriter } from "../binary/bitwriter";
-import { getConstantData } from "./constants";
+import * as types from './types';
+import { BitReader } from '../binary/bitreader';
+import { BitWriter } from '../binary/bitwriter';
+import { getConstantData } from './constants';
 
 export function readSkills(char: types.ID2S, reader: BitReader, mod: string): void {
   const constants = getConstantData(mod, char.header.version);
   char.skills = [] as types.ISkill[];
   const offset = SkillOffset[<string>char.header.class];
   const header = reader.ReadString(2); //0x0000 [skills header = 0x69, 0x66 "if"]
-  if (header !== "if") {
+  if (header !== 'if') {
     // header is not present in first save after char is created
     if (char.header.level === 1) {
       return; // TODO: return starter skills based on class
@@ -28,7 +28,7 @@ export function readSkills(char: types.ID2S, reader: BitReader, mod: string): vo
 
 export async function writeSkills(char: types.ID2S): Promise<Uint8Array> {
   const writer = new BitWriter();
-  writer.WriteString("if", 2); //0x0000 [skills header = 0x69, 0x66 "if"]
+  writer.WriteString('if', 2); //0x0000 [skills header = 0x69, 0x66 "if"]
   //probably array length checking/sorting of skills by id...
   for (let i = 0; i < 30; i++) {
     writer.WriteUInt8(char.skills[i].points);

@@ -1,16 +1,25 @@
 ### TODO
+- Can't paste a 2nd time same unique misc item
+- Skipped bytes: rewrite same value as read
+- replace const constants = window[`${window.work_mod}_constants_${window.work_version}`] by calls to getConstantData with version string/number attention
+- On setting a quest, enabling town wp for this act?
+- On complete all act quests set introduced/complete too
+- char.item_bonuses: filter out misc/inventory except charms. Check socketed attributes are properly considered.
+- Skill sorting, grouping per tree
+- Char & merc: display the complete/merged list of stats, enhancePlayerAttributes
+- Update versions. With later node version minimatch can be replaced by path.MatchesGlob
+- To convert sp to mp: handle exception item by item, so just erase the impossible items from save (not editor)
+- Holiday Barrage skill ID in SP.
+- Char read: do not skip/loose data on read, just copy/paste it on write
 - Drag&drop: often can't drop at a position
-- Grouping elemental max res
 - Grouping min&max properly
-- Left & right ring are inversed compared to game? for merc only?
 - Paste in socketed
 - Double click on cube & not all grids = opens cube grid ?
 - Matriarchal javelins quantity issue?
 - HC: add dead edit button
 - If not a runeword, buttons to unsocket 1 only.
 - Drag to socket in ?
-- Base combobox options
-- Remove enhance button?
+- Drag to swap items
 - When selecting an inv item, then a socketed equipped item, then reclicking it, it goes back to the inv item?
 - According to this site, there is a "Broken" field in unknown item data (https://github.com/WalterCouto/D2CE/blob/main/d2s_File_Format.md#single-item-layout)
 - Ear: fill tooltip, add edit inputs
@@ -25,28 +34,18 @@
 - Make a ReMoDDeD item pack for item creation
 - Waypoints per game mod
 - Complete all Q: do not use Larzuk Q, reset stats/skills Q, imbue Q, personalize Q
-- Max gold (char, stash) per game mod
-- Stackables max quantity (for scroll of torments 10->100 when cube bug is fixed)
-- MuleRareArmJew > amulets have "+6req level" ??
-- MuleRareWeap > rework the activate weight system
-- Parsing reason runeforge id + 1000x tier ?
 - Button to add an item in socket
-- Skills in editor: group by tab
-- lazy loading of some inv_files (runes, gems, tomes, charms ?)
 - d2s update dependencies but careful mocha & chai & esm/commonjs
 - store vuex + move window.work_mod there for watching
 - Selected item: color it like on hover.
-- socketStyle: 4s in armor: add paddings ?
 - memoize
 - Editor: create new chars from v99, not 97
-- Base combobox (also for socketed items)
 - Attribute 270 - cheatcheck
 - Item tooltip not always properly updated, displays 1 as attr value
 - in constants get full set magical_attributes, add set items in \_allAttributes, finish enhancePlayerAttributes
 - quests: better states management. Readme, D:\Games\Diablo II\D2Bot-with-Kolbot\Basic-Blizzhacker-and-Autosmurf-plugin\trunk\d2bs\kolbot\D2BotBlank.dbj
 - Select classskill update choices on class change
 - drag&drop between item UIs & for merc
-- Update rune effects in constants ?
 - In the constant data "properties" (used to group attributes), remove/fix changed attributes
 
 ### d2s

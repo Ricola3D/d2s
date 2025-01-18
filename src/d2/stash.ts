@@ -1,8 +1,8 @@
-import * as types from "./types";
-import { BitWriter } from "../binary/bitwriter";
-import * as items from "./items";
-import { enhanceItems } from "./attribute_enhancer";
-import { BitReader } from "../binary/bitreader";
+import * as types from './types';
+import { BitWriter } from '../binary/bitwriter';
+import * as items from './items';
+import { enhanceItems } from './attribute_enhancer';
+import { BitReader } from '../binary/bitreader';
 
 const defaultConfig = {
   extendedStash: false,
@@ -46,13 +46,13 @@ async function readStashHeader(stash: types.IStash, reader: BitReader) {
     case 0x535353: // SSS
     case 0x4d545343: // CSTM
       stash.version = reader.ReadString(2);
-      if (stash.version !== "01" && stash.version !== "02") {
+      if (stash.version !== '01' && stash.version !== '02') {
         throw new Error(`unkown stash version ${stash.version} at position ${reader.offset - 2 * 8}`);
       }
 
       stash.type = header === 0x535353 ? types.EStashType.shared : types.EStashType.private;
 
-      if (stash.type === types.EStashType.shared && stash.version == "02") {
+      if (stash.type === types.EStashType.shared && stash.version == '02') {
         stash.sharedGold = reader.ReadUInt32();
       }
 
@@ -81,11 +81,11 @@ async function readStashPages(stash: types.IStash, reader: BitReader, mod: strin
 async function readStashPage(stash: types.IStash, reader: BitReader, mod: string, version: number) {
   const page: types.IStashPage = {
     items: [],
-    name: "",
+    name: '',
     type: 0,
   };
   const header = reader.ReadString(2);
-  if (header !== "ST") {
+  if (header !== 'ST') {
     throw new Error(`can not read stash page header ST at position ${reader.offset - 2 * 8}`);
   }
 
@@ -100,7 +100,7 @@ async function readStashPage(stash: types.IStash, reader: BitReader, mod: string
 async function readStashPart(stash: types.IStash, reader: BitReader, mod: string, version: number) {
   const page: types.IStashPage = {
     items: [],
-    name: "",
+    name: '',
     type: 0,
   };
   page.items = await items.readItems(reader, mod, version, defaultConfig);
@@ -125,17 +125,17 @@ export async function write(data: types.IStash, mod: string, version: number, us
 async function writeStashHeader(data: types.IStash): Promise<Uint8Array> {
   const writer = new BitWriter();
   if (data.type === types.EStashType.private) {
-    writer.WriteString("CSTM", 4);
+    writer.WriteString('CSTM', 4);
   } else {
-    writer.WriteString("SSS", 4);
+    writer.WriteString('SSS', 4);
   }
 
   writer.WriteString(data.version, data.version.length);
 
   if (data.type === types.EStashType.private) {
-    writer.WriteString("", 4);
+    writer.WriteString('', 4);
   } else {
-    if (data.version == "02") {
+    if (data.version == '02') {
       writer.WriteUInt32(data.sharedGold);
     }
   }
@@ -177,7 +177,7 @@ async function writeStashPages(data: types.IStash, mod: string, version: number,
 async function writeStashPage(data: types.IStashPage, mod: string, version: number, config: types.IConfig): Promise<Uint8Array> {
   const writer = new BitWriter();
 
-  writer.WriteString("ST", 2);
+  writer.WriteString('ST', 2);
   writer.WriteUInt32(data.type);
 
   writer.WriteString(data.name, data.name.length + 1);

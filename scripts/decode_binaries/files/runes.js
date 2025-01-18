@@ -1,14 +1,14 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
-const { readString } = require("../utils.js");
+const { readString } = require('../utils.js');
 
 function decodeRunesFile(inputDir) {
   let items = [];
-  const inputFile = path.join(inputDir, "runes.bin");
+  const inputFile = path.join(inputDir, 'runes.bin');
 
   if (fs.existsSync(inputFile)) {
     const fileBuffer = fs.readFileSync(inputFile);
@@ -17,7 +17,7 @@ function decodeRunesFile(inputDir) {
     const lineLength = (fileBuffer.byteLength - 4) / lineCount;
 
     if (lineLength != 228) {
-      console.log("WARNING: expected line length is 46, but actual is " + lineLength);
+      console.log('WARNING: expected line length is 46, but actual is ' + lineLength);
     }
 
     let lineStart = 4; // We skip 4 first bytes

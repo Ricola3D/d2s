@@ -1,7 +1,7 @@
-import * as types from "./types";
-import { BitReader } from "../binary/bitreader";
-import { BitWriter } from "../binary/bitwriter";
-import { getConstantData } from "./constants";
+import * as types from './types';
+import { BitReader } from '../binary/bitreader';
+import { BitWriter } from '../binary/bitwriter';
+import { getConstantData } from './constants';
 
 //todo use constants.magical_properties and csvBits
 export function readAttributes(char: types.ID2S, reader: BitReader, mod: string): void {
@@ -13,12 +13,12 @@ export function readAttributes(char: types.ID2S, reader: BitReader, mod: string)
 
   // Initial values
   char.attributes = attributes.reduce((acc, curr) => {
-    acc[curr.s] = 0; // Add the attribute with value 0
+    acc[curr.s || `attribute_${curr.id}`] = 0; // Add the attribute with value 0
     return acc;
   }, {} as types.IAttributes);
 
   const header = reader.ReadString(2); //0x0000 [attributes header = 0x67, 0x66 "gf"]
-  if (header != "gf") {
+  if (header != 'gf') {
     // header is not present in first save after char is created
     if (char.header.level === 1) {
       const classData = constants.classes.find((c) => c.n === char.header.class).a;
@@ -52,18 +52,18 @@ export function readAttributes(char: types.ID2S, reader: BitReader, mod: string)
   //read till 0x1ff end of attributes is found
   while (id != 0x1ff) {
     // bitOffset += 9;
-    const field = constants.magical_properties[id];
-    if (field === undefined) {
+    const charStatDef = constants.magical_properties[id];
+    if (charStatDef === undefined) {
       throw new Error(`Invalid attribute id: ${id}`);
     }
-    const size = field.cB;
+    const size = charStatDef.cB;
     if (size === undefined) {
       throw new Error(`Missing CSV save bits for id: ${id}`);
     }
-    char.attributes[field.s] = reader.ReadUInt32(size);
-    if (field.cVS) {
+    char.attributes[charStatDef.s || `attribute_${charStatDef.id}`] = reader.ReadUInt32(size);
+    if (charStatDef.cVS) {
       //hitpoints - maxstamina need to be bit shifted
-      char.attributes[field.s] >>>= field.cVS;
+      char.attributes[charStatDef.s || `attribute_${charStatDef.id}`] >>>= charStatDef.cVS;
     }
 
     // Next attribute
@@ -71,19 +71,22 @@ export function readAttributes(char: types.ID2S, reader: BitReader, mod: string)
     id = reader.ReadUInt16(9);
   }
 
+  const prevOffset = reader.offset;
   reader.Align();
+  const newOffset = reader.offset;
+  char.unk_after_attr = reader.bits.subarray(prevOffset, newOffset);
 }
 
 export async function writeAttributes(char: types.ID2S, constants: types.IConstantData): Promise<Uint8Array> {
   const writer = new BitWriter();
-  writer.WriteString("gf", 2); //0x0000 [attributes header = 0x67, 0x66 "gf"]
+  writer.WriteString('gf', 2); //0x0000 [attributes header = 0x67, 0x66 "gf"]
 
   // Stats = magical_properties with "Saved" = 1.
   // There are report that only stat ids 0 to 255 can be saved. It doesn't work for stats 256-510.
   const charStatDefs = constants.magical_properties.filter((val, idx) => val && val.c && idx < 256);
 
   for (const charStatDef of charStatDefs) {
-    let value = char.attributes[charStatDef.s];
+    let value = char.attributes[charStatDef.s || `attribute_${charStatDef.id}`];
     if (!value) {
       continue; // 0 values are not saved to gain file size
     }

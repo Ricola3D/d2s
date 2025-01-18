@@ -1,12 +1,12 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
 function decodeSkillDescFile(inputDir) {
   let items = [];
-  const inputFile = path.join(inputDir, "skilldesc.bin");
+  const inputFile = path.join(inputDir, 'skilldesc.bin');
 
   if (fs.existsSync(inputFile)) {
     const fileBuffer = fs.readFileSync(inputFile);
@@ -15,7 +15,7 @@ function decodeSkillDescFile(inputDir) {
     const lineLength = (fileBuffer.byteLength - 4) / lineCount;
 
     if (lineLength != 300) {
-      console.log("WARNING: expected line length is 444, but actual is " + lineLength);
+      console.log('WARNING: expected line length is 444, but actual is ' + lineLength);
     }
 
     let lineStart = 4; // We skip 4 first bytes
@@ -26,9 +26,9 @@ function decodeSkillDescFile(inputDir) {
       // const lineUint8Array = new Uint8Array(lineBuffer.byteLength);
       // lineBuffer.copy(lineUint8Array, 0, 0, lineBuffer.byteLength);
 
-      let item = { "*eol": 0 };
+      let item = { '*eol': 0 };
 
-      item.bytes = lineBuffer.reduce((acc, byte) => acc + " " + byte, "");
+      item.bytes = lineBuffer.reduce((acc, byte) => acc + ' ' + byte, '');
 
       // 0-1 SkillDesc
       item.SkillDesc = lineBuffer.readUint16LE(0);
@@ -53,16 +53,16 @@ function decodeSkillDescFile(inputDir) {
 
       // 8-9 str name
       //0-9999 string.txt 10000-19999 patchstring.txt 20000- expansionstring.txt
-      item["str name"] = lineBuffer.readUint16LE(8);
+      item['str name'] = lineBuffer.readUint16LE(8);
 
       // 10-11 str short
-      item["str short"] = lineBuffer.readUint16LE(10);
+      item['str short'] = lineBuffer.readUint16LE(10);
 
       // 12-13 str long
-      item["str long"] = lineBuffer.readUint16LE(12);
+      item['str long'] = lineBuffer.readUint16LE(12);
 
       // 14-15 str alt
-      item["str alt"] = lineBuffer.readUint16LE(14);
+      item['str alt'] = lineBuffer.readUint16LE(14);
 
       // 16-17 descdam
       item.descdam = lineBuffer.readUint16LE(16);
@@ -71,10 +71,10 @@ function decodeSkillDescFile(inputDir) {
       item.descatt = lineBuffer.readUint16LE(18);
 
       // 20-23 ddam calc1 (skilldesccode)
-      item["ddam calc1"] = lineBuffer.readUint32LE(20);
+      item['ddam calc1'] = lineBuffer.readUint32LE(20);
 
       // 24-27 ddam calc2 (skilldesccode)
-      item["ddam calc2"] = lineBuffer.readUint32LE(24);
+      item['ddam calc2'] = lineBuffer.readUint32LE(24);
 
       // 28 p1dmelem
       item.p1dmelem = lineBuffer.readUint8(28);
@@ -250,10 +250,10 @@ function decodeSkillDescFile(inputDir) {
       }
 
       // 296-297 item proc text
-      item["item proc text"] = lineBuffer.readUint16LE(296);
+      item['item proc text'] = lineBuffer.readUint16LE(296);
 
       // 298 item proc descline count
-      item["item proc descline count"] = lineBuffer.readUint8(298);
+      item['item proc descline count'] = lineBuffer.readUint8(298);
 
       // 299 Padding
 

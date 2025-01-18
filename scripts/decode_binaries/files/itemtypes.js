@@ -1,24 +1,24 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
-const { readString } = require("../utils.js");
+const { readString } = require('../utils.js');
 
 function decodeItemTypesFile(inputDir) {
   let items = [];
-  const inputFile = path.join(inputDir, "itemtypes.bin");
+  const inputFile = path.join(inputDir, 'itemtypes.bin');
 
   if (fs.existsSync(inputFile)) {
     const fileBuffer = fs.readFileSync(inputFile);
 
     const lineCount = fileBuffer.readUInt32LE(0);
     const lineLength = (fileBuffer.byteLength - 4) / lineCount;
-    console.log("Line count " + lineCount);
+    console.log('Line count ' + lineCount);
 
     if (lineLength != 228) {
-      console.log("WARNING: expected line length is 228, but actual is " + lineLength);
+      console.log('WARNING: expected line length is 228, but actual is ' + lineLength);
     }
 
     let lineStart = 4; // We skip 4 first bytes
@@ -29,7 +29,7 @@ function decodeItemTypesFile(inputDir) {
       // const lineUint8Array = new Uint8Array(lineBuffer.byteLength);
       // lineBuffer.copy(lineUint8Array, 0, 0, lineBuffer.byteLength);
 
-      let item = { "*eol": 0 };
+      let item = { '*eol': 0 };
 
       // 0-3 Code (Char[4])
       item.Code = readString(lineBuffer, 0, 4);

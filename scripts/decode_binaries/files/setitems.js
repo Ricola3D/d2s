@@ -1,14 +1,14 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
-const { readString } = require("../utils.js");
+const { readString } = require('../utils.js');
 
 function decodeSetItemsFile(inputDir) {
   let items = [];
-  const inputFile = path.join(inputDir, "setitems.bin");
+  const inputFile = path.join(inputDir, 'setitems.bin');
 
   if (fs.existsSync(inputFile)) {
     const fileBuffer = fs.readFileSync(inputFile);
@@ -17,7 +17,7 @@ function decodeSetItemsFile(inputDir) {
     const lineLength = (fileBuffer.byteLength - 4) / lineCount;
 
     if (lineLength != 444) {
-      console.log("WARNING: expected line length is 444, but actual is " + lineLength);
+      console.log('WARNING: expected line length is 444, but actual is ' + lineLength);
     }
 
     let lineStart = 4; // We skip 4 first bytes
@@ -28,7 +28,7 @@ function decodeSetItemsFile(inputDir) {
       // const lineUint8Array = new Uint8Array(lineBuffer.byteLength);
       // lineBuffer.copy(lineUint8Array, 0, 0, lineBuffer.byteLength);
 
-      let item = { "*ID": lineIndex, "*ItemName": "", "*eol": "" };
+      let item = { '*ID': lineIndex, '*ItemName': '', '*eol': '' };
 
       //item.bytes = lineBuffer.reduce((acc, byte) => acc + " " + byte, "")
 
@@ -54,16 +54,16 @@ function decodeSetItemsFile(inputDir) {
       item.lvl = lineBuffer.readUint16LE(48);
 
       // 50-51 Padding
-      item["level req"] = lineBuffer.readUint16LE(50);
+      item['level req'] = lineBuffer.readUint16LE(50);
 
       // 52-55
       item.rarity = lineBuffer.readUint32LE(52);
 
       // 56-59
-      item["cost mult"] = lineBuffer.readUint32LE(56);
+      item['cost mult'] = lineBuffer.readUint32LE(56);
 
       // 60-63
-      item["cost add"] = lineBuffer.readUint32LE(60);
+      item['cost add'] = lineBuffer.readUint32LE(60);
 
       // 64 chrtransform
       item.chrtransform = lineBuffer.readUint8(64);
@@ -87,7 +87,7 @@ function decodeSetItemsFile(inputDir) {
       item.dropsfxframe = lineBuffer.readUint8(134);
 
       // 135 add func
-      item["add func"] = lineBuffer.readUint8(135);
+      item['add func'] = lineBuffer.readUint8(135);
 
       // 136-279 prop1..9
       {

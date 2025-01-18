@@ -1,13 +1,14 @@
-import * as types from "./types";
-import { BitReader } from "../binary/bitreader";
-import { BitWriter } from "../binary/bitwriter";
-import { getConstantData } from "./constants";
+import * as types from './types';
+import { BitReader } from '../binary/bitreader';
+import { BitWriter } from '../binary/bitwriter';
+import { getConstantData } from './constants';
+import * as default_header from './versions/default_header';
 
 export async function readHeader(char: types.ID2S, reader: BitReader) {
   char.header = {} as types.IHeader;
   //0x0000
-  char.header.identifier = reader.ReadUInt32().toString(16).padStart(8, "0");
-  if (char.header.identifier != "aa55aa55") {
+  char.header.identifier = reader.ReadUInt32().toString(16).padStart(8, '0');
+  if (char.header.identifier != 'aa55aa55') {
     throw new Error(`D2S identifier 'aa55aa55' not found at position ${reader.offset - 4 * 8}`);
   }
   //0x0004
@@ -16,7 +17,7 @@ export async function readHeader(char: types.ID2S, reader: BitReader) {
 
 export async function readHeaderData(char: types.ID2S, reader: BitReader, mod: string) {
   const constants = getConstantData(mod, char.header.version);
-  const v = await _versionSpecificHeader(char.header.version);
+  const v = _versionSpecificHeader(char.header.version);
   if (v == null) {
     throw new Error(`Cannot parse version: ${char.header.version}`);
   }
@@ -32,7 +33,7 @@ export async function writeHeader(char: types.ID2S): Promise<Uint8Array> {
 
 export async function writeHeaderData(char: types.ID2S, constants: types.IConstantData): Promise<Uint8Array> {
   const writer = new BitWriter();
-  const v = await _versionSpecificHeader(char.header.version);
+  const v = _versionSpecificHeader(char.header.version);
   if (v == null) {
     throw new Error(`Cannot parse version: ${char.header.version}`);
   }
@@ -67,13 +68,13 @@ export async function fixHeader(writer: BitWriter) {
  * 0x60, 0x0, 0x0, 0x0 = 1.13c = version
  * 0x62, 0x0, 0x0, 0x0 = 1.2 = version
  * */
-async function _versionSpecificHeader(version: number) {
+function _versionSpecificHeader(version: number) {
   switch (version) {
     case 0x60: {
-      return await import(`./versions/default_header`);
+      return default_header;
     }
     default: {
-      return await import(`./versions/default_header`);
+      return default_header;
     }
   }
 }

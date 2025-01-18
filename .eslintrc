@@ -3,34 +3,44 @@
     "parser": "@typescript-eslint/parser",
     "plugins": ["@typescript-eslint", "prettier"],
     "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
-    "ignores": [
-      // Ignore git hidden files:
-      "**/.git",
-      "**/.svn",
-      "**/.hg",
+    // Ignore format for newer versions of eslint
+    // "ignores": [
+    //   // Ignore git hidden files:
+    //   "**/.git",
+    //   "**/.svn",
+    //   "**/.hg",
 
-      // Ignore dependencies
-      "**/node_modules",
+    //   // Ignore dependencies
+    //   "**/node_modules",
 
-      // Ignore build dirs
-      "dist",
+    //   // Ignore build dirs
+    //   "dist",
 
-      // Ignore static data
-      "public/d2/",
-      "lib",
-      "examples/**/*.d2s",
-      "examples/**/*.d2i",
-      "examples/**/*.d2x",
-      "examples/**/*.sss",
+    //   // Ignore static data
+    //   "public/d2/",
+    //   "lib",
+    //   "examples/**/*.d2s",
+    //   "examples/**/*.d2i",
+    //   "examples/**/*.d2x",
+    //   "examples/**/*.sss",
 
-      // Ignore test output
-      "coverage",
-      ".husky",
-      ".nyc_output"
-    ],
+    //   // Ignore test output
+    //   "coverage",
+    //   ".husky",
+    //   ".nyc_output"
+    // ],
     "rules": {
-      "no-console": 1, // Means warning
-      "prettier/prettier": 2, // Means error
+      "no-console": "warn", // Means warning
+      "prettier/prettier": [
+        "error", // Means error
+        {
+          "tabWidth": 2,
+          "useTabs": false,
+          "printWidth": 140,
+          "singleQuote": true,
+          "endOfLine": "lf"
+        }
+      ],
       "@typescript-eslint/no-explicit-any": ["warn", { "ignoreRestArgs": true }]
     }
   }

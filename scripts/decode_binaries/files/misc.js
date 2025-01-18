@@ -1,14 +1,14 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
-const { readString } = require("../utils.js");
+const { readString } = require('../utils.js');
 
 function decodeMiscFile(inputDir) {
   let items = [];
-  const inputFile = path.join(inputDir, "misc.bin");
+  const inputFile = path.join(inputDir, 'misc.bin');
 
   if (fs.existsSync(inputFile)) {
     const fileBuffer = fs.readFileSync(inputFile);
@@ -17,7 +17,7 @@ function decodeMiscFile(inputDir) {
     const lineLength = (fileBuffer.byteLength - 4) / lineCount;
 
     if (lineLength != 436) {
-      console.log("WARNING: expected line length is 436, but actual is " + lineLength);
+      console.log('WARNING: expected line length is 436, but actual is ' + lineLength);
     }
 
     let lineStart = 4; // We skip 4 first bytes
@@ -121,7 +121,7 @@ function decodeMiscFile(inputDir) {
       // 212-219 Padding
 
       // 220-223 gamble cost
-      item["gamble cost"] = lineBuffer.readUint32LE(220);
+      item['gamble cost'] = lineBuffer.readUint32LE(220);
 
       // 224 speed
       item.speed = lineBuffer.readUint8(224);
@@ -159,7 +159,7 @@ function decodeMiscFile(inputDir) {
       // 255 Padding
 
       // 256-257 auto prefix
-      item["auto prefix"] = lineBuffer.readUint16LE(256);
+      item['auto prefix'] = lineBuffer.readUint16LE(256);
 
       // 258 missiletype
       item.missiletype = lineBuffer.readUint8(258);
@@ -291,7 +291,7 @@ function decodeMiscFile(inputDir) {
       item.levelreq = lineBuffer.readUint8(327);
 
       // 328 magic lvl
-      item["magic lvl"] = lineBuffer.readUint8(328);
+      item['magic lvl'] = lineBuffer.readUint8(328);
 
       // 329 Transform
       item.Transform = lineBuffer.readUint8(329);
@@ -311,47 +311,47 @@ function decodeMiscFile(inputDir) {
       {
         let offset = 334;
         let PNJs = [
-          "Akara",
-          "Gheed",
-          "Charsi",
-          "Fara",
-          "Lysander",
-          "Drognan",
-          "Hralti",
-          "Alkor",
-          "Ormus",
-          "Elzix",
-          "Asheara",
-          "Cain",
-          "Halbu",
-          "Jamella",
-          "Malah",
-          "Larzuk",
-          "Drehya",
+          'Akara',
+          'Gheed',
+          'Charsi',
+          'Fara',
+          'Lysander',
+          'Drognan',
+          'Hralti',
+          'Alkor',
+          'Ormus',
+          'Elzix',
+          'Asheara',
+          'Cain',
+          'Halbu',
+          'Jamella',
+          'Malah',
+          'Larzuk',
+          'Drehya',
         ];
         // PNJ Min
         for (let i = 0; i < 17; i++) {
-          item[PNJs[i] + "Min"] = lineBuffer.readUint8(offset);
+          item[PNJs[i] + 'Min'] = lineBuffer.readUint8(offset);
           offset += 1;
         }
         // PNJ Max
         for (let i = 0; i < 17; i++) {
-          item[PNJs[i] + "Max"] = lineBuffer.readUint8(offset);
+          item[PNJs[i] + 'Max'] = lineBuffer.readUint8(offset);
           offset += 1;
         }
         // PNJ MagicMin
         for (let i = 0; i < 17; i++) {
-          item[PNJs[i] + "MagicMin"] = lineBuffer.readUint8(offset);
+          item[PNJs[i] + 'MagicMin'] = lineBuffer.readUint8(offset);
           offset += 1;
         }
         // PNJ MagicMax
         for (let i = 0; i < 17; i++) {
-          item[PNJs[i] + "MagicMax"] = lineBuffer.readUint8(offset);
+          item[PNJs[i] + 'MagicMax'] = lineBuffer.readUint8(offset);
           offset += 1;
         }
         // PNJ MagicLvl
         for (let i = 0; i < 17; i++) {
-          item[PNJs[i] + "MagicLvl"] = lineBuffer.readUint8(offset);
+          item[PNJs[i] + 'MagicLvl'] = lineBuffer.readUint8(offset);
           offset += 1;
         }
       }

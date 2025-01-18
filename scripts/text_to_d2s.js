@@ -1,7 +1,7 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-var-requires */
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
 function writeBits(bits, position, toWrite, numberOfBits) {
   for (let i = 0; i < numberOfBits; i++) {
@@ -14,8 +14,8 @@ function writeBytes(bits, position, bytes, numberOfBits = bytes.length * 8) {
   bytes.reduce((acc, c) => {
     const b = c
       .toString(2)
-      .padStart(8, "0")
-      .split("")
+      .padStart(8, '0')
+      .split('')
       .reverse()
       .map((e) => parseInt(e, 2));
     b.forEach((bit) => (toWrite[acc++] = bit));
@@ -67,12 +67,12 @@ function fixHeader(bits) {
   console.log(`size: ${eof} - checksum: ${checksum}`);
 }
 
-const input_file_path = path.join("C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/ReMoDDeD", "input.txt");
-const output_file_path = path.join("C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/ReMoDDeD", "output.d2s");
+const input_file_path = path.join('C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/ReMoDDeD', 'input.txt');
+const output_file_path = path.join('C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/ReMoDDeD', 'output.d2s');
 if (fs.existsSync(input_file_path)) {
-  const text = fs.readFileSync(input_file_path, "utf-8");
+  const text = fs.readFileSync(input_file_path, 'utf-8');
   const bits = text
-    .split("")
+    .split('')
     .map((x) => parseInt(x))
     .reverse();
   fixHeader(bits);
