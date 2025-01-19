@@ -1,4 +1,7 @@
 ### TODO
+- Unsocket all: move socketed items to inv instead of deleting it? or other button ?
+- When editing socketed jewel, socket stats is not updated properly
+- Editor for shared stash ?
 - Button to paste 5x or 10x ?
 - Consistency check: Can't paste a 2nd time same unique misc item
 - Skipped bytes: rewrite same value as read
