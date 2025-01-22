@@ -42,8 +42,11 @@ describe('stash', () => {
   it('should provide read and write consistency for plugy shared stash file', async () => {
     const inputBuffer = fs.readFileSync(path.join(__dirname, `../../examples/stash/_LOD_SharedStashSave.sss`));
     const inputJson = await read(inputBuffer, 'vanilla');
+    await fs.writeFileSync(path.join(__dirname, `../../examples/stash/_LOD_SharedStashSave_in.json`), JSON.stringify(inputJson, null, 2));
     const outputBuffer = await write(inputJson, 'vanilla', 0x60);
+    await fs.writeFileSync(path.join(__dirname, `../../examples/stash/_LOD_SharedStashSave_out.sss`), outputBuffer);
     const outputJson = await read(outputBuffer, 'vanilla');
+    await fs.writeFileSync(path.join(__dirname, `../../examples/stash/_LOD_SharedStashSave_out.json`), JSON.stringify(outputJson, null, 2));
 
     expect(inputBuffer.length, 'file size').to.eq(outputBuffer.length);
     expect(outputJson, 'json').to.deep.eq(inputJson);

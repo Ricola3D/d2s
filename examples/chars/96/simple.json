@@ -591,7 +591,7 @@
       "multiple_pictures": false,
       "class_specific": false,
       "low_quality_id": 0,
-      "timestamp": 0,
+      "timestamp": false,
       "ear_attributes": {
         "class": 0,
         "level": 0,
@@ -628,7 +628,7 @@
       "multiple_pictures": false,
       "class_specific": false,
       "low_quality_id": 0,
-      "timestamp": 0,
+      "timestamp": false,
       "ear_attributes": {
         "class": 0,
         "level": 0,
@@ -665,7 +665,7 @@
       "multiple_pictures": false,
       "class_specific": false,
       "low_quality_id": 0,
-      "timestamp": 0,
+      "timestamp": false,
       "ear_attributes": {
         "class": 0,
         "level": 0,
@@ -702,7 +702,7 @@
       "multiple_pictures": false,
       "class_specific": false,
       "low_quality_id": 0,
-      "timestamp": 0,
+      "timestamp": false,
       "ear_attributes": {
         "class": 0,
         "level": 0,
@@ -739,7 +739,7 @@
       "multiple_pictures": false,
       "class_specific": false,
       "low_quality_id": 0,
-      "timestamp": 0,
+      "timestamp": false,
       "ear_attributes": {
         "class": 0,
         "level": 0,
@@ -776,7 +776,7 @@
       "multiple_pictures": false,
       "class_specific": false,
       "low_quality_id": 0,
-      "timestamp": 0,
+      "timestamp": false,
       "ear_attributes": {
         "class": 0,
         "level": 0,
@@ -814,7 +814,7 @@
       "multiple_pictures": false,
       "class_specific": false,
       "low_quality_id": 0,
-      "timestamp": 0,
+      "timestamp": false,
       "ear_attributes": {
         "class": 0,
         "level": 0,
@@ -858,7 +858,7 @@
       "multiple_pictures": false,
       "class_specific": false,
       "low_quality_id": 0,
-      "timestamp": 0,
+      "timestamp": false,
       "ear_attributes": {
         "class": 0,
         "level": 0,

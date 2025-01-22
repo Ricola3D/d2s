@@ -196,7 +196,8 @@ export function enhanceItem(
     }
     if (itemTypeDef.c) {
       let classSpecific = false;
-      if (item.quality <= EQuality.Superior) {
+      if (![types.EQuality.Unique, types.EQuality.Set].includes(item.quality)) {
+        // Unique/set don't have the staff mods
         // Does any of the category is "<class> Item" ?
         for (const cat of itemTypeDef.c) {
           if (cat.endsWith(' Item')) {
@@ -205,7 +206,6 @@ export function enhanceItem(
           }
         }
       }
-      // Other qualities have the bit class_specific set to false, and no auto_affix_id
 
       if (classSpecific) {
         item.class_specific = true;

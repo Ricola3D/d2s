@@ -30626,9 +30626,9 @@ let remodded_constants_99 = {
             "hdi": "armor/glove/gloves_l"
         },
         "Ag2": {
-            "nc": "Ag4",
-            "exc": "Ag5",
-            "elc": "Ag6",
+            "nc": "Ag1",
+            "exc": "Ag2",
+            "elc": "Ag3",
             "iq": 0,
             "n": "Adept Gloves",
             "minac": 12,
@@ -30719,9 +30719,9 @@ let remodded_constants_99 = {
             "hdi": "armor/glove/heavy_gloves"
         },
         "Ag5": {
-            "nc": "Ag1",
-            "exc": "Ag2",
-            "elc": "Ag3",
+            "nc": "Ag4",
+            "exc": "Ag5",
+            "elc": "Ag6",
             "iq": 0,
             "n": "Adept Gloves",
             "minac": 54,

@@ -1,4 +1,6 @@
 ### TODO
+- Context menu: disabled option if clipboard/preview is empty
+- On import at, automaticaly copy too ? if you want to paste it after
 - Unsocket all: move socketed items to inv instead of deleting it? or other button ?
 - When editing socketed jewel, socket stats is not updated properly
 - Editor for shared stash ?

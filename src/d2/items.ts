@@ -663,7 +663,7 @@ export function newItem(): types.IItem {
     picture_id: 0,
     class_specific: false,
     low_quality_id: 0,
-    timestamp: 0, // 1 for returned body piece, 0 otherwise
+    timestamp: false, // true for returned body piece, false otherwise
     time: 0, // for body pieces
     ear_attributes: {
       class: 0,
@@ -955,7 +955,7 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
     }
 
     //realm data
-    item.timestamp = reader.ReadUInt8(1);
+    item.timestamp = reader.ReadUInt8(1) == 1;
     if (item.timestamp || item.categories.includes('Body Part')) {
       item.time = reader.ReadUInt32(30);
     }
@@ -1119,7 +1119,7 @@ export async function writeItem(item: types.IItem, mod: string, version: number,
       writer.WriteUInt8(1, 5);
     }
 
-    writer.WriteUInt8(item.timestamp, 1);
+    writer.WriteUInt8(item.timestamp ? 1 : 0, 1);
     if (item.timestamp || item.categories.includes('Body Part')) {
       writer.WriteUInt32(item.time, 30);
     }

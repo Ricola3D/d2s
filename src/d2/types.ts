@@ -447,7 +447,7 @@ export interface IItem {
   picture_id: number; // current skin index
   class_specific: boolean;
   low_quality_id: number;
-  timestamp: number;
+  timestamp: boolean;
   time: number;
   ear_attributes: IEarAttributes;
   defense_rating: number;
