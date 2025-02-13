@@ -2297,7 +2297,10 @@ let remodded_constants_99 = {
             "id": 649,
             "s": "Shield of Forsaken Light"
         },
-        null, // 650
+        {
+            "id": 650,
+            "s": "Spirit's Embrace"
+        },
         {
             "id": 651,
             "s": "Spirit Retribution"
@@ -2353,7 +2356,10 @@ let remodded_constants_99 = {
             "id": 683,
             "s": "Raise Leoric's Chosen"
         },
-        null,
+        {
+            "id": 684,
+            "s": "Spirit's Charge"
+        },
         {
             "id": 685,
             "s": "Anthrax Armor"
@@ -17517,6 +17523,24 @@ let remodded_constants_99 = {
             "index": "Band of Permafrost",
             "n": "Band of Permafrost",
             "hdi": "misc/ring/ring"
+        },
+        {
+            "id": 208,
+            "index": "Morality",
+            "n": "Morality",
+            "hdi": "weapon/polearm/poleaxe"
+        },
+        {
+            "id": 209,
+            "index": "Remembrance",
+            "n": "Remembrance",
+            "hdi": "armor/helmet/bone_helm"
+        },
+        {
+            "id": 210,
+            "index": "Harbinger",
+            "n": "Harbinger",
+            "hdi": "armor/armor/chain_mail"
         }
     ],
     "unq_items": [
@@ -64071,10 +64095,12 @@ remodded_constants_99.unq_items[4095] = {
 
 // runeword_id - read/write value
 remodded_constants_99.runeword_fixes = {
-    22: 2692,
-    170: 2626,
-    171: 2627,
-    172: 2006
+    // id (not index !) - saved value in d2s
+    22: 2692, // Delirium
+    170: 2626, // Lord of Terror
+    171: 2627, // Fenris Fang
+    172: 2006, // Elder
+    173: 2065 // Alacrity
 };
 
 remodded_constants_99.gold = {

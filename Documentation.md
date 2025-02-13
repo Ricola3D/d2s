@@ -1,4 +1,6 @@
-Data guide: https://www.d2rmodding.com/_files/ugd/698f72_5d9678d029d74fa68dc06293f6405208.pdf
+Data guide:
+- https://github.com/locbones/D2R_DataGuide (improved by Bonesy)
+- https://www.d2rmodding.com/_files/ugd/698f72_5d9678d029d74fa68dc06293f6405208.pdf
 
 D2S file format:
 - http://user.xmission.com/~trevin/DiabloIIv1.09_File_Format.shtml
