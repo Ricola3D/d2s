@@ -516,6 +516,7 @@ function ReMoDDeDPostTreatment(input_dir, constants) {
   for (change of nameChanges) {
     if (!change.from || typeof change.to === 'string' || change.to instanceof String) {
       // String or undefined change
+      if (!constants[change.section][change.key]) console.log(`Missing key "${change.key}" in section "${change.section}"`);
       if (constants[change.section][change.key].n == change.from) {
         constants[change.section][change.key].n = change.to;
         console.log(`WARN: name of "${change.key}" changed to "${constants[change.section][change.key].n}"`);

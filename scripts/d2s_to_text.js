@@ -19,7 +19,6 @@ const path = require('path');
 // const mod = "ReMoDDeD"
 const mod = 'RMD-MP';
 const input_file_path = path.join(`C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/${mod}`, 'input.d2s');
-// const input_file_path = path.join("C:/Users/Admin/Saved Games/Diablo II Resurrected", "TestTest.d2s");
 const output_file_path = path.join(`C:/Users/Admin/Saved Games/Diablo II Resurrected/mods/${mod}`, 'output.txt');
 if (fs.existsSync(input_file_path)) {
   const fileBuffer = fs.readFileSync(input_file_path);
