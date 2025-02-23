@@ -915,6 +915,13 @@ export async function readItem(reader: BitReader, mod: string, version: number, 
           }
         }
         break;
+      case EQuality.DemonTempered:
+        item.rare_name_id = reader.ReadUInt8(8);
+        if (item.rare_name_id) item.rare_name = constants.rare_names[item.rare_name_id] ? constants.rare_names[item.rare_name_id].n : '';
+        item.rare_name_id2 = reader.ReadUInt8(8);
+        if (item.rare_name_id2)
+          item.rare_name2 = constants.rare_names[item.rare_name_id2] ? constants.rare_names[item.rare_name_id2].n : '';
+        break;
       default:
         break;
     }
@@ -1085,6 +1092,10 @@ export async function writeItem(item: types.IItem, mod: string, version: number,
             writer.WriteBit(0);
           }
         }
+        break;
+      case EQuality.DemonTempered:
+        writer.WriteUInt8(item.rare_name_id !== undefined ? item.rare_name_id : _lookupRareId(item.rare_name, constants), 8);
+        writer.WriteUInt8(item.rare_name_id2 !== undefined ? item.rare_name_id2 : _lookupRareId(item.rare_name2, constants), 8);
         break;
       default:
         break;

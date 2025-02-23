@@ -442,7 +442,7 @@ export interface IItem {
   nr_of_items_in_sockets: number; // Number of socketed items
   id: number; // Uint32 identifier
   level: number;
-  quality: EQuality; // 0:undefined, 1: low, 2: normal, 3: superior, 4: magic, 5: set, 6: rare, 7: unique, 8: crafted
+  quality: EQuality; // 0:undefined, 1: low, 2: normal, 3: superior, 4: magic, 5: set, 6: rare, 7: unique, 8: crafted, 9: demon tempered (ReMoDDeD)
   multiple_pictures: boolean; // 1: has multiple skins
   picture_id: number; // current skin index
   class_specific: boolean;
@@ -605,6 +605,7 @@ export enum EQuality { // TODO naming convention EQuality
   Rare = 0x06,
   Unique = 0x07,
   Crafted = 0x08,
+  DemonTempered = 0x09,
 }
 
 export enum EGemPosition {

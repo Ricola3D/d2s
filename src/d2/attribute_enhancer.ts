@@ -113,9 +113,12 @@ export function enhanceItem(
     item.magic_prefix = 0;
     item.magic_suffix = 0;
   }
-  if (item.quality === EQuality.Rare || item.quality === EQuality.Crafted) {
+  if (item.quality === EQuality.Rare || item.quality === EQuality.Crafted || item.quality === EQuality.DemonTempered) {
     item.rare_name = constants.rare_names[item.rare_name_id] ? constants.rare_names[item.rare_name_id].n : '';
     item.rare_name2 = constants.rare_names[item.rare_name_id2] ? constants.rare_names[item.rare_name_id2].n : '';
+
+    // Demon tempered doesn't have magical_name_ids since it's made from a unique
+    if (item.quality === EQuality.DemonTempered) item.magical_name_ids = [0, 0, 0, 0, 0, 0];
   } else {
     item.rare_name_id = 0;
     item.rare_name = '';
