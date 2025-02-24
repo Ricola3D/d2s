@@ -1,5 +1,5 @@
 ### TODO
-- Read for tempering = slight blood red transform color
+- Tempered = grey or white transform color
 - Context menu: disabled option if clipboard/preview is empty
 - On import at, automaticaly copy too ? if you want to paste it after
 - Unsocket all: move socketed items to inv instead of deleting it? or other button ?
