@@ -303,13 +303,15 @@ export function enhanceItem(
       if (itemTypeDef.ui) {
         item.inv_file = itemTypeDef.ui;
       }
-      if (unq && [itemTypeDef.nc, itemTypeDef.exc, itemTypeDef.elc].includes(unq.c)) {
-        // We exclude cases where base have been completely changed (ex: Tempering in ReMoDDeD)
-        if (unq.i) {
-          item.inv_file = unq.i;
-        }
-        if (unq.hdi) {
-          item.hd_inv_file = unq.hdi;
+      if (unq) {
+        if ([itemTypeDef.nc, itemTypeDef.exc, itemTypeDef.elc].includes(unq.c)) {
+          // We exclude cases where base have been completely changed (ex: Tempering in ReMoDDeD)
+          if (unq.i) {
+            item.inv_file = unq.i;
+          }
+          if (unq.hdi) {
+            item.hd_inv_file = unq.hdi;
+          }
         }
         if (unq.tc) item.transform_color = unq.tc;
       }
@@ -318,13 +320,15 @@ export function enhanceItem(
       if (itemTypeDef.ui) {
         item.inv_file = itemTypeDef.ui;
       }
-      if (set && [itemTypeDef.nc, itemTypeDef.exc, itemTypeDef.elc].includes(set.c)) {
-        // We exclude cases where base have been completely changed (ex: Tempering in ReMoDDeD)
-        if (set.i) {
-          item.inv_file = set.i;
-        }
-        if (set.hdi) {
-          item.hd_inv_file = set.hdi;
+      if (set) {
+        if ([itemTypeDef.nc, itemTypeDef.exc, itemTypeDef.elc].includes(set.c)) {
+          // We exclude cases where base have been completely changed (ex: Tempering in ReMoDDeD)
+          if (set.i) {
+            item.inv_file = set.i;
+          }
+          if (set.hdi) {
+            item.hd_inv_file = set.hdi;
+          }
         }
         if (set.tc) item.transform_color = set.tc;
       }
