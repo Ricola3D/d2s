@@ -200,8 +200,11 @@ export function enhanceItem(
     // If the item has been edited, we must update class_specific
     if (itemTypeDef.c) {
       let classSpecific = false;
-      if (![types.EQuality.Unique, types.EQuality.Set, types.EQuality.DemonTempered].includes(item.quality)) {
-        // Unique/set/Ready-for-tempering don't have the staff mods
+      if (
+        ![types.EQuality.Unique, types.EQuality.Set, types.EQuality.DemonTempered].includes(item.quality) &&
+        !itemTypeDef.c.includes('Relic')
+      ) {
+        // Unique/set/Ready-for-tempering/tempered don't have the staff mods
         // Does any of the category is "<class> Item" ?
         for (const cat of itemTypeDef.c) {
           if (cat.endsWith(' Item')) {

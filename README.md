@@ -1,11 +1,13 @@
 ### TODO
-- Tempered = grey or white transform color
+- On creating a char, automatically put focus/trailer in name input, with select all?
+- Ctrl+c ctrl+v under cursor?
+- Keybinds seem reverted to previous when editing a guy with F9-12
+- Ready for tempering = some white pixels are redish, but it's less visible than transform color
 - Context menu: disabled option if clipboard/preview is empty
 - On import at, automaticaly copy too ? if you want to paste it after
 - Unsocket all: move socketed items to inv instead of deleting it? or other button ?
 - When editing socketed jewel, socket stats is not updated properly
 - Editor for shared stash ?
-- Button to paste 5x or 10x ?
 - Consistency check: Can't paste a 2nd time same unique misc item
 - Skipped bytes: rewrite same value as read
 - replace const constants = window[`${window.work_mod}_constants_${window.work_version}`] by calls to getConstantData with version string/number attention
