@@ -1,4 +1,7 @@
 ### TODO
+- Belt items
+- Tempering bases have same normal/nm/hell value than base
+- Display "EB" for elite bases
 - On creating a char, automatically put focus/trailer in name input, with select all?
 - Ctrl+c ctrl+v under cursor?
 - Keybinds seem reverted to previous when editing a guy with F9-12
