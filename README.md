@@ -1,4 +1,7 @@
 ### TODO
+- Drag&drop: on first click hide tooltip and dragstart ? Or hide/show tooltip on drag up ?
+- Running/walking
+- Paste in the current grid, not always inventory
 - Belt items
 - Tempering bases have same normal/nm/hell value than base
 - Display "EB" for elite bases
@@ -23,7 +26,6 @@
 - To convert sp to mp: handle exception item by item, so just erase the impossible items from save (not editor)
 - Holiday Barrage skill ID in SP.
 - Char read: do not skip/loose data on read, just copy/paste it on write
-- Drag&drop: often can't drop at a position
 - Grouping min&max properly
 - Paste in socketed
 - Double click on cube & not all grids = opens cube grid ?
@@ -37,7 +39,6 @@
 - Ear: fill tooltip, add edit inputs
 - Organs/herbs/flags: if timestamp, display edit input for time/timestamp
 - HeroEditor: add buttons reset all stats / reset all skills
-- Drag issue when socketed
 - Base options: 2 groups (norm/excep/elite, others). Maybe add precision of difficulty for each option ?
 - Weapon dmg in tooltip: doesn't reflex %ed, +min, +max, +flat, etc..
 - Consistency: runewords can't get customized ? (only in old d2 versions?)
